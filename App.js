@@ -1,13 +1,40 @@
+/**
+ * Sample React Native App
+ * https://github.com/facebook/react-native
+ *
+ * @format
+ * @flow
+ */
+
 import React from 'react';
-import {
-  View
-} from 'react-native';
+import {View,Text, ScrollView} from 'react-native';
 
-function App(){
+
+import mainStyle from './styles/mainStyle';
+import AppHeader from './comps/header';
+import AppFooter from './comps/footer';
+import AppContent from './comps/AppContent';
+
+
+
+function App() {
   return (
-    <View>
+    <View style={mainStyle.App}>
+      <View style={mainStyle.AppHeader}>
+        <AppHeader/>
+      </View>
 
+      <View style={mainStyle.AppContent}>
+        <AppContent/>
+      </View> 
+
+      <View style={mainStyle.AppFooter}>
+        <AppFooter/>
+      </View>
+     
     </View>
-  )
+  );
 }
+
+
 export default App;
