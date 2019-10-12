@@ -22,7 +22,7 @@ function Appfooter() {
               <Image
                 resizeMode="contain" 
                 style={{width: 25, height: 25}}
-                source={require('../images/assets/icon/home.png')}
+                source={require('../assets/icon/home.png')}
               />
               <Text style={footerStyle.label}>Home</Text>
             </View>
@@ -30,7 +30,7 @@ function Appfooter() {
               <Image 
                 resizeMode="contain"
                 style={{width: 25, height: 25}}
-                source={require('../images/assets/icon/schedule.png')}
+                source={require('../assets/icon/schedule.png')}
               />
               <Text style={footerStyle.label}>Schedule</Text>
             </View>
@@ -38,14 +38,14 @@ function Appfooter() {
               <Image
                 resizeMode="contain"
                 style={{width: 50, height: 50}}
-                source={require('../images/assets/icon/donate.png')}
+                source={require('../assets/icon/donate.png')}
               />
             </View>
             <View style={footerStyle.iconsFooter}>
               <Image 
                 resizeMode="contain"
                 style={{width: 25, height: 25, paddingTop:10}}
-                source={require('../images/assets/icon/notif.png')}
+                source={require('../assets/icon/notif.png')}
               />
               <Text style={footerStyle.label}>Notifications</Text>
             </View>
@@ -53,7 +53,7 @@ function Appfooter() {
               <Image 
                 resizeMode="contain"
                 style={{width: 25, height: 25}}
-                source={require('../images/assets/icon/profile.png')}
+                source={require('../assets/icon/profile.png')}
               />
               <Text style={footerStyle.label}>Account</Text>
             </View>
