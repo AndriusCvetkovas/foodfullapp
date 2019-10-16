@@ -2,9 +2,11 @@ import {StyleSheet} from 'react-native';
 
 var mainStyle = StyleSheet.create({
     App:{
-        minHeight: '100%'
+        maxHeight: '100%',
+        height: '100%'
     },
     AppHeader:{
+        maxHeight:'20%',
         height:'20%',
         top: 0 ,
         resizeMode: 'cover'
@@ -12,15 +14,15 @@ var mainStyle = StyleSheet.create({
     },
 
     AppContent:{
-        minHeight: '70%'
+        flex:1,
+        height: '100%',
+        padding: 10,
     },
 
     AppFooter:{
         backgroundColor:'#f6fafd',
         bottom: 0,
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center'
+        flexDirection: 'row'
     }
  });
 

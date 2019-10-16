@@ -7,15 +7,21 @@
  */
 
 import React from 'react';
-import {View,Text} from 'react-native';
-import headerStyle from '../styles/headerStyle';
+import {View,Text,ScrollView} from 'react-native';
+import ContentStyle from '../styles/contentStyle';
 
 
 function AppContent() {
   return (
-    <View>
-      <Text>Content</Text>
-    </View>
+      <ScrollView style = {ContentStyle.comp}>
+      <Text>
+          
+          
+          
+          
+      </Text>
+      </ScrollView>
+        
   );
 }
 

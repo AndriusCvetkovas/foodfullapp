@@ -2,14 +2,13 @@ import {StyleSheet} from 'react-native';
 
 var footerStyle = StyleSheet.create({
     comp:{
+        flex:1,
         flexDirection: 'row',
         backgroundColor:'#f6fafd',
-        height: '100%',
         justifyContent: 'center',
         alignItems:'center',
         textAlign:'center',
-
-  
+        height: 60
     },
     iconsFooter:{
         justifyContent: 'center',
@@ -20,12 +19,16 @@ var footerStyle = StyleSheet.create({
         width: 50,
        
     },
+    sizeIcon:{
+        width: 25,
+        height: 25
+    },
 
     label:{
         paddingTop:4,
-        fontSize: 12,
+        fontSize: 11,
         color: '#000'
-    }
+     }
    
  })
 
