@@ -7,7 +7,7 @@
  */
 
 import React from 'react';
-import {View,Text,Image} from 'react-native';
+import {View,Text,Image,ScrollView} from 'react-native';
 import footerStyle from '../styles/footerStyle';
 
 
@@ -15,13 +15,11 @@ function Appfooter() {
 
 
   return (
-  
-    <View style={footerStyle.comp}>
-           
-           <View style={footerStyle.iconsFooter}>
+            <View style={footerStyle.comp}>
+          <View style={footerStyle.iconsFooter}>
               <Image
                 resizeMode="contain" 
-                style={{width: 25, height: 25}}
+                style={footerStyle.sizeIcon}
                 source={require('../images/assets/icon/home.png')}
               />
               <Text style={footerStyle.label}>Home</Text>
@@ -29,7 +27,7 @@ function Appfooter() {
             <View style={footerStyle.iconsFooter}>
               <Image 
                 resizeMode="contain"
-                style={{width: 25, height: 25}}
+                style={footerStyle.sizeIcon}
                 source={require('../images/assets/icon/schedule.png')}
               />
               <Text style={footerStyle.label}>Schedule</Text>
@@ -37,14 +35,15 @@ function Appfooter() {
             <View style={footerStyle.iconsFooter}>
               <Image
                 resizeMode="contain"
-                style={{width: 50, height: 50}}
-                source={require('../images/assets/icon/donate.png')}
+                style={footerStyle.sizeIcon}
+                source={require('../images/assets/icon/donate_active.png')}
               />
+              <Text style={footerStyle.label}>Donate</Text>
             </View>
             <View style={footerStyle.iconsFooter}>
               <Image 
                 resizeMode="contain"
-                style={{width: 25, height: 25, paddingTop:10}}
+                style={footerStyle.sizeIcon}
                 source={require('../images/assets/icon/notif.png')}
               />
               <Text style={footerStyle.label}>Notifications</Text>
@@ -52,13 +51,15 @@ function Appfooter() {
             <View style={footerStyle.iconsFooter}>
               <Image 
                 resizeMode="contain"
-                style={{width: 25, height: 25}}
+                style={footerStyle.sizeIcon}
                 source={require('../images/assets/icon/profile.png')}
               />
               <Text style={footerStyle.label}>Account</Text>
             </View>
+          
+          </View> 
+           
             
-    </View>
   );
 }
 
