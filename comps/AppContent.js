@@ -10,12 +10,13 @@ import React from 'react';
 import {View,Text,ScrollView} from 'react-native';
 import ContentStyle from '../styles/contentStyle';
 import GMap from './GMap';
+import Dashboard from './Dashboard';
 
 function AppContent() {
   return (
-      <ScrollView style = {ContentStyle.comp}>
-        <GMap />
-      </ScrollView>
+      <View style = {ContentStyle.comp}>
+        <Dashboard />
+      </View>
         
   );
 }
