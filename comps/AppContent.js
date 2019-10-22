@@ -10,12 +10,15 @@ import React from 'react';
 import {View,Text} from 'react-native';
 import headerStyle from '../styles/headerStyle';
 import DonationPen from '../comps/DonationPen';
+import Accpending from './Accpending';
+import LoginPage from './LoginPage';
 
 
 function AppContent() {
   return (
     <View>
-     <DonationPen />
+   <LoginPage /> 
+   
     </View>
   );
 }
