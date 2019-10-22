@@ -37,7 +37,7 @@ var DashStyle = StyleSheet.create({
     },
     your: {
         marginTop: 0,
-        flex: 1,
+        flex: 0.5,
         borderRadius: 30,
         backgroundColor: 'white',
         shadowColor: '#aaaaaa',
