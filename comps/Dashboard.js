@@ -47,7 +47,7 @@ function Dashboard(){
             {/*Leaderboard below*/}
             <View style = {DashStyle.leaderBoardMain}>
                 <View style = {DashStyle.your}>
-                    <Text style = {{color: '#066a87', fontSize: 20, fontWeight: '600'}}>Leaderboard</Text>
+                    <Text style = {{color: '#06a2bc', fontSize: 20, fontWeight: '600'}}>Leaderboard</Text>
                     {/*Your Leaderboard below*/}
                     <View style = {DashStyle.innerLeadB}>
                         <View>

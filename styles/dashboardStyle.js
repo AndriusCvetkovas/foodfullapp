@@ -11,12 +11,13 @@ var DashStyle = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         borderRadius: 20,
-        backgroundColor: '#066a87',
-        width: '95%'
+        backgroundColor: '#06a2bc',
+        width: '92%',
+        padding: 5
     },
     innerPendingBox: {
         flex: 1,
-        margin: 10,
+        margin: 5,
         width: '95%',
         backgroundColor: 'white',
         borderRadius: 10,
@@ -26,7 +27,7 @@ var DashStyle = StyleSheet.create({
     dateBubble: {
         width: 50,
         height: 50,
-        backgroundColor: '#c3de95',
+        backgroundColor: '#a4d638',
         borderRadius: 50,
         alignItems: 'center',
         justifyContent: 'center',
@@ -41,8 +42,8 @@ var DashStyle = StyleSheet.create({
         borderRadius: 30,
         backgroundColor: 'white',
         shadowColor: '#aaaaaa',
-        shadowOffset: { width: 2, height: 2 },
-        shadowOpacity: 0.8,
+        shadowOffset: { width: 2, height: 3 },
+        shadowOpacity: 0.6,
         shadowRadius: 10,
         elevation: 2,
         alignItems: 'center',
@@ -62,7 +63,7 @@ var DashStyle = StyleSheet.create({
         shadowOpacity: 0.8,
         shadowRadius: 2,
         elevation: 0,
-        width: '95%',
+        width: '92%',
         marginTop: 15,
         marginBottom: -50,
         borderRadius: 30
