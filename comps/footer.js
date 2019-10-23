@@ -32,13 +32,15 @@ function Appfooter() {
               />
               <Text style={footerStyle.label}>Schedule</Text>
             </View>
-            <View style={footerStyle.iconsFooter}>
+
+            <View style={footerStyle.donateIcon}>
               <Image
                 resizeMode="contain"
-                style={footerStyle.sizeIcon}
+                style={footerStyle.sizeDonateIcon}
                 source={require('../assets/icon/donate.png')}
               />
               <Text style={footerStyle.label}>Donate</Text>
+
             </View>
             <View style={footerStyle.iconsFooter}>
               <Image 

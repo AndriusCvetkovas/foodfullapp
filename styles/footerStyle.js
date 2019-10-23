@@ -18,11 +18,26 @@ var footerStyle = StyleSheet.create({
         height: 50,
         width: 50,
        
-    },
+    }, 
     sizeIcon:{
         width: 25,
         height: 25
     },
+
+
+    // DONATION ICON
+    donateIcon:{
+        justifyContent: 'center',
+        alignItems:'center',
+        flex:1,
+        textAlign:'center',
+        top: -10,
+    },
+    sizeDonateIcon:{
+        width: 55,
+        height: 55,
+    },
+    
 
     label:{
         paddingTop:4,
