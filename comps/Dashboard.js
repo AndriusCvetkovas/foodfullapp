@@ -53,6 +53,7 @@ function Dashboard(){
                         <View>
                             <Image
                             style = {{width: 100, height: 100, borderRadius: 100, backgroundColor: "#aaaaaa"}}
+                            source={require('../assets/img/safeway.jpg')}
                             ></Image>
                         </View>
                         <View style = {{margin: 20}}>
@@ -77,7 +78,7 @@ function Dashboard(){
                             <Text style = {{padding: 10, color: '#066a87', fontSize: 20}}>2</Text>
                             <Image style = {{margin: 10, width: 50, height: 50, borderRadius: 50, backgroundColor: 'grey'}}></Image>
                             <View>
-                                <Text style = {{color: '#066a87', fontSize: 16}}>Whole Foods</Text>
+                                <Text style = {{color: '#066a87', fontSize: 16}}>Safeway Extra</Text>
                                 <Text>2465 Willingdon Ave</Text>
                             </View>
                         </View>
@@ -85,7 +86,7 @@ function Dashboard(){
                             <Text style = {{padding: 10, color: '#066a87', fontSize: 20}}>3</Text>
                             <Image style = {{margin: 10, width: 50, height: 50, borderRadius: 50, backgroundColor: 'grey'}}></Image>
                             <View>
-                                <Text style = {{color: '#066a87', fontSize: 16}}>Whole Foods</Text>
+                                <Text style = {{color: '#066a87', fontSize: 16}}>Fresh Street Market</Text>
                                 <Text>2465 Willingdon Ave</Text>
                             </View>
                         </View>

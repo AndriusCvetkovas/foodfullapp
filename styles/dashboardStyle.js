@@ -33,9 +33,7 @@ var DashStyle = StyleSheet.create({
         justifyContent: 'center',
         marginRight: 50
     },
-    pendingDetail: {
-        flex: 1
-    },
+    
     your: {
         marginTop: 0,
         flex: 0.5,
@@ -43,7 +41,7 @@ var DashStyle = StyleSheet.create({
         backgroundColor: 'white',
         shadowColor: '#aaaaaa',
         shadowOffset: { width: 2, height: 3 },
-        shadowOpacity: 0.6,
+        shadowOpacity: 0.5,
         shadowRadius: 10,
         elevation: 2,
         alignItems: 'center',
@@ -72,7 +70,7 @@ var DashStyle = StyleSheet.create({
         flex: 1,
         flexDirection: 'row',
         alignItems: 'center',
-        marginTop: 10,
+        marginTop: 5,
         padding: 10
     },
     leader: {
