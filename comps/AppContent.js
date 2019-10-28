@@ -12,12 +12,16 @@ import headerStyle from '../styles/headerStyle';
 import DonationPen from '../comps/DonationPen';
 import Accpending from './Accpending';
 import LoginPage from './LoginPage';
+import SignUp from './SignUp';
+import DonationSign from './DonationSign';
 
 
 function AppContent() {
   return (
     <View>
-   <LoginPage /> 
+   {/* <SignUp />  */}
+   {/* <LoginPage /> */}
+   <DonationSign />
    
     </View>
   );

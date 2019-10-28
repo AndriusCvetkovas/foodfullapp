@@ -2,7 +2,8 @@
 import {StyleSheet} from 'react-native';
 const styles = StyleSheet.create({
     container: {
-      marginTop:150,
+      marginTop:250,
+      marginBottom:150,
       flex: 1,
       justifyContent: 'center',
       alignItems: 'center',
