@@ -11,6 +11,7 @@ function Dashboard(){
                 style= {{color: 'white', fontSize: 20, flex: 0.2, margin: 10, padding: 10}}
                 >Upcoming Pick Ups</Text>
                 {/* Pending box below */}
+
                 <View style = {DashStyle.innerPendingBox} >
                     <View style = {DashStyle.innerPendingBox}>
                         {/* Date bubble below*/}
@@ -27,6 +28,8 @@ function Dashboard(){
                         </View>
                     </View>
                 </View>
+
+
                 <View style = {DashStyle.innerPendingBox} >
                     <View style = {DashStyle.innerPendingBox}>
                         {/* Date bubble below*/}
@@ -44,6 +47,8 @@ function Dashboard(){
                     </View>
                 </View>
             </View>
+
+            
             {/*Leaderboard below*/}
             <View style = {DashStyle.leaderBoardMain}>
                 <View style = {DashStyle.your}>
@@ -58,8 +63,8 @@ function Dashboard(){
                         </View>
                         <View style = {{margin: 20}}>
                             <Text style = {{color: '#066a87', fontSize: 18}}>You are in the 2nd place</Text>
-                            <Text>40 Donations</Text>
-                            <Text>1100 Kg of food</Text>
+                            <Text style = {{color: '#0ca3bc', fontSize: 16}}>40 Donations</Text>
+                            <Text style = {{color: '#0ca3bc', fontSize: 16}}>1100 Kg of food</Text>
                         </View>
                     </View>
                 </View>
@@ -67,26 +72,37 @@ function Dashboard(){
                     {/*Scrollable dashboard below*/}
                     <ScrollView>
                         <View style = {DashStyle.leaderDetail}>
-                            <Text style = {{padding: 10, color: '#066a87', fontSize: 20}}>1</Text>
-                            <Image style = {{margin: 10, width: 50, height: 50, borderRadius: 50, backgroundColor: 'grey'}}></Image>
+                            <Text style = {{padding: 10, color: '#0ca3bc', fontSize: 20}}>1</Text>
+                            <Image style = {{margin: 10, width: 50, height: 50, borderRadius: 50, backgroundColor: 'grey'}}
+                            source={require('../assets/img/wholefoods.jpg')}>
+                            </Image>
                             <View>
-                                <Text style = {{color: '#066a87', fontSize: 16}}>Whole Foods</Text>
+                                <Text style = {{color: '#066a87', fontSize: 18}}>
+                                    Whole Foods</Text>
                                 <Text>2465 Willingdon Ave</Text>
                             </View>
                         </View>
+
                         <View style = {DashStyle.leaderDetail}>
-                            <Text style = {{padding: 10, color: '#066a87', fontSize: 20}}>2</Text>
-                            <Image style = {{margin: 10, width: 50, height: 50, borderRadius: 50, backgroundColor: 'grey'}}></Image>
+                            <Text style = {{padding: 10, color: '#0ca3bc', fontSize: 20}}>2</Text>
+                            <Image 
+                            style = {{margin: 10, width: 50, height: 50, borderRadius: 50, backgroundColor: 'grey'}}
+                            source={require('../assets/img/safeway.jpg')}>
+                            </Image>
                             <View>
-                                <Text style = {{color: '#066a87', fontSize: 16}}>Safeway Extra</Text>
+                                <Text style = {{color: '#066a87', fontSize: 18}}>Safeway Extra</Text>
                                 <Text>2465 Willingdon Ave</Text>
                             </View>
                         </View>
+
                         <View style = {DashStyle.leaderDetail}>
-                            <Text style = {{padding: 10, color: '#066a87', fontSize: 20}}>3</Text>
-                            <Image style = {{margin: 10, width: 50, height: 50, borderRadius: 50, backgroundColor: 'grey'}}></Image>
+                            <Text style = {{padding: 10, color: '#0ca3bc', fontSize: 20}}>3</Text>
+                            <Image style = {{margin: 10, width: 50, height: 50, borderRadius: 50, backgroundColor: 'grey'}}
+                            source={require('../assets/img/freshmarket.jpg')}>
+
+                            </Image>
                             <View>
-                                <Text style = {{color: '#066a87', fontSize: 16}}>Fresh Street Market</Text>
+                                <Text style = {{color: '#066a87', fontSize: 18}}>Fresh Street Market</Text>
                                 <Text>2465 Willingdon Ave</Text>
                             </View>
                         </View>

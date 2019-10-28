@@ -25,13 +25,14 @@ var DashStyle = StyleSheet.create({
         alignItems: 'center'
     },
     dateBubble: {
-        width: 50,
-        height: 50,
+        width: 60,
+        height: 60,
         backgroundColor: '#a4d638',
         borderRadius: 50,
         alignItems: 'center',
         justifyContent: 'center',
-        marginRight: 50
+        marginRight: 40,
+        marginLeft: 10
     },
     
     your: {
