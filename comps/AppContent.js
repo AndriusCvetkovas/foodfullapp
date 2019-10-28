@@ -12,11 +12,11 @@ import ContentStyle from '../styles/contentStyle';
 import GMap from './GMap';
 import Dashboard from './Dashboard';
 import Confirmation from './Confirmation';
-
+import DashboardAccept from './DashboardAccept';
 function AppContent() {
   return (
       <View style = {ContentStyle.comp}>
-        <Dashboard/>
+        <DashboardAccept/>
       </View>
         
   );

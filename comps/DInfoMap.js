@@ -15,7 +15,7 @@ function Info(){
             <View>
                 <Text
                 style = {GMapStyle.donatorTitle}
-                >Name of the Donator</Text>
+                >Safeway Extra</Text>
             </View>
             {/*Image box below*/} 
             <View 
@@ -29,15 +29,17 @@ function Info(){
             <View
             style = {GMapStyle.dateBox}
             >
-                <Text style = {{flex: 1}}>Date:</Text>
+                <Text style = {{flex: 1, color: '#066a87'}}>Date:</Text>
                 <Text style = {{flex: 1}}>69 January 6969</Text>
             </View>
             {/*Time box below*/} 
-            <Text>Pick your time</Text>
-            <View
-            style = {GMapStyle.timeBox}
-            >
-                <TimePicker />
+            <View style = {{flexDirection: 'row', width: "80%"}}>
+                <Text style = {{color: '#066a87'}}>Pick your time:</Text>
+                <View
+                style = {GMapStyle.timeBox}
+                >
+                    {/*<TimePicker />*/}
+                </View>
             </View>
             {/*Note box below*/} 
             <View
@@ -53,7 +55,7 @@ function Info(){
             style = {GMapStyle.button}>
                 <Text
                 style = {{color: 'white'}}
-                >Accept</Text>
+                >Claim Donation</Text>
             </TouchableHighlight>
         </View>
     );

@@ -4,6 +4,7 @@ import MapView from 'react-native-maps';
 import Geolocation from 'react-native-geolocation-service';
 import GMapStyle from '../styles/mapStyle';
 import Info from './DInfoMap';
+import AcceptedInfo from './DConfMap';
 function GMap(){
     
   async function getPos(){
@@ -55,7 +56,7 @@ function GMap(){
             <Text>hi</Text>
           </View>
         </ScrollView>
-        <Info/>
+        <AcceptedInfo />
       </View>
             );  
           };
