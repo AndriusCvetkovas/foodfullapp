@@ -7,9 +7,9 @@ var mainStyle = StyleSheet.create({
     },
     AppHeader:{
         maxHeight:'20%',
-        height:'20%',
+        height:'13%',
         top: 0 ,
-        resizeMode: 'cover'
+        resizeMode: 'cover',
 
     },
 
@@ -17,6 +17,8 @@ var mainStyle = StyleSheet.create({
         flex:1,
         height: '100%',
         padding: 10,
+        backgroundColor:'#eee'
+
     },
 
     AppFooter:{

@@ -7,15 +7,17 @@ var AppHeaderStyle = StyleSheet.create({
         alignItems: 'center',
     },
     TextStyle:{
-        color: 'white',
-        bottom: '20%'
-
+        color: '#038ca3',
+        justifyContent:'center',
+        alignItems:'center',
+        fontSize:18
     },
     background:{
         width:'100%',
         height:'100%',
         justifyContent: 'center',
         alignItems: 'center',
+        backgroundColor:'#fff'
     }
    
  })
