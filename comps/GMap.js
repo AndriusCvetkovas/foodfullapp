@@ -37,7 +37,13 @@ function GMap(){
           <View
           style = {GMapStyle.viewStyle}
           >
-            <Text>Hi</Text>
+            <Text>Safeway Extra</Text>
+            <Text></Text>
+          </View>
+          <View
+          style = {GMapStyle.viewStyle}
+          >
+          <Text>hi</Text>
           </View>
           <View
           style = {GMapStyle.viewStyle}
@@ -47,15 +53,10 @@ function GMap(){
           <View
           style = {GMapStyle.viewStyle}
           >
-            <Text>hi</Text>
-          </View>
-          <View
-          style = {GMapStyle.viewStyle}
-          >
-            <Text>hi</Text>
+          <Text>hi</Text>
           </View>
         </ScrollView>
-        <Info/>
+        
       </View>
             );  
           };

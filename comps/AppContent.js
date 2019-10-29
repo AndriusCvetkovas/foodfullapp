@@ -16,7 +16,8 @@ import Confirmation from './Confirmation';
 function AppContent() {
   return (
       <View style = {ContentStyle.comp}>
-        <Dashboard/>
+        {/* <GMap/> */}
+        <Dashboard />
       </View>
         
   );
