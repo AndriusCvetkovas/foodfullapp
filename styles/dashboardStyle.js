@@ -21,7 +21,7 @@ var DashStyle = StyleSheet.create({
         margin: 5,
         width: '95%',
         backgroundColor: 'white',
-        borderRadius: 10,
+        borderRadius: 20,
         flexDirection: 'row',
         alignItems: 'center'
     },
