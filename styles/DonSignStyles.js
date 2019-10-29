@@ -9,6 +9,15 @@ const styles = StyleSheet.create({
       alignItems: 'center',
       backgroundColor: '#00b5ec',
     },
+    test: {
+      height:25,
+      width:230,
+      flexDirection: 'row',
+      
+    },
+    text:{
+    textAlign:'left',
+    },
     pendingimg:{
     
       width:100,
@@ -23,13 +32,13 @@ const styles = StyleSheet.create({
         borderRadius:30,
         borderBottomWidth: 1,
         width:250,
-        height:45,
-        marginBottom:20,
+        height:40,
+        marginBottom:25,
         flexDirection: 'row',
         alignItems:'center',
     },
     inputs:{
-        height:45,
+        height:30,
         marginLeft:16,
         borderBottomColor: '#FFFFFF',
         flex:1,
@@ -41,7 +50,7 @@ const styles = StyleSheet.create({
       justifyContent: 'center'
     },
     buttonContainer: {
-      height:45,
+      height:40,
       flexDirection: 'row',
       justifyContent: 'center',
       alignItems: 'center',

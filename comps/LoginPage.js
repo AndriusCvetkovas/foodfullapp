@@ -18,9 +18,9 @@ function LoginPage(){
 
 <View style={styles.container}>
 
-<View style= {styles.pendingimg}>
+<View style= {styles.LogoImg}>
             <Image
-            style={styles.pendingimg}
+            style={styles.LogoImg}
             source={require('../assets/img/logo.png')}
             />
         </View>
@@ -51,7 +51,12 @@ function LoginPage(){
           <Text style={styles.signUpText}>Next</Text>
         </TouchableHighlight>
 
+        <View style={styles.signUpFooter}>
+          <Text>Don't have account? Sign Up</Text>
+
         </View>
+
+   </View>
 
   
   )

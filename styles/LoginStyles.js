@@ -3,13 +3,12 @@ import {StyleSheet} from 'react-native';
 const styles = StyleSheet.create({
     container: {
       marginTop:150,
-      flex: 1,
+      flex: 4,
       justifyContent: 'center',
       alignItems: 'center',
       backgroundColor: '#00b5ec',
     },
-    pendingimg:{
-    
+   LogoImg:{
       width:100,
       height:100,
       borderRadius:100,
@@ -53,6 +52,9 @@ const styles = StyleSheet.create({
     },
     signUpText: {
       color: 'white',
+    },
+    signUpFooter: {
+      flex:1,
     }
   });
 

@@ -22,6 +22,8 @@ function AppContent() {
    {/* <SignUp />  */}
    {/* <LoginPage /> */}
    <DonationSign />
+   {/* <Accpending /> */}
+   {/* <DonationPen /> */}
    
     </View>
   );
