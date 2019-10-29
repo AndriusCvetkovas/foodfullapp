@@ -4,11 +4,15 @@ var footerStyle = StyleSheet.create({
     comp:{
         flex:1,
         flexDirection: 'row',
-        backgroundColor:'#f6fafd',
+        backgroundColor:'#ffffff',
         justifyContent: 'center',
         alignItems:'center',
         textAlign:'center',
-        height: 60
+        height: 85,
+        shadowColor: '#aaaaaa',
+        shadowOffset: { width: 2, height: 2 },
+        shadowOpacity: 0.7,
+        shadowRadius: 10
     },
     iconsFooter:{
         justifyContent: 'center',
@@ -16,8 +20,7 @@ var footerStyle = StyleSheet.create({
         flex:1,
         textAlign:'center',
         height: 50,
-        width: 50,
-       
+        width: 50, 
     }, 
     sizeIcon:{
         width: 25,
@@ -31,16 +34,16 @@ var footerStyle = StyleSheet.create({
         alignItems:'center',
         flex:1,
         textAlign:'center',
-        top: -10,
+        top: -15,
     },
     sizeDonateIcon:{
         width: 55,
         height: 55,
     },
-    
+    // End of Donation Icon Styling
 
     label:{
-        paddingTop:4,
+        paddingTop:7,
         fontSize: 11,
         color: '#000'
      }

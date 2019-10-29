@@ -16,7 +16,8 @@ import DashboardAccept from './DashboardAccept';
 function AppContent() {
   return (
       <View style = {ContentStyle.comp}>
-        <Dashboard/>
+        {/* <GMap/> */}
+        <Dashboard />
       </View>
         
   );
