@@ -4,11 +4,15 @@ var AppHeaderStyle = StyleSheet.create({
     comp:{
         flex: 1,
         justifyContent: 'center',
-        alignItems: 'center',
+        alignItems: 'center'
     },
     TextStyle:{
-        color: 'white',
-        bottom: '20%'
+        color: '#066a87',
+        bottom: '20%',
+        marginTop: 25,
+        fontSize: 20,
+        fontWeight: '500',
+        letterSpacing: 1.3
 
     },
     background:{

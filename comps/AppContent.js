@@ -9,18 +9,16 @@
 import React from 'react';
 import {View,Text,ScrollView} from 'react-native';
 import ContentStyle from '../styles/contentStyle';
-
+import GMap from './GMap';
+import Dashboard from './Dashboard';
+import Confirmation from './Confirmation';
 
 function AppContent() {
   return (
-      <ScrollView style = {ContentStyle.comp}>
-      <Text>
-          
-          
-          
-          
-      </Text>
-      </ScrollView>
+      <View style = {ContentStyle.comp}>
+        {/* <GMap/> */}
+        <Dashboard />
+      </View>
         
   );
 }

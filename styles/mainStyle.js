@@ -9,14 +9,14 @@ var mainStyle = StyleSheet.create({
         maxHeight:'20%',
         height:'20%',
         top: 0 ,
-        resizeMode: 'cover'
+        resizeMode: 'cover',
+        zIndex: 2
 
     },
 
     AppContent:{
         flex:1,
-        height: '100%',
-        padding: 10,
+        height: '100%'
     },
 
     AppFooter:{
