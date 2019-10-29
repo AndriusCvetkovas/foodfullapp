@@ -9,7 +9,8 @@ var buttonStyle = StyleSheet.create( {
         marginTop: 20,
         width: '70%',
         alignItems: 'center',
-        justifyContent: 'center'
+        justifyContent: 'center',
+        elevation: 1
     },
     button2: {
         flex: 0.3,

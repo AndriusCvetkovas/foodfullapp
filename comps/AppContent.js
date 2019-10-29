@@ -17,7 +17,7 @@ function AppContent() {
   return (
       <View style = {ContentStyle.comp}>
         {/* <GMap/> */}
-        <Dashboard />
+        <GMap />
       </View>
         
   );

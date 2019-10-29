@@ -23,6 +23,7 @@ function Info(){
             style = {GMapStyle.imageBox}
             >
                 <Image
+                source = {require('../assets/img/safeway.jpg')}
                 style = {GMapStyle.donationImage}
                 />
             </View>

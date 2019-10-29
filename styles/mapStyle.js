@@ -51,7 +51,7 @@ var GMapStyle = StyleSheet.create({
         margin: 20
     },
     dateBox: {
-        flex: 1,
+        flex: 0.5,
         flexDirection: 'row',
         width: '80%',
         alignItems: 'center',
