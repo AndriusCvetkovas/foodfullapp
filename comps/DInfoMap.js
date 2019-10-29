@@ -2,6 +2,7 @@ import React from 'react';
 import {View, Text, Image, TouchableHighlight} from 'react-native';
 import GMapStyle from '../styles/mapStyle';
 import TimePicker from './DatePicker';
+import buttonStyle from '../styles/buttonStyle';
 //for DateTimePicker run yarn add @react-native-community/datetimepicker and pod install
 
 function Info(){
@@ -52,7 +53,7 @@ function Info(){
             {/*Button below*/}
             <TouchableHighlight
             title="Accept"
-            style = {GMapStyle.button}>
+            style = {buttonStyle.button}>
                 <Text
                 style = {{color: 'white'}}
                 >Claim Donation</Text>

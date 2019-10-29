@@ -66,7 +66,7 @@ function GMap(){
             <Text>Location 4</Text>
           </View>
         </ScrollView>
-        {/*<AcceptedInfo />*/}
+        <Info />
       </View>
             );  
           };

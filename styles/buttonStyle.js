@@ -5,7 +5,8 @@ var buttonStyle = StyleSheet.create( {
         padding: 5,
         borderRadius: 20,
         backgroundColor: 'green',
-        marginBottom: 10,
+        marginBottom: 20,
+        marginTop: 20,
         width: '70%',
         alignItems: 'center',
         justifyContent: 'center'
