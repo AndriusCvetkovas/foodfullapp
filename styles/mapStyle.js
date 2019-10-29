@@ -23,61 +23,66 @@ var GMapStyle = StyleSheet.create({
         position: 'absolute',
         width: '70%',
         height: '70%',
-        backgroundColor: '#e3e3e3',
+        backgroundColor: 'white',
         alignSelf: 'center',
-        borderWidth: 0.5,
-        borderColor: 'black',
+        shadowColor: '#aaaaaa',
+        shadowOffset: { width: 2, height: 3 },
+        shadowOpacity: 0.6,
+        shadowRadius: 10,
         top: '10%',
         flexDirection:'column',
         alignItems: 'center',
-        justifyContent: 'center'
+        justifyContent: 'center',
+        borderRadius: 30
     },
     donatorTitle: {
         fontSize: 20,
         paddingTop: 25,
-        paddingLeft: 25,
-        flex: 0
+        flex: 0,
+        color: "#066a87"
     },
     imageBox:{
-        marginLeft: 20,
-        marginRight: 20,
-        flex: 2
+        flex: 1
     },
     donationImage:{
         width: 100,
         height: 100,
-        backgroundColor: 'white',
+        backgroundColor: '#aaaaaa',
         margin: 20
     },
     dateBox: {
         flex: 0.5,
         flexDirection: 'row',
-        width: '85%',
+        width: '80%',
         alignItems: 'center',
         justifyContent:'center'
     },
     timeBox: {
         flex: 1,
-        margin: 20,
-        backgroundColor: 'white',
-        width: '80%',
+        marginLeft: 20,
+        backgroundColor: '#aaaaaa'
     },
     noteBox: {
         flex: 1,
         width: '80%',
         margin: 20,
-        backgroundColor: 'white'
+        backgroundColor: '#aaaaaa'
     },
-    button: {
-        flex: 0.3,
-        padding: 5,
-        borderWidth: 0.5,
-        borderRadius: 20,
-        backgroundColor: 'green',
-        marginBottom: 20,
-        width: '30%',
-        alignItems: 'center',
-        justifyContent: 'center'
+    
+    checkmarkImage: {
+        width: 70,
+        height: 70,
+        margin: 20
+    },
+    messageBox: {
+        flex: 1,
+        width: '80%',
+        justifyContent:'center'
+    },
+    locationBox: {
+        flex: 1,
+        flexDirection: 'row',
+        width: '80%'
     }
   });
 export default GMapStyle;
