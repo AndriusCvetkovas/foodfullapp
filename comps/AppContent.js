@@ -13,36 +13,32 @@ import ContentStyle from '../styles/contentStyle';
 import Donations from '../comps/donation';
 import Donate from './donate';
 import Pickup from './pickup';
+import DonateContent from './donateContent';
+import Appfooter from './footer'
 
 
 function AppContent() {
-  const [selectedTab, setSelectedTab] = useState(0);
-  var donation = null;
-  if (selectedTab === 0){
-    donation = (
-      <Donations/>
-    )
-  } else if (selectedTab === 1){
-    donation = (
-      <Pickup />
-    )
-  }
+  const [defaultComp, setComp] = useState('currentPage');
+  currentPage = (<Donate/>);
+
+  _retrieveData = async () => {
+    try {
+      const value = await AsyncStorage.getItem(pag);
+      if (value !== null) {
+        // We have data!!
+        currentPage = page;
+      }
+    } catch (error) {
+      // Error retrieving data
+    }
+  };
   
+
   return (
-    <View style = {ContentStyle.comp}>
-      <MaterialTabs
-        items={['Donations ','Pick Ups' ]}
-        selectedIndex={selectedTab}
-        onChange={setSelectedTab}
-        barColor="#fff"
-        indicatorColor="#b4dc5c"
-        activeTextColor="#07a2bb"
-        inactiveTextColor="#8d8d8d"
-      /> 
-       {donation}
-       {/* <Donate /> */}
-      
-    </View>
+   
+  
+       <Donate/>
+   
   );
 }
 

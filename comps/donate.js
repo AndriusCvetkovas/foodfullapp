@@ -1,5 +1,5 @@
 import React, {useState , Component} from 'react';
-import {View,Text,ScrollView,Image, TextInput,Switch,TouchableOpacity } from 'react-native';
+import {View,Text,ScrollView,Image, TextInput,Switch,TouchableOpacity,KeyboardAvoidingView } from 'react-native';
 import DatePicker from 'react-native-datepicker';
 import donateStyle from '../styles/donateStyle';
 import donationStyle from '../styles/donationStyle';
@@ -11,16 +11,19 @@ function Donate(){
     var orgInput = null;
 
     if (chooseOrg === true){
-        orgInput = (<View style={{margin:5}}>
+        orgInput = (
+    <KeyboardAvoidingView enabled>
+        <View style={{margin:5}}>
             <TextInput
                 style={{ height: 40, borderColor: '#ddd', borderWidth: 1, borderRadius: 15, backgroundColor: '#eee', margin:10 }}
-                onChangeText={text => onChangeText(text)}
             />
-    </View>)
+        </View>
+    </KeyboardAvoidingView>)
     } 
 
     return (
-    <ScrollView  style={donateStyle.container}>
+    <KeyboardAvoidingView style={donateStyle.container} behavior="padding" enabled>
+         <ScrollView  >
          <View>
             <View style={donateStyle.padding}>
                 <Text style={{fontSize:16, marginBottom:5}}>Add a Photo</Text>
@@ -40,10 +43,11 @@ function Donate(){
                             style={{width: '100%'}}
                             date={date}
                             mode="date"
+                            value = {date}
                             placeholder="select date"
                             format="YYYY-MM-DD"
-                            minDate="2016-05-01"
-                            maxDate="2016-06-01"
+                            minDate = "2018-06-01"
+                            maxDate="2040-06-01"
                             confirmBtnText="Confirm"
                             cancelBtnText="Cancel"
                             customStyles={{
@@ -62,7 +66,7 @@ function Donate(){
                             }
                             // ... You can check the source to find the other keys.
                             }}
-                            onDateChange={() => {useState(setStartDate)}}
+                            onDateChange={(val) => {setStartDate(val)}}
                         />
                 </View>
              </View>
@@ -75,11 +79,11 @@ function Donate(){
                 <View style={donateStyle.comp}>
                     <DatePicker
                             style={{width: '100%'}}
-                            date={date}
+                            date={time}
                             mode="time"
                             placeholder="Pick a time"
                             format="HH:mm"
-                            
+                            value = {time}
                             confirmBtnText="Confirm"
                             cancelBtnText="Cancel"
                             customStyles={{
@@ -98,7 +102,7 @@ function Donate(){
                             }
                             // ... You can check the source to find the other keys.
                             }}
-                            onDateChange={() => {useState(setTime)}}
+                            onDateChange={(newTime) => {setTime(newTime)}}
                         />
                 </View>
              </View>
@@ -106,8 +110,10 @@ function Donate(){
              <View>
                     <Text style={{fontSize:16, marginBottom:5}}>Description</Text>
                     <TextInput
-                        style={{ height: 80, borderColor: '#ddd', borderWidth: 1, borderRadius: 15, backgroundColor: '#eee' }}
-                        onChangeText={text => onChangeText(text)}
+                        style={{ height: 80, borderColor: '#ddd', borderWidth: 1, borderRadius: 15, backgroundColor: '#eee',
+                    }}
+                    numberOfLines={4}
+                    multiline
                     />
             </View>
 
@@ -115,13 +121,15 @@ function Donate(){
                     <Text style={donateStyle.lftItems}>Choose Organization</Text>
                     <Switch
                         style={donateStyle.rgttems}
+                        value = {chooseOrg}
                         onValueChange = {() => setChooseOrg(!chooseOrg)}
                     />
             </View>
            
 
             {orgInput}
-           
+
+            </View>
             <TouchableOpacity
                 style={donateStyle.DonateBtn}
                 underlayColor='#000'
@@ -129,15 +137,11 @@ function Donate(){
                 >
                 <Text style={donateStyle.btnText}>Donate</Text>
             </TouchableOpacity>
-           
-           
-    </View>
-    
-    
-   
     </ScrollView>
-    
+
        
+           
+    </KeyboardAvoidingView>
     )
 }   
 
