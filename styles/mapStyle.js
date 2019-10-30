@@ -29,7 +29,7 @@ var GMapStyle = StyleSheet.create({
         shadowOffset: { width: 2, height: 3 },
         shadowOpacity: 0.6,
         shadowRadius: 10,
-        top: '10%',
+        top: '25%',
         flexDirection:'column',
         alignItems: 'center',
         justifyContent: 'center',
