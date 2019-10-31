@@ -14,7 +14,8 @@ var DashStyle = StyleSheet.create({
         borderRadius: 20,
         backgroundColor: '#06a2bc',
         width: '92%',
-        padding: 5
+        padding: 5,
+        top: -5
     },
     innerPendingBox: {
         flex: 1,
@@ -72,7 +73,7 @@ var DashStyle = StyleSheet.create({
         flex: 1,
         flexDirection: 'row',
         alignItems: 'center',
-        marginTop: 5,
+        marginTop: 0,
         padding: 10
     },
     leader: {

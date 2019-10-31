@@ -9,7 +9,7 @@ function Dashboard(){
             <View style = {DashStyle.pending}>
                 {/* title below */}
                 <Text
-                style= {{color: 'white', fontSize: 20, flex: 0.2, margin: 10, padding: 10}}
+                style= {{color: 'white', fontSize: 20, flex: 0.2, margin: 10, padding: 10, fontWeight: '600'}}
                 >Upcoming Pick Ups</Text>
                 {/* Pending box below */}
 
@@ -49,7 +49,7 @@ function Dashboard(){
                 </View>
             </View>
 
-            
+
             {/*Leaderboard below*/}
             <View style = {DashStyle.leaderBoardMain}>
                 <View style = {DashStyle.your}>
