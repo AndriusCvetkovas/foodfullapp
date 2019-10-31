@@ -25,7 +25,7 @@ function GMap(){
     getPos();
   }, []);
   
-  console.log(location)
+  
     return(
       <View>
         <MapView 

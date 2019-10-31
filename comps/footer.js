@@ -13,11 +13,13 @@ import {Actions} from 'react-native-router-flux';
 import Dashboard from './Dashboard.js';
 
 function Appfooter() {
-  const [color, changeColor] = useState(true);
+  const [color, changeColor] = useState(require('../assets/icon/home.png'));
+
   function Combined(){
     Actions.dashboard(); 
     changeColor(require('../assets/icon/home_active.png'))
-  }
+  };
+  
   return (
             <View style={footerStyle.comp}>
           <TouchableOpacity style={footerStyle.iconsFooter}

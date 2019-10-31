@@ -13,6 +13,7 @@ import {Actions} from 'react-native-router-flux';
 import styles from '../styles/LoginStyles';
 
 
+
 function LoginPage(){
   return (
  
