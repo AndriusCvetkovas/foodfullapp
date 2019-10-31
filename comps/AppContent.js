@@ -6,7 +6,7 @@
  * @flow
  */
 
-import React from 'react';
+import React, {useState} from 'react';
 import {View,Text,ScrollView} from 'react-native';
 import ContentStyle from '../styles/contentStyle';
 import {Router, Scene, Overlay, Stack, Lightbox} from 'react-native-router-flux';
@@ -19,9 +19,12 @@ import Accpending from './Accpending';
 import LoginPage from './LoginPage';
 import SignUp from './SignUp';
 import DonationSign from './DonationSign';
-
+import Donate from './donate';
 import Info from './DInfoMap';
 function AppContent() {
+  
+  
+
   return (
     <Router>
       <Scene key='root'>
@@ -40,6 +43,16 @@ function AppContent() {
           key="donationsign"
           component={DonationSign}
           title="Almost"
+          />
+          <Scene
+          key="donate"
+          component={Donate}
+          title="donate"
+          />
+          <Scene
+          key="confirmation"
+          component={Confirmation}
+          title="Confirm Your Donation"
           />
         <Scene
           key="dashboard"
