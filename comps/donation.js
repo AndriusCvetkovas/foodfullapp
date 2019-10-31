@@ -9,20 +9,20 @@
 import React from 'react';
 import {View,Text,Image,ScrollView,TouchableOpacity} from 'react-native';
 import donationStyle from '../styles/donationStyle';
-import axios from 'axios';
+//import axios from 'axios';
 
 export default class Donations extends React.Component {
     state = {
       posts: []
     }
   
-    componentDidMount() {
+    /*componentDidMount() {
       axios.get(`http://localhost:3000`)
         .then(res => {
           const posts = res.data;
           this.setState({ posts });
         })
-    }
+    }*/
   
     render() {
       
@@ -35,7 +35,7 @@ export default class Donations extends React.Component {
                                 <View style = {donationStyle.Images}>
                                     <Image
                                     style={donationStyle.ImageSize}
-                                    source={require('../images/assets/no-image.png')}
+                                    
                                     />
                                 </View>
                                 <View style={donationStyle.TextDisplay}>

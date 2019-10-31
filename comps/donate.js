@@ -16,6 +16,7 @@ function Donate(){
     <KeyboardAvoidingView enabled>
         <View style={{margin:5}}>
             <TextInput
+                onFocus={()=> Actions.map()}
                 style={{ height: 40, borderColor: '#ddd', borderWidth: 1, borderRadius: 15, backgroundColor: '#eee', margin:10 }}
             />
         </View>

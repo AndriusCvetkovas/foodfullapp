@@ -52,7 +52,8 @@ function Appfooter() {
               <Text style={footerStyle.label}>Donate</Text>
 
             </TouchableOpacity>
-            <TouchableOpacity style={footerStyle.iconsFooter}>
+            <TouchableOpacity style={footerStyle.iconsFooter}
+            onPress={()=> Actions.notifications()}>
               <Image 
                 resizeMode="contain"
                 style={footerStyle.sizeIcon}

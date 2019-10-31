@@ -21,6 +21,7 @@ import SignUp from './SignUp';
 import DonationSign from './DonationSign';
 import Donate from './donate';
 import Info from './DInfoMap';
+import DonateContent from './donateContent';
 function AppContent() {
   
   
@@ -53,6 +54,10 @@ function AppContent() {
           key="confirmation"
           component={Confirmation}
           title="Confirm Your Donation"
+          />
+          <Scene
+          key="notifications"
+          component={DonateContent}
           />
         <Scene
           key="dashboard"
