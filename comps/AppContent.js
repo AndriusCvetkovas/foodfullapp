@@ -23,10 +23,7 @@ function AppContent() {
   return (
       <View style = {ContentStyle.comp}>
         {/* <GMap/> */}
-        {/* < LoginPage /> */}
-        {/* <SignUp /> */}
-        {/* <Accpending /> */}
-        <DonationSign />
+        < LoginPage />
 
       </View>
         

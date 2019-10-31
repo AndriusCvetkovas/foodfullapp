@@ -1,8 +1,8 @@
 import {StyleSheet} from 'react-native';
 var styles = StyleSheet.create({
     pendingimg:{
-        width:50,
-        height:50,
+        width:'70%',
+        height:'50%',
         borderRadius:100,
         marginBottom: 5
     },
@@ -19,9 +19,8 @@ var styles = StyleSheet.create({
     titlepen: {
         fontSize:20,
         fontWeight: "500",
-        color: "#1F7A8C",
-        marginBottom: 5
-        
+        color: "#0ca3bc",
+        marginBottom: 5  
     },
     header: {
         fontSize: 25,

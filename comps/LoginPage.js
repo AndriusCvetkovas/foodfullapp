@@ -18,13 +18,22 @@ function LoginPage(){
 
 <View style={styles.container}>
 
-        <View style= {styles.LogoImg}>
+        <View>
             <Image
             style={styles.LogoImg}
-            source={require('../assets/img/logo.png')}
+            source={require('../assets/img/logo_animation.png')}
             />
         </View>
 
+
+        <View>
+          <Text style={styles.header}>
+          Foodfull
+          </Text>
+          <Text style={styles.subheader}>
+          Giving food a Second Life
+          </Text>
+        </View>
        
 
        
@@ -36,7 +45,6 @@ function LoginPage(){
               />
         </View>
 
-  
         
         <View style={styles.inputContainer}>
           <Image style={styles.inputIcon} source={{uri: 'https://png.icons8.com/key-2/ultraviolet/50/3498db'}}/>
@@ -47,8 +55,8 @@ function LoginPage(){
 
         
 
-        <TouchableHighlight style={[styles.buttonContainer, styles.signupButton]} onPress={() => this.onClickListener('sign_up')}>
-          <Text style={styles.signUpText}>Sign In</Text>
+        <TouchableHighlight style={[styles.buttonContainer, styles.signinButton]} onPress={() => this.onClickListener('sign_up')}>
+          <Text style={styles.signInText}>Sign In</Text>
         </TouchableHighlight>
 
         <View style={styles.signUpFooter}>
