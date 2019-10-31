@@ -11,11 +11,10 @@ import {View,Text,ImageBackground} from 'react-native';
 import AppHeaderStyle from '../styles/headerStyle';
 
 
-
 function Appheader() {
   return (
     <View style={AppHeaderStyle.comp}>
-      <Text style={AppHeaderStyle.TextStyle}>FoodFull</Text>
+      <Text style={AppHeaderStyle.TextStyle}>Foodfull</Text>
     </View>
   );
 }
