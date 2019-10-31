@@ -10,8 +10,8 @@ import AcceptedInfo from './DConfMap';
 import AppContent from './AppContent';
 function GMap(){
 
-  const [lat, setLat] = useState("");
-  const [long, setLong] = useState("");
+  const [lat, setLat] = useState();
+  const [long, setLong] = useState();
   const [name, setName] = useState("");
   const [img, setImage] = useState("");
   async function getPos(){
@@ -45,7 +45,8 @@ function GMap(){
                 
         >
           <Marker
-            coordinate ={{latitude: lat,
+            coordinate ={{
+            latitude: lat,
             longitude: long
             }}
             title ={name}

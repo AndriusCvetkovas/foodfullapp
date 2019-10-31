@@ -15,15 +15,33 @@ import Dashboard from './Dashboard';
 import Confirmation from './Confirmation';
 import DashboardAccept from './DashboardAccept';
 import Info from './DInfoMap';
+import LoginPage from './LoginPage';
+import SignUp from './SignUp';
+import DonationSign from './DonationSign';
 function AppContent() {
   return (
     <Router>
       <Scene key='root'>
         <Scene
+          key="login"
+          component={LoginPage}
+          title="login"
+          initial
+          />
+          <Scene
+          key="signup"
+          component={SignUp}
+          title="Sign Up"
+          />
+          <Scene
+          key="donationsign"
+          component={DonationSign}
+          title="Almost"
+          />
+        <Scene
           key="dashboard"
           component={Dashboard}
           title="Home"
-          initial
         ></Scene>
         
         <Overlay
@@ -44,7 +62,6 @@ function AppContent() {
       </Scene>
     </Router>
       
-        
   );
 }
 

@@ -13,7 +13,7 @@ import {Actions} from 'react-native-router-flux';
 import Dashboard from './Dashboard.js';
 
 function Appfooter() {
-  const [color, changeColor] = useState(require('../assets/icon/home.png'));
+  const [color, changeColor] = useState(true);
   function Combined(){
     Actions.dashboard(); 
     changeColor(require('../assets/icon/home_active.png'))
