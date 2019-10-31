@@ -1,5 +1,5 @@
-import React, {useEffect} from 'react';
-import {View, ScrollView, Text, TouchableOpacity} from 'react-native';
+import React, {useEffect, useState} from 'react';
+import {View, ScrollView, Text, TouchableOpacity, Image} from 'react-native';
 import MapView, {Marker} from 'react-native-maps';
 import {Router, Scene, Actions} from 'react-native-router-flux';
 import Geolocation from 'react-native-geolocation-service';
@@ -9,9 +9,14 @@ import Info from './DInfoMap';
 import AcceptedInfo from './DConfMap';
 import AppContent from './AppContent';
 function GMap(){
+
+  const [lat, setLat] = useState("");
+  const [long, setLong] = useState("");
+  const [name, setName] = useState("");
+  const [img, setImage] = useState("");
   async function getPos(){
     //console.log(Geolocation)
-    var info = await Geolocation.getCurrentPosition((data)=>{
+    var position = await Geolocation.getCurrentPosition((data)=>{
       console.log(data);
     });
   }
@@ -19,9 +24,8 @@ function GMap(){
   useEffect(()=>{
     getPos();
   }, []);
-
-  getPos();
   
+  console.log(location)
     return(
       <View>
         <MapView 
@@ -41,16 +45,17 @@ function GMap(){
                 
         >
           <Marker
-            coordinate ={{latitude: 49.246292,
-            longitude: -123.116226
+            coordinate ={{latitude: lat,
+            longitude: long
             }}
-            title ={'Location 1'}
-            description= {'Foodbank'}
+            title ={name}
+            description= {name}
+            autoFocus={true}
            />
            <GooglePlacesAutocomplete
             placeholder='Search'
             minLength={2} // minimum length of text to search
-            autoFocus={true}
+            autoFocus={false}
             returnKeyType={'search'} // Can be left out for default return key https://facebook.github.io/react-native/docs/textinput.html#returnkeytype
             keyboardAppearance={'light'} // Can be left out for default keyboardAppearance https://facebook.github.io/react-native/docs/textinput.html#keyboardappearance
             listViewDisplayed='auto'    // true/false/undefined
@@ -58,6 +63,10 @@ function GMap(){
             renderDescription={row => row.description} // custom description render
             onPress={(data, details = null) => { // 'details' is provided when fetchDetails = true
               console.log(data, details);
+              setLat(details.geometry.location.lat);
+              setLong(details.geometry.location.lng);
+              setName(data.description);
+              setImage(details.icon);
             }}
 
             getDefaultValue={() => ''}
@@ -85,7 +94,7 @@ function GMap(){
               },
               listView:{
                 backgroundColor: 'rgba(255,255,255, .8)',
-                top: 13
+                top: 13,
               },
               predefinedPlacesDescription: {
                 color: '#1faadb',
@@ -116,7 +125,11 @@ function GMap(){
           onPress={() => Actions.Info()}
           style = {GMapStyle.viewStyle}
           >
-            <Text>Location 1</Text>
+            <Image
+            style ={{width: 50, height: 50}}
+            source = {{uri:img}}
+            ></Image>
+            <Text style={{flex: 0.8}}>{name}</Text>
           </TouchableOpacity>
           <View
           style = {GMapStyle.viewStyle}

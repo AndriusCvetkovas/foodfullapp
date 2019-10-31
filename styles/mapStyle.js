@@ -13,6 +13,7 @@ var GMapStyle = StyleSheet.create({
       width: '95%',
       backgroundColor: '#AAA',
       height: 70,
+      flexDirection: 'row',
       marginRight: 10,
       marginLeft: 10,
       marginTop: 10,

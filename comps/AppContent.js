@@ -26,15 +26,14 @@ function AppContent() {
           initial
         ></Scene>
         
-        <Scene
+        <Overlay
           key="map"
           component={GMap}
           title="Map"
-        ></Scene>
+        ></Overlay>
           <Scene
             key="Info"
             component={Info}
-            direction="vertical"
             title="Information"
           ></Scene>
         <Scene key = "DConfirmation"

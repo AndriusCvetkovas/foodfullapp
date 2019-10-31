@@ -6,24 +6,27 @@
  * @flow
  */
 
-import React from 'react';
+import React, {useState} from 'react';
 import {View,Text,Image,ScrollView, TouchableOpacity} from 'react-native';
 import footerStyle from '../styles/footerStyle';
 import {Actions} from 'react-native-router-flux';
 import Dashboard from './Dashboard.js';
 
 function Appfooter() {
-
-
+  const [color, changeColor] = useState(require('../assets/icon/home.png'));
+  function Combined(){
+    Actions.dashboard(); 
+    changeColor(require('../assets/icon/home_active.png'))
+  }
   return (
             <View style={footerStyle.comp}>
           <TouchableOpacity style={footerStyle.iconsFooter}
-            onPress ={() => Actions.dashboard()}
+            onPress ={() =>  Combined()}
           >
               <Image
                 resizeMode="contain" 
                 style={footerStyle.sizeIcon}
-                source={require('../assets/icon/home.png')}
+                source={color}
               />
               <Text style={footerStyle.label}>Home</Text>
             </TouchableOpacity>
