@@ -13,6 +13,11 @@ import GMap from './GMap';
 import Dashboard from './Dashboard';
 import Confirmation from './Confirmation';
 import DashboardAccept from './DashboardAccept';
+import DonationPen from '../comps/DonationPen';
+import Accpending from './Accpending';
+import LoginPage from './LoginPage';
+import SignUp from './SignUp';
+import DonationSign from './DonationSign';
 
 function AppContent() {
   return (
