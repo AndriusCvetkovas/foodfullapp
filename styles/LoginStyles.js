@@ -6,15 +6,30 @@ const styles = StyleSheet.create({
       flex: 1,
       justifyContent: 'center',
       alignItems: 'center',
-      backgroundColor: '#00b5ec',
+      textAlign: 'center',
+      backgroundColor: '#ffffff',
     },
    LogoImg:{
-      width:100,
-      height:100,
-      borderRadius:100,
-      marginBottom: 100,
+      width:220,
+      height:150,
       marginTop:70,
+      marginBottom: 12
   },
+  
+  header:{
+    fontSize: 25,
+    fontWeight: '500',
+    textAlign: 'center',
+    color: '#06a2bc'
+  },
+
+  subheader:{
+    fontSize: 20,
+    textAlign: 'center',
+    fontWeight: '200',
+    color: '#06a2bc'
+  },
+
     inputContainer: {
         borderBottomColor: '#F5FCFF',
         backgroundColor: '#F0F0F0',
@@ -22,14 +37,13 @@ const styles = StyleSheet.create({
         borderBottomWidth: 1,
         width:250,
         height:45,
-        marginBottom:20,
+        marginBottom:15,
         flexDirection: 'row',
         alignItems:'center',
     },
     inputs:{
         height:45,
         marginLeft:16,
-        borderBottomColor: '#FFFFFF',
         flex:1,
     },
     inputIcon:{
@@ -45,13 +59,15 @@ const styles = StyleSheet.create({
       alignItems: 'center',
       marginBottom:20,
       width:250,
-      borderRadius:30,
+      borderRadius:30
     },
-    signupButton: {
-      backgroundColor: "#1F7A8C",
+    signinButton: {
+      backgroundColor: "#0ca3bc",
+      height: 50,
     },
-    signUpText: {
+    signInText: {
       color: 'white',
+      fontSize: 20
     },
     signUpFooter: {
       flex:1,
