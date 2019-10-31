@@ -18,7 +18,7 @@ function LoginPage(){
 
 <View style={styles.container}>
 
-<View style= {styles.LogoImg}>
+        <View style= {styles.LogoImg}>
             <Image
             style={styles.LogoImg}
             source={require('../assets/img/logo.png')}
@@ -48,7 +48,7 @@ function LoginPage(){
         
 
         <TouchableHighlight style={[styles.buttonContainer, styles.signupButton]} onPress={() => this.onClickListener('sign_up')}>
-          <Text style={styles.signUpText}>Next</Text>
+          <Text style={styles.signUpText}>Sign In</Text>
         </TouchableHighlight>
 
         <View style={styles.signUpFooter}>

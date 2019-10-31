@@ -22,7 +22,12 @@ import DonationSign from './DonationSign';
 function AppContent() {
   return (
       <View style = {ContentStyle.comp}>
-        <GMap/>
+        {/* <GMap/> */}
+        {/* < LoginPage /> */}
+        {/* <SignUp /> */}
+        {/* <Accpending /> */}
+        <DonationSign />
+
       </View>
         
   );

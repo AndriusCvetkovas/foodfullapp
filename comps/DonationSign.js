@@ -21,6 +21,8 @@ function DonationSign(){
    
    
     <View style={styles.container}>
+
+      <Text style={styles.header}>Donating</Text>
    
    <View style={styles.test}>
             <Text style={styles.text}>Company Name</Text>

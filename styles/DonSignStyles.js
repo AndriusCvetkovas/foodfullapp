@@ -2,12 +2,12 @@
 import {StyleSheet} from 'react-native';
 const styles = StyleSheet.create({
     container: {
-      marginTop:250,
-      marginBottom:150,
+      marginTop:0,
+      marginBottom:0,
       flex: 1,
       justifyContent: 'center',
       alignItems: 'center',
-      backgroundColor: '#00b5ec',
+      backgroundColor: '#ffffff',
     },
     test: {
       height:25,
@@ -18,14 +18,23 @@ const styles = StyleSheet.create({
     text:{
     textAlign:'left',
     },
+
     pendingimg:{
-    
       width:100,
       height:100,
       borderRadius:100,
       marginBottom: 100,
       marginTop:70,
   },
+
+  header: {
+    fontSize: 23,
+    textAlign: "center",
+    marginBottom: 5,
+    fontWeight: "500",
+    color: "#06a2bc",
+    textAlign:'center',
+},
     inputContainer: {
         borderBottomColor: '#F5FCFF',
         backgroundColor: '#F0F0F0',
@@ -59,10 +68,12 @@ const styles = StyleSheet.create({
       borderRadius:30,
     },
     signupButton: {
-      backgroundColor: "#1F7A8C",
+      backgroundColor: "#0ca3bc",
+      height: 50
     },
     signUpText: {
       color: 'white',
+      fontSize: 20,
     }
   });
 

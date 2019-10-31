@@ -1,6 +1,7 @@
 import {StyleSheet} from 'react-native';
 
 var SignUpStyles = StyleSheet.create({
+
    
     containerHeader:{
         flex:0.5,
@@ -19,19 +20,32 @@ var SignUpStyles = StyleSheet.create({
         justifyContent: 'center',
     },
    
-    box: {
-        marginTop: 0,
+    activebox: {
+        marginTop:0,
         flex: 1,
+        top:20,
         borderRadius: 30,
         backgroundColor: 'white',
-        shadowColor: '#aaaaaa',
-        shadowOffset: { width: 2, height: 2 },
-        shadowOpacity: 0.5,
+        shadowColor: '#0dacbc',
+        shadowOffset: { width: 2, height: 7 },
+        shadowOpacity: 0.25,
         shadowRadius: 10,
         alignItems: 'center',
         justifyContent: 'center',
-        padding: 10,
+        padding: 12,
         marginBottom: 15,
+    },
+
+    greybox: {
+        marginTop:0,
+        flex: 1,
+        borderRadius: 30,
+        backgroundColor: '#ededed',
+        alignItems: 'center',
+        justifyContent: 'center',
+        padding: 12,
+        marginBottom: 15,
+        top:60
     },
     
     accpContianer: {
@@ -39,33 +53,30 @@ var SignUpStyles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center'
     },
+    
     MainSignup: {
-        flex:2,
-        width: '80%',
-        marginBottom: -25,
-        marginRight: 25,
+        flex:3,
+        top: 50,
         alignItems: 'center',
         justifyContent: 'center',
      
        
     },
    
-
     titlepen: {
         fontSize:20,
-        fontWeight: "500",
-        color: "#1F7A8C",
+        fontWeight: "400",
+        color: "#06a2bc",
         marginBottom: 5,
-        textAlign:'center',
-        
-        
+        textAlign:'center',  
     },
+    
     header: {
-        fontSize: 25,
+        fontSize: 23,
         textAlign: "center",
         marginBottom: 5,
         fontWeight: "500",
-        color: "#0972A3",
+        color: "#06a2bc",
         textAlign:'center',
     },
     buttonContainer: {
@@ -77,16 +88,18 @@ var SignUpStyles = StyleSheet.create({
         marginBottom:20,
         width:250,
         borderRadius:30,
-        borderColor: "red",
+
       },
       signupButton: {
-        
         backgroundColor: "white",
-        borderWidth: 1,
-        borderColor: '#1F7A8C',
+        borderWidth: 1.5,
+        borderColor: '#0ca3bc',
+        top:100,
+        height:50
       },
       signUpText: {
-        color: '#1F7A8C',
+        color: '#0ca3bc',
+        fontSize: 20
       },
     
 });

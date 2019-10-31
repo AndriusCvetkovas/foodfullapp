@@ -2,16 +2,16 @@
 import {StyleSheet} from 'react-native';
 const styles = StyleSheet.create({
     container: {
-      marginTop:150,
-      flex: 4,
+      marginTop:0,
+      flex: 1,
       justifyContent: 'center',
       alignItems: 'center',
-      backgroundColor: '#00b5ec',
+      textAlign: 'center',
+      backgroundColor: '#ffffff',
     },
    LogoImg:{
       width:100,
       height:100,
-      borderRadius:100,
       marginBottom: 100,
       marginTop:70,
   },
@@ -48,7 +48,7 @@ const styles = StyleSheet.create({
       borderRadius:30,
     },
     signupButton: {
-      backgroundColor: "#1F7A8C",
+      backgroundColor: "#0ca3bc",
     },
     signUpText: {
       color: 'white',
