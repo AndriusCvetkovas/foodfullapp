@@ -42,7 +42,7 @@ function Appfooter() {
             </TouchableOpacity>
 
             <TouchableOpacity style={footerStyle.donateIcon}
-            onPress ={() => Actions.map()}
+            onPress ={() => Actions.donate()}
             >
               <Image
                 resizeMode="contain"
@@ -52,7 +52,8 @@ function Appfooter() {
               <Text style={footerStyle.label}>Donate</Text>
 
             </TouchableOpacity>
-            <TouchableOpacity style={footerStyle.iconsFooter}>
+            <TouchableOpacity style={footerStyle.iconsFooter}
+            onPress={()=> Actions.notifications()}>
               <Image 
                 resizeMode="contain"
                 style={footerStyle.sizeIcon}
@@ -72,10 +73,8 @@ function Appfooter() {
             </TouchableOpacity>
           
           </View> 
-           
-            
-  );
-}
+    );
+   }
+ 
+   export default Appfooter
 
-
-export default Appfooter;
