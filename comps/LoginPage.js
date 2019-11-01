@@ -9,7 +9,9 @@ import {
   TouchableHighlight
 
 } from 'react-native';
+import {Actions} from 'react-native-router-flux';
 import styles from '../styles/LoginStyles';
+
 
 
 function LoginPage(){
@@ -55,12 +57,12 @@ function LoginPage(){
 
         
 
-        <TouchableHighlight style={[styles.buttonContainer, styles.signinButton]} onPress={() => this.onClickListener('sign_up')}>
-          <Text style={styles.signInText}>Sign In</Text>
+        <TouchableHighlight style={[styles.buttonContainer, styles.signupButton]} onPress={() => Actions.dashboard()}>
+          <Text style={styles.signUpText}>Next</Text>
         </TouchableHighlight>
 
         <View style={styles.signUpFooter}>
-          <Text>Don't have account? Sign Up</Text>
+          <Text onPress={()=> Actions.signup()}>Don't have account? Sign Up</Text>
 
         </View>
 

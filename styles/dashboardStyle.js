@@ -3,6 +3,7 @@ import {StyleSheet} from 'react-native';
 var DashStyle = StyleSheet.create({
     main: {
         flex: 1,
+        top: '2%',
         alignItems: 'center',
         justifyContent: 'center'
     },

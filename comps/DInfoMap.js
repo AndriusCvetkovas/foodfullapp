@@ -3,6 +3,7 @@ import {View, Text, Image, TouchableHighlight} from 'react-native';
 import GMapStyle from '../styles/mapStyle';
 import TimePicker from './DatePicker';
 import buttonStyle from '../styles/buttonStyle';
+import {Router, Scene, Actions} from 'react-native-router-flux';
 //for DateTimePicker run yarn add @react-native-community/datetimepicker and pod install
 
 function Info(){
@@ -53,6 +54,7 @@ function Info(){
             </View>
             {/*Button below*/}
             <TouchableHighlight
+            onPress = {()=> Actions.DConfirmation()}
             title="Accept"
             style = {buttonStyle.button}>
                 <Text

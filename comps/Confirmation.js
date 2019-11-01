@@ -1,7 +1,8 @@
 import React from 'react';
-import {View, Text, Image, TouchableHighlight} from 'react-native';
+import {View, Text, Image, TouchableOpacity} from 'react-native';
 import ConfirmStyle from '../styles/confirmStyle';
 import buttonStyle from '../styles/buttonStyle';
+import {Actions} from 'react-native-router-flux';
 
 function Confirmation(){
     return(
@@ -39,13 +40,14 @@ function Confirmation(){
             >
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad 
             </Text>
-            <TouchableHighlight
+            <TouchableOpacity
+            
             title="Accept"
             style = {buttonStyle.button}>
                 <Text
                 style = {{color: 'white', fontSize: 16, fontWeight: '500'}}
                 >Claim another Donation</Text>
-            </TouchableHighlight>
+            </TouchableOpacity>
             </View>
         </View>
     )

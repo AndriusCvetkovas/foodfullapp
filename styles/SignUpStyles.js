@@ -2,6 +2,12 @@ import {StyleSheet} from 'react-native';
 
 var SignUpStyles = StyleSheet.create({
 
+    container: {
+        backgroundColor: '#ffffff',
+        width:'100%',
+        height: '100%',
+        justifyContent: 'center'
+    },
    
     containerHeader:{
         flex:0.5,
@@ -9,15 +15,13 @@ var SignUpStyles = StyleSheet.create({
 
     containerButton:{
         flex:0.2,
-        
     },
 
     containerSign:{
-        
         height:360,
         width:400,
         alignItems: 'center',
-        justifyContent: 'center',
+        justifyContent: 'center'
     },
    
     activebox: {

@@ -1,11 +1,11 @@
 import React from 'react';
 import {View, Text, Image, TouchableHighlight} from 'react-native';
 import SignUpStyles from '../styles/SignUpStyles';
-
+import {Actions} from 'react-native-router-flux';
 function SignUp(){
-    return(
 
-    
+    return(
+        <View style={SignUpStyles.container}>
         <View style = {SignUpStyles.containerSign}>
 
         <View style = {SignUpStyles.containerHeader}>
@@ -53,13 +53,14 @@ function SignUp(){
                  </View>
 
         <View style = {SignUpStyles.containerButton}>
-        <TouchableHighlight style={[SignUpStyles.buttonContainer, SignUpStyles.signupButton]} onPress={() => this.onClickListener('sign_up')}>
+        <TouchableHighlight style={[SignUpStyles.buttonContainer, SignUpStyles.signupButton]} onPress={() => Actions.donationsign()}>
           <Text style={SignUpStyles.signUpText}>Next</Text>
         </TouchableHighlight>
         </View>
                  
         </View>
 
+        </View>
         
 
        
