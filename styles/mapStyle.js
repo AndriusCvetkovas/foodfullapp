@@ -40,7 +40,7 @@ var GMapStyle = StyleSheet.create({
         fontSize: 20,
         paddingTop: 25,
         flex: 0,
-        color: "#066a87"
+        color: "#0ca3bc"
     },
     imageBox:{
         flex: 1

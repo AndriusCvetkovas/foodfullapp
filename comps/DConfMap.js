@@ -29,17 +29,17 @@ function AcceptedInfo(){
             style = {GMapStyle.messageBox}
             >
                 <Text>You have claimed this donation from Safeway Extra</Text>
-                <Text style = {{color: '#066a87'}}></Text>
+                <Text style = {{color: '#0ca3bc'}}></Text>
             </View>
             <View
             style = {{flexDirection: 'row', width: "80%", flex: 0.4}}
             >
-                <Text style = {{flex: 1, color: '#066a87'}}>Location:</Text>
+                <Text style = {{flex: 1, color: '#0ca3bc'}}>Location:</Text>
                 <Text style = {{flex: 1}}>6666 Iona</Text>
             </View>
             {/*Time box below*/} 
             <View style = {{flexDirection: 'row', width: "80%", flex: 0.4}}>
-                <Text style = {{color: '#066a87', flex: 1}}>Pickup time:</Text>
+                <Text style = {{color: '#0ca3bc', flex: 1}}>Pickup time:</Text>
                 <Text
                 style = {{color: "black", flex: 1}}
                 >
@@ -59,7 +59,7 @@ function AcceptedInfo(){
             title="Accept"
             style = {buttonStyle.button2}>
                 <Text
-                style = {{color: '#066a87', fontWeight: 'bold'}}
+                style = {{color: '#0ca3bc', fontWeight: 'bold'}}
                 >View pickups</Text>
             </TouchableHighlight>
         </View>

@@ -28,7 +28,7 @@ import DConfMap from './DConfMap';
 
 function AppContent() {
   return (
-        <AccountCreate/>
+        <DConfMap/>
     // <Router>
     //   <Scene key='root'>
     //     <Scene
