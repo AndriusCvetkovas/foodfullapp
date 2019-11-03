@@ -5,7 +5,7 @@ var ConfirmStyle = StyleSheet.create({
     main: {
         width: '100%',
         backgroundColor:"#e3e3e3",
-        alignItems:'center',
+        alignItems:'center', 
         justifyContent: 'center',
         height: '100%'
         

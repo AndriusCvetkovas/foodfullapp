@@ -8,7 +8,7 @@ var DashStyle = StyleSheet.create({
         justifyContent: 'center'
     },
     pending: {
-        flex: 1,
+        flex: 0.5,
         justifyContent: 'center',
         alignItems: 'center',
         borderRadius: 20,
@@ -36,7 +36,17 @@ var DashStyle = StyleSheet.create({
         marginRight: 40,
         marginLeft: 10
     },
-    
+    // Donation Button
+
+    donatContainer: {
+        flex:0.25,
+        backgroundColor:'pink',
+        width:'92%',
+        justifyContent:'center',
+        alignItems:'center',
+
+    },
+    //LeaderBoard
     your: {
         marginTop: 0,
         flex: 0.5,
@@ -57,7 +67,7 @@ var DashStyle = StyleSheet.create({
         alignItems: 'center'
     },
     leaderBoardMain: {
-        flex: 2,
+        flex: 1,
         shadowColor: '#aaaaaa',
         backgroundColor: 'white',
         shadowOffset: { width: 0, height: 0 },

@@ -50,6 +50,18 @@ function Dashboard(){
             </View>
 
 
+            {/* Make a Donation Button */}
+
+            <View style={DashStyle.donatContainer}>
+                <Text>
+                    hi
+                </Text>
+            </View>
+
+
+            {/*//// End of Donation Button ////// */}
+
+
             {/*Leaderboard below*/}
             <View style = {DashStyle.leaderBoardMain}>
                 <View style = {DashStyle.your}>
@@ -69,6 +81,8 @@ function Dashboard(){
                         </View>
                     </View>
                 </View>
+
+
                 <View style = {DashStyle.leader}>
                     {/*Scrollable dashboard below*/}
                     <ScrollView>
