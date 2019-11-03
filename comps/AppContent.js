@@ -24,11 +24,12 @@ import Info from './DInfoMap';
 import DonateContent from './donateContent';
 import DonationPosted from './DonationPosted';
 import DConfMap from './DConfMap';
+import DInfoMap from './DInfoMap';
 
 
 function AppContent() {
   return (
-        <DConfMap/>
+        <DInfoMap/>
     // <Router>
     //   <Scene key='root'>
     //     <Scene
