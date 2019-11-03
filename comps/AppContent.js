@@ -15,7 +15,7 @@ import Dashboard from './Dashboard';
 import Confirmation from './Confirmation';
 import DashboardAccept from './DashboardAccept';
 import DonationPen from '../comps/DonationPen';
-import Accpending from './Accpending';
+import AccountCreate from './AccountCreate';
 import LoginPage from './LoginPage';
 import SignUp from './SignUp';
 import DonationSign from './DonationSign';
@@ -28,7 +28,7 @@ import DConfMap from './DConfMap';
 
 function AppContent() {
   return (
-        <DConfMap />
+        <AccountCreate/>
     // <Router>
     //   <Scene key='root'>
     //     <Scene
