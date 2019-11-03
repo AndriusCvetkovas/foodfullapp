@@ -1,8 +1,8 @@
 import React from 'react';
 import {View, Text, Image, ScrollView} from 'react-native';
 import DashStyle from '../styles/dashboardStyle';
-import {Actions} from 'react-native-router-flux';
-
+// import {Actions} from 'react-native-router-flux';
+ 
 function Dashboard(){
     return(
         <View style = {DashStyle.main}>

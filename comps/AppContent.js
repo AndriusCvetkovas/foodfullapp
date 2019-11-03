@@ -22,13 +22,18 @@ import DonationSign from './DonationSign';
 import Donate from './donate';
 import Info from './DInfoMap';
 import DonateContent from './donateContent';
+import style from '../styles/contentStyle';
 
 function AppContent() {
   
   return (
     <View>
+      {/* <SignUp /> */}
+      {/* <DonationSign /> */}
+      <Dashboard />
+      {/* <LoginPage /> */}
+      {/* <DonateContent /> */}
 
-      <DonateContent />
 
     </View>
 
