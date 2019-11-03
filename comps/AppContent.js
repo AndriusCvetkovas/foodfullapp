@@ -22,11 +22,13 @@ import DonationSign from './DonationSign';
 import Donate from './donate';
 import Info from './DInfoMap';
 import DonateContent from './donateContent';
+import Schedule from './Schedule';
 function AppContent() {
   
   
 
   return (
+    /*
     <Router>
       <Scene key='root'>
         <Scene
@@ -82,6 +84,10 @@ function AppContent() {
         
       </Scene>
     </Router>
+    */
+    <View style = {{flex: 1}}>
+      <Schedule />
+    </View>
       
   );
 }
