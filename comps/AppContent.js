@@ -40,6 +40,7 @@ function AppContent() {
         // <DConfMap/>
         // <DonateContent />
         // <NotifPickComfirm />
+        <PickedUpComfirm />
 
         //NOT DONE
         // <DonationPen /> Changed the file not this one
@@ -47,8 +48,8 @@ function AppContent() {
           // <Donate />
           // <Pickup />
           // <Confirmation />
-          <PickedUpComfirm />
-          // <DatePicker /> NOT Working
+          
+          // <DatePicker /> 
 
 
 

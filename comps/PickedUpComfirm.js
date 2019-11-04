@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, Image, TouchableOpacity} from 'react-native';
+import {View, Text, Image, TouchableOpacity, ScrollView} from 'react-native';
 import PickUpComfirmSty from '../styles/PickUpComfirmSty';
 import buttonStyle from '../styles/buttonStyle';
 import {Actions} from 'react-native-router-flux';
@@ -25,22 +25,24 @@ function Confirmation(){
                     <Text style={PickUpComfirmSty.address}>Pending</Text>
                   </View>
                   <View>
-                    {/* <Text style={PickUpComfirmSty.time}>3:00PM to 7:00PM</Text> */}
+                   
                   </View>
               </View>
-                {/* <Image style = {{width: 75, height: 75, margin:15}}
-                source = {require('../assets/img/posted_donation.png')}></Image> */}
-                
-                {/* <Text style = {{paddingRight: 25, width:210, fontSize:20, fontWeight:'800',}}>Safeway Extra </Text> */}
-               
+              
             </View>
             {/*Image text below */}
            
             {/*Images below */}
-            <View style = {PickUpComfirmSty.imageBox}>
-                <Image style = {{width: 100, height: 100, margin:15, marginBottom: 0, backgroundColor: 'grey'}}></Image>
-                <Image style = {{width: 100, height: 100, margin:15, marginBottom: 0, backgroundColor: 'grey'}}></Image>
-            </View>
+            <ScrollView horizontal='true' style={{height:1}}>
+                <View style = {PickUpComfirmSty.imageBox}>
+                    <Image style = {{width: 100, height: 100, margin:2, marginBottom: 0, backgroundColor: 'grey'}}></Image>
+                    <Image style = {{width: 100, height: 100, margin:2, marginBottom: 0, backgroundColor: 'grey'}}></Image>
+                    <Image style = {{width: 100, height: 100, margin:2, marginBottom: 0, backgroundColor: 'grey'}}></Image>
+                    <Image style = {{width: 100, height: 100, margin:2, marginBottom: 0, backgroundColor: 'grey'}}></Image>
+                    <Image style = {{width: 100, height: 100, margin:2, marginBottom: 0, backgroundColor: 'grey'}}></Image>
+                </View>
+            </ScrollView>
+           
             {/*Date of pickup below */}
             <View style = {PickUpComfirmSty.pickupDate}>
                 <Text style = {{ color: '#0ca3bc',fontSize: 18, flex: 1}}>Pickup loaction</Text>
