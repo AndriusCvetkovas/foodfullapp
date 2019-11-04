@@ -9,7 +9,7 @@ function Dashboard(){
             <View style = {DashStyle.pending}>
                 {/* title below */}
                 <Text
-                style= {{color: 'white', fontSize: 20, flex: 0.2, margin: 10, padding: 10, fontWeight: '600'}}
+                style= {{color: '#0ca3bc', fontSize: 20, flex: 0.2, margin: 10, padding: 10, fontWeight: '600'}}
                 >Upcoming Pick Ups</Text>
                 {/* Pending box below */}
 
@@ -52,10 +52,16 @@ function Dashboard(){
 
             {/* Make a Donation Button */}
 
-            <View style={DashStyle.donatContainer}>
-                <Text>
-                    hi
-                </Text>
+            <View style={DashStyle.donateContainer}>
+                <Text style={DashStyle.donateText}>Make a Donation</Text>
+                <Image
+                    style = {{width:15, height:25, position:'absolute', zIndex:1, right:0, marginRight:15}}
+                    source={require('../assets/icon/next.png')}
+                />
+                <Image
+                    style = {{width: '100%', height:'100%', borderRadius: 30}}
+                    source={require('../assets/img/makedonation.png')}
+                />
             </View>
 
 
@@ -92,8 +98,11 @@ function Dashboard(){
                             source={require('../assets/img/wholefoods.jpg')}>
                             </Image>
                             <View>
-                                <Text style = {{color: '#066a87', fontSize: 18}}>
+                                <View style={{flexDirection:"row"}}>
+                                    <Text style = {{color: '#066a87', fontSize: 18}}>
                                     Whole Foods</Text>
+                                    <Text style={DashStyle.weight}> 1320 kg</Text>
+                                </View>
                                 <Text>2465 Willingdon Ave</Text>
                             </View>
                         </View>
@@ -105,7 +114,10 @@ function Dashboard(){
                             source={require('../assets/img/safeway.jpg')}>
                             </Image>
                             <View>
+                                <View style={{flexDirection:'row'}}>
                                 <Text style = {{color: '#066a87', fontSize: 18}}>Safeway Extra</Text>
+                                <Text style = {DashStyle.weight}>1100 kg</Text>
+                                </View>
                                 <Text>2465 Willingdon Ave</Text>
                             </View>
                         </View>
@@ -117,8 +129,11 @@ function Dashboard(){
 
                             </Image>
                             <View>
-                                <Text style = {{color: '#066a87', fontSize: 18}}>Fresh Street Market</Text>
-                                <Text>2465 Willingdon Ave</Text>
+                                <View style={{flexDirection:'row'}}>
+                                    <Text style = {{color: '#066a87', fontSize: 18}}>Fresh Street Market</Text>
+                                    <Text style = {DashStyle.weight}>1090 kg</Text>
+                                </View>
+                                <Text>3267 Surrey</Text>
                             </View>
                         </View>
                     </ScrollView>

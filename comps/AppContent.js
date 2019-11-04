@@ -22,23 +22,11 @@ import DonationSign from './DonationSign';
 import Donate from './donate';
 import Info from './DInfoMap';
 import DonateContent from './donateContent';
-import style from '../styles/contentStyle';
-
+import Schedule from './Schedule';
 function AppContent() {
   
   return (
-    // <View style={{flex:1}}>
-    //   {/* <Confirmation /> */}
-    //   {/* <SignUp /> */}
-    //   {/* <DonationSign /> */}
-    //   <Dashboard />
-    //   {/* <LoginPage /> */}
-    //   {/* <DonateContent /> */}
-
-
-    // </View>
-
-    /* HIDING ROUTER FOR NOW */
+    /*
     <Router>
       <Scene key='root'>
         <Scene
@@ -94,6 +82,10 @@ function AppContent() {
         
       </Scene>
     </Router>
+    */
+    <View style = {{flex: 1}}>
+      <Dashboard />
+    </View>
       
   );
 }
