@@ -8,7 +8,6 @@ var ConfirmStyle = StyleSheet.create({
         alignItems:'center', 
         justifyContent: 'center',
         height: '100%'
-        
     },
     main2: {
         flex: 0.9,

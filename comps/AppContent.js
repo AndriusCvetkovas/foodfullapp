@@ -18,7 +18,8 @@ import DonationPen from '../comps/DonationPen';
 import Accpending from './Accpending';
 import LoginPage from './LoginPage';
 import SignUp from './SignUp';
-import DonationSign from './DonationSign';
+import DonatingSignUp from './DonatingSignUp';
+import AcceptingSignUp from './AcceptingSignUp';
 import Donate from './donate';
 import Info from './DInfoMap';
 import DonateContent from './donateContent';
@@ -84,7 +85,7 @@ function AppContent() {
     </Router>
     */
     <View style = {{flex: 1}}>
-      <Dashboard />
+      <DonatingSignUp/>
     </View>
       
   );

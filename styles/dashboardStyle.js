@@ -5,7 +5,7 @@ var DashStyle = StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor: '#f4f4f4'
+        backgroundColor: '#f7f7f7'
     },
     pending: {
         flex: 0.5,
@@ -16,17 +16,13 @@ var DashStyle = StyleSheet.create({
         width: '92%',
         padding: 5,
         top: -10,
-        shadowColor: '#aaaaaa',
-        shadowOffset: { width: 2, height: 3 },
-        shadowOpacity: 0.3,
-        shadowRadius: 10,
     },
     innerPendingBox: {
         flex: 1,
         margin: 5,
         width: '95%',
-        backgroundColor: 'white',
-        borderRadius: 20,
+        backgroundColor: '#ffffff',
+        borderRadius: 15,
         flexDirection: 'row',
         alignItems: 'center'
     },
@@ -86,7 +82,7 @@ var DashStyle = StyleSheet.create({
         flex: 0.8,
         shadowColor: '#aaaaaa',
         backgroundColor: '#ffffff',
-        shadowOffset: { width: 0, height: 0 },
+        shadowOffset: { width: 0, height: 1 },
         shadowOpacity: 0.7,
         shadowRadius: 2,
         elevation: 0,
