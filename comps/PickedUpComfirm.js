@@ -1,52 +1,81 @@
 import React from 'react';
 import {View, Text, Image, TouchableOpacity} from 'react-native';
-import ConfirmStyle from '../styles/confirmStyle';
+import PickUpComfirmSty from '../styles/PickUpComfirmSty';
 import buttonStyle from '../styles/buttonStyle';
 import {Actions} from 'react-native-router-flux';
 
+
 function Confirmation(){
     return(
-        <View style = {ConfirmStyle.main}>
-            <View style = {ConfirmStyle.main2}>
+        <View style = {PickUpComfirmSty.main}>
+            <View style = {PickUpComfirmSty.main2}>
             {/*Donation info below */}
-            <View style = {ConfirmStyle.donationInfoTop}>
-                <Image style = {{width: 75, height: 75, margin:15}}
-                source = {require('../assets/img/posted_donation.png')}></Image>
-                <Text style = {{paddingRight: 25}}>This donation will be posted publicly for any accepting organization to claim</Text>
+           
+            <View style = {PickUpComfirmSty.donationInfoTop}>
+            <View style = {PickUpComfirmSty.Images}>
+                  <Text style={PickUpComfirmSty.Date}>14</Text>
+                  <Text style={PickUpComfirmSty.Month}>Jun</Text>
+              </View>
+
+              <View style={PickUpComfirmSty.TextDisplay}>
+                  <View>
+                      <Text style={PickUpComfirmSty.Organization}>Safeway Extra</Text>
+                  </View>
+                  <View>
+                    <Text style={PickUpComfirmSty.address}>Pending</Text>
+                  </View>
+                  <View>
+                    {/* <Text style={PickUpComfirmSty.time}>3:00PM to 7:00PM</Text> */}
+                  </View>
+              </View>
+                {/* <Image style = {{width: 75, height: 75, margin:15}}
+                source = {require('../assets/img/posted_donation.png')}></Image> */}
+                
+                {/* <Text style = {{paddingRight: 25, width:210, fontSize:20, fontWeight:'800',}}>Safeway Extra </Text> */}
+               
             </View>
             {/*Image text below */}
-            <Text style = {ConfirmStyle.imageText}>Images</Text>
+           
             {/*Images below */}
-            <View style = {ConfirmStyle.imageBox}>
-                <Image style = {{width: 75, height: 75, margin:15, marginBottom: 0, backgroundColor: 'grey'}}></Image>
+            <View style = {PickUpComfirmSty.imageBox}>
+                <Image style = {{width: 100, height: 100, margin:15, marginBottom: 0, backgroundColor: 'grey'}}></Image>
+                <Image style = {{width: 100, height: 100, margin:15, marginBottom: 0, backgroundColor: 'grey'}}></Image>
             </View>
             {/*Date of pickup below */}
-            <View style = {ConfirmStyle.pickupDate}>
-                <Text style = {{ fontSize: 18, flex: 1}}>Date of pickup</Text>
-                <Text style = {{color: '#066a87', fontSize: 16, flex: 1}}>July 14, 2019</Text>
+            <View style = {PickUpComfirmSty.pickupDate}>
+                <Text style = {{ color: '#0ca3bc',fontSize: 18, flex: 1}}>Pickup loaction</Text>
+                <Text style = {{color: '#066a87', fontSize: 16, flex: 1, marginTop:18}}>20014 Coquitlam V3C 5W8</Text>
             </View>
             {/*Pickup time below */}
-            <View style = {ConfirmStyle.pickupTime}>
-                <Text style = {{fontSize: 18, flex: 1}}>Pickup Time</Text>
-                <Text style = {{color: '#066a87', fontSize: 16, flex: 1}}>3:00 pm - 7:00 pm</Text>
+            <View style = {PickUpComfirmSty.pickupTime}>
+                <Text style = {{color: '#0ca3bc', fontSize: 18, flex: 1}}>Pickup Time</Text>
+                <Text style = {{color: '#066a87', fontSize: 16, flex: 1, marginTop:18}}>3:00 pm - 7:00 pm</Text>
             </View>
             {/*Description title below */}
             <Text
-            style = {ConfirmStyle.descriptionTitle}
+            style = {PickUpComfirmSty.descriptionTitle}
             >Description</Text>
             {/*Description below */}
             <Text
-            style = {ConfirmStyle.description}
+            style = {PickUpComfirmSty.description}
             >
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad 
             </Text>
             <TouchableOpacity
             
             title="Accept"
-            style = {buttonStyle.button}>
+            style = {PickUpComfirmSty.button}>
                 <Text
-                style = {{color: 'white', fontSize: 16, fontWeight: '500'}}
-                >Claim another Donation</Text>
+                style = {{color: '#0ca3bc', fontSize: 16, fontWeight: '500'}}
+                >Picked Up</Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+            
+            title="Accept"
+            style = {PickUpComfirmSty.button2}>
+                <Text
+                style = {{color: 'red', fontSize: 16, fontWeight: '500'}}
+                >Cancel Pickup</Text>
             </TouchableOpacity>
             </View>
         </View>
