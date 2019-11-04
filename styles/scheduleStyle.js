@@ -2,10 +2,10 @@ import {StyleSheet} from 'react-native';
 
 var ScheduleStyle = StyleSheet.create({
     mainView: {
+        height: '90%',
         justifyContent: 'center',
         alignItems: 'center',
         width: '95%',
-        height: '70%',
         borderRadius: 20
     },
     backgroundView: {

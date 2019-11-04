@@ -10,7 +10,7 @@ import React, {useState} from 'react';
 import {View,Text,ScrollView} from 'react-native';
 import MaterialTabs from 'react-native-material-tabs';
 import ContentStyle from '../styles/contentStyle';
-import Donations from '../comps/donation';
+import Donations from './donation';
 import Pickup from './pickup';
 
 
