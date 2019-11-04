@@ -24,6 +24,9 @@ import Donate from './donate';
 import Info from './DInfoMap';
 import DonateContent from './donateContent';
 import Schedule from './Schedule';
+import Profile from './Profile';
+import Leaderboard from './Leaderboard';
+import DonNotification from './DonNotification';
 function AppContent() {
   
   return (
@@ -85,7 +88,7 @@ function AppContent() {
     </Router>
     */
     <View style = {{flex: 1}}>
-      <DashboardAccept/>
+      <Schedule/>
     </View>
       
   );
