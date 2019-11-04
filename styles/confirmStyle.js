@@ -66,7 +66,7 @@ var ConfirmStyle = StyleSheet.create({
         width: '90%',
         color: "#e4e3e3",
         marginBottom: 20
-    }
+    },
 
 })
 export default ConfirmStyle;

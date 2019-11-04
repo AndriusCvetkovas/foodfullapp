@@ -84,6 +84,17 @@ var GMapStyle = StyleSheet.create({
         flex: 1,
         flexDirection: 'row',
         width: '80%'
-    }
+    },
+InputSty:{
+       
+        borderRadius:30,
+        width: 180,
+        height: 40, 
+        borderColor: '#F0F0F0', 
+        borderWidth: 1, 
+        textAlign: 'right',
+        paddingRight: 20,
+}
+
   });
 export default GMapStyle;

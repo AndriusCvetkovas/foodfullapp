@@ -25,11 +25,33 @@ import DonateContent from './donateContent';
 import DonationPosted from './DonationPosted';
 import DConfMap from './DConfMap';
 import DInfoMap from './DInfoMap';
+import Pickup from './pickup';
+import PickedUpComfirm from './PickedUpComfirm';
+import NotifPickComfirm from './NotifPickComfirm';
 
 
 function AppContent() {
   return (
-        <DInfoMap/>
+      //Done
+        // <DInfoMap/>
+        // <DonationPosted/>
+        // <AccountCreate />
+        // <DonateContent/>
+        // <DConfMap/>
+        // <DonateContent />
+        <NotifPickComfirm />
+
+        //NOT DONE
+        // <DonationPen /> Changed the file not this one
+        
+          // <Donate />
+          // <Pickup />
+          // <Confirmation />
+          // <PickedUpComfirm />
+          // <DatePicker /> NOT Working
+
+
+
     // <Router>
     //   <Scene key='root'>
     //     <Scene
