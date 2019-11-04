@@ -109,7 +109,6 @@ buttonClickListener = () =>{
                 />
           </View>
 
-
           
       {/* NEXT BUTTON */}
           <TouchableHighlight style={[DonSignStyles.buttonContainer, DonSignStyles.signupButton]} onPress={buttonClickListener}>
