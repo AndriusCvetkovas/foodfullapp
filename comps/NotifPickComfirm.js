@@ -1,33 +1,33 @@
 import React, {Component} from 'react';
 import {View, Text, Image, TouchableHighlight, TextInput} from 'react-native';
-import GMapStyle from '../styles/pickUpStyle';
+import PickUpStyle from '../styles/pickUpStyle';
 // import buttonStyle from '../styles/buttonStyle';
 
 function AcceptedInfo(){
     const [value, onChangeText] = React.useState('LBS');
     return(
         <View
-        style = {GMapStyle.infoBox}
+        style = {PickUpStyle.infoBox}
         >
             {/*Title box below*/} 
             <View
             style = {{marginTop: 50}}>
                 <Text
-                style = {GMapStyle.donatorTitle}
+                style = {PickUpStyle.donatorTitle}
                 >Picked Up</Text>
             </View>
             {/*Image box below*/} 
             <View 
-            style = {GMapStyle.imageBox}
+            style = {PickUpStyle.imageBox}
             >
                 <Image
-                style = {GMapStyle.checkmarkImage}
+                style = {PickUpStyle.checkmarkImage}
                 source = {require('../assets/icon/checkmark.png')}
                 />
             </View>
             {/*Date box below*/} 
             <View
-            style = {GMapStyle.messageBox}
+            style = {PickUpStyle.messageBox}
             >
                 <Text>You have picked up your donation from Safeway Extra</Text>
                 <Text style = {{color: '#0ca3bc'}}></Text>
@@ -43,7 +43,7 @@ function AcceptedInfo(){
                 <Text style = {{color: '#0ca3bc', flex: 1, fontWeight:'800'}}>Weight:</Text>
                 
                 <TextInput
-      style={GMapStyle.InputSty}
+      style={PickUpStyle.InputSty}
       onChangeText={text => onChangeText(text)}
       value={value}
     />
@@ -52,7 +52,7 @@ function AcceptedInfo(){
             {/*Button below*/}
             <TouchableHighlight
             title="Accept"
-            style = {GMapStyle.buttonS}>
+            style = {PickUpStyle.buttonS}>
                 <Text
                 style = {{color: 'white'}}
                 >Comfirm Pickup</Text>

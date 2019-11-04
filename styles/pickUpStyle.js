@@ -1,6 +1,6 @@
 import {StyleSheet} from 'react-native';
 
-var GMapStyle = StyleSheet.create({
+var PickUpStyle = StyleSheet.create({
     mapStyle: {
       height: 450,
       top: 0,
@@ -111,4 +111,4 @@ buttonS: {
 },
 
   });
-export default GMapStyle;
+export default PickUpStyle;
