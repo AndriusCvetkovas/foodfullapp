@@ -122,30 +122,69 @@ function GMap(){
         </MapView>
         
         <ScrollView>
-          <TouchableOpacity
-          onPress={() => Actions.Info()}
-          style = {GMapStyle.viewStyle}
-          >
-            <Image
-            style ={{width: 50, height: 50}}
-            source = {{uri:"https://maps.googleapis.com/maps/api/place/photo?maxwidth=50&photoreference="+img+"&key=AIzaSyCCD_OOE3Yj3h-fSov9ed1IhFByZPNALEs"}}
-            ></Image>
-            <Text style={{flex: 0.8}}>{name}</Text>
-          </TouchableOpacity>
           <View
           style = {GMapStyle.viewStyle}
           >
-            <Text>Location 2</Text>
+            <View style ={GMapStyle.innerInfoView}>
+              <Text style={GMapStyle.infoInnerTitle}>Safeway Extra</Text>
+              <Text style ={GMapStyle.infoInnerAddress}>1100 British Ave</Text>
+            </View>
+            <Text style={GMapStyle.infoInnerDistance}>4.6 km</Text>
+            <TouchableOpacity style ={GMapStyle.infoInnerButton}>
+              <Text style = {{color: '#06a2bc'}}>View</Text>
+            </TouchableOpacity>
           </View>
+          
           <View
           style = {GMapStyle.viewStyle}
           >
-            <Text>Location 3</Text>
+            <View style ={GMapStyle.innerInfoView}>
+              <Text style={GMapStyle.infoInnerTitle}>Safeway Extra</Text>
+              <Text style ={GMapStyle.infoInnerAddress}>1100 British Ave</Text>
+            </View>
+            <Text style={GMapStyle.infoInnerDistance}>4.6 km</Text>
+            <TouchableOpacity style ={GMapStyle.infoInnerButton}>
+              <Text style = {{color: '#06a2bc'}}>View</Text>
+            </TouchableOpacity>
           </View>
+
           <View
           style = {GMapStyle.viewStyle}
           >
-            <Text>Location 4</Text>
+            <View style ={GMapStyle.innerInfoView}>
+              <Text style={GMapStyle.infoInnerTitle}>Safeway Extra</Text>
+              <Text style ={GMapStyle.infoInnerAddress}>1100 British Ave</Text>
+            </View>
+            <Text style={GMapStyle.infoInnerDistance}>4.6 km</Text>
+            <TouchableOpacity style ={GMapStyle.infoInnerButton}>
+              <Text style = {{color: '#06a2bc'}}>View</Text>
+            </TouchableOpacity>
+          </View>
+
+          <View
+          style = {GMapStyle.viewStyle}
+          >
+            <View style ={GMapStyle.innerInfoView}>
+              <Text style={GMapStyle.infoInnerTitle}>Safeway Extra</Text>
+              <Text style ={GMapStyle.infoInnerAddress}>1100 British Ave</Text>
+            </View>
+            <Text style={GMapStyle.infoInnerDistance}>4.6 km</Text>
+            <TouchableOpacity style ={GMapStyle.infoInnerButton}>
+              <Text style = {{color: '#06a2bc'}}>View</Text>
+            </TouchableOpacity>
+          </View>
+
+          <View
+          style = {GMapStyle.viewStyle}
+          >
+            <View style ={GMapStyle.innerInfoView}>
+              <Text style={GMapStyle.infoInnerTitle}>Safeway Extra</Text>
+              <Text style ={GMapStyle.infoInnerAddress}>1100 British Ave</Text>
+            </View>
+            <Text style={GMapStyle.infoInnerDistance}>4.6 km</Text>
+            <TouchableOpacity style ={GMapStyle.infoInnerButton}>
+              <Text style = {{color: '#06a2bc'}}>View</Text>
+            </TouchableOpacity>
           </View>
         </ScrollView>
         

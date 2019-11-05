@@ -89,7 +89,7 @@ function AppContent() {
     </Router>
     */
     <View style = {{flex: 1}}>
-      <Schedule />
+      <GMap />
     </View>
       
   );

@@ -10,15 +10,19 @@ var GMapStyle = StyleSheet.create({
     },
     viewStyle: {
       flex: 1,
+      flexDirection: 'row',
       width: '95%',
-      backgroundColor: '#AAA',
+      backgroundColor: 'white',
+      borderWidth: 0.5,
+      borderColor: '#06a2bc',
       height: 70,
       flexDirection: 'row',
       marginRight: 10,
       marginLeft: 10,
       marginTop: 10,
-      padding: 10,
-      borderRadius: 10
+      padding: 15,
+      borderRadius: 20,
+      alignItems: 'center'
     },
     infoBox: {
         position: 'absolute',
@@ -84,6 +88,34 @@ var GMapStyle = StyleSheet.create({
         flex: 1,
         flexDirection: 'row',
         width: '80%'
+    },
+    infoInnerTitle: {
+        flex: 1, 
+        fontSize: 18,
+        color: '#06a2bc',
+        fontWeight: '600'
+    },
+    infoInnerAddress: {
+        fontSize: 12,
+        color: '#06a2bc'
+    },
+    innerInfoView: {
+        flex: 1
+    },
+    infoInnerButton: {
+        flex: 0.4,
+        padding: 5,
+        borderWidth: 0.5,
+        alignItems: 'center',
+        justifyContent: 'center',
+        borderColor: '#06a2bc',
+        borderRadius: 30,
+        height: 30
+    },
+    infoInnerDistance:{
+        fontSize: 12,
+        flex: 1.2,
+        bottom :5
     }
   });
 export default GMapStyle;
