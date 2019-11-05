@@ -1,18 +1,18 @@
 import React from 'react';
-import {View, Text, Image, ScrollView} from 'react-native';
+import {View, Text, Image, ScrollView, TouchableOpacity} from 'react-native';
 import DashStyle from '../styles/dashboardStyle';
-import {Actions} from 'react-native-router-flux';
-
+// import {Actions} from 'react-native-router-flux';
+ 
 function Dashboard(){
     return(
         <View style = {DashStyle.main}>
             <View style = {DashStyle.pending}>
                 {/* title below */}
                 <Text
-                style= {{color: 'white', fontSize: 20, flex: 0.2, margin: 10, padding: 10, fontWeight: '600'}}
+                style= {{color: '#0ca3bc', fontSize: 20, flex: 0.2, margin: 10, padding: 10, fontWeight: '600'}}
                 >Upcoming Pick Ups</Text>
                 {/* Pending box below */}
-
+                
                 <View style = {DashStyle.innerPendingBox} >
                     <View style = {DashStyle.innerPendingBox}>
                         {/* Date bubble below*/}
@@ -22,6 +22,13 @@ function Dashboard(){
                         </View>
                         {/*Details below*/}
                         <View style = {DashStyle.pendingDetail}>
+                        {/* arrow */}
+                        <View>
+                            <Image
+                                style = {{width:8, height:18, position:'absolute', zIndex:1, right:-50}}
+                                source={require('../assets/icon/next.png')}
+                            />
+                        </View>
                             {/* Foodbank name below*/}
                             <Text style = {{color: '#066a87', fontSize: 18}}>Vancouver Food Bank</Text>
                             {/* time details below*/}
@@ -40,6 +47,13 @@ function Dashboard(){
                         </View>
                         {/*Details below*/}
                         <View style = {DashStyle.pendingDetail}>
+                            {/* arrow */}
+                            <View>
+                                <Image
+                                    style = {{width:8, height:18, position:'absolute', zIndex:1, right:-50}}
+                                    source={require('../assets/icon/next.png')}
+                                />
+                            </View>
                             {/* Foodbank name below*/}
                             <Text style = {{color: '#066a87', fontSize: 18}}>Vancouver Food Bank</Text>
                             {/* time details below*/}
@@ -48,6 +62,22 @@ function Dashboard(){
                     </View>
                 </View>
             </View>
+
+
+            {/* Make a Donation Button */}
+            <View style={DashStyle.donateContainer}>
+                <Text style={DashStyle.donateText}>Make a Donation</Text>
+                {/* arrow */}
+                <Image
+                    style = {{width:15, height:25, position:'absolute', zIndex:1, right:0, marginRight:15}}
+                    source={require('../assets/icon/next.png')}
+                />
+                <Image
+                    style = {{width: '100%', height:'100%', borderRadius: 30}}
+                    source={require('../assets/img/makedonation.png')}
+                />
+            </View>
+            {/*//// End of Donation Button ////// */}
 
 
             {/*Leaderboard below*/}
@@ -69,6 +99,8 @@ function Dashboard(){
                         </View>
                     </View>
                 </View>
+
+
                 <View style = {DashStyle.leader}>
                     {/*Scrollable dashboard below*/}
                     <ScrollView>
@@ -78,8 +110,11 @@ function Dashboard(){
                             source={require('../assets/img/wholefoods.jpg')}>
                             </Image>
                             <View>
-                                <Text style = {{color: '#066a87', fontSize: 18}}>
+                                <View style={{flexDirection:"row"}}>
+                                    <Text style = {{color: '#066a87', fontSize: 18}}>
                                     Whole Foods</Text>
+                                    <Text style={DashStyle.weight}> 1320 kg</Text>
+                                </View>
                                 <Text>2465 Willingdon Ave</Text>
                             </View>
                         </View>
@@ -91,7 +126,10 @@ function Dashboard(){
                             source={require('../assets/img/safeway.jpg')}>
                             </Image>
                             <View>
+                                <View style={{flexDirection:'row'}}>
                                 <Text style = {{color: '#066a87', fontSize: 18}}>Safeway Extra</Text>
+                                <Text style = {DashStyle.weight}>1100 kg</Text>
+                                </View>
                                 <Text>2465 Willingdon Ave</Text>
                             </View>
                         </View>
@@ -103,8 +141,11 @@ function Dashboard(){
 
                             </Image>
                             <View>
-                                <Text style = {{color: '#066a87', fontSize: 18}}>Fresh Street Market</Text>
-                                <Text>2465 Willingdon Ave</Text>
+                                <View style={{flexDirection:'row'}}>
+                                    <Text style = {{color: '#066a87', fontSize: 18}}>Fresh Street Market</Text>
+                                    <Text style = {DashStyle.weight}>1090 kg</Text>
+                                </View>
+                                <Text>3267 Surrey</Text>
                             </View>
                         </View>
                     </ScrollView>

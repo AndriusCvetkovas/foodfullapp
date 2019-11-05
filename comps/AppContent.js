@@ -18,7 +18,8 @@ import DonationPen from '../comps/DonationPen';
 import Accpending from './Accpending';
 import LoginPage from './LoginPage';
 import SignUp from './SignUp';
-import DonationSign from './DonationSign';
+import DonatingSignUp from './DonatingSignUp';
+import AcceptingSignUp from './AcceptingSignUp';
 import Donate from './donate';
 import Info from './DInfoMap';
 import DonateContent from './donateContent';
@@ -28,8 +29,6 @@ import Leaderboard from './Leaderboard';
 import DonNotification from './DonNotification';
 function AppContent() {
   
-  
-
   return (
     /*
     <Router>
@@ -89,7 +88,7 @@ function AppContent() {
     </Router>
     */
     <View style = {{flex: 1}}>
-      <GMap />
+      <DashboardAccept/>
     </View>
       
   );

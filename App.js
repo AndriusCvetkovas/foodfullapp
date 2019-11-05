@@ -19,8 +19,12 @@ import {Actions} from 'react-native-router-flux';
 
 function App() {
   return (
+    
     <View style={mainStyle.App}>
-      
+
+    <View style={mainStyle.AppHeader}>
+        <AppHeader/>
+      </View> 
 
       <View style={mainStyle.AppContent}>
         <AppContent/>
