@@ -28,7 +28,7 @@ But for now, if any input is blank there will be an alert
 */ 
 const [input, setInput] = useState("");
 
-buttonClickListener = () =>{
+var buttonClickListener = () =>{
 
   if(input == ''){
     inputinfo = (

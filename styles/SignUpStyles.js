@@ -105,6 +105,21 @@ var SignUpStyles = StyleSheet.create({
         color: '#0ca3bc',
         fontSize: 20
       },
-    
+    //States
+    containerActive: {
+        backgroundColor: '#606060',
+        width:'100%',
+        height: '100%',
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
+    headerActive: {
+        fontSize: 23,
+        textAlign: "center",
+        marginBottom: 10,
+        fontWeight: "500",
+        color: "#06a2bc",
+        textAlign:'center',
+    }
 });
 export default SignUpStyles;
