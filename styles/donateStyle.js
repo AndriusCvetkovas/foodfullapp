@@ -51,15 +51,54 @@ var donateStyle = StyleSheet.create({
         borderWidth: 1,
         borderColor: '#07a2bb',
         backgroundColor: '#07a2bb',
-        color:'#fff'
+        color:'#fff',
+        width: '60%'
 
       },
+      mapSearchButton:{
+        flexDirection:'row',
+        flex:1,
+        marginBottom:15,
+        justifyContent:'center',
+        alignItems:'center',
+        height:40,
+        paddingTop:5,
+        paddingBottom:5,
+        borderRadius:30,
+        borderWidth: 1,
+        borderColor: '#07a2bb',
+        backgroundColor: '#fff',
+        color:'#fff',
+        width: '60%'
+      },
+    
       btnText:{
         color:'white'
       },
 
       rgttems:{
         flex:0.2
+    },
+
+    ImagePad:{
+      flex:1,
+      flexDirection:'row'
+    },
+
+    uploadPictureButton:{
+      height: 100,
+      width: 100,
+      alignItems: 'center',
+      justifyContent: 'center',
+      borderWidth: 1,
+      marginLeft: 5,
+      borderColor: '#ddd',  
+      borderRadius: 10
+    },
+
+    addImagePlus:{
+      color:'#07a2bb',
+      fontSize: 25
     }
  });
 

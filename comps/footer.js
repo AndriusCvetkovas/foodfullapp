@@ -12,6 +12,8 @@ import footerStyle from '../styles/footerStyle';
 import {Actions} from 'react-native-router-flux';
 import Dashboard from './Dashboard.js';
 
+//New Ideas
+
 function Appfooter() {
   const [color, changeColor] = useState(require('../assets/icon/home.png'));
 
@@ -74,6 +76,6 @@ function Appfooter() {
           </View> 
     );
    }
+   
  
    export default Appfooter
-
