@@ -6,8 +6,9 @@
  * @flow
  */
 
-import React, {useState} from 'react';
-import {View,Text,ScrollView} from 'react-native';
+import React, {useState, useEffect} from 'react';
+import {View,Text,ScrollView, AsyncStorage} from 'react-native';
+import MaterialTabs from 'react-native-material-tabs';
 import ContentStyle from '../styles/contentStyle';
 import {Router, Scene, Overlay, Stack, Lightbox} from 'react-native-router-flux';
 import GMap from './GMap';
