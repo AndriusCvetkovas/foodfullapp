@@ -13,7 +13,7 @@ function GMap(){
   const [lat, setLat] = useState();
   const [long, setLong] = useState();
   const [name, setName] = useState("");
-  const [img, setImage] = useState("");
+  const [img, setImage] = useState('');
   async function getPos(){
     //console.log(Geolocation)
     var position = await Geolocation.getCurrentPosition((data)=>{
@@ -25,7 +25,7 @@ function GMap(){
     getPos();
   }, []);
   
-  console.log(location)
+  
     return(
       <View>
         <MapView 
@@ -51,7 +51,7 @@ function GMap(){
             }}
             title ={name}
             description= {name}
-            autoFocus={true}
+            autoFocus={false}
            />
            <GooglePlacesAutocomplete
             placeholder='Search'
@@ -67,7 +67,7 @@ function GMap(){
               setLat(details.geometry.location.lat);
               setLong(details.geometry.location.lng);
               setName(data.description);
-              setImage(details.icon);
+              setImage(details.photos[0].photo_referance);
             }}
 
             getDefaultValue={() => ''}
@@ -128,7 +128,7 @@ function GMap(){
           >
             <Image
             style ={{width: 50, height: 50}}
-            source = {{uri:img}}
+            source = {{uri:"https://maps.googleapis.com/maps/api/place/photo?maxwidth=50&photoreference="+img+"&key=AIzaSyCCD_OOE3Yj3h-fSov9ed1IhFByZPNALEs"}}
             ></Image>
             <Text style={{flex: 0.8}}>{name}</Text>
           </TouchableOpacity>

@@ -12,6 +12,7 @@ import {
 
 } from 'react-native';
 import styles from '../styles/DonSignStyles';
+import {Actions} from 'react-native-router-flux';
 
 
 function DonationSign(){
@@ -21,6 +22,8 @@ function DonationSign(){
    
    
     <View style={styles.container}>
+
+      <Text style={styles.header}>Donating</Text>
    
    <View style={styles.test}>
             <Text style={styles.text}>Company Name</Text>
@@ -72,7 +75,7 @@ function DonationSign(){
 
         
 
-        <TouchableHighlight style={[styles.buttonContainer, styles.signupButton]} onPress={() => this.onClickListener('sign_up')}>
+        <TouchableHighlight style={[styles.buttonContainer, styles.signupButton]} onPress={() => Actions.dashboard()}>
           <Text style={styles.signUpText}>Next</Text>
         </TouchableHighlight>
 

@@ -12,12 +12,16 @@ import footerStyle from '../styles/footerStyle';
 import {Actions} from 'react-native-router-flux';
 import Dashboard from './Dashboard.js';
 
+//New Ideas
+
 function Appfooter() {
-  const [color, changeColor] = useState(true);
+  const [color, changeColor] = useState(require('../assets/icon/home.png'));
+
   function Combined(){
     Actions.dashboard(); 
     changeColor(require('../assets/icon/home_active.png'))
-  }
+  };
+  
   return (
             <View style={footerStyle.comp}>
           <TouchableOpacity style={footerStyle.iconsFooter}
@@ -40,7 +44,7 @@ function Appfooter() {
             </TouchableOpacity>
 
             <TouchableOpacity style={footerStyle.donateIcon}
-            onPress ={() => Actions.map()}
+            onPress ={() => Actions.donate()}
             >
               <Image
                 resizeMode="contain"
@@ -70,10 +74,8 @@ function Appfooter() {
             </TouchableOpacity>
           
           </View> 
-           
-            
-  );
-}
-
-
-export default Appfooter;
+    );
+   }
+   
+ 
+   export default Appfooter

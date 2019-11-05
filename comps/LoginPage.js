@@ -13,19 +13,29 @@ import {Actions} from 'react-native-router-flux';
 import styles from '../styles/LoginStyles';
 
 
+
 function LoginPage(){
   return (
  
 
 <View style={styles.container}>
 
-<View style= {styles.LogoImg}>
+        <View>
             <Image
             style={styles.LogoImg}
-            source={require('../assets/img/logo.png')}
+            source={require('../assets/img/logo_animation.png')}
             />
         </View>
 
+
+        <View>
+          <Text style={styles.header}>
+          Foodfull
+          </Text>
+          <Text style={styles.subheader}>
+          Giving food a Second Life
+          </Text>
+        </View>
        
 
        
@@ -37,7 +47,6 @@ function LoginPage(){
               />
         </View>
 
-  
         
         <View style={styles.inputContainer}>
           <Image style={styles.inputIcon} source={{uri: 'https://png.icons8.com/key-2/ultraviolet/50/3498db'}}/>

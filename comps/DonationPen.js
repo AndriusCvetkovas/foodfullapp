@@ -19,11 +19,11 @@ function DonationPen(){
        <View style= {styles.pending}>
             <Image
             style={styles.pendingimg}
-            source={require('../assets/icon/donate.png')}
+            source={require('../assets/img/posted_donation.png')}
             />
             <Text style={styles.titlepen}>Your Donation</Text>
-            <Text style={styles.titlepen}>has been posted</Text>
-            <Text>When an organiazation claims your food donation, you will be notfied.</Text>
+            <Text style={styles.titlepen}>has been posted!</Text>
+            <Text>When an organiazation claims your food donation, you will be notified.</Text>
         </View>
 
 
@@ -40,7 +40,7 @@ function DonationPen(){
       marginLeft:50
     }}>
     <Text style={{color: 'white', fontSize: 15, fontWeight: '400'}}>
-      View progress
+      Make another Donation
     </Text>
   </View>
 </TouchableOpacity>
@@ -60,7 +60,7 @@ function DonationPen(){
       marginTop:10,
     }}>
     <Text style={{color: 'white', fontSize: 15, fontWeight: '400'}}>
-      Make another donation
+      View Progress
     </Text>
   </View>
 </TouchableOpacity>
