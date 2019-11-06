@@ -1,6 +1,7 @@
 
 import {StyleSheet} from 'react-native';
-const styles = StyleSheet.create({
+const DonSignStyles = StyleSheet.create({
+
     container: {
       marginTop:0,
       marginBottom:0,
@@ -9,42 +10,48 @@ const styles = StyleSheet.create({
       alignItems: 'center',
       backgroundColor: '#ffffff',
     },
-    test: {
+
+    titles: {
       height:25,
-      width:230,
+      width:'70%',
       flexDirection: 'row',
-      
+      zIndex: -1
     },
+
     text:{
     textAlign:'left',
+    fontWeight: '400',
+    fontSize: 16,
     },
 
-    pendingimg:{
-      width:100,
-      height:100,
-      borderRadius:100,
-      marginBottom: 100,
-      marginTop:70,
-  },
+    headerContainer:{
+      flex:0.3,
+      top:-40,
+      flexDirection:'row',
+      textAlign:'center',
+      justifyContent:'center',
+    },
 
-  header: {
-    fontSize: 23,
-    textAlign: "center",
-    marginBottom: 5,
-    fontWeight: "500",
-    color: "#06a2bc",
-    textAlign:'center',
-},
+    headertext: {
+      fontSize: 23,
+      textAlign: "center",
+      marginBottom: 5,
+      fontWeight: "500",
+      color: "#06a2bc",
+      textAlign:'center',
+      marginLeft:'4%'
+    },
+
+    // FORM
     inputContainer: {
         borderBottomColor: '#F5FCFF',
         backgroundColor: '#F0F0F0',
         borderRadius:30,
         borderBottomWidth: 1,
-        width:250,
+        width:'70%',
         height:40,
-        marginBottom:25,
-        flexDirection: 'row',
-        alignItems:'center',
+        marginBottom:18,
+        marginTop:5
     },
     inputs:{
         height:30,
@@ -52,29 +59,26 @@ const styles = StyleSheet.create({
         borderBottomColor: '#FFFFFF',
         flex:1,
     },
-    inputIcon:{
-      width:30,
-      height:30,
-      marginLeft:15,
-      justifyContent: 'center'
-    },
+
+    // NEXT BUTTON
     buttonContainer: {
-      height:40,
-      flexDirection: 'row',
+      height:50,
       justifyContent: 'center',
       alignItems: 'center',
-      marginBottom:20,
+      marginTop:30,
       width:250,
       borderRadius:30,
     },
     signupButton: {
-      backgroundColor: "#0ca3bc",
+      backgroundColor: "#a4d638",
       height: 50
     },
     signUpText: {
       color: 'white',
       fontSize: 20,
+      fontWeight: '500'
     }
+    
   });
 
-  export default styles;
+  export default DonSignStyles;

@@ -11,6 +11,7 @@
   "dependencies": {
     "@react-native-community/datetimepicker": "^2.1.0",
     "@react-native-community/geolocation": "^2.0.2",
+    "react-native-calendars": "^1.212.0",
     "material-tabs": "0.0.8",
     "react": "16.9.0",
     "react-native": "0.61.3",

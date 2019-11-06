@@ -4,7 +4,7 @@ var ContentStyle = StyleSheet.create({
     comp:{
         flex: 1,
         height: '100%',
-        top: -66
+        top:80
     }
     
  });

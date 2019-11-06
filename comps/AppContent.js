@@ -19,14 +19,19 @@ import DonationPen from '../comps/DonationPen';
 import Accpending from './Accpending';
 import LoginPage from './LoginPage';
 import SignUp from './SignUp';
-import DonationSign from './DonationSign';
+import DonatingSignUp from './DonatingSignUp';
+import AcceptingSignUp from './AcceptingSignUp';
 import Donate from './donate';
 import Info from './DInfoMap';
+import DonateContent from './donateContent';
+import Schedule from './Schedule';
+import Profile from './Profile';
+import Leaderboard from './Leaderboard';
+import DonNotification from './DonNotification';
 function AppContent() {
   
-  
-
   return (
+    /*
     <Router>
       <Scene key='root'>
         <Scene
@@ -55,6 +60,10 @@ function AppContent() {
           component={Confirmation}
           title="Confirm Your Donation"
           />
+          <Scene
+          key="notifications"
+          component={DonateContent}
+          />
         <Scene
           key="dashboard"
           component={Dashboard}
@@ -78,6 +87,10 @@ function AppContent() {
         
       </Scene>
     </Router>
+    */
+    <View style = {{flex: 1}}>
+      <AcceptingSignUp/>
+    </View>
       
   );
 }
