@@ -15,6 +15,7 @@ const DonSignStyles = StyleSheet.create({
       height:25,
       width:'70%',
       flexDirection: 'row',
+      zIndex: -1
     },
 
     text:{
@@ -77,6 +78,7 @@ const DonSignStyles = StyleSheet.create({
       fontSize: 20,
       fontWeight: '500'
     }
+    
   });
 
   export default DonSignStyles;
