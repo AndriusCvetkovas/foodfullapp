@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     fontWeight: '300',
     color: '#06a2bc',
-    fontFamily:'Avenir',
+    fontFamily:'DidactGothic-Regular',
   },
 
   //  FORM
