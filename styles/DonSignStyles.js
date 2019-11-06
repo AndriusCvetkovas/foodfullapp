@@ -77,15 +77,8 @@ const DonSignStyles = StyleSheet.create({
       color: 'white',
       fontSize: 20,
       fontWeight: '500'
-    },
-    predictions: {
-      top: 270,
-      backgroundColor: 'white',
-      padding: 20,
-      flexDirection: 'column',
-      zIndex: 2,
-      position: 'absolute',
     }
+    
   });
 
   export default DonSignStyles;
