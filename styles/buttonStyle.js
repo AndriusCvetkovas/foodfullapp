@@ -4,7 +4,7 @@ var buttonStyle = StyleSheet.create( {
         flex: 0.3,
         padding: 5,
         borderRadius: 20,
-        backgroundColor: 'green',
+        backgroundColor: '#a4d638',
         marginBottom: 20,
         marginTop: 20,
         width: '70%',

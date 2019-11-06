@@ -24,7 +24,9 @@ function Profile(){
             style={ProfileStyle.infoStyle}
             >
                 <TouchableOpacity style = {{position: 'absolute', top: 20, right: 20}}>
-                    <Image style ={{width: 20, height: 20, backgroundColor: 50 }}></Image>
+                    <Image style ={{width: 20, height: 20}}
+                    source={require('../assets/icon/edit.png')}
+                    ></Image>
                 </TouchableOpacity>
                 {/* Store name/title below */}
                 <Text
@@ -38,7 +40,7 @@ function Profile(){
                     style={ProfileStyle.innerStatBox1}
                     >
                         <Image 
-                        source={require('../assets/icon/donating_active.png')}
+                        source={require('../assets/icon/weight.png')}
                         style={{width: 50, height: 50, padding: 20, flex: 0.2}}
                         />
                         <View style = {ProfileStyle.innerTextBox}>

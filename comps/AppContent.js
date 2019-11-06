@@ -88,7 +88,7 @@ function AppContent() {
     </Router>
     */
     <View style = {{flex: 1}}>
-      <Schedule/>
+      <Profile/>
     </View>
       
   );
