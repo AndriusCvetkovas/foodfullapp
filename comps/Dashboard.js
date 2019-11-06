@@ -37,30 +37,6 @@ function Dashboard(){
                     </View>
                 </View>
 
-
-                <View style = {DashStyle.innerPendingBox} >
-                    <View style = {DashStyle.innerPendingBox}>
-                        {/* Date bubble below*/}
-                        <View style = {DashStyle.dateBubble}>
-                            <Text style = {{color: 'white', fontSize: 20}}>10</Text>
-                            <Text style = {{color: 'white'}}>Jun</Text>
-                        </View>
-                        {/*Details below*/}
-                        <View style = {DashStyle.pendingDetail}>
-                            {/* arrow */}
-                            <View>
-                                <Image
-                                    style = {{width:8, height:18, position:'absolute', zIndex:1, right:-50}}
-                                    source={require('../assets/icon/next.png')}
-                                />
-                            </View>
-                            {/* Foodbank name below*/}
-                            <Text style = {{color: '#066a87', fontSize: 18}}>Vancouver Food Bank</Text>
-                            {/* time details below*/}
-                            <Text style = {{color:'grey'}}>3:00 pm to 7:00 pm</Text>
-                        </View>
-                    </View>
-                </View>
             </View>
 
 

@@ -145,6 +145,8 @@ function Choose(){
           </View>
 
           
+
+          
       {/* NEXT BUTTON */}
           <TouchableHighlight style={[DonSignStyles.buttonContainer, DonSignStyles.signupButton]} onPress={buttonClickListener}>
             <Text style={DonSignStyles.signUpText}>Next</Text>

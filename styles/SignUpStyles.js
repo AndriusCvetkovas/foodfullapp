@@ -14,6 +14,7 @@ var SignUpStyles = StyleSheet.create({
     headerContainer:{ 
         flex:0.3,
         width: '98%',
+        top:-40
     },
     header: {
         fontSize: 23,
@@ -43,9 +44,7 @@ var SignUpStyles = StyleSheet.create({
         flex: 1,
         width:360,
         borderRadius: 20,
-        shadowColor: '#9B9EA3',
         shadowOffset: { width: 2, height: 7 },
-        shadowOpacity: 0.25,
         shadowRadius: 10,
         alignItems: 'center',
         justifyContent: 'center',
@@ -56,9 +55,7 @@ var SignUpStyles = StyleSheet.create({
         flex: 1,
         width:360,
         borderRadius: 30,
-        shadowColor: '#9B9EA3',
         shadowOffset: { width: 2, height: 7 },
-        shadowOpacity: 0.25,
         shadowRadius: 10,
         alignItems: 'center',
         justifyContent: 'center',

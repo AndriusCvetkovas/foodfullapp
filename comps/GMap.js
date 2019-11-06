@@ -131,7 +131,7 @@ function GMap(){
             </View>
             <Text style={GMapStyle.infoInnerDistance}>4.6 km</Text>
             <TouchableOpacity style ={GMapStyle.infoInnerButton}>
-              <Text style = {{color: '#06a2bc'}}>View</Text>
+              <Text style = {{color: '#ffffff'}}>View</Text>
             </TouchableOpacity>
           </View>
           
@@ -144,7 +144,7 @@ function GMap(){
             </View>
             <Text style={GMapStyle.infoInnerDistance}>4.6 km</Text>
             <TouchableOpacity style ={GMapStyle.infoInnerButton}>
-              <Text style = {{color: '#06a2bc'}}>View</Text>
+              <Text style = {{color: '#ffffff'}}>View</Text>
             </TouchableOpacity>
           </View>
 
@@ -157,7 +157,7 @@ function GMap(){
             </View>
             <Text style={GMapStyle.infoInnerDistance}>4.6 km</Text>
             <TouchableOpacity style ={GMapStyle.infoInnerButton}>
-              <Text style = {{color: '#06a2bc'}}>View</Text>
+              <Text style = {{color: '#ffffff'}}>View</Text>
             </TouchableOpacity>
           </View>
 

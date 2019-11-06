@@ -3,7 +3,7 @@ import {StyleSheet} from 'react-native';
 var GMapStyle = StyleSheet.create({
     mapStyle: {
       height: 450,
-      top: 0,
+      top: 0, 
       left: 0,
       right: 0,
       bottom: 0
@@ -109,6 +109,7 @@ var GMapStyle = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         borderColor: '#06a2bc',
+        backgroundColor: '#06a2bc',
         borderRadius: 30,
         height: 30
     },

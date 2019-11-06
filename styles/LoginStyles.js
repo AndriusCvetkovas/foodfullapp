@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
   //  FORM
 
   form:{
-    marginTop:20,
+    marginTop:25,
   },
     inputContainer: {
         borderBottomColor: '#F5FCFF',
@@ -76,10 +76,11 @@ const styles = StyleSheet.create({
     // FOOTER
     signUpFooter: {
       flex:1,
-      flexDirection:'row'
+      flexDirection:'row',
+      marginTop:20
     },
     signUpText:{
-      fontSize:15,
+      fontSize:18,
       fontFamily:'Avenir',
       fontWeight:'500',
       marginRight:5
@@ -87,7 +88,7 @@ const styles = StyleSheet.create({
     //This is the "Sign Up" text
     link: {
     color:'#0ca3bc',
-    fontSize:15,
+    fontSize:18,
     fontFamily:'Avenir',
     fontWeight:'500'
     }
