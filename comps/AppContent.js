@@ -33,7 +33,7 @@ function AppContent() {
   return (
 
     <View style = {{flex: 1}}>
-    <DashboardAccept/>
+    <Profile/>
   </View>
 
     /*

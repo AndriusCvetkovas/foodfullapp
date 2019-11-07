@@ -12,7 +12,7 @@ var ProfileStyle = StyleSheet.create({
         backgroundColor: '#06a2bc',
         top:0,
         width: '100%',
-        height:'60%',
+        height:'70%',
         top:-130
     },
     imageViewStyle:{

@@ -111,7 +111,7 @@ function Dashboard(){
                         <View style = {DashStyle.leaderDetail}>
                             <Text style={DashStyle.ranking}>4</Text>
                             <Image style = {{margin: 10, width: 50, height: 50, borderRadius: 50, backgroundColor: 'grey'}}
-                            source={require('../assets/img/freshmarket.jpg')}>
+                            source={require('../assets/img/farmtotable.jpg')}>
 
                             </Image>
                             <View>
@@ -127,7 +127,7 @@ function Dashboard(){
                         <View style = {DashStyle.leaderDetail}>
                             <Text style={DashStyle.ranking}>5</Text>
                             <Image style = {{margin: 10, width: 50, height: 50, borderRadius: 50, backgroundColor: 'grey'}}
-                            source={require('../assets/img/freshmarket.jpg')}>
+                            source={require('../assets/img/saveon.jpg')}>
 
                             </Image>
                             <View>
