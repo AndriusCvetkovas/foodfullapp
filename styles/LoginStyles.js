@@ -15,7 +15,6 @@ const styles = StyleSheet.create({
       marginTop:70,
       marginBottom: 12
   },
-  
   header:{
     fontSize: 25,
     fontWeight: '500',
@@ -55,7 +54,7 @@ const styles = StyleSheet.create({
         flex:1,
     },
     buttonContainer: {
-      height:40,
+      height:50,
       flexDirection: 'row',
       justifyContent: 'center',
       alignItems: 'center',
@@ -71,6 +70,8 @@ const styles = StyleSheet.create({
     signInText: {
       color: 'white',
       fontSize: 20,
+      fontFamily: 'Avenir',
+      fontWeight: '500'
      
     },
     // FOOTER
@@ -82,7 +83,7 @@ const styles = StyleSheet.create({
     signUpText:{
       fontSize:18,
       fontFamily:'Avenir',
-      fontWeight:'500',
+      fontWeight:'300',
       marginRight:5
     },
     //This is the "Sign Up" text

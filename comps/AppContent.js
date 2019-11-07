@@ -89,11 +89,11 @@ function AppContent() {
     </Router>
     */
     <View style = {{flex: 1}}>
-      <LoginPage/>
+      <Leaderboard/>
     </View>
       
   );
 }
 
 
-export default GMap;
+export default Dashboard;

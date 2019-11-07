@@ -12,30 +12,6 @@ function Dashboard(){
                 style= {{color: '#0ca3bc', fontSize: 20, flex: 0.2, margin: 10, padding: 10, fontWeight: '600'}}
                 >Upcoming Pick Ups</Text>
                 {/* Pending box below */}
-                
-                <View style = {DashStyle.innerPendingBox} >
-                    <View style = {DashStyle.innerPendingBox}>
-                        {/* Date bubble below*/}
-                        <View style = {DashStyle.dateBubble}>
-                            <Text style = {{color: 'white', fontSize: 20}}>10</Text>
-                            <Text style = {{color: 'white'}}>Jun</Text>
-                        </View>
-                        {/*Details below*/}
-                        <View style = {DashStyle.pendingDetail}>
-                        {/* arrow */}
-                        <View>
-                            <Image
-                                style = {{width:8, height:18, position:'absolute', zIndex:1, right:-50}}
-                                source={require('../assets/icon/next.png')}
-                            />
-                        </View>
-                            {/* Foodbank name below*/}
-                            <Text style = {{color: '#066a87', fontSize: 18}}>Vancouver Food Bank</Text>
-                            {/* time details below*/}
-                            <Text style = {{color:'grey'}}>3:00 pm to 7:00 pm</Text>
-                        </View>
-                    </View>
-                </View>
 
             </View>
 
@@ -64,66 +40,106 @@ function Dashboard(){
                     <View style = {DashStyle.innerLeadB}>
                         <View>
                             <Image
-                            style = {{width: 100, height: 100, borderRadius: 100, backgroundColor: "#aaaaaa"}}
+                            style = {{width: 90, height: 90, borderRadius: 100, backgroundColor: "#aaaaaa"}}
                             source={require('../assets/img/safeway.jpg')}
                             ></Image>
                         </View>
                         <View style = {{margin: 20}}>
-                            <Text style = {{color: '#066a87', fontSize: 18}}>You are in the 2nd place</Text>
-                            <Text style = {{color: '#0ca3bc', fontSize: 16}}>40 Donations</Text>
-                            <Text style = {{color: '#0ca3bc', fontSize: 16}}>1100 Kg of food</Text>
+                            <Text style = {{color: '#066a87', fontSize: 18, marginBottom:5}}>You are in 2nd place</Text>
+
+                             <Text style = {{color: '#0ca3bc', fontSize: 16}}>40 Donations</Text>
+                            <Text style = {{color: '#A4D638', fontSize: 18, fontFamily:'Avenir', fontWeight:'500'}}>1100 Kg</Text>
                         </View>
                     </View>
                 </View>
 
-
+                {/*Scrollable LEADERBOARD below*/}
                 <View style = {DashStyle.leader}>
-                    {/*Scrollable dashboard below*/}
                     <ScrollView>
+                    {/* 1 */}
                         <View style = {DashStyle.leaderDetail}>
-                            <Text style = {{padding: 10, color: '#0ca3bc', fontSize: 20}}>1</Text>
+                            <Text style={DashStyle.ranking}>1</Text>
                             <Image style = {{margin: 10, width: 50, height: 50, borderRadius: 50, backgroundColor: 'grey'}}
                             source={require('../assets/img/wholefoods.jpg')}>
                             </Image>
                             <View>
                                 <View style={{flexDirection:"row"}}>
-                                    <Text style = {{color: '#066a87', fontSize: 18}}>
+                                    <Text style={DashStyle.leaderName}>
                                     Whole Foods</Text>
                                     <Text style={DashStyle.weight}> 1320 kg</Text>
                                 </View>
-                                <Text>2465 Willingdon Ave</Text>
+                                <Text style={DashStyle.location}>4420 Lougheed HWY, Burnaby</Text>
                             </View>
                         </View>
 
+                    {/* 2*/}
                         <View style = {DashStyle.leaderDetail}>
-                            <Text style = {{padding: 10, color: '#0ca3bc', fontSize: 20}}>2</Text>
+                            <Text style={DashStyle.ranking}>2</Text>
                             <Image 
-                            style = {{margin: 10, width: 50, height: 50, borderRadius: 50, backgroundColor: 'grey'}}
+                            style = {{margin: 10, width: 50, height: 50, borderRadius: 50}}
                             source={require('../assets/img/safeway.jpg')}>
                             </Image>
                             <View>
                                 <View style={{flexDirection:'row'}}>
-                                <Text style = {{color: '#066a87', fontSize: 18}}>Safeway Extra</Text>
+                                <Text style={DashStyle.leaderName}>Safeway Extra</Text>
                                 <Text style = {DashStyle.weight}>1100 kg</Text>
                                 </View>
-                                <Text>2465 Willingdon Ave</Text>
+                                <Text style={DashStyle.location}>6153 200 St, Langley</Text>
                             </View>
                         </View>
 
+                    {/* 3*/}
                         <View style = {DashStyle.leaderDetail}>
-                            <Text style = {{padding: 10, color: '#0ca3bc', fontSize: 20}}>3</Text>
+                            <Text style={DashStyle.ranking}>3</Text>
                             <Image style = {{margin: 10, width: 50, height: 50, borderRadius: 50, backgroundColor: 'grey'}}
                             source={require('../assets/img/freshmarket.jpg')}>
 
                             </Image>
                             <View>
                                 <View style={{flexDirection:'row'}}>
-                                    <Text style = {{color: '#066a87', fontSize: 18}}>Fresh Street Market</Text>
+                                    <Text style={DashStyle.leaderName}>Fresh Street Market</Text>
                                     <Text style = {DashStyle.weight}>1090 kg</Text>
                                 </View>
-                                <Text>3267 Surrey</Text>
+                                <Text style={DashStyle.location}>1650 Marine Dr, Vancouver</Text>
                             </View>
                         </View>
+
+                    {/* 4*/}
+                        <View style = {DashStyle.leaderDetail}>
+                            <Text style={DashStyle.ranking}>4</Text>
+                            <Image style = {{margin: 10, width: 50, height: 50, borderRadius: 50, backgroundColor: 'grey'}}
+                            source={require('../assets/img/freshmarket.jpg')}>
+
+                            </Image>
+                            <View>
+                                <View style={{flexDirection:'row'}}>
+                                    <Text style={DashStyle.leaderName}>Farm to Table</Text>
+                                    <Text style = {DashStyle.weight}>1021 kg</Text>
+                                </View>
+                                <Text style={DashStyle.location}>1312 Richards St, Vancouver</Text>
+                            </View>
+                        </View>
+
+                    {/* 5*/}
+                        <View style = {DashStyle.leaderDetail}>
+                            <Text style={DashStyle.ranking}>5</Text>
+                            <Image style = {{margin: 10, width: 50, height: 50, borderRadius: 50, backgroundColor: 'grey'}}
+                            source={require('../assets/img/freshmarket.jpg')}>
+
+                            </Image>
+                            <View>
+                                <View style={{flexDirection:'row'}}>
+                                    <Text style={DashStyle.leaderName}>Save-On-Foods</Text>
+                                    <Text style = {DashStyle.weight}>1004 kg</Text>
+                                </View>
+                                <Text style={DashStyle.location}>1403 E King Edward, Vancouver</Text>
+                            </View>
+                        </View>
+
+
+
+
+
                     </ScrollView>
                 </View>
             </View>

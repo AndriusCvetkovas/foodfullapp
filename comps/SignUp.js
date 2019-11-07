@@ -55,7 +55,7 @@ function SignUp(){
         TextColor2 = "#49b204"
         ShadowColor2 = "#0ca3bc"
         ShadowOpacity2 = 0.25
-        ButtonColor = "#0ca3bc"
+        ButtonColor = "#34a3bd"
         ButtonBorder = "#0ca3bc"
         ButtonText = "#ffffff"
         imageUrl2 = require('../assets/icon/accepting_active.png');

@@ -29,7 +29,8 @@ var SignUpStyles = StyleSheet.create({
         fontWeight: "400",
         color: "#06a2bc",
         marginBottom: 5,
-        textAlign:'center', 
+        textAlign:'center',
+        fontFamily: 'DidactGothic-Regular' 
     },
  
     // DONATING AND ACCEPTING OPTIONS
@@ -50,6 +51,7 @@ var SignUpStyles = StyleSheet.create({
         justifyContent: 'center',
         padding:15,
         marginBottom: 40,
+        
     },
     option2: {
         flex: 1,

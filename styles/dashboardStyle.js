@@ -8,14 +8,14 @@ var DashStyle = StyleSheet.create({
         backgroundColor: '#f7f7f7'
     },
     pending: {
-        flex: 0.5,
+        flex: 0.2,
         justifyContent: 'center',
         alignItems: 'center',
         borderRadius: 20,
         backgroundColor: '#ffffff',
         width: '92%',
         padding: 5,
-        top: -10,
+        top: -20,
     },
     innerPendingBox: {
         flex: 1,
@@ -36,15 +36,15 @@ var DashStyle = StyleSheet.create({
         marginRight: 40,
         marginLeft: 10
     },
-    // Donation Button
 
+    // Donation Button
     donateContainer: {
-        flex:0.3,
+        flex:0.28,
         backgroundColor:'#dbf9fc',
         width:'92%',
         justifyContent:'center',
-        top:10,
-        marginBottom: 10,
+        top:0,
+        marginBottom: 12,
         borderRadius: 50,
     },
     donateText: {
@@ -53,15 +53,16 @@ var DashStyle = StyleSheet.create({
        color: '#06a2bc',
        fontWeight: '500',
        fontSize:20,
-       paddingLeft: '8%'
+       paddingLeft: '10%',
+       fontFamily: 'Avenir',
+       fontWeight: '800'
 
     },
 
 
     //LeaderBoard
     your: {
-        marginTop: 0,
-        flex: 0.5,
+        flex: 0.4,
         borderRadius: 30,
         backgroundColor: 'white',
         shadowColor: '#aaaaaa',
@@ -83,26 +84,51 @@ var DashStyle = StyleSheet.create({
         shadowColor: '#aaaaaa',
         backgroundColor: '#ffffff',
         shadowOffset: { width: 0, height: 1 },
-        shadowOpacity: 0.7,
+        shadowOpacity: 0.2,
         shadowRadius: 2,
         elevation: 0,
         width: '92%',
-        marginTop: 15,
-        borderRadius: 30
+        marginTop: 10,
+        borderRadius: 30,
+        marginBottom:20
+    },
+
+    // for each leader on leaderboard
+
+    ranking:{
+        padding:10,
+        color: '#06a2bc',
+        fontFamily: 'Avenir',
+        fontSize: 22,
+        fontWeight:'500'
+    },
+    leaderName:{
+        fontFamily: 'Avenir',
+        fontWeight: '500',
+        color: '#06a2bc',
+        fontSize: 18
+    },
+    location:{
+        marginTop: 3,
+        fontFamily: 'DidactGothic-Regular',
+        color: '#066a87'
     },
     weight:{
         marginLeft: '10%',
         fontWeight: '500',
         fontSize: 17,
-        color: '#a4d638'
+        color: '#a4d638',
+         fontFamily: 'Avenir',
     },
     leaderDetail: {
         flex: 1,
         flexDirection: 'row',
         alignItems: 'center',
         marginTop: 0,
-        padding: 10
+        padding: 10,
     },
+
+    
     leader: {
         flex: 1
     }
