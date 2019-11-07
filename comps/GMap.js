@@ -8,7 +8,7 @@ import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplet
 import Info from './DInfoMap';
 import AcceptedInfo from './DConfMap';
 import AppContent from './AppContent';
-import apiKey from '../apiKey';
+import apiKey from '../apiKey/apiKey';
 function GMap(){
 
   const [lat, setLat] = useState();

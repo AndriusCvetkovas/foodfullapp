@@ -15,7 +15,7 @@ import {
 import DonSignStyles from '../styles/DonSignStyles';
 import { Actions } from 'react-native-router-flux';
 import Geolocation from 'react-native-geolocation-service';
-import apiKey from '../apiKey';
+import apiKey from '../apiKey/apiKey';
 
 
 function AcceptingSignUp() {

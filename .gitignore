@@ -38,7 +38,7 @@ jspm_packages/
 package-lock/
 android/
 ios/
-apiKey
+apiKey/
 
 # TypeScript v1 declaration files
 typings/
