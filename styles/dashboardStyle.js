@@ -14,7 +14,6 @@ var DashStyle = StyleSheet.create({
         borderRadius: 20,
         backgroundColor: '#ffffff',
         width: '92%',
-        padding: 5,
         top: -20,
     },
     innerPendingBox: {

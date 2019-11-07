@@ -8,13 +8,14 @@ function Dashboard(){
         <View style = {DashStyle.main}>
             <View style = {DashStyle.pending}>
                 {/* title below */}
-                <Text
-                style= {{color: '#0ca3bc', fontSize: 20, flex: 0.2, margin: 10, padding: 10, fontWeight: '600'}}
-                >Upcoming Pick Ups</Text>
+                <TouchableOpacity style={{flex:1}}>
+                    <Text
+                    style= {{color: '#0ca3bc', fontSize: 20, flex: 0.2, margin: 10, padding: 10, fontWeight: '600'}}
+                    >Upcoming Pick Ups</Text>
+                    </TouchableOpacity>
                 {/* Pending box below */}
-
             </View>
-
+            
 
             {/* Make a Donation Button */}
             <View style={DashStyle.donateContainer}>
