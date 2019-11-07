@@ -34,15 +34,15 @@ var GMapStyle = StyleSheet.create({
         shadowOffset: { width: 2, height: 3 },
         shadowOpacity: 0.6,
         shadowRadius: 10,
-        top: '25%',
+        top: '10%',
         flexDirection:'column',
         alignItems: 'center',
         justifyContent: 'center',
         borderRadius: 30
     },
     donatorTitle: {
-        fontSize: 20,
-        paddingTop: 25,
+        fontSize: 25,
+        fontFamily: 'avenir',
         flex: 0,
         color: "#0ca3bc"
     },
