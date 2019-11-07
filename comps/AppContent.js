@@ -6,11 +6,11 @@
  * @flow
  */
 
-import React, {useState, useEffect} from 'react';
-import {View,Text,ScrollView, AsyncStorage} from 'react-native';
+import React, { useState, useEffect } from 'react';
+import { View, Text, ScrollView, AsyncStorage } from 'react-native';
 import MaterialTabs from 'react-native-material-tabs';
 import ContentStyle from '../styles/contentStyle';
-import {Router, Scene, Overlay, Stack, Lightbox} from 'react-native-router-flux';
+import { Router, Scene, Overlay, Stack, Lightbox } from 'react-native-router-flux';
 import GMap from './GMap';
 import Dashboard from './Dashboard';
 import Confirmation from './Confirmation';
@@ -29,7 +29,7 @@ import Profile from './Profile';
 import Leaderboard from './Leaderboard';
 import DonNotification from './DonNotification';
 function AppContent() {
-  
+
   return (
     /*
     <Router>
@@ -88,10 +88,10 @@ function AppContent() {
       </Scene>
     </Router>
     */
-    <View style = {{flex: 1}}>
-      <AcceptingSignUp/>
+    <View style={{ flex: 1 }}>
+      <DonatingSignUp />
     </View>
-      
+
   );
 }
 
