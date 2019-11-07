@@ -27,7 +27,7 @@ var DashStyle = StyleSheet.create({
     dateBubble: {
         width: 50,
         height: 50,
-        backgroundColor: '#a4d638',
+        backgroundColor: '#FAC947',
         borderRadius: 50,
         alignItems: 'center',
         justifyContent: 'center',
