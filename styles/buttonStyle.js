@@ -4,7 +4,7 @@ var buttonStyle = StyleSheet.create( {
         flex: 0.3,
         padding: 5,
         borderRadius: 20,
-        backgroundColor: '#a4d638',
+        backgroundColor: '#afd455',
         marginBottom: 20,
         marginTop: 20,
         width: '70%',
@@ -21,7 +21,7 @@ var buttonStyle = StyleSheet.create( {
         width: '70%',
         alignItems: 'center',
         justifyContent: 'center',
-        borderColor: '#066a87',
+        borderColor: '#0ca3bc',
         borderWidth: 0.5,
         marginBottom: 50
     }

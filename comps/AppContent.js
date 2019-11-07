@@ -16,7 +16,7 @@ import Dashboard from './Dashboard';
 import Confirmation from './Confirmation';
 import DashboardAccept from './DashboardAccept';
 import DonationPen from '../comps/DonationPen';
-import Accpending from './Accpending';
+import AccountCreate from './AccountCreate';
 import LoginPage from './LoginPage';
 import SignUp from './SignUp';
 import DonatingSignUp from './DonatingSignUp';
@@ -24,12 +24,17 @@ import AcceptingSignUp from './AcceptingSignUp';
 import Donate from './donate';
 import Info from './DInfoMap';
 import DonateContent from './donateContent';
-import Schedule from './Schedule';
-import Profile from './Profile';
-import Leaderboard from './Leaderboard';
-import DonNotification from './DonNotification';
-function AppContent() {
+import DonationPosted from './DonationPosted';
+import DConfMap from './DConfMap';
+import DInfoMap from './DInfoMap';
+import Pickup from './pickup';
+import PickedUpComfirm from './PickedUpComfirm';
+import NotifPickComfirm from './NotifPickComfirm';
+import AcceptDonationNF from './AcceptDonationNF';
+import MsgAcceptDonation from './MsgAcceptDonation';
+import MsgCancelDonation from './MsgCancelDonation';
 
+function AppContent() {
   return (
     /*
     <Router>
@@ -70,20 +75,20 @@ function AppContent() {
           title="Home"
         ></Scene>
         
-        <Overlay
-          key="map"
-          component={GMap}
-          title="Map"
-        ></Overlay>
-          <Scene
-            key="Info"
-            component={Info}
-            title="Information"
-          ></Scene>
-        <Scene key = "DConfirmation"
-        component={Confirmation}
-        title="Confirmation"
-        />
+    //     <Overlay
+    //       key="map"
+    //       component={GMap}
+    //       title="Map"
+    //     ></Overlay>
+    //       <Scene
+    //         key="Info"
+    //         component={Info}
+    //         title="Information"
+    //       ></Scene>
+    //     <Scene key = "DConfirmation"
+    //     component={Confirmation}
+    //     title="Confirmation"
+    //     />
         
       </Scene>
     </Router>

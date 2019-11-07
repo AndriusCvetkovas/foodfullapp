@@ -37,7 +37,10 @@ function DonateContent() {
         activeTextColor="#07a2bb"
         inactiveTextColor="#8d8d8d"
       /> 
+    
        {donation}
+
+     
     </View>
   );
 }

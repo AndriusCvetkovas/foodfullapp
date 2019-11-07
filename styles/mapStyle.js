@@ -26,7 +26,7 @@ var GMapStyle = StyleSheet.create({
     },
     infoBox: {
         position: 'absolute',
-        width: '70%',
+        width: '80%',
         height: '70%',
         backgroundColor: 'white',
         alignSelf: 'center',
@@ -44,7 +44,7 @@ var GMapStyle = StyleSheet.create({
         fontSize: 20,
         paddingTop: 25,
         flex: 0,
-        color: "#066a87"
+        color: "#0ca3bc"
     },
     imageBox:{
         flex: 1
@@ -65,13 +65,13 @@ var GMapStyle = StyleSheet.create({
     timeBox: {
         flex: 1,
         marginLeft: 20,
-        backgroundColor: '#aaaaaa'
+        // backgroundColor: '#f3f4f4'
     },
     noteBox: {
         flex: 1,
         width: '80%',
         margin: 20,
-        backgroundColor: '#aaaaaa'
+        // backgroundColor: '#aaaaaa'
     },
     
     checkmarkImage: {

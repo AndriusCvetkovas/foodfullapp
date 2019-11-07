@@ -3,7 +3,7 @@ import {View, Text, Image, TouchableHighlight} from 'react-native';
 import GMapStyle from '../styles/mapStyle';
 import buttonStyle from '../styles/buttonStyle';
 
-function AcceptedInfo(){
+function MsgAcceptDonation(){
     return(
         <View
         style = {GMapStyle.infoBox}
@@ -13,7 +13,7 @@ function AcceptedInfo(){
             style = {{marginTop: 50}}>
                 <Text
                 style = {GMapStyle.donatorTitle}
-                >Claimed</Text>
+                >Donation Accepting</Text>
             </View>
             {/*Image box below*/} 
             <View 
@@ -28,7 +28,7 @@ function AcceptedInfo(){
             <View
             style = {GMapStyle.messageBox}
             >
-                <Text>You have claimed this donation from Safeway Extra</Text>
+                <Text>You have Accepted this donation from Safeway Extra</Text>
                 <Text style = {{color: '#0ca3bc'}}></Text>
             </View>
             <View
@@ -53,7 +53,7 @@ function AcceptedInfo(){
             style = {buttonStyle.button}>
                 <Text
                 style = {{color: 'white'}}
-                >Claim another Donation</Text>
+                >View Donation</Text>
             </TouchableHighlight>
             <TouchableHighlight
             title="Accept"
@@ -65,4 +65,4 @@ function AcceptedInfo(){
         </View>
     );
 };
-export default AcceptedInfo;
+export default MsgAcceptDonation;
