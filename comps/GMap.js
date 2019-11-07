@@ -8,6 +8,7 @@ import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplet
 import Info from './DInfoMap';
 import AcceptedInfo from './DConfMap';
 import AppContent from './AppContent';
+import apiKey from '../apiKey';
 function GMap(){
 
   const [lat, setLat] = useState();
@@ -67,14 +68,13 @@ function GMap(){
               setLat(details.geometry.location.lat);
               setLong(details.geometry.location.lng);
               setName(data.description);
-              setImage(details.photos[3].photo_reference);
             }}
 
             getDefaultValue={() => ''}
 
             query={{
               // available options: https://developers.google.com/places/web-service/autocomplete
-              key: 'AIzaSyCCD_OOE3Yj3h-fSov9ed1IhFByZPNALEs',
+              key: apiKey,
               language: 'en', // language of the results
               types: 'establishment' // default: 'geocode'
             }}
