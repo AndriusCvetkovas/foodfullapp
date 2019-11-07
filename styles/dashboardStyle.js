@@ -105,7 +105,8 @@ var DashStyle = StyleSheet.create({
         fontFamily: 'Avenir',
         fontWeight: '500',
         color: '#06a2bc',
-        fontSize: 18
+        fontSize: 18,
+        flex: 1
     },
     location:{
         marginTop: 3,
@@ -113,11 +114,13 @@ var DashStyle = StyleSheet.create({
         color: '#066a87'
     },
     weight:{
-        marginLeft: '10%',
         fontWeight: '500',
         fontSize: 17,
         color: '#a4d638',
-         fontFamily: 'Avenir',
+        fontFamily: 'Avenir',
+        flex: 0.5,
+        textAlign: 'right',
+        marginRight: 10
     },
     leaderDetail: {
         flex: 1,
