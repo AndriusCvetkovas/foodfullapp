@@ -9,7 +9,7 @@ var ProfileStyle = StyleSheet.create({
     },
     imageViewStyle:{
         flex: 0.5,
-        elevation: 6,
+        zIndex: 6,
         alignItems: 'center',
         justifyContent: 'center',
         top: 50,
@@ -24,7 +24,7 @@ var ProfileStyle = StyleSheet.create({
         backgroundColor: 'transparent',
     },
     infoStyle: {
-        flex: 1,
+        flex: 1.2,
         width: '90%',
         borderRadius: 30,
         backgroundColor: 'white',
@@ -68,7 +68,7 @@ var ProfileStyle = StyleSheet.create({
         padding: 20
     },
     buttonView: {
-        flex:0.3,
+        flex:0.5,
         width: '100%',
         alignItems: 'center',
         justifyContent: 'center',

@@ -20,23 +20,31 @@ const styles = StyleSheet.create({
     fontSize: 25,
     fontWeight: '500',
     textAlign: 'center',
-    color: '#06a2bc'
+    color: '#06a2bc',
+    fontFamily:'Avenir',
+    fontWeight: '800'
   },
 
   subheader:{
     fontSize: 20,
     textAlign: 'center',
-    fontWeight: '200',
-    color: '#06a2bc'
+    fontWeight: '300',
+    color: '#06a2bc',
+    fontFamily:'Avenir',
   },
 
+  //  FORM
+
+  form:{
+    marginTop:20,
+  },
     inputContainer: {
         borderBottomColor: '#F5FCFF',
         backgroundColor: '#F0F0F0',
         borderRadius:30,
         borderBottomWidth: 1,
-        width:280,
-        height:45,
+        width:'70%',
+        height:40,
         marginBottom:15,
         flexDirection: 'row',
         alignItems:'center',
@@ -46,32 +54,44 @@ const styles = StyleSheet.create({
         marginLeft:16,
         flex:1,
     },
-    inputIcon:{
-      width:30,
-      height:30,
-      marginLeft:15,
-      justifyContent: 'center'
-    },
     buttonContainer: {
-      height:45,
+      height:40,
       flexDirection: 'row',
       justifyContent: 'center',
       alignItems: 'center',
+      marginTop:20,
       marginBottom:20,
       width:250,
-      borderRadius:30
+      borderRadius:30,
     },
     signinButton: {
-      backgroundColor: "#0ca3bc",
+      backgroundColor: '#0ca3bc',
       height: 50,
     },
     signInText: {
       color: 'white',
-      fontSize: 20
+      fontSize: 20,
+     
     },
+    // FOOTER
     signUpFooter: {
       flex:1,
+      flexDirection:'row'
+    },
+    signUpText:{
+      fontSize:15,
+      fontFamily:'Avenir',
+      fontWeight:'500',
+      marginRight:5
+    },
+    //This is the "Sign Up" text
+    link: {
+    color:'#0ca3bc',
+    fontSize:15,
+    fontFamily:'Avenir',
+    fontWeight:'500'
     }
+
   });
 
   export default styles;

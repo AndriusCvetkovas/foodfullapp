@@ -10,59 +10,67 @@ import {
 
 } from 'react-native';
 import {Actions} from 'react-native-router-flux';
-import styles from '../styles/LoginStyles';
+import Loginstyles from '../styles/LoginStyles';
 
 
 
 function LoginPage(){
   return (
  
+<View style={Loginstyles.container}>
 
-<View style={styles.container}>
-
+      {/* LOGO / ANIMATION */}
         <View>
             <Image
-            style={styles.LogoImg}
+            style={Loginstyles.LogoImg}
             source={require('../assets/img/logo_animation.png')}
             />
         </View>
 
-
+      {/* HEADER AND SUBHEADER */}
         <View>
-          <Text style={styles.header}>
+          <Text style={Loginstyles.header}>
           Foodfull
           </Text>
-          <Text style={styles.subheader}>
+          <Text style={Loginstyles.subheader}>
           Giving food a Second Life
           </Text>
         </View>
        
 
-       
-        <View style={styles.inputContainer}>
-        <Image style={styles.inputIcon} source={{uri: 'https://cdn2.iconfinder.com/data/icons/basic-thin-line-color/21/20-512.png'}}/>
-          <TextInput style={styles.inputs}
+       {/* FORM */}
+
+       <View style={Loginstyles.form}>
+        <View style={Loginstyles.inputContainer}>
+        <Image style={{width:20, height:15, marginLeft:15,}}
+          source={require('../assets/icon/email.png')}/>
+          <TextInput style={Loginstyles.inputs}
               placeholder="Email"
               keyboardType="email-address"
               />
         </View>
 
-        
-        <View style={styles.inputContainer}>
-          <Image style={styles.inputIcon} source={{uri: 'https://png.icons8.com/key-2/ultraviolet/50/3498db'}}/>
-          <TextInput style={styles.inputs}
+        <View style={Loginstyles.inputContainer}>
+          <Image style={{width:18, height:25, marginLeft:15,}}
+          source={require('../assets/icon/password.png')}/>
+          <TextInput style={Loginstyles.inputs}
               placeholder="Password"
               />
         </View>
 
+        </View>
+
         
 
-        <TouchableHighlight style={[styles.buttonContainer, styles.signupButton]} onPress={() => Actions.dashboard()}>
-          <Text style={styles.signUpText}>Next</Text>
+        <TouchableHighlight style={[Loginstyles.buttonContainer, Loginstyles.signinButton]} onPress={() => Actions.dashboard()}>
+          <Text style={Loginstyles.signInText}>Sign In</Text>
         </TouchableHighlight>
 
-        <View style={styles.signUpFooter}>
-          <Text onPress={()=> Actions.signup()}>Don't have account? Sign Up</Text>
+        <View style={Loginstyles.signUpFooter}>
+          <Text style={Loginstyles.signUpText}>Don't have account?</Text>
+          <Text 
+          style={Loginstyles.link}
+          onPress={()=> Actions.signup()}> Sign Up</Text>
 
         </View>
 
