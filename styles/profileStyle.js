@@ -7,12 +7,20 @@ var ProfileStyle = StyleSheet.create({
         justifyContent: 'center',
         backgroundColor: 'white'
     },
+    background:{
+        position:"absolute",
+        backgroundColor: '#06a2bc',
+        top:0,
+        width: '100%',
+        height:'70%',
+        top:-130
+    },
     imageViewStyle:{
         flex: 0.5,
-        elevation: 6,
+        zIndex: 6,
         alignItems: 'center',
         justifyContent: 'center',
-        top: 50,
+        top: 30,
         backgroundColor: 'transparent'
     },
     imageStyle: {
@@ -24,7 +32,8 @@ var ProfileStyle = StyleSheet.create({
         backgroundColor: 'transparent',
     },
     infoStyle: {
-        flex: 1,
+        flex: 2,
+        top:-15,
         width: '90%',
         borderRadius: 30,
         backgroundColor: 'white',
@@ -37,14 +46,17 @@ var ProfileStyle = StyleSheet.create({
         elevation: 5
     },
     titleStyle: {
+        flex: 0.5,
         fontSize: 20,
         color: '#06a2bc',
-        fontWeight: '600',
-        paddingTop: 50,
-        paddingBottom: 10
+        fontWeight: '500',
+        paddingTop: 80,
+        paddingBottom: 10,
+        fontFamily: 'avenir'
+
     },
     statBox: {
-        flex: 2,
+        flex: 1,
         flexDirection: 'row'
     },
     innerStatBox1: {
@@ -57,7 +69,7 @@ var ProfileStyle = StyleSheet.create({
         flex: 1
     },
     infoInnerBox: {
-        flex: 5,
+        flex: 1.8,
         alignItems: 'flex-start',
         left: -50,
         padding: 20,
@@ -65,16 +77,17 @@ var ProfileStyle = StyleSheet.create({
     },
     addressBox:{
         flex: 1,
-        padding: 20
+        padding: 10
     },
     buttonView: {
-        flex:0.3,
+        flex:0.7,
         width: '100%',
         alignItems: 'center',
         justifyContent: 'center',
-        shadowColor: '#aaaaaa'
+        shadowColor: '#aaaaaa',
     },
     buttonStyle: {
+        top: -20,
         flexDirection: 'row',
         width: '90%',
         height: 50,
@@ -84,9 +97,21 @@ var ProfileStyle = StyleSheet.create({
         borderRadius: 15,
         borderWidth: 0.2,
         shadowColor: '#aaaaaa',
-        shadowOpacity: 1,
-        shadowRadius: 1,
-        elevation: 5
+        shadowOpacity: 0.6,
+        shadowRadius: 10,
+        elevation: 2,
+        shadowOffset: { width: 2, height: 2 },
+    },
+    signOutBut: {
+        bottom: 30,
+        height: 50,
+        borderColor: '#0CA3BC',
+        borderRadius: 30,
+        borderWidth: 1.5, 
+        width: 200,
+        alignItems: 'center',
+        justifyContent: 'center'
     }
+   
 });
 export default ProfileStyle;

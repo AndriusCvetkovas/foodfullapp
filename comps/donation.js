@@ -12,9 +12,9 @@ import donationStyle from '../styles/donationStyle';
 //import axios from 'axios';
 
 export default class Donations extends React.Component {
-    state = {
-      posts: []
-    }
+    // state = {
+    //   posts: []
+    // }
   
     /*componentDidMount() {
       axios.get(`http://localhost:3000`)
@@ -28,22 +28,20 @@ export default class Donations extends React.Component {
       
       return (
             <ScrollView>
-                <View>
-                    {
-                        this.state.posts.map(post => 
+           
                             <View style = {donationStyle.CardDisplay}>
                                 <View style = {donationStyle.Images}>
                                     <Image
                                     style={donationStyle.ImageSize}
-                                    
+                                    source={require('../assets/img/logo.png')}
                                     />
                                 </View>
                                 <View style={donationStyle.TextDisplay}>
                                     <View>
-                                        <Text style={donationStyle.Organization}> {post.organization}</Text>
+                                        <Text style={donationStyle.Organization}> Safeway</Text>
                                     </View>
                                     <View>
-                                        <Text style={donationStyle.address}> {post.organizationAdress}</Text>
+                                        <Text style={donationStyle.address}> 4475 Parker Street</Text>
                                     </View>
                                     
                                 </View>
@@ -58,9 +56,130 @@ export default class Donations extends React.Component {
                                         </View>
                                     </View>
                             </View>
-                        )
-                    }
-                </View>
+
+
+
+                            <View style = {donationStyle.CardDisplay}>
+                                <View style = {donationStyle.Images}>
+                                    <Image
+                                    style={donationStyle.ImageSize}
+                                    source={require('../assets/img/logo.png')}
+                                    />
+                                </View>
+                                <View style={donationStyle.TextDisplay}>
+                                    <View>
+                                        <Text style={donationStyle.Organization}> Safeway</Text>
+                                    </View>
+                                    <View>
+                                        <Text style={donationStyle.address}> 4475 Parker Street</Text>
+                                    </View>
+                                    
+                                </View>
+                                <View style={donationStyle.TextDisplay}>
+                                        <View style={donationStyle.option}>
+                                            <TouchableOpacity
+                                                style={donationStyle.BtnStyleBlueView}
+                                                underlayColor='#000'
+                                                color='000'>
+                                                <Text style={donationStyle.btnText}>View</Text>
+                                            </TouchableOpacity>
+                                        </View>
+                                    </View>
+                            </View>
+
+
+
+
+                            <View style = {donationStyle.CardDisplay}>
+                                <View style = {donationStyle.Images}>
+                                    <Image
+                                    style={donationStyle.ImageSize}
+                                    source={require('../assets/img/logo.png')}
+                                    />
+                                </View>
+                                <View style={donationStyle.TextDisplay}>
+                                    <View>
+                                        <Text style={donationStyle.Organization}> Safeway</Text>
+                                    </View>
+                                    <View>
+                                        <Text style={donationStyle.address}> 4475 Parker Street</Text>
+                                    </View>
+                                    
+                                </View>
+                                <View style={donationStyle.TextDisplay}>
+                                        <View style={donationStyle.option}>
+                                            <TouchableOpacity
+                                                style={donationStyle.BtnStyleBlueView}
+                                                underlayColor='#000'
+                                                color='000'>
+                                                <Text style={donationStyle.btnText}>View</Text>
+                                            </TouchableOpacity>
+                                        </View>
+                                    </View>
+                            </View>
+
+
+
+
+
+                            <View style = {donationStyle.CardDisplay}>
+                                <View style = {donationStyle.Images}>
+                                    <Image
+                                    style={donationStyle.ImageSize}
+                                    source={require('../assets/img/logo.png')}
+                                    />
+                                </View>
+                                <View style={donationStyle.TextDisplay}>
+                                    <View>
+                                        <Text style={donationStyle.Organization}> Safeway</Text>
+                                    </View>
+                                    <View>
+                                        <Text style={donationStyle.address}> 4475 Parker Street</Text>
+                                    </View>
+                                    
+                                </View>
+                                <View style={donationStyle.TextDisplay}>
+                                        <View style={donationStyle.option}>
+                                            <TouchableOpacity
+                                                style={donationStyle.BtnStyleBlueView}
+                                                underlayColor='#000'
+                                                color='000'>
+                                                <Text style={donationStyle.btnText}>View</Text>
+                                            </TouchableOpacity>
+                                        </View>
+                                    </View>
+                            </View>
+
+
+
+                            <View style = {donationStyle.CardDisplay}>
+                                <View style = {donationStyle.Images}>
+                                    <Image
+                                    style={donationStyle.ImageSize}
+                                    source={require('../assets/img/logo.png')}
+                                    />
+                                </View>
+                                <View style={donationStyle.TextDisplay}>
+                                    <View>
+                                        <Text style={donationStyle.Organization}> Safeway</Text>
+                                    </View>
+                                    <View>
+                                        <Text style={donationStyle.address}> 4475 Parker Street</Text>
+                                    </View>
+                                    
+                                </View>
+                                <View style={donationStyle.TextDisplay}>
+                                        <View style={donationStyle.option}>
+                                            <TouchableOpacity
+                                                style={donationStyle.BtnStyleBlueView}
+                                                underlayColor='#000'
+                                                color='000'>
+                                                <Text style={donationStyle.btnText}>View</Text>
+                                            </TouchableOpacity>
+                                        </View>
+                                    </View>
+                            </View>
+                        
             </ScrollView>      
           );
     }

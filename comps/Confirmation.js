@@ -46,7 +46,7 @@ function Confirmation(){
             style = {buttonStyle.button}>
                 <Text
                 style = {{color: 'white', fontSize: 16, fontWeight: '500'}}
-                >Claim another Donation</Text>
+                >Confirm Donation</Text>
             </TouchableOpacity>
             </View>
         </View>

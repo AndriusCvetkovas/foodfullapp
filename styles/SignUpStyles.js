@@ -14,6 +14,7 @@ var SignUpStyles = StyleSheet.create({
     headerContainer:{ 
         flex:0.3,
         width: '98%',
+        top:-40
     },
     header: {
         fontSize: 23,
@@ -28,7 +29,8 @@ var SignUpStyles = StyleSheet.create({
         fontWeight: "400",
         color: "#06a2bc",
         marginBottom: 5,
-        textAlign:'center', 
+        textAlign:'center',
+        fontFamily: 'DidactGothic-Regular' 
     },
  
     // DONATING AND ACCEPTING OPTIONS
@@ -43,22 +45,19 @@ var SignUpStyles = StyleSheet.create({
         flex: 1,
         width:360,
         borderRadius: 20,
-        shadowColor: '#9B9EA3',
         shadowOffset: { width: 2, height: 7 },
-        shadowOpacity: 0.25,
         shadowRadius: 10,
         alignItems: 'center',
         justifyContent: 'center',
         padding:15,
         marginBottom: 40,
+        
     },
     option2: {
         flex: 1,
         width:360,
         borderRadius: 30,
-        shadowColor: '#9B9EA3',
         shadowOffset: { width: 2, height: 7 },
-        shadowOpacity: 0.25,
         shadowRadius: 10,
         alignItems: 'center',
         justifyContent: 'center',

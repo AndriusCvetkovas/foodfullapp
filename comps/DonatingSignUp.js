@@ -10,7 +10,6 @@ import {
   FormLabel,
   Alert
 
-
 } from 'react-native';
 import DonSignStyles from '../styles/DonSignStyles';
 import {Actions} from 'react-native-router-flux';
@@ -156,6 +155,8 @@ const getPos = async (lat, long) => {
               secureTextEntry={true}
                 />
           </View>
+
+          
 
           
       {/* NEXT BUTTON */}

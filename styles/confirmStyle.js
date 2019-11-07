@@ -60,12 +60,48 @@ var ConfirmStyle = StyleSheet.create({
         fontWeight: "600",
         width: '90%'
     },
+    Images:{
+        // flex:1,
+        margin: 6,
+        justifyContent:'center',
+        alignItems: 'center',
+        alignContent: 'center',
+        backgroundColor:'#f8c745',
+        width: 75,
+        height: 75,
+        borderRadius: 100,
+        transform:[
+            {scaleX: 0.80},
+            {scaleY: 0.85}
+          ]
+
+    },
+    Organization:{
+        fontSize:18,
+        color:'#07a2bb',
+    },
+
+    address:{
+        fontSize:14,
+        color:'#3b7687',
+    },
+    time:{
+        fontSize:14,
+        color:'#6492a0',
+    },
+
+    Date:{
+       fontSize:30,
+       color:'white',
+       fontWeight:'bold'
+
+    },
     description:{
         flex: 0.7,
         width: '90%',
         color: "#e4e3e3",
         marginBottom: 20
-    }
+    },
 
 })
 export default ConfirmStyle;
