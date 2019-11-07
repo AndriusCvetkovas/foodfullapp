@@ -33,12 +33,14 @@ import NotifPickComfirm from './NotifPickComfirm';
 import AcceptDonationNF from './AcceptDonationNF';
 import MsgAcceptDonation from './MsgAcceptDonation';
 import MsgCancelDonation from './MsgCancelDonation';
+import LeaderBoard from './Leaderboard';
+import Profile from './Profile';
 
 function AppContent() {
   return (
 
     <View style = {{flex: 1}}>
-    <GMap/>
+    <DConfMap/>
   </View>
 
     /*
