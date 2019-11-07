@@ -39,7 +39,7 @@ var GMapStyle = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         borderRadius: 30,
-        padding: 20,
+        padding: 10,
     },
     donatorTitle: {
         fontSize: 25,
