@@ -158,6 +158,8 @@ const getPos = async (lat, long) => {
           </View>
 
           
+
+          
       {/* NEXT BUTTON */}
           <TouchableHighlight style={[DonSignStyles.buttonContainer, DonSignStyles.signupButton]} onPress={buttonClickListener}>
             <Text style={DonSignStyles.signUpText}>Next</Text>

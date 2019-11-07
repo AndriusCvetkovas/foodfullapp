@@ -59,7 +59,7 @@ function GMap() {
             <Image source={{uri:`https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=${img}&key=${apiKey}`}}
             style = {{width: 300, height: 50}}>
             </Image>
-            <Text style = {{fontSize: 20, paddingTop: 10, paddingBottom: 10}}>{name}</Text>
+            <Text style = {{fontSize: 20, padding: 20}}>{name}</Text>
             <Text>{address}</Text>
             <TouchableOpacity style={GMapStyle.infoInnerButton}>
               <Text style={{ color: '#06a2bc' }} 
@@ -172,7 +172,7 @@ function GMap() {
           </View>
           <Text style={GMapStyle.infoInnerDistance}>4.6 km</Text>
           <TouchableOpacity style={GMapStyle.infoInnerButton}>
-            <Text style={{ color: '#06a2bc' }}>View</Text>
+            <Text style={{ color: 'white' }}>View</Text>
           </TouchableOpacity>
         </View>
 

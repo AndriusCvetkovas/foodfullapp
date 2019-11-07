@@ -9,6 +9,14 @@ var LeaderboardStyles = StyleSheet.create({
         backgroundColor: 'white',
         
     },
+    background:{
+        position:"absolute",
+        backgroundColor: '#06a2bc',
+        top:0,
+        width: '100%',
+        height:'50%',
+        top:-20
+    },
     yourBox: {
         flex: 0.3,
         flexDirection: 'row',

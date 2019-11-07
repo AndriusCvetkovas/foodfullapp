@@ -6,6 +6,12 @@ function Leaderboard(){
         //Main View
         <View style={LeaderboardStyles.mainView}>
             {/*Your rank below*/}
+
+            <View style={LeaderboardStyles.background}>
+
+            </View>
+
+
             <View style ={LeaderboardStyles.yourBox}>
                 {/*Image box below*/}
                 <View style = {LeaderboardStyles.imageBox}>

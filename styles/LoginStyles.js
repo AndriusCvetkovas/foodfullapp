@@ -15,7 +15,6 @@ const styles = StyleSheet.create({
       marginTop:70,
       marginBottom: 12
   },
-  
   header:{
     fontSize: 25,
     fontWeight: '500',
@@ -30,13 +29,13 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     fontWeight: '300',
     color: '#06a2bc',
-    fontFamily:'Avenir',
+    fontFamily:'DidactGothic-Regular',
   },
 
   //  FORM
 
   form:{
-    marginTop:20,
+    marginTop:25,
   },
     inputContainer: {
         borderBottomColor: '#F5FCFF',
@@ -55,7 +54,7 @@ const styles = StyleSheet.create({
         flex:1,
     },
     buttonContainer: {
-      height:40,
+      height:50,
       flexDirection: 'row',
       justifyContent: 'center',
       alignItems: 'center',
@@ -71,23 +70,26 @@ const styles = StyleSheet.create({
     signInText: {
       color: 'white',
       fontSize: 20,
+      fontFamily: 'Avenir',
+      fontWeight: '500'
      
     },
     // FOOTER
     signUpFooter: {
       flex:1,
-      flexDirection:'row'
+      flexDirection:'row',
+      marginTop:20
     },
     signUpText:{
-      fontSize:15,
+      fontSize:18,
       fontFamily:'Avenir',
-      fontWeight:'500',
+      fontWeight:'300',
       marginRight:5
     },
     //This is the "Sign Up" text
     link: {
     color:'#0ca3bc',
-    fontSize:15,
+    fontSize:18,
     fontFamily:'Avenir',
     fontWeight:'500'
     }

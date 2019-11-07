@@ -1,7 +1,7 @@
 import React from 'react';
 import {View, Text, Image, ScrollView} from 'react-native';
 import DashStyle from '../styles/dashboardAcceptStyle';
-
+ 
 function DashboardAccept(){
     return(
         <View style = {DashStyle.main}>
@@ -60,6 +60,14 @@ function DashboardAccept(){
                         </View>
                     </View>
             </View>
+
+
+
+            <View style={{flex:0.25}}>
+                <Text>Find Donations</Text>
+            </View>
+
+
             <View style = {DashStyle.pending}>
                 {/* title below */}
                 <Text

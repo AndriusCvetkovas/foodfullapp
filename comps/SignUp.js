@@ -18,26 +18,46 @@ function SignUp(){
         setOptionColor1(false)
     }
 
-    var BGColor1 = 'lightgrey'
+    var BGColor1 = '#F4F5F7'
     var HeaderColor1 = "#606060"
     var TextColor1 = "#606060"
     var imageUrl1 = require('../assets/icon/donating.png')
+    var ShadowColor1 = "#9B9EA3"
+    var ShadowOpacity1 = 0
+
+    //Next Button
+    var ButtonColor = "#EDEDEF"
+    var ButtonBorder = "#EDEDEF"
+    var ButtonText = "#606060"
+
 
     if (optionColor1 === true) {
         BGColor1 = '#ffffff'
         HeaderColor1 = "#0ca3bc"
         TextColor1 = "#49b204"
+        ShadowColor1 = "#0ca3bc"
+        ShadowOpacity1 = 0.25
+        ButtonColor = "#0ca3bc"
+        ButtonBorder = "#0ca3bc"
+        ButtonText = "#ffffff"
         imageUrl1 = require('../assets/icon/donating_active.png');
     }
-    var BGColor2 = 'lightgrey'
+    var BGColor2 = '#F4F5F7'
     var HeaderColor2 = "#606060"
     var TextColor2 = "#606060"
     var imageUrl2 = require('../assets/icon/accepting.png')
+    var ShadowColor2 = "#9B9EA3"
+    var ShadowOpacity2 = 0
 
     if (optionColor2 === true) {
         BGColor2 = '#ffffff'
         HeaderColor2 = "#0ca3bc"
         TextColor2 = "#49b204"
+        ShadowColor2 = "#0ca3bc"
+        ShadowOpacity2 = 0.25
+        ButtonColor = "#34a3bd"
+        ButtonBorder = "#0ca3bc"
+        ButtonText = "#ffffff"
         imageUrl2 = require('../assets/icon/accepting_active.png');
     }
 
@@ -55,7 +75,7 @@ function SignUp(){
                  {/* DONATING FOOD BOX */}
                 <TouchableOpacity 
                 onPress = {()=> ChangeColor1()}
-                style ={[SignUpStyles.option1, {backgroundColor:BGColor1}]}>
+                style ={[SignUpStyles.option1, {backgroundColor:BGColor1, shadowColor:ShadowColor1, shadowOpacity:ShadowOpacity1}]}>
                     <Text style = {{color: HeaderColor1, fontSize: 20, marginLeft:45, fontWeight: '600'}}>Donating Food</Text>
                   
                     <View style = {SignUpStyles.optioninfo}>
@@ -82,7 +102,7 @@ function SignUp(){
 
                 <TouchableOpacity 
                 onPress = {()=> ChangeColor2()}
-                style ={[SignUpStyles.option2, {backgroundColor:BGColor2}]}>
+                style ={[SignUpStyles.option2, {backgroundColor:BGColor2, shadowColor:ShadowColor2, shadowOpacity:ShadowOpacity2}]}>
                     <Text style = {{color: HeaderColor2, fontSize: 20,marginLeft:57,  fontWeight: '600'}}>Accepting Food</Text>
                   
                     <View style = {SignUpStyles.optioninfo}>
@@ -106,11 +126,10 @@ function SignUp(){
 
          {/* NEXT BUTTON*/}
         <View style = {SignUpStyles.buttonContainer}>
-        <TouchableHighlight style={SignUpStyles.button} onPress={() => Actions.donationsign()}>
-          <Text style={SignUpStyles.buttonText}>Next</Text>
+        <TouchableHighlight style={[SignUpStyles.button, {borderColor:ButtonBorder, backgroundColor:ButtonColor}]} onPress={() => Actions.donationsign()}>
+          <Text style={[SignUpStyles.buttonText, {color:ButtonText}]}>Next</Text>
         </TouchableHighlight>
 
-        
         </View>
                  
         </View>

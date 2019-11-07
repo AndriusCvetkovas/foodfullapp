@@ -36,6 +36,11 @@ import MsgCancelDonation from './MsgCancelDonation';
 
 function AppContent() {
   return (
+
+    <View style = {{flex: 1}}>
+    <GMap/>
+  </View>
+
     /*
     <Router>
       <Scene key='root'>
@@ -93,10 +98,7 @@ function AppContent() {
       </Scene>
     </Router>
     */
-    <View style={{ flex: 1 }}>
-      <GMap />
-    </View>
-
+      
   );
 }
 

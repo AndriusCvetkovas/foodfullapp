@@ -7,12 +7,20 @@ var ProfileStyle = StyleSheet.create({
         justifyContent: 'center',
         backgroundColor: 'white'
     },
+    background:{
+        position:"absolute",
+        backgroundColor: '#06a2bc',
+        top:0,
+        width: '100%',
+        height:'60%',
+        top:-130
+    },
     imageViewStyle:{
         flex: 0.5,
         zIndex: 6,
         alignItems: 'center',
         justifyContent: 'center',
-        top: 50,
+        top: 30,
         backgroundColor: 'transparent'
     },
     imageStyle: {
@@ -25,6 +33,7 @@ var ProfileStyle = StyleSheet.create({
     },
     infoStyle: {
         flex: 1.2,
+        top:-15,
         width: '90%',
         borderRadius: 30,
         backgroundColor: 'white',
@@ -41,7 +50,7 @@ var ProfileStyle = StyleSheet.create({
         color: '#06a2bc',
         fontWeight: '600',
         paddingTop: 50,
-        paddingBottom: 10
+        paddingBottom: 10,
     },
     statBox: {
         flex: 2,
@@ -72,7 +81,7 @@ var ProfileStyle = StyleSheet.create({
         width: '100%',
         alignItems: 'center',
         justifyContent: 'center',
-        shadowColor: '#aaaaaa'
+        shadowColor: '#aaaaaa',
     },
     buttonStyle: {
         flexDirection: 'row',
@@ -84,9 +93,11 @@ var ProfileStyle = StyleSheet.create({
         borderRadius: 15,
         borderWidth: 0.2,
         shadowColor: '#aaaaaa',
-        shadowOpacity: 1,
+        shadowOpacity: 0.25,
         shadowRadius: 1,
-        elevation: 5
-    }
+        elevation: 5,
+        shadowOffset: { width: 2, height: 5 },
+    },
+   
 });
 export default ProfileStyle;
