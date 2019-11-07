@@ -89,7 +89,7 @@ function AppContent() {
     </Router>
     */
     <View style={{ flex: 1 }}>
-      <DonatingSignUp />
+      <GMap />
     </View>
 
   );
