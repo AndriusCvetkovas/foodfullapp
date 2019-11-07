@@ -38,7 +38,8 @@ var GMapStyle = StyleSheet.create({
         flexDirection:'column',
         alignItems: 'center',
         justifyContent: 'center',
-        borderRadius: 30
+        borderRadius: 30,
+        padding: 20,
     },
     donatorTitle: {
         fontSize: 25,
@@ -50,8 +51,8 @@ var GMapStyle = StyleSheet.create({
         flex: 1
     },
     donationImage:{
-        width: 100,
-        height: 100,
+        width: 75,
+        height: 75,
         backgroundColor: '#aaaaaa',
         margin: 20
     },
@@ -65,6 +66,7 @@ var GMapStyle = StyleSheet.create({
     timeBox: {
         flex: 1,
         marginLeft: 20,
+ 
         // backgroundColor: '#f3f4f4'
     },
     noteBox: {

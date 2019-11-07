@@ -36,12 +36,12 @@ function Info(){
             <View
             style = {GMapStyle.dateBox}
             >
-                <Text style = {{flex: 1, color: '#0ca3bc',fontSize:16, fontWeight:'600'}}>Date:</Text>
-                <Text style = {{flex: 1}}>69 January 6969</Text>
+                <Text style = {{flex: 1, color: '#0ca3bc',fontSize:18, fontFamily: 'avenir'}}>Date:</Text>
+                <Text style = {{flex: 1.1, fontFamily: 'DidactGothic-regular', fontSize: 15}}>69 January 6969</Text>
             </View>
             {/*Time box below*/} 
-            <View style = {{flexDirection: 'row', width: "80%"}}>
-                <Text style = {{color: '#0ca3bc',fontSize:16, fontWeight:'600'}}>Pick your time:</Text>
+            <View style = {{flexDirection: 'row', width: "80%", alignItems: 'center', justifyContent:'center'}}>
+                <Text style = {{color: '#0ca3bc',fontSize:18, fontFamily: 'avenir'}}>Pick your time:</Text>
                 <View
                 style = {GMapStyle.timeBox}
                 >
@@ -81,10 +81,10 @@ function Info(){
             <View
             style = {GMapStyle.noteBox}
             >
-              <Text style = {{color: '#0ca3bc', paddingBottom:5, fontSize:16, fontWeight:'600'}}>Descriptions:</Text>
+              <Text style = {{color: '#0ca3bc', paddingBottom:5, fontSize:18, fontFamily: 'avenir'}}>Descriptions:</Text>
                
                 <Text
-                style = {{padding: 10}}
+                style = {{paddingTop: 10, fontFamily: 'DidactGothic-regular', fontSize: 15}}
                 >Soup cans, chicken noodles, and mushroom. Produce: apple, bananas Bakery: buns and loaves of bread</Text>
             </View>
             {/*Button below*/}
@@ -93,7 +93,7 @@ function Info(){
             title="Accept"
             style = {buttonStyle.button}>
                 <Text
-                style = {{color: 'white'}}
+                style = {{color: 'white', fontFamily: 'avenir', fontSize: 16, fontWeight: '500'}}
                 >Claim Donation</Text>
             </TouchableHighlight>
         </View>
