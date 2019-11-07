@@ -10,7 +10,6 @@ function Profile(){
         >
 
             <View style={ProfileStyle.background}>
-
             </View>
 
 
@@ -34,6 +33,7 @@ function Profile(){
                     source={require('../assets/icon/edit.png')}
                     ></Image>
                 </TouchableOpacity>
+
                 {/* Store name/title below */}
                 <Text
                 style={ProfileStyle.titleStyle}
@@ -47,10 +47,10 @@ function Profile(){
                     >
                         <Image 
                         source={require('../assets/icon/weight.png')}
-                        style={{width: 20, height: 50, padding: 20, flex: 0.2}}
+                        style={{width: 50, height: 45, padding: 20}}
                         />
                         <View style = {ProfileStyle.innerTextBox}>
-                            <Text style={{fontSize: 16, textAlign: 'center'}}>1100 kg</Text>
+                            <Text style={{fontSize: 16, textAlign: 'center', fontFamily:'Avenir', fontWeight:'800', color:'#A4D638'}}>1100 kg</Text>
                             <Text style={{textAlign: 'center'}}>of Food</Text>
                         </View>
                     </View>
@@ -58,10 +58,10 @@ function Profile(){
                     <View style={ProfileStyle.innerStatBox1}>
                     <Image 
                         source={require('../assets/icon/donating_active.png')}
-                        style={{width: 20, height: 50, padding: 20, flex: 0.2}}
+                        style={{width: 50, height: 45, padding: 20}}
                         />
                         <View style = {ProfileStyle.innerTextBox}>
-                            <Text style={{fontSize: 16, textAlign: 'center'}}>40</Text>
+                            <Text style={{fontSize: 16, textAlign: 'center', fontFamily:'Avenir', fontWeight:'800', color:'#F5982F'}}>40</Text>
                             <Text style={{textAlign: 'center'}}>Donations</Text>
                         </View>
                     </View>   

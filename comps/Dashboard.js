@@ -18,6 +18,7 @@ function Dashboard(){
 
             {/* Make a Donation Button */}
             <View style={DashStyle.donateContainer}>
+                <TouchableOpacity style={{justifyContent:'center'}}>
                 <Text style={DashStyle.donateText}>Make a Donation</Text>
                 {/* arrow */}
                 <Image
@@ -28,6 +29,7 @@ function Dashboard(){
                     style = {{width: '100%', height:'100%', borderRadius: 30}}
                     source={require('../assets/img/makedonation.png')}
                 />
+                </TouchableOpacity>
             </View>
             {/*//// End of Donation Button ////// */}
 

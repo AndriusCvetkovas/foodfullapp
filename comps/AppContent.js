@@ -31,6 +31,11 @@ import DonNotification from './DonNotification';
 function AppContent() {
   
   return (
+
+    <View style = {{flex: 1}}>
+    <Dashboard/>
+  </View>
+
     /*
     <Router>
       <Scene key='root'>
@@ -88,12 +93,9 @@ function AppContent() {
       </Scene>
     </Router>
     */
-    <View style = {{flex: 1}}>
-      <Leaderboard/>
-    </View>
       
   );
 }
 
 
-export default Dashboard;
+export default AppContent;

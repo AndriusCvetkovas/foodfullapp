@@ -4,7 +4,7 @@ var DashStyle = StyleSheet.create({
     main: {
         height: '110%',
         alignItems: 'center',
-        justifyContent: 'center',
+        justifyContent: 'center', 
         backgroundColor: '#e3e3e3',
         paddingBottom: 20
     },
