@@ -14,7 +14,8 @@ import {
 } from 'react-native';
 import DonSignStyles from '../styles/DonSignStyles';
 import {Actions} from 'react-native-router-flux';
-
+import Geolocation from 'react-native-geolocation-service';
+import apiKey from '../apiKey';
 
 function DonationSign(){
 
@@ -35,12 +36,21 @@ const [input, setInput] = useState("");
         Alert.alert("Please fill in all inputs before signing up."));
 
     }
-
+//GRAB CURRENT LOCATION
+const [long, setLong] = useState('');
+const [lat, setLat] = useState('');
+const getPos = async (lat, long) => {
+  await Geolocation.getCurrentPosition((data) => {
+    setLong(data.coords.longitude);
+    setLat(data.coords.latitude);
+  });
+}
+//AUTOCOMPLETE FUNCTION
   };
   var suggestionList = [];
   const [prediction, setPrediction] = useState([]);
   const getAddress = async (address) => {
-    const apiUrl = `https://maps.googleapis.com/maps/api/place/textsearch/json?query=${address}&location=49.246292,-123.116226&radius=50000&key=AIzaSyCCD_OOE3Yj3h-fSov9ed1IhFByZPNALEs`;
+    const apiUrl = `https://maps.googleapis.com/maps/api/place/textsearch/json?query=${address}&location=${lat},${long}&radius=50000&key=${apiKey}`;
     const result = await fetch(apiUrl);
     const json = await result.json();
     const suggestion = await json.results;
