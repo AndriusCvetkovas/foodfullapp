@@ -146,20 +146,7 @@ function GMap() {
           </View>
           <Text style={GMapStyle.infoInnerDistance}>4.6 km</Text>
           <TouchableOpacity style={GMapStyle.infoInnerButton}>
-            <Text style={{ color: '#06a2bc' }}>View</Text>
-          </TouchableOpacity>
-        </View>
-
-        <View
-          style={GMapStyle.viewStyle}
-        >
-          <View style={GMapStyle.innerInfoView}>
-            <Text style={GMapStyle.infoInnerTitle}>Safeway Extra</Text>
-            <Text style={GMapStyle.infoInnerAddress}>1100 British Ave</Text>
-          </View>
-          <Text style={GMapStyle.infoInnerDistance}>4.6 km</Text>
-          <TouchableOpacity style={GMapStyle.infoInnerButton}>
-            <Text style={{ color: '#06a2bc' }}>View</Text>
+            <Text style={{ color: 'white' }}>View</Text>
           </TouchableOpacity>
         </View>
 
@@ -185,7 +172,7 @@ function GMap() {
           </View>
           <Text style={GMapStyle.infoInnerDistance}>4.6 km</Text>
           <TouchableOpacity style={GMapStyle.infoInnerButton}>
-            <Text style={{ color: '#06a2bc' }}>View</Text>
+            <Text style={{ color: 'white' }}>View</Text>
           </TouchableOpacity>
         </View>
 
@@ -198,7 +185,20 @@ function GMap() {
           </View>
           <Text style={GMapStyle.infoInnerDistance}>4.6 km</Text>
           <TouchableOpacity style={GMapStyle.infoInnerButton}>
-            <Text style={{ color: '#06a2bc' }}>View</Text>
+            <Text style={{ color: 'white' }}>View</Text>
+          </TouchableOpacity>
+        </View>
+
+        <View
+          style={GMapStyle.viewStyle}
+        >
+          <View style={GMapStyle.innerInfoView}>
+            <Text style={GMapStyle.infoInnerTitle}>Safeway Extra</Text>
+            <Text style={GMapStyle.infoInnerAddress}>1100 British Ave</Text>
+          </View>
+          <Text style={GMapStyle.infoInnerDistance}>4.6 km</Text>
+          <TouchableOpacity style={GMapStyle.infoInnerButton}>
+            <Text style={{ color: 'white' }}>View</Text>
           </TouchableOpacity>
         </View>
       </ScrollView>
