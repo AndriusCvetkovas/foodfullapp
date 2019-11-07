@@ -10,7 +10,6 @@ import {
   FormLabel,
   Alert
 
-
 } from 'react-native';
 import DonSignStyles from '../styles/DonSignStyles';
 import {Actions} from 'react-native-router-flux';

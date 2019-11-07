@@ -105,4 +105,4 @@ function AppContent() {
 }
 
 
-export default AppContent;
+export default from '../storybook';
