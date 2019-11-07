@@ -50,8 +50,8 @@ function Dashboard() {
                         <View style={{ margin: 20 }}>
                             <Text style={{ color: '#066a87', fontSize: 18, marginBottom: 5 }}>You are in 2nd place</Text>
 
-                            <Text style={{ color: '#0ca3bc', fontSize: 16 }}>40 Donations</Text>
-                            <Text style={{ color: '#A4D638', fontSize: 18, fontFamily: 'Avenir', fontWeight: '500' }}>1100 Kg</Text>
+                            <Text style = {{color: '#0ca3bc', fontSize: 16}}>40 Donations</Text>
+                            <Text style = {{color: '#A4D638', fontSize: 18, fontFamily:'Avenir', fontWeight:'500'}}>1100 Kg</Text>
                         </View>
                     </View>
                 </View>
@@ -65,8 +65,8 @@ function Dashboard() {
                             <Image style={{ margin: 10, width: 50, height: 50, borderRadius: 50, backgroundColor: 'grey' }}
                                 source={require('../assets/img/wholefoods.jpg')}>
                             </Image>
-                            <View>
-                                <View style={{ flexDirection: "row" }}>
+                            <View style ={{flex: 1}}>
+                                <View style={{flexDirection:"row"}}>
                                     <Text style={DashStyle.leaderName}>
                                         Whole Foods</Text>
                                     <Text style={DashStyle.weight}> 1320 kg</Text>
@@ -82,10 +82,10 @@ function Dashboard() {
                                 style={{ margin: 10, width: 50, height: 50, borderRadius: 50 }}
                                 source={require('../assets/img/safeway.jpg')}>
                             </Image>
-                            <View>
-                                <View style={{ flexDirection: 'row' }}>
-                                    <Text style={DashStyle.leaderName}>Safeway Extra</Text>
-                                    <Text style={DashStyle.weight}>1100 kg</Text>
+                            <View style ={{flex: 1}}>
+                                <View style={{flexDirection:'row'}}>
+                                <Text style={DashStyle.leaderName}>Safeway Extra</Text>
+                                <Text style = {DashStyle.weight}>1100 kg</Text>
                                 </View>
                                 <Text style={DashStyle.location}>6153 200 St, Langley</Text>
                             </View>
@@ -98,8 +98,8 @@ function Dashboard() {
                                 source={require('../assets/img/freshmarket.jpg')}>
 
                             </Image>
-                            <View>
-                                <View style={{ flexDirection: 'row' }}>
+                            <View style ={{flex: 1}}>
+                                <View style={{flexDirection:'row'}}>
                                     <Text style={DashStyle.leaderName}>Fresh Street Market</Text>
                                     <Text style={DashStyle.weight}>1090 kg</Text>
                                 </View>
@@ -114,8 +114,8 @@ function Dashboard() {
                                 source={require('../assets/img/farmtotable.jpg')}>
 
                             </Image>
-                            <View>
-                                <View style={{ flexDirection: 'row' }}>
+                            <View style ={{flex: 1}}>
+                                <View style={{flexDirection:'row'}}>
                                     <Text style={DashStyle.leaderName}>Farm to Table</Text>
                                     <Text style={DashStyle.weight}>1021 kg</Text>
                                 </View>
@@ -130,8 +130,8 @@ function Dashboard() {
                                 source={require('../assets/img/saveon.jpg')}>
 
                             </Image>
-                            <View>
-                                <View style={{ flexDirection: 'row' }}>
+                            <View style ={{flex: 1}}>
+                                <View style={{flexDirection:'row'}}>
                                     <Text style={DashStyle.leaderName}>Save-On-Foods</Text>
                                     <Text style={DashStyle.weight}>1004 kg</Text>
                                 </View>

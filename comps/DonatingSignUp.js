@@ -14,7 +14,8 @@ import {
 } from 'react-native';
 import DonSignStyles from '../styles/DonSignStyles';
 import {Actions} from 'react-native-router-flux';
-
+import Geolocation from 'react-native-geolocation-service';
+import apiKey from '../apiKey/apiKey';
 
 function DonationSign(){
 
@@ -28,45 +29,57 @@ But for now, if any input is blank there will be an alert
 */ 
 const [input, setInput] = useState("");
 
-var buttonClickListener = () =>{
+  buttonClickListener = () => {
 
-  if(input == ''){
-    inputinfo = (
-         Alert.alert("Please fill in all the inputs before signing up."));
+    if (input == '') {
+      inputinfo = (
+        Alert.alert("Please fill in all inputs before signing up."));
 
-  }
-
-}
-var suggestionList = [];
-const [prediction, setPrediction] = useState([]);
-const getAddress = async(address)=>{
-  const apiUrl = `https://maps.googleapis.com/maps/api/place/textsearch/json?query=${address}&location=49.246292,-123.116226&radius=50000&key=AIzaSyCCD_OOE3Yj3h-fSov9ed1IhFByZPNALEs`;
-  const result = await fetch(apiUrl);
-  const json = await result.json();
-  const suggestion = await json.results;
-  console.log(suggestion);
-  setPrediction(suggestion);
-}
-for (var i = 0; i < prediction.length; i++){
-  suggestionList.push(
-    <Text style= {{padding: 10, borderBottomWidth: 0.5}}  onPress={()=>Choose(prediction[0].formatted_address)}>{prediction[i].formatted_address}</Text>
-  )
-}
-const [autoComplete, enter] = useState("");
-const [disp, changeDisp] = useState({
-  top: 270,
-  backgroundColor: 'white',
-  padding: 20,
-  flexDirection: 'column',
-  zIndex: 2,
-  position: 'absolute',
-});
-function Choose(){
-  enter(prediction[0].formatted_address);
-  changeDisp({
-    display: 'none'
+    }
+//GRAB CURRENT LOCATION
+const [long, setLong] = useState('');
+const [lat, setLat] = useState('');
+const getPos = async (lat, long) => {
+  await Geolocation.getCurrentPosition((data) => {
+    setLong(data.coords.longitude);
+    setLat(data.coords.latitude);
   });
 }
+//AUTOCOMPLETE FUNCTION
+  };
+  var suggestionList = [];
+  const [prediction, setPrediction] = useState([]);
+  const getAddress = async (address) => {
+    const apiUrl = `https://maps.googleapis.com/maps/api/place/textsearch/json?query=${address}&location=${lat},${long}&radius=50000&key=${apiKey}`;
+    const result = await fetch(apiUrl);
+    const json = await result.json();
+    const suggestion = await json.results;
+    console.log(suggestion);
+    setPrediction(suggestion);
+  }
+  for (var i = 0; i < prediction.length; i++) {
+    suggestionList.push(
+
+      <Text key={i}
+        style={{ padding: 10, borderBottomWidth: 0.5 }} onPress={Choose.bind(this, prediction[i].formatted_address)}>{prediction[i].formatted_address}</Text>
+    )
+  }
+  const [autoComplete, enter] = useState("")
+  const [disp, changeDisp] = useState({
+    top: 270,
+    backgroundColor: 'white',
+    padding: 20,
+    flexDirection: 'column',
+    zIndex: 2,
+    position: 'absolute',
+  });
+  function Choose(selection) {
+    enter(selection);
+    changeDisp({
+      display: 'none'
+    });
+  }
+
 
   return (
  

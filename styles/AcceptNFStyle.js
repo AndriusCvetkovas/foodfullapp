@@ -1,13 +1,14 @@
 import {StyleSheet} from 'react-native';
 
-var ConfirmStyle = StyleSheet.create({
+var AcceptNFStyle = StyleSheet.create({
 
     main: {
         width: '100%',
         backgroundColor:"#e3e3e3",
-        alignItems:'center', 
+        alignItems:'center',
         justifyContent: 'center',
         height: '100%'
+        
     },
     main2: {
         flex: 0.9,
@@ -29,7 +30,7 @@ var ConfirmStyle = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         paddingLeft: 50,
-        paddingRight: 50
+        paddingRight: 50,
     },
     imageText: {
         flex: 0.2,
@@ -37,10 +38,7 @@ var ConfirmStyle = StyleSheet.create({
         fontWeight: "600",
         width: '90%'
     },
-    imageBox: {
-        flex: 1,
-        flexDirection: 'row',
-    },
+   
     pickupDate: {
         width: '90%',
         flex: 0.5,
@@ -55,7 +53,7 @@ var ConfirmStyle = StyleSheet.create({
     },
     descriptionTitle: {
         flex: 0.3,
-        color: 'black',
+       color: '#0ca3bc',
         fontSize: 18,
         fontWeight: "600",
         width: '90%'
@@ -67,8 +65,8 @@ var ConfirmStyle = StyleSheet.create({
         alignItems: 'center',
         alignContent: 'center',
         backgroundColor:'#f8c745',
-        width: 75,
-        height: 75,
+        width: 100,
+        height: 100,
         borderRadius: 100,
         transform:[
             {scaleX: 0.80},
@@ -99,9 +97,57 @@ var ConfirmStyle = StyleSheet.create({
     description:{
         flex: 0.7,
         width: '90%',
-        color: "#e4e3e3",
+        color: "black",
         marginBottom: 20
     },
-
+    Month:{
+        fontSize:26,
+        color:'white',
+        fontWeight:'400'
+ 
+     },
+     ImageSize:{
+         width: 90,
+         height: 90,
+     },
+     TextDisplay:{
+      
+         width:200,
+        
+ 
+     },
+     button: {
+        flex: 0.3,
+        padding: 5,
+        
+        borderTopColor:'#F0F0F0',
+        borderBottomColor: '#F0F0F0',
+        backgroundColor: 'white',
+       
+        borderTopWidth: 2,
+        borderBottomWidth: 2,
+        marginBottom: 0,
+        marginTop: 20,
+        width: '110%',
+        alignItems: 'center',
+        justifyContent: 'center',
+        elevation: 1
+    },
+    button2: {
+        flex: 0.3,
+        padding: 5,
+        
+        borderTopColor:'#F0F0F0',
+        borderBottomColor: '#F0F0F0',
+        backgroundColor: 'white',
+       
+        borderTopWidth: 2,
+        borderBottomWidth: 2,
+     
+        width: '110%',
+        alignItems: 'center',
+        justifyContent: 'center',
+        elevation: 1
+    },
 })
-export default ConfirmStyle;
+export default AcceptNFStyle;
