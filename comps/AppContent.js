@@ -28,7 +28,9 @@ import DInfoMap from './DInfoMap';
 import Pickup from './pickup';
 import PickedUpComfirm from './PickedUpComfirm';
 import NotifPickComfirm from './NotifPickComfirm';
-
+import AcceptDonationNF from './AcceptDonationNF';
+import MsgAcceptDonation from './MsgAcceptDonation';
+import MsgCancelDonation from './MsgCancelDonation';
 
 function AppContent() {
   return (
@@ -40,7 +42,10 @@ function AppContent() {
         // <DConfMap/>
         // <DonateContent />
         // <NotifPickComfirm />
-        <PickedUpComfirm />
+        // <PickedUpComfirm />
+        // <AcceptDonationNF />
+         <MsgAcceptDonation />
+        // <MsgCancelDonation />
 
         //NOT DONE
         // <DonationPen /> Changed the file not this one
