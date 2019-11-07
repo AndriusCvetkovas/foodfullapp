@@ -4,11 +4,24 @@ import DashStyle from '../styles/dashboardAcceptStyle';
  
 function DashboardAccept(){
     return(
-        <View style = {DashStyle.main}>
+             <View style = {DashStyle.main}>
+
+                <View style={DashStyle.findDonation}>
+                <Text style={DashStyle.findText}>Find Donations</Text>
+                <Image
+                    style = {{width:15, height:25, position:'absolute', zIndex:1, right:0, marginRight:15}}
+                    source={require('../assets/icon/next.png')}
+                />
+                <Image
+                    style = {{width: '100%', height:110, borderRadius: 30}}
+                    source={require('../assets/img/claimdonation.png')}
+                />
+            </View>
+
             <View style = {DashStyle.pending}>
                 {/* title below */}
                 <Text
-                style= {{color: '#066a87', fontSize: 20, flex: 0.2, margin: 10, padding: 10}}
+                style= {{color: '#0CA3BC', fontSize: 20, flex: 0.2, margin: 10, padding: 10, fontFamily:'Avenir', fontWeight:'800'}}
                 >Upcoming Pick Ups</Text>
                 {/* Pending box below */}
                     <View style = {DashStyle.innerPendingBox} >
@@ -62,16 +75,10 @@ function DashboardAccept(){
             </View>
 
 
-
-            <View style={{flex:0.25}}>
-                <Text>Find Donations</Text>
-            </View>
-
-
             <View style = {DashStyle.pending}>
                 {/* title below */}
                 <Text
-                style= {{color: 'green', fontSize: 20, flex: 0.2, margin: 10, padding: 10}}
+                style= {{color: '#A4D638', fontSize: 20, flex: 0.2, margin: 10, padding: 10, fontFamily:'Avenir', fontWeight:'800'}}
                 >Donation Requests</Text>
                 {/* Pending box below */}
                 <View style = {DashStyle.innerPendingBox} >
