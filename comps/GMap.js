@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { View, ScrollView, Text, TouchableOpacity, Image } from 'react-native';
+import { View, ScrollView, Text, TouchableOpacity, Image, AsyncStorage } from 'react-native';
 import MapView, { Marker, Callout, Animated } from 'react-native-maps';
 import { Router, Scene, Actions } from 'react-native-router-flux';
 import Geolocation from 'react-native-geolocation-service';
@@ -71,11 +71,14 @@ function GMap() {
   }
 
   //CHECK WHAT TYPE USER HAS
-  if(type === 0){
-    GetUsers0();
-  } else {
-    GetDonation();
+  const CheckType = () =>{
+    if(type == 0){
+      GetUsers0();
+    } else {
+      GetDonation();
+    }
   }
+  
 
   const [users, setUsers] = useState([]);
   const [lat, setLat] = useState();
@@ -86,6 +89,9 @@ function GMap() {
   
   useEffect(()=>{
     getType();
+  }, []);
+  useEffect(()=>{
+    CheckType();
   }, []);
 
   return (
@@ -224,7 +230,8 @@ function GMap() {
               </View>
               <Text style={GMapStyle.infoInnerDistance}>4.6 km</Text>
               <TouchableOpacity style={GMapStyle.infoInnerButton}
-              onPress={()=>Actions.postdonation({addr: d.name})}
+              onPress={()=>Actions.postdonation({addr: d.name,
+              ids: d.id})}
               >
                 <Text style={{ color: 'white' }}>Pick</Text>
               </TouchableOpacity>

@@ -8,11 +8,14 @@ import ImagePicker from 'react-native-image-picker';
 import axios from 'axios';
 import Confirmation from './Confirmation';
 var id = "";
-function Donate({addr}) {
+var receiverId = 0;
+function Donate({addr, ids}) {
     var text = addr;
+    receiverId = ids;
     if(text == null){
         text = ''
     }
+    console.log(id);
     const [chooseOrg, setChooseOrg] = useState(false);
     const [imageDefault, setArrayImages] = useState([]);
     const options = {
@@ -101,7 +104,8 @@ function Donate({addr}) {
             image_url: selectedUrl,
             weight: 0,
             description: selectedDescription,
-            user_id: id
+            user_id: id,
+            destination_id: receiverId
 
         }
     }
