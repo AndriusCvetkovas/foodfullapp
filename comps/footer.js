@@ -14,28 +14,34 @@ import Dashboard from './Dashboard.js';
 import Schedule from './Schedule';
 
 
-
+var type = "";
 function Appfooter() {
   //GET USER TYPE 
-  var type = "";
   const getType = async () =>{
     var json = await AsyncStorage.getItem('type');
     type = json;
-    CheckUser();
 }
-  const [color, changeColor] = useState(require('../assets/icon/home.png'));
+  const [colorHome, changeColorHome] = useState(require('../assets/icon/home_active.png'));
+  const [colorSchedule, changeColorSchedule] = useState(require('../assets/icon/schedule.png'));
+  const [colorNotif, changeColorNotif] = useState(require('../assets/icon/notif.png'));
+  const [colorProfile, changeColorProfile] = useState(require('../assets/icon/profile.png'));
   const [buttonText, changeButtonText] = useState('');
   const [buttonLink, changeButtonLink] = useState('Actions.postdonation()');
   
 
   const CheckUser = () => {
     if (type == 1) {
+      
       changeButtonText('Claim');
     } else {
       changeButtonText('Donate')
     }
   }
   const Plus = () =>{
+    changeColorHome(require('../assets/icon/home.png'));
+    changeColorNotif(require('../assets/icon/notif.png'));
+    changeColorProfile(require('../assets/icon/profile.png'));
+    changeColorSchedule(require('../assets/icon/schedule.png'));
     if(type == 0){
       Actions.postdonation();
     }else {
@@ -44,14 +50,36 @@ function Appfooter() {
   }
 
   function CombinedHome() {
+    changeColorHome(require('../assets/icon/home_active.png'));
+    changeColorNotif(require('../assets/icon/notif.png'));
+    changeColorProfile(require('../assets/icon/profile.png'));
+    changeColorSchedule(require('../assets/icon/schedule.png'));
     if (type == 1) {
-      Actions.tabbar1();
+      Actions.dashboard1();
+      
     } else {
-      Actions.tabbar0();
+      Actions.dashboard0();
     }
-    changeColor(require('../assets/icon/home_active.png'))
   };
+  function CombinedProf(){
+    Actions.profile();
+    changeColorHome(require('../assets/icon/home.png'));
+    changeColorNotif(require('../assets/icon/notif.png'));
+    changeColorProfile(require('../assets/icon/profile_active.png'));
+    changeColorSchedule(require('../assets/icon/schedule.png'));
+  };
+  function CombinedSchedule(){
+    Actions.schedule();
+    changeColorHome(require('../assets/icon/home.png'));
+    changeColorNotif(require('../assets/icon/notif.png'));
+    changeColorProfile(require('../assets/icon/profile.png'));
+    changeColorSchedule(require('../assets/icon/schedule_active.png'));
+  }
   function CombinedNot() {
+    changeColorHome(require('../assets/icon/home.png'));
+    changeColorNotif(require('../assets/icon/notif_active.png'));
+    changeColorProfile(require('../assets/icon/profile.png'));
+    changeColorSchedule(require('../assets/icon/schedule.png'));
     if (type == 1) {
       Actions.notification1();
     } else {
@@ -59,6 +87,7 @@ function Appfooter() {
     }
   }
   useEffect(() => {
+    CheckUser();
     getType();
   }, []);
   return (
@@ -69,17 +98,17 @@ function Appfooter() {
         <Image
           resizeMode="contain"
           style={footerStyle.sizeIcon}
-          source={color}
+          source={colorHome}
         />
         <Text style={footerStyle.label}>Home</Text>
       </TouchableOpacity>
       <TouchableOpacity style={footerStyle.iconsFooter}
-        onPress={() => Actions.schedule()}
+        onPress={() => CombinedSchedule()}
       >
         <Image
           resizeMode="contain"
           style={footerStyle.sizeIcon}
-          source={require('../assets/icon/schedule.png')}
+          source={colorSchedule}
         />
         <Text style={footerStyle.label}>Schedule</Text>
       </TouchableOpacity>
@@ -100,18 +129,18 @@ function Appfooter() {
         <Image
           resizeMode="contain"
           style={footerStyle.sizeIcon}
-          source={require('../assets/icon/notif.png')}
+          source={colorNotif}
         />
         <Text style={footerStyle.label}>Notifications</Text>
       </TouchableOpacity>
       <TouchableOpacity style={footerStyle.iconsFooter}
-        onPress={() => Actions.profile()}
+        onPress={() => CombinedProf()}
       >
         <Image
           resizeMode="contain"
           style={footerStyle.sizeIcon}
 
-          source={require('../assets/icon/profile.png')}
+          source={colorProfile}
 
         />
         <Text style={footerStyle.label}>Account</Text>
