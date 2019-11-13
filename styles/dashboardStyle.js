@@ -4,78 +4,118 @@ var DashStyle = StyleSheet.create({
     main: {
         flex: 1,
         alignItems: 'center',
-        justifyContent: 'center'
-    },
-    pending: {
-        flex: 1,
         justifyContent: 'center',
-        alignItems: 'center',
-        borderRadius: 20,
-        backgroundColor: '#06a2bc',
-        width: '92%',
-        padding: 5
+        backgroundColor: '#f7f7f7'
     },
-    innerPendingBox: {
-        flex: 1,
-        margin: 5,
-        width: '95%',
-        backgroundColor: 'white',
-        borderRadius: 10,
-        flexDirection: 'row',
-        alignItems: 'center'
+
+    // Dashboard illustration
+    backgroundImg:{
+        width:'100%', 
+        flex:4,
+        top:-80, 
+        justifyContent:'center', 
+        alignItems:'center',
     },
-    dateBubble: {
-        width: 60,
-        height: 60,
-        backgroundColor: '#a4d638',
-        borderRadius: 50,
-        alignItems: 'center',
-        justifyContent: 'center',
-        marginRight: 40,
-        marginLeft: 10
+
+    // Donation Button
+    donateButton:{
+        backgroundColor:'#0ca3bc',
+        width:220,
+        height:55,
+        zIndex: 5,
+        top:8,
+        alignItems:'center',
+        justifyContent:'center',
+        borderRadius:30,
     },
-    
-    your: {
-        marginTop: 0,
-        flex: 0.5,
-        borderRadius: 30,
-        backgroundColor: 'white',
-        shadowColor: '#aaaaaa',
-        shadowOffset: { width: 2, height: 3 },
-        shadowOpacity: 0.5,
-        shadowRadius: 10,
-        elevation: 2,
-        alignItems: 'center',
-        justifyContent: 'center',
-        padding: 20
+    donateButtonText:{
+        fontFamily:'Avenir',
+        fontSize:25,
+        fontWeight:'800',
+        color:'#ffffff',
     },
+    header:{
+        color:'#0ca3bc',
+        fontFamily:'Avenir',
+        fontSize:28,
+        fontWeight:'700',
+        top: -10,
+        width:'100%',
+        marginLeft:0,
+        lineHeight:36
+    },
+
+
+
+    //LeaderBoard
     innerLeadB: {
-        flex: 1,
         flexDirection: 'row',
-        alignItems: 'center'
+        alignItems: 'center',
     },
     leaderBoardMain: {
         flex: 2,
+        backgroundColor: '#ffffff',
         shadowColor: '#aaaaaa',
-        backgroundColor: 'white',
-        shadowOffset: { width: 0, height: 0 },
-        shadowOpacity: 0.8,
-        shadowRadius: 2,
+        shadowOffset: { width: 0, height: 2 },
+        shadowOpacity: 0.4,
+        shadowRadius: 8,
         elevation: 0,
         width: '92%',
-        marginTop: 15,
-        marginBottom: -50,
-        borderRadius: 30
+        borderRadius: 30,
+        top:-90,
+        justifyContent:'center',
+        alignItems:'center'
     },
-    leaderDetail: {
-        flex: 1,
-        flexDirection: 'row',
-        alignItems: 'center',
-        marginTop: 5,
-        padding: 10
+
+    // Upcoming schedule
+    title:{
+        fontSize:25,
+        fontFamily:'Avenir',
+        fontWeight:'500',
+        marginBottom:20,
+        color:'#0ca3bc'
     },
-    leader: {
-        flex: 1
-    }
+    dateTitle:{
+        fontFamily:'Avenir',
+        fontSize:18,
+        fontWeight:'600',
+        color:'#727272',
+        marginRight:20
+    },
+    line:{
+        borderBottomWidth:2,
+        borderColor:'#d8d8d8',
+        width:250
+    },
+    notifContainer:{
+        flex:3.2,
+        width:'92%',
+        justifyContent:'center', 
+        alignItems:'center',
+        top:-60, 
+        borderRadius:30,
+        backgroundColor:'#ffffff', 
+        padding:20,
+        shadowColor: '#aaaaaa',
+        shadowOffset: { width: 0, height: 1 },
+        shadowOpacity: 0.4,
+        elevation:0,
+        shadowRadius: 5,
+    },
+    notification:{
+        flex:1,
+        width:'100%',
+        borderRadius:20, 
+        justifyContent:'center',
+        backgroundColor:'pink',
+    },
+    dateCircle:{
+        width:10, 
+        height:10, 
+        backgroundColor:'#a4d638', 
+        borderRadius:50, 
+        marginRight:30
+    },
+
 });
 export default DashStyle;

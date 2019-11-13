@@ -9,7 +9,7 @@ var AppHeaderStyle = StyleSheet.create({
     TextStyle:{
         color: '#066a87',
         bottom: '20%',
-        marginTop: 25,
+        marginTop: 50,
         fontSize: 20,
         fontWeight: '500',
         letterSpacing: 1.3
@@ -20,6 +20,7 @@ var AppHeaderStyle = StyleSheet.create({
         height:'100%',
         justifyContent: 'center',
         alignItems: 'center',
+        backgroundColor:'#ffffff'
     }
    
  })

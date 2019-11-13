@@ -1,83 +1,127 @@
-import {StyleSheet} from 'react-native';
+import { StyleSheet } from 'react-native';
 
 var GMapStyle = StyleSheet.create({
     mapStyle: {
-      height: 450,
-      top: 0,
-      left: 0,
-      right: 0,
-      bottom: 0
+        height: 450,
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0
     },
     viewStyle: {
-      flex: 1,
-      width: '95%',
-      backgroundColor: '#AAA',
-      height: 70,
-      marginRight: 10,
-      marginLeft: 10,
-      marginTop: 10,
-      padding: 10,
-      borderRadius: 10
+        flex: 1,
+        flexDirection: 'row',
+        width: '95%',
+        backgroundColor: 'white',
+        borderWidth: 0.5,
+        borderColor: '#06a2bc',
+        height: 80,
+        flexDirection: 'row',
+        marginRight: 10,
+        marginLeft: 10,
+        marginTop: 10,
+        padding: 10,
+        paddingLeft: 15,
+        paddingRight: 15,
+        borderRadius: 20,
+        alignItems: 'center'
     },
     infoBox: {
         position: 'absolute',
-        width: '70%',
+        width: '80%',
         height: '70%',
-        backgroundColor: '#e3e3e3',
+        backgroundColor: 'white',
         alignSelf: 'center',
-        borderWidth: 0.5,
-        borderColor: 'black',
+        shadowColor: '#aaaaaa',
+        shadowOffset: { width: 2, height: 3 },
+        shadowOpacity: 0.6,
+        shadowRadius: 10,
         top: '10%',
-        flexDirection:'column',
+        flexDirection: 'column',
         alignItems: 'center',
-        justifyContent: 'center'
+        justifyContent: 'center',
+        borderRadius: 30,
+        padding: 10,
     },
     donatorTitle: {
-        fontSize: 20,
-        paddingTop: 25,
-        paddingLeft: 25,
-        flex: 0
+        fontSize: 25,
+        fontFamily: 'avenir',
+        flex: 0,
+        color: "#0ca3bc"
     },
-    imageBox:{
-        marginLeft: 20,
-        marginRight: 20,
-        flex: 2
+    imageBox: {
+        flex: 1
     },
-    donationImage:{
-        width: 100,
-        height: 100,
-        backgroundColor: 'white',
+    donationImage: {
+        width: 75,
+        height: 75,
+        backgroundColor: '#aaaaaa',
         margin: 20
     },
     dateBox: {
         flex: 0.5,
         flexDirection: 'row',
-        width: '85%',
+        width: '80%',
         alignItems: 'center',
-        justifyContent:'center'
+        justifyContent: 'center'
     },
     timeBox: {
         flex: 1,
-        margin: 20,
-        backgroundColor: 'white',
-        width: '80%',
+        marginLeft: 20,
+
+        // backgroundColor: '#f3f4f4'
     },
     noteBox: {
         flex: 1,
         width: '80%',
         margin: 20,
-        backgroundColor: 'white'
+        // backgroundColor: '#aaaaaa'
     },
-    button: {
-        flex: 0.3,
+
+    checkmarkImage: {
+        width: 70,
+        height: 70,
+        margin: 20
+    },
+    messageBox: {
+        flex: 1,
+        width: '80%',
+        justifyContent: 'center'
+    },
+    locationBox: {
+        flex: 1,
+        flexDirection: 'row',
+        width: '80%'
+    },
+    infoInnerTitle: {
+        flex: 2,
+        fontSize: 18,
+        color: '#06a2bc',
+        fontWeight: '600'
+    },
+    infoInnerAddress: {
+        fontSize: 12,
+        color: '#06a2bc'
+    },
+    innerInfoView: {
+        flex: 2
+    },
+    infoInnerButton: {
+        flex: 0.4,
         padding: 5,
         borderWidth: 0.5,
-        borderRadius: 20,
-        backgroundColor: 'green',
-        marginBottom: 20,
-        width: '30%',
         alignItems: 'center',
-        justifyContent: 'center'
+        justifyContent: 'center',
+        borderColor: '#06a2bc',
+        backgroundColor: '#06a2bc',
+        borderRadius: 30,
+        height: 30
+    },
+    infoInnerDistance: {
+        fontSize: 12,
+        flex: 0.8,
+        bottom: 5,
+        marginLeft: 10
     }
-  });
+});
 export default GMapStyle;

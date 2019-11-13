@@ -14,23 +14,25 @@ import mainStyle from './styles/mainStyle';
 import AppHeader from './comps/header';
 import AppFooter from './comps/footer';
 import AppContent from './comps/AppContent';
-
+import {Actions} from 'react-native-router-flux';
 
 
 function App() {
   return (
+    
     <View style={mainStyle.App}>
-      <View style={mainStyle.AppHeader}>
+
+    <View style={mainStyle.AppHeader}>
         <AppHeader/>
-      </View>
+      </View> 
 
       <View style={mainStyle.AppContent}>
         <AppContent/>
       </View> 
 
-      <View style={mainStyle.AppFooter}>
+      {/* <View style={mainStyle.AppFooter}>
         <AppFooter/>
-      </View>
+      </View> */}
      
     </View>
   );

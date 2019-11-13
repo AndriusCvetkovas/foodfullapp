@@ -7,7 +7,7 @@ var mainStyle = StyleSheet.create({
     },
     AppHeader:{
         maxHeight:'20%',
-        height:'20%',
+        height:'13%',
         top: 0 ,
         resizeMode: 'cover',
         zIndex: 2
