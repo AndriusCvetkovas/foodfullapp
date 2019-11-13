@@ -14,12 +14,14 @@ import Dashboard from './Dashboard.js';
 import Schedule from './Schedule';
 
 
-var type = "";
+
 function Appfooter() {
   //GET USER TYPE 
+  var type = "";
   const getType = async () =>{
     var json = await AsyncStorage.getItem('type');
     type = json;
+    CheckUser();
 }
   const [color, changeColor] = useState(require('../assets/icon/home.png'));
   const [buttonText, changeButtonText] = useState('');
@@ -28,7 +30,6 @@ function Appfooter() {
 
   const CheckUser = () => {
     if (type == 1) {
-      
       changeButtonText('Claim');
     } else {
       changeButtonText('Donate')
@@ -58,7 +59,6 @@ function Appfooter() {
     }
   }
   useEffect(() => {
-    CheckUser();
     getType();
   }, []);
   return (

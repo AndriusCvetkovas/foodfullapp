@@ -19,10 +19,10 @@ function Profile() {
         var json = await AsyncStorage.getItem('id');
         currentId = json;
         console.log("userID "+currentId);
+        GetUser();
     }
     //GRAB USER INFORMATION
     const GetUser = async () => {
-        
         var obj = {
         key: "users_read",
         data: {
@@ -50,13 +50,15 @@ function Profile() {
         DeleteData();
         Actions.login();
     }
-    useEffect(()=>{
+    // useEffect(()=>{
+    //     getID();
+    // }, []);
+    // useEffect(()=>{
+    //     GetUser();
+    // }, [getID()]);
+    useEffect(()=> {
         getID();
-        GetUser();
-    }, []);
-    useEffect(()=>{
-        GetUser();
-    }, [getID()]);
+    }, [])
     return (
         //Main view
         <View

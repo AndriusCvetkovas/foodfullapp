@@ -11,21 +11,29 @@ import AppContent from './AppContent';
 import apiKey from '../apiKey/apiKey';
 import axios from 'axios';
 
-var type = "";
+
 
 function GMap() {
-
+  var type = "";
   //GET USER TYPE
   const getType = async () =>{
     var json = await AsyncStorage.getItem('type');
     type = json;
     console.log(type)
+    CheckType();
 }
 
-
+//CHECK WHAT TYPE USER HAS
+const CheckType = () =>{
+  console.log('user' +type)
+  if(type == 1){
+    GetDonation();
+  } else {
+    GetUsers0();
+  }
+}
 //function to get foodbanks
   const GetUsers0 = async () => {
-    
     var obj = {
       key: "users_read",
       data: {
@@ -48,19 +56,6 @@ function GMap() {
     var obj = {
       key: "donations_read",
       data: {
-      },
-      config: {
-        join: [
-          {
-            model:"users",
-            data:[
-              {col: lat,
-              col: long,
-              col: name}
-            ],
-            join_stmt:"users.id = donations.user_id"
-          }
-        ]
       }
     }
     var p = await axios.post(`http://localhost:3001/post`, obj)
@@ -70,16 +65,6 @@ function GMap() {
     console.log(e);
   }
 
-  //CHECK WHAT TYPE USER HAS
-  const CheckType = () =>{
-    if(type == 0){
-      GetUsers0();
-    } else {
-      GetDonation();
-    }
-  }
-  
-
   const [users, setUsers] = useState([]);
   const [lat, setLat] = useState();
   const [long, setLong] = useState();
@@ -88,11 +73,10 @@ function GMap() {
   const [address, setAddress]= useState();
   
   useEffect(()=>{
+    
     getType();
   }, []);
-  useEffect(()=>{
-    CheckType();
-  }, []);
+  
 
   return (
     <View>
