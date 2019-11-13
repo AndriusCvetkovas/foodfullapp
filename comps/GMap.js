@@ -56,6 +56,17 @@ const CheckType = () =>{
     var obj = {
       key: "donations_read",
       data: {
+      },
+      config:{
+        join:[
+          {
+            model:'users',
+            data: [
+              {col:lat}
+            ],
+            join_stmt:"users.id = donations.user_id"
+          }
+        ]
       }
     }
     var p = await axios.post(`http://localhost:3001/post`, obj)

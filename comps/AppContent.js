@@ -75,7 +75,7 @@ function AppContent() {
           title="Account Created"
           hideNavBar={true}
         />
-        <Scene
+        <Stack
           key="tabbar0"
           gestureEnabled={false}
           tabs
@@ -131,7 +131,7 @@ function AppContent() {
           title='Map'
           hideNavBar={true}
           />
-        </Scene>
+        </Stack>
 
         <Scene
           key="tabbar1"
