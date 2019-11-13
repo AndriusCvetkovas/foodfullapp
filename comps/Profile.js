@@ -1,9 +1,44 @@
-import React from 'react';
-import { View, Text, Image, TouchableOpacity } from 'react-native';
+import React, { useState, useEffect } from 'react';
+import { View, Text, Image, TouchableOpacity, AsyncStorage  } from 'react-native';
 import ProfileStyle from '../styles/profileStyle';
-import { Actions, AsyncStorage } from 'react-native-router-flux';
+import { Actions} from 'react-native-router-flux';
+import axios from 'axios';
 
 function Profile() {
+    
+    var currentId = '';
+
+    //USER INFORMATION
+
+    const [userName, setUserName] = useState();
+    const [userAddress, setUserAddress] = useState();
+    const [userEmail, setUserEmail] = useState();
+    const [userPhone, setUserPhone] = useState();
+    //GET current user id 
+    const getID = async () =>{
+        var json = await AsyncStorage.getItem('id');
+        currentId = json;
+        console.log("userID "+currentId);
+    }
+    //GRAB USER INFORMATION
+    const GetUser = async () => {
+        
+        var obj = {
+        key: "users_read",
+        data: {
+            id: currentId
+        }
+        }
+        var r = await axios.post(`http://localhost:3001/post`, obj);
+        var json = JSON.parse(r.data.body);
+        console.log(json);
+        var d = json.data;
+        setUserName(d[0].name);
+        setUserAddress(d[0].address)
+        setUserEmail(d[0].email)
+        setUserPhone(d[0].phone)
+    }
+    //CLEAR SESSION INFO
     const DeleteData = async () => {
         try {
             await AsyncStorage.clear();
@@ -15,6 +50,13 @@ function Profile() {
         DeleteData();
         Actions.login();
     }
+    useEffect(()=>{
+        getID();
+        GetUser();
+    }, []);
+    useEffect(()=>{
+        GetUser();
+    }, [getID()]);
     return (
         //Main view
         <View
@@ -49,7 +91,7 @@ function Profile() {
                 {/* Store name/title below */}
                 <Text
                     style={ProfileStyle.titleStyle}
-                >Safeway Extra</Text>
+                >{userName}</Text>
                 {/* Stat view below */}
                 <View
                     style={ProfileStyle.statBox}
@@ -83,17 +125,17 @@ function Profile() {
                     {/* Address below */}
                     <View style={ProfileStyle.addressBox}>
                         <Text style={{ fontSize: 12, color: '#aaaaaa' }}>Address</Text>
-                        <Text style={{ fontSize: 15, fontFamily: 'DidactGothic-Regular' }}>2465 Willingdon Ave</Text>
+                        <Text style={{ fontSize: 15, fontFamily: 'DidactGothic-Regular' }}>{userAddress}</Text>
                     </View>
                     {/* Email below */}
                     <View style={ProfileStyle.addressBox}>
                         <Text style={{ fontSize: 12, color: '#aaaaaa' }}>Email</Text>
-                        <Text style={{ fontSize: 15, fontFamily: 'DidactGothic-Regular' }}>management@safeway.com</Text>
+                        <Text style={{ fontSize: 15, fontFamily: 'DidactGothic-Regular' }}>{userEmail}</Text>
                     </View>
                     {/* Phone below */}
                     <View style={ProfileStyle.addressBox}>
                         <Text style={{ fontSize: 12, color: '#aaaaaa' }}>Phone number</Text>
-                        <Text style={{ fontSize: 15, fontFamily: 'DidactGothic-Regular' }}>604-931-0110</Text>
+                        <Text style={{ fontSize: 15, fontFamily: 'DidactGothic-Regular' }}>{userPhone}</Text>
                     </View>
                 </View>
             </View>
