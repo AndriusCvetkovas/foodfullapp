@@ -71,7 +71,6 @@ var ProfileStyle = StyleSheet.create({
     infoInnerBox: {
         flex: 1.8,
         alignItems: 'flex-start',
-        left: -50,
         padding: 20,
         marginBottom: 20
     },
