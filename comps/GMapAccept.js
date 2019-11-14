@@ -78,6 +78,7 @@ useEffect(()=> {
               source={d.image_url}
               style={{width: 100, height: 100}}
               ></Image>
+          <Text>{d.description}</Text>
               </Callout></Marker>
           })
         }
