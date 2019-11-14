@@ -20,6 +20,7 @@ function Appfooter() {
   const getType = async () =>{
     var json = await AsyncStorage.getItem('type');
     type = json;
+    CheckUser();
 }
   const [colorHome, changeColorHome] = useState(require('../assets/icon/home_active.png'));
   const [colorSchedule, changeColorSchedule] = useState(require('../assets/icon/schedule.png'));
@@ -42,10 +43,10 @@ function Appfooter() {
     changeColorNotif(require('../assets/icon/notif.png'));
     changeColorProfile(require('../assets/icon/profile.png'));
     changeColorSchedule(require('../assets/icon/schedule.png'));
-    if(type == 0){
-      Actions.postdonation();
+    if(type == 1){
+      Actions.mapaccept();
     }else {
-      Actions.map1();
+      Actions.postdonation();
     }
   }
 
@@ -56,7 +57,6 @@ function Appfooter() {
     changeColorSchedule(require('../assets/icon/schedule.png'));
     if (type == 1) {
       Actions.dashboard1();
-      
     } else {
       Actions.dashboard0();
     }
@@ -87,7 +87,7 @@ function Appfooter() {
     }
   }
   useEffect(() => {
-    CheckUser();
+    
     getType();
   }, []);
   return (

@@ -81,6 +81,7 @@ function Donate({addr, ids}) {
 
                 </View>
             </KeyboardAvoidingView>)
+    }else {
     }
 
     //SELECTIONS
@@ -88,6 +89,7 @@ function Donate({addr, ids}) {
     const [selectedUrl, setSelectedUrl] = useState();
     const [selectedDescription, setSelectedDescription] = useState();
     const [selectedTime, setSelectedTime] = useState();
+    const [status, setStatus] = useState(0);
     //GET USER ID
     
     const getID = async () =>{
@@ -95,6 +97,8 @@ function Donate({addr, ids}) {
         id = json;
         console.log(id);
     }
+
+    
     //SEND INFORMATION TO DATABASE
     const obj = {
         key: "donations_create",
@@ -105,12 +109,18 @@ function Donate({addr, ids}) {
             weight: 0,
             description: selectedDescription,
             user_id: id,
-            destination_id: receiverId
+            destination_id: receiverId,
+            status: status
 
         }
     }
     console.log(obj.data.user_id)
-    const changePage = () => Actions.confirmdonation({ text: obj });
+    const changePage = () => {if(receiverId != 0 ){
+        setStatus(1);
+        Actions.confirmdonation({ text: obj })
+    }else {
+        Actions.confirmdonation({ text: obj })
+    } };
     // const SendDonationInfo = async () => {
 
     //     var r = await axios.post(`http://localhost:3001/post`, obj);
@@ -237,7 +247,7 @@ function Donate({addr, ids}) {
                         <Switch
                             style={donateStyle.rgttems}
                             value={chooseOrg}
-                            onValueChange={() => setChooseOrg(!chooseOrg)}
+                            onValueChange={() => {setChooseOrg(!chooseOrg)}}
                         />
                     </View>
 

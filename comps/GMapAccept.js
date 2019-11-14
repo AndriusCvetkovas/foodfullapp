@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { View, ScrollView, Text, TouchableOpacity, Image, AsyncStorage } from 'react-native';
 import MapView, { Marker, Callout, Animated } from 'react-native-maps';
-import { Actions } from 'react-native-router-flux';
+import { Router, Scene, Actions } from 'react-native-router-flux';
 import Geolocation from 'react-native-geolocation-service';
 import GMapStyle from '../styles/mapStyle';
 import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplete';
@@ -13,7 +13,7 @@ import axios from 'axios';
 
 
 
-function GMap() {
+function GMapAccept() {
   var type = "";
   //GET USER TYPE
   const getType = async () =>{
@@ -27,35 +27,37 @@ function GMap() {
 const CheckType = () =>{
   console.log('user' +type)
   if(type == 1){
-    alert('err')
+    GetDonation();
   } else {
-    GetUsers0();
+    alert(err);
   }
 }
-//function to get foodbanks
-  const GetUsers0 = async () => {
+//GET DONATIONS
+  const GetDonation = async () =>{
     var obj = {
-      key: "users_read",
+      key: "donations_read",
       data: {
-        type: 1
       }
+      
     }
-    var r = await axios.post(`http://localhost:3001/post`, obj);
-    var json = JSON.parse(r.data.body);
+    var p = await axios.post(`http://localhost:3001/post`, obj)
+    var json = JSON.parse(p.data.body);
     console.log(json);
     var d = json.data;
     console.log(d);
     setUsers(d);
         setLat(lat.push(d[i].lat));
         setLong(long.push(d[i].long));
-        setName(name.push(d[i].name));
-        setAddress(address.push(d[i].address));
+        setName(name.push(d[i].description));
+        setAddress(address.push(d[i].name));
+        setImage(img.push(d[i].image_url));
     }
 
   const [users, setUsers] = useState([]);
   const [lat, setLat] = useState();
   const [long, setLong] = useState();
   const [name, setName] = useState();
+  const [img, setImage] = useState();
   const [address, setAddress]= useState();
   useEffect(()=>{
     
@@ -212,4 +214,4 @@ const CheckType = () =>{
     </View>
   );
 };
-export default GMap;
+export default GMapAccept;

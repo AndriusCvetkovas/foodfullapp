@@ -8,8 +8,6 @@
 
 import React, { useState, useEffect } from 'react';
 import { View, Text, ScrollView, AsyncStorage } from 'react-native';
-import MaterialTabs from 'react-native-material-tabs';
-import ContentStyle from '../styles/contentStyle';
 import { Router, Scene, Overlay, Stack, Lightbox } from 'react-native-router-flux';
 import GMap from './GMap';
 import Dashboard from './Dashboard';
@@ -38,6 +36,7 @@ import Profile from './Profile';
 import Appfooter from './footer';
 import DonNotification from './DonNotification';
 import Schedule from './Schedule';
+import GMapAccept from './GMapAccept';
 
 function AppContent() {
   return (
@@ -48,7 +47,7 @@ function AppContent() {
   */
 
 
-    < Router>
+    <Router>
       <Scene key='root' modal>
         <Scene
           key="login"
@@ -152,8 +151,8 @@ function AppContent() {
             title="Notifications"
             hideNavBar={true} />
             <Scene
-            key='map1'
-            component={GMap}
+            key='mapaccept'
+            component={GMapAccept}
             title='Map'
             hideNavBar={true}
             />

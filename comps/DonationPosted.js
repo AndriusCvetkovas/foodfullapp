@@ -7,6 +7,7 @@ import {
   TouchableHighlight,
 } from 'react-native';
 import styles from '../styles/PostedStyle';
+import {Actions} from 'react-native-router-flux';
 
 
 function DonationPosted(){
@@ -24,10 +25,10 @@ function DonationPosted(){
         </View>
 
         <View style = {styles.containerButton}>
-        <TouchableHighlight style={[styles.buttonContainer, styles.MakePost]} onPress={() => Actions.donationsign()}>
+        <TouchableHighlight style={[styles.buttonContainer, styles.MakePost]} onPress={() => Actions.postdonation( )}>
           <Text style={styles.B1}>Make another Donation</Text>
         </TouchableHighlight>
-        <TouchableHighlight style={[styles.buttonContainer, styles.ViewPost]} onPress={() => Actions.donationsign()}>
+        <TouchableHighlight style={[styles.buttonContainer, styles.ViewPost]} onPress={() => {}}>
           <Text style={styles.B2}>View your Donation</Text>
         </TouchableHighlight>
         </View>
