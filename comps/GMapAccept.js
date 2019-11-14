@@ -14,29 +14,13 @@ import axios from 'axios';
 
 
 function GMapAccept() {
-  var type = "";
-  //GET USER TYPE
-  const getType = async () =>{
-    var json = await AsyncStorage.getItem('type');
-    type = json;
-    console.log(type)
-    CheckType();
-}
 
-//CHECK WHAT TYPE USER HAS
-const CheckType = () =>{
-  console.log('user' +type)
-  if(type == 1){
-    GetDonation();
-  } else {
-    alert(err);
-  }
-}
 //GET DONATIONS
   const GetDonation = async () =>{
     var obj = {
       key: "donations_read",
       data: {
+        status: 0
       }
       
     }
@@ -48,23 +32,19 @@ const CheckType = () =>{
     setUsers(d);
         setLat(lat.push(d[i].lat));
         setLong(long.push(d[i].long));
-        setName(name.push(d[i].description));
-        setAddress(address.push(d[i].name));
+        setDescription(description.push(d[i].description));
+        setName(name.push(d[i].name));
         setImage(img.push(d[i].image_url));
     }
-
   const [users, setUsers] = useState([]);
   const [lat, setLat] = useState();
   const [long, setLong] = useState();
-  const [name, setName] = useState();
+  const [description, setDescription] = useState();
   const [img, setImage] = useState();
-  const [address, setAddress]= useState();
-  useEffect(()=>{
-    
-    getType();
-  }, []);
-  
-
+  const [name, setName]= useState();
+useEffect(()=> {
+  GetDonation()
+}, [])
   return (
     <View>
       <MapView
@@ -92,9 +72,13 @@ const CheckType = () =>{
               longitude: d.long
             }}
             title={d.name}
-            description={d.address}
-            image={require('../assets/icon/map.png')}
-            />
+            description={d.description}
+            ><Callout>
+              <Image
+              source={d.image_url}
+              style={{width: 100, height: 100}}
+              ></Image>
+              </Callout></Marker>
           })
         }
         
@@ -196,14 +180,13 @@ const CheckType = () =>{
               >
               <View style={GMapStyle.innerInfoView}>
                 <Text style={GMapStyle.infoInnerTitle}>{d.name}</Text>
-                <Text style={GMapStyle.infoInnerAddress} key={i}>{d.address}</Text>
+                <Text style={[GMapStyle.infoInnerAddress, {fontSize: 16}]} key={i}>Donation Notes:{d.description}</Text>
               </View>
               <Text style={GMapStyle.infoInnerDistance}>4.6 km</Text>
               <TouchableOpacity style={GMapStyle.infoInnerButton}
-              onPress={()=>Actions.postdonation({addr: d.name,
-              ids: d.id})}
+              onPress={()=>Actions.info({description: d.description, names: d.name, img: d.image_url, time: d.time, date:d.date, address:d.address, id: d.id})}
               >
-                <Text style={{ color: 'white' }}>Pick</Text>
+                <Text style={{ color: 'white' }}>Claim</Text>
               </TouchableOpacity>
             </TouchableOpacity>
             )

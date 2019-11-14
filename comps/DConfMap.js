@@ -3,7 +3,11 @@ import { View, Text, Image, TouchableHighlight } from 'react-native';
 import GMapStyle from '../styles/mapStyle';
 import buttonStyle from '../styles/buttonStyle';
 
-function AcceptedInfo() {
+function AcceptedInfo({address, time, date, names}) {
+    var addr = address;
+    var t = time;
+    var d = date;
+    var n = names;
     return (
         <View
             style={GMapStyle.infoBox}
@@ -28,14 +32,14 @@ function AcceptedInfo() {
             <View
                 style={GMapStyle.messageBox}
             >
-                <Text style={{ marginTop: 15, fontFamily: 'DidactGothic-Regular', fontSize: 15 }}>You have claimed this donation from Safeway Extra</Text>
+                <Text style={{ marginTop: 15, fontFamily: 'DidactGothic-Regular', fontSize: 15 }}>You have claimed this donation from {n}</Text>
                 <Text style={{ color: '#0ca3bc' }}></Text>
             </View>
             <View
                 style={{ flexDirection: 'row', width: "80%", flex: 0.4, alignItems: 'center' }}
             >
                 <Text style={{ flex: 1, color: '#0ca3bc', flex: 1, fontFamily: 'Avenir', fontSize: 18 }}>Location:</Text>
-                <Text style={{ flex: 1, fontFamily: 'DidactGothic-Regular', fontSize: 15 }}>6666 Iona</Text>
+                <Text style={{ flex: 1, fontFamily: 'DidactGothic-Regular', fontSize: 15 }}>{addr}</Text>
             </View>
             {/*Time box below*/}
             <View style={{ flexDirection: 'row', width: "80%", flex: 0.4, alignItems: 'center' }}>
@@ -43,7 +47,7 @@ function AcceptedInfo() {
                 <Text
                     style={{ color: "black", flex: 1, fontFamily: 'DidactGothic-Regular', fontSize: 15 }}
                 >
-                    1:20pm
+                    {d} {t}
                 </Text>
             </View>
 

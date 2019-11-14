@@ -130,6 +130,17 @@ function AppContent() {
           title='Map'
           hideNavBar={true}
           />
+          <Scene
+          key='info'
+          component={Info}
+          title="info"
+          hideNavBar={true}
+          />
+          <Scene
+          key='conf'
+          component={DConfMap}
+          title="confirmation"
+          hideNavBar={true} />
         </Stack>
 
         <Scene
