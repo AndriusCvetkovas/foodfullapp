@@ -1,130 +1,115 @@
 import React from 'react';
-import { View, Text, Image, ScrollView } from 'react-native';
+import { View, Text, Image, ScrollView, TouchableOpacity } from 'react-native';
 import DashStyle from '../styles/dashboardAcceptStyle';
+import {Actions} from 'react-native-router-flux';
 
 function DashboardAccept() {
-    return (
+    return ( 
         <View style={DashStyle.main}>
-            <View style={DashStyle.pending}>
-                {/* title below */}
-                <Text
-                    style={{ color: '#066a87', fontSize: 20, flex: 0.2, margin: 10, padding: 10 }}
-                >Upcoming Pick Ups</Text>
-                {/* Pending box below */}
-                <View style={DashStyle.innerPendingBox} >
-                    <View style={DashStyle.innerPendingBox}>
-                        {/* Date bubble below*/}
-                        <View style={DashStyle.dateBubble}>
-                            <Text style={{ color: 'white', fontSize: 20 }}>10</Text>
-                            <Text style={{ color: 'white' }}>Jun</Text>
-                        </View>
-                        {/*Details below*/}
-                        <View style={DashStyle.pendingDetail}>
-                            {/* Foodbank name below*/}
-                            <Text style={{ color: '#066a87', fontSize: 18 }}>Vancouver Food Bank</Text>
-                            {/* time details below*/}
-                            <Text style={{ color: 'grey' }}>3:00 pm to 7:00 pm</Text>
-                        </View>
-                    </View>
-                </View>
-                <View style={DashStyle.innerPendingBox} >
-                    <View style={DashStyle.innerPendingBox}>
-                        {/* Date bubble below*/}
-                        <View style={DashStyle.dateBubble}>
-                            <Text style={{ color: 'white', fontSize: 20 }}>10</Text>
-                            <Text style={{ color: 'white' }}>Jun</Text>
-                        </View>
-                        {/*Details below*/}
-                        <View style={DashStyle.pendingDetail}>
-                            {/* Foodbank name below*/}
-                            <Text style={{ color: '#066a87', fontSize: 18 }}>Vancouver Food Bank</Text>
-                            {/* time details below*/}
-                            <Text style={{ color: 'grey' }}>3:00 pm to 7:00 pm</Text>
-                        </View>
-                    </View>
-                </View>
-                <View style={DashStyle.innerPendingBox} >
-                    <View style={DashStyle.innerPendingBox}>
-                        {/* Date bubble below*/}
-                        <View style={DashStyle.dateBubble}>
-                            <Text style={{ color: 'white', fontSize: 20 }}>10</Text>
-                            <Text style={{ color: 'white' }}>Jun</Text>
-                        </View>
-                        {/*Details below*/}
-                        <View style={DashStyle.pendingDetail}>
-                            {/* Foodbank name below*/}
-                            <Text style={{ color: '#066a87', fontSize: 18 }}>Vancouver Food Bank</Text>
-                            {/* time details below*/}
-                            <Text style={{ color: 'grey' }}>3:00 pm to 7:00 pm</Text>
-                        </View>
-                    </View>
-                </View>
+
+        {/* BACKGROUND IMAGE AND DONATE BUTTON */}
+        <View style={DashStyle.backgroundImg}>
+            <Image style={{width:'100%',height:420, position:'absolute'}}
+             source={require('../assets/img/dashboard_illustration2.png')}>
+            </Image>
+                <View style={{justifyContent:'center', alignItems:'center'}}>
+                <Text style={DashStyle.header}>Looking for Donations?</Text>
+                <TouchableOpacity style={DashStyle.searchButton}
+                onPress={()=>Actions.mapaccept()}
+                >
+                    <Text style={DashStyle.searchButtonText}>Search</Text>
+                </TouchableOpacity>
             </View>
+        </View> 
 
-
-
-            <View style={{ flex: 0.25 }}>
-                <Text>Find Donations</Text>
-            </View>
-
-
-            <View style={DashStyle.pending}>
-                {/* title below */}
-                <Text
-                    style={{ color: 'green', fontSize: 20, flex: 0.2, margin: 10, padding: 10 }}
-                >Donation Requests</Text>
-                {/* Pending box below */}
-                <View style={DashStyle.innerPendingBox} >
-                    <View style={DashStyle.innerPendingBox}>
-                        {/* Date bubble below*/}
-                        <View style={DashStyle.dateBubble}>
-                            <Text style={{ color: 'white', fontSize: 20 }}>10</Text>
-                            <Text style={{ color: 'white' }}>Jun</Text>
-                        </View>
-                        {/*Details below*/}
-                        <View style={DashStyle.pendingDetail}>
-                            {/* Foodbank name below*/}
-                            <Text style={{ color: '#066a87', fontSize: 18 }}>Vancouver Food Bank</Text>
-                            {/* time details below*/}
-                            <Text style={{ color: 'grey' }}>3:00 pm to 7:00 pm</Text>
-                        </View>
-                    </View>
+          {/* DONATION REQUESTS*/}
+           {/* Green circle with number needs to change according to notification # */}
+        <View style={DashStyle.donations}>
+            <TouchableOpacity style={{flexDirection:'row', alignItems:'center'}}>
+                <View style={DashStyle.donationCircle}>
+                    <Text style={DashStyle.circleText}>5</Text>
                 </View>
-
-                <View style={DashStyle.innerPendingBox} >
-                    <View style={DashStyle.innerPendingBox}>
-                        {/* Date bubble below*/}
-                        <View style={DashStyle.dateBubble}>
-                            <Text style={{ color: 'white', fontSize: 20 }}>10</Text>
-                            <Text style={{ color: 'white' }}>Jun</Text>
-                        </View>
-                        {/*Details below*/}
-                        <View style={DashStyle.pendingDetail}>
-                            {/* Foodbank name below*/}
-                            <Text style={{ color: '#066a87', fontSize: 18 }}>Vancouver Food Bank</Text>
-                            {/* time details below*/}
-                            <Text style={{ color: 'grey' }}>3:00 pm to 7:00 pm</Text>
-                        </View>
-                    </View>
+                <View>
+                    <Text style={DashStyle.titles}>Donation Requests</Text>
                 </View>
-                <View style={DashStyle.innerPendingBox} >
-                    <View style={DashStyle.innerPendingBox}>
-                        {/* Date bubble below*/}
-                        <View style={DashStyle.dateBubble}>
-                            <Text style={{ color: 'white', fontSize: 20 }}>10</Text>
-                            <Text style={{ color: 'white' }}>Jun</Text>
-                        </View>
-                        {/*Details below*/}
-                        <View style={DashStyle.pendingDetail}>
-                            {/* Foodbank name below*/}
-                            <Text style={{ color: '#066a87', fontSize: 18 }}>Vancouver Food Bank</Text>
-                            {/* time details below*/}
-                            <Text style={{ color: 'grey' }}>3:00 pm to 7:00 pm</Text>
-                        </View>
-                    </View>
-                </View>
-            </View>
+                <Image style={{width:15,height:20, margin:10}}
+                source={require('../assets/icon/next.png')}>
+                </Image>
+            </TouchableOpacity>
         </View>
+
+
+        {/*UPCOMING SCHEDULE*/}
+            {/* container to hold the notifications */}
+        <View style={DashStyle.notifContainer}>
+                <Text style={DashStyle.titles}>Upcoming Pick Ups</Text>
+                 {/* Date with line */}
+                <View style={{flexDirection:'row', alignItems:'center', marginBottom:10}}>
+                    <Text style={DashStyle.dateTitle}>Today</Text>
+                    <View style={DashStyle.line}></View>
+                </View>
+
+                <ScrollView style={{width:'90%'}}>
+                    <View style={DashStyle.upcomingContainer}>
+                        <View style={{marginBottom:20}}>
+                            <View>
+                                <View style={DashStyle.upcomingPickup}>
+                                    <View style={DashStyle.greenCircle}></View>
+                                    <View>
+                                        <Text style={DashStyle.companyName}>Vancouver Food Bank</Text>
+                                        <Text>3:00 pm</Text>
+                                    </View>
+                                </View>
+                            </View>
+                        </View>
+
+                        <View style={{marginBottom:20}}>
+                            <View>
+                                <View style={DashStyle.upcomingPickup}>
+                                    <View style={DashStyle.greenCircle}></View>
+                                    <View>
+                                        <Text style={DashStyle.companyName}>Vancouver Food Bank</Text>
+                                        <Text>3:00 pm</Text>
+                                    </View>
+                                </View>
+                            </View>
+                        </View>
+
+                        <View style={{marginBottom:20}}>
+                            <View>
+                                <View style={DashStyle.upcomingPickup}>
+                                    <View style={DashStyle.greenCircle}></View>
+                                    <View>
+                                        <Text style={DashStyle.companyName}>Vancouver Food Bank</Text>
+                                        <Text>3:00 pm</Text>
+                                    </View>
+                                </View>
+                            </View>
+                        </View>
+
+                        <View style={{marginBottom:20}}>
+                            <View>
+                                <View style={DashStyle.upcomingPickup}>
+                                    <View style={DashStyle.greenCircle}></View>
+                                    <View>
+                                        <Text style={DashStyle.companyName}>Vancouver Food Bank</Text>
+                                        <Text>3:00 pm</Text>
+                                    </View>
+                                </View>
+                            </View>
+                        </View>
+                </View>
+
+            </ScrollView>
+        
+        </View>
+
+
+
+        
+
+    </View>
     )
 };
 export default DashboardAccept;
+

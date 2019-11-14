@@ -5,14 +5,22 @@ var ScheduleStyle = StyleSheet.create({
         height: '90%',
         justifyContent: 'center',
         alignItems: 'center',
-        width: '95%',
+        width: '92%',
         borderRadius: 20
     },
     backgroundView: {
         flex:1,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: '#d6d6d6'
-    }
+        backgroundColor: '#eaeaea'
+    },
+    // Dashboard illustration
+    backgroundImg:{
+        width:'100%',  
+        flex:4,
+        top:0, 
+        justifyContent:'center', 
+        alignItems:'center',
+    },
 })
 export default ScheduleStyle;

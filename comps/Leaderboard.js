@@ -8,48 +8,36 @@ function Leaderboard(){
             {/*Your rank below*/}
 
             <View style={LeaderboardStyles.background}>
-
+            <Image style ={{width:'100%', height:'100%',}}
+                    source={require('../assets/img/blue_background.png')}/>
             </View>
-
-
+            <View style={LeaderboardStyles.yourRank}>
+                    <Text style={{color:'#ffffff', fontFamily:'Avenir', fontWeight:'600', fontSize:20}}>You are currently in</Text>
+                    <Text style={{color:'#ffffff', fontFamily:'Avenir', fontWeight:'800', fontSize:35}}>2nd Place</Text>
+            </View>
+ 
+             {/*Image box below*/}
             <View style ={LeaderboardStyles.yourBox}>
-                {/*Image box below*/}
                 <View style = {LeaderboardStyles.imageBox}>
                     <Image
-                    style={LeaderboardStyles.yourImage}
-                    source={require('../assets/img/safeway.jpg')}
+                        style={LeaderboardStyles.yourImage}
+                        source={require('../assets/img/safeway.jpg')}
                      />
-                     <Text
-                     style = {{color: '#06a2bc', fontSize: 30, flex: 0.6, paddingLeft: 20}}
-                     >2nd</Text>
                 </View>
-                {/*Stats below*/}
+
+            {/*Stats/ your info below*/}
                 <View style = {LeaderboardStyles.yourStats}>
-                    <View style = {LeaderboardStyles.innerYourStats}>
-                        <Image
-                        source={require('../assets/icon/donating_active.png')}
-                        style= {{width: 25, height: 25, flex: 0.2}}
-                        />
-                        <View style = {{flex: 0.4, marginLeft: 15}}>
-                            <Text style ={{textAlign: 'center', color: '#c3de95', fontWeight: '700', fontSize: 15}}>1100 kg</Text>
-                            <Text style ={{textAlign: 'center', fontSize: 12}}>of Food</Text>
-                        </View>
-                    </View>
-                    <View style = {LeaderboardStyles.innerYourStats}>
-                        <Image
-                        source={require('../assets/icon/donating_active.png')}
-                        style= {{width: 25, height: 25, flex: 0.2}}
-                        />
-                        <View style = {{flex: 0.4, marginLeft: 15}}>
-                            <Text style ={{textAlign: 'center', color: '#ef9b23', fontWeight: '700', fontSize: 15}}>40</Text>
-                            <Text style ={{textAlign: 'center', fontSize: 12}}>Donations</Text>
-                        </View>
-                    </View>
+                    
                 </View>
             </View>
+
+
+    
             {/*Leaderboard scrollview below*/}
             <View style ={LeaderboardStyles.rankBox}>
                 <ScrollView>
+
+                 {/* 1 */}
                     <View style ={LeaderboardStyles.rankInnerBox}>
                         <Text style={LeaderboardStyles.rankNum}>1</Text>
                         <Image 
@@ -58,58 +46,141 @@ function Leaderboard(){
                         />
                         <View style = {LeaderboardStyles.nameAddress}>
                             <Text style ={LeaderboardStyles.rankName}>Whole Foods</Text>
-                            <Text style ={LeaderboardStyles.rankAddress}>2465 Willingdon Ave</Text>
+                            <Text style ={LeaderboardStyles.rankAddress}>4420 Lougheed HWY, Burnaby</Text>
                         </View>
                         <Text style ={LeaderboardStyles.rankAmount}>1320 kg</Text>
                     </View>
-                    <View style ={LeaderboardStyles.rankInnerBox}>
+
+                    {/* 2 YOU*/}
+                    {/* Need to highlight your ranking, based on leaderboard calculations = light blue */}
+                    <View style ={[LeaderboardStyles.rankInnerBox,{backgroundColor: "rgba(19,191,209,0.07)"}]}>
                         <Text style={LeaderboardStyles.rankNum}>2</Text>
                         <Image 
                         source = {require('../assets/img/safeway.jpg')}
                         style = {LeaderboardStyles.rankImage}
                         />
                         <View style = {LeaderboardStyles.nameAddress}>
-                            <Text style ={LeaderboardStyles.rankName}>Safeway</Text>
-                            <Text style ={LeaderboardStyles.rankAddress}>2465 Willingdon Ave</Text>
+                            <Text style ={LeaderboardStyles.rankName}>Safeway Extra</Text>
+                            <Text style ={LeaderboardStyles.rankAddress}>6153 200 St, Langley</Text>
                         </View>
-                        <Text style ={LeaderboardStyles.rankAmount}>1220 kg</Text>
+                        <Text style ={LeaderboardStyles.rankAmount}>1100 kg</Text>
                     </View>
+
+                    {/* 3*/}
                     <View style ={LeaderboardStyles.rankInnerBox}>
                         <Text style={LeaderboardStyles.rankNum}>3</Text>
                         <Image 
-                        source = {require('../assets/img/wholefoods.jpg')}
+                        source = {require('../assets/img/freshmarket.jpg')}
                         style = {LeaderboardStyles.rankImage}
                         />
                         <View style = {LeaderboardStyles.nameAddress}>
-                            <Text style ={LeaderboardStyles.rankName}>Whole Foods</Text>
-                            <Text style ={LeaderboardStyles.rankAddress}>2465 Willingdon Ave</Text>
+                            <Text style ={LeaderboardStyles.rankName}>Fresh Street Market</Text>
+                            <Text style ={LeaderboardStyles.rankAddress}>1650 Marine Dr, Vancouver</Text>
                         </View>
-                        <Text style ={LeaderboardStyles.rankAmount}>1320 kg</Text>
+                        <Text style ={LeaderboardStyles.rankAmount}>1090 kg</Text>
                     </View>
                     <View style ={LeaderboardStyles.rankInnerBox}>
+
+                    {/* 4 */}
                         <Text style={LeaderboardStyles.rankNum}>4</Text>
                         <Image 
-                        source = {require('../assets/img/wholefoods.jpg')}
+                        source = {require('../assets/img/farmtotable.jpg')}
                         style = {LeaderboardStyles.rankImage}
                         />
                         <View style = {LeaderboardStyles.nameAddress}>
-                            <Text style ={LeaderboardStyles.rankName}>Whole Foods</Text>
-                            <Text style ={LeaderboardStyles.rankAddress}>2465 Willingdon Ave</Text>
+                            <Text style ={LeaderboardStyles.rankName}>Farm to Table</Text>
+                            <Text style ={LeaderboardStyles.rankAddress}>1312 Richards St, Vancouver</Text>
                         </View>
-                        <Text style ={LeaderboardStyles.rankAmount}>1320 kg</Text>
+                        <Text style ={LeaderboardStyles.rankAmount}>1021 kg</Text>
                     </View>
+
+                    {/* 5 */}
                     <View style ={LeaderboardStyles.rankInnerBox}>
                         <Text style={LeaderboardStyles.rankNum}>5</Text>
                         <Image 
-                        source = {require('../assets/img/wholefoods.jpg')}
+                        source = {require('../assets/img/saveon.jpg')}
+                        style = {LeaderboardStyles.rankImage}
+                        />
+                        <View style = {LeaderboardStyles.nameAddress}>
+                            <Text style ={LeaderboardStyles.rankName}>Save-On-Foods</Text>
+                            <Text style ={LeaderboardStyles.rankAddress}>1403 E King Edward, Vancouver</Text>
+                        </View>
+                        <Text style ={LeaderboardStyles.rankAmount}>1004 kg</Text>
+                    </View>
+
+                    {/* 6 */}
+                    <View style ={LeaderboardStyles.rankInnerBox}>
+                        <Text style={LeaderboardStyles.rankNum}>6</Text>
+                        <Image 
+                        source = {require('../assets/img/wholefoods2.png')}
                         style = {LeaderboardStyles.rankImage}
                         />
                         <View style = {LeaderboardStyles.nameAddress}>
                             <Text style ={LeaderboardStyles.rankName}>Whole Foods</Text>
-                            <Text style ={LeaderboardStyles.rankAddress}>2465 Willingdon Ave</Text>
+                            <Text style ={LeaderboardStyles.rankAddress}>510 W 8th, Vancouver</Text>
                         </View>
-                        <Text style ={LeaderboardStyles.rankAmount}>1320 kg</Text>
+                        <Text style ={LeaderboardStyles.rankAmount}>1001 kg</Text>
                     </View>
+
+                    {/* 7 */}
+                    <View style ={LeaderboardStyles.rankInnerBox}>
+                        <Text style={LeaderboardStyles.rankNum}>7</Text>
+                        <Image 
+                        source = {require('../assets/img/nesters.jpg')}
+                        style = {LeaderboardStyles.rankImage}
+                        />
+                        <View style = {LeaderboardStyles.nameAddress}>
+                            <Text style ={LeaderboardStyles.rankName}>Nesters Market</Text>
+                            <Text style ={LeaderboardStyles.rankAddress}>990 Seymour St</Text>
+                        </View>
+                        <Text style ={LeaderboardStyles.rankAmount}>1000 kg</Text>
+                    </View>
+
+                    {/* 8 */}
+                    <View style ={LeaderboardStyles.rankInnerBox}>
+                        <Text style={LeaderboardStyles.rankNum}>8</Text>
+                        <Image 
+                        source = {require('../assets/img/famous.jpg')}
+                        style = {LeaderboardStyles.rankImage}
+                        />
+                        <View style = {LeaderboardStyles.nameAddress}>
+                            <Text style ={LeaderboardStyles.rankName}>Famous Foods</Text>
+                            <Text style ={LeaderboardStyles.rankAddress}>1595 Kingsway</Text>
+                        </View>
+                        <Text style ={LeaderboardStyles.rankAmount}>940 kg</Text>
+                    </View>
+
+                    {/* 9 */}
+                    <View style ={LeaderboardStyles.rankInnerBox}>
+                        <Text style={LeaderboardStyles.rankNum}>9</Text>
+                        <Image 
+                        source = {require('../assets/img/sunrise.jpg')}
+                        style = {LeaderboardStyles.rankImage}
+                        />
+                        <View style = {LeaderboardStyles.nameAddress}>
+                            <Text style ={LeaderboardStyles.rankName}>Sunrise Market</Text>
+                            <Text style ={LeaderboardStyles.rankAddress}>300 Powell St, Vancouver</Text>
+                        </View>
+                        <Text style ={LeaderboardStyles.rankAmount}>935 kg</Text>
+                    </View>
+
+                    {/* 10 */}
+                    <View style ={LeaderboardStyles.rankInnerBox}>
+                        <Text style={LeaderboardStyles.rankNum}>10</Text>
+                        <Image 
+                        source = {require('../assets/img/iga.jpg')}
+                        style = {LeaderboardStyles.rankImage}
+                        />
+                        <View style = {LeaderboardStyles.nameAddress}>
+                            <Text style ={LeaderboardStyles.rankName}>IGA</Text>
+                            <Text style ={LeaderboardStyles.rankAddress}>3515 W 4th Ave, Vancouver,</Text>
+                        </View>
+                        <Text style ={LeaderboardStyles.rankAmount}>836 kg</Text>
+                    </View>
+
+
+
+
                 </ScrollView>
             </View>
         </View>

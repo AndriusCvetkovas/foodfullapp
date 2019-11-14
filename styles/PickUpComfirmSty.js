@@ -12,7 +12,7 @@ var PickUpComfirmSty = StyleSheet.create({
     },
     main2: {
         flex: 0.9,
-        width: '80%',
+        width: '85%',
         backgroundColor: 'white',
         borderRadius: 30,
         shadowColor: '#aaaaaa',
@@ -42,24 +42,37 @@ var PickUpComfirmSty = StyleSheet.create({
         flex: 1,
         flexDirection: 'row',
     },
+    imageBox2: {
+        flex: 1,
+        marginTop:10,
+        flexDirection: 'row',
+    },
     pickupDate: {
-        width: '90%',
-        flex: 0.5,
+        width: '95%',
+        flex: 0.7,
         flexDirection: 'row',
         alignItems: 'center',
     },
     pickupTime: {
-        flex: 0.5,
-        width: '90%',
+        flex: 0.7,
+        width: '95%',
         flexDirection: 'row',
         alignItems: 'center',
     },
     descriptionTitle: {
+        flex: 0.5,
+       color: '#0ca3bc',
+        fontSize: 18,
+        // fontWeight: "600",
+        width: '95%',
+    },
+    descriptionTitle2: {
         flex: 0.3,
        color: '#0ca3bc',
         fontSize: 18,
-        fontWeight: "600",
-        width: '90%'
+        // fontWeight: "600",
+        width: '95%',
+        
     },
     Images:{
         // flex:1,
@@ -86,6 +99,15 @@ var PickUpComfirmSty = StyleSheet.create({
         fontSize:14,
         color:'#3b7687',
     },
+    accpTxt:{
+        fontSize:14,
+        color:'#a5d826',
+    },
+
+    declineTxt:{
+        fontSize:14,
+        color:'red',
+    },
     time:{
         fontSize:14,
         color:'#6492a0',
@@ -101,8 +123,16 @@ var PickUpComfirmSty = StyleSheet.create({
         flex: 0.7,
         width: '90%',
         color: "black",
-        marginBottom: 20
+        marginBottom: 20,
     },
+    description2:{
+      
+       flex: 0.7,
+        width: '90%',
+        color: "black",
+        marginBottom: 10,
+    },
+  
     Month:{
         fontSize:26,
         color:'white',

@@ -4,6 +4,7 @@ var ConfirmStyle = StyleSheet.create({
 
     main: {
         width: '100%',
+        backgroundColor:"#e3e3e3",
         alignItems:'center', 
         justifyContent: 'center',
         height: '100%'
@@ -27,14 +28,14 @@ var ConfirmStyle = StyleSheet.create({
         flex: 1,
         flexDirection: 'row',
         alignItems: 'center',
-        paddingLeft: 50,
-        paddingRight: 50
+        justifyContent:'center'
     },
     imageText: {
         flex: 0.2,
         fontSize: 18,
         fontWeight: "600",
-        width: '90%'
+        width: '90%',
+        marginTop:10,
     },
     imageBox: {
         flex: 1,
@@ -54,9 +55,9 @@ var ConfirmStyle = StyleSheet.create({
     },
     descriptionTitle: {
         flex: 0.3,
-        color: 'black',
+        color: '#0ca3bc',
         fontSize: 18,
-        fontWeight: "600",
+        
         width: '90%'
     },
     Images:{
@@ -98,7 +99,7 @@ var ConfirmStyle = StyleSheet.create({
     description:{
         flex: 0.7,
         width: '90%',
-        color: "grey",
+        color: "black",
         marginBottom: 20
     },
 

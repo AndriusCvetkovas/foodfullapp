@@ -22,9 +22,9 @@ function Confirmation({text}){
             <View style = {ConfirmStyle.main2}>
             {/*Donation info below */}
             <View style = {ConfirmStyle.donationInfoTop}>
-                <Image style = {{width: 75, height: 75, margin:15}}
+                <Image style = {{width: 50, height: 50, margin:15, flex: 0.7}}
                 source = {require('../assets/img/posted_donation.png')}></Image>
-                <Text style = {{paddingRight: 25}}>This donation will be posted publicly for any accepting organization to claim</Text>
+                <Text style = {{paddingRight: 25, flex: 1.8}}>This donation will be posted publicly for any accepting organization to claim</Text>
             </View>
             {/*Image text below */}
             <Text style = {ConfirmStyle.imageText}>Images</Text>

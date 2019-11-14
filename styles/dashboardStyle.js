@@ -7,23 +7,26 @@ var DashStyle = StyleSheet.create({
         justifyContent: 'center',
         backgroundColor: '#f7f7f7'
     },
-
     // Dashboard illustration
     backgroundImg:{
-        width:'100%', 
+        width:'100%',  
         flex:4,
-        top:-80, 
+        top:-40, 
         justifyContent:'center', 
         alignItems:'center',
     },
-
     // Donation Button
+    donateContainer:{
+        justifyContent:'center', 
+        alignItems:'center', 
+        marginLeft:0
+    },
     donateButton:{
-        backgroundColor:'#0ca3bc',
-        width:220,
-        height:55,
+        backgroundColor:'#13bfd1',
+        width:190,
+        height:50,
         zIndex: 5,
-        top:8,
+        top:-10,
         alignItems:'center',
         justifyContent:'center',
         borderRadius:30,
@@ -39,13 +42,11 @@ var DashStyle = StyleSheet.create({
         fontFamily:'Avenir',
         fontSize:28,
         fontWeight:'700',
-        top: -10,
+        top: -25,
         width:'100%',
         marginLeft:0,
         lineHeight:36
     },
-
-
 
     //LeaderBoard
     innerLeadB: {
@@ -66,14 +67,34 @@ var DashStyle = StyleSheet.create({
         justifyContent:'center',
         alignItems:'center'
     },
+    announcementText:{
+        color: '#01657c', 
+        fontSize: 20, 
+        marginBottom: 5, 
+        fontFamily:'Avenir', 
+        fontWeight:'600' 
+    },
+    rankNumber:{
+        color: '#0ca3bc', 
+        fontSize: 23, 
+        marginBottom: 5, 
+        fontFamily:'Avenir', 
+        fontWeight:'800'
+    },
 
     // Upcoming schedule
     title:{
         fontSize:25,
         fontFamily:'Avenir',
         fontWeight:'500',
-        marginBottom:20,
+        marginBottom:15,
         color:'#0ca3bc'
+    },
+    today:{
+        left:0, 
+        flexDirection:'row', 
+        alignItems:'center', 
+        marginBottom:20
     },
     dateTitle:{
         fontFamily:'Avenir',
@@ -88,7 +109,7 @@ var DashStyle = StyleSheet.create({
         width:250
     },
     notifContainer:{
-        flex:3.2,
+        flex:3.5,
         width:'92%',
         justifyContent:'center', 
         alignItems:'center',
@@ -114,7 +135,13 @@ var DashStyle = StyleSheet.create({
         height:10, 
         backgroundColor:'#a4d638', 
         borderRadius:50, 
-        marginRight:30
+        marginRight:30,
+        top:-10
+    },
+    companyName:{
+        fontSize:20, 
+        fontFamily:'avenir', 
+        fontWeight:'500'
     },
 
 });

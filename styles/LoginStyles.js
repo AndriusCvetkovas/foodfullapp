@@ -12,11 +12,11 @@ const styles = StyleSheet.create({
    LogoImg:{
       width:220,
       height:150,
-      marginTop:70,
+      marginTop:50,
       marginBottom: 12
   },
   header:{
-    fontSize: 25,
+    fontSize: 28,
     fontWeight: '500',
     textAlign: 'center',
     color: '#06a2bc',
@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
   //  FORM
 
   form:{
-    marginTop:25,
+    marginTop:30,
   },
     inputContainer: {
         borderBottomColor: '#F5FCFF',

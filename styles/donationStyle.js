@@ -15,15 +15,32 @@ var donationStyle = StyleSheet.create({
         borderRadius:10
     },
     Images:{
-        flex:0.3,
+        flex:0.35,
         margin: 6,
         justifyContent:'center',
         alignItems: 'center',
         alignContent: 'center',
         backgroundColor:'#f8c745',
-        width: 100,
-        height: 100,
-        borderRadius: 100/2,
+        width: 120,
+        height: 120,
+        borderRadius: 120/1,
+        transform:[
+            {scaleX: 0.75},
+            {scaleY: 0.75}
+          ]
+
+    },
+
+    Images2:{
+        flex:0.35,
+        margin: 6,
+        justifyContent:'center',
+        alignItems: 'center',
+        alignContent: 'center',
+        backgroundColor:'#a5d826',
+        width: 120,
+        height: 120,
+        borderRadius: 120/1,
         transform:[
             {scaleX: 0.75},
             {scaleY: 0.75}
@@ -54,7 +71,18 @@ var donationStyle = StyleSheet.create({
         flex:0.3,
     },
     optionText:{
-        color:'#906904'
+        color:'#f8c745',
+        marginTop:10,
+        fontFamily:'Avenir',
+        fontWeight:'600',
+        fontSize:15
+    },
+    pickedText:{
+        color:'#a5d826',
+        marginTop:10,
+        fontFamily:'Avenir',
+        fontWeight:'600',
+        fontSize:15
     },
     
     Month:{
@@ -64,8 +92,17 @@ var donationStyle = StyleSheet.create({
 
     },
     ImageSize:{
-        width: 90,
-        height: 90
+        width: 120,
+        height: 120,
+        borderRadius: 120,
+
+    },
+    Dots:{
+       marginRight:15,
+       marginTop:20,
+       width:5,
+       height:20,
+        
     },
     TextDisplay:{
         flex:0.42,
@@ -110,7 +147,23 @@ var donationStyle = StyleSheet.create({
 
     btnText:{
         color:'#07a2bb'
-    }
+    },
+
+    accpText:{
+        color:'#a5d826',
+        textAlign:'center',
+        fontFamily:'Avenir',
+        fontWeight:'600',
+        fontSize:15
+    },
+
+    DeclinedText:{
+        color:'red',
+        textAlign:'center',
+        fontFamily:'Avenir',
+        fontWeight:'600',
+        fontSize:15
+    },
 
     
  });

@@ -14,7 +14,7 @@ var SignUpStyles = StyleSheet.create({
     headerContainer:{ 
         flex:0.3,
         width: '98%',
-        top:-40
+        top:-45
     },
     header: {
         fontSize: 23,
@@ -30,7 +30,7 @@ var SignUpStyles = StyleSheet.create({
         color: "#06a2bc",
         marginBottom: 5,
         textAlign:'center',
-        fontFamily: 'Avenir' 
+        fontFamily: 'DidactGothic-Regular' 
     },
  
     // DONATING AND ACCEPTING OPTIONS

@@ -22,6 +22,8 @@ const DonSignStyles = StyleSheet.create({
     textAlign:'left',
     fontWeight: '400',
     fontSize: 16,
+    fontFamily:'Avenir',
+    marginLeft:-8
     },
 
     headerContainer:{
@@ -48,7 +50,7 @@ const DonSignStyles = StyleSheet.create({
         backgroundColor: '#F0F0F0',
         borderRadius:30,
         borderBottomWidth: 1,
-        width:'70%',
+        width:'75%',
         height:40,
         marginBottom:18,
         marginTop:5

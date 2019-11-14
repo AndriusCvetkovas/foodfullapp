@@ -7,14 +7,17 @@ var ProfileStyle = StyleSheet.create({
         justifyContent: 'center',
         backgroundColor: 'white'
     },
+    // Background Blue/Illustrations
     background:{
         position:"absolute",
         backgroundColor: '#06a2bc',
-        top:0,
         width: '100%',
         height:'60%',
-        top:-130
+        top:-130,
+        borderBottomLeftRadius:30,
+        borderBottomRightRadius:30,
     },
+    // Profile Image
     imageViewStyle:{
         flex: 0.5,
         zIndex: 6,
@@ -31,33 +34,45 @@ var ProfileStyle = StyleSheet.create({
         borderColor: 'white',
         backgroundColor: 'transparent',
     },
+
+
+    // Profile container box
     infoStyle: {
-        flex: 2,
-        top:-15,
+        flex: 2.2,
+        top:-12,
         width: '90%',
         borderRadius: 30,
         backgroundColor: 'white',
         alignItems: 'center',
         justifyContent: 'center',
         shadowColor: '#aaaaaa',
-        shadowOffset: { width: 5, height: 5 },
-        shadowOpacity: 0.5,
-        shadowRadius: 5,
+        shadowOffset: { width: 1, height: 5 },
+        shadowOpacity: 0.2,
+        shadowRadius: 10,
         elevation: 5
     },
     titleStyle: {
         flex: 0.5,
-        fontSize: 20,
+        fontSize: 25,
         color: '#06a2bc',
         fontWeight: '500',
-        paddingTop: 80,
+        paddingTop: 70,
         paddingBottom: 10,
         fontFamily: 'avenir'
-
+    },
+    titles:{
+        fontSize:18, 
+        color: '#aaaaaa',
+    },
+    info:{
+        fontSize: 18, 
+        fontFamily: 'DidactGothic-Regular',
     },
     statBox: {
         flex: 1,
-        flexDirection: 'row'
+        flexDirection: 'row',
+        justifyContent:'center',
+        alignItems:'center'
     },
     innerStatBox1: {
         flexDirection: 'row',
@@ -66,18 +81,33 @@ var ProfileStyle = StyleSheet.create({
         alignItems: 'center'
     },
     innerTextBox: {
-        flex: 1
+        flex: 1,
+    },
+    calculations:{
+        fontSize: 20, 
+        textAlign: 'center', 
+        fontFamily:'Avenir', 
+        fontWeight:'800', 
+        color:'#A4D638'
+    },
+    calcText:{
+        textAlign: 'center', 
+        fontFamily: 'DidactGothic-Regular', 
+        fontSize: 17
     },
     infoInnerBox: {
-        flex: 1.8,
+        flex: 1.9,
         alignItems: 'flex-start',
         padding: 20,
-        marginBottom: 20
+        marginTop: 0
     },
     addressBox:{
-        flex: 1,
-        padding: 10
+        flex: 0,
+        padding: 10,
+        top:-30
     },
+
+    // Buttons
     buttonView: {
         flex:0.7,
         width: '100%',
@@ -86,7 +116,7 @@ var ProfileStyle = StyleSheet.create({
         shadowColor: '#aaaaaa',
     },
     buttonStyle: {
-        top: -20,
+        top: -30,
         flexDirection: 'row',
         width: '90%',
         height: 50,
@@ -96,20 +126,20 @@ var ProfileStyle = StyleSheet.create({
         borderRadius: 15,
         borderWidth: 0.2,
         shadowColor: '#aaaaaa',
-        shadowOpacity: 0.6,
-        shadowRadius: 10,
+        shadowOpacity: 0.3,
+        shadowRadius: 5,
         elevation: 2,
-        shadowOffset: { width: 2, height: 2 },
+        shadowOffset: { width: 5, height: 3 },
     },
     signOutBut: {
-        bottom: 30,
-        height: 50,
-        borderColor: '#0CA3BC',
-        borderRadius: 30,
+        height: 45,
+        borderColor: '#719799',
+        borderRadius: 15,
         borderWidth: 1.5, 
-        width: 200,
+        width: 380,
         alignItems: 'center',
-        justifyContent: 'center'
+        justifyContent: 'center',
+        top:-50
     }
    
 });

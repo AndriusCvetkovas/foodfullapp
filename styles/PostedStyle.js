@@ -3,10 +3,6 @@ var styles = StyleSheet.create({
     mainbody:{
     flex:1,
     alignItems:"center",
-    
-    
-    
-
   },
   headers:{
     
@@ -25,8 +21,8 @@ contents:{
 
   imgPosted:{
       width:350,
-      height:250,
-      marginTop: 150,
+      height:265,
+      marginTop: 40,
   },
   titleHeader:{
      textAlign:"center",

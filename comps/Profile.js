@@ -59,109 +59,109 @@ function Profile() {
     useEffect(()=> {
         getID();
     }, [])
-    return (
-        //Main view
+    return( 
+        //Main view 
         <View
-            style={ProfileStyle.mainView}
+        style = {ProfileStyle.mainView}
         >
-
+            {/* Blue background */}
             <View style={ProfileStyle.background}>
+            <Image style ={{width:'100%', height:'100%'}}
+                    source={require('../assets/img/blue_background.png')}/>
             </View>
-
 
             {/* Image view */}
             <View
-                style={ProfileStyle.imageViewStyle}
+            style={ProfileStyle.imageViewStyle}
             >
                 <Image
-                    source={require('../assets/img/safeway.jpg')}
-                    style={ProfileStyle.imageStyle}
+                source={require('../assets/img/safeway.jpg')}
+                style={ProfileStyle.imageStyle}
                 >
                 </Image>
             </View>
 
             {/* Info view */}
             <View
-                style={ProfileStyle.infoStyle}
+            style={ProfileStyle.infoStyle}
             >
-                <TouchableOpacity style={{ position: 'absolute', top: 20, right: 20 }}>
-                    <Image style={{ width: 20, height: 20 }}
-                        source={require('../assets/icon/edit.png')}
+                <TouchableOpacity style = {{position: 'absolute', top: 20, right: 20}}>
+                    <Image style ={{width: 20, height: 20}}
+                    source={require('../assets/icon/edit.png')}
                     ></Image>
                 </TouchableOpacity>
 
                 {/* Store name/title below */}
                 <Text
-                    style={ProfileStyle.titleStyle}
+                style={ProfileStyle.titleStyle}
                 >{userName}</Text>
                 {/* Stat view below */}
-                <View
-                    style={ProfileStyle.statBox}
-                >
-                    <View
-                        style={ProfileStyle.innerStatBox1}
-                    >
-                        <Image
-                            source={require('../assets/icon/weight.png')}
-                            style={{ width: 50, height: 45, padding: 20 }}
-                        />
-                        <View style={ProfileStyle.innerTextBox}>
-                            <Text style={{ fontSize: 16, textAlign: 'center', fontFamily: 'Avenir', fontWeight: '800', color: '#A4D638' }}>1100 kg</Text>
-                            <Text style={{ textAlign: 'center', fontFamily: 'DidactGothic-Regular', fontSize: 15 }}>of Food</Text>
-                        </View>
-                    </View>
-
+                <View style={ProfileStyle.statBox}>
+                     {/* WEIGHT */}
                     <View style={ProfileStyle.innerStatBox1}>
-                        <Image
-                            source={require('../assets/icon/donating_active.png')}
-                            style={{ width: 50, height: 45, padding: 20 }}
+                        <Image 
+                        source={require('../assets/icon/weight.png')}
+                        style={{width: 45, height: 35,marginBottom:10,padding: 20}}
                         />
-                        <View style={ProfileStyle.innerTextBox}>
-                            <Text style={{ fontSize: 16, textAlign: 'center', fontFamily: 'Avenir', fontWeight: '800', color: '#F5982F' }}>40</Text>
-                            <Text style={{ textAlign: 'center', fontFamily: 'DidactGothic-Regular', fontSize: 15 }}>Donations</Text>
+                        <View style = {ProfileStyle.innerTextBox}>
+                            <Text style={ProfileStyle.calculations}>1100 kg</Text>
+                            <Text style={ProfileStyle.calcText}>of Food</Text>
                         </View>
                     </View>
+                    {/* NUMBER OF DONATIONS */}
+                    <View style={ProfileStyle.innerStatBox1}>
+                    <Image 
+                        source={require('../assets/icon/donating_active.png')}
+                        style={{width: 45, height: 35, padding:20, marginBottom:10,}}
+                        />
+                        <View style = {ProfileStyle.innerTextBox}>
+                            <Text style={[ProfileStyle.calculations, {color:'#F5982F'}]}>40</Text>
+                            <Text style={ProfileStyle.calcText}>Donations</Text>
+                        </View>
+                    </View>   
                 </View>
 
-                <View style={ProfileStyle.infoInnerBox}>
+                <View style ={ProfileStyle.infoInnerBox}>
                     {/* Address below */}
-                    <View style={ProfileStyle.addressBox}>
-                        <Text style={{ fontSize: 12, color: '#aaaaaa' }}>Address</Text>
-                        <Text style={{ fontSize: 15, fontFamily: 'DidactGothic-Regular' }}>{userAddress}</Text>
+                    <View style = {ProfileStyle.addressBox}>
+                        <Text style ={ProfileStyle.titles}>Address</Text>
+                        <Text style = {ProfileStyle.info}>{userAddress}</Text>
                     </View>
                     {/* Email below */}
-                    <View style={ProfileStyle.addressBox}>
-                        <Text style={{ fontSize: 12, color: '#aaaaaa' }}>Email</Text>
-                        <Text style={{ fontSize: 15, fontFamily: 'DidactGothic-Regular' }}>{userEmail}</Text>
+                    <View style = {ProfileStyle.addressBox}>
+                        <Text style ={ProfileStyle.titles}>Email</Text>
+                        <Text style = {ProfileStyle.info}>{userEmail}</Text>
                     </View>
                     {/* Phone below */}
-                    <View style={ProfileStyle.addressBox}>
-                        <Text style={{ fontSize: 12, color: '#aaaaaa' }}>Phone number</Text>
-                        <Text style={{ fontSize: 15, fontFamily: 'DidactGothic-Regular' }}>{userPhone}</Text>
+                    <View style = {ProfileStyle.addressBox}>
+                        <Text style ={ProfileStyle.titles}>Phone number</Text>
+                        <Text style = {ProfileStyle.info}>{userPhone}</Text>
                     </View>
                 </View>
             </View>
 
             {/* Button view */}
-            <View style={ProfileStyle.buttonView}>
-                <TouchableOpacity style={ProfileStyle.buttonStyle}>
+            <View style = {ProfileStyle.buttonView}>
+                <TouchableOpacity style ={ProfileStyle.buttonStyle}
+                onPress={()=>Actions.leaderboard()}
+                >
                     <Image
-                        style={{ flex: 0.04, width: 25, height: 15 }}
-                        source={require('../assets/icon/leaderboard.png')}
+                    style={{flex: 0.04, width:25, height:15}}
+                    source= {require('../assets/icon/leaderboard.png')}
                     ></Image>
-                    <Text style={{ flex: 0.8, textAlign: 'center', color: '#06a2bc', fontSize: 20, fontFamily: 'avenir' }}>Leaderboard</Text>
+                    <Text style={{flex: 0.8, textAlign: 'center', color: '#06a2bc', fontSize: 20, fontFamily: 'avenir'}}>Leaderboard</Text>
                     <Image
-                        source={require('../assets/icon/next.png')}
-                        style={{ flex: 0.03, width: 20, height: 20 }}
+                    source= {require('../assets/icon/next.png')}
+                    style={{flex: 0.03,width: 20, height: 20}}
                     ></Image>
                 </TouchableOpacity>
             </View>
 
             <View>
-                <TouchableOpacity style={ProfileStyle.signOutBut}
-                    onPress={() => Logout()}
+                <TouchableOpacity style = {ProfileStyle.signOutBut}
+                onPress={() => Logout()}
                 >
-                    <Text style={{ textAlign: 'center', color: '#06a2bc', fontSize: 20, fontFamily: 'avenir' }}>Sign Out</Text>
+                    <Text style={{textAlign: 'center', color: '#719799', fontSize: 20, fontFamily: 'avenir'}}>Sign Out</Text>
                 </TouchableOpacity>
             </View>
 

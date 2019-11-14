@@ -2,7 +2,7 @@ import {StyleSheet} from 'react-native';
 
 var ContentStyle = StyleSheet.create({
     comp:{
-        marginTop:100,
+        marginTop:0,
         flex: 1,
         height: '100%',
         

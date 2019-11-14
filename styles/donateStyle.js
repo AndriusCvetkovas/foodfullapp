@@ -10,9 +10,21 @@ var donateStyle = StyleSheet.create({
         margin:5,
         backgroundColor:'#fff'
     },
-
+    headers:{
+      fontSize:18, 
+      marginBottom:10,
+      fontFamily: 'Avenir',
+      fontWeight:'500'
+    },
+    note:{
+      fontSize:15, 
+      marginBottom:10, 
+      color:'#06a2bc', 
+      width:'75%', 
+      marginLeft:15
+    },
     comp:{
-        marginBottom:12
+        marginBottom:12,
     },
 
     dateIcon: {
@@ -37,16 +49,17 @@ var donateStyle = StyleSheet.create({
       },
        lftItems:{
           flex:0.8,
-          fontSize:16
+          fontSize:18,
+          fontFamily:'Avenir',
+          fontWeight:'600'
       },
       DonateBtn:{
         flex:0.5,
+        marginTop:0,
         marginBottom:15,
         justifyContent:'center',
         alignItems:'center',
-        height:40,
-        paddingTop:5,
-        paddingBottom:5,
+        height:50,
         borderRadius:30,
         borderWidth: 1,
         borderColor: '#07a2bb',
@@ -61,7 +74,7 @@ var donateStyle = StyleSheet.create({
         marginBottom:15,
         justifyContent:'center',
         alignItems:'center',
-        height:40,
+        height:45,
         paddingTop:5,
         paddingBottom:5,
         borderRadius:30,
@@ -69,11 +82,14 @@ var donateStyle = StyleSheet.create({
         borderColor: '#07a2bb',
         backgroundColor: '#fff',
         color:'#fff',
-        width: '60%'
+        width: '95%'
       },
     
       btnText:{
-        color:'white'
+        color:'#ffffff',
+        fontFamily:'Avenir',
+        fontSize:20,
+        fontWeight:'800'
       },
 
       rgttems:{

@@ -3,7 +3,7 @@ var buttonStyle = StyleSheet.create( {
     button: {
         padding: 5,
         borderRadius: 30,
-        backgroundColor: '#afd455',
+        backgroundColor: '#a4d638',
         marginBottom: 20,
         marginTop: 20,
         width: '70%',

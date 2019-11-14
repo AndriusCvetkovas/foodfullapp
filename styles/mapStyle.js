@@ -29,7 +29,7 @@ var GMapStyle = StyleSheet.create({
     infoBox: {
         position: 'absolute',
         width: '80%',
-        height: '70%',
+        height: '75%',
         backgroundColor: 'white',
         alignSelf: 'center',
         shadowColor: '#aaaaaa',
@@ -48,6 +48,12 @@ var GMapStyle = StyleSheet.create({
         fontFamily: 'avenir',
         flex: 0,
         color: "#0ca3bc"
+    },
+    CancelledText: {
+        fontSize: 25,
+        fontFamily: 'avenir',
+        flex: 0,
+        color: "#ED4D22"
     },
     imageBox: {
         flex: 1
@@ -84,8 +90,8 @@ var GMapStyle = StyleSheet.create({
         margin: 20
     },
     messageBox: {
-        flex: 1,
-        width: '80%',
+        flex: 2,
+        width: '85%',
         justifyContent: 'center'
     },
     locationBox: {
@@ -94,7 +100,7 @@ var GMapStyle = StyleSheet.create({
         width: '80%'
     },
     infoInnerTitle: {
-        flex: 2,
+        flex: 1,
         fontSize: 18,
         color: '#06a2bc',
         fontWeight: '600'
@@ -104,7 +110,8 @@ var GMapStyle = StyleSheet.create({
         color: '#06a2bc'
     },
     innerInfoView: {
-        flex: 2
+        flex: 1,
+        
     },
     infoInnerButton: {
         flex: 0.4,
@@ -119,9 +126,8 @@ var GMapStyle = StyleSheet.create({
     },
     infoInnerDistance: {
         fontSize: 12,
-        flex: 0.8,
-        bottom: 5,
-        marginLeft: 10
+        flex: 0.5,
+        bottom: -8,
     }
 });
 export default GMapStyle;

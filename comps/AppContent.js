@@ -141,6 +141,12 @@ function AppContent() {
           component={DConfMap}
           title="confirmation"
           hideNavBar={true} />
+          <Scene
+            key="leaderboard"
+            component={LeaderBoard}
+            title='lb'
+            hideNavBar={true}
+            />
         </Stack>
 
         <Scene
@@ -179,6 +185,12 @@ function AppContent() {
             title='schedule'
             hideNavBar={true} 
           />
+          <Scene
+            key="leaderboard"
+            component={LeaderBoard}
+            title='lb'
+            hideNavBar={true}
+            />
         </Scene>
 
       </Scene>
