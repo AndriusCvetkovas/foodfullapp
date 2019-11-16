@@ -2,8 +2,11 @@ import React from 'react';
 import { View, Text, Image, ScrollView, TouchableOpacity } from 'react-native';
 import DashStyle from '../styles/dashboardAcceptStyle';
 import {Actions} from 'react-native-router-flux';
+import axios from 'axios';
 
 function DashboardAccept() {
+
+
     return ( 
         <View style={DashStyle.main}>
 
