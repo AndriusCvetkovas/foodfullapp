@@ -28,12 +28,14 @@ function Appfooter() {
   const [colorProfile, changeColorProfile] = useState(require('../assets/icon/profile.png'));
   const [buttonText, changeButtonText] = useState('');
   const [buttonLink, changeButtonLink] = useState('Actions.postdonation()');
+  const [mainButton, changeMainButton] = useState(require('../assets/icon/donate.png'));
   
 
   const CheckUser = () => {
     if (type == 1) {
       
       changeButtonText('Claim');
+      changeMainButton(require('../assets/icon/search_button.png'))
     } else {
       changeButtonText('Donate')
     }
@@ -119,7 +121,7 @@ function Appfooter() {
         <Image
           resizeMode="contain"
           style={footerStyle.sizeDonateIcon}
-          source={require('../assets/icon/donate.png')}
+          source={mainButton}
         />
         <Text style={footerStyle.label}>{buttonText}</Text>
 
