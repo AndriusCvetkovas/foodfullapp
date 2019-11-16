@@ -412,7 +412,7 @@ return (
                     />
             </View>
 
-            <View style={donateStyle.padding, donateStyle.row}>
+            <View style={[donateStyle.padding, donateStyle.row]}>
                     <Text style={donateStyle.lftItems}>Choose Organization</Text>
                     <Switch
                         style={donateStyle.rgttems}
