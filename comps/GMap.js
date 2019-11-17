@@ -199,7 +199,7 @@ const CheckType = () =>{
               <Text style={GMapStyle.infoInnerDistance}>4.6 km</Text>
               <TouchableOpacity style={GMapStyle.infoInnerButton}
               onPress={()=>Actions.postdonation({addr: d.name,
-              ids: d.id})}
+              ids: d.id, stat: 1})}
               >
                 <Text style={{ color: 'white' }}>Pick</Text>
               </TouchableOpacity>
