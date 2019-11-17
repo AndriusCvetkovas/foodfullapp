@@ -17,7 +17,6 @@ import DonationPen from '../comps/DonationPen';
 import AccountCreate from './AccountCreate';
 import LoginPage from './LoginPage';
 import SignUp from './SignUp';
-import DonatingSignUp from './DonatingSignUp';
 import AcceptingSignUp from './AcceptingSignUp';
 import Donate from './donate';
 import Info from './DInfoMap';

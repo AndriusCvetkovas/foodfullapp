@@ -18,15 +18,8 @@ function AcceptDonationNF() {
                     </View>
 
                     <View style={AcceptNFStyle.TextDisplay}>
-                        <View>
                             <Text style={AcceptNFStyle.Organization}>Whole Foods</Text>
-                        </View>
-                        <View>
                             <Text style={AcceptNFStyle.address}>Donation Request</Text>
-                        </View>
-                        <View>
-
-                        </View>
                     </View>
 
                 </View>
@@ -35,12 +28,12 @@ function AcceptDonationNF() {
                 {/*Date of pickup below */}
                 <View style={AcceptNFStyle.pickupDate}>
                     <Text style={{ color: '#0ca3bc', fontSize: 18, flex: 1 }}>Loaction</Text>
-                    <Text style={{ color: '#066a87', fontSize: 16, flex: 1, marginTop: 18 }}>20014 Williondon V5G 5W8</Text>
+                    <Text style={{ color: '#066a87', fontSize: 16, flex: 1}}>Williondon</Text>
                 </View>
                 {/*Pickup time below */}
                 <View style={AcceptNFStyle.pickupTime}>
                     <Text style={{ color: '#0ca3bc', fontSize: 18, flex: 1 }}>Pickup Time</Text>
-                    <Text style={{ color: '#066a87', fontSize: 16, flex: 1, marginTop: 18 }}>3:00 pm - 7:00 pm</Text>
+                    <Text style={{ color: '#066a87', fontSize: 16, flex: 1 }}>3:00 pm - 7:00 pm</Text>
                 </View>
                 {/*Description title below */}
                 <Text
