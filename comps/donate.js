@@ -13,7 +13,10 @@ var statu = 0;
 function Donate({addr, ids, stat}) {
     var text = addr;
     receiverId = ids;
-    statu = stat;
+    
+    if(stat != null){
+        statu = stat;
+    }
     if(text == null){
         text = ''
     }

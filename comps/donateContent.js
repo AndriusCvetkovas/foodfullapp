@@ -13,7 +13,11 @@ import ContentStyle from '../styles/contentStyle';
 import Donations from '../comps/donation';
 import Pickup from '../comps/pickup';
 
-function DonateContent() {
+function DonateContent({pickup}) {
+  var pick = pickup;
+  if (pick != null){
+    setSelectedTab(1);
+  }
   const [selectedTab, setSelectedTab] = useState(0);
   var donation = null;
   if (selectedTab === 0){
