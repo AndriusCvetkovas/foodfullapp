@@ -22,7 +22,6 @@ function GMapAccept() {
       data: {
         status: 0
       }
-      
     }
     var p = await axios.post(`http://localhost:3001/post`, obj)
     var json = JSON.parse(p.data.body);
@@ -180,7 +179,7 @@ useEffect(()=> {
               style={GMapStyle.viewStyle}
               >
               <View style={GMapStyle.innerInfoView}>
-                <Text style={GMapStyle.infoInnerTitle}>{d.name}</Text>
+                <Text style={GMapStyle.infoInnerTitle} key={i}>{d.name}</Text>
                 <Text style={[GMapStyle.infoInnerAddress, {fontSize: 16}]} key={i}>Donation Notes:{d.description}</Text>
               </View>
               <Text style={GMapStyle.infoInnerDistance}>4.6 km</Text>

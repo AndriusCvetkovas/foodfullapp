@@ -61,6 +61,7 @@ function Appfooter() {
       Actions.dashboard1();
     } else {
       Actions.dashboard0();
+      
     }
   };
   function CombinedProf(){

@@ -1,12 +1,66 @@
-import React from 'react';
-import { View, Text, Image, ScrollView, TouchableOpacity } from 'react-native';
+import React, {useState, useEffect} from 'react';
+import { View, Text, Image, ScrollView, TouchableOpacity, AsyncStorage } from 'react-native';
 import DashStyle from '../styles/dashboardAcceptStyle';
 import {Actions} from 'react-native-router-flux';
 import axios from 'axios';
 
 function DashboardAccept() {
+    
+    var currentId = "";
 
+    const [numDon, setNumDon] = useState('0');
 
+    //RECEIVE CURRENT USER ID FROM ASYNC STORAGE
+    const getID = async () =>{
+        var json = await AsyncStorage.getItem('id');
+        currentId = json;
+        console.log("userID "+currentId);
+        GetDonations();
+        GetDonationsAcc();
+    }
+
+    //READ THE DIRECT USER DONATIONS
+    const GetDonations = async () => {
+        var obj = {
+        key: "donations_read",
+        data: {
+            destination_id: currentId,
+            status: 1
+        }
+        }
+        var r = await axios.post(`http://localhost:3001/post`, obj);
+        var json = JSON.parse(r.data.body);
+        //console.log(json.data);
+        var arr = json.data;
+        setNumDon(arr.length);
+    }
+
+    //READ THE DIRECT USER DONATIONS ACCEPTED
+    const [dons, setDons] = useState([]);
+    
+    const GetDonationsAcc = async () => {
+        var obj = {
+        key: "donations_read",
+        data: {
+            destination_id: currentId,
+            status: 2
+        }
+        }
+        var r = await axios.post(`http://localhost:3001/post`, obj);
+        var jsons = JSON.parse(r.data.body);
+        var d = jsons.data;
+        console.log(d);
+        setDons(d);
+        setDonsName(donsName.push(d[i].name));
+        setDonsTime(donsTime.push(d[i].time));
+        console.log(donsName)
+    }
+    const [donsName, setDonsName] = useState();
+    const [donsTime, setDonsTime] = useState();
+    
+    useEffect(()=>{
+        getID();
+    }, [])
     return ( 
         <View style={DashStyle.main}>
 
@@ -28,9 +82,11 @@ function DashboardAccept() {
           {/* DONATION REQUESTS*/}
            {/* Green circle with number needs to change according to notification # */}
         <View style={DashStyle.donations}>
-            <TouchableOpacity style={{flexDirection:'row', alignItems:'center'}}>
+            <TouchableOpacity style={{flexDirection:'row', alignItems:'center'}}
+            onPress={()=> Actions.notification1()}
+            >
                 <View style={DashStyle.donationCircle}>
-                    <Text style={DashStyle.circleText}>5</Text>
+                    <Text style={DashStyle.circleText}>{numDon}</Text>
                 </View>
                 <View>
                     <Text style={DashStyle.titles}>Donation Requests</Text>
@@ -53,54 +109,25 @@ function DashboardAccept() {
                 </View>
 
                 <ScrollView style={{width:'90%'}}>
-                    <View style={DashStyle.upcomingContainer}>
-                        <View style={{marginBottom:20}}>
-                            <View>
-                                <View style={DashStyle.upcomingPickup}>
-                                    <View style={DashStyle.greenCircle}></View>
-                                    <View>
-                                        <Text style={DashStyle.companyName}>Vancouver Food Bank</Text>
-                                        <Text>3:00 pm</Text>
+                    <View>
+                        {
+                            dons.map((d, i)=>{
+                                return (
+                                    
+                                    <View style={{marginBottom:20}}>
+                                        <View>
+                                            <View style={DashStyle.upcomingPickup}>
+                                                <View style={DashStyle.greenCircle}></View>
+                                                <View>
+                                                    <Text style={DashStyle.companyName}key={i}>{d.name}</Text>
+                                                    <Text >{d.time}</Text>
+                                                </View>
+                                            </View>
+                                        </View>
                                     </View>
-                                </View>
-                            </View>
-                        </View>
-
-                        <View style={{marginBottom:20}}>
-                            <View>
-                                <View style={DashStyle.upcomingPickup}>
-                                    <View style={DashStyle.greenCircle}></View>
-                                    <View>
-                                        <Text style={DashStyle.companyName}>Vancouver Food Bank</Text>
-                                        <Text>3:00 pm</Text>
-                                    </View>
-                                </View>
-                            </View>
-                        </View>
-
-                        <View style={{marginBottom:20}}>
-                            <View>
-                                <View style={DashStyle.upcomingPickup}>
-                                    <View style={DashStyle.greenCircle}></View>
-                                    <View>
-                                        <Text style={DashStyle.companyName}>Vancouver Food Bank</Text>
-                                        <Text>3:00 pm</Text>
-                                    </View>
-                                </View>
-                            </View>
-                        </View>
-
-                        <View style={{marginBottom:20}}>
-                            <View>
-                                <View style={DashStyle.upcomingPickup}>
-                                    <View style={DashStyle.greenCircle}></View>
-                                    <View>
-                                        <Text style={DashStyle.companyName}>Vancouver Food Bank</Text>
-                                        <Text>3:00 pm</Text>
-                                    </View>
-                                </View>
-                            </View>
-                        </View>
+                                )
+                            })
+                        }
                 </View>
 
             </ScrollView>
