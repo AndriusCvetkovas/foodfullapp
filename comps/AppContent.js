@@ -81,13 +81,13 @@ function AppContent() {
           tabBarComponent={Appfooter}
           wrap={false}
           modal
-          type="reset"
         >
           <Scene
             key="dashboard0"
             component={Dashboard}
             title="Dashboard"
             hideNavBar={true}
+            
           />
           <Scene
             key='postdonation'
@@ -112,7 +112,6 @@ function AppContent() {
             component={DonationPosted}
             title="Donation posted"
             hideNavBar={true}
-            onEnter={()=>{Actions.refresh({key: 'postdonation'});}}
           />
           <Scene
             key='profile'
