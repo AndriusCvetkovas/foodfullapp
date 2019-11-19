@@ -13,7 +13,7 @@ function MsgAcceptDonation(){
             style = {{marginTop: 50}}>
                 <Text
                 style = {GMapStyle.donatorTitle}
-                >Donation Accepting</Text>
+                >Donation Accepted</Text>
             </View>
             {/*Image box below*/} 
             <View 
@@ -53,14 +53,14 @@ function MsgAcceptDonation(){
             style = {buttonStyle.button}>
                 <Text
                 style = {{color: 'white', fontWeight: '500', fontFamily: 'avenir', fontSize: 16}}
-                >View Donation</Text>
+                >View Donations</Text>
             </TouchableHighlight>
             <TouchableHighlight
             title="Accept"
             style = {buttonStyle.button2}>
                 <Text
                 style = {{color: '#0ca3bc', fontWeight: '500', fontFamily: 'avenir', fontSize: 16}}
-                >View pickups</Text>
+                >Search for Donations</Text>
             </TouchableHighlight>
         </View>
     );

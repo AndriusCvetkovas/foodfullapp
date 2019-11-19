@@ -6,6 +6,7 @@
  * @flow
  */
 
+// import React, { useState, useEffect } from 'react';
 import React, { useState, useEffect } from 'react';
 import { View, Text, ScrollView, AsyncStorage } from 'react-native';
 import { Router, Scene, Overlay, Stack, Lightbox, Drawer } from 'react-native-router-flux';
@@ -36,165 +37,171 @@ import Appfooter from './footer';
 import DonNotification from './DonNotification';
 import Schedule from './Schedule';
 import GMapAccept from './GMapAccept';
+import DonNotificationAccepted from './DonNotificationAccepted';
+import DonNotificationDeclined from './DonNotificationDeclined';
+import MsgDeclineDonation from './MsgDeclineDonation';
 
 function AppContent() {
   return (
 
-    /* <View style = {{flex: 1}}>
-    <SignUp/>
+    <View style = {{flex: 1}}>
+    {/* <SignUp/>
+    <Pickup/> */}
+  <Confirmation />
+ 
   </View>
-  */
+  
 
 
-    <Router>
-      <Scene key='root' modal>
-        <Scene
-          key="login"
-          component={LoginPage}
-          title="login"
-          hideNavBar={true}
-          initial
-        />
-        <Scene
-          key="signup"
-          component={SignUp}
-          title="Sign Up"
-          hideNavBar={true}
-        />
-        <Scene
-          key="acceptingsignup"
-          component={AcceptingSignUp}
-          title="Sign Up"
-          hideNavBar={true}
-        />
-        <Scene
-          key="accountcreated"
-          component={AccountCreate}
-          title="Account Created"
-          hideNavBar={true}
-        />
-        <Stack
-          key="tabbar0"
-          gestureEnabled={false}
-          tabs
-          hideNavBar
-          tabBarComponent={Appfooter}
-          wrap={false}
-          modal
-        >
-          <Scene
-            key="dashboard0"
-            component={Dashboard}
-            title="Dashboard"
-            hideNavBar={true}
-          />
-          <Scene
-            key='postdonation'
-            component={Donate}
-            title="Post Donation"
-            hideNavBar={true}
-          />
-          <Scene
-            key='confirmdonation'
-            component={Confirmation}
-            title="Confirm donation"
-            hideNavBar={true}
-          />
-          <Scene
-            key='notification0'
-            component={DonNotification}
-            title="Notifications"
-            hideNavBar={true} />
-          <Scene
-            key='donationposted'
-            component={DonationPosted}
-            title="Donation posted"
-            hideNavBar={true}
-          />
-          <Scene
-            key='profile'
-            component={Profile}
-            title="profile"
-            hideNavBar={true}
-          />
-          <Scene
-            key='schedule'
-            component={Schedule}
-            title='schedule'
-            hideNavBar={true} 
-          />
-          <Scene
-          key='map'
-          component={GMap}
-          title='Map'
-          hideNavBar={true}
-          />
-          <Scene
-          key='info'
-          component={Info}
-          title="info"
-          hideNavBar={true}
-          />
-          <Scene
-          key='conf'
-          component={DConfMap}
-          title="confirmation"
-          hideNavBar={true} />
-          <Scene
-            key="leaderboard"
-            component={LeaderBoard}
-            title='lb'
-            hideNavBar={true}
-            />
-        </Stack>
+    // <Router>
+    //   <Scene key='root' modal>
+    //     <Scene
+    //       key="login"
+    //       component={LoginPage}
+    //       title="login"
+    //       hideNavBar={true}
+    //       initial
+    //     />
+    //     <Scene
+    //       key="signup"
+    //       component={SignUp}
+    //       title="Sign Up"
+    //       hideNavBar={true}
+    //     />
+    //     <Scene
+    //       key="acceptingsignup"
+    //       component={AcceptingSignUp}
+    //       title="Sign Up"
+    //       hideNavBar={true}
+    //     />
+    //     <Scene
+    //       key="accountcreated"
+    //       component={AccountCreate}
+    //       title="Account Created"
+    //       hideNavBar={true}
+    //     />
+    //     <Stack
+    //       key="tabbar0"
+    //       gestureEnabled={false}
+    //       tabs
+    //       hideNavBar
+    //       tabBarComponent={Appfooter}
+    //       wrap={false}
+    //       modal
+    //     >
+    //       <Scene
+    //         key="dashboard0"
+    //         component={Dashboard}
+    //         title="Dashboard"
+    //         hideNavBar={true}
+    //       />
+    //       <Scene
+    //         key='postdonation'
+    //         component={Donate}
+    //         title="Post Donation"
+    //         hideNavBar={true}
+    //       />
+    //       <Scene
+    //         key='confirmdonation'
+    //         component={Confirmation}
+    //         title="Confirm donation"
+    //         hideNavBar={true}
+    //       />
+    //       <Scene
+    //         key='notification0'
+    //         component={DonNotification}
+    //         title="Notifications"
+    //         hideNavBar={true} />
+    //       <Scene
+    //         key='donationposted'
+    //         component={DonationPosted}
+    //         title="Donation posted"
+    //         hideNavBar={true}
+    //       />
+    //       <Scene
+    //         key='profile'
+    //         component={Profile}
+    //         title="profile"
+    //         hideNavBar={true}
+    //       />
+    //       <Scene
+    //         key='schedule'
+    //         component={Schedule}
+    //         title='schedule'
+    //         hideNavBar={true} 
+    //       />
+    //       <Scene
+    //       key='map'
+    //       component={GMap}
+    //       title='Map'
+    //       hideNavBar={true}
+    //       />
+    //       <Scene
+    //       key='info'
+    //       component={Info}
+    //       title="info"
+    //       hideNavBar={true}
+    //       />
+    //       <Scene
+    //       key='conf'
+    //       component={DConfMap}
+    //       title="confirmation"
+    //       hideNavBar={true} />
+    //       <Scene
+    //         key="leaderboard"
+    //         component={LeaderBoard}
+    //         title='lb'
+    //         hideNavBar={true}
+    //         />
+    //     </Stack>
 
-        <Drawer
-          key="tabbar1"
-          gestureEnabled={false}
-          tabs
-          hideNavBar
-          wrap={false}
-          tabBarComponent={Appfooter}>
+    //     <Drawer
+    //       key="tabbar1"
+    //       gestureEnabled={false}
+    //       tabs
+    //       hideNavBar
+    //       wrap={false}
+    //       tabBarComponent={Appfooter}>
           
-          <Scene
-            key="dashboard1"
-            component={DashboardAccept}
-            title="Dashboard"
-            hideNavBar={true}
-          />
-          <Scene
-            key='notification1'
-            component={DonateContent}
-            title="Notifications"
-            hideNavBar={true} />
-            <Scene
-            key='mapaccept'
-            component={GMapAccept}
-            title='Map'
-            hideNavBar={true}
-            />
-          <Scene
-            key='profile'
-            component={Profile}
-            title="profile"
-            hideNavBar={true}
-          />
-          <Scene
-            key='schedule'
-            component={Schedule}
-            title='schedule'
-            hideNavBar={true} 
-          />
-          <Scene
-            key="leaderboard"
-            component={LeaderBoard}
-            title='lb'
-            hideNavBar={true}
-            />
-        </Drawer>
+    //       <Scene
+    //         key="dashboard1"
+    //         component={DashboardAccept}
+    //         title="Dashboard"
+    //         hideNavBar={true}
+    //       />
+    //       <Scene
+    //         key='notification1'
+    //         component={DonateContent}
+    //         title="Notifications"
+    //         hideNavBar={true} />
+    //         <Scene
+    //         key='mapaccept'
+    //         component={GMapAccept}
+    //         title='Map'
+    //         hideNavBar={true}
+    //         />
+    //       <Scene
+    //         key='profile'
+    //         component={Profile}
+    //         title="profile"
+    //         hideNavBar={true}
+    //       />
+    //       <Scene
+    //         key='schedule'
+    //         component={Schedule}
+    //         title='schedule'
+    //         hideNavBar={true} 
+    //       />
+    //       <Scene
+    //         key="leaderboard"
+    //         component={LeaderBoard}
+    //         title='lb'
+    //         hideNavBar={true}
+    //         />
+    //     </Drawer>
 
-      </Scene>
-    </Router >
+    //   </Scene>
+    // </Router >
 
 
   );
