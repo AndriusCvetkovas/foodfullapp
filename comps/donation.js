@@ -140,7 +140,7 @@ function Donations() {
                                         <Text style={donationStyle.Organization} key={i}>{d.name}</Text>
                                     </View>
                                     <View>
-                                        <Text style={donationStyle.address}>Name</Text>
+                                        <Text style={donationStyle.address}>{d.address}</Text>
                                     </View>
                                     
                                 </View>
