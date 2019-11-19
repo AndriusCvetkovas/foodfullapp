@@ -11,6 +11,7 @@ function LoginPage() {
   const [password, setEnteredPassword] = useState();
   //Auth
   const Auth = async () => {
+    console.log(email, password)
     var obj = {
       key: "users_auth",
       data: {
