@@ -15,14 +15,12 @@ var GMapStyle = StyleSheet.create({
         backgroundColor: 'white',
         borderWidth: 0.5,
         borderColor: '#06a2bc',
-        height: 80,
+        height: 70,
         flexDirection: 'row',
         marginRight: 10,
         marginLeft: 10,
         marginTop: 10,
-        padding: 10,
-        paddingLeft: 15,
-        paddingRight: 15,
+        padding: 15,
         borderRadius: 20,
         alignItems: 'center'
     },
@@ -110,8 +108,7 @@ var GMapStyle = StyleSheet.create({
         color: '#06a2bc'
     },
     innerInfoView: {
-        flex: 1,
-        
+        flex: 1
     },
     infoInnerButton: {
         flex: 0.4,
@@ -126,8 +123,8 @@ var GMapStyle = StyleSheet.create({
     },
     infoInnerDistance: {
         fontSize: 12,
-        flex: 0.5,
-        bottom: -8,
+        flex: 1.2,
+        bottom: 5
     }
 });
 export default GMapStyle;

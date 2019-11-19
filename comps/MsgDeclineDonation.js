@@ -3,7 +3,7 @@ import {View, Text, Image, TouchableHighlight} from 'react-native';
 import GMapStyle from '../styles/mapStyle';
 import buttonStyle from '../styles/buttonStyle';
 
-function MsgCancelDonation(){
+function MsgDeclineDonation(){
     return(
         <View
         style = {GMapStyle.infoBox}
@@ -13,17 +13,20 @@ function MsgCancelDonation(){
             style = {{marginTop: 50}}>
                 <Text
                 style = {GMapStyle.CancelledText}
-                >Pick Up Cancelled</Text>
+                >Donation Declined</Text>
             </View>
             {/*Image box below*/} 
-           
+            <View 
+            style = {GMapStyle.imageBox}
+            >
+               
+            </View>
             {/*Date box below*/} 
             <View
             style = {GMapStyle.messageBox}
             >
                 <Text style = {{height:70,marginTop: 40, fontFamily: 'DidactGothic-Regular', fontSize: 15}}>You have cancelled this donation from Safeway Extra.
-They will be informed that you are no longer picking
-up this donation.</Text>
+                You have declined this donation request</Text>
                 <Text style = {{color: '#0ca3bc'}}></Text>
             </View>
             <View
@@ -34,7 +37,7 @@ up this donation.</Text>
             </View>
             {/*Time box below*/} 
             <View style = {{flexDirection: 'row', width: "80%", flex: 0.4}}>
-                <Text style = {{color: '#0ca3bc', flex: 1, fontFamily: 'DidactGothic-Regular', fontSize: 15}}>Pickup time:</Text>
+                <Text style = {{color: '#0ca3bc', flex: 1, fontFamily: 'DidactGothic-Regular', fontSize: 18}}>Pickup time:</Text>
                 <Text
                 style = {{color: "black", flex: 1, fontFamily: 'DidactGothic-Regular', fontSize: 15}}
                 >
@@ -60,4 +63,4 @@ up this donation.</Text>
         </View>
     );
 };
-export default MsgCancelDonation;
+export default MsgDeclineDonation;

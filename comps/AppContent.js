@@ -6,6 +6,7 @@
  * @flow
  */
 
+// import React, { useState, useEffect } from 'react';
 import React, { useState, useEffect } from 'react';
 import { View, Text, ScrollView, AsyncStorage } from 'react-native';
 import { Router, Scene, Overlay, Stack, Lightbox, Drawer, Actions } from 'react-native-router-flux';
@@ -36,14 +37,13 @@ import Appfooter from './footer';
 import DonNotification from './DonNotification';
 import Schedule from './Schedule';
 import GMapAccept from './GMapAccept';
+import DonNotificationAccepted from './DonNotificationAccepted';
+import DonNotificationDeclined from './DonNotificationDeclined';
+import MsgDeclineDonation from './MsgDeclineDonation';
+
 
 function AppContent() {
   return (
-
-    /* <View style = {{flex: 1}}>
-    <SignUp/>
-  </View>
-  */
 
 
     <Router>
@@ -150,7 +150,7 @@ function AppContent() {
             />
         </Drawer>
 
-        <Drawer
+    //     <Drawer
           key="tabbar1"
           gestureEnabled={false}
           tabs
