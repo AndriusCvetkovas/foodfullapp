@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, Image, TouchableOpacity} from 'react-native';
+import {View, Text, Image, TouchableOpacity, ScrollView} from 'react-native';
 import ConfirmStyle from '../styles/confirmStyle';
 import buttonStyle from '../styles/buttonStyle';
 import {Actions} from 'react-native-router-flux';
@@ -29,11 +29,22 @@ function Confirmation({text}){
             {/*Image text below */}
             <Text style = {ConfirmStyle.imageText}>Images</Text>
             {/*Images below */}
-            <View style = {ConfirmStyle.imageBox}>
+            {/* <View style = {ConfirmStyle.imageBox}>
                 <Image style = {{height: 100, width: 100, margin:15, marginBottom: 0}}
                 source = {{uri:url}}
                 ></Image>
+            </View> */}
+
+           <ScrollView horizontal='true' style={{height:2, marginTop:20}}> 
+            <View style = {ConfirmStyle.imageBox}>
+            <Image style={{width: 100, height: 100, margin:2, marginBottom: 0, marginTop: 10}}  source = {{uri:url}}></Image>
+            {/* <Image style={{width: 100, height: 100, margin:2, marginBottom: 0, marginTop: 10}}  source = {{uri:url}}></Image> */}
             </View>
+            </ScrollView>
+
+
+
+
             {/*Date of pickup below */}
             <View style = {ConfirmStyle.pickupDate}>
                 <Text style = {{ fontSize: 18, flex: 1}}>Date of pickup</Text>
