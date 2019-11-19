@@ -2,6 +2,7 @@ import React from 'react';
 import { View, Text, Image, TouchableHighlight } from 'react-native';
 import GMapStyle from '../styles/mapStyle';
 import buttonStyle from '../styles/buttonStyle';
+import {Actions} from 'react-native-router-flux';
 
 function AcceptedInfo({address, time, date, names}) {
     var addr = address;
@@ -54,14 +55,16 @@ function AcceptedInfo({address, time, date, names}) {
             {/*Button below*/}
             <TouchableHighlight
                 title="Accept"
-                style={buttonStyle.button}>
+                style={buttonStyle.button}
+                onPress={()=>Actions.mapaccept()}>
                 <Text
                     style={{ color: 'white', fontWeight: '500', fontFamily: 'avenir', fontSize: 16 }}
                 >Claim another Donation</Text>
             </TouchableHighlight>
             <TouchableHighlight
                 title="Accept"
-                style={buttonStyle.button2}>
+                style={buttonStyle.button2}
+                onPress={()=> Actions.notification1({pickup: 1})}>
                 <Text
                     style={{ color: '#0ca3bc', fontWeight: '500', fontFamily: 'avenir', fontSize: 16 }}
                 >View pickups</Text>

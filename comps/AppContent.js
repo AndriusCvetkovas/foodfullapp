@@ -8,7 +8,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { View, Text, ScrollView, AsyncStorage } from 'react-native';
-import { Router, Scene, Overlay, Stack, Lightbox } from 'react-native-router-flux';
+import { Router, Scene, Overlay, Stack, Lightbox, Drawer } from 'react-native-router-flux';
 import GMap from './GMap';
 import Dashboard from './Dashboard';
 import Confirmation from './Confirmation';
@@ -17,7 +17,6 @@ import DonationPen from '../comps/DonationPen';
 import AccountCreate from './AccountCreate';
 import LoginPage from './LoginPage';
 import SignUp from './SignUp';
-import DonatingSignUp from './DonatingSignUp';
 import AcceptingSignUp from './AcceptingSignUp';
 import Donate from './donate';
 import Info from './DInfoMap';
@@ -149,13 +148,14 @@ function AppContent() {
             />
         </Stack>
 
-        <Scene
+        <Drawer
           key="tabbar1"
           gestureEnabled={false}
           tabs
           hideNavBar
           wrap={false}
           tabBarComponent={Appfooter}>
+          
           <Scene
             key="dashboard1"
             component={DashboardAccept}
@@ -191,7 +191,7 @@ function AppContent() {
             title='lb'
             hideNavBar={true}
             />
-        </Scene>
+        </Drawer>
 
       </Scene>
     </Router >

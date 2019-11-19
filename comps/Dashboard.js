@@ -1,10 +1,52 @@
-import React from 'react';
-import { View, Text, Image, ScrollView, TouchableOpacity } from 'react-native';
+import React, {useEffect, useState} from 'react';
+import { View, Text, Image, ScrollView, TouchableOpacity, AsyncStorage } from 'react-native';
 import DashStyle from '../styles/dashboardStyle';
 import { Actions } from 'react-native-router-flux';
+import axios from 'axios';
 // import {Actions} from 'react-native-router-flux';
 
 function Dashboard() {
+    var currentId= 0;
+    //RECEIVE CURRENT USER ID FROM ASYNC STORAGE
+    const getID = async () =>{
+        var json = await AsyncStorage.getItem('id');
+        currentId = json;
+        console.log("userID "+currentId);
+        GetDonations();
+    }
+    const [dons, setDons] = useState([]);
+    const [accId, setAccId] = useState([])
+    const GetDonations = async () => {
+        var obj = {
+        key: "donations_read",
+        data: {
+            user_id: currentId,
+            status: 2,
+        }
+        }
+        var r = await axios.post(`http://localhost:3001/post`, obj);
+        var json = JSON.parse(r.data.body);
+        console.log(json.data);
+        var d = json.data;
+        setDons(d);
+    }
+    //GET ACCEPTOR NAME
+    // const GetName = async () => {
+    //     var obj = {
+    //     key: "users_read",
+    //     data: {
+    //         id: accId
+    //     }
+    //     }
+    //     var b = await axios.post(`http://localhost:3001/post`, obj);
+    //     var json = JSON.parse(b.data.body);
+    //     console.log(json.data);
+        
+    // }
+
+    useEffect(()=>{
+        getID();
+    }, []);
     return (
         <View style={DashStyle.main}>
 
@@ -66,18 +108,25 @@ function Dashboard() {
                         <View style={DashStyle.line}></View>
                     </View>
 
-                    <View style={{ marginBottom: 15 }}>
-                        <View>
-                            <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-                                <View style={DashStyle.dateCircle}>
+                    {
+                        dons.map((d, i)=>{
+                            return (
+                                    
+                                <View style={{ marginBottom: 10 }}>
+                                    <View>
+                                        <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+                                            <View style={DashStyle.dateCircle}>
+                                            </View>
+                                            <View>
+                                                <Text style={{ fontSize: 20, fontFamily: 'avenir', fontWeight: '500' }}>{d.name}</Text>
+                                                <Text>{d.time}</Text>
+                                            </View>
+                                        </View>
+                                    </View>
                                 </View>
-                                <View>
-                                    <Text style={{ fontSize: 20, fontFamily: 'avenir', fontWeight: '500' }}>Vancouver Food Bank</Text>
-                                    <Text>3:00 pm</Text>
-                                </View>
-                            </View>
-                        </View>
-                    </View>
+                            )
+                        })
+                    }
 
                     <View style={{ marginBottom: 10 }}>
                         <View>

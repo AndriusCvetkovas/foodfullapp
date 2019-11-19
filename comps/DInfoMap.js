@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { View, Text, Image, TouchableHighlight } from 'react-native';
+import React, { useState, useEffect } from 'react';
+import { View, Text, Image, TouchableHighlight, AsyncStorage } from 'react-native';
 import GMapStyle from '../styles/mapStyle';
 import TimePicker from './DatePicker';
 import DatePicker from 'react-native-datepicker';
@@ -7,6 +7,7 @@ import buttonStyle from '../styles/buttonStyle';
 import { Router, Scene, Actions } from 'react-native-router-flux';
 import axios from 'axios';
 //for DateTimePicker run yarn add @react-native-community/datetimepicker and pod install
+
 
 function Info({ description, names, img, time, date, address, id }) {
     var desc = description;
@@ -17,13 +18,20 @@ function Info({ description, names, img, time, date, address, id }) {
     var addresss = address;
     var dId = id;
     console.log(namer);
+    var currentId = 0;
+    const getID = async () =>{
+        var json = await AsyncStorage.getItem('id');
+        currentId = json;
+        console.log("userID "+currentId);
+    }
 
     const Claim = async () => {
         var obj = {
             key: "donations_update",
             data: {
               id: dId,
-              status: 2
+              status: 2,
+              destination_id: currentId
             }
           }
           var r = await axios.post(`http://localhost:3001/post`, obj);
@@ -33,7 +41,9 @@ function Info({ description, names, img, time, date, address, id }) {
     }
     //const [time, setTime] = useState("20:20");
 
-
+    useEffect(()=> {
+        getID()
+    }, [])
     return (
         <View
             style={GMapStyle.infoBox}

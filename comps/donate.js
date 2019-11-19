@@ -9,9 +9,14 @@ import axios from 'axios';
 import Confirmation from './Confirmation';
 var id = "";
 var receiverId = 0;
-function Donate({addr, ids}) {
+var statu = 0;
+function Donate({addr, ids, stat}) {
     var text = addr;
     receiverId = ids;
+    
+    if(stat != null){
+        statu = stat;
+    }
     if(text == null){
         text = ''
     }
@@ -138,17 +143,23 @@ function Donate({addr, ids}) {
             description: selectedDescription,
             user_id: id,
             destination_id: receiverId,
-            status: status
+            status: statu
 
         }
     }
+    
     console.log(obj.data.user_id)
-    const changePage = () => {if(receiverId != 0 ){
+    const changePage = () => {
+        if(receiverId != 0 ){
         setStatus(1);
         Actions.confirmdonation({ text: obj })
+    }else if(receiverId != 0 && text == null) {
+        alert("Please enter receiver")
+        
     }else {
         Actions.confirmdonation({ text: obj })
-    } };
+    }
+}
     // const SendDonationInfo = async () => {
 
     //     var r = await axios.post(`http://localhost:3001/post`, obj);
@@ -163,144 +174,6 @@ function Donate({addr, ids}) {
     useEffect(()=>{
         getID();
     }, []);
-//     return (
-//         <KeyboardAvoidingView style={donateStyle.container} behavior="padding" enabled>
-//             <ScrollView  >
-//                 <View>
-//                     <View style={donateStyle.padding}>
-//                         <Text style={{ fontSize: 16, marginBottom: 5 }}>Add a Photo</Text>
-//                         <ScrollView horizontal='true'>
-//                             <View style={donateStyle.ImagePad}>
-//                                 <TouchableOpacity onPress={() => uploadMyImage()} >
-//                                     <View style={donateStyle.uploadPictureButton}>
-//                                         <Text style={donateStyle.addImagePlus}>+</Text>
-//                                     </View>
-//                                 </TouchableOpacity>
-//                                 {imageDefault.map((obj, i) => {
-//                                     return <Image key={i} source={obj} style={{ height: 100, width: 100, borderRadius: 10, marginLeft: 5 }} />
-//                                 })}
-//                                 {/* <Image source={avatarSource} style={{height:100, width:100, borderRadius: 10}} /> */}
-
-//                             </View>
-//                         </ScrollView>
-
-//                     </View>
-//                     <View>
-//                         <View>
-//                             <Text style={{ fontSize: 16, marginBottom: 3 }}>Date of Pickup</Text>
-//                         </View>
-//                         <View style={donateStyle.comp}>
-//                             <DatePicker
-//                                 style={{ width: '100%' }}
-//                                 date={selectedDate}
-//                                 mode="date"
-//                                 value={selectedDate}
-//                                 placeholder="select date"
-//                                 format="YYYY-MM-DD"
-//                                 minDate="2018-06-01"
-//                                 maxDate="2040-06-01"
-//                                 confirmBtnText="Confirm"
-//                                 cancelBtnText="Cancel"
-//                                 customStyles={{
-//                                     dateIcon: {
-//                                         position: 'absolute',
-//                                         left: 0,
-//                                         width: 0,
-//                                         height: 0,
-//                                         top: 4,
-//                                         marginLeft: 0
-//                                     },
-//                                     dateInput: {
-//                                         width: 100,
-//                                         borderRadius: 50,
-
-//                                     }
-//                                     // ... You can check the source to find the other keys.
-//                                 }}
-//                                 onDateChange={(val) => { setSelectedDate(val) }}
-//                             />
-//                         </View>
-//                     </View>
-
-
-//                     <View>
-//                         <View>
-//                             <Text style={{ fontSize: 16, marginBottom: 3 }}>Time</Text>
-//                         </View>
-//                         <View style={donateStyle.comp}>
-//                             <DatePicker
-//                                 style={{ width: '100%' }}
-//                                 date={selectedTime}
-//                                 mode="time"
-//                                 placeholder="Pick a time"
-//                                 format="HH:mm"
-//                                 value={selectedTime}
-//                                 confirmBtnText="Confirm"
-//                                 cancelBtnText="Cancel"
-//                                 customStyles={{
-//                                     dateIcon: {
-//                                         position: 'absolute',
-//                                         left: 0,
-//                                         width: 0,
-//                                         height: 0,
-//                                         top: 4,
-//                                         marginLeft: 0
-//                                     },
-//                                     dateInput: {
-//                                         width: 100,
-//                                         borderRadius: 50,
-
-//                                     }
-//                                     // ... You can check the source to find the other keys.
-//                                 }}
-//                                 onDateChange={(newTime) => { setSelectedTime(newTime) }}
-//                             />
-//                         </View>
-//                     </View>
-
-//                     <View>
-//                         <Text style={{ fontSize: 16, marginBottom: 5 }}>Description</Text>
-//                         <TextInput
-//                             style={{
-//                                 height: 80, borderColor: '#ddd', borderWidth: 1, borderRadius: 15, backgroundColor: '#eee',
-//                             }}
-//                             numberOfLines={4}
-//                             multiline
-//                             onChangeText={(text) => setSelectedDescription(text)}
-//                         />
-//                     </View>
-
-//                     <View style={donateStyle.padding, donateStyle.row}>
-//                         <Text style={donateStyle.lftItems}>Choose Organization</Text>
-//                         <Switch
-//                             style={donateStyle.rgttems}
-//                             value={chooseOrg}
-//                             onValueChange={() => {setChooseOrg(!chooseOrg)}}
-//                         />
-//                     </View>
-
-
-//                     {orgInput}
-
-//                 </View>
-//                 <View style={{ justifyContent: 'center', alignItems: 'center', }}>
-
-//                     <TouchableOpacity
-//                         style={donateStyle.DonateBtn}
-//                         underlayColor='#000'
-//                         color='white'
-//                         onPress={changePage}
-//                     >
-//                         <Text style={donateStyle.btnText}>Donate</Text>
-//                     </TouchableOpacity>
-
-//                 </View>
-
-//             </ScrollView>
-
-//         </KeyboardAvoidingView>
-//     )
-// }
 return (
     <KeyboardAvoidingView style={donateStyle.container} behavior="padding" enabled>
          <ScrollView  >
@@ -412,7 +285,7 @@ return (
                     />
             </View>
 
-            <View style={donateStyle.padding, donateStyle.row}>
+            <View style={[donateStyle.padding, donateStyle.row]}>
                     <Text style={donateStyle.lftItems}>Choose Organization</Text>
                     <Switch
                         style={donateStyle.rgttems}
