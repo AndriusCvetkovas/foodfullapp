@@ -53,7 +53,6 @@ function AppContent() {
   // </View>
   
 
-
     <Router>
       <Stack key='root' modal>
         <Scene
