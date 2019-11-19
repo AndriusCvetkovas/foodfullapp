@@ -150,7 +150,7 @@ function AppContent() {
             />
         </Drawer>
 
-    //     <Drawer
+         <Drawer
           key="tabbar1"
           gestureEnabled={false}
           tabs
