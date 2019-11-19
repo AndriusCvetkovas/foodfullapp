@@ -31,7 +31,7 @@ var ConfirmStyle = StyleSheet.create({
         justifyContent:'center'
     },
     imageText: {
-        flex: 0.2,
+        flex: 0.4,
         fontSize: 18,
         fontWeight: "600",
         width: '90%',
@@ -46,18 +46,20 @@ var ConfirmStyle = StyleSheet.create({
         flex: 0.5,
         flexDirection: 'row',
         alignItems: 'center',
+        marginTop: 30,
     },
     pickupTime: {
         flex: 0.5,
         width: '90%',
         flexDirection: 'row',
         alignItems: 'center',
+        marginTop: 10,
     },
     descriptionTitle: {
         flex: 0.3,
         color: '#0ca3bc',
         fontSize: 18,
-        
+        marginTop: 10,
         width: '90%'
     },
     Images:{

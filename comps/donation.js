@@ -20,9 +20,6 @@ function Donations() {
     // MODAL VIEW 
     const [showModal, setShowModal]= useState(false);
 
-
-
-
     //COMMUNICATION
     var currentId = "";
     const getID = async () => {
@@ -50,6 +47,7 @@ function Donations() {
         setDons(d);
         setDonsName(d[0].name);
         setDonsAddress(d[0].address);
+        console.log(json.data)
     }
 
     useEffect(() => {
@@ -76,7 +74,7 @@ function Donations() {
                     </View>
 
                     <View style={AcceptNFStyle.TextDisplay}>
-                            <Text style={AcceptNFStyle.Organization}>{donsName}</Text>
+                            <Text style={AcceptNFStyle.Organization}>Namae</Text>
                             <Text style={AcceptNFStyle.address}>Donation Request</Text>
                     </View>
 
@@ -86,7 +84,7 @@ function Donations() {
                 {/*Date of pickup below */}
                 <View style={AcceptNFStyle.pickupDate}>
                     <Text style={{ color: '#0ca3bc', fontSize: 18, flex: 1 }}>Loaction</Text>
-                    <Text style={{ color: '#066a87', fontSize: 16, flex: 1}}>{donsAddress}</Text>
+                    <Text style={{ color: '#066a87', fontSize: 16, flex: 1}}>address</Text>
                 </View>
                 {/*Pickup time below */}
                 <View style={AcceptNFStyle.pickupTime}>
@@ -130,7 +128,7 @@ function Donations() {
                 dons.map((d, i) => {
                     return (
                        
-          <View style = {donationStyle.CardDisplay}>
+                            <View style = {donationStyle.CardDisplay}>
                                 <View style = {donationStyle.Images}>
                                     <Image
                                     style={donationStyle.ImageSize}
@@ -139,10 +137,10 @@ function Donations() {
                                 </View>
                                 <View style={donationStyle.TextDisplay}>
                                     <View>
-                                        <Text style={donationStyle.Organization}> Safeway</Text>
+                                        <Text style={donationStyle.Organization} key={i}>{d.name}</Text>
                                     </View>
                                     <View>
-                                        <Text style={donationStyle.address}> 4475 Parker Street</Text>
+                                        <Text style={donationStyle.address}>{d.address}</Text>
                                     </View>
                                     
                                 </View>
@@ -166,6 +164,6 @@ function Donations() {
         </View>
     );
 }
-export default Donations
+export default Donations;
 
 

@@ -45,6 +45,13 @@ import MsgDeclineDonation from './MsgDeclineDonation';
 function AppContent() {
   return (
 
+  //   <View style = {{flex: 1}}>
+  //   {/* <SignUp/>
+  //   <Pickup/> */}
+  // <Confirmation />
+ 
+  // </View>
+  
 
     <Router>
       <Stack key='root' modal>
@@ -150,7 +157,7 @@ function AppContent() {
             />
         </Drawer>
 
-         <Drawer
+        <Drawer
           key="tabbar1"
           gestureEnabled={false}
           tabs
