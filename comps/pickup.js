@@ -37,9 +37,14 @@ function Pickup() {
 
               <View style={donationStyle.option}>
                   <View>
-                      <Text style={donationStyle.optionText}>Pending ...</Text>
+                      <Text style={donationStyle.optionText}>Pending</Text>
+                     
                   </View>
+                  
               </View>
+              <TouchableOpacity>
+                <Image style={donationStyle.Dots} source={require("../assets/icon/dot_nav.png")} />
+              </TouchableOpacity>
           </View>
         </View>
     </View>
@@ -67,11 +72,16 @@ function Pickup() {
 
               <View style={donationStyle.option}>
                   <View>
-                      <Text style={donationStyle.optionText}>Pending ....</Text>
+                      <Text style={donationStyle.optionText}>Pending</Text>
                   </View>
               </View>
+              <TouchableOpacity>
+                <Image style={donationStyle.Dots} source={require("../assets/icon/dot_nav.png")} />
+              </TouchableOpacity>
           </View>
+          
         </View>
+        
     </View>
 
 
@@ -79,7 +89,7 @@ function Pickup() {
     <View style = {donationStyle.comp}>
         <View>
           <View style = {donationStyle.CardDisplay}>
-              <View style = {donationStyle.Images}>
+              <View style = {donationStyle.Images2}>
                   <Text style={donationStyle.Date}>14</Text>
                   <Text style={donationStyle.Month}>Jun</Text>
               </View>
@@ -97,9 +107,12 @@ function Pickup() {
 
               <View style={donationStyle.option}>
                   <View>
-                      <Text style={donationStyle.optionText}>Pending ...</Text>
+                      <Text style={donationStyle.pickedText}>Picked Up</Text>
                   </View>
               </View>
+              <TouchableOpacity>
+                <Image style={donationStyle.Dots} source={require("../assets/icon/dot_nav.png")} />
+              </TouchableOpacity>
           </View>
         </View>
     </View>
@@ -108,7 +121,7 @@ function Pickup() {
     <View style = {donationStyle.comp}>
         <View>
           <View style = {donationStyle.CardDisplay}>
-              <View style = {donationStyle.Images}>
+              <View style = {donationStyle.Images2}>
                   <Text style={donationStyle.Date}>14</Text>
                   <Text style={donationStyle.Month}>Jun</Text>
               </View>
@@ -126,12 +139,49 @@ function Pickup() {
 
               <View style={donationStyle.option}>
                   <View>
-                      <Text style={donationStyle.optionText}>Pending ....</Text>
+                      <Text style={donationStyle.pickedText}>Picked Up</Text>
                   </View>
               </View>
+              <TouchableOpacity>
+                <Image style={donationStyle.Dots} source={require("../assets/icon/dot_nav.png")} />
+              </TouchableOpacity>
           </View>
         </View>
     </View>
+
+
+
+    <View style = {donationStyle.comp}>
+        <View>
+          <View style = {donationStyle.CardDisplay}>
+              <View style = {donationStyle.Images2}>
+                  <Text style={donationStyle.Date}>14</Text>
+                  <Text style={donationStyle.Month}>Jun</Text>
+              </View>
+              <View style={donationStyle.TextDisplay}>
+                  <View>
+                      <Text style={donationStyle.Organization}>Whole Foods</Text>
+                  </View>
+                  <View>
+                    <Text style={donationStyle.address}>2465 Willingdon Ave</Text>
+                  </View>
+                  <View>
+                    <Text style={donationStyle.time}>3:00PM to 7:00PM</Text>
+                  </View>
+              </View>
+
+              <View style={donationStyle.option}>
+                  <View>
+                      <Text style={donationStyle.pickedText}>Picked Up</Text>
+                  </View>
+              </View>
+              <TouchableOpacity>
+                <Image style={donationStyle.Dots} source={require("../assets/icon/dot_nav.png")} />
+              </TouchableOpacity>
+          </View>
+        </View>
+    </View>
+
     </ScrollView>
     
   );
