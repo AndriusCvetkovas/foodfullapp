@@ -4,7 +4,7 @@ import DashStyle from '../styles/dashboardAcceptStyle';
 import {Actions} from 'react-native-router-flux';
 import axios from 'axios';
 
-function DashboardAccept() {
+function DashboardAccept({navigation}) {
     
     var currentId = "";
 
@@ -60,7 +60,10 @@ function DashboardAccept() {
     
     useEffect(()=>{
         getID();
-    }, [])
+    }, []);
+    useEffect(()=>{
+        GetDonations();
+    },[navigation.state.params])
     return ( 
         <View style={DashStyle.main}>
 
