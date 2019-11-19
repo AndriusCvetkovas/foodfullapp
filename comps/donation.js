@@ -35,6 +35,8 @@ function Donations() {
     const [dons, setDons] = useState([]);
     const [donsName, setDonsName] = useState([]);
     const [donsAddress, setDonsAddress] = useState();
+    const [dd, setdd]=useState({});
+    
     const GetDonations = async () => {
         var obj = {
             key: "donations_read",
@@ -48,8 +50,7 @@ function Donations() {
         //console.log(json.data);
         var d = json.data;
         setDons(d);
-        setDonsName(d[0].name);
-        setDonsAddress(d[0].address);
+        
     }
 
     useEffect(() => {
@@ -76,7 +77,7 @@ function Donations() {
                     </View>
 
                     <View style={AcceptNFStyle.TextDisplay}>
-                            <Text style={AcceptNFStyle.Organization}>{donsName}</Text>
+                    <Text style={AcceptNFStyle.Organization}>{dd.name}</Text>
                             <Text style={AcceptNFStyle.address}>Donation Request</Text>
                     </View>
 
@@ -86,12 +87,12 @@ function Donations() {
                 {/*Date of pickup below */}
                 <View style={AcceptNFStyle.pickupDate}>
                     <Text style={{ color: '#0ca3bc', fontSize: 18, flex: 1 }}>Loaction</Text>
-                    <Text style={{ color: '#066a87', fontSize: 16, flex: 1}}>{donsAddress}</Text>
+                    <Text style={{ color: '#066a87', fontSize: 16, flex: 1}}>{dd.address}</Text>
                 </View>
                 {/*Pickup time below */}
                 <View style={AcceptNFStyle.pickupTime}>
                     <Text style={{ color: '#0ca3bc', fontSize: 18, flex: 1 }}>Pickup Time</Text>
-                    <Text style={{ color: '#066a87', fontSize: 16, flex: 1 }}>3:00 pm - 7:00 pm</Text>
+                    <Text style={{ color: '#066a87', fontSize: 16, flex: 1 }}>{dd.time}</Text>
                 </View>
                 {/*Description title below */}
                 <Text
@@ -101,7 +102,7 @@ function Donations() {
                 <Text
                     style={AcceptNFStyle.description}
                 >
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+                    {dd.description}
             </Text>
                 <TouchableOpacity
 
@@ -139,10 +140,10 @@ function Donations() {
                                 </View>
                                 <View style={donationStyle.TextDisplay}>
                                     <View>
-                                        <Text style={donationStyle.Organization}> Safeway</Text>
+                    <Text style={donationStyle.Organization}>{d.name}</Text>
                                     </View>
                                     <View>
-                                        <Text style={donationStyle.address}> 4475 Parker Street</Text>
+                                        <Text style={donationStyle.address}>{d.address}</Text>
                                     </View>
                                     
                                 </View>
@@ -153,7 +154,7 @@ function Donations() {
                                                 style={donationStyle.BtnStyleBlueView}
                                                 underlayColor='#000'
                                                 color='000'
-                                                onPress={()=>setShowModal(!showModal)}>
+                                                    onPress={()=>[setShowModal(!showModal), setdd(d),console.log(dd)]}>
                                                 <Text style={donationStyle.btnText}>View</Text>
                                             </TouchableOpacity>
                                         </View>
