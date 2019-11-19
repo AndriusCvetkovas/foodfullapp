@@ -5,7 +5,7 @@ import buttonStyle from '../styles/buttonStyle';
 import {Actions} from 'react-native-router-flux';
 
 
-function Confirmation(){
+function PickedUpComfirm(){
     return(
         <View style = {PickUpComfirmSty.main}>
             <View style = {PickUpComfirmSty.main2}>
@@ -51,7 +51,7 @@ function Confirmation(){
             {/*Pickup time below */}
             <View style = {PickUpComfirmSty.pickupTime}>
                 <Text style = {{color: '#0ca3bc', fontSize: 18, flex: 1}}>Pickup Time</Text>
-                <Text style = {{color: '#066a87', fontSize: 16, flex: 1, marginTop:18}}>3:00 pm - 7:00 pm</Text>
+                <Text style = {{color: '#066a87', fontSize: 16, flex: 1, marginTop:5}}>3:00 pm - 7:00 pm</Text>
             </View>
             {/*Description title below */}
             <Text
@@ -83,4 +83,4 @@ function Confirmation(){
         </View>
     )
 };
-export default Confirmation;
+export default PickedUpComfirm;
