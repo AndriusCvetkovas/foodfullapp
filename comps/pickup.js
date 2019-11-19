@@ -56,6 +56,16 @@ function Pickup() {
     <ScrollView>
       {
         dons.map((d, i) => {
+          if(d.status == 1){
+            var texta = 'Pending...';
+            var colorz = '#ee9a23'
+        }else if (d.status == 2) {
+            texta = 'Accepted...'
+            colorz = '#a5d826'
+        }else {
+            texta = 'Declined...'
+            colorz = 'red'
+        }
           return (
 <View style = {donationStyle.comp}>
         <View>
@@ -77,7 +87,7 @@ function Pickup() {
 
               <View style={donationStyle.option}>
                   <View>
-                      <Text style={donationStyle.optionText}>Pending</Text>
+                    <Text style={[donationStyle.optionText, {color: colorz}]}>{texta}</Text>
                   </View>
               </View>
               <TouchableOpacity>
@@ -88,86 +98,9 @@ function Pickup() {
         </View>
         
     </View>
-
-
-
-
           )
         })
       }
-
-<View style = {donationStyle.comp}>
-        <View>
-          <View style = {donationStyle.CardDisplay}>
-              <View style = {donationStyle.Images}>
-                  <Text style={donationStyle.Date}>14</Text>
-                  <Text style={donationStyle.Month}>Jun</Text>
-              </View>
-              <View style={donationStyle.TextDisplay}>
-                  <View>
-                      <Text style={donationStyle.Organization}>Safeway Extra</Text>
-                  </View>
-                  <View>
-                    <Text style={donationStyle.address}>2465 Willingdon Ave</Text>
-                  </View>
-                  <View>
-                    <Text style={donationStyle.time}>5:00PM</Text>
-                  </View>
-              </View>
-
-              <View style={donationStyle.option}>
-                  <View>
-                      <Text style={donationStyle.optionText}>Pending</Text>
-                  </View>
-              </View>
-              <TouchableOpacity>
-                <Image style={donationStyle.Dots} source={require("../assets/icon/dot_nav.png")} />
-              </TouchableOpacity>
-          </View>
-          
-        </View>
-        
-    </View>
-
-
-
-
-
-
-    <View style = {donationStyle.comp}>
-        <View>
-          <View style = {donationStyle.CardDisplay}>
-              <View style = {donationStyle.Images}>
-                  <Text style={donationStyle.Date}>14</Text>
-                  <Text style={donationStyle.Month}>Jun</Text>
-              </View>
-              <View style={donationStyle.TextDisplay}>
-                  <View>
-                      <Text style={donationStyle.Organization}>Safeway Extra</Text>
-                  </View>
-                  <View>
-                    <Text style={donationStyle.address}>2465 Willingdon Ave</Text>
-                  </View>
-                  <View>
-                    <Text style={donationStyle.time}>5:00PM</Text>
-                  </View>
-              </View>
-
-              <View style={donationStyle.option}>
-                  <View>
-                      <Text style={donationStyle.optionText}>Pending</Text>
-                  </View>
-              </View>
-              <TouchableOpacity>
-                <Image style={donationStyle.Dots} source={require("../assets/icon/dot_nav.png")} />
-              </TouchableOpacity>
-          </View>
-          
-        </View>
-        
-    </View>
-
-
     </ScrollView>
 
   );

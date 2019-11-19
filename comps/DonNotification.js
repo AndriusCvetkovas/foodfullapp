@@ -16,6 +16,7 @@ function DonNotification() {
     }
 
     const [dons, setDons] = useState([]);
+    const [dd, setdd]=useState({});
     const GetDonations = async () => {
         var obj = {
             key: "donations_read",
@@ -52,7 +53,7 @@ function DonNotification() {
                     </View>
 
                     <View style={AcceptNFStyle.TextDisplay}>
-                            <Text style={AcceptNFStyle.Organization}>name</Text>
+                            <Text style={AcceptNFStyle.Organization}>{dd.name}</Text>
                             <Text style={AcceptNFStyle.address}>Donation Request</Text>
                     </View>
 
@@ -62,12 +63,12 @@ function DonNotification() {
                 {/*Date of pickup below */}
                 <View style={AcceptNFStyle.pickupDate}>
                     <Text style={{ color: '#0ca3bc', fontSize: 18, flex: 1 }}>Loaction</Text>
-                    <Text style={{ color: '#066a87', fontSize: 16, flex: 1}}>address</Text>
+                    <Text style={{ color: '#066a87', fontSize: 16, flex: 1}}>{dd.address}</Text>
                 </View>
                 {/*Pickup time below */}
                 <View style={AcceptNFStyle.pickupTime}>
                     <Text style={{ color: '#0ca3bc', fontSize: 18, flex: 1 }}>Pickup Time</Text>
-                    <Text style={{ color: '#066a87', fontSize: 16, flex: 1 }}>3:00 pm - 7:00 pm</Text>
+                    <Text style={{ color: '#066a87', fontSize: 16, flex: 1 }}>{dd.time}</Text>
                 </View>
                 {/*Description title below */}
                 <Text
@@ -77,7 +78,7 @@ function DonNotification() {
                 <Text
                     style={AcceptNFStyle.description}
                 >
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+                    {dd.description}
             </Text>
                 <TouchableOpacity
 
@@ -137,7 +138,7 @@ function DonNotification() {
                                         style={donationStyle.BtnStyleBlueView}
                                         underlayColor='#000'
                                         color='000'
-                                        onPress={()=>setShowModal(!showModal)}>
+                                        onPress={()=>{[setShowModal(!showModal),setdd(d)]}}>
                                         <Text style={donationStyle.btnText}>View</Text>
                                     </TouchableOpacity>
                                 </View>

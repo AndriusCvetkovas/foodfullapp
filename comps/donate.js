@@ -160,17 +160,6 @@ function Donate({addr, ids, stat, navigation}) {
         Actions.confirmdonation({ text: obj })
     }
 }
-    // const SendDonationInfo = async () => {
-
-    //     var r = await axios.post(`http://localhost:3001/post`, obj);
-
-    // }
-
-    // CONFIRM THE DONATION
-    const Confirm = () => {
-        //SendDonationInfo();
-        changePage({ text: selectedDate });
-    }
     useEffect(()=>{
         getID();
         console.log(navigation.state.params);
@@ -178,6 +167,9 @@ function Donate({addr, ids, stat, navigation}) {
 
     useEffect(()=>{
         setSelectedDate("");
+        setSelectedTime("");
+        setSelectedUrl("");
+        setSelectedDescription("");
     },[navigation.state.params])
 return (
     <KeyboardAvoidingView style={donateStyle.container} behavior="padding" enabled>
