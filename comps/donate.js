@@ -224,7 +224,7 @@ return (
                             mode="time"
                             placeholder="Pick a time"
                             format="HH:mm"
-                            value = {selectedTime}
+                            value = ''
                             confirmBtnText="Confirm"
                             cancelBtnText="Cancel"
                             customStyles={{
