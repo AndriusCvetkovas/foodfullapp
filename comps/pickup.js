@@ -57,32 +57,37 @@ function Pickup() {
       {
         dons.map((d, i) => {
           return (
-            <View style={donationStyle.comp}>
-              <View>
-                <View style={donationStyle.CardDisplay}>
-                  <View style={donationStyle.Images}>
-                    <Text style={donationStyle.Date}>{d.date.slice(5)}</Text>
-                  </View>
-                  <View style={donationStyle.TextDisplay}>
-                    <View>
-                      <Text style={donationStyle.Organization}>{d.name}</Text>
-                    </View>
-                    <View>
-                      <Text style={donationStyle.address}>{d.address}</Text>
-                    </View>
-                    <View>
-                      <Text style={donationStyle.time}>{d.time}</Text>
-                    </View>
-                  </View>
-
-                  <View style={donationStyle.option}>
-                    <View>
-                      <Text style={donationStyle.optionText}>Pending...</Text>
-                    </View>
-                  </View>
-                </View>
+<View style = {donationStyle.comp}>
+        <View>
+          <View style = {donationStyle.CardDisplay}>
+              <View style = {donationStyle.Images}>
+                  <Text style={donationStyle.Date}>{d.date.slice(5)}</Text>
               </View>
-            </View>
+              <View style={donationStyle.TextDisplay}>
+                  <View>
+                      <Text style={donationStyle.Organization}>{d.name}</Text>
+                  </View>
+                  <View>
+                    <Text style={donationStyle.address}>{d.address}</Text>
+                  </View>
+                  <View>
+                    <Text style={donationStyle.time}>{d.time}</Text>
+                  </View>
+              </View>
+
+              <View style={donationStyle.option}>
+                  <View>
+                      <Text style={donationStyle.optionText}>Pending</Text>
+                  </View>
+              </View>
+              <TouchableOpacity>
+                <Image style={donationStyle.Dots} source={require("../assets/icon/dot_nav.png")} />
+              </TouchableOpacity>
+          </View>
+          
+        </View>
+        
+    </View>
           )
         })
       }

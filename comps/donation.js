@@ -6,6 +6,7 @@
  * @flow
  */
 
+
 import React, { useState, useEffect } from 'react';
 import { View, Text, Image, ScrollView, TouchableOpacity, AsyncStorage } from 'react-native';
 import donationStyle from '../styles/donationStyle';
@@ -128,34 +129,36 @@ function Donations() {
             {
                 dons.map((d, i) => {
                     return (
-                        <View style={donationStyle.CardDisplay}>
-                            <View style={donationStyle.Images}>
-                                <Image
+                       
+          <View style = {donationStyle.CardDisplay}>
+                                <View style = {donationStyle.Images}>
+                                    <Image
                                     style={donationStyle.ImageSize}
-                                    source={require('../assets/img/logo.png')}
-                                />
-                            </View>
-                            <View style={donationStyle.TextDisplay}>
-                                <View>
-                                    <Text style={donationStyle.Organization} key={i}>{d.name}</Text>
+                                    source={require('../assets/img/safeway.jpg')}
+                                    />
                                 </View>
-                                <View>
-                                    <Text style={donationStyle.address}>{d.address}</Text>
+                                <View style={donationStyle.TextDisplay}>
+                                    <View>
+                                        <Text style={donationStyle.Organization}> Safeway</Text>
+                                    </View>
+                                    <View>
+                                        <Text style={donationStyle.address}> 4475 Parker Street</Text>
+                                    </View>
+                                    
                                 </View>
-
+                                <View style={donationStyle.TextDisplay}>
+                                        <View style={donationStyle.option}>
+                                        
+                                            <TouchableOpacity
+                                                style={donationStyle.BtnStyleBlueView}
+                                                underlayColor='#000'
+                                                color='000'
+                                                onPress={()=>setShowModal(!showModal)}>
+                                                <Text style={donationStyle.btnText}>View</Text>
+                                            </TouchableOpacity>
+                                        </View>
+                                    </View>
                             </View>
-                            <View style={donationStyle.TextDisplay}>
-                                <View style={donationStyle.option}>
-                                    <TouchableOpacity
-                                        style={donationStyle.BtnStyleBlueView}
-                                        underlayColor='#000'
-                                        color='000'
-                                        onPress={()=>setShowModal(!showModal)}>
-                                        <Text style={donationStyle.btnText}>View</Text>
-                                    </TouchableOpacity>
-                                </View>
-                            </View>
-                        </View>
                     )
                 })
             }

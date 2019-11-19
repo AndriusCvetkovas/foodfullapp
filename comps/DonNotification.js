@@ -32,6 +32,7 @@ function DonNotification() {
     return (
         <ScrollView>
 
+
 {
                 dons.map((d, i) => {
                     return (
@@ -66,6 +67,7 @@ function DonNotification() {
                     )
                 })
             }
+
 
         </ScrollView>
     )
