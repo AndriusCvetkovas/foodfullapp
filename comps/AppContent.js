@@ -9,7 +9,7 @@
 // import React, { useState, useEffect } from 'react';
 import React, { useState, useEffect } from 'react';
 import { View, Text, ScrollView, AsyncStorage } from 'react-native';
-import { Router, Scene, Overlay, Stack, Lightbox, Drawer } from 'react-native-router-flux';
+import { Router, Scene, Overlay, Stack, Lightbox, Drawer, Actions } from 'react-native-router-flux';
 import GMap from './GMap';
 import Dashboard from './Dashboard';
 import Confirmation from './Confirmation';
@@ -55,7 +55,7 @@ function AppContent() {
 
 
     <Router>
-      <Scene key='root' modal>
+      <Stack key='root' modal>
         <Scene
           key="login"
           component={LoginPage}
@@ -81,7 +81,7 @@ function AppContent() {
           title="Account Created"
           hideNavBar={true}
         />
-        <Stack
+        <Drawer
           key="tabbar0"
           gestureEnabled={false}
           tabs
@@ -89,6 +89,7 @@ function AppContent() {
           tabBarComponent={Appfooter}
           wrap={false}
           modal
+          type="reset"
         >
           <Scene
             key="dashboard0"
@@ -101,6 +102,7 @@ function AppContent() {
             component={Donate}
             title="Post Donation"
             hideNavBar={true}
+            
           />
           <Scene
             key='confirmdonation'
@@ -118,6 +120,7 @@ function AppContent() {
             component={DonationPosted}
             title="Donation posted"
             hideNavBar={true}
+            onEnter={()=>{Actions.refresh({key: 'postdonation'});}}
           />
           <Scene
             key='profile'
@@ -154,7 +157,7 @@ function AppContent() {
             title='lb'
             hideNavBar={true}
             />
-        </Stack>
+        </Drawer>
 
         <Drawer
           key="tabbar1"
@@ -201,7 +204,7 @@ function AppContent() {
             />
         </Drawer>
 
-      </Scene>
+      </Stack>
     </Router >
 
 

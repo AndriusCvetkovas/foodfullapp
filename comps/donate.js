@@ -63,29 +63,7 @@ function Donate({addr, ids, stat}) {
 
     if (chooseOrg === true) {
         orgInput = (
-            // <KeyboardAvoidingView enabled>
-            //     <View style={{ margin: 5 }}>
-            //         <TextInput
-            //             style={{ height: 40, borderColor: '#ddd', borderWidth: 1, borderRadius: 15, backgroundColor: '#eee', margin: 10, padding: 10 }}
-            //         >{text}</TextInput>
-            //         <View style={{ justifyContent: 'center', alignItems: 'center', }}>
-            //             <TouchableOpacity
-            //                 style={donateStyle.mapSearchButton}
-            //                 underlayColor='#000'
-            //                 color='white'
-            //                 onPress={()=> Actions.map()}
-            //             >
-            //                 <View style={{ flexDirection: 'row' , justifyContent: 'flex-start', alignItems: 'center'}}>
-            //                     <Text style={{ flex: 1, marginLeft: 10 }} >Locate in the map</Text>
-            //                     <Image style={{ flex: 0.1, height: 22, width: 10, margin: 20}}
-            //                     source = {require('../assets/icon/map.png')}/>
-            //                 </View>
-
-            //             </TouchableOpacity>
-            //         </View>
-
-            //     </View>
-            // </KeyboardAvoidingView>
+            
             <KeyboardAvoidingView enabled>
             <View style={{margin:5}}>
                 <TextInput

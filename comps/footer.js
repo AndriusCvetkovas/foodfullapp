@@ -48,6 +48,7 @@ function Appfooter() {
     if(type == 1){
       Actions.mapaccept();
     }else {
+      Actions.refresh({key: 'postdonation'});
       Actions.postdonation();
     }
   }
