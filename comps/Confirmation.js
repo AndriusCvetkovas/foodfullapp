@@ -7,7 +7,7 @@ import axios from 'axios';
 
 function Confirmation({text}){
     var obj = text;
-    var url = obj.data.image_url[0].uri
+    var url = obj.data.image_url[0].uri;
     console.log(obj);
     const SendDonationInfo = async () => {
         var r = await axios.post(`http://localhost:3001/post`, obj);
@@ -15,7 +15,9 @@ function Confirmation({text}){
     }
     const Confirm = () =>{
         SendDonationInfo();
-        Actions.donationposted();
+        Actions.refresh({key: 'postdonation'})
+        
+        Actions.donationposted()
     }
     return(
         <View style = {ConfirmStyle.main}>
