@@ -15,7 +15,6 @@ function Dashboard() {
         GetDonations();
     }
     const [dons, setDons] = useState([]);
-    const [accId, setAccId] = useState([]);
     const [name, setName] = useState({});
     const GetDonations = async () => {
         var obj = {
@@ -44,7 +43,6 @@ function Dashboard() {
         console.log(json.data);
         var bb = json.data;
         setName(bb);
-        setAccId(id);
     }
 
     useEffect(()=>{
@@ -115,10 +113,10 @@ function Dashboard() {
 
                     {
                         dons.map((d, i)=>{
-                                //GetName(d.destination_id);
+                                GetName(d.destination_id);
                                 console.log(name)
-                            
-                            
+
+
                             return (
                                     
                                 <View style={{ marginBottom: 10 }}>
@@ -127,7 +125,7 @@ function Dashboard() {
                                             <View style={DashStyle.dateCircle}>
                                             </View>
                                             <View>
-                                                <Text style={{ fontSize: 20, fontFamily: 'avenir', fontWeight: '500' } } key={i}>Donator Name+ {d.user_id}</Text>
+                                                <Text style={{ fontSize: 20, fontFamily: 'avenir', fontWeight: '500' } } key={i}>Acceptor Name+ {d.destination_id}</Text>
                                                 <Text>{d.time}</Text>
                                             </View>
                                         </View>
