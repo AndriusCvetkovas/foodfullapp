@@ -4,7 +4,8 @@ import DonNotifStyle from '../styles/donNotifStyle';
 import donationStyle from '../styles/donationStyle';
 import axios from 'axios';
 import Modal from "react-native-modal";
-import AcceptNFStyle from '../styles/AcceptNFStyle'
+import AcceptNFStyle from '../styles/AcceptNFStyle';
+import AppHeaderStyle from '../styles/headerStyle';
 function DonNotification() {
     const [showModal, setShowModal]= useState(false);
     var currentId = "";
@@ -34,6 +35,7 @@ function DonNotification() {
         getID();
     }, [])
     return (
+        <View>
         <ScrollView>
             <Modal isVisible={showModal}
             coverScreen={false}
@@ -152,6 +154,7 @@ function DonNotification() {
 
         
         </ScrollView>
+        </View>
     )
 };
 export default DonNotification;

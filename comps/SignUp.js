@@ -71,7 +71,7 @@ function SignUp() {
 
     return (
         <View style={SignUpStyles.container}>
-            <TouchableOpacity style ={{position: 'absolute', top: 10, left: 20, flexDirection: 'row', alignItems: 'center', justifyContent:'center'}}
+            <TouchableOpacity style ={{position: 'absolute', top: 50, left: 20, flexDirection: 'row', alignItems: 'center', justifyContent:'center'}}
             onPress={()=>Actions.login()}> 
                 <Image
                 source = {require('../assets/icon/next.png')}

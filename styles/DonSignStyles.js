@@ -28,7 +28,7 @@ const DonSignStyles = StyleSheet.create({
 
     headerContainer:{
       flex:0.3,
-      top:-40,
+      top:0,
       flexDirection:'row',
       textAlign:'center',
       justifyContent:'center',

@@ -15,6 +15,7 @@ var mainStyle = StyleSheet.create({
 
     AppContent:{
         flex:1,
+        top: 0,
         height: '100%'
     },
 

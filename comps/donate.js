@@ -172,6 +172,7 @@ function Donate({addr, ids, stat, navigation}) {
     },[navigation.state.params])
 return (
     <KeyboardAvoidingView style={donateStyle.container} behavior="padding" enabled>
+        
          <ScrollView  >
          <View>
             <View style={donateStyle.padding}>

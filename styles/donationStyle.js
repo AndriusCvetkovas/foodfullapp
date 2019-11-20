@@ -5,7 +5,7 @@ var donationStyle = StyleSheet.create({
         borderColor:'#eee',
         borderRadius: 5,
         padding:5,
-        marginTop: 10,
+        top: 100,
         shadowOffset:{width:0.2, height: 0.1},
         shadowColor:'#eee',
         borderStyle: 'solid',

@@ -22,9 +22,9 @@ function App() {
     
     <View style={mainStyle.App}>
 
-    <View style={mainStyle.AppHeader}>
+    {/* <View style={mainStyle.AppHeader}>
         <AppHeader/>
-      </View> 
+      </View>  */}
 
       <View style={mainStyle.AppContent}>
         <AppContent/>
