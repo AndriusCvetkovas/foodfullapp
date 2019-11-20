@@ -6,7 +6,7 @@ import {
     TouchableHighlight,
     TouchableOpacity,
 } from 'react-native';
-import SignUpStyles from '../styles/SignUpStyles';
+import SignUpStyles from '../../styles/SignUpStyles';
 import { Actions } from 'react-native-router-flux';
 import axios from 'axios';
 
@@ -30,7 +30,7 @@ function SignUp() {
     var BGColor1 = '#F4F5F7';
     var HeaderColor1 = '#606060';
     var TextColor1 = '#606060';
-    var imageUrl1 = require('../assets/icon/donating.png');
+    var imageUrl1 = require('../../assets/icon/donating.png');
     var ShadowColor1 = '#9B9EA3';
     var ShadowOpacity1 = 0;
 
@@ -48,12 +48,12 @@ function SignUp() {
         ButtonColor = '#0ca3bc';
         ButtonBorder = '#0ca3bc';
         ButtonText = '#ffffff';
-        imageUrl1 = require('../assets/icon/donating_active.png');
+        imageUrl1 = require('../../assets/icon/donating_active.png');
     }
     var BGColor2 = '#F4F5F7';
     var HeaderColor2 = '#606060';
     var TextColor2 = '#606060';
-    var imageUrl2 = require('../assets/icon/accepting.png');
+    var imageUrl2 = require('../../assets/icon/accepting.png');
     var ShadowColor2 = '#9B9EA3';
     var ShadowOpacity2 = 0;
 
@@ -66,7 +66,7 @@ function SignUp() {
         ButtonColor = '#34a3bd';
         ButtonBorder = '#0ca3bc';
         ButtonText = '#ffffff';
-        imageUrl2 = require('../assets/icon/accepting_active.png');
+        imageUrl2 = require('../../assets/icon/accepting_active.png');
     }
 
     return (
@@ -74,7 +74,7 @@ function SignUp() {
             <TouchableOpacity style ={{position: 'absolute', top: 50, left: 20, flexDirection: 'row', alignItems: 'center', justifyContent:'center'}}
             onPress={()=>Actions.login()}> 
                 <Image
-                source = {require('../assets/icon/next.png')}
+                source = {require('../../assets/icon/next.png')}
                 style = {{width: 20, height: 20, transform: [
                     { rotateY: '180deg'} ]}}
                 ></Image>

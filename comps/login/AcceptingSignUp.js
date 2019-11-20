@@ -12,12 +12,11 @@ import {
 
 
 } from 'react-native';
-import DonSignStyles from '../styles/DonSignStyles';
+import DonSignStyles from '../../styles/DonSignStyles';
 import { Actions } from 'react-native-router-flux';
 import Geolocation from 'react-native-geolocation-service';
-import apiKey from '../apiKey/apiKey';
+import apiKey from '../../apiKey/apiKey';
 import axios from 'axios';
-import SignUp from './SignUp';
 
 
 
@@ -56,10 +55,10 @@ function AcceptingSignUp({text}) {
   const signUpType = ()=> {
     if(userType == 0){
       setHeader("Donating Food");
-      setHeaderImg(require("../assets/icon/donating_active.png"))
+      setHeaderImg(require("../../assets/icon/donating_active.png"))
     }else {
       setHeader("Accepting Food");
-      setHeaderImg(require("../assets/icon/accepting_active.png"))
+      setHeaderImg(require("../../assets/icon/accepting_active.png"))
     }
   }
 
@@ -143,7 +142,7 @@ function AcceptingSignUp({text}) {
       <TouchableOpacity style ={{position: 'absolute', top: 50, left: 20, flexDirection: 'row', alignItems: 'center', justifyContent:'center'}}
             onPress={()=>Actions.signup()}> 
                 <Image
-                source = {require('../assets/icon/next.png')}
+                source = {require('../../assets/icon/next.png')}
                 style = {{width: 20, height: 20, transform: [
                     { rotateY: '180deg'} ]}}
                 ></Image>
