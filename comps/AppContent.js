@@ -36,6 +36,7 @@ import Appfooter from './footer';
 import DonNotification from './DonNotification';
 import Schedule from './Schedule';
 import GMapAccept from './GMapAccept';
+import GetStarted from './getStarted';
 
 function AppContent() {
   return (
@@ -50,7 +51,7 @@ function AppContent() {
       <Scene key='root' modal>
         <Scene
           key="login"
-          component={LoginPage}
+          component={GetStarted}
           title="login"
           hideNavBar={true}
           initial
@@ -73,6 +74,11 @@ function AppContent() {
           title="Account Created"
           hideNavBar={true}
         />
+        <Scene
+        key='onboarding'
+        component={GetStarted}
+        title="onboarding"
+        hideNavBar={true}/>
         <Stack
           key="tabbar0"
           gestureEnabled={false}
@@ -201,4 +207,4 @@ function AppContent() {
 }
 
 
-export default AppContent;
+export default Dashboard;

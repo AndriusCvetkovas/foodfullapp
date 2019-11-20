@@ -29,9 +29,9 @@ function AccountCreate({text}) {
   const ChangeToDashboard = ()=>{
     //ReadUsers();
     if(userType === 0){
-      Actions.dashboard0();
+      Actions.onboarding();
     }else {
-      Actions.dashboard1();
+      Actions.onboarding();
     }
   }
   return (
