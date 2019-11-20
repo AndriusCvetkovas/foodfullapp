@@ -40,7 +40,8 @@ import GMapAccept from './GMapAccept';
 import DonNotificationAccepted from './DonNotificationAccepted';
 import DonNotificationDeclined from './DonNotificationDeclined';
 import MsgDeclineDonation from './MsgDeclineDonation';
-import AppHeader from './header'
+import AppHeader from './header';
+import GetStarted from './getStarted';
 
 
 function AppContent() {
@@ -73,6 +74,12 @@ function AppContent() {
         <Scene
           key="accountcreated"
           component={AccountCreate}
+          title="Account Created"
+          hideNavBar={true}
+        />
+        <Scene
+          key="onboarding"
+          component={GetStarted}
           title="Account Created"
           hideNavBar={true}
         />
