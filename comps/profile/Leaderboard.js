@@ -1,6 +1,6 @@
 import React from 'react';
 import {View, Text, Image, ScrollView} from 'react-native';
-import LeaderboardStyles from '../styles/leaderboardStyle.js';
+import LeaderboardStyles from '../../styles/leaderboardStyle.js';
 function Leaderboard(){
     return(
         //Main View

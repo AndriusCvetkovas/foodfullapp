@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, Image, TouchableOpacity, AsyncStorage  } from 'react-native';
-import ProfileStyle from '../styles/profileStyle';
+import ProfileStyle from '../../styles/profileStyle';
 import { Actions} from 'react-native-router-flux';
 import axios from 'axios';
 
