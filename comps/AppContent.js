@@ -15,7 +15,7 @@ import Dashboard from './Dashboard';
 import Confirmation from './Confirmation';
 import DashboardAccept from './DashboardAccept';
 import DonationPen from '../comps/DonationPen';
-import AccountCreate from './AccountCreate';
+import AccountCreate from './login/AccountCreate';
 import LoginPage from './login/LoginPage';
 import SignUp from './login/SignUp';
 import AcceptingSignUp from './login/AcceptingSignUp';
