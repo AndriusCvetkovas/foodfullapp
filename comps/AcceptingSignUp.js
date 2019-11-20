@@ -140,6 +140,15 @@ function AcceptingSignUp({text}) {
   return (
 
     <View style={DonSignStyles.container}>
+      <TouchableOpacity style ={{position: 'absolute', top: 10, left: 20, flexDirection: 'row', alignItems: 'center', justifyContent:'center'}}
+            onPress={()=>Actions.signup()}> 
+                <Image
+                source = {require('../assets/icon/next.png')}
+                style = {{width: 20, height: 20, transform: [
+                    { rotateY: '180deg'} ]}}
+                ></Image>
+                <Text>Back</Text>
+            </TouchableOpacity>
 
       {/* HEADER: icon and text */}
       <View style={DonSignStyles.headerContainer}>

@@ -20,7 +20,7 @@ var AppHeaderStyle = StyleSheet.create({
         height:'100%',
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor:'#ffffff'
+        backgroundColor:'transparent'
     }
    
  })

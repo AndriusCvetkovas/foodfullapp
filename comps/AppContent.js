@@ -8,8 +8,8 @@
 
 // import React, { useState, useEffect } from 'react';
 import React, { useState, useEffect } from 'react';
-import { View, Text, ScrollView, AsyncStorage } from 'react-native';
-import { Router, Scene, Overlay, Stack, Lightbox, Drawer, Actions, Tabs } from 'react-native-router-flux';
+import { View, Text, ScrollView, AsyncStorage, Navigator } from 'react-native';
+import { Router, Scene, Overlay, Stack, Lightbox, Drawer, Actions, Tabs, Animations, Schema } from 'react-native-router-flux';
 import GMap from './GMap';
 import Dashboard from './Dashboard';
 import Confirmation from './Confirmation';
@@ -48,7 +48,8 @@ function AppContent() {
 
 
     <Router>
-      <Stack key='root' modal>
+
+      <Stack key='root'>
         <Scene
           key="login"
           component={LoginPage}
@@ -80,11 +81,13 @@ function AppContent() {
           wrap={false}
           hideNavBar={true}
           tabBarComponent={Appfooter}
+          modal
         >
           <Scene
             key="dashboard0"
             component={Dashboard}
             title="Dashboard"
+            hideNavBar={true}
           />
           <Scene
             key='postdonation'

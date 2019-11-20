@@ -71,6 +71,15 @@ function SignUp() {
 
     return (
         <View style={SignUpStyles.container}>
+            <TouchableOpacity style ={{position: 'absolute', top: 10, left: 20, flexDirection: 'row', alignItems: 'center', justifyContent:'center'}}
+            onPress={()=>Actions.login()}> 
+                <Image
+                source = {require('../assets/icon/next.png')}
+                style = {{width: 20, height: 20, transform: [
+                    { rotateY: '180deg'} ]}}
+                ></Image>
+                <Text>Back</Text>
+            </TouchableOpacity>
             {/* HEADER TEXT */}
             <View style={SignUpStyles.headerContainer}>
                 <Text style={SignUpStyles.header}>How will you be using Foodfull?</Text>

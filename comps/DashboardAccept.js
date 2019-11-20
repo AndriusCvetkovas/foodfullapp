@@ -61,9 +61,6 @@ function DashboardAccept({navigation}) {
     useEffect(()=>{
         getID();
     }, []);
-    useEffect(()=>{
-        GetDonations();
-    },[navigation.state.params])
     return ( 
         <View style={DashStyle.main}>
 

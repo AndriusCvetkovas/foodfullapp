@@ -9,8 +9,6 @@ var mainStyle = StyleSheet.create({
         maxHeight:'20%',
         height:'13%',
         top: 0 ,
-        resizeMode: 'cover',
-        zIndex: 1,
         backgroundColor: 'transparent'
 
     },
@@ -23,7 +21,8 @@ var mainStyle = StyleSheet.create({
     AppFooter:{
         backgroundColor:'#f6fafd',
         bottom: 0,
-        flexDirection: 'row'
+        flexDirection: 'row',
+        
     }
  });
 

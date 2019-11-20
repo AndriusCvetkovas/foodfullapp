@@ -124,7 +124,7 @@ function DonNotification() {
                             </View>
                             <View style={donationStyle.TextDisplay}>
                                 <View>
-                                    <Text style={donationStyle.Organization} key={i}>{d.name}</Text>
+                                    <Text style={donationStyle.Organization} key={i}>Donation {i+1}</Text>
                                 </View>
                                 <View>
                                     <Text style={donationStyle.address}>{d.address}</Text>

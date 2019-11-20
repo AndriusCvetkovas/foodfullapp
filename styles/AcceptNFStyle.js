@@ -7,7 +7,7 @@ var AcceptNFStyle = StyleSheet.create({
         width: '100%',
         alignItems: 'center',
         justifyContent: 'center',
-        height: '100%'
+        flex: 1
 
     },
     main2: {
@@ -54,21 +54,21 @@ var AcceptNFStyle = StyleSheet.create({
         color: '#0ca3bc',
         fontSize: 18,
         fontWeight: "600",
-        width: '90%'
+        width: '90%',
+        alignItems: 'center',
+        justifyContent: 'center'
     },
     Images: {
         flex: 1.5,
-        margin: 6,
+        margin: 20,
         justifyContent: 'center',
         alignItems: 'center',
         backgroundColor: '#f8c745',
         width: 100,
         height: 100,
         borderRadius: 100,
-        transform: [
-            { scaleX: 0.80 },
-            { scaleY: 0.85 }
-        ]
+        textAlign: 'center'
+        
     },
     TextDisplay: {
         flex: 2
