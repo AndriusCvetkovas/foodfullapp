@@ -67,7 +67,7 @@ function Profile() {
             {/* Blue background */}
             <View style={ProfileStyle.background}>
             <Image style ={{width:'100%', height:'100%'}}
-                    source={require('../assets/img/blue_background.png')}/>
+                    source={require('../../assets/img/blue_background.png')}/>
             </View>
 
             {/* Image view */}
@@ -75,7 +75,7 @@ function Profile() {
             style={ProfileStyle.imageViewStyle}
             >
                 <Image
-                source={require('../assets/img/safeway.jpg')}
+                source={require('../../assets/img/safeway.jpg')}
                 style={ProfileStyle.imageStyle}
                 >
                 </Image>
@@ -87,7 +87,7 @@ function Profile() {
             >
                 <TouchableOpacity style = {{position: 'absolute', top: 20, right: 20}}>
                     <Image style ={{width: 20, height: 20}}
-                    source={require('../assets/icon/edit.png')}
+                    source={require('../../assets/icon/edit.png')}
                     ></Image>
                 </TouchableOpacity>
 
@@ -100,7 +100,7 @@ function Profile() {
                      {/* WEIGHT */}
                     <View style={ProfileStyle.innerStatBox1}>
                         <Image 
-                        source={require('../assets/icon/weight.png')}
+                        source={require('../../assets/icon/weight.png')}
                         style={{width: 45, height: 35,marginBottom:10,padding: 20}}
                         />
                         <View style = {ProfileStyle.innerTextBox}>
@@ -111,7 +111,7 @@ function Profile() {
                     {/* NUMBER OF DONATIONS */}
                     <View style={ProfileStyle.innerStatBox1}>
                     <Image 
-                        source={require('../assets/icon/donating_active.png')}
+                        source={require('../../assets/icon/donating_active.png')}
                         style={{width: 45, height: 35, padding:20, marginBottom:10,}}
                         />
                         <View style = {ProfileStyle.innerTextBox}>
@@ -147,11 +147,11 @@ function Profile() {
                 >
                     <Image
                     style={{flex: 0.04, width:25, height:15}}
-                    source= {require('../assets/icon/leaderboard.png')}
+                    source= {require('../../assets/icon/leaderboard.png')}
                     ></Image>
                     <Text style={{flex: 0.8, textAlign: 'center', color: '#06a2bc', fontSize: 20, fontFamily: 'avenir'}}>Leaderboard</Text>
                     <Image
-                    source= {require('../assets/icon/next.png')}
+                    source= {require('../../assets/icon/next.png')}
                     style={{flex: 0.03,width: 20, height: 20}}
                     ></Image>
                 </TouchableOpacity>

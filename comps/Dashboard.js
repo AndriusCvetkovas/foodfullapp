@@ -3,7 +3,7 @@ import { View, Text, Image, ScrollView, TouchableOpacity, AsyncStorage } from 'r
 import DashStyle from '../styles/dashboardStyle';
 import { Actions } from 'react-native-router-flux';
 import axios from 'axios';
-// import {Actions} from 'react-native-router-flux';
+
 
 function Dashboard() {
     var currentId= 0;

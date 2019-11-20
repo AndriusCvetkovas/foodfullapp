@@ -9,7 +9,7 @@ function Leaderboard(){
 
             <View style={LeaderboardStyles.background}>
             <Image style ={{width:'100%', height:'100%',}}
-                    source={require('../assets/img/blue_background.png')}/>
+                    source={require('../../assets/img/blue_background.png')}/>
             </View>
             <View style={LeaderboardStyles.yourRank}>
                     <Text style={{color:'#ffffff', fontFamily:'Avenir', fontWeight:'600', fontSize:20}}>You are currently in</Text>
@@ -21,7 +21,7 @@ function Leaderboard(){
                 <View style = {LeaderboardStyles.imageBox}>
                     <Image
                         style={LeaderboardStyles.yourImage}
-                        source={require('../assets/img/safeway.jpg')}
+                        source={require('../../assets/img/safeway.jpg')}
                      />
                 </View>
 
@@ -41,7 +41,7 @@ function Leaderboard(){
                     <View style ={LeaderboardStyles.rankInnerBox}>
                         <Text style={LeaderboardStyles.rankNum}>1</Text>
                         <Image 
-                        source = {require('../assets/img/wholefoods.jpg')}
+                        source = {require('../../assets/img/wholefoods.jpg')}
                         style = {LeaderboardStyles.rankImage}
                         />
                         <View style = {LeaderboardStyles.nameAddress}>
@@ -56,7 +56,7 @@ function Leaderboard(){
                     <View style ={[LeaderboardStyles.rankInnerBox,{backgroundColor: "rgba(19,191,209,0.07)"}]}>
                         <Text style={LeaderboardStyles.rankNum}>2</Text>
                         <Image 
-                        source = {require('../assets/img/safeway.jpg')}
+                        source = {require('../../assets/img/safeway.jpg')}
                         style = {LeaderboardStyles.rankImage}
                         />
                         <View style = {LeaderboardStyles.nameAddress}>
@@ -70,7 +70,7 @@ function Leaderboard(){
                     <View style ={LeaderboardStyles.rankInnerBox}>
                         <Text style={LeaderboardStyles.rankNum}>3</Text>
                         <Image 
-                        source = {require('../assets/img/freshmarket.jpg')}
+                        source = {require('../../assets/img/freshmarket.jpg')}
                         style = {LeaderboardStyles.rankImage}
                         />
                         <View style = {LeaderboardStyles.nameAddress}>
@@ -84,7 +84,7 @@ function Leaderboard(){
                     {/* 4 */}
                         <Text style={LeaderboardStyles.rankNum}>4</Text>
                         <Image 
-                        source = {require('../assets/img/farmtotable.jpg')}
+                        source = {require('../../assets/img/farmtotable.jpg')}
                         style = {LeaderboardStyles.rankImage}
                         />
                         <View style = {LeaderboardStyles.nameAddress}>
@@ -98,7 +98,7 @@ function Leaderboard(){
                     <View style ={LeaderboardStyles.rankInnerBox}>
                         <Text style={LeaderboardStyles.rankNum}>5</Text>
                         <Image 
-                        source = {require('../assets/img/saveon.jpg')}
+                        source = {require('../../assets/img/saveon.jpg')}
                         style = {LeaderboardStyles.rankImage}
                         />
                         <View style = {LeaderboardStyles.nameAddress}>
@@ -112,7 +112,7 @@ function Leaderboard(){
                     <View style ={LeaderboardStyles.rankInnerBox}>
                         <Text style={LeaderboardStyles.rankNum}>6</Text>
                         <Image 
-                        source = {require('../assets/img/wholefoods2.png')}
+                        source = {require('../../assets/img/wholefoods2.png')}
                         style = {LeaderboardStyles.rankImage}
                         />
                         <View style = {LeaderboardStyles.nameAddress}>
@@ -126,7 +126,7 @@ function Leaderboard(){
                     <View style ={LeaderboardStyles.rankInnerBox}>
                         <Text style={LeaderboardStyles.rankNum}>7</Text>
                         <Image 
-                        source = {require('../assets/img/nesters.jpg')}
+                        source = {require('../../assets/img/nesters.jpg')}
                         style = {LeaderboardStyles.rankImage}
                         />
                         <View style = {LeaderboardStyles.nameAddress}>
@@ -140,7 +140,7 @@ function Leaderboard(){
                     <View style ={LeaderboardStyles.rankInnerBox}>
                         <Text style={LeaderboardStyles.rankNum}>8</Text>
                         <Image 
-                        source = {require('../assets/img/famous.jpg')}
+                        source = {require('../../assets/img/famous.jpg')}
                         style = {LeaderboardStyles.rankImage}
                         />
                         <View style = {LeaderboardStyles.nameAddress}>
@@ -154,7 +154,7 @@ function Leaderboard(){
                     <View style ={LeaderboardStyles.rankInnerBox}>
                         <Text style={LeaderboardStyles.rankNum}>9</Text>
                         <Image 
-                        source = {require('../assets/img/sunrise.jpg')}
+                        source = {require('../../assets/img/sunrise.jpg')}
                         style = {LeaderboardStyles.rankImage}
                         />
                         <View style = {LeaderboardStyles.nameAddress}>
@@ -168,7 +168,7 @@ function Leaderboard(){
                     <View style ={LeaderboardStyles.rankInnerBox}>
                         <Text style={LeaderboardStyles.rankNum}>10</Text>
                         <Image 
-                        source = {require('../assets/img/iga.jpg')}
+                        source = {require('../../assets/img/iga.jpg')}
                         style = {LeaderboardStyles.rankImage}
                         />
                         <View style = {LeaderboardStyles.nameAddress}>

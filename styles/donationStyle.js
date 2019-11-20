@@ -2,10 +2,10 @@ import {StyleSheet} from 'react-native';
 
 var donationStyle = StyleSheet.create({
     CardDisplay:{
+        top: 10,
         borderColor:'#eee',
         borderRadius: 5,
         padding:5,
-        top: 100,
         shadowOffset:{width:0.2, height: 0.1},
         shadowColor:'#eee',
         borderStyle: 'solid',

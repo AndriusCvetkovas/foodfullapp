@@ -86,7 +86,7 @@ function Donations() {
 
         <View>
             
-        <ScrollView>
+        <ScrollView style ={{height: '100%'}}>
 
             {
                 dons.map((d, i) => {
