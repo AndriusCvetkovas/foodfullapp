@@ -15,7 +15,7 @@ function Dashboard() {
         GetDonations();
     }
     const [dons, setDons] = useState([]);
-    const [name, setName] = useState({});
+    const [name, setName] = useState();
     const GetDonations = async () => {
         var obj = {
         key: "donations_read",
@@ -113,8 +113,8 @@ function Dashboard() {
 
                     {
                         dons.map((d, i)=>{
-                                GetName(d.destination_id);
-                                console.log(name)
+                                //GetName(d.destination_id);
+                                console.log("this is the name " + name)
 
 
                             return (

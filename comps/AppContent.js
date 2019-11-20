@@ -62,6 +62,7 @@ function AppContent() {
           component={SignUp}
           title="Sign Up"
           hideNavBar={true}
+          gesturesEnabled={false}
         />
         <Scene
           key="acceptingsignup"
@@ -77,17 +78,19 @@ function AppContent() {
         />
         <Tabs
           key="tabbar0"
-          gestureEnabled={false}
+
           wrap={false}
           hideNavBar={true}
           tabBarComponent={Appfooter}
           modal
+          gesturesEnabled={false}
         >
           <Scene
             key="dashboard0"
             component={Dashboard}
             title="Dashboard"
             hideNavBar={true}
+            panHandlers={null}
           />
           <Scene
             key='postdonation'
@@ -153,7 +156,7 @@ function AppContent() {
 
          <Drawer
           key="tabbar1"
-          gestureEnabled={false}
+          gesturesEnabled={false}
           tabs
           hideNavBar
           wrap={false}
