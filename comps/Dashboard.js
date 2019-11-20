@@ -16,6 +16,7 @@ function Dashboard() {
     }
     const [dons, setDons] = useState([]);
     const [name, setName] = useState();
+    const [user, setUser] = useState([]);
     const GetDonations = async () => {
         var obj = {
         key: "donations_read",
@@ -26,9 +27,12 @@ function Dashboard() {
         }
         var r = await axios.post(`http://localhost:3001/post`, obj);
         var json = JSON.parse(r.data.body);
-        console.log(json.data);
+        //console.log(json.data, json.receivers);
         var d = json.data;
+        setUser(json.receivers);
         setDons(d);
+        console.log(user[2].name)
+        
     }
     //GET ACCEPTOR NAME
     const GetName = async (id) => {
@@ -113,8 +117,9 @@ function Dashboard() {
 
                     {
                         dons.map((d, i)=>{
-                                //GetName(d.destination_id);
-                                console.log("this is the name " + name)
+                                //GetName(d.destination_id); user[destination_id].name || ""
+                                var uname = user[d.destination_id].name || "";
+                                //console.log(uname)
 
 
                             return (
@@ -125,7 +130,7 @@ function Dashboard() {
                                             <View style={DashStyle.dateCircle}>
                                             </View>
                                             <View>
-                                                <Text style={{ fontSize: 20, fontFamily: 'avenir', fontWeight: '500' } } key={i}>Acceptor Name+ {d.destination_id}</Text>
+                                                <Text style={{ fontSize: 20, fontFamily: 'avenir', fontWeight: '500' } } key={i}>{uname}</Text>
                                                 <Text>{d.time}</Text>
                                             </View>
                                         </View>
