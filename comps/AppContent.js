@@ -9,7 +9,7 @@
 // import React, { useState, useEffect } from 'react';
 import React, { useState, useEffect } from 'react';
 import { View, Text, ScrollView, AsyncStorage } from 'react-native';
-import { Router, Scene, Overlay, Stack, Lightbox, Drawer, Actions } from 'react-native-router-flux';
+import { Router, Scene, Overlay, Stack, Lightbox, Drawer, Actions, Tabs } from 'react-native-router-flux';
 import GMap from './GMap';
 import Dashboard from './Dashboard';
 import Confirmation from './Confirmation';
@@ -40,6 +40,7 @@ import GMapAccept from './GMapAccept';
 import DonNotificationAccepted from './DonNotificationAccepted';
 import DonNotificationDeclined from './DonNotificationDeclined';
 import MsgDeclineDonation from './MsgDeclineDonation';
+import AppHeader from './header'
 
 
 function AppContent() {
@@ -73,21 +74,17 @@ function AppContent() {
           title="Account Created"
           hideNavBar={true}
         />
-        <Drawer
+        <Tabs
           key="tabbar0"
           gestureEnabled={false}
-          tabs
-          hideNavBar
-          tabBarComponent={Appfooter}
           wrap={false}
-          modal
+          hideNavBar={true}
+          tabBarComponent={Appfooter}
         >
           <Scene
             key="dashboard0"
             component={Dashboard}
             title="Dashboard"
-            hideNavBar={true}
-            
           />
           <Scene
             key='postdonation'
@@ -106,6 +103,7 @@ function AppContent() {
             key='notification0'
             component={DonNotification}
             title="Notifications"
+            schema="modal"
             hideNavBar={true} />
           <Scene
             key='donationposted'
@@ -148,7 +146,7 @@ function AppContent() {
             title='lb'
             hideNavBar={true}
             />
-        </Drawer>
+        </Tabs>
 
          <Drawer
           key="tabbar1"

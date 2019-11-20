@@ -62,7 +62,7 @@ function LoginPage() {
         };
         storeData2();
         if (userT.data[0].type == 0) {
-          Actions.tabbar0();
+          Actions.dashboard0();
         } else {
           Actions.tabbar1();
         }

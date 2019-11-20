@@ -10,7 +10,8 @@ var mainStyle = StyleSheet.create({
         height:'13%',
         top: 0 ,
         resizeMode: 'cover',
-        zIndex: 2
+        zIndex: 1,
+        backgroundColor: 'transparent'
 
     },
 

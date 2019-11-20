@@ -15,7 +15,8 @@ function Dashboard() {
         GetDonations();
     }
     const [dons, setDons] = useState([]);
-    const [accId, setAccId] = useState([])
+    const [accId, setAccId] = useState([]);
+    const [name, setName] = useState({});
     const GetDonations = async () => {
         var obj = {
         key: "donations_read",
@@ -31,18 +32,20 @@ function Dashboard() {
         setDons(d);
     }
     //GET ACCEPTOR NAME
-    // const GetName = async () => {
-    //     var obj = {
-    //     key: "users_read",
-    //     data: {
-    //         id: accId
-    //     }
-    //     }
-    //     var b = await axios.post(`http://localhost:3001/post`, obj);
-    //     var json = JSON.parse(b.data.body);
-    //     console.log(json.data);
-        
-    // }
+    const GetName = async (id) => {
+        var obj = {
+        key: "users_read",
+        data: {
+            id: id
+        }
+        }
+        var b = await axios.post(`http://localhost:3001/post`, obj);
+        var json = JSON.parse(b.data.body);
+        console.log(json.data);
+        var bb = json.data;
+        setName(bb);
+        setAccId(id);
+    }
 
     useEffect(()=>{
         getID();
@@ -88,7 +91,9 @@ function Dashboard() {
                                 <Text style={{ color: '#A4D638', fontSize: 18, fontFamily: 'Avenir', fontWeight: '800' }}>1100 Kg</Text>
                             </View>
                         </View>
-                        <TouchableOpacity>
+                        <TouchableOpacity
+                        onPress={()=>Actions.leaderboard()}
+                        >
                             <Image style={{ width: 15, height: 20, position: 'absolute', top: -10 }}
                                 source={require('../assets/icon/next.png')} />
                         </TouchableOpacity>
@@ -110,6 +115,10 @@ function Dashboard() {
 
                     {
                         dons.map((d, i)=>{
+                                //GetName(d.destination_id);
+                                console.log(name)
+                            
+                            
                             return (
                                     
                                 <View style={{ marginBottom: 10 }}>
@@ -118,7 +127,7 @@ function Dashboard() {
                                             <View style={DashStyle.dateCircle}>
                                             </View>
                                             <View>
-                                                <Text style={{ fontSize: 20, fontFamily: 'avenir', fontWeight: '500' }}>{d.name}</Text>
+                                                <Text style={{ fontSize: 20, fontFamily: 'avenir', fontWeight: '500' } } key={i}>Donator Name+ {d.user_id}</Text>
                                                 <Text>{d.time}</Text>
                                             </View>
                                         </View>
@@ -128,48 +137,10 @@ function Dashboard() {
                         })
                     }
 
-                    <View style={{ marginBottom: 10 }}>
-                        <View>
-                            <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-                                <View style={DashStyle.dateCircle}>
-                                </View>
-                                <View>
-                                    <Text style={{ fontSize: 20, fontFamily: 'avenir', fontWeight: '500' }}>Vancouver Food Bank</Text>
-                                    <Text>3:00 pm</Text>
-                                </View>
-                            </View>
-                        </View>
-                    </View>
-
-                    <View style={{ marginBottom: 10 }}>
-                        <View>
-                            <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-                                <View style={DashStyle.dateCircle}>
-                                </View>
-                                <View>
-                                    <Text style={{ fontSize: 20, fontFamily: 'avenir', fontWeight: '500' }}>Vancouver Food Bank</Text>
-                                    <Text>3:00 pm</Text>
-                                </View>
-                            </View>
-                        </View>
-                    </View>
-
                     {/* Date with line */}
                     <View style={{ left: 0, flexDirection: 'row', alignItems: 'center', marginBottom: 20, marginTop: 10 }}>
-                        <Text style={DashStyle.dateTitle}>Wednesday</Text>
+                        <Text style={DashStyle.dateTitle}>Tomorrow</Text>
                         <View style={DashStyle.line}></View>
-                    </View>
-                    <View style={{ marginBottom: 10 }}>
-                        <View>
-                            <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-                                <View style={DashStyle.dateCircle}>
-                                </View>
-                                <View>
-                                    <Text style={{ fontSize: 20, fontFamily: 'avenir', fontWeight: '500' }}>Vancouver Food Bank</Text>
-                                    <Text>3:00 pm</Text>
-                                </View>
-                            </View>
-                        </View>
                     </View>
 
                 </ScrollView>

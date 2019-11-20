@@ -168,7 +168,6 @@ function Donate({addr, ids, stat, navigation}) {
     useEffect(()=>{
         setSelectedDate("");
         setSelectedTime("");
-        setSelectedUrl("");
         setSelectedDescription("");
     },[navigation.state.params])
 return (
