@@ -79,13 +79,13 @@ const styles = StyleSheet.create({
 export default class GetStarted extends Component {
   render() {
     return (
-       <SafeAreaView style={styles.comp} >
+       <View style={styles.comp} >
          <View style = {{flex: 0.2, position: 'absolute', top: 670, zIndex: 2, textAlign: 'center', width: '100%'}}>
           <TouchableOpacity 
           onPress={()=>{Actions.login()}}
             >
-              <Text style ={{ color: 'grey', top: 120,textAlign: 'center'}}
-              >skip to login...</Text>
+              <Text style ={{ color: 'grey', top: 140,textAlign: 'center'}}
+              >skip to login</Text>
             </TouchableOpacity>
           </View>
        {/* PAGE ONE: ACCOUNT CREATED */}
@@ -140,6 +140,12 @@ export default class GetStarted extends Component {
 
         {/* PAGE THREE:  */}
         <View style={styles.slide4}>
+          <Text style={styles.text}>And simple</Text>
+          <TouchableOpacity style = {{borderRadius: 30,borderWidth: 1, width: 70, height: 40, top: 470, justifyContent: 'center', alignItems: 'center', zIndex: 2}}
+          onPress={()=>Actions.login()}
+          >
+            <Text >Login</Text>
+          </TouchableOpacity>
           <Text style={styles.subheader}>Track your progress</Text>
           <LottieView
             source={require('../assets/lottieFiles/donatephone.json')}
@@ -151,7 +157,7 @@ export default class GetStarted extends Component {
         
 
       </Swiper>
-       </SafeAreaView> 
+       </View> 
       
       
 

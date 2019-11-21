@@ -21,125 +21,124 @@ import axios from 'axios';
 
 
 
-  function AcceptingSignUp({text}) {
-    //console.log("props", props)
-    var userType = text;
-    const SendUserInfo = async () => {
-      var obj = {
-        key: "users_create",
-        data: {
-          name: userName,
-          phone: userPhone,
-          email: userEmail,
-          password: userPassword,
-          type: userType,
-          address: userAddress,
-          lat: userLatitude,
-          long: userLongitude
-        }
-      }
-      // console.log(userLatitude);
-      // console.log(userLongitude);
-      // console.log(userEmail);
-      // console.log(userPassword);
-      // console.log(userPhone);
-      // console.log(userPassword);
-      // console.log(userAddress);
-      // console.log(userName);
-      // console.log(userType);
-      var r = await axios.post(`http://localhost:3001/post`, obj);
-      console.log(r.data);
-      Actions.accountcreated({text: userType});
-    }
-    const [header, setHeader] = useState("");
-    const [headerImg, setHeaderImg] = useState();
-    const signUpType = ()=> {
-      if(userType == 0){
-        setHeader("Donating Food");
-        setHeaderImg(require("../../assets/icon/donating_active.png"))
-      }else {
-        setHeader("Accepting Food");
-        setHeaderImg(require("../../assets/icon/accepting_active.png"))
+function AcceptingSignUp({text}) {
+  //console.log("props", props)
+  var userType = text;
+  const SendUserInfo = async () => {
+    var obj = {
+      key: "users_create",
+      data: {
+        name: userName,
+        phone: userPhone,
+        email: userEmail,
+        password: userPassword,
+        type: userType,
+        address: userAddress,
+        lat: userLatitude,
+        long: userLongitude
       }
     }
-  
-    //SELECTED LOCATION
-    const [userLatitude, setUserLatitude] = useState();
-    const [userLongitude, setUserLongitude] = useState();
-    //Selected Email
-    const [userEmail, setUserEmail] = useState();
-    //Selected password
-    const [userPassword, setUserPassword] = useState();
-    //Selected Phone
-    const [userPhone, setUserPhone] = useState();
-    //SELECTED name
-    const [userName, setUserName] = useState();
-    //SELECTED address
-    const [userAddress, setUserAddress] = useState();
-  
-  
-    //GRAB CURRENT LOCATION
-    const [long, setLong] = useState('');
-    const [lat, setLat] = useState('');
-    const getPos = async () => {
-      await Geolocation.getCurrentPosition((data) => {
-        setLong(data.coords.longitude);
-        setLat(data.coords.latitude);
-      });
+    // console.log(userLatitude);
+    // console.log(userLongitude);
+    // console.log(userEmail);
+    // console.log(userPassword);
+    // console.log(userPhone);
+    // console.log(userPassword);
+    // console.log(userAddress);
+    // console.log(userName);
+    // console.log(userType);
+    var r = await axios.post(`http://localhost:3001/post`, obj);
+    console.log(r.data);
+    Actions.onboarding();
+  }
+  const [header, setHeader] = useState("");
+  const [headerImg, setHeaderImg] = useState();
+  const signUpType = ()=> {
+    if(userType == 0){
+      setHeader("Donating Food");
+      setHeaderImg(require("../../assets/icon/donating_active.png"))
+    }else {
+      setHeader("Accepting Food");
+      setHeaderImg(require("../../assets/icon/accepting_active.png"))
     }
-    //AUTOCOMPLETE FUNCTION
-    var suggestionList = [];
-    const [prediction, setPrediction] = useState([]);
-    const getAddress = async (address) => {
-      const apiUrl = `https://maps.googleapis.com/maps/api/place/textsearch/json?query=${address}&location=${lat},${long}&radius=50000&key=${apiKey}`;
-      const result = await fetch(apiUrl);
-      const json = await result.json();
-      const suggestion = await json.results;
-      console.log(json);
-      setPrediction(suggestion);
-    }
-    for (var i = 0; i < prediction.length; i++) {
-      suggestionList.push(
-  
-        <Text key={i}
-          style={{ padding: 10, borderBottomWidth: 0.5 }} onPress={Choose.bind(this, prediction[i])}>{prediction[i].formatted_address}</Text>
-      )
-    };
-    
-    const [disp, changeDisp] = useState({
-      top: 270,
-      top: 400,
-      backgroundColor: 'white',
-      padding: 0,
-      flexDirection: 'column',
-      height: 300,
-      zIndex: 2,
-      overflow: 'hidden',
-      position: 'absolute',
+  }
+
+  //SELECTED LOCATION
+  const [userLatitude, setUserLatitude] = useState();
+  const [userLongitude, setUserLongitude] = useState();
+  //Selected Email
+  const [userEmail, setUserEmail] = useState();
+  //Selected password
+  const [userPassword, setUserPassword] = useState();
+  //Selected Phone
+  const [userPhone, setUserPhone] = useState();
+  //SELECTED name
+  const [userName, setUserName] = useState();
+  //SELECTED address
+  const [userAddress, setUserAddress] = useState();
+
+
+  //GRAB CURRENT LOCATION
+  const [long, setLong] = useState('');
+  const [lat, setLat] = useState('');
+  const getPos = async () => {
+    await Geolocation.getCurrentPosition((data) => {
+      setLong(data.coords.longitude);
+      setLat(data.coords.latitude);
     });
-    function Choose(selection) {
-      setUserAddress(selection.formatted_address);
-      setUserLatitude(selection.geometry.location.lat);
-      setUserLongitude(selection.geometry.location.lng);
-      changeDisp({
-        display: 'none'
-      });
+  }
+  //AUTOCOMPLETE FUNCTION
+  var suggestionList = [];
+  const [prediction, setPrediction] = useState([]);
+  const getAddress = async (address) => {
+    const apiUrl = `https://maps.googleapis.com/maps/api/place/textsearch/json?query=${address}&location=${lat},${long}&radius=50000&key=${apiKey}`;
+    const result = await fetch(apiUrl);
+    const json = await result.json();
+    const suggestion = await json.results;
+    console.log(json);
+    setPrediction(suggestion);
+  }
+  for (var i = 0; i < prediction.length; i++) {
+    suggestionList.push(
+
+      <Text key={i}
+        style={{ padding: 10, borderBottomWidth: 0.5}} onPress={Choose.bind(this, prediction[i])}>{prediction[i].formatted_address}</Text>
+    )
+  }
+  const [disp, changeDisp] = useState({
+    top: 400,
+    backgroundColor: 'white',
+    padding: 0,
+    flexDirection: 'column',
+    height: 300,
+    zIndex: 2,
+    overflow: 'hidden',
+    position: 'absolute',
+  });
+  function Choose(selection) {
+    setUserAddress(selection.formatted_address);
+    setUserLatitude(selection.geometry.location.lat);
+    setUserLongitude(selection.geometry.location.lng);
+    changeDisp({
+      display: 'none'
+    });
+  }
+  function SendUser() {
+    if(userAddress == null || userEmail == null || userPassword == null || userName == null || userPhone == null){
+      alert("Please fill up the blanks")
     }
-    function SendUser() {
-      if(userAddress == null || userEmail == null || userPassword == null || userName == null || userPhone == null){
-        alert("Please fill up the blanks")
-      }
-      else{
-        SendUserInfo();
-      }
-    };
-  
-  
-    useEffect(() => {
-      getPos();
-      signUpType();
-    }, []);
-  
+    else{
+      SendUserInfo();
+    }
+  };
+
+
+  useEffect(() => {
+    getPos();
+    signUpType();
+  }, []);
+
+
   return (
 
     <View style={DonSignStyles.container}>
