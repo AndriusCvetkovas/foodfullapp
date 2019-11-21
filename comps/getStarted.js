@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import { AppRegistry, StyleSheet, Text, View, Button, SafeAreaView } from 'react-native';
+import { AppRegistry, StyleSheet, Text, View, Button, SafeAreaView, TouchableOpacity } from 'react-native';
 import LottieView from 'lottie-react-native';
 import Swiper from 'react-native-swiper';
-import { black } from 'ansi-colors';
+import {Actions} from 'react-native-router-flux'
 
 const styles = StyleSheet.create({
   comp:{
@@ -65,6 +65,14 @@ const styles = StyleSheet.create({
     color: '#fff',
     fontSize: 30,
     fontWeight: 'bold'
+  },
+  nextButton: {
+    flex: 0.15,
+    backgroundColor: '#3dbfd2',
+    width: 100,
+    justifyContent:'center', 
+    alignItems:'center',
+    borderRadius: 30
   }
 })
 
@@ -72,10 +80,25 @@ export default class GetStarted extends Component {
   render() {
     return (
        <SafeAreaView style={styles.comp} >
-
+         <View style = {{flex: 0.2, position: 'absolute', top: 670, zIndex: 2, textAlign: 'center', width: '100%'}}>
+          <TouchableOpacity 
+          onPress={()=>{Actions.login()}}
+            >
+              <Text style ={{ color: 'grey', top: 120,textAlign: 'center'}}
+              >skip to login...</Text>
+            </TouchableOpacity>
+          </View>
        {/* PAGE ONE: ACCOUNT CREATED */}
-        <Swiper style={styles.wrapper} showsButtons={false} showsPagination={true} loop={false} dot={<View style={{backgroundColor: '#bcd1d3', width: 8, height: 8, borderRadius: 8, marginLeft: 5, marginRight: 5, marginTop: 3, marginBottom: 3}} />}
-        activeDot={<View style={{backgroundColor: '#3dbfd2', width: 8, height: 8, borderRadius: 8, marginLeft: 3, marginRight: 3, marginTop: 3, marginBottom: 3}} />}>
+        <Swiper style={styles.wrapper}
+        nextButton={
+            <Text style={[{color: 'white', fontFamily: 'avenir',  fontSize: 20,paddingBottom: 10}]}>Next</Text>
+        }
+        prevButton={
+          <Text style = {{position: 'absolute'}}></Text>
+        }
+        buttonWrapperStyle= {{borderRadius:20, backgroundColor: '#3dbfd2', width: 100, height: 45, justifyContent: 'center', alignItems: 'center', top: 660, left: 155, right: 0 }}
+        showsButtons={false} showsPagination={true} loop={false} dot={<View style={{backgroundColor: '#bcd1d3', width: 8, height: 8, borderRadius: 8, marginLeft: 5, marginRight: 5, marginTop: 3, marginBottom: 3, bottom: 80}} />}
+        activeDot={<View style={{backgroundColor: '#3dbfd2', width: 8, height: 8, borderRadius: 8, marginLeft: 3, marginRight: 3, marginTop: 3, marginBottom: 3, bottom: 80}} />}>
         <View style={styles.slide1}>
         <Text style={styles.header}>Your account has been created!</Text>
         <LottieView
@@ -85,6 +108,7 @@ export default class GetStarted extends Component {
             loop
         />
           <Text style={styles.desc}>Thank you for joining foodfull and making a change in your own community.</Text>
+          
 
         </View>
 
@@ -112,6 +136,8 @@ export default class GetStarted extends Component {
         <View style={styles.slide4}>
           <Text style={styles.text}>And simple</Text>
         </View>
+        
+
       </Swiper>
        </SafeAreaView> 
       
