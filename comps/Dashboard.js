@@ -31,11 +31,7 @@ function Dashboard({navigation}) {
         var d = json.data;
         setUser(json.receivers);
         setDons(d);
-        if(dons == ''){
-            setn('You have no pickups')
-        }else {
-            setn('Today')
-        }
+        
     
         
     }
@@ -60,7 +56,14 @@ function Dashboard({navigation}) {
     }, []);
     useEffect(()=>{
         getID();
-    },[navigation.state.params])
+    },[navigation.state.params]);
+    useEffect(()=> {
+        if(dons == ''){
+            setn('You have no pickups')
+        }else {
+            setn('Today')
+        }
+    }, [GetDonations])
     return (
         <View style={DashStyle.main}>
 
