@@ -168,4 +168,4 @@ function Dashboard({navigation}) {
         </View>
     )
 };
-export default AppContent;
+export default Dashboard;

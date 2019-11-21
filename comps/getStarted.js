@@ -53,13 +53,13 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#92BBD9'
+    backgroundColor: '#ffffff'
   },
   slide4: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#000'
+    backgroundColor: '#ffffff'
   },
   text: {
     color: '#fff',
@@ -85,7 +85,7 @@ export default class GetStarted extends Component {
           onPress={()=>{Actions.login()}}
             >
               <Text style ={{ color: 'grey', top: 140,textAlign: 'center'}}
-              >skip to login...</Text>
+              >skip to login</Text>
             </TouchableOpacity>
           </View>
        {/* PAGE ONE: ACCOUNT CREATED */}
@@ -117,7 +117,7 @@ export default class GetStarted extends Component {
         <View style={styles.slide2}>
         <Text style={styles.subheader}>Donate</Text>
         <LottieView
-            source={require('../assets/lottieFiles/donate.json')}
+            source={require('../assets/lottieFiles/donatephone.json')}
             style={{justifyContent:'center', alignItems:'center',height:350, width:'100%',top:-5, marginLeft:4.3}}
             autoPlay
             loop
@@ -127,7 +127,13 @@ export default class GetStarted extends Component {
 
       {/* PAGE THREE:  */}
         <View style={styles.slide3}>
-          <Text style={styles.text}>And simple</Text>
+          <Text style={styles.subheader}>Create a Schedule</Text>
+          <LottieView
+            source={require('../assets/lottieFiles/donatephone.json')}
+            style={{justifyContent:'center', alignItems:'center',height:350, width:'100%',top:-5, marginLeft:4.3}}
+            autoPlay
+            loop
+        />
         </View>
 
 
@@ -135,11 +141,18 @@ export default class GetStarted extends Component {
         {/* PAGE THREE:  */}
         <View style={styles.slide4}>
           <Text style={styles.text}>And simple</Text>
-          <TouchableOpacity style = {{borderRadius: 30, borderColor:'white',borderWidth: 1, width: 70, height: 40, top: 50, justifyContent: 'center', alignItems: 'center'}}
+          <TouchableOpacity style = {{borderRadius: 30,borderWidth: 1, width: 70, height: 40, top: 470, justifyContent: 'center', alignItems: 'center', zIndex: 2}}
           onPress={()=>Actions.login()}
           >
-            <Text style = {{color: 'white'}}>Login</Text>
+            <Text >Login</Text>
           </TouchableOpacity>
+          <Text style={styles.subheader}>Track your progress</Text>
+          <LottieView
+            source={require('../assets/lottieFiles/donatephone.json')}
+            style={{justifyContent:'center', alignItems:'center',height:350, width:'100%',top:-5, marginLeft:4.3}}
+            autoPlay
+            loop
+        />
         </View>
         
 
