@@ -53,13 +53,13 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#92BBD9'
+    backgroundColor: '#ffffff'
   },
   slide4: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#000'
+    backgroundColor: '#ffffff'
   },
   text: {
     color: '#fff',
@@ -93,7 +93,7 @@ export default class GetStarted extends Component {
         <View style={styles.slide2}>
         <Text style={styles.subheader}>Donate</Text>
         <LottieView
-            source={require('../assets/lottieFiles/donate.json')}
+            source={require('../assets/lottieFiles/donatephone.json')}
             style={{justifyContent:'center', alignItems:'center',height:350, width:'100%',top:-5, marginLeft:4.3}}
             autoPlay
             loop
@@ -103,14 +103,26 @@ export default class GetStarted extends Component {
 
       {/* PAGE THREE:  */}
         <View style={styles.slide3}>
-          <Text style={styles.text}>And simple</Text>
+          <Text style={styles.subheader}>Create a Schedule</Text>
+          <LottieView
+            source={require('../assets/lottieFiles/donatephone.json')}
+            style={{justifyContent:'center', alignItems:'center',height:350, width:'100%',top:-5, marginLeft:4.3}}
+            autoPlay
+            loop
+        />
         </View>
 
 
 
         {/* PAGE THREE:  */}
         <View style={styles.slide4}>
-          <Text style={styles.text}>And simple</Text>
+          <Text style={styles.subheader}>Track your progress</Text>
+          <LottieView
+            source={require('../assets/lottieFiles/donatephone.json')}
+            style={{justifyContent:'center', alignItems:'center',height:350, width:'100%',top:-5, marginLeft:4.3}}
+            autoPlay
+            loop
+        />
         </View>
       </Swiper>
        </SafeAreaView> 
