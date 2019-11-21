@@ -79,7 +79,17 @@ function PickedUpComfirm(){
                 style = {{color: 'red', fontSize: 16, fontWeight: '500'}}
                 >Cancel Pickup</Text>
             </TouchableOpacity>
+            
             </View>
+            <TouchableOpacity style ={{position: 'absolute', top: 70, right: 50}}
+                // onPress={()=>{setShowModal(!showModal)}}
+                >
+                    <Image
+                    
+                    source={require('../assets/icon/x.png')}
+                    style = {{width: 15, height: 15}}
+                    />
+                    </TouchableOpacity>
         </View>
     )
 };

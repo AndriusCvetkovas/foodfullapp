@@ -194,6 +194,14 @@ function Donations() {
                     >Decline Donation</Text>
                 </TouchableOpacity>
             </View>
+            <TouchableOpacity style ={{position: 'absolute', top: 30, right: 30}}
+                onPress={()=>{setShowModal(!showModal)}}>
+                    <Image
+                    
+                    source={require('../assets/icon/x.png')}
+                    style = {{width: 15, height: 15}}
+                    />
+                    </TouchableOpacity>
                 </View>
             </Modal>
         </View>
