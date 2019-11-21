@@ -10,7 +10,8 @@ import React, { useState, useEffect } from 'react';
 import { View, Text, ScrollView, Image, TouchableOpacity, AsyncStorage } from 'react-native';
 import donationStyle from '../styles/donationStyle';
 import axios from 'axios';
-
+import Modal from "react-native-modal";
+import PickedUpComfirm from './PickedUpComfirm';
 
 
 
@@ -35,24 +36,31 @@ function Pickup() {
     var d = jsons.data;
     console.log(d);
     setDons(d);
-    setDonsName(donsName.push(d[i].name));
-    setDonsTime(donsTime.push(d[i].time));
-    setDonsAddress(donsAddress.push(d[i].address));
     console.log(donsName)
-    setDonsStatus(donsStatus.push(d[i].status));
   }
   const [dons, setDons] = useState([]);
   const [donsName, setDonsName] = useState();
-  const [donsTime, setDonsTime] = useState();
-  const [donsAddress, setDonsAddress] = useState();
-  const [donsStatus, setDonsStatus] = useState();
-  const [text, setText] = useState();
+  // const [donsTime, setDonsTime] = useState();
+  // const [donsAddress, setDonsAddress] = useState();
+  // const [donsStatus, setDonsStatus] = useState();
+  // const [text, setText] = useState();
+  const [showModal, setShowModal]= useState(false);
 
   
   useEffect(() => {
     getID();
   }, []);
   return (
+    <View>
+      <Modal
+      isVisible={showModal}
+      coverScreen={false}
+      animationIn='slideInUp'
+      style = {{backgroundColor: 'transparent', height: 700,width: 380, position: "absolute"}}
+      isVisible = {showModal}
+      onBackdropPress={() => setShowModal(!showModal)}>
+        <PickedUpComfirm/>
+      </Modal>
     <ScrollView>
       {
         dons.map((d, i) => {
@@ -89,7 +97,9 @@ function Pickup() {
                     <Text style={[donationStyle.optionText, {color: colorz}]}>{texta}</Text>
                   </View>
               </View>
-              <TouchableOpacity>
+              <TouchableOpacity
+              onPress={()=>setShowModal(!showModal)}
+              >
                 <Image style={donationStyle.Dots} source={require("../assets/icon/dot_nav.png")} />
               </TouchableOpacity>
           </View>
@@ -101,6 +111,7 @@ function Pickup() {
         })
       }
     </ScrollView>
+    </View>
 
   );
 }
