@@ -214,4 +214,4 @@ function AppContent() {
 }
 
 
-export default GetStarted;
+export default AppContent;
