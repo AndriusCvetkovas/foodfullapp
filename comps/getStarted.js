@@ -79,12 +79,12 @@ const styles = StyleSheet.create({
 export default class GetStarted extends Component {
   render() {
     return (
-       <SafeAreaView style={styles.comp} >
+       <View style={styles.comp} >
          <View style = {{flex: 0.2, position: 'absolute', top: 670, zIndex: 2, textAlign: 'center', width: '100%'}}>
           <TouchableOpacity 
           onPress={()=>{Actions.login()}}
             >
-              <Text style ={{ color: 'grey', top: 120,textAlign: 'center'}}
+              <Text style ={{ color: 'grey', top: 140,textAlign: 'center'}}
               >skip to login...</Text>
             </TouchableOpacity>
           </View>
@@ -135,11 +135,16 @@ export default class GetStarted extends Component {
         {/* PAGE THREE:  */}
         <View style={styles.slide4}>
           <Text style={styles.text}>And simple</Text>
+          <TouchableOpacity style = {{borderRadius: 30, borderColor:'white',borderWidth: 1, width: 70, height: 40, top: 50, justifyContent: 'center', alignItems: 'center'}}
+          onPress={()=>Actions.login()}
+          >
+            <Text style = {{color: 'white'}}>Login</Text>
+          </TouchableOpacity>
         </View>
         
 
       </Swiper>
-       </SafeAreaView> 
+       </View> 
       
       
 
