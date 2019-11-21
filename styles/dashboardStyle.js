@@ -11,7 +11,7 @@ var DashStyle = StyleSheet.create({
     backgroundImg:{
         width:'100%',  
         flex:4,
-        top:-40, 
+        top:0, 
         justifyContent:'center', 
         alignItems:'center',
     },
@@ -23,17 +23,16 @@ var DashStyle = StyleSheet.create({
     },
     donateButton:{
         backgroundColor:'#13bfd1',
-        width:190,
-        height:50,
+        width:150,
+        height:40,
         zIndex: 5,
-        top:-10,
         alignItems:'center',
         justifyContent:'center',
         borderRadius:30,
     },
     donateButtonText:{
         fontFamily:'Avenir',
-        fontSize:25,
+        fontSize:20,
         fontWeight:'800',
         color:'#ffffff',
     },
@@ -42,7 +41,7 @@ var DashStyle = StyleSheet.create({
         fontFamily:'Avenir',
         fontSize:28,
         fontWeight:'700',
-        top: -25,
+        top: -10,
         width:'100%',
         marginLeft:0,
         lineHeight:36
@@ -54,7 +53,7 @@ var DashStyle = StyleSheet.create({
         alignItems: 'center',
     },
     leaderBoardMain: {
-        flex: 2,
+        flex: 1.6,
         backgroundColor: '#ffffff',
         shadowColor: '#aaaaaa',
         shadowOffset: { width: 0, height: 2 },
@@ -63,7 +62,7 @@ var DashStyle = StyleSheet.create({
         elevation: 0,
         width: '92%',
         borderRadius: 30,
-        top:-90,
+        top:-80,
         justifyContent:'center',
         alignItems:'center'
     },

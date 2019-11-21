@@ -61,7 +61,7 @@ function Dashboard() {
                     source={require('../assets/img/dashboard_illustration.png')}>
                 </Image>
 
-                <View style={{ justifyContent: 'center', alignItems: 'center', marginLeft: 100 }}>
+                <View style={{ justifyContent: 'center', alignItems: 'center'}}>
                     <Text style={DashStyle.header}>Let's Make a Change</Text>
                     <TouchableOpacity
                         style={DashStyle.donateButton}
@@ -107,7 +107,7 @@ function Dashboard() {
             {/*UPCOMING SCHEDULE*/}
             {/* container to hold the notifications */}
             <View style={DashStyle.notifContainer}>
-                <Text style={DashStyle.title}>Upcoming Donations</Text>
+                <Text style={DashStyle.title}>Upcoming Pickups</Text>
                 <ScrollView style={{ width: '90%' }}>
                     {/* Date with line */}
                     <View style={{ left: 0, flexDirection: 'row', alignItems: 'center', marginBottom: 20 }}>

@@ -8,7 +8,8 @@ import {
   TouchableOpacity,
   TouchableHighlight,
   FormLabel,
-  Alert
+  Alert,
+  ScrollView
 
 
 } from 'react-native';
@@ -101,15 +102,17 @@ function AcceptingSignUp({text}) {
     suggestionList.push(
 
       <Text key={i}
-        style={{ padding: 10, borderBottomWidth: 0.5 }} onPress={Choose.bind(this, prediction[i])}>{prediction[i].formatted_address}</Text>
+        style={{ padding: 10, borderBottomWidth: 0.5}} onPress={Choose.bind(this, prediction[i])}>{prediction[i].formatted_address}</Text>
     )
   }
   const [disp, changeDisp] = useState({
-    top: 270,
+    top: 400,
     backgroundColor: 'white',
     padding: 0,
     flexDirection: 'column',
+    height: 300,
     zIndex: 2,
+    overflow: 'hidden',
     position: 'absolute',
   });
   function Choose(selection) {
@@ -186,9 +189,9 @@ function AcceptingSignUp({text}) {
         >{userAddress}</TextInput>
 
       </View>
-      <View style={disp}>
+      <ScrollView style={disp}>
         {suggestionList}
-      </View>
+      </ScrollView>
       <View style={DonSignStyles.titles}>
         <Text style={DonSignStyles.text}>Phone Number</Text>
       </View>
