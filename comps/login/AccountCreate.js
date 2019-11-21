@@ -15,17 +15,6 @@ import axios from 'axios';
 
 function AccountCreate({text}) {
   const [userType, setUserType] = useState(text);
-  // const ReadUsers = async() => {
-  //   var obj = {
-  //     key:"users_read",
-  //     data:{}
-  //   }
-  
-  //   var r = await axios.post(`http://localhost:3001/post`, obj);
-  //   console.log(r.data);
-  //   setUserType(JSON.parse(r.data.body.type))
-  //   console.log(userType);
-  // }
   const ChangeToDashboard = ()=>{
     //ReadUsers();
     if(userType === 0){

@@ -31,7 +31,7 @@ function Dashboard() {
         var d = json.data;
         setUser(json.receivers);
         setDons(d);
-        if(dons == ""){
+        if(dons == null){
             setn('You have no pickups')
         }else {
             setn('Today')
@@ -119,7 +119,7 @@ function Dashboard() {
                     <View style={{ left: 0, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', marginBottom: 20 }}>
                         <Image
                         source={require('../assets/icon/donating.png')}
-                        style={{width: 200, height: 170, position: 'absolute', top: 50, opacity: 0.1, }}
+                        style={{width: 200, height: 170, position: 'absolute', top: 50, opacity: 0.05, }}
                         ></Image>
                         <View style={[DashStyle.line, {marginRight: 20}]}></View>
                         <Text style={[DashStyle.dateTitle]}>{n}</Text>

@@ -66,7 +66,7 @@ function DashboardAccept({navigation}) {
 
         {/* BACKGROUND IMAGE AND DONATE BUTTON */}
         <View style={DashStyle.backgroundImg}>
-            <Image style={{width:'100%',height:420, position:'absolute'}}
+            <Image style={{width:'100%',height:400, position:'absolute'}}
              source={require('../assets/img/dashboard_illustration2.png')}>
             </Image>
                 <View style={{justifyContent:'center', alignItems:'center'}}>

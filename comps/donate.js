@@ -142,11 +142,11 @@ function Donate({addr, ids, stat, navigation}) {
         console.log(navigation.state.params);
     }, []);
 
-    useEffect(()=>{
-        setSelectedDate("");
-        setSelectedTime("");
-        setSelectedDescription("");
-    },[navigation.state.params])
+    // useEffect(()=>{
+    //     setSelectedDate("");
+    //     setSelectedTime("");
+    //     setSelectedDescription("");
+    // },[navigation.state.params])
 return (
     <KeyboardAvoidingView style={donateStyle.container} behavior="padding" enabled>
         

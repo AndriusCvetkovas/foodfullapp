@@ -138,6 +138,7 @@ function Donations() {
 
                 <View style={AcceptNFStyle.donationInfoTop}>
                     <View style={AcceptNFStyle.Images}>
+                    <Text style={AcceptNFStyle.Month}>Date</Text>
                         <Text style={AcceptNFStyle.Month}>{dd.date}</Text>
                     </View>
 
