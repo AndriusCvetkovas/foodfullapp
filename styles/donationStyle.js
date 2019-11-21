@@ -42,6 +42,7 @@ var donationStyle = StyleSheet.create({
 
     },
     Organization:{
+        width: 200,
         fontSize:18,
         color:'#07a2bb',
     },

@@ -21,16 +21,16 @@ function DonationPosted(){
         </View>
 
         <View style={styles.contents}>
-              <Text style={styles.contentPosts}>When an orgainzation claim your food donation you will be notified</Text>
+              <Text style={styles.contentPosts}>When an organization claims your food donation you will be notified</Text>
         </View>
 
         <View style = {styles.containerButton}>
         <TouchableHighlight style={[styles.buttonContainer, styles.MakePost]} onPress={() => Actions.postdonation( )}>
           <Text style={styles.B1}>Make another Donation</Text>
         </TouchableHighlight>
-        <TouchableHighlight style={[styles.buttonContainer, styles.ViewPost]} onPress={() => {}}>
+        {/* <TouchableHighlight style={[styles.buttonContainer, styles.ViewPost]} onPress={() => {Actions.notification0()}}>
           <Text style={styles.B2}>View your Donation</Text>
-        </TouchableHighlight>
+        </TouchableHighlight> */}
         </View>
 
        </View>

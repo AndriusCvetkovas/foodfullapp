@@ -16,7 +16,6 @@ import Modal from "react-native-modal";
 import AcceptDonationNF from './AcceptDonationNF';
 import AcceptNFStyle from '../styles/AcceptNFStyle';
 import buttonStyle from '../styles/buttonStyle';
-import { updateExpression } from '@babel/types';
 function Donations() {
     // MODAL VIEW 
     const [showModal, setShowModal]= useState(false);
@@ -171,7 +170,7 @@ function Donations() {
                     {dd.description}
             </Text>
                 <TouchableOpacity
-                    onPress={()=>{Update2(dd.id), setShowModal(!showModal)}}
+                    onPress={()=>{Update2(dd.id), setShowModal(!showModal),getID()}}
                     title="Accept"
                     style={AcceptNFStyle.button}>
                     <Text
@@ -179,7 +178,7 @@ function Donations() {
                     >Accept Donation</Text>
                 </TouchableOpacity>
                 <TouchableOpacity
-                    onPress={()=>{Update3(dd.id), setShowModal(!showModal)}}
+                    onPress={()=>{Update3(dd.id), setShowModal(!showModal),getID()}}
                     title="Accept"
                     style={AcceptNFStyle.button2}>
                     <Text

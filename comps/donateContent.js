@@ -13,7 +13,7 @@ import ContentStyle from '../styles/contentStyle';
 import Donations from '../comps/donation';
 import Pickup from '../comps/pickup';
 
-function DonateContent({pickup}) {
+function DonateContent({pickup, navigation}) {
   var pick = pickup;
   if (pick != null){
     setSelectedTab(1);

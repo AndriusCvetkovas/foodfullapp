@@ -22,7 +22,8 @@ function DonNotification() {
         var obj = {
             key: "donations_read",
             data: {
-                user_id: currentId
+                user_id: currentId,
+                status: 2
             }
         }
         var r = await axios.post(`http://localhost:3001/post`, obj);
@@ -36,11 +37,10 @@ function DonNotification() {
     }, [])
     return (
         <View>
-        <ScrollView>
             <Modal isVisible={showModal}
             coverScreen={false}
             animationIn='slideInUp'
-            style = {{backgroundColor: 'transparent', height: 50,width: '95%', position: 'absolute', top: 300, right: 0}}
+            style = {{backgroundColor: 'transparent', height: 50,width: '95%', position: 'absolute', top: 0, right: 0, zIndex: -1}}
             isVisible = {showModal}
             onBackdropPress={() => setShowModal(!showModal)}
             >
@@ -101,23 +101,24 @@ function DonNotification() {
             </View>
                 </View>
             </Modal>
-
+        <ScrollView style ={{height: '100%'}}>
+            
 
 {
                 dons.map((d, i) => {
                     if(d.status == 1){
-                        var texta = 'Pending...';
+                        var texta = 'Your donation is not yet accepted';
                         var colorz = '#ee9a23'
                     }else if (d.status == 2) {
-                        texta = 'Accepted...'
+                        texta = 'Foodbank accepted your donation!'
                         colorz = '#a5d826'
                     }else {
-                        texta = 'Declined...'
+                        texta = 'Your donation was declined'
                         colorz = 'red'
                     }
                     
                     return (
-                        <View style={donationStyle.CardDisplay}>
+                        <View style={[donationStyle.CardDisplay, {top: 50,}]}>
                             <View style={donationStyle.Images}>
                             <Image
                                 style={donationStyle.ImageSize}
@@ -126,10 +127,10 @@ function DonNotification() {
                             </View>
                             <View style={donationStyle.TextDisplay}>
                                 <View>
-                                    <Text style={donationStyle.Organization} key={i}>Foodbank accepted your donation!</Text>
+                                    <Text style={donationStyle.Organization} key={i}>{texta}</Text>
                                 </View>
                                 <View>
-                                    <Text style={donationStyle.address}></Text>
+                                    <Text style={donationStyle.address}>{d.date+" " + " "+d.time}</Text>
                                 </View>
 
                             </View>

@@ -5,7 +5,7 @@ import { Actions } from 'react-native-router-flux';
 import axios from 'axios';
 
 
-function Dashboard() {
+function Dashboard({navigation}) {
     var currentId= 0;
     //RECEIVE CURRENT USER ID FROM ASYNC STORAGE
     const getID = async () =>{
@@ -58,6 +58,9 @@ function Dashboard() {
     useEffect(()=>{
         getID();
     }, []);
+    useEffect(()=>{
+        getID();
+    },[navigation.state.params])
     return (
         <View style={DashStyle.main}>
 

@@ -51,17 +51,14 @@ function Pickup() {
   
   useEffect(() => {
     getID();
-  }, [])
+  }, []);
   return (
     <ScrollView>
       {
         dons.map((d, i) => {
-          if(d.status == 1){
-            var texta = 'Pending...';
+          if (d.status == 2) {
+            var texta = 'Pickup Pending...'
             var colorz = '#ee9a23'
-        }else if (d.status == 2) {
-            texta = 'Accepted...'
-            colorz = '#a5d826'
         }else {
             texta = 'Declined...'
             colorz = 'red'
@@ -71,7 +68,9 @@ function Pickup() {
         <View>
           <View style = {donationStyle.CardDisplay}>
               <View style = {donationStyle.Images}>
-                  <Text style={donationStyle.Date}>{d.date.slice(5)}</Text>
+                  <Image
+                  source = {require('../assets/img/food.png')}
+                  style ={{height: 100, width: 100, borderRadius: 100}}/>
               </View>
               <View style={donationStyle.TextDisplay}>
                   <View>
@@ -81,7 +80,7 @@ function Pickup() {
                     <Text style={donationStyle.address}>{d.address}</Text>
                   </View>
                   <View>
-                    <Text style={donationStyle.time}>{d.time}</Text>
+                    <Text style={donationStyle.time}>{d.date +" "+d.time}</Text>
                   </View>
               </View>
 

@@ -183,7 +183,7 @@ return (
                             value = {selectedDate}
                             placeholder="select date"
                             format="YYYY-MM-DD"
-                            minDate = "2018-06-01"
+                            minDate = "2019-11-21"
                             maxDate="2040-06-01"
                             confirmBtnText="Confirm"
                             cancelBtnText="Cancel"
@@ -223,6 +223,7 @@ return (
                             value = {selectedTime}
                             confirmBtnText="Confirm"
                             cancelBtnText="Cancel"
+                            minuteInterval= {30}
                             customStyles={{
                             dateIcon: {
                                 position: 'absolute',

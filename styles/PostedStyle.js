@@ -3,6 +3,7 @@ var styles = StyleSheet.create({
     mainbody:{
     flex:1,
     alignItems:"center",
+    top: 80
   },
   headers:{
     
