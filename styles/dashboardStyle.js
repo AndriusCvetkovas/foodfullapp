@@ -26,6 +26,7 @@ var DashStyle = StyleSheet.create({
         width:150,
         height:40,
         zIndex: 5,
+        top: -10,
         alignItems:'center',
         justifyContent:'center',
         borderRadius:30,
@@ -41,7 +42,7 @@ var DashStyle = StyleSheet.create({
         fontFamily:'Avenir',
         fontSize:28,
         fontWeight:'700',
-        top: -10,
+        top: -30,
         width:'100%',
         marginLeft:0,
         lineHeight:36
@@ -100,12 +101,12 @@ var DashStyle = StyleSheet.create({
         fontSize:18,
         fontWeight:'600',
         color:'#727272',
-        marginRight:20
+        marginRight:20,
     },
     line:{
         borderBottomWidth:2,
         borderColor:'#d8d8d8',
-        width:250
+        width:50,
     },
     notifContainer:{
         flex:3.5,
@@ -127,6 +128,7 @@ var DashStyle = StyleSheet.create({
         width:'100%',
         borderRadius:20, 
         justifyContent:'center',
+        alignItems:'center',
         backgroundColor:'pink',
     },
     dateCircle:{

@@ -101,7 +101,7 @@ function Donations() {
                                 </View>
                                 <View style={donationStyle.TextDisplay}>
                                     <View>
-                                        <Text style={donationStyle.Organization}>{d.name}</Text>
+                                        <Text style={donationStyle.Organization} >{d.name}</Text>
                                     </View>
                                     <View>
                                         <Text style={donationStyle.address}>{d.address}</Text>

@@ -21,6 +21,7 @@ function Schedule(){
                         borderRadius: 20,
                         flex: 1,
                         paddingTop: 30,
+                        marginBottom: 200
                     }}
                     markedDates={{
                         '2019-11-20': {selected: true, marked:true, selectedColor:'#a4d638'},

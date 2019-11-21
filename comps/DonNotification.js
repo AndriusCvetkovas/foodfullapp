@@ -121,28 +121,31 @@ function DonNotification() {
                             <View style={donationStyle.Images}>
                             <Image
                                 style={donationStyle.ImageSize}
-                                source={require('../assets/img/safeway.jpg')}
+                                source={require('../assets/icon/donating.png')}
                                 />
                             </View>
                             <View style={donationStyle.TextDisplay}>
                                 <View>
-                                    <Text style={donationStyle.Organization} key={i}>Donation {i+1}</Text>
+                                    <Text style={donationStyle.Organization} key={i}>Foodbank accepted your donation!</Text>
                                 </View>
                                 <View>
-                                    <Text style={donationStyle.address}>{d.address}</Text>
+                                    <Text style={donationStyle.address}></Text>
                                 </View>
 
                             </View>
                             <View style={donationStyle.TextDisplay}>
-                            <Text style={[donationStyle.accpText, {color: colorz}]}>{texta}</Text>
+                                <View style = {{right: -120, top: -20, }}>
+                                    <Image style={donationStyle.Dots} source={require("../assets/icon/dot_nav.png")} />
+                                </View> 
+                            {/* <Text style={[donationStyle.accpText, {color: colorz}]}>{texta}</Text> */}
                                 <View style={donationStyle.option}>
-                                    <TouchableOpacity
+                                    {/* <TouchableOpacity
                                         style={donationStyle.BtnStyleBlueView}
                                         underlayColor='#000'
                                         color='000'
                                         onPress={()=>{[setShowModal(!showModal),setdd(d)]}}>
                                         <Text style={donationStyle.btnText}>View</Text>
-                                    </TouchableOpacity>
+                                    </TouchableOpacity> */}
                                 </View>
                             </View>
                         </View>

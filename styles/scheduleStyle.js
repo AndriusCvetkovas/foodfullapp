@@ -2,11 +2,13 @@ import {StyleSheet} from 'react-native';
 
 var ScheduleStyle = StyleSheet.create({
     mainView: {
-        height: '90%',
+        height: '80%',
+        top: 50,
         justifyContent: 'center',
         alignItems: 'center',
         width: '92%',
-        borderRadius: 20
+        bottom: 20,
+        borderRadius: 20,
     },
     backgroundView: {
         flex:1,
@@ -18,7 +20,7 @@ var ScheduleStyle = StyleSheet.create({
     backgroundImg:{
         width:'100%',  
         flex:4,
-        top:0, 
+        top:100, 
         justifyContent:'center', 
         alignItems:'center',
     },

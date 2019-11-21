@@ -15,7 +15,8 @@ function Confirmation({text}){
     }
     const Confirm = () =>{
         SendDonationInfo();
-        Actions.refresh({key: 'postdonation'})
+        Actions.refresh({key: 'postdonation'});
+        Actions.donationposted();
     }
     
     return(

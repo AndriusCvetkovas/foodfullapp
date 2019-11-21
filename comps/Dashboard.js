@@ -31,7 +31,12 @@ function Dashboard() {
         var d = json.data;
         setUser(json.receivers);
         setDons(d);
-        console.log(user[2].name)
+        if(dons == ""){
+            setn('You have no pickups')
+        }else {
+            setn('Today')
+        }
+    
         
     }
     //GET ACCEPTOR NAME
@@ -48,7 +53,8 @@ function Dashboard() {
         var bb = json.data;
         setName(bb);
     }
-
+    const [n, setn] = useState();
+    
     useEffect(()=>{
         getID();
     }, []);
@@ -110,8 +116,13 @@ function Dashboard() {
                 <Text style={DashStyle.title}>Upcoming Pickups</Text>
                 <ScrollView style={{ width: '90%' }}>
                     {/* Date with line */}
-                    <View style={{ left: 0, flexDirection: 'row', alignItems: 'center', marginBottom: 20 }}>
-                        <Text style={DashStyle.dateTitle}>Today</Text>
+                    <View style={{ left: 0, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', marginBottom: 20 }}>
+                        <Image
+                        source={require('../assets/icon/donating.png')}
+                        style={{width: 200, height: 170, position: 'absolute', top: 50, opacity: 0.1, }}
+                        ></Image>
+                        <View style={[DashStyle.line, {marginRight: 20}]}></View>
+                        <Text style={[DashStyle.dateTitle]}>{n}</Text>
                         <View style={DashStyle.line}></View>
                     </View>
 
@@ -119,6 +130,7 @@ function Dashboard() {
                         dons.map((d, i)=>{
                                 //GetName(d.destination_id); user[destination_id].name || ""
                                 var uname = user[d.destination_id].name || "";
+                
                                 //console.log(uname)
 
 
@@ -141,10 +153,6 @@ function Dashboard() {
                     }
 
                     {/* Date with line */}
-                    <View style={{ left: 0, flexDirection: 'row', alignItems: 'center', marginBottom: 20, marginTop: 10 }}>
-                        <Text style={DashStyle.dateTitle}>Tomorrow</Text>
-                        <View style={DashStyle.line}></View>
-                    </View>
 
                 </ScrollView>
             </View>

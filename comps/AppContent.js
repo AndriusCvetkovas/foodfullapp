@@ -214,4 +214,4 @@ function AppContent() {
 }
 
 
-export default Dashboard;
+export default AppContent;

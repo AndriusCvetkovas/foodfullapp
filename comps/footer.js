@@ -29,12 +29,16 @@ function Appfooter() {
   const [buttonText, changeButtonText] = useState('');
   const [buttonLink, changeButtonLink] = useState('Actions.postdonation()');
   const [mainButton, changeMainButton] = useState(require('../assets/icon/donate.png'));
-  
+  const [home, changeHome] = useState('#0ca3bc');
+  const [schedule, changeSchedule] = useState('black');
+  const [notification, changeNotification] = useState('black');
+  const [profile, changeProfile] = useState('black');
+  const [plus, changePlus] = useState('black')
 
   const CheckUser = () => {
     if (type == 1) {
       
-      changeButtonText('Claim');
+      changeButtonText('Search');
       changeMainButton(require('../assets/icon/search_button.png'))
     } else {
       changeButtonText('Donate')
@@ -45,6 +49,11 @@ function Appfooter() {
     changeColorNotif(require('../assets/icon/notif.png'));
     changeColorProfile(require('../assets/icon/profile.png'));
     changeColorSchedule(require('../assets/icon/schedule.png'));
+    changeHome('black')
+    changeNotification('black');
+    changeProfile('black');
+    changeSchedule('black');
+    changePlus('#0ca3bc')
     if(type == 1){
       Actions.mapaccept();
     }else {
@@ -55,6 +64,11 @@ function Appfooter() {
 
   function CombinedHome() {
     changeColorHome(require('../assets/icon/home_active.png'));
+    changeHome('#0ca3bc')
+    changeNotification('black');
+    changeProfile('black');
+    changeSchedule('black');
+    changePlus('black')
     changeColorNotif(require('../assets/icon/notif.png'));
     changeColorProfile(require('../assets/icon/profile.png'));
     changeColorSchedule(require('../assets/icon/schedule.png'));
@@ -67,6 +81,11 @@ function Appfooter() {
   };
   function CombinedProf(){
     Actions.profile();
+    changeHome('black')
+    changeNotification('black');
+    changeProfile('#0ca3bc');
+    changeSchedule('black');
+    changePlus('black')
     changeColorHome(require('../assets/icon/home.png'));
     changeColorNotif(require('../assets/icon/notif.png'));
     changeColorProfile(require('../assets/icon/profile_active.png'));
@@ -74,12 +93,22 @@ function Appfooter() {
   };
   function CombinedSchedule(){
     Actions.schedule();
+    changeHome('black');
+    changeNotification('black');
+    changeProfile('black');
+    changeSchedule('#0ca3bc');
+    changePlus('black');
     changeColorHome(require('../assets/icon/home.png'));
     changeColorNotif(require('../assets/icon/notif.png'));
     changeColorProfile(require('../assets/icon/profile.png'));
     changeColorSchedule(require('../assets/icon/schedule_active.png'));
   }
   function CombinedNot() {
+    changeHome('black');
+    changeNotification('#0ca3bc');
+    changeProfile('black');
+    changeSchedule('black');
+    changePlus('black');
     changeColorHome(require('../assets/icon/home.png'));
     changeColorNotif(require('../assets/icon/notif_active.png'));
     changeColorProfile(require('../assets/icon/profile.png'));
@@ -104,7 +133,7 @@ function Appfooter() {
           style={footerStyle.sizeIcon}
           source={colorHome}
         />
-        <Text style={footerStyle.label}>Home</Text>
+        <Text style={[footerStyle.label, {color: home}]}>Home</Text>
       </TouchableOpacity>
       <TouchableOpacity style={footerStyle.iconsFooter}
         onPress={() => CombinedSchedule()}
@@ -114,7 +143,7 @@ function Appfooter() {
           style={footerStyle.sizeIcon}
           source={colorSchedule}
         />
-        <Text style={footerStyle.label}>Schedule</Text>
+        <Text style={[footerStyle.label, {color: schedule}]}>Schedule</Text>
       </TouchableOpacity>
 
       <TouchableOpacity style={footerStyle.donateIcon}
@@ -125,7 +154,7 @@ function Appfooter() {
           style={footerStyle.sizeDonateIcon}
           source={mainButton}
         />
-        <Text style={footerStyle.label}>{buttonText}</Text>
+        <Text style={[footerStyle.label,{color: plus}]}>{buttonText}</Text>
 
       </TouchableOpacity>
       <TouchableOpacity style={footerStyle.iconsFooter}
@@ -135,7 +164,7 @@ function Appfooter() {
           style={footerStyle.sizeIcon}
           source={colorNotif}
         />
-        <Text style={footerStyle.label}>Notifications</Text>
+        <Text style={[footerStyle.label, {color: notification}]}>Notifications</Text>
       </TouchableOpacity>
       <TouchableOpacity style={footerStyle.iconsFooter}
         onPress={() => CombinedProf()}
@@ -147,7 +176,7 @@ function Appfooter() {
           source={colorProfile}
 
         />
-        <Text style={footerStyle.label}>Account</Text>
+        <Text style={[footerStyle.label, {color: profile}]}>Profile</Text>
       </TouchableOpacity>
 
     </View>
