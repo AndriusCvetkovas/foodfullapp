@@ -5,7 +5,7 @@ import { Actions } from 'react-native-router-flux';
 import axios from 'axios';
 
 
-function Dashboard() {
+function Dashboard({navigation}) {
     var currentId= 0;
     //RECEIVE CURRENT USER ID FROM ASYNC STORAGE
     const getID = async () =>{
@@ -27,15 +27,11 @@ function Dashboard() {
         }
         var r = await axios.post(`http://localhost:3001/post`, obj);
         var json = JSON.parse(r.data.body);
-        //console.log(json.data, json.receivers);
+        console.log(json.data, json.receivers);
         var d = json.data;
         setUser(json.receivers);
         setDons(d);
-        if(dons == null){
-            setn('You have no pickups')
-        }else {
-            setn('Today')
-        }
+        
     
         
     }
@@ -58,6 +54,16 @@ function Dashboard() {
     useEffect(()=>{
         getID();
     }, []);
+    useEffect(()=>{
+        getID();
+    },[navigation.state.params]);
+    useEffect(()=> {
+        if(dons == ''){
+            setn('You have no pickups')
+        }else {
+            setn('Today')
+        }
+    }, [GetDonations])
     return (
         <View style={DashStyle.main}>
 
@@ -130,7 +136,7 @@ function Dashboard() {
                         dons.map((d, i)=>{
                                 //GetName(d.destination_id); user[destination_id].name || ""
                                 var uname = user[d.destination_id].name || "";
-                
+                                
                                 //console.log(uname)
 
 

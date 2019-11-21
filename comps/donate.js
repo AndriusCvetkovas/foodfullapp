@@ -10,7 +10,7 @@ import Confirmation from './Confirmation';
 var id = "";
 var receiverId = 0;
 var statu = 0;
-function Donate({addr, ids, stat, navigation}) {
+function Donate({addr, ids, stat, tt}) {
     var text = addr;
     receiverId = ids;
     
@@ -139,14 +139,14 @@ function Donate({addr, ids, stat, navigation}) {
 }
     useEffect(()=>{
         getID();
-        console.log(navigation.state.params);
     }, []);
 
-    // useEffect(()=>{
-    //     setSelectedDate("");
-    //     setSelectedTime("");
-    //     setSelectedDescription("");
-    // },[navigation.state.params])
+    useEffect(()=>{
+        setSelectedDate("");
+        setSelectedTime("");
+        setSelectedDescription("");
+        Actions.refresh({key: 'postdonation'})
+    },[tt]);
 return (
     <KeyboardAvoidingView style={donateStyle.container} behavior="padding" enabled>
         
@@ -182,8 +182,8 @@ return (
                             mode="date"
                             value = {selectedDate}
                             placeholder="select date"
-                            format="YYYY-MM-DD"
-                            minDate = "2018-06-01"
+                            format="YYYY-MMM-DD"
+                            minDate = "2019-11-21"
                             maxDate="2040-06-01"
                             confirmBtnText="Confirm"
                             cancelBtnText="Cancel"
@@ -223,6 +223,7 @@ return (
                             value = {selectedTime}
                             confirmBtnText="Confirm"
                             cancelBtnText="Cancel"
+                            minuteInterval= {30}
                             customStyles={{
                             dateIcon: {
                                 position: 'absolute',
@@ -256,7 +257,7 @@ return (
                     numberOfLines={4}
                     multiline
                     onChangeText={(text) => setSelectedDescription(text)}
-                    />
+                >{selectedDescription}</TextInput>
             </View>
 
             <View style={[donateStyle.padding, donateStyle.row]}>

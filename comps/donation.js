@@ -16,7 +16,6 @@ import Modal from "react-native-modal";
 import AcceptDonationNF from './AcceptDonationNF';
 import AcceptNFStyle from '../styles/AcceptNFStyle';
 import buttonStyle from '../styles/buttonStyle';
-import { updateExpression } from '@babel/types';
 function Donations() {
     // MODAL VIEW 
     const [showModal, setShowModal]= useState(false);
@@ -120,6 +119,14 @@ function Donations() {
                                             </TouchableOpacity>
                                         </View>
                                     </View>
+                                    <TouchableOpacity style ={{position: 'absolute', top: 30, right: 30}}
+                                    onPress={()=>{setShowModal(!showModal)}}>
+                                        <Image
+                                        
+                                        source={require('../assets/icon/x.png')}
+                                        style = {{width: 15, height: 15}}
+                                        />
+                                    </TouchableOpacity>
                             </View>
                     )
                 })
@@ -171,7 +178,7 @@ function Donations() {
                     {dd.description}
             </Text>
                 <TouchableOpacity
-                    onPress={()=>{Update2(dd.id), setShowModal(!showModal)}}
+                    onPress={()=>{Update2(dd.id), setShowModal(!showModal),getID()}}
                     title="Accept"
                     style={AcceptNFStyle.button}>
                     <Text
@@ -179,7 +186,7 @@ function Donations() {
                     >Accept Donation</Text>
                 </TouchableOpacity>
                 <TouchableOpacity
-                    onPress={()=>{Update3(dd.id), setShowModal(!showModal)}}
+                    onPress={()=>{Update3(dd.id), setShowModal(!showModal),getID()}}
                     title="Accept"
                     style={AcceptNFStyle.button2}>
                     <Text
@@ -187,6 +194,14 @@ function Donations() {
                     >Decline Donation</Text>
                 </TouchableOpacity>
             </View>
+            <TouchableOpacity style ={{position: 'absolute', top: 30, right: 30}}
+                onPress={()=>{setShowModal(!showModal)}}>
+                    <Image
+                    
+                    source={require('../assets/icon/x.png')}
+                    style = {{width: 15, height: 15}}
+                    />
+                    </TouchableOpacity>
                 </View>
             </Modal>
         </View>

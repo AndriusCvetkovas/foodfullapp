@@ -17,7 +17,9 @@ var AcceptNFStyle = StyleSheet.create({
         borderRadius: 30,
         padding: 20,
         alignItems: 'center',
-        justifyContent: 'center'
+        justifyContent: 'center',
+
+        
 
     },
     donationInfoTop: {

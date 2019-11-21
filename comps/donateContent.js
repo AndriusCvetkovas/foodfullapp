@@ -13,18 +13,19 @@ import ContentStyle from '../styles/contentStyle';
 import Donations from '../comps/donation';
 import Pickup from '../comps/pickup';
 
-function DonateContent({pickup}) {
+function DonateContent({pickup, navigation}) {
   var pick = pickup;
+  const [selectedTab, setSelectedTab] = useState()
   if (pick != null){
-    setSelectedTab(1);
+    selectedTab = 1;
   }
-  const [selectedTab, setSelectedTab] = useState(0);
+  
   var donation = null;
-  if (selectedTab === 0){
+  if (selectedTab == 0){
     donation = (
       <Donations/>
     )
-  } else if (selectedTab === 1){
+  } else if (selectedTab == 1){
     donation = (
       <Pickup />
     )

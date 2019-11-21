@@ -61,6 +61,9 @@ function DashboardAccept({navigation}) {
     useEffect(()=>{
         getID();
     }, []);
+    useEffect(()=>{
+        getID();
+    },[navigation.state.params])
     return ( 
         <View style={DashStyle.main}>
 
