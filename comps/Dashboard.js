@@ -27,11 +27,11 @@ function Dashboard({navigation}) {
         }
         var r = await axios.post(`http://localhost:3001/post`, obj);
         var json = JSON.parse(r.data.body);
-        //console.log(json.data, json.receivers);
+        console.log(json.data, json.receivers);
         var d = json.data;
         setUser(json.receivers);
         setDons(d);
-        if(dons == null){
+        if(dons == ''){
             setn('You have no pickups')
         }else {
             setn('Today')
@@ -133,7 +133,7 @@ function Dashboard({navigation}) {
                         dons.map((d, i)=>{
                                 //GetName(d.destination_id); user[destination_id].name || ""
                                 var uname = user[d.destination_id].name || "";
-                
+                                
                                 //console.log(uname)
 
 

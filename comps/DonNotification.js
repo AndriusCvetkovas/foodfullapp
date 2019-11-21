@@ -6,6 +6,7 @@ import axios from 'axios';
 import Modal from "react-native-modal";
 import AcceptNFStyle from '../styles/AcceptNFStyle';
 import AppHeaderStyle from '../styles/headerStyle';
+import LottieView from 'lottie-react-native';
 function DonNotification() {
     const [showModal, setShowModal]= useState(false);
     var currentId = "";
@@ -28,19 +29,33 @@ function DonNotification() {
         }
         var r = await axios.post(`http://localhost:3001/post`, obj);
         var json = JSON.parse(r.data.body);
-        //console.log(json.data);
+        console.log(json.data);
         var d = json.data;
         setDons(d);
+    }
+    const CheckifDon = () => {
+        if(dons == ''){
+            return (
+                <View style ={{alignItems: 'center', justifyContent: 'center', top: '50%'}}>
+                    <Text style ={{color: 'grey', fontFamily: 'avenir', fontSize: 20}}>You don't have any notifications...</Text>
+                </View>
+            )
+        }
     }
     useEffect(()=>{
         getID();
     }, [])
     return (
         <View>
+            {CheckifDon()}
+            {/* <LottieView
+            source={require('../assets/lottieFiles/avocado.json')}
+            style={{justifyContent:'center', alignItems:'center',height:200, width:200, top: 50}}
+        /> */}
             <Modal isVisible={showModal}
             coverScreen={false}
             animationIn='slideInUp'
-            style = {{backgroundColor: 'transparent', height: 50,width: '95%', position: 'absolute', top: 0, right: 0, zIndex: -1}}
+            style = {{backgroundColor: 'transparent', height: 50,width: '95%', position: 'absolute', top: "40%", right: 0,bottom:0, zIndex: 1}}
             isVisible = {showModal}
             onBackdropPress={() => setShowModal(!showModal)}
             >
@@ -82,21 +97,13 @@ function DonNotification() {
                 >
                     {dd.description}
             </Text>
-                <TouchableOpacity
-
-                    title="Accept"
-                    style={AcceptNFStyle.button}>
-                    <Text
-                        style={{ color: '#0ca3bc', fontSize: 16, fontWeight: '500' }}
-                    >Accept Donation</Text>
-                </TouchableOpacity>
-                <TouchableOpacity
-
-                    title="Accept"
-                    style={AcceptNFStyle.button2}>
-                    <Text
-                        style={{ color: 'red', fontSize: 16, fontWeight: '500' }}
-                    >Decline Donation</Text>
+                <TouchableOpacity style ={{position: 'absolute', top: 30, right: 30}}
+                onPress={()=>{setShowModal(!showModal)}}>
+                    <Image
+                    
+                    source={require('../assets/icon/x.png')}
+                    style = {{width: 15, height: 15}}
+                    />
                 </TouchableOpacity>
             </View>
                 </View>
@@ -112,16 +119,14 @@ function DonNotification() {
                     }else if (d.status == 2) {
                         texta = 'Foodbank accepted your donation!'
                         colorz = '#a5d826'
-                    }else {
-                        texta = 'Your donation was declined'
-                        colorz = 'red'
                     }
+                    
                     
                     return (
                         <View style={[donationStyle.CardDisplay, {top: 50,}]}>
                             <View style={donationStyle.Images}>
                             <Image
-                                style={donationStyle.ImageSize}
+                                style={{height: 60, width: 70}}
                                 source={require('../assets/icon/donating.png')}
                                 />
                             </View>
@@ -135,9 +140,11 @@ function DonNotification() {
 
                             </View>
                             <View style={donationStyle.TextDisplay}>
-                                <View style = {{right: -120, top: -20, }}>
+                                <TouchableOpacity style = {{right: -120, top: -20, }}
+                                onPress={()=> [setShowModal(!showModal), setdd(d)]}
+                                >
                                     <Image style={donationStyle.Dots} source={require("../assets/icon/dot_nav.png")} />
-                                </View> 
+                                </TouchableOpacity> 
                             {/* <Text style={[donationStyle.accpText, {color: colorz}]}>{texta}</Text> */}
                                 <View style={donationStyle.option}>
                                     {/* <TouchableOpacity

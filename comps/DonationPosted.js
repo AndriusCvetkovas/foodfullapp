@@ -11,6 +11,7 @@ import {Actions} from 'react-native-router-flux';
 
 
 function DonationPosted(){
+  var tt ='ha'
   return (
    <View>
        <View style={styles.mainbody}>
@@ -25,7 +26,7 @@ function DonationPosted(){
         </View>
 
         <View style = {styles.containerButton}>
-        <TouchableHighlight style={[styles.buttonContainer, styles.MakePost]} onPress={() => Actions.postdonation( )}>
+        <TouchableHighlight style={[styles.buttonContainer, styles.MakePost]} onPress={() => Actions.postdonation({tt})}>
           <Text style={styles.B1}>Make another Donation</Text>
         </TouchableHighlight>
         {/* <TouchableHighlight style={[styles.buttonContainer, styles.ViewPost]} onPress={() => {Actions.notification0()}}>
