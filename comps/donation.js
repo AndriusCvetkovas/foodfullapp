@@ -77,6 +77,15 @@ function Donations() {
         console.log(json.data);
         
     }
+    const CheckifDon = () => {
+        if(dons == ''){
+            return (
+                <View style ={{alignItems: 'center', justifyContent: 'center', top: '40%'}}>
+                    <Text style ={{color: 'grey', fontFamily: 'avenir', fontSize: 20}}>You don't have any donations...</Text>
+                </View>
+            )
+        }
+    }
 
     useEffect(() => {
         getID();
@@ -84,6 +93,7 @@ function Donations() {
     return (
 
         <View>
+            {CheckifDon()}
             
         <ScrollView style ={{height: '100%'}}>
 
