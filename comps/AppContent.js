@@ -42,6 +42,7 @@ import DonNotificationDeclined from './DonNotificationDeclined';
 import MsgDeclineDonation from './MsgDeclineDonation';
 import AppHeader from './header';
 import GetStarted from './getStarted';
+import Home from './Home';
 
 
 function AppContent() {
