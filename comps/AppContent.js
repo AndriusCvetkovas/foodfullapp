@@ -137,12 +137,6 @@ function AppContent() {
             hideNavBar={true} 
           />
           <Scene
-          key='map'
-          component={GMap}
-          title='Map'
-          hideNavBar={true}
-          />
-          <Scene
           key='info'
           component={Info}
           title="info"
@@ -205,6 +199,12 @@ function AppContent() {
             hideNavBar={true}
             />
         </Drawer>
+        <Scene
+          key='map'
+          component={GMap}
+          title='Map'
+          hideNavBar={true}
+          />
 
       </Stack>
     </Router >
