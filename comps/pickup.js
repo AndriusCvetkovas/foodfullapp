@@ -45,22 +45,13 @@ function Pickup() {
   // const [donsStatus, setDonsStatus] = useState();
   // const [text, setText] = useState();
   const [showModal, setShowModal]= useState(false);
-  const CheckifDon = () => {
-    if(dons == ''){
-        return (
-            <View style ={{alignItems: 'center', justifyContent: 'center', top: 315}}>
-                <Text style ={{color: 'grey', fontFamily: 'avenir', fontSize: 20}}>You don't have any donations...</Text>
-            </View>
-        )
-    }
-}
+
   
   useEffect(() => {
     getID();
   }, []);
   return (
     <View>
-      {CheckifDon()}
       <Modal
       isVisible={showModal}
       coverScreen={false}
