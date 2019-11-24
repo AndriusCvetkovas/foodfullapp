@@ -7,7 +7,8 @@ import {
   Image,
   AsyncStorage,
 } from 'react-native';
-import MapView, {Marker, Callout, Animated} from 'react-native-maps';
+import MapView, {Marker, Callout, Animated as AnimatedMap,
+  AnimatedRegion,} from 'react-native-maps';
 import {Actions} from 'react-native-router-flux';
 import Geolocation from 'react-native-geolocation-service';
 import GMapStyle from '../styles/mapStyle';
@@ -67,6 +68,8 @@ function GMap() {
   useEffect(() => {
     getType();
   }, []);
+  const [la,setLa] = useState(49.246292)
+  const [lo,setLo] = useState(-123.116226)
 
   return (
     <View style={{justifyContent: 'center'}}>
@@ -75,14 +78,15 @@ function GMap() {
         style={GMapStyle.mapStyle}
         zoomEnabled={true}
         region={{
-          latitude: 49.246292,
-          longitude: -123.116226,
+          latitude: la,
+          longitude: lo,
           latitudeDelta: 0.5,
           longitudeDelta: 0.5,
-        }}>
+        }}
+        >
         {users.map((d, i) => {
           return (
-            <Marker
+            <MapView.Marker
               id={d.id}
               coordinate={{
                 latitude: d.lat,
@@ -91,11 +95,14 @@ function GMap() {
               title={d.name}
               description={d.address}
               image={require('../assets/icon/map.png')}
+              selected={true}
             />
           );
         })}
       </MapView>
-      <ScrollView horizontal={true} style={GMapStyle.viewStyle}>
+      <ScrollView horizontal={true} style={GMapStyle.viewStyle}
+      showsHorizontalScrollIndicator={false}
+      >
         {
           users.map((d, i)=>{
             return(
@@ -112,7 +119,9 @@ function GMap() {
               </View>
             </View>
 
-            <TouchableOpacity style={GMapStyle.innerButton}>
+            <TouchableOpacity style={GMapStyle.innerButton}
+            
+            onPress={()=>Actions.postdonation({addr: d.name, ids: d.id, stat: 1})}>
               <Text
                 style={{
                   color: '#06a2bc',
@@ -141,63 +150,4 @@ function GMap() {
     </View>
   );
 }
-
-//   <View>
-//     <MapView
-//       provider={MapView.PROVIDER_GOOGLE}
-//       style={GMapStyle.mapStyle}
-//       zoomEnabled={true}
-//       region={{
-//         latitude: 49.246292,
-//         longitude: -123.116226,
-//         latitudeDelta: 0.5,
-//         longitudeDelta: 0.5
-//       }}
-//       showsUserLocation={true}
-//       showsCompass={true}
-//       showsMyLocationButton={true}
-//       showsScale={true}
-
-//     >
-//       {
-//         users.map((d, i)=>{
-//           return <Marker
-//           id={d.id}
-//           coordinate={{
-//             latitude: d.lat,
-//             longitude: d.long
-//           }}
-//           title={d.name}
-//           description={d.address}
-//           image={require('../assets/icon/map.png')}
-//           />
-//         })
-//       }
-//     </MapView>
-//     <ScrollView>
-//     {
-//         users.map((d, i)=>{
-//           return (
-//           <TouchableOpacity
-//             style={GMapStyle.viewStyle}
-//             >
-//             <View style={GMapStyle.innerInfoView}>
-//               <Text style={GMapStyle.infoInnerTitle}>{d.name}</Text>
-//               <Text style={GMapStyle.infoInnerAddress} key={i}>{d.address}</Text>
-//             </View>
-//             <Text style={GMapStyle.infoInnerDistance}>4.6 km</Text>
-//             <TouchableOpacity style={GMapStyle.infoInnerButton}
-//             onPress={()=>Actions.postdonation({addr: d.name,
-//             ids: d.id, stat: 1})}
-//             >
-//               <Text style={{ color: 'white' }}>Pick</Text>
-//             </TouchableOpacity>
-//           </TouchableOpacity>
-//           )
-//         })
-//     }
-//     </ScrollView>
-//   </View>
-// );
-//};
 export default GMap;

@@ -174,12 +174,7 @@ function AppContent() {
             component={DonateContent}
             title="Notifications"
             hideNavBar={true} />
-            <Scene
-            key='mapaccept'
-            component={GMapAccept}
-            title='Map'
-            hideNavBar={true}
-            />
+            
           <Scene
             key='profile'
             component={Profile}
@@ -200,11 +195,19 @@ function AppContent() {
             />
         </Drawer>
         <Scene
+        gesturesEnabled={false}
           key='map'
           component={GMap}
           title='Map'
           hideNavBar={true}
           />
+          <Scene
+          gesturesEnabled={false}
+            key='mapaccept'
+            component={GMapAccept}
+            title='Map'
+            hideNavBar={true}
+            />
 
       </Stack>
     </Router >
