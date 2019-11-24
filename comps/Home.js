@@ -40,19 +40,19 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: 'darkblue',
+    backgroundColor: '#ffffff',
   },
   slide2: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: 'slategrey'
+    backgroundColor: '#ffffff'
   },
   slide3: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: 'darkgreen'
+    backgroundColor: '#ffffff'
   },
   text: {
     color: '#fff',
@@ -112,15 +112,16 @@ export default class Home extends Component {
             <Text style = {{position: 'absolute'}}></Text>
         }
         buttonWrapperStyle= {{borderRadius:20, backgroundColor: '#3dbfd2', width: 100, height: 45, justifyContent: 'center', alignItems: 'center', top: 660, left: 155, right: 0 }}
-        showsButtons={false} showsPagination={true} loop={true} 
+        showsButtons={false} showsPagination={true} loop={true} paginationClickable={true}
         
         // DOTS
         dot={<View style={{backgroundColor: '#bcd1d3', width: 8, height: 8, borderRadius: 8, marginLeft: 5, marginRight: 5, marginTop: 3, marginBottom: 3, bottom:200 }} />}
 
-        activeDot={<View style={{backgroundColor: '#3dbfd2', width: 8, height: 8, borderRadius: 8, marginLeft: 3, marginRight: 3, marginTop: 3, marginBottom: 3, bottom:200 }} />}
+        activeDot={<View style={{backgroundColor: '#3dbfd2', width: 8, height: 8, borderRadius: 8, marginLeft: 5, marginRight: 5, marginTop: 3, marginBottom: 3, bottom:200 }} />}
 
         autoplay
         autoplayTimeout={2.9}
+        
         >
         <View style={styles.slide1}>
         <LottieView
@@ -134,6 +135,7 @@ export default class Home extends Component {
 
       {/* PAGE TWO*/}
         <View style={styles.slide2}>
+          <Text>Food Waste</Text>
         <LottieView
             source={require('../assets/lottieFiles/donatephone.json')}
             style={{justifyContent:'center', alignItems:'center',height:350, width:'100%', position:'absolute', bottom:80}}
@@ -141,6 +143,7 @@ export default class Home extends Component {
             loop
         />
         </View>
+
 
 
       {/* PAGE THREE*/}
