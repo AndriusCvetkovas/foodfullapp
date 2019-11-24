@@ -43,11 +43,18 @@ import MsgDeclineDonation from './MsgDeclineDonation';
 import AppHeader from './header';
 import GetStarted from './getStarted';
 
-
+import Users from './Users';
 function AppContent() {
   return (
 
 
+//     <View style = {{flex: 1}}>
+//      {/* <SignUp/> */} 
+//  <Users/>    
+//     {/* <Profile /> */}
+//   {/* {/* <Confirmation /> */}
+ 
+//   </View>
     <Router>
 
       <Stack key='root'>

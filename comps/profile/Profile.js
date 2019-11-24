@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, Image, TouchableOpacity, AsyncStorage  } from 'react-native';
+import { View, Text, Image, TouchableOpacity, AsyncStorage,Button  } from 'react-native';
 import ProfileStyle from '../../styles/profileStyle';
 import { Actions} from 'react-native-router-flux';
 import axios from 'axios';
@@ -14,6 +14,7 @@ function Profile() {
     const [userAddress, setUserAddress] = useState();
     const [userEmail, setUserEmail] = useState();
     const [userPhone, setUserPhone] = useState();
+    
     //GET current user id 
     const getID = async () =>{
         var json = await AsyncStorage.getItem('id');
@@ -37,7 +38,24 @@ function Profile() {
         setUserAddress(d[0].address)
         setUserEmail(d[0].email)
         setUserPhone(d[0].phone)
+        // setAdress(d[0].adress)
     }
+
+    // const UpdateUser = async() => {
+    //     var obj = {
+    //         key:"users_update",
+    //         data:{
+    //             id:currentId,
+    //             email:t_email,
+    //             address:t_address,
+    //             id:currentId
+    //         }
+    //     }
+
+       
+
+        // var r = await axios.post("http://localhost:3001/post", obj);
+        // await ReadUsers();
     //CLEAR SESSION INFO
     const DeleteData = async () => {
         try {
@@ -90,6 +108,16 @@ function Profile() {
                     source={require('../../assets/icon/edit.png')}
                     ></Image>
                 </TouchableOpacity>
+
+<View style = {{position: 'absolute', top: 20, right: 20 , width:100, height:100, color: 'red'}}>
+                <Button style = {{position: 'absolute', top: 20, right: 20 , width:10, height:20, color: 'red'}}
+                title="Edit"
+                onPress={()=>{
+                    setShowEdit(!showEdit)
+                }}
+            />
+</View>
+
 
                 {/* Store name/title below */}
                 <Text
