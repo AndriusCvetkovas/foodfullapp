@@ -28,13 +28,19 @@ function Confirmation({obj}){
             </View>
 
             <View style={{flex:1.5}}>
-                <LottieView
+                {/* <LottieView
               source={require('../assets/lottieFiles/location.json')}
               style={{justifyContent:'center', alignItems:'center',height:55, width:55, position:'absolute', top:-6, left:13, zIndex:1}}
               autoPlay
               loop
+            /> */}
+               <LottieView
+              source={require('../assets/lottieFiles/checkmark2.json')}
+              style={{justifyContent:'center', alignItems:'center',height:50, width:50, position:'absolute', top:25, left:13, zIndex:1}}
+              autoPlay
+              loop
             />
-            <Image style = {{height: 120, width: 120, top:20}}
+            <Image style = {{height: 120, width: 120, top:10}}
                 source={require('../assets/img/confirm_donation.png')} 
                 />
             </View>
