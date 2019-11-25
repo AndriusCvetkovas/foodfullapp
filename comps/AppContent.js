@@ -224,4 +224,4 @@ function AppContent() {
 }
 
 
-export default SignUp;
+export default AppContent;

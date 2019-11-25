@@ -76,6 +76,7 @@ var SignUpStyles = StyleSheet.create({
         width:'98%',
         alignItems: 'center',
         justifyContent: 'center',
+        top:-20
     },
    
 // BUTTON
