@@ -85,7 +85,7 @@ export default class GetStarted extends Component {
           onPress={()=>{Actions.login()}}
             >
               <Text style ={{ color: 'grey', top: 140,textAlign: 'center'}}
-              >skip to login</Text>
+              >Skip</Text>
             </TouchableOpacity>
           </View>
        {/* PAGE ONE: ACCOUNT CREATED */}
@@ -107,7 +107,7 @@ export default class GetStarted extends Component {
             autoPlay
             loop
         />
-          <Text style={styles.desc}>Thank you for joining foodfull and making a change in your own community.</Text>
+          <Text style={styles.desc}>Thank you for joining foodfull and making a change in your community.</Text>
           
 
         </View>

@@ -52,12 +52,18 @@ function AppContent() {
     <Router>
 
       <Stack key='root'>
+      <Scene
+          key="home"
+          component={Home}
+          title="Home"
+          hideNavBar={true}
+          initial
+        />
         <Scene
           key="login"
           component={LoginPage}
           title="login"
           hideNavBar={true}
-          initial
         />
         <Scene
           key="signup"
@@ -218,4 +224,4 @@ function AppContent() {
 }
 
 
-export default Home;
+export default SignUp;

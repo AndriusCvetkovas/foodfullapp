@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { AppRegistry, StyleSheet, Text, View, Button, SafeAreaView, TouchableOpacity } from 'react-native';
+import { AppRegistry, StyleSheet, Text, View, Button, SafeAreaView, TouchableOpacity, Image } from 'react-native';
 import LottieView from 'lottie-react-native';
 import Swiper from 'react-native-swiper';
 import {Actions} from 'react-native-router-flux'
@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
   },
   header:{
     fontFamily: 'Avenir',
-    fontSize: 28,
+    fontSize: 25,
     fontWeight:'700',
     color: '#3dbfd2',
     top:0,
@@ -87,7 +87,7 @@ export default class Home extends Component {
               </TouchableOpacity>
 
               <TouchableOpacity 
-              onPress={()=>{Actions.login()}}
+              onPress={()=>{Actions.signup()}}
               style={{height:60}}>
                   <View style ={{ top:50, width:350, height:60,padding:10, alignItems:'center', justifyContent:'center', borderRadius:10, borderColor:'#ffffff', borderWidth:2}}>  
                   <Text style={{fontSize:20, fontFamily:'Avenir', color:'#ffffff',}}>Create an Account</Text>
@@ -97,8 +97,10 @@ export default class Home extends Component {
         </View>
 
         { /* LOGO STAYS ON EACH PAGE */}
-          <View style = {{flex: 0.2, position: 'absolute', top: 100, zIndex: 2, textAlign: 'center', width: '100%',  justifyContent:'center',
-            alignItems:'center'}}>
+          <View style = {{flex: 0.2, position: 'absolute', top: 80, zIndex: 2, textAlign: 'center', width: '100%',  justifyContent:'center',
+            alignItems:'center', flexDirection:'row'}}>
+            <Image source={require('../assets/icon/logo.png')} 
+            style={{width:30, height:35, marginRight:15, top:-3}}/>
               <Text style={styles.header}
               >Foodfull</Text>
           </View>
@@ -115,45 +117,71 @@ export default class Home extends Component {
         showsButtons={false} showsPagination={true} loop={true} paginationClickable={true}
         
         // DOTS
-        dot={<View style={{backgroundColor: '#bcd1d3', width: 8, height: 8, borderRadius: 8, marginLeft: 5, marginRight: 5, marginTop: 3, marginBottom: 3, bottom:200 }} />}
+        dot={<View style={{backgroundColor: '#bcd1d3', width: 10, height: 10, borderRadius: 10, marginLeft: 5, marginRight: 5, marginTop: 3, marginBottom: 3, bottom:200 }} />}
 
-        activeDot={<View style={{backgroundColor: '#3dbfd2', width: 8, height: 8, borderRadius: 8, marginLeft: 5, marginRight: 5, marginTop: 3, marginBottom: 3, bottom:200 }} />}
+        activeDot={<View style={{backgroundColor: '#3dbfd2', width: 10, height: 10, borderRadius: 10, marginLeft: 5, marginRight: 5, marginTop: 3, marginBottom: 3, bottom:200 }} />}
 
         autoplay
-        autoplayTimeout={2.9}
+        autoplayTimeout={3.2}
         
         >
         <View style={styles.slide1}>
-        <LottieView
-            source={require('../assets/lottieFiles/welcome.json')}
-            style={{justifyContent:'center', alignItems:'center',height:'100%', width:'100%', position:'absolute', bottom:0}}
-            autoPlay
-            loop
-        />
+          <View style={{justifyContent:'center', alignItems:'center', position:'absolute', top:180, zIndex:1}}>
+              <Text style={{fontFamily:'Avenir', fontSize:20, color:'#91e55a', fontWeight:'800'}}>BE PART OF A</Text>
+
+              <Text style={{fontFamily:'Avenir', fontSize:40, color:'#3dbfd2', width:300, textAlign:'center', fontWeight:'800',}}>Hunger-Free Community</Text>
+          </View>
+          <Image 
+          source={require('../assets/img/1.png')}
+          style={{width:'100%', height:'100%'}}
+          />
+          {/* <LottieView
+              source={require('../assets/lottieFiles/welcome.json')}
+              style={{justifyContent:'center', alignItems:'center',height:'100%', width:'100%', position:'absolute', bottom:0}}
+              autoPlay
+              loop
+          /> */}
         </View>
 
 
       {/* PAGE TWO*/}
         <View style={styles.slide2}>
-          <Text>Food Waste</Text>
-        <LottieView
-            source={require('../assets/lottieFiles/donatephone.json')}
-            style={{justifyContent:'center', alignItems:'center',height:350, width:'100%', position:'absolute', bottom:80}}
-            autoPlay
-            loop
-        />
+            <View style={{justifyContent:'center', alignItems:'center', position:'absolute', top:180, zIndex:1}}>
+                  <Text style={{fontFamily:'Avenir', fontSize:20, color:'#91e55a', fontWeight:'800'}}>PUT AN END TO</Text>
+
+                  <Text style={{fontFamily:'Avenir', fontSize:40, color:'#3dbfd2', width:300, textAlign:'center', fontWeight:'800',}}>Food Waste</Text>
+            </View>
+            <Image 
+            source={require('../assets/img/2.png')}
+            style={{width:'100%', height:'100%',}}
+              />
+            {/* <LottieView
+                source={require('../assets/lottieFiles/donatephone.json')}
+                style={{justifyContent:'center', alignItems:'center',height:350, width:'100%', position:'absolute', bottom:80}}
+                autoPlay
+                loop
+            /> */}
         </View>
 
 
 
       {/* PAGE THREE*/}
         <View style={styles.slide3}>
-        <LottieView
-            source={require('../assets/lottieFiles/welcome.json')}
-            style={{justifyContent:'center', alignItems:'center',height:350, width:'100%', position:'absolute', bottom:80}}
-            autoPlay
-            loop
-        />
+            <View style={{justifyContent:'center', alignItems:'center', position:'absolute', top:180, zIndex:1}}>
+                  <Text style={{fontFamily:'Avenir', fontSize:20, color:'#91e55a', fontWeight:'800'}}>SOMETHING HERE</Text>
+
+                  <Text style={{fontFamily:'Avenir', fontSize:40, color:'#3dbfd2', width:300, textAlign:'center', fontWeight:'800',}}>Make a Change</Text>
+            </View>
+            <Image 
+            source={require('../assets/img/3.png')}
+            style={{width:'100%', height:'100%', top:0}}
+              />
+            {/* <LottieView
+                source={require('../assets/lottieFiles/welcome.json')}
+                style={{justifyContent:'center', alignItems:'center',height:350, width:'100%', position:'absolute', bottom:80}}
+                autoPlay
+                loop
+            /> */}
         </View>
 
 
