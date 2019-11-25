@@ -7,10 +7,13 @@ import { Actions } from 'react-native-router-flux';
 import ImagePicker from 'react-native-image-picker';
 import axios from 'axios';
 import Confirmation from './Confirmation';
+import Modal from "react-native-modal";
 var id = "";
 var receiverId = 0;
 var statu = 0;
 function Donate({addr, ids, stat, tt}) {
+
+    
     var text = addr;
     receiverId = ids;
     
@@ -33,6 +36,7 @@ function Donate({addr, ids, stat, tt}) {
 
     var orgInput = null;
 
+    //IMAGE UPLOAD
     function uploadMyImage() {
         ImagePicker.showImagePicker(options, (response) => {
 
@@ -129,7 +133,8 @@ function Donate({addr, ids, stat, tt}) {
     const changePage = () => {
         if(receiverId != 0 ){
         setStatus(1);
-        Actions.confirmdonation({ text: obj })
+        setShowModal(!showModal)
+        //Actions.confirmdonation({ text: obj })
     }else if(receiverId != 0 && text == null) {
         alert("Please enter receiver")
         
@@ -147,6 +152,16 @@ function Donate({addr, ids, stat, tt}) {
         setSelectedDescription("");
         Actions.refresh({key: 'postdonation'})
     },[tt]);
+
+    const [showModal, setShowModal]= useState(false);
+    var modalInitContent = (<View><Text>eee</Text></View>);
+
+    if (showModal === true){
+        modalInitContent = (<Confirmation 
+            obj = {obj}
+        />
+        );    
+      }
 return (
     <KeyboardAvoidingView style={donateStyle.container} behavior="padding" enabled>
         
@@ -287,6 +302,24 @@ return (
         </View>
             
     </ScrollView>
+
+    <Modal isVisible={showModal}
+            coverScreen={false}
+            animationIn='slideInUp'
+            style = {{backgroundColor: 'transparent', height: 700,width: 380, position: "absolute"}}
+            isVisible = {showModal}
+            onBackdropPress={() => setShowModal(!showModal)}
+            >
+               {modalInitContent}
+               <TouchableOpacity style ={{position: 'absolute', top: 80, right: 50}}
+                onPress={()=>{setShowModal(!showModal)}}>
+                    <Image
+                    
+                    source={require('../assets/icon/x.png')}
+                    style = {{width: 15, height: 15}}
+                    />
+            </TouchableOpacity>
+            </Modal>
 
        
            

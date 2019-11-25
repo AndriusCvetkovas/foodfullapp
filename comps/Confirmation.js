@@ -5,8 +5,7 @@ import buttonStyle from '../styles/buttonStyle';
 import {Actions} from 'react-native-router-flux';
 import axios from 'axios';
 
-function Confirmation({text}){
-    var obj = text;
+function Confirmation({obj}){
     var url = obj.data.image_url[0].uri;
     console.log(obj);
     const SendDonationInfo = async () => {
@@ -59,11 +58,11 @@ function Confirmation({text}){
             <TouchableOpacity
             
             title="Accept"
-            style = {buttonStyle.button}
+            style = {[buttonStyle.button, {width: 150}]}
             onPress={()=> Confirm()}>
                 <Text
                 style = {{color: 'white', fontSize: 16, fontWeight: '500'}}
-                >Confirm Donation</Text>
+                >Confirm</Text>
             </TouchableOpacity>
             </View>
         </View>
