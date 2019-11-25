@@ -211,7 +211,7 @@ function Donations() {
                     source={require('../assets/icon/x.png')}
                     style = {{width: 15, height: 15}}
                     />
-                    </TouchableOpacity>
+            </TouchableOpacity>
                 </View>
             </Modal>
         </View>

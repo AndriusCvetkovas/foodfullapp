@@ -44,43 +44,100 @@ function GMapAccept() {
 useEffect(()=> {
   GetDonation()
 }, [])
+const [h, setH] = useState(200)
+const [la,setLa] = useState(49.246292)
+  const [lo,setLo] = useState(-123.116226)
   return (
-    <View>
+    <View style={{justifyContent: 'center'}}>
       <MapView
         provider={MapView.PROVIDER_GOOGLE}
         style={GMapStyle.mapStyle}
         zoomEnabled={true}
         region={{
-          latitude: 49.246292,
-          longitude: -123.116226,
+          latitude: la,
+          longitude: lo,
           latitudeDelta: 0.5,
-          longitudeDelta: 0.5
+          longitudeDelta: 0.5,
         }}
-        showsUserLocation={true}
-        showsCompass={true}
-        showsMyLocationButton={true}
-        showsScale={true}
-
+        >
+        {users.map((d, i) => {
+          return (
+            <MapView.Marker
+              id={d.id}
+              coordinate={{
+                latitude: d.lat,
+                longitude: d.long,
+              }}
+              title={d.name}
+              description={d.address}
+              image={require('../assets/icon/map.png')}
+              selected={true}
+            />
+          );
+        })}
+      </MapView>
+      <ScrollView horizontal={true} style={GMapStyle.viewStyle}
+      showsHorizontalScrollIndicator={false}
+      
       >
         {
           users.map((d, i)=>{
-            return <Marker
-            id={d.id}
-            coordinate={{
-              latitude: d.lat,
-              longitude: d.long
-            }}
-            title={d.name}
-            description={d.description}
-            ><Callout>
+            return(
+          <TouchableOpacity style={[GMapStyle.infoStyle, {marginBottom: h}]}
+          onPress={()=>setH(500)}
+          >
+            <View style={[GMapStyle.innerInfo, ]}>
               <Image
-              source={d.image_url}
-              style={{width: 100, height: 100}}
-              ></Image>
-          <Text>{d.description}</Text>
-              </Callout></Marker>
-          })
-        }
+                style={{height: 75, width: 75, borderRadius: 75}}
+                source={require('../assets/img/safeway.jpg')}></Image>
+              <View style={[GMapStyle.innerInner, {top: 30}]}>
+                <Text style={GMapStyle.innerTitle}>{d.name}</Text>
+                <Text style={GMapStyle.innerAddress} key={i}>
+                  {d.address}
+                </Text>
+                <View style= {{left: -70, top: 20, overflow: 'hidden', height: 70}}>
+                  
+                  <Text>{d.time}</Text>
+                  <Text>{d.date}</Text>
+                  <Text>
+                  Donation Notes:
+                  </Text>
+                  <Text style ={{color: 'grey', width: 150}}>{d.description} ssssssssssssssssssssssss</Text>
+                </View>
+              </View>
+            </View>
+
+            <TouchableOpacity style={GMapStyle.innerButton}
+            
+            onPress={()=>Actions.postdonation({addr: d.name, ids: d.id, stat: 1})}>
+              <Text
+                style={{
+                  color: '#06a2bc',
+                  fontFamily: 'avenir',
+                  fontWeight: '600',
+                  fontSize: 16,
+                }}>
+                Select
+              </Text>
+            </TouchableOpacity>
+          </TouchableOpacity>
+          )})
+          }
+      </ScrollView>
+      <TouchableOpacity style={GMapStyle.backBut}
+      onPress={()=> Actions.tabbar1()}>
+        <Image
+          source={require('../assets/icon/next.png')}
+          style={{
+            left: -2,
+            width: 15,
+            height: 25,
+            transform: [{rotateY: '180deg'}],
+          }}></Image>
+      </TouchableOpacity>
+    </View>
+  );
+}
         
         {/* <Marker
           coordinate={{
@@ -170,31 +227,31 @@ useEffect(()=> {
 
           debounce={2000} // debounce the requests in ms. Set to 0 to remove debounce. By default 0ms
         /> */}
-      </MapView>
-      <ScrollView>
-      {
-          users.map((d, i)=>{
-            return (
-            <TouchableOpacity
-              style={GMapStyle.viewStyle}
-              >
-              <View style={GMapStyle.innerInfoView}>
-                <Text style={GMapStyle.infoInnerTitle} key={i}>{d.name}</Text>
-                <Text style={[GMapStyle.infoInnerAddress, {fontSize: 16}]} key={i}>Donation Notes:{d.description}</Text>
-              </View>
-              <Text style={GMapStyle.infoInnerDistance}>4.6 km</Text>
-              <TouchableOpacity style={GMapStyle.infoInnerButton}
-              onPress={()=>Actions.info({description: d.description, names: d.name, img: d.image_url, time: d.time, date:d.date, address:d.address, id: d.id})}
-              >
-                <Text style={{ color: 'white' }}>Claim</Text>
-              </TouchableOpacity>
-            </TouchableOpacity>
-            )
-          })
-      }
-      </ScrollView>
+//       </MapView>
+//       <ScrollView>
+//       {
+//           users.map((d, i)=>{
+//             return (
+//             <TouchableOpacity
+//               style={GMapStyle.viewStyle}
+//               >
+//               <View style={GMapStyle.innerInfoView}>
+//                 <Text style={GMapStyle.infoInnerTitle} key={i}>{d.name}</Text>
+//                 <Text style={[GMapStyle.infoInnerAddress, {fontSize: 16}]} key={i}>Donation Notes:{d.description}</Text>
+//               </View>
+//               <Text style={GMapStyle.infoInnerDistance}>4.6 km</Text>
+//               <TouchableOpacity style={GMapStyle.infoInnerButton}
+//               onPress={()=>Actions.info({description: d.description, names: d.name, img: d.image_url, time: d.time, date:d.date, address:d.address, id: d.id})}
+//               >
+//                 <Text style={{ color: 'white' }}>Claim</Text>
+//               </TouchableOpacity>
+//             </TouchableOpacity>
+//             )
+//           })
+//       }
+//       </ScrollView>
 
-    </View>
-  );
-};
+//     </View>
+//   );
+// };
 export default GMapAccept;
