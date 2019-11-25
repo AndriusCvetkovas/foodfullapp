@@ -304,9 +304,9 @@ return (
     </ScrollView>
 
     <Modal isVisible={showModal}
-            coverScreen={false}
+            coverScreen={true}
             animationIn='slideInUp'
-            style = {{backgroundColor: 'transparent', height: 700,width: 380, position: "absolute"}}
+            style = {{height: 700,width: 380}}
             isVisible = {showModal}
             onBackdropPress={() => setShowModal(!showModal)}
             >
