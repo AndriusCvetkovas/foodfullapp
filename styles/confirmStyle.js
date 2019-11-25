@@ -3,21 +3,16 @@ import {StyleSheet} from 'react-native';
 var ConfirmStyle = StyleSheet.create({
 
     main: {
-        width: '100%',
-        backgroundColor:"#e3e3e3",
+        padding: 0,
         alignItems:'center', 
         justifyContent: 'center',
         height: '100%'
     },
     main2: {
         flex: 0.9,
-        width: '80%',
+        // width: '80%',
         backgroundColor: 'white',
         borderRadius: 30,
-        shadowColor: '#aaaaaa',
-        shadowOffset: { width: 2, height: 3 },
-        shadowOpacity: 0.6,
-        shadowRadius: 10,
         margin: 20,
         padding: 20,
         alignItems:'center',
