@@ -108,6 +108,7 @@ function LoginPage() {
           <TextInput style={Loginstyles.inputs}
             placeholder="Email"
             keyboardType="email-address"
+            autoCapitalize={false}
             onChangeText={(em) => setEnteredEmail(em)}
           />
         </View>

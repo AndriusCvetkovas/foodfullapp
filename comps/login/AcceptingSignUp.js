@@ -79,8 +79,8 @@ function AcceptingSignUp({text}) {
 
 
   //GRAB CURRENT LOCATION
-  const [long, setLong] = useState('');
-  const [lat, setLat] = useState('');
+  const [long, setLong] = useState();
+  const [lat, setLat] = useState();
   const getPos = async () => {
     await Geolocation.getCurrentPosition((data) => {
       setLong(data.coords.longitude);
@@ -210,6 +210,7 @@ function AcceptingSignUp({text}) {
       <View style={DonSignStyles.inputContainer}>
         <TextInput style={DonSignStyles.inputs}
           keyboardType="email-address"
+          autoCapitalize={false}
           selectionColor="#0ca3bc"
           onChangeText={(email) => setUserEmail(email)}
         />

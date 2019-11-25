@@ -80,8 +80,8 @@ function Donations() {
     const CheckifDon = () => {
         if(dons == ''){
             return (
-                <View style ={{alignItems: 'center', justifyContent: 'center', top: '40%'}}>
-                    <Text style ={{color: 'grey', fontFamily: 'avenir', fontSize: 20}}>You don't have any donations...</Text>
+                <View style ={{alignItems: 'center', justifyContent: 'center', top: '50%'}}>
+                    <Text style ={{color: 'grey', fontFamily: 'avenir', fontSize: 20}}>You don't have any notifications...</Text>
                 </View>
             )
         }
