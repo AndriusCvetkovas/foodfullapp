@@ -88,7 +88,7 @@ var ConfirmStyle = StyleSheet.create({
     description:{
         flex: 1,
         width: 300,
-        color: "black",
+        color: "grey",
         marginBottom: 20,
     },
 

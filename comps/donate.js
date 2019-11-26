@@ -13,7 +13,6 @@ var receiverId = 0;
 var statu = 0;
 function Donate({addr, ids, stat, tt}) {
 
-    
     var text = addr;
     receiverId = ids;
     
@@ -249,7 +248,7 @@ return (
                             value = {selectedTime}
                             confirmBtnText="Confirm"
                             cancelBtnText="Cancel"
-                            minuteInterval= {30}
+                            minuteInterval= {15}
                             customStyles={{
                             dateIcon: {
                                 position: 'absolute',
@@ -328,12 +327,13 @@ return (
             onBackdropPress={() => setShowModal(!showModal)}
             >
                {modalInitContent}
-               <TouchableOpacity style ={{position: 'absolute', top: 80, right: 50}}
-                onPress={()=>{setShowModal(!showModal)}}>
+               <TouchableOpacity style ={{position: 'absolute', zIndex: 1, top: 180, right: 50}}
+                onPress={() => setShowModal(!showModal)}
+                >
                     <Image
                     
                     source={require('../assets/icon/x.png')}
-                    style = {{width: 15, height: 15,top:100, right:10}}
+                    style = {{width: 15, height: 15}}
                     />
             </TouchableOpacity>
             </Modal>

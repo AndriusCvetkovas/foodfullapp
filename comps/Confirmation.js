@@ -15,7 +15,6 @@ function Confirmation({obj}){
     }
     const Confirm = () =>{
         SendDonationInfo();
-        Actions.refresh({key: 'postdonation'});
         Actions.donationposted();
     }
     
@@ -69,9 +68,9 @@ function Confirmation({obj}){
 
                 {/*Description title below */}
                     <Text style = {[ConfirmStyle.titles,{marginTop:10}]}
-                    >Description</Text>
+                    >Description:</Text>
                     {/*Description below */}
-                    <ScrollView>
+                    <ScrollView style = {{borderColor: 'grey', borderWidth: 0.5, padding: 5, borderRadius: 10}}>
                         <Text
                         style = {ConfirmStyle.description}
                         >
@@ -84,7 +83,7 @@ function Confirmation({obj}){
             <TouchableOpacity
             title="Accept"
             style = {[buttonStyle.button, {width: 200}]}
-            onPress={()=> Confirm()}>
+            onPress={()=> Confirm({val: 'ssss'})}>
                 <Text
                 style = {{color: 'white', fontSize: 16, fontWeight: '500'}}
                 >Confirm</Text>

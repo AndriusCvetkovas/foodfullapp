@@ -99,13 +99,13 @@ export default class Home extends Component {
         </View>
 
         { /* LOGO STAYS ON EACH PAGE */}
-          <View style = {{flex: 0.2, position: 'absolute', top: 80, zIndex: 2, textAlign: 'center', width: '100%',  justifyContent:'center',
+          {/* <View style = {{flex: 0.2, position: 'absolute', top: 80, zIndex: 2, textAlign: 'center', width: '100%',  justifyContent:'center',
             alignItems:'center'}}>
             <Image source={require('../assets/icon/logo.png')} 
             style={{width:40, height:45, top:-8}}/>
               <Text style={styles.header}
               >Foodfull</Text>
-          </View>
+          </View> */}
 
        {/* PAGE ONE */}
         <Swiper style={styles.wrapper}
