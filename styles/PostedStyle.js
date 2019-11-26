@@ -6,10 +6,8 @@ var styles = StyleSheet.create({
     top: 80
   },
   headers:{
-    
     width:200,
-    height:70,
-    // backgroundColor:"red",
+    height:100,
     marginTop:20,
 },
 
@@ -27,7 +25,7 @@ contents:{
   },
   titleHeader:{
      textAlign:"center",
-     fontSize:25,
+     fontSize:30,
      fontWeight:"600",
      color: "#0ca3bc",
   },

@@ -6,10 +6,10 @@ var ConfirmStyle = StyleSheet.create({
         padding: 0,
         alignItems:'center', 
         justifyContent: 'center',
-        height: '100%'
+        height: '70%',
     },
     main2: {
-        flex: 0.9,
+        flex: 1,
         // width: '80%',
         backgroundColor: 'white',
         borderRadius: 30,
@@ -23,37 +23,32 @@ var ConfirmStyle = StyleSheet.create({
         flex: 1,
         flexDirection: 'row',
         alignItems: 'center',
-        justifyContent:'center'
+        justifyContent:'center',
     },
-    imageText: {
-        flex: 0.2,
-        fontSize: 18,
-        fontWeight: "600",
-        width: '90%',
-        marginTop:10,
-    },
-    imageBox: {
-        flex: 1,
-        flexDirection: 'row',
+    header:{
+        fontFamily:'Avenir',
+        fontWeight:'800',
+        color: '#0ca3bc',
+        fontSize:25,
+      
     },
     pickupDate: {
         width: '90%',
-        flex: 0.5,
         flexDirection: 'row',
         alignItems: 'center',
+        marginTop:20
     },
     pickupTime: {
-        flex: 0.5,
         width: '90%',
         flexDirection: 'row',
         alignItems: 'center',
+        marginTop:5
     },
-    descriptionTitle: {
-        flex: 0.3,
-        color: '#0ca3bc',
-        fontSize: 18,
-        
-        width: '90%'
+    titles:{
+        fontSize: 18, 
+        flex: 1, 
+        fontFamily:'Avenir',
+        fontWeight:'600',
     },
     Images:{
         // flex:1,
@@ -89,13 +84,12 @@ var ConfirmStyle = StyleSheet.create({
        fontSize:30,
        color:'white',
        fontWeight:'bold'
-
     },
     description:{
-        flex: 0.7,
-        width: '90%',
+        flex: 1,
+        width: 300,
         color: "black",
-        marginBottom: 20
+        marginBottom: 20,
     },
 
 })

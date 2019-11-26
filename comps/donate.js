@@ -63,9 +63,19 @@ function Donate({addr, ids, stat, tt}) {
     }
 
 
-
+    var pdcolor = '#3dbfd2',
+        cocolor = '#606060',
+        coweight = '600';
 
     if (chooseOrg === true) {
+
+    var pdcolor = '#b7b7b7',
+        pdline = 'line-through',
+        pddecoration = 'solid',
+        cocolor = '#3dbfd2';
+        coweight = '800';
+    
+        
         orgInput = (
             <KeyboardAvoidingView enabled>
             <View style={{margin:5}}>
@@ -169,6 +179,7 @@ return (
          <View>
             <View style={donateStyle.padding}>
                 {/* ADD A PHOTO */}
+                <Text style={donateStyle.pageHeader}>Make a Donation</Text>
                 <Text style={donateStyle.headers}>Add up to 3 Photos</Text>
                 <ScrollView horizontal='true'>
                     <View style={donateStyle.ImagePad}>
@@ -263,7 +274,7 @@ return (
              <View>
                  <View style={{flexDirection:'row', alignItems:'center'}}>
                  <Text style={donateStyle.headers}>Description</Text>
-                    <Text style={donateStyle.note}>If necessary, please add notes or details about your food donation
+                    <Text style={donateStyle.note}>Please add notes or details about your food donation
                     </Text>
                  </View>
                     <TextInput
@@ -274,9 +285,15 @@ return (
                     onChangeText={(text) => setSelectedDescription(text)}
                 >{selectedDescription}</TextInput>
             </View>
+        
+        {/* Public Donation Header */}
+            <View>
+                <Text style={[donateStyle.pdheader, {color:pdcolor, textDecorationLine: pdline, textDecorationStyle: pddecoration}]}> Public Donation</Text>
+            </View>
 
+        {/* Choose Organization */}
             <View style={[donateStyle.padding, donateStyle.row]}>
-                    <Text style={donateStyle.lftItems}>Choose Organization</Text>
+                    <Text style={[donateStyle.lftItems, {color:cocolor, fontWeight: coweight}]}>Choose an Organization</Text>
                     <Switch
                         style={donateStyle.rgttems}
                         value = {chooseOrg}
@@ -316,7 +333,7 @@ return (
                     <Image
                     
                     source={require('../assets/icon/x.png')}
-                    style = {{width: 15, height: 15}}
+                    style = {{width: 15, height: 15,top:100, right:10}}
                     />
             </TouchableOpacity>
             </Modal>

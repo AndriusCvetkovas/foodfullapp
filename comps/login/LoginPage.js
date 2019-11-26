@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, Image, Button, TextInput, TouchableOpacity, TouchableHighlight, AsyncStorage } from 'react-native';
+import { View, Text, Image, Button, TextInput, TouchableOpacity, TouchableHighlight, AsyncStorage, } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 import Loginstyles from '../../styles/LoginStyles';
 import axios from 'axios';
+import LottieView from 'lottie-react-native';
 
 
 
@@ -82,14 +83,20 @@ function LoginPage() {
 
       {/* LOGO / ANIMATION */}
       <View>
-        <Image
+        {/* <Image
           style={Loginstyles.LogoImg}
           source={require('../../assets/img/logo_animation.png')}
+        /> */}
+          <LottieView
+            source={require('../../assets/lottieFiles/signin.json')}
+            style={Loginstyles.LogoImg}
+            autoPlay
+            loop
         />
       </View>
 
       {/* HEADER AND SUBHEADER */}
-      <View>
+      <View style={{top:-40}}>
         <Text style={Loginstyles.header}>
           Foodfull
           </Text>

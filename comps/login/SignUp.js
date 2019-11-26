@@ -44,7 +44,7 @@ function SignUp() {
         HeaderColor1 = '#0ca3bc';
         TextColor1 = '#49b204';
         ShadowColor1 = '#0ca3bc';
-        ShadowOpacity1 = 0.25;
+        ShadowOpacity1 = 0.15;
         ButtonColor = '#0ca3bc';
         ButtonBorder = '#0ca3bc';
         ButtonText = '#ffffff';
@@ -62,7 +62,7 @@ function SignUp() {
         HeaderColor2 = '#0ca3bc';
         TextColor2 = '#49b204';
         ShadowColor2 = '#0ca3bc';
-        ShadowOpacity2 = 0.25;
+        ShadowOpacity2 = 0.15;
         ButtonColor = '#34a3bd';
         ButtonBorder = '#0ca3bc';
         ButtonText = '#ffffff';
@@ -122,7 +122,7 @@ function SignUp() {
                             </View>
 
                             <View style={{ margin: 20 }}>
-                                <Text style={{ color: TextColor1, width: 175, fontSize: 14 }}>
+                                <Text style={{ color: TextColor1, width: 175, fontSize: 18 }}>
                                     Grocery store and markets restaurants
                 </Text>
                             </View>
@@ -167,7 +167,7 @@ function SignUp() {
                             </View>
 
                             <View style={{ margin: 20 }}>
-                                <Text style={{ color: TextColor2, width: 175, fontSize: 14 }}>
+                                <Text style={{ color: TextColor2, width: 250, fontSize: 18 }}>
                                     Food banks, non profit organization and shelters
                 </Text>
                             </View>

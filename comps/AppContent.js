@@ -42,6 +42,7 @@ import DonNotificationDeclined from './DonNotificationDeclined';
 import MsgDeclineDonation from './MsgDeclineDonation';
 import AppHeader from './header';
 import GetStarted from './getStarted';
+import Home from './Home';
 
 
 function AppContent() {
@@ -51,12 +52,18 @@ function AppContent() {
     <Router>
 
       <Stack key='root'>
+      <Scene
+          key="home"
+          component={Home}
+          title="Home"
+          hideNavBar={true}
+          initial
+        />
         <Scene
           key="login"
           component={LoginPage}
           title="login"
           hideNavBar={true}
-          initial
         />
         <Scene
           key="signup"

@@ -11,10 +11,8 @@ const styles = StyleSheet.create({
       backgroundColor: '#ffffff',
     },
    LogoImg:{
-      width:220,
-      height:150,
-      marginTop:50,
-      marginBottom: 12
+      width:300,
+      height:300,
   },
   header:{
     fontSize: 28,
@@ -36,7 +34,7 @@ const styles = StyleSheet.create({
   //  FORM
 
   form:{
-    marginTop:30,
+    marginTop:0,
   },
     inputContainer: {
         borderBottomColor: '#F5FCFF',
@@ -66,7 +64,7 @@ const styles = StyleSheet.create({
     },
     signinButton: {
       backgroundColor: '#0ca3bc',
-      height: 50,
+      height: 45,
     },
     signInText: {
       color: 'white',
