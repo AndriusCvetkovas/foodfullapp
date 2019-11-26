@@ -76,6 +76,13 @@ export default class Home extends Component {
     return (
        <View style={styles.comp} >
 
+          <LottieView
+            source={require('../assets/lottieFiles/homescreen')}
+            style={{height:'100%', width:'100%', position:'absolute'}}
+            autoPlay
+            loop
+           />
+
          <View style = {{flex: 0.2, position: 'absolute', top: 670, zIndex: 2, textAlign: 'center', width: '100%', justifyContent:'center', alignItems:'center'}}>
 
             <TouchableOpacity 
@@ -95,99 +102,10 @@ export default class Home extends Component {
                   <Text style={{fontSize:20, fontFamily:'Avenir', color:'#ffffff',}}>Create an Account</Text>
                   </View>
               </TouchableOpacity>
+
            
         </View>
-
-        { /* LOGO STAYS ON EACH PAGE */}
-          <View style = {{flex: 0.2, position: 'absolute', top: 80, zIndex: 2, textAlign: 'center', width: '100%',  justifyContent:'center',
-            alignItems:'center'}}>
-            <Image source={require('../assets/icon/logo.png')} 
-            style={{width:40, height:45, top:-8}}/>
-              <Text style={styles.header}
-              >Foodfull</Text>
-          </View>
-
-       {/* PAGE ONE */}
-        <Swiper style={styles.wrapper}
-        nextButton={
-            <Text style={[{color: 'white', fontFamily: 'avenir',  fontSize: 20,paddingBottom: 10}]}>Next</Text>
-        }
-        prevButton={
-            <Text style = {{position: 'absolute'}}></Text>
-        }
-        buttonWrapperStyle= {{borderRadius:20, backgroundColor: '#3dbfd2', width: 100, height: 45, justifyContent: 'center', alignItems: 'center', top: 660, left: 155, right: 0 }}
-        showsButtons={false} showsPagination={true} loop={true} paginationClickable={true}
-        
-        // DOTS
-        dot={<View style={{backgroundColor: '#bcd1d3', width: 10, height: 10, borderRadius: 10, marginLeft: 5, marginRight: 5, marginTop: 3, marginBottom: 3, bottom:200 }} />}
-
-        activeDot={<View style={{backgroundColor: '#3dbfd2', width: 10, height: 10, borderRadius: 10, marginLeft: 5, marginRight: 5, marginTop: 3, marginBottom: 3, bottom:200 }} />}
-
-        autoplay
-        autoplayTimeout={3.2}
-        
-        >
-        <View style={styles.slide1}>
-          <View style={{justifyContent:'center', alignItems:'center',zIndex:1,top:-100}}>
-              <Text style={{fontFamily:'Avenir', fontSize:20, color:'#91e55a', fontWeight:'800',}}>BE PART OF A</Text>
-
-              <Text style={{fontFamily:'Avenir', fontSize:40, color:'#3dbfd2', width:300, textAlign:'center', fontWeight:'800',}}>Hunger-Free Community</Text>
-          </View>
-          <Image 
-          source={require('../assets/img/1.png')}
-          style={{width:'100%', height:'100%', position:'absolute'}}
-          />
-          {/* <LottieView
-              source={require('../assets/lottieFiles/welcome.json')}
-              style={{justifyContent:'center', alignItems:'center',height:'100%', width:'100%', position:'absolute', bottom:0}}
-              autoPlay
-              loop
-          /> */}
-        </View>
-
-
-      {/* PAGE TWO*/}
-        <View style={styles.slide2}>
-            <View style={{justifyContent:'center', alignItems:'center',top:-120, zIndex:1}}>
-                  <Text style={{fontFamily:'Avenir', fontSize:20, color:'#91e55a', fontWeight:'800'}}>PUT AN END TO</Text>
-
-                  <Text style={{fontFamily:'Avenir', fontSize:40, color:'#3dbfd2', width:300, textAlign:'center', fontWeight:'800',}}>Food Waste</Text>
-            </View>
-            <Image 
-            source={require('../assets/img/2.png')}
-            style={{width:'100%', height:'100%', position:'absolute'}}
-              />
-            {/* <LottieView
-                source={require('../assets/lottieFiles/donatephone.json')}
-                style={{justifyContent:'center', alignItems:'center',height:350, width:'100%', position:'absolute', bottom:80}}
-                autoPlay
-                loop
-            /> */}
-        </View>
-
-
-
-      {/* PAGE THREE*/}
-        <View style={styles.slide3}>
-            <View style={{justifyContent:'center', alignItems:'center',top:-120,zIndex:1}}>
-                  <Text style={{fontFamily:'Avenir', fontSize:20, color:'#91e55a', fontWeight:'800'}}>SOMETHING HERE</Text>
-
-                  <Text style={{fontFamily:'Avenir', fontSize:40, color:'#3dbfd2', width:300, textAlign:'center', fontWeight:'800',}}>Make a Change</Text>
-            </View>
-            <Image 
-            source={require('../assets/img/3.png')}
-            style={{width:'100%', height:'100%',position:'absolute'}}
-              />
-            {/* <LottieView
-                source={require('../assets/lottieFiles/welcome.json')}
-                style={{justifyContent:'center', alignItems:'center',height:350, width:'100%', position:'absolute', bottom:80}}
-                autoPlay
-                loop
-            /> */}
-        </View>
-
-
-      </Swiper>
+       
        </View> 
       
       
@@ -197,4 +115,4 @@ export default class Home extends Component {
   }
 }
 
-AppRegistry.registerComponent('myproject', () => SwiperComponent)
+// AppRegistry.registerComponent('myproject', () => SwiperComponent)

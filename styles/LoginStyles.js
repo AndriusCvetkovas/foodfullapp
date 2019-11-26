@@ -61,6 +61,7 @@ const styles = StyleSheet.create({
       marginBottom:20,
       width:250,
       borderRadius:30,
+      backgroundColor: '#ffffff'
     },
     signinButton: {
       backgroundColor: '#0ca3bc',

@@ -134,9 +134,9 @@ function LoginPage() {
 
 
 
-      <TouchableHighlight style={[Loginstyles.buttonContainer, Loginstyles.signinButton]} onPress={() => CheckUsers()}>
+      <TouchableOpacity style={[Loginstyles.buttonContainer, Loginstyles.signinButton]} onPress={() => CheckUsers()}>
         <Text style={Loginstyles.signInText}>Sign In</Text>
-      </TouchableHighlight>
+      </TouchableOpacity>
 
       <View style={Loginstyles.signUpFooter}>
         <Text style={Loginstyles.signUpText}>Don't have account?</Text>
