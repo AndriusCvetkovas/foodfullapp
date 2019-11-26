@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { View, ScrollView, Text, TouchableOpacity, Image, AsyncStorage, Animated } from 'react-native';
-import MapView, { Marker, Callout } from 'react-native-maps';
+import MapView, { Marker, Callout} from 'react-native-maps';
 import { Router, Scene, Actions } from 'react-native-router-flux';
 import Geolocation from 'react-native-geolocation-service';
 import GMapStyle from '../styles/mapStyle';
@@ -44,6 +44,8 @@ function GMapAccept() {
 useEffect(()=> {
   GetDonation()
 }, [])
+const [la,setLa] = useState();
+const [lo,setLo] = useState();
 const [h, setH] = useState(true);
 const [hh] = useState(new Animated.Value(200))
 if(h == false){
@@ -63,8 +65,7 @@ if(h == false){
     }
   ).start();
 }
-const [la,setLa] = useState(49.246292)
-  const [lo,setLo] = useState(-123.116226);
+
   const [dd, setdd] = useState([]);
   
   const [showModal, setShowModal]= useState(false);
@@ -85,8 +86,8 @@ const [la,setLa] = useState(49.246292)
         style={GMapStyle.mapStyle}
         zoomEnabled={true}
         region={{
-          latitude: la,
-          longitude: lo,
+          latitude: 49.246292,
+          longitude: -123.116226,
           latitudeDelta: 0.5,
           longitudeDelta: 0.5,
         }}
@@ -115,7 +116,7 @@ const [la,setLa] = useState(49.246292)
           users.map((d, i)=>{
             return(
           <TouchableOpacity style={[GMapStyle.infoStyle]}
-          onPress={()=>setH(!h)}
+          onPress={()=>{setH(!h), setLa(59)}}
           >
             <View style={[GMapStyle.innerInfo, ]}>
               <Image
