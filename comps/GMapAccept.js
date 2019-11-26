@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { View, ScrollView, Text, TouchableOpacity, Image, AsyncStorage } from 'react-native';
-import MapView, { Marker, Callout, Animated } from 'react-native-maps';
+import { View, ScrollView, Text, TouchableOpacity, Image, AsyncStorage, Animated } from 'react-native';
+import MapView, { Marker, Callout } from 'react-native-maps';
 import { Router, Scene, Actions } from 'react-native-router-flux';
 import Geolocation from 'react-native-geolocation-service';
 import GMapStyle from '../styles/mapStyle';
@@ -44,7 +44,25 @@ function GMapAccept() {
 useEffect(()=> {
   GetDonation()
 }, [])
-const [h, setH] = useState(200)
+const [h, setH] = useState(true);
+const [hh] = useState(new Animated.Value(200))
+if(h == false){
+  Animated.timing(
+    hh,
+    {
+      toValue: 300,
+      duration: 1000
+    }
+  ).start();
+}else {
+  Animated.timing(
+    hh,
+    {
+      toValue: 200,
+      duration: 1000
+    }
+  ).start();
+}
 const [la,setLa] = useState(49.246292)
   const [lo,setLo] = useState(-123.116226);
   const [dd, setdd] = useState([]);
@@ -58,6 +76,8 @@ const [la,setLa] = useState(49.246292)
         />
         );    
       }
+        
+
   return (
     <View style={{justifyContent: 'center'}}>
       <MapView
@@ -87,15 +107,15 @@ const [la,setLa] = useState(49.246292)
           );
         })}
       </MapView>
-      <ScrollView horizontal={true} style={GMapStyle.viewStyle}
+      <Animated.ScrollView horizontal={true} style={[GMapStyle.viewStyle, {height: hh}]}
       showsHorizontalScrollIndicator={false}
       
       >
         {
           users.map((d, i)=>{
             return(
-          <TouchableOpacity style={[GMapStyle.infoStyle, {marginBottom: h}]}
-          onPress={()=>setH(500)}
+          <TouchableOpacity style={[GMapStyle.infoStyle]}
+          onPress={()=>setH(!h)}
           >
             <View style={[GMapStyle.innerInfo, ]}>
               <Image
@@ -134,7 +154,7 @@ const [la,setLa] = useState(49.246292)
           </TouchableOpacity>
           )})
           }
-      </ScrollView>
+      </Animated.ScrollView>
       <TouchableOpacity style={GMapStyle.backBut}
       onPress={()=> Actions.tabbar1()}>
         <Image
