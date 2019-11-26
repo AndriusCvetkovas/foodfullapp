@@ -27,7 +27,7 @@ function DonNotification() {
                 status: 2
             }
         }
-        var r = await axios.post(`http://localhost:3001/post`, obj);
+        var r = await axios.post(`https://foodfullapp.herokuapp.com/post`, obj);
         var json = JSON.parse(r.data.body);
         console.log(json.data);
         var d = json.data;

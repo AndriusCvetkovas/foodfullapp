@@ -38,7 +38,7 @@ function Info({dd}) {
         destination_id: currentId,
       },
     };
-    var r = await axios.post(`http://localhost:3001/post`, obj);
+    var r = await axios.post(`https://foodfullapp.herokuapp.com/post`, obj);
     var json = JSON.parse(r.data.body);
     console.log(r);
     Actions.conf({address: addresss, time: times, date: dates, names: namer});
