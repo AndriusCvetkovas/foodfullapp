@@ -260,57 +260,7 @@ function Donate({addr, ids, stat, tt}) {
             </View>
           </View>
 
-             <View>
-                <View>
-                    <Text style={donateStyle.headers}>Time</Text>
-                </View>
-                <View style={donateStyle.comp}>
-                    <DatePicker
-                            style={{width: '100%'}}
-                            date={selectedTime}
-                            mode="time"
-                            placeholder="Pick a time"
-                            format="HH:mm"
-                            value = {selectedTime}
-                            confirmBtnText="Confirm"
-                            cancelBtnText="Cancel"
-                            minuteInterval= {15}
-                            customStyles={{
-                            dateIcon: {
-                                position: 'absolute',
-                                left: 0,
-                                width:0,
-                                height:0,
-                                top: 4,
-                                marginLeft: 0
-                            },
-                            dateInput: {
-                                width: 100,
-                                borderRadius:50,
-                                
-                            }
-                            // ... You can check the source to find the other keys.
-                            }}
-                            onDateChange={(newTime) => {setSelectedTime(newTime)}}
-                        />
-                </View>
-             </View>
-
-             <View>
-                 <View style={{flexDirection:'row', alignItems:'center'}}>
-                 <Text style={donateStyle.headers}>Description</Text>
-                    <Text style={donateStyle.note}>Please add notes or details about your food donation
-                    </Text>
-                 </View>
-                    <TextInput
-                        style={{ height: 80, borderColor: '#ddd', borderWidth: 1, borderRadius: 15, backgroundColor: '#eee', padding:20,
-                    }}
-                    numberOfLines={4}
-                    multiline
-                    onChangeText={(text) => setSelectedDescription(text)}
-                >{selectedDescription}</TextInput>
-            </View>
-        
+            
         {/* Public Donation Header */}
             <View>
               <Text style={donateStyle.headers}>Time</Text>

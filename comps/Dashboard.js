@@ -51,9 +51,9 @@ function Dashboard({navigation}) {
     }
     const [n, setn] = useState();
     
-    useEffect(()=>{
-        getID();
-    }, []);
+    // useEffect(()=>{
+    //     getID();
+    // }, []);
     useEffect(()=>{
         getID();
     },[navigation.state.params]);
