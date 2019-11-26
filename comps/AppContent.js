@@ -7,9 +7,20 @@
  */
 
 // import React, { useState, useEffect } from 'react';
-import React, { useState, useEffect } from 'react';
-import { View, Text, ScrollView, AsyncStorage, Navigator } from 'react-native';
-import { Router, Scene, Overlay, Stack, Lightbox, Drawer, Actions, Tabs, Animations, Schema } from 'react-native-router-flux';
+import React, {useState, useEffect} from 'react';
+import {View, Text, ScrollView, AsyncStorage, Navigator} from 'react-native';
+import {
+  Router,
+  Scene,
+  Overlay,
+  Stack,
+  Lightbox,
+  Drawer,
+  Actions,
+  Tabs,
+  Animations,
+  Schema,
+} from 'react-native-router-flux';
 import GMap from './GMap';
 import Dashboard from './Dashboard';
 import Confirmation from './Confirmation';
@@ -44,15 +55,11 @@ import AppHeader from './header';
 import GetStarted from './getStarted';
 import Home from './Home';
 
-
 function AppContent() {
   return (
-
-
     <Router>
-
-      <Stack key='root'>
-      <Scene
+      <Stack key="root">
+        <Scene
           key="home"
           component={Home}
           title="Home"
@@ -92,13 +99,11 @@ function AppContent() {
         />
         <Tabs
           key="tabbar0"
-
           wrap={false}
           hideNavBar={true}
           tabBarComponent={Appfooter}
           modal
-          gesturesEnabled={false}
-        >
+          gesturesEnabled={false}>
           <Scene
             key="dashboard0"
             component={Dashboard}
@@ -107,69 +112,64 @@ function AppContent() {
             panHandlers={null}
           />
           <Scene
-            key='postdonation'
+            key="postdonation"
             component={Donate}
             title="Post Donation"
             hideNavBar={true}
-            
           />
           <Scene
-            key='confirmdonation'
+            key="confirmdonation"
             component={Confirmation}
             title="Confirm donation"
             hideNavBar={true}
           />
           <Scene
-            key='notification0'
+            key="notification0"
             component={DonNotification}
             title="Notifications"
             schema="modal"
-            hideNavBar={true} />
+            hideNavBar={true}
+          />
           <Scene
-            key='donationposted'
+            key="donationposted"
             component={DonationPosted}
             title="Donation posted"
             hideNavBar={true}
           />
           <Scene
-            key='profile'
+            key="profile"
             component={Profile}
             title="profile"
             hideNavBar={true}
           />
           <Scene
-            key='schedule'
+            key="schedule"
             component={Schedule}
-            title='schedule'
-            hideNavBar={true} 
+            title="schedule"
+            hideNavBar={true}
           />
+          <Scene key="info" component={Info} title="info" hideNavBar={true} />
           <Scene
-          key='info'
-          component={Info}
-          title="info"
-          hideNavBar={true}
+            key="conf"
+            component={DConfMap}
+            title="confirmation"
+            hideNavBar={true}
           />
-          <Scene
-          key='conf'
-          component={DConfMap}
-          title="confirmation"
-          hideNavBar={true} />
           <Scene
             key="leaderboard"
             component={LeaderBoard}
-            title='lb'
+            title="lb"
             hideNavBar={true}
-            />
+          />
         </Tabs>
 
-         <Drawer
+        <Drawer
           key="tabbar1"
           gesturesEnabled={false}
           tabs
           hideNavBar
           wrap={false}
           tabBarComponent={Appfooter}>
-          
           <Scene
             key="dashboard1"
             component={DashboardAccept}
@@ -177,51 +177,48 @@ function AppContent() {
             hideNavBar={true}
           />
           <Scene
-            key='notification1'
+            key="notification1"
             component={DonateContent}
             title="Notifications"
-            hideNavBar={true} />
-            
+            hideNavBar={true}
+          />
+
           <Scene
-            key='profile'
+            key="profile"
             component={Profile}
             title="profile"
             hideNavBar={true}
           />
           <Scene
-            key='schedule'
+            key="schedule"
             component={Schedule}
-            title='schedule'
-            hideNavBar={true} 
+            title="schedule"
+            hideNavBar={true}
           />
           <Scene
             key="leaderboard"
             component={LeaderBoard}
-            title='lb'
+            title="lb"
             hideNavBar={true}
-            />
+          />
         </Drawer>
         <Scene
-        gesturesEnabled={false}
-          key='map'
-          component={GMap}
-          title='Map'
-          hideNavBar={true}
-          />
-          <Scene
           gesturesEnabled={false}
-            key='mapaccept'
-            component={GMapAccept}
-            title='Map'
-            hideNavBar={true}
-            />
-
+          key="map"
+          component={GMap}
+          title="Map"
+          hideNavBar={true}
+        />
+        <Scene
+          gesturesEnabled={false}
+          key="mapaccept"
+          component={GMapAccept}
+          title="Map"
+          hideNavBar={true}
+        />
       </Stack>
-    </Router >
-
-
+    </Router>
   );
 }
-
 
 export default AppContent;

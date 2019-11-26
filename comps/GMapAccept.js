@@ -77,8 +77,7 @@ if(h == false){
         />
         );    
       }
-        
-
+      
   return (
     <View style={{justifyContent: 'center'}}>
       <MapView
