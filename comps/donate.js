@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, ScrollView, Image, TextInput, Switch, TouchableOpacity, KeyboardAvoidingView, AsyncStorage } from 'react-native';
+import {Alert, View, Text, ScrollView, Image, TextInput, Switch, TouchableOpacity, KeyboardAvoidingView, AsyncStorage } from 'react-native';
 import DatePicker from 'react-native-datepicker';
 import donateStyle from '../styles/donateStyle';
 import donationStyle from '../styles/donationStyle';
@@ -8,8 +8,13 @@ import ImagePicker from 'react-native-image-picker';
 import axios from 'axios';
 import Confirmation from './Confirmation';
 var id = "";
+var arr=[];
+var source='';
 var receiverId = 0;
 var statu = 0;
+var orgInput = null;
+
+
 function Donate({addr, ids, stat, tt}) {
     var text = addr;
     receiverId = ids;
@@ -31,12 +36,71 @@ function Donate({addr, ids, stat, tt}) {
         },
     };
 
-    var orgInput = null;
+     //SELECTIONS
+     const [selectedDate, setSelectedDate] = useState();
+     const [selectedUrl, setSelectedUrl] = useState();
+     const [selectedDescription, setSelectedDescription] = useState();
+     const [selectedTime, setSelectedTime] = useState();
+     const [status, setStatus] = useState(0);
+     //GET USER ID
+     
+     const getID = async () =>{
+         var json = await AsyncStorage.getItem('id');
+         id = json;
+         console.log(id);
+     }
+ 
+     
+     //SEND INFORMATION TO DATABASE
+     const obj = {
+         key: "donations_create",
+         data: {
+             date: selectedDate,
+             time: selectedTime,
+             image_url: selectedUrl,
+             weight: 0,
+             description: selectedDescription,
+             user_id: id,
+             destination_id: receiverId,
+             status: statu
+ 
+         }
+     }
+     
+     console.log(obj.data.user_id)
+     const changePage = () => {
+         if(receiverId != 0 ){
+         setStatus(1);
+         Actions.confirmdonation({ text: obj })
+     }else if(receiverId != 0 && text == null) {
+         alert("Please enter receiver")
+         
+     }else {
+         Actions.confirmdonation({ text: obj })
+     }
+ }
+  
+
+    function showAlert(ima){
+        Alert.alert(
+            'Delete Image ?',
+            'Your image will be removed from the list. Would you like to proceed?',
+            [
+                {
+                text: 'Cancel',
+                onPress: () => console.log('Cancel Pressed'),
+                style: 'cancel',
+                },
+                {text: 'Remove', style:'destructive', onPress: () => deleteImage(ima)},
+            ],
+            {cancelable: false},
+            );
+    }
+
+   
 
     function uploadMyImage() {
         ImagePicker.showImagePicker(options, (response) => {
-
-
             if (response.didCancel) {
                 console.log('User cancelled image picker');
             } else if (response.error) {
@@ -44,109 +108,76 @@ function Donate({addr, ids, stat, tt}) {
             } else if (response.customButton) {
                 console.log('User tapped custom button: ', response.customButton);
             } else {
-                const source = { uri: response.uri };
-
-                var arr = imageDefault.map((o) => {
+                source = { uri: response.uri };
+                arr = imageDefault.map((o) => {
                     return o;
                 });
                 arr.push(source);
                 setArrayImages(arr);
-                console.log(arr);
                 setSelectedUrl(arr);
+                console.log(arr);
 
+                
             }
         });
     }
 
 
+    function deleteImage(imag){
+        for (var i = arr.length - 1; i >= 0; --i) {
+            if (arr[i].uri === imag.uri) {
+                arr = arr.splice(i,1);
+                setArrayImages(arr);
+                console.log('yeah')
+            }
+        }
+    }
 
 
     if (chooseOrg === true) {
         orgInput = (
             <KeyboardAvoidingView enabled>
-            <View style={{margin:5}}>
-                <TextInput
-                    onFocus={()=> Actions.map()}
-                    style={{ height: 40, borderColor: '#EDEDEF', borderWidth: 1, borderRadius: 30, backgroundColor: '#eee',marginBottom:10,padding:10, width:'98%'}}
-                    placeholder='Please locate users in the map'
-        >{text}</TextInput>
-                <View style={{justifyContent:'center',alignItems:'center',}}>
-                <TouchableOpacity
-                    style={donateStyle.mapSearchButton}
-                    underlayColor='#000'
-                    color='white'
-                    onPress={()=> Actions.map()}
-                    >
-                    <View style={{flexDirection:'row', alignItems:'center'}}>
-                        <Image
-                            style={{width:15, height:20, left:-20}}
-                            source={require('../assets/icon/map.png')}
-                         />
-                        <Text style={{fontSize:18, fontfamily:'Avenir', fontWeight:'600', color:'#06a2bc'}}>View Map</Text>
+                <View style={{margin:5}}>
+                    <TextInput
+                        onFocus={()=> Actions.map()}
+                        style={{ height: 40, borderColor: '#EDEDEF', borderWidth: 1, borderRadius: 30, backgroundColor: '#eee',marginBottom:10,padding:10, width:'98%'}}
+                        placeholder='Please locate users in the map'
+                    >{text}</TextInput>
+                    <View style={{justifyContent:'center',alignItems:'center',}}>
+                        <TouchableOpacity
+                            style={donateStyle.mapSearchButton}
+                            underlayColor='#000'
+                            color='white'
+                            onPress={()=> Actions.map()}
+                            >
+                            <View style={{flexDirection:'row', alignItems:'center'}}>
+                                <Image
+                                    style={{width:15, height:20, left:-20}}
+                                    source={require('../assets/icon/map.png')}
+                                />
+                                <Text style={{fontSize:18, fontfamily:'Avenir', fontWeight:'600', color:'#06a2bc'}}>View Map</Text>
+                            </View>
+                        </TouchableOpacity>
                     </View>
-                    
-                </TouchableOpacity>
                 </View>
-               
-            </View>
-        </KeyboardAvoidingView>
+            </KeyboardAvoidingView>
             )
-    }else {
     }
 
-    //SELECTIONS
-    const [selectedDate, setSelectedDate] = useState();
-    const [selectedUrl, setSelectedUrl] = useState();
-    const [selectedDescription, setSelectedDescription] = useState();
-    const [selectedTime, setSelectedTime] = useState();
-    const [status, setStatus] = useState(0);
-    //GET USER ID
-    
-    const getID = async () =>{
-        var json = await AsyncStorage.getItem('id');
-        id = json;
-        console.log(id);
-    }
+   
 
-    
-    //SEND INFORMATION TO DATABASE
-    const obj = {
-        key: "donations_create",
-        data: {
-            date: selectedDate,
-            time: selectedTime,
-            image_url: selectedUrl,
-            weight: 0,
-            description: selectedDescription,
-            user_id: id,
-            destination_id: receiverId,
-            status: statu
-
-        }
-    }
-    
-    console.log(obj.data.user_id)
-    const changePage = () => {
-        if(receiverId != 0 ){
-        setStatus(1);
-        Actions.confirmdonation({ text: obj })
-    }else if(receiverId != 0 && text == null) {
-        alert("Please enter receiver")
-        
-    }else {
-        Actions.confirmdonation({ text: obj })
-    }
-}
     useEffect(()=>{
         getID();
-    }, []);
-
-    useEffect(()=>{
+        
         setSelectedDate("");
         setSelectedTime("");
         setSelectedDescription("");
         Actions.refresh({key: 'postdonation'})
     },[tt]);
+
+   
+
+    console.log(arr);
 return (
     <KeyboardAvoidingView style={donateStyle.container} behavior="padding" enabled>
         
@@ -155,16 +186,20 @@ return (
             <View style={donateStyle.padding}>
                 {/* ADD A PHOTO */}
                 <Text style={donateStyle.headers}>Add up to 3 Photos</Text>
-                <ScrollView horizontal='true'>
+                <ScrollView horizontal='true' pagingEnabled = 'true'>
                     <View style={donateStyle.ImagePad}>
                     <TouchableOpacity onPress = {() => uploadMyImage()} >
                             <View style={donateStyle.uploadPictureButton}>
                                 <Text style={donateStyle.addImagePlus}>+</Text>
                             </View>    
                         </TouchableOpacity>
+                        
                         {imageDefault.map((obj,i)=>{
-                            return <Image key={i} source={obj} style={{height:100, width:100, borderRadius: 10, marginLeft:5}} />
+                            return <TouchableOpacity onPress = {()=>showAlert(obj)}>
+                                    <Image key={i} source={obj} style={{height:100, width:100, borderRadius: 10, marginLeft:5}} />
+                                </TouchableOpacity>
                         })}
+                        
                         {/* <Image source={avatarSource} style={{height:100, width:100, borderRadius: 10}} /> */}
                        
                     </View>
@@ -293,6 +328,8 @@ return (
     </KeyboardAvoidingView>
     )
 }   
+
+
 
 
 export default Donate

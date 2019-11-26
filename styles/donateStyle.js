@@ -4,11 +4,12 @@ var donateStyle = StyleSheet.create({
 
     container:{
         flex: 1,
+  
         height:'100%',
         top: 40,
-        padding:10,
-        borderRadius: 20,
-        margin:5,
+        padding:15,
+        borderRadius: 10,
+        margin:20,
         backgroundColor:'#fff'
     },
     headers:{
@@ -115,7 +116,7 @@ var donateStyle = StyleSheet.create({
 
     addImagePlus:{
       color:'#07a2bb',
-      fontSize: 25
+      fontSize: 50
     }
  });
 
