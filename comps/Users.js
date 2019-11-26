@@ -12,22 +12,6 @@ function Users(){
     const [error, setError] = useState("");
     const [users, Setusers] = useState([]);
 
-    const CreateUser = async()=>{
-        //fetch to the db to create 
-        console.log(email, password);
-        var obj = {
-            key:'users_create',
-            data:{
-                email:email,
-                address:address,
-                password:password
-            }
-        }
-        var data = await axios.post("http://localhost:3001/post", obj);
-        console.log("create", data)
-        await ReadUsers();      
-          
-    }
 
     const ReadUsers = async()=>{
 

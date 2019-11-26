@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, Image, TouchableOpacity, AsyncStorage,Button  } from 'react-native';
+import { View, Text, Image, TouchableOpacity, AsyncStorage,Button , TextInput ,TouchableHighlight } from 'react-native';
 import ProfileStyle from '../../styles/profileStyle';
+import styles from '../../styles/EditStyles';
 import { Actions} from 'react-native-router-flux';
 import axios from 'axios';
+import Modal from "react-native-modal";
 
-function Profile() {
-    
+ function Profile() {
+    const [showModal, setShowModal]= useState(false);
     var currentId = '';
 
     //USER INFORMATION
@@ -14,6 +16,12 @@ function Profile() {
     const [userAddress, setUserAddress] = useState();
     const [userEmail, setUserEmail] = useState();
     const [userPhone, setUserPhone] = useState();
+
+
+    // const [t_email, setEmail] = useState("");
+    // const [t_address, setAddress] = useState("");
+    const [users, Setusers] = useState([]);
+    const [uId, setUserId] = useState();
     
     //GET current user id 
     const getID = async () =>{
@@ -37,25 +45,44 @@ function Profile() {
         setUserName(d[0].name);
         setUserAddress(d[0].address)
         setUserEmail(d[0].email)
-        setUserPhone(d[0].phone)
+        setUserPhone(d[0].phone);
+        setUserId(d[0].id);
         // setAdress(d[0].adress)
     }
 
-    // const UpdateUser = async() => {
+    // const ReadUsers = async()=>{
+
+    //     //fetch to the db to read
     //     var obj = {
-    //         key:"users_update",
-    //         data:{
-    //             id:currentId,
-    //             email:t_email,
-    //             address:t_address,
-    //             id:currentId
-    //         }
+    //         key:"users_read",
+    //         data:{}
     //     }
 
-       
+    //     var data = await axios.post("http://localhost:3001/post", obj);
+    //     console.log("read", JSON.parse(data.data.body));
+        
+    //     var dbusers = JSON.parse(data.data.body).data;
+    //     Setusers(dbusers);  
 
-        // var r = await axios.post("http://localhost:3001/post", obj);
-        // await ReadUsers();
+    // }
+
+    const UpdateUser = async() => {
+        var obj = {
+            key:"users_update",
+            data:{
+                id: uId,
+                email: userEmail,
+                address: userAddress
+                
+            }
+        }
+        var r = await axios.post("http://localhost:3001/post", obj);
+    console.log("test", r.data.body);
+    }
+
+ 
+        
+        
     //CLEAR SESSION INFO
     const DeleteData = async () => {
         try {
@@ -103,20 +130,12 @@ function Profile() {
             <View
             style={ProfileStyle.infoStyle}
             >
-                <TouchableOpacity style = {{position: 'absolute', top: 20, right: 20}}>
+                <TouchableOpacity style = {{position: 'absolute', top: 20, right: 20}}
+                onPress={()=> setShowModal(!showModal)}>
                     <Image style ={{width: 20, height: 20}}
                     source={require('../../assets/icon/edit.png')}
                     ></Image>
                 </TouchableOpacity>
-
-<View style = {{position: 'absolute', top: 20, right: 20 , width:100, height:100, color: 'red'}}>
-                <Button style = {{position: 'absolute', top: 20, right: 20 , width:10, height:20, color: 'red'}}
-                title="Edit"
-                onPress={()=>{
-                    setShowEdit(!showEdit)
-                }}
-            />
-</View>
 
 
                 {/* Store name/title below */}
@@ -192,6 +211,69 @@ function Profile() {
                     <Text style={{textAlign: 'center', color: '#719799', fontSize: 20, fontFamily: 'avenir'}}>Sign Out</Text>
                 </TouchableOpacity>
             </View>
+            <Modal isVisible={showModal}
+            coverScreen={false}
+            animationIn='slideInUp'
+            style = {{backgroundColor: 'transparent', height: 500,width: 380, position: "absolute"}}
+            isVisible = {showModal}
+            onBackdropPress={() => setShowModal(!showModal)}
+            >
+                <View style = {{height: 400, width: 330, backgroundColor: 'white', marginTop:15, padding:20 }}>
+                    {/* <TextInput
+                    style ={{height: 50, width: 100}}
+                    placeholder={'hahahah'}
+                    
+                    ></TextInput> */}
+
+       <Text style ={ProfileStyle.titles}>Address</Text>
+       <View style={styles.inputContainer}>
+
+          <TextInput style={styles.inputs}
+          placeholder="Address"
+          underlineColorAndroid='transparent'
+          value={userAddress}
+          onChangeText={(t)=>{setUserAddress(t);
+        }}
+        />
+
+             
+        </View>
+
+
+        <Text style ={ProfileStyle.titles}>Email</Text>
+        <View style={styles.inputContainer}>
+          
+          <TextInput style={styles.inputs}
+                placeholder="Email"
+                underlineColorAndroid='transparent'
+                value={userEmail}
+                onChangeText={(t)=>{setUserEmail(t);
+              }}
+              />
+        </View>
+
+
+        <Text style ={ProfileStyle.titles}>Phone</Text>
+        <View style={styles.inputContainer}>
+          
+          {/* <TextInput style={styles.inputs}
+              placeholder="Phone"
+              
+              underlineColorAndroid='transparent'
+              onChangeText={(email) => this.setState({email})}/> */}
+        </View>
+
+
+        <TouchableHighlight style={[styles.buttonContainer, styles.signupButton]} 
+          title="UPDATE USER"
+          onPress={()=>{
+              UpdateUser();
+          }}>
+                        
+          <Text style={styles.signUpText}>update</Text>
+        </TouchableHighlight>
+                </View>
+            </Modal>
 
 
 

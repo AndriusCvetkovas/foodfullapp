@@ -18,17 +18,7 @@ function UsersCard({id, email, password, hash, ReadUsers, address}){
         ).start();
     },[])
 
-    const DeleteUser=async()=>{
-        var obj={
-            key:"users_delete",
-            data:{
-                id:id
-            }
-        }
 
-        var r = await axios.post("http://localhost:3001/post", obj);
-        await ReadUsers();
-    }
 
     return(
         <Animated.View style={{opacity:op}}>
