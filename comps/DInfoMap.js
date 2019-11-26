@@ -9,14 +9,13 @@ import axios from 'axios';
 //for DateTimePicker run yarn add @react-native-community/datetimepicker and pod install
 
 
-function Info({ description, names, img, time, date, address, id }) {
-    var desc = description;
-    var namer = names;
-    var imgs = img;
-    var times = time;
-    var dates = date;
-    var addresss = address;
-    var dId = id;
+function Info({dd}) {
+    var desc = dd.description;
+    var namer = dd.names;
+    var times = dd.time;
+    var dates = dd.date;
+    var addresss = dd.address;
+    var dId = dd.id;
     console.log(namer);
     var currentId = 0;
     const getID = async () =>{
@@ -38,6 +37,7 @@ function Info({ description, names, img, time, date, address, id }) {
           var json = JSON.parse(r.data.body);
           console.log(r);
         Actions.conf({address: addresss, time: times, date: dates, names:namer});
+
     }
     //const [time, setTime] = useState("20:20");
 
@@ -60,7 +60,7 @@ function Info({ description, names, img, time, date, address, id }) {
             >
                 <Image
                     source={require('../assets/img/safeway.jpg')}
-                    style={GMapStyle.donationImage}
+                    style={{width: 100, height: 100}}
                 />
 
             </View>
@@ -105,7 +105,7 @@ function Info({ description, names, img, time, date, address, id }) {
                             onDateChange={(newTime) => {setTime(newTime)}}
                         /> */}
                     {/*<TimePicker />*/}
-                    <Text>{time}</Text>
+                    <Text>{times}</Text>
                 </View>
             </View>
             {/*Note box below*/}

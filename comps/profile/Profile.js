@@ -14,6 +14,7 @@ function Profile() {
     const [userAddress, setUserAddress] = useState();
     const [userEmail, setUserEmail] = useState();
     const [userPhone, setUserPhone] = useState();
+    const [userType, setUserType] = useState(0);
     //GET current user id 
     const getID = async () =>{
         var json = await AsyncStorage.getItem('id');
@@ -21,6 +22,7 @@ function Profile() {
         console.log("userID "+currentId);
         GetUser();
     }
+    
     //GRAB USER INFORMATION
     const GetUser = async () => {
         var obj = {
@@ -34,10 +36,13 @@ function Profile() {
         console.log(json);
         var d = json.data;
         setUserName(d[0].name);
-        setUserAddress(d[0].address)
-        setUserEmail(d[0].email)
-        setUserPhone(d[0].phone)
+        setUserAddress(d[0].address);
+        setUserEmail(d[0].email);
+        setUserPhone(d[0].phone);
+        setUserType(d[0].type);
+        checkUser();
     }
+
     //CLEAR SESSION INFO
     const DeleteData = async () => {
         try {
@@ -58,7 +63,7 @@ function Profile() {
     // }, [getID()]);
     useEffect(()=> {
         getID();
-    }, [])
+    }, []);
     return( 
         //Main view 
         <View
@@ -141,7 +146,9 @@ function Profile() {
             </View>
 
             {/* Button view */}
-            <View style = {ProfileStyle.buttonView}>
+            <View style = {ProfileStyle.buttonView}
+            show={false}
+            >
                 <TouchableOpacity style ={ProfileStyle.buttonStyle}
                 onPress={()=>Actions.leaderboard()}
                 >

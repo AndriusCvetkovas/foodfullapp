@@ -10,7 +10,7 @@ import AcceptedInfo from './DConfMap';
 import AppContent from './AppContent';
 import apiKey from '../apiKey/apiKey';
 import axios from 'axios';
-
+import Modal from 'react-native-modal';
 
 
 function GMapAccept() {
@@ -46,7 +46,18 @@ useEffect(()=> {
 }, [])
 const [h, setH] = useState(200)
 const [la,setLa] = useState(49.246292)
-  const [lo,setLo] = useState(-123.116226)
+  const [lo,setLo] = useState(-123.116226);
+  const [dd, setdd] = useState([]);
+  
+  const [showModal, setShowModal]= useState(false);
+  var modalInitContent = (<View><Text>eee</Text></View>);
+
+    if (showModal === true){
+        modalInitContent = (<Info 
+          dd = {dd}
+        />
+        );    
+      }
   return (
     <View style={{justifyContent: 'center'}}>
       <MapView
@@ -109,7 +120,7 @@ const [la,setLa] = useState(49.246292)
 
             <TouchableOpacity style={GMapStyle.innerButton}
             
-            onPress={()=>Actions.postdonation({addr: d.name, ids: d.id, stat: 1})}>
+            onPress={()=>{setShowModal(!showModal), setdd(d)}}>
               <Text
                 style={{
                   color: '#06a2bc',
@@ -135,6 +146,23 @@ const [la,setLa] = useState(49.246292)
             transform: [{rotateY: '180deg'}],
           }}></Image>
       </TouchableOpacity>
+      <Modal isVisible={showModal}
+            coverScreen={true}
+            animationIn='slideInUp'
+            style = {{height: 700,width: 380}}
+            isVisible = {showModal}
+            onBackdropPress={() => setShowModal(!showModal)}
+            >
+               {modalInitContent}
+               <TouchableOpacity style ={{position: 'absolute', top: 240, right: 60}}
+                onPress={()=>{setShowModal(!showModal)}}>
+                    <Image
+                    
+                    source={require('../assets/icon/x.png')}
+                    style = {{width: 15, height: 15}}
+                    />
+                    </TouchableOpacity>
+            </Modal>
     </View>
   );
 }
