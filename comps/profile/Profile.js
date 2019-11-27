@@ -21,6 +21,7 @@ function Profile() {
         console.log("userID "+currentId);
         GetUser();
     }
+    const UpdateUser = async ()
     //GRAB USER INFORMATION
     const GetUser = async () => {
         var obj = {

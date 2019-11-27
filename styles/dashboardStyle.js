@@ -131,14 +131,7 @@ var DashStyle = StyleSheet.create({
         alignItems:'center',
         backgroundColor:'pink',
     },
-    dateCircle:{
-        width:10, 
-        height:10, 
-        backgroundColor:'#a4d638', 
-        borderRadius:50, 
-        marginRight:30,
-        top:-10
-    },
+  
     companyName:{
         fontSize:20, 
         fontFamily:'avenir', 

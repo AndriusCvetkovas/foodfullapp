@@ -48,10 +48,7 @@ function DonNotification() {
     return (
         <View>
             {CheckifDon()}
-            {/* <LottieView
-            source={require('../assets/lottieFiles/avocado.json')}
-            style={{justifyContent:'center', alignItems:'center',height:200, width:200, top: 50}}
-        /> */}
+         
             <Modal isVisible={showModal}
             coverScreen={false}
             animationIn='slideInUp'
