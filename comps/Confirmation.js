@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {View, Text, Image, TouchableOpacity, ScrollView} from 'react-native';
 import ConfirmStyle from '../styles/confirmStyle';
 import buttonStyle from '../styles/buttonStyle';
@@ -83,7 +83,7 @@ function Confirmation({obj}){
             <TouchableOpacity
             title="Accept"
             style = {[buttonStyle.button, {width: 200}]}
-            onPress={()=> Confirm({val: 'ssss'})}>
+            onPress={()=> Confirm()}>
                 <Text
                 style = {{color: 'white', fontSize: 16, fontWeight: '500'}}
                 >Confirm</Text>
