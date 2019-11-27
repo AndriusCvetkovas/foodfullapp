@@ -20,17 +20,22 @@ import Confirmation from './Confirmation';
 import Modal from 'react-native-modal';
 var id = '';
 var receiverId = 0;
-var statu = 0;
-function Donate({addr, ids, stat, tt}) {
+function Donate({addr, ids, tt, dType}) {
+  var donationType = dType;
+  console.log('don type: ', donationType);
+
+
+  if(donationType === 0){
+
+  }
   var text = addr;
+
   receiverId = ids;
 
-  if (stat != null) {
-    statu = stat;
-  }
   if (text == null) {
     text = '';
   }
+
   console.log(id);
   const [chooseOrg, setChooseOrg] = useState(false);
   const [imageDefault, setArrayImages] = useState([]);
@@ -71,7 +76,7 @@ function Donate({addr, ids, stat, tt}) {
     cocolor = '#606060',
     coweight = '600';
 
-  if (chooseOrg === true) {
+  if (donationType === 1) {
     var pdcolor = '#b7b7b7',
       pdline = 'line-through',
       pddecoration = 'solid',
@@ -79,7 +84,15 @@ function Donate({addr, ids, stat, tt}) {
     coweight = '800';
 
     orgInput = (
+      
       <KeyboardAvoidingView enabled>
+        <Text
+              style={[
+                donateStyle.lftItems,
+                {color: cocolor, fontWeight: coweight},
+              ]}>
+              Choose an Organization:
+        </Text>
         <View style={{margin: 5}}>
           <TextInput
             onFocus={() => Actions.map()}
@@ -150,7 +163,7 @@ function Donate({addr, ids, stat, tt}) {
       description: selectedDescription,
       user_id: id,
       destination_id: receiverId,
-      status: statu,
+      status: donationType,
     },
   };
 
@@ -322,7 +335,7 @@ function Donate({addr, ids, stat, tt}) {
           </View>
 
           {/* Public Donation Header */}
-          <View>
+          {/* <View>
             <Text
               style={[
                 donateStyle.pdheader,
@@ -335,10 +348,10 @@ function Donate({addr, ids, stat, tt}) {
               {' '}
               Public Donation
             </Text>
-          </View>
+          </View> */}
 
           {/* Choose Organization */}
-          <View style={[donateStyle.padding, donateStyle.row]}>
+          {/* <View style={[donateStyle.padding, donateStyle.row]}>
             <Text
               style={[
                 donateStyle.lftItems,
@@ -351,19 +364,11 @@ function Donate({addr, ids, stat, tt}) {
               value={chooseOrg}
               onValueChange={() => setChooseOrg(!chooseOrg)}
             />
-          </View>
+          </View> */}
         <View>
           {orgInput}
         </View>
-        <View style={{justifyContent: 'center', alignItems: 'center'}}>
-          <TouchableOpacity
-            style={donateStyle.DonateBtn}
-            underlayColor="#000"
-            color="white"
-            onPress={changePage}>
-            <Text style={donateStyle.btnText}>Donate</Text>
-          </TouchableOpacity>
-        </View>
+        
       </ScrollView>
 
       <Modal
@@ -385,6 +390,13 @@ function Donate({addr, ids, stat, tt}) {
           />
         </TouchableOpacity>
       </Modal>
+      <TouchableOpacity
+          style={donateStyle.DonateBtn}
+          underlayColor="#000"
+          color="white"
+          onPress={changePage}>
+          <Text style={donateStyle.btnText}>Donate</Text>
+        </TouchableOpacity>
     </KeyboardAvoidingView>
   );
 }

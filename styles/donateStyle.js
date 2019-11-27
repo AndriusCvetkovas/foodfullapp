@@ -67,16 +67,17 @@ var donateStyle = StyleSheet.create({
           
       },
        lftItems:{
-          flex:0.8,
+          flex:1,
           fontSize:20,
           fontFamily:'Avenir',
-
-          left:-10
+          marginTop: 10,
+          marginBottom: 5,
+          left:0
       },
       DonateBtn:{
-        flex:0.5,
-        marginTop:0,
-        marginBottom:15,
+        position: 'absolute',
+        bottom: 60,
+        alignSelf:'center',
         justifyContent:'center',
         alignItems:'center',
         height:50,
@@ -102,7 +103,7 @@ var donateStyle = StyleSheet.create({
         borderColor: '#07a2bb',
         backgroundColor: '#fff',
         color:'#fff',
-        width: '95%'
+        width: '90%'
       },
     
       btnText:{

@@ -41,6 +41,7 @@ var SignUpStyles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
     },
+    
    
     option1: {
         flex: 1,
