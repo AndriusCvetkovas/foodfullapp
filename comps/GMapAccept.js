@@ -59,6 +59,7 @@ const [hh] = useState(new Animated.Value(200))
     if (showModal === true){
         modalInitContent = (<Info 
           dd = {dd}
+          setShowModal={setShowModal}
         />
         );    
       }

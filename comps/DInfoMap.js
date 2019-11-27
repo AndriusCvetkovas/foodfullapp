@@ -14,7 +14,7 @@ import {Router, Scene, Actions} from 'react-native-router-flux';
 import axios from 'axios';
 //for DateTimePicker run yarn add @react-native-community/datetimepicker and pod install
 
-function Info({dd}) {
+function Info({dd, setShowModal}) {
   var desc = dd.description;
   var namer = dd.names;
   var times = dd.time;
@@ -36,11 +36,12 @@ function Info({dd}) {
         id: dId,
         status: 2,
         destination_id: currentId,
-      },
+      }
     };
     var r = await axios.post(`https://foodfullapp.herokuapp.com/post`, obj);
     var json = JSON.parse(r.data.body);
     console.log(r);
+    setShowModal(false);
     Actions.conf({address: addresss, time: times, date: dates, names: namer});
   };
   //const [time, setTime] = useState("20:20");
