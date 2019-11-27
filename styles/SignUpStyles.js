@@ -23,6 +23,7 @@ var SignUpStyles = StyleSheet.create({
         fontWeight: "500",
         color: "#06a2bc",
         textAlign:'center',
+        fontFamily: 'avenir'
     },
     subheader: {
         fontSize:20,

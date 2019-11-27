@@ -58,7 +58,7 @@ function Appfooter() {
       Actions.mapaccept();
     }else {
       Actions.refresh({key: 'postdonation'});
-      Actions.postdonation();
+      Actions.choosedonation();
     }
   }
 

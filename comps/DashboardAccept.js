@@ -51,8 +51,8 @@ function DashboardAccept({navigation}) {
         var d = jsons.data;
         console.log(d);
         setDons(d);
-        setDonsName(donsName.push(d[i].name));
-        setDonsTime(donsTime.push(d[i].time));
+        // setDonsName(donsName.push(d[i].name));
+        // setDonsTime(donsTime.push(d[i].time));
         console.log(donsName)
     }
     const [donsName, setDonsName] = useState();

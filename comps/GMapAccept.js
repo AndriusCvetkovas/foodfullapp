@@ -4,7 +4,6 @@ import MapView, { Marker, Callout} from 'react-native-maps';
 import { Router, Scene, Actions } from 'react-native-router-flux';
 import Geolocation from 'react-native-geolocation-service';
 import GMapStyle from '../styles/mapStyle';
-import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplete';
 import Info from './DInfoMap';
 import AcceptedInfo from './DConfMap';
 import AppContent from './AppContent';
@@ -30,11 +29,11 @@ function GMapAccept() {
     var d = json.data;
     console.log(d);
     setUsers(d);
-        setLat(lat.push(d[i].lat));
-        setLong(long.push(d[i].long));
-        setDescription(description.push(d[i].description));
-        setName(name.push(d[i].name));
-        setImage(img.push(d[i].image_url));
+        // setLat(lat.push(d[i].lat));
+        // setLong(long.push(d[i].long));
+        // setDescription(description.push(d[i].description));
+        // setName(name.push(d[i].name));
+        // setImage(img.push(d[i].image_url));
     }
   const [users, setUsers] = useState([]);
   const [lat, setLat] = useState();
@@ -86,8 +85,10 @@ if(h == false){
         provider={MapView.PROVIDER_GOOGLE}
         style={GMapStyle.mapStyle}
         zoomEnabled={true}
+        showsUserLocation={true}
+
         region={{
-          latitude: 49,
+          latitude: 49.2,
           longitude: -123.116226,
           latitudeDelta: 0.5,
           longitudeDelta: 0.5,
@@ -97,6 +98,7 @@ if(h == false){
           return (
             <MapView.Marker
               id={d.id}
+              key={i}
               coordinate={{
                 latitude: d.lat,
                 longitude: d.long,
@@ -116,16 +118,18 @@ if(h == false){
         {
           users.map((d, i)=>{
             return(
-          <TouchableOpacity style={[GMapStyle.infoStyle]}
-          onPress={()=>{setH(!h), map.current.animateToRegion(
+          <TouchableOpacity style={GMapStyle.infoStyle}
+          onPress={()=>{
+            setH(!h),
+            map.current.animateToRegion(
             {
               latitude: d.lat,
               longitude: d.long,
               latitudeDelta: 0.1,
-              longitudeDelta: 0.1,
+              longitudeDelta: 0.1
             },1000
           )}
-          }
+        }
           
           >
             <View style={[GMapStyle.innerInfo, ]} >
