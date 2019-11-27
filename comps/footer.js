@@ -15,7 +15,9 @@ import Schedule from './Schedule';
 
 
 var type = "";
-function Appfooter() {
+function Appfooter({navigation}) {
+  console.log(navigation.state.index);
+  
   //GET USER TYPE 
   const getType = async () =>{
     var json = await AsyncStorage.getItem('type');
@@ -37,92 +39,158 @@ function Appfooter() {
 
   const CheckUser = () => {
     if (type == 1) {
-      
-      changeButtonText('Search');
       changeMainButton(require('../assets/icon/search_button.png'))
+      changeButtonText('Search');
+      
     } else {
+      changeMainButton(require('../assets/icon/donate.png'))
       changeButtonText('Donate')
     }
   }
+  const CheckActive = ()=>{
+    if(type ==0){
+      changeMainButton(require('../assets/icon/donate.png'))
+      if(navigation.state.index == 0){
+        changeColorHome(require('../assets/icon/home_active.png'));
+        changeHome('#0ca3bc')
+        changeNotification('black');
+        changeProfile('black');
+        changeSchedule('black');
+        changePlus('black')
+        changeColorNotif(require('../assets/icon/notif.png'));
+        changeColorProfile(require('../assets/icon/profile.png'));
+        changeColorSchedule(require('../assets/icon/schedule.png'));
+      }else if (navigation.state.index == 1){
+        changeColorHome(require('../assets/icon/home.png'));
+        changeColorNotif(require('../assets/icon/notif.png'));
+        changeColorProfile(require('../assets/icon/profile.png'));
+        changeColorSchedule(require('../assets/icon/schedule.png'));
+        changeHome('black')
+        changeNotification('black');
+        changeProfile('black');
+        changeSchedule('black');
+        changePlus('#0ca3bc')
+      }else if (navigation.state.index == 7 || navigation.state.index == 3){
+        changeHome('black');
+        changeNotification('black');
+        changeProfile('black');
+        changeSchedule('#0ca3bc');
+        changePlus('black');
+        changeColorHome(require('../assets/icon/home.png'));
+        changeColorNotif(require('../assets/icon/notif.png'));
+        changeColorProfile(require('../assets/icon/profile.png'));
+        changeColorSchedule(require('../assets/icon/schedule_active.png'));
+      }else if (navigation.state.index == 4 || navigation.state.index == 1){
+        changeHome('black');
+        changeNotification('#0ca3bc');
+        changeProfile('black');
+        changeSchedule('black');
+        changePlus('black');
+        changeColorHome(require('../assets/icon/home.png'));
+        changeColorNotif(require('../assets/icon/notif_active.png'));
+        changeColorProfile(require('../assets/icon/profile.png'));
+        changeColorSchedule(require('../assets/icon/schedule.png'));
+      }else if (navigation.state.index == 6){
+        changeHome('black')
+        changeNotification('black');
+        changeProfile('#0ca3bc');
+        changeSchedule('black');
+        changePlus('black')
+        changeColorHome(require('../assets/icon/home.png'));
+        changeColorNotif(require('../assets/icon/notif.png'));
+        changeColorProfile(require('../assets/icon/profile_active.png'));
+        changeColorSchedule(require('../assets/icon/schedule.png'));
+      }
+    }else {
+      changeMainButton(require('../assets/icon/search_button.png'))
+      if(navigation.state.index == 0){
+        changeColorHome(require('../assets/icon/home_active.png'));
+        changeHome('#0ca3bc')
+        changeNotification('black');
+        changeProfile('black');
+        changeSchedule('black');
+        changePlus('black')
+        changeColorNotif(require('../assets/icon/notif.png'));
+        changeColorProfile(require('../assets/icon/profile.png'));
+        changeColorSchedule(require('../assets/icon/schedule.png'));
+      }else if (navigation.state.index == 7 || navigation.state.index == 3){
+        changeHome('black');
+        changeNotification('black');
+        changeProfile('black');
+        changeSchedule('#0ca3bc');
+        changePlus('black');
+        changeColorHome(require('../assets/icon/home.png'));
+        changeColorNotif(require('../assets/icon/notif.png'));
+        changeColorProfile(require('../assets/icon/profile.png'));
+        changeColorSchedule(require('../assets/icon/schedule_active.png'));
+      }else if (navigation.state.index == 4 || navigation.state.index == 1){
+        changeHome('black');
+        changeNotification('#0ca3bc');
+        changeProfile('black');
+        changeSchedule('black');
+        changePlus('black');
+        changeColorHome(require('../assets/icon/home.png'));
+        changeColorNotif(require('../assets/icon/notif_active.png'));
+        changeColorProfile(require('../assets/icon/profile.png'));
+        changeColorSchedule(require('../assets/icon/schedule.png'));
+      }else if (navigation.state.index == 2){
+        changeHome('black')
+        changeNotification('black');
+        changeProfile('#0ca3bc');
+        changeSchedule('black');
+        changePlus('black')
+        changeColorHome(require('../assets/icon/home.png'));
+        changeColorNotif(require('../assets/icon/notif.png'));
+        changeColorProfile(require('../assets/icon/profile_active.png'));
+        changeColorSchedule(require('../assets/icon/schedule.png'));
+      }
+    }
+    
+  }
   const Plus = () =>{
-    changeColorHome(require('../assets/icon/home.png'));
-    changeColorNotif(require('../assets/icon/notif.png'));
-    changeColorProfile(require('../assets/icon/profile.png'));
-    changeColorSchedule(require('../assets/icon/schedule.png'));
-    changeHome('black')
-    changeNotification('black');
-    changeProfile('black');
-    changeSchedule('black');
-    changePlus('#0ca3bc')
+    
     if(type == 1){
       Actions.mapaccept();
     }else {
       Actions.refresh({key: 'postdonation'});
       Actions.choosedonation();
     }
+    CheckActive()
   }
-
+  
   function CombinedHome() {
-    changeColorHome(require('../assets/icon/home_active.png'));
-    changeHome('#0ca3bc')
-    changeNotification('black');
-    changeProfile('black');
-    changeSchedule('black');
-    changePlus('black')
-    changeColorNotif(require('../assets/icon/notif.png'));
-    changeColorProfile(require('../assets/icon/profile.png'));
-    changeColorSchedule(require('../assets/icon/schedule.png'));
     if (type == 1) {
       Actions.dashboard1();
     } else {
       Actions.dashboard0();
-      
     }
+    CheckActive()
   };
   function CombinedProf(){
     Actions.profile();
-    changeHome('black')
-    changeNotification('black');
-    changeProfile('#0ca3bc');
-    changeSchedule('black');
-    changePlus('black')
-    changeColorHome(require('../assets/icon/home.png'));
-    changeColorNotif(require('../assets/icon/notif.png'));
-    changeColorProfile(require('../assets/icon/profile_active.png'));
-    changeColorSchedule(require('../assets/icon/schedule.png'));
+    CheckActive()
   };
   function CombinedSchedule(){
     Actions.schedule();
-    changeHome('black');
-    changeNotification('black');
-    changeProfile('black');
-    changeSchedule('#0ca3bc');
-    changePlus('black');
-    changeColorHome(require('../assets/icon/home.png'));
-    changeColorNotif(require('../assets/icon/notif.png'));
-    changeColorProfile(require('../assets/icon/profile.png'));
-    changeColorSchedule(require('../assets/icon/schedule_active.png'));
+    CheckActive()
   }
   function CombinedNot() {
-    changeHome('black');
-    changeNotification('#0ca3bc');
-    changeProfile('black');
-    changeSchedule('black');
-    changePlus('black');
-    changeColorHome(require('../assets/icon/home.png'));
-    changeColorNotif(require('../assets/icon/notif_active.png'));
-    changeColorProfile(require('../assets/icon/profile.png'));
-    changeColorSchedule(require('../assets/icon/schedule.png'));
     if (type == 1) {
       Actions.notification1();
     } else {
       Actions.notification0();
     }
+    CheckActive()
   }
+  
   useEffect(() => {
     
     getType();
+    CheckActive()
   }, []);
+  useEffect(() => {
+    CheckActive()
+  }, [navigation]);
   return (
     <View style={footerStyle.comp}>
       <TouchableOpacity style={footerStyle.iconsFooter}

@@ -6,7 +6,7 @@ import LottieView from 'lottie-react-native';
 import {Actions} from 'react-native-router-flux';
 import axios from 'axios';
 
-function Confirmation({obj}){
+function Confirmation({obj, setShowModal}){
     var url = obj.data.image_url[0].uri;
     console.log(obj);
     const SendDonationInfo = async () => {
@@ -15,6 +15,7 @@ function Confirmation({obj}){
     }
     const Confirm = () =>{
         SendDonationInfo();
+        setShowModal(false);
         Actions.donationposted();
     }
     

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { View, ScrollView, Text, TouchableOpacity, Image, AsyncStorage, Animated } from 'react-native';
+import { View, ScrollView, Text, TouchableOpacity, Image, AsyncStorage, Animated, InteractionManager } from 'react-native';
 import MapView, { Marker, Callout} from 'react-native-maps';
 import { Router, Scene, Actions } from 'react-native-router-flux';
 import Geolocation from 'react-native-geolocation-service';
@@ -10,6 +10,7 @@ import AppContent from './AppContent';
 import apiKey from '../apiKey/apiKey';
 import axios from 'axios';
 import Modal from 'react-native-modal';
+
 
 
 function GMapAccept() {
@@ -48,23 +49,7 @@ const [la,setLa] = useState(49);
 const [lo,setLo] = useState();
 const [h, setH] = useState(true);
 const [hh] = useState(new Animated.Value(200))
-if(h == false){
-  Animated.timing(
-    hh,
-    {
-      toValue: 300,
-      duration: 1000
-    }
-  ).start();
-}else {
-  Animated.timing(
-    hh,
-    {
-      toValue: 200,
-      duration: 1000
-    }
-  ).start();
-}
+
 
   const [dd, setdd] = useState([]);
   
@@ -120,15 +105,34 @@ if(h == false){
             return(
           <TouchableOpacity style={GMapStyle.infoStyle}
           onPress={()=>{
-            setH(!h),
-            map.current.animateToRegion(
-            {
-              latitude: d.lat,
-              longitude: d.long,
-              latitudeDelta: 0.1,
-              longitudeDelta: 0.1
-            },1000
-          )}
+            if(hh._value == 200){
+              Animated.timing(
+                hh,
+                {
+                  toValue: 300,
+                  duration: 1000
+                }
+              ).start();
+            }else {
+              Animated.timing(
+                hh,
+                {
+                  toValue: 200,
+                  duration: 1000
+                }
+              ).start();
+            }
+            InteractionManager.runAfterInteractions(()=>{
+              map.current.animateToRegion(
+                {
+                  latitude: d.lat,
+                  longitude: d.long,
+                  latitudeDelta: 0.1,
+                  longitudeDelta: 0.1
+                },1000
+              )
+            })
+            }
         }
           
           >

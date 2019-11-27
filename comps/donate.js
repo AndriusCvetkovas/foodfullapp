@@ -72,10 +72,6 @@ function Donate({addr, ids, tt, dType}) {
     });
   }
 
-  var pdcolor = '#3dbfd2',
-    cocolor = '#606060',
-    coweight = '600';
-
   if (donationType === 1) {
     var pdcolor = '#b7b7b7',
       pdline = 'line-through',
@@ -198,7 +194,7 @@ function Donate({addr, ids, tt, dType}) {
   );
 
   if (showModal === true) {
-    modalInitContent = <Confirmation obj={obj} />;
+    modalInitContent = <Confirmation obj={obj} setShowModal={setShowModal} />;
   }
   return (
     <KeyboardAvoidingView

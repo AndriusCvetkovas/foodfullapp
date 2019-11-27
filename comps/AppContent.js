@@ -97,6 +97,13 @@ function AppContent() {
           title="Account Created"
           hideNavBar={true}
         />
+        <Scene
+          gesturesEnabled={false}
+          key="mapaccept"
+          component={GMapAccept}
+          title="Map"
+          hideNavBar={true}
+        />
         <Tabs
           key="tabbar0"
           wrap={false}
@@ -212,13 +219,6 @@ function AppContent() {
           gesturesEnabled={false}
           key="map"
           component={GMap}
-          title="Map"
-          hideNavBar={true}
-        />
-        <Scene
-          gesturesEnabled={false}
-          key="mapaccept"
-          component={GMapAccept}
           title="Map"
           hideNavBar={true}
         />
