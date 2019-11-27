@@ -101,6 +101,7 @@ export default class GetStarted extends Component {
         activeDot={<View style={{backgroundColor: '#3dbfd2', width: 8, height: 8, borderRadius: 8, marginLeft: 3, marginRight: 3, marginTop: 3, marginBottom: 3, bottom: 80}} />}>
         <View style={styles.slide1}>
         <Text style={styles.header}>Your account has been created!</Text>
+
         <LottieView
             source={require('../assets/lottieFiles/welcome.json')}
             style={{justifyContent:'center', alignItems:'center',height:350, width:'100%'}}
