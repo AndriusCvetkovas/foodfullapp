@@ -178,7 +178,7 @@ function SignUp() {
 
                 {/* NEXT BUTTON*/}
                 <View style={SignUpStyles.buttonContainer}>
-                    <TouchableHighlight
+                    <TouchableOpacity
                         style={[
                             SignUpStyles.button,
                             { borderColor: ButtonBorder, backgroundColor: ButtonColor },
@@ -187,7 +187,7 @@ function SignUp() {
                         <Text style={[SignUpStyles.buttonText, { color: ButtonText }]}>
                             Next
             </Text>
-                    </TouchableHighlight>
+                    </TouchableOpacity>
                 </View>
             </View>
         </View>

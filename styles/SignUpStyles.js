@@ -82,7 +82,7 @@ var SignUpStyles = StyleSheet.create({
 // BUTTON
 
     buttonContainer:{
-        top:50,
+        top:60,
         width:'98%',
         flex:1,
         alignItems: 'center',
