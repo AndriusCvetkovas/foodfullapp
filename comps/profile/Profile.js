@@ -31,7 +31,6 @@ import Modal from "react-native-modal";
         console.log("userID "+currentId);
         GetUser();
     }
-    const UpdateUser = async ()
     //GRAB USER INFORMATION
     const GetUser = async () => {
         var obj = {
@@ -223,7 +222,7 @@ import Modal from "react-native-modal";
             isVisible = {showModal}
             onBackdropPress={() => setShowModal(!showModal)}
             >
-                <View style = {{height: 500, width: 330, backgroundColor: 'white', marginTop:15, padding:20, borderRadius:20 }}>
+                <View style = {{height: 500, width: 330, backgroundColor: 'white', marginTop:15, padding:20, borderRadius:50 }}>
                    
 
        <Text style ={ProfileStyle.titles}>Address</Text>
