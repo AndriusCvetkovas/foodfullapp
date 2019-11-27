@@ -98,7 +98,7 @@ function ChooseDonation(){
                 onPress={() => ChangeColor2()}
                 >
                     <Text style = {[ChooseDonationStyle.optionTitle, {color: HeaderColor2}]}>
-                        Public
+                        Private
                     </Text>
 
                     <View style ={ChooseDonationStyle.optionInfo}>
