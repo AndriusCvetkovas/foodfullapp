@@ -218,11 +218,11 @@ import Modal from "react-native-modal";
             <Modal isVisible={showModal}
             coverScreen={false}
             animationIn='slideInUp'
-            style = {{backgroundColor: 'transparent', height: 500,width: 380, position: "absolute"}}
+            style = {{backgroundColor: 'transparent', height: 500,width: 380, position: "absolute", alignItems:"center", marginTop:50}}
             isVisible = {showModal}
             onBackdropPress={() => setShowModal(!showModal)}
             >
-                <View style = {{height: 500, width: 330, backgroundColor: 'white', marginTop:15, padding:20, borderRadius:50 }}>
+                <View style = {{height: 500, width: 330, backgroundColor: 'white', marginTop:15, padding:25, borderRadius:50 }}>
                    
 
        <Text style ={ProfileStyle.titles}>Address</Text>
