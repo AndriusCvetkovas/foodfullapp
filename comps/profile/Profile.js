@@ -31,6 +31,7 @@ import Modal from "react-native-modal";
         console.log("userID "+currentId);
         GetUser();
     }
+    const UpdateUser = async ()
     //GRAB USER INFORMATION
     const GetUser = async () => {
         var obj = {

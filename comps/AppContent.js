@@ -42,6 +42,7 @@ import DonNotificationDeclined from './DonNotificationDeclined';
 import MsgDeclineDonation from './MsgDeclineDonation';
 import AppHeader from './header';
 import GetStarted from './getStarted';
+import Home from './Home';
 
 import Users from './Users';
 function AppContent() {
@@ -63,12 +64,18 @@ function AppContent() {
     <Router>
 
       <Stack key='root'>
+      <Scene
+          key="home"
+          component={Home}
+          title="Home"
+          hideNavBar={true}
+          initial
+        />
         <Scene
           key="login"
           component={LoginPage}
           title="login"
           hideNavBar={true}
-          initial
         />
         <Scene
           key="signup"
@@ -149,12 +156,6 @@ function AppContent() {
             hideNavBar={true} 
           />
           <Scene
-          key='map'
-          component={GMap}
-          title='Map'
-          hideNavBar={true}
-          />
-          <Scene
           key='info'
           component={Info}
           title="info"
@@ -192,12 +193,7 @@ function AppContent() {
             component={DonateContent}
             title="Notifications"
             hideNavBar={true} />
-            <Scene
-            key='mapaccept'
-            component={GMapAccept}
-            title='Map'
-            hideNavBar={true}
-            />
+            
           <Scene
             key='profile'
             component={Profile}
@@ -217,6 +213,20 @@ function AppContent() {
             hideNavBar={true}
             />
         </Drawer>
+        <Scene
+        gesturesEnabled={false}
+          key='map'
+          component={GMap}
+          title='Map'
+          hideNavBar={true}
+          />
+          <Scene
+          gesturesEnabled={false}
+            key='mapaccept'
+            component={GMapAccept}
+            title='Map'
+            hideNavBar={true}
+            />
 
       </Stack>
     </Router >

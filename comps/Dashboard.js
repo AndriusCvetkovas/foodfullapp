@@ -64,6 +64,7 @@ function Dashboard({navigation}) {
             setn('Today')
         }
     }, [GetDonations])
+    
     return (
         <View style={DashStyle.main}>
 

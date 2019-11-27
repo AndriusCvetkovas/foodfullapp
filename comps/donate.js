@@ -7,10 +7,12 @@ import { Actions } from 'react-native-router-flux';
 import ImagePicker from 'react-native-image-picker';
 import axios from 'axios';
 import Confirmation from './Confirmation';
+import Modal from "react-native-modal";
 var id = "";
 var receiverId = 0;
 var statu = 0;
 function Donate({addr, ids, stat, tt}) {
+
     var text = addr;
     receiverId = ids;
     
@@ -33,6 +35,7 @@ function Donate({addr, ids, stat, tt}) {
 
     var orgInput = null;
 
+    //IMAGE UPLOAD
     function uploadMyImage() {
         ImagePicker.showImagePicker(options, (response) => {
 
@@ -59,9 +62,19 @@ function Donate({addr, ids, stat, tt}) {
     }
 
 
-
+    var pdcolor = '#3dbfd2',
+        cocolor = '#606060',
+        coweight = '600';
 
     if (chooseOrg === true) {
+
+    var pdcolor = '#b7b7b7',
+        pdline = 'line-through',
+        pddecoration = 'solid',
+        cocolor = '#3dbfd2';
+        coweight = '800';
+    
+        
         orgInput = (
             <KeyboardAvoidingView enabled>
             <View style={{margin:5}}>
@@ -129,7 +142,8 @@ function Donate({addr, ids, stat, tt}) {
     const changePage = () => {
         if(receiverId != 0 ){
         setStatus(1);
-        Actions.confirmdonation({ text: obj })
+        setShowModal(!showModal)
+        //Actions.confirmdonation({ text: obj })
     }else if(receiverId != 0 && text == null) {
         alert("Please enter receiver")
         
@@ -147,6 +161,16 @@ function Donate({addr, ids, stat, tt}) {
         setSelectedDescription("");
         Actions.refresh({key: 'postdonation'})
     },[tt]);
+
+    const [showModal, setShowModal]= useState(false);
+    var modalInitContent = (<View><Text>eee</Text></View>);
+
+    if (showModal === true){
+        modalInitContent = (<Confirmation 
+            obj = {obj}
+        />
+        );    
+      }
 return (
     <KeyboardAvoidingView style={donateStyle.container} behavior="padding" enabled>
         
@@ -154,6 +178,7 @@ return (
          <View>
             <View style={donateStyle.padding}>
                 {/* ADD A PHOTO */}
+                <Text style={donateStyle.pageHeader}>Make a Donation</Text>
                 <Text style={donateStyle.headers}>Add up to 3 Photos</Text>
                 <ScrollView horizontal='true'>
                     <View style={donateStyle.ImagePad}>
@@ -223,7 +248,7 @@ return (
                             value = {selectedTime}
                             confirmBtnText="Confirm"
                             cancelBtnText="Cancel"
-                            minuteInterval= {30}
+                            minuteInterval= {15}
                             customStyles={{
                             dateIcon: {
                                 position: 'absolute',
@@ -248,7 +273,7 @@ return (
              <View>
                  <View style={{flexDirection:'row', alignItems:'center'}}>
                  <Text style={donateStyle.headers}>Description</Text>
-                    <Text style={donateStyle.note}>If necessary, please add notes or details about your food donation
+                    <Text style={donateStyle.note}>Please add notes or details about your food donation
                     </Text>
                  </View>
                     <TextInput
@@ -259,9 +284,15 @@ return (
                     onChangeText={(text) => setSelectedDescription(text)}
                 >{selectedDescription}</TextInput>
             </View>
+        
+        {/* Public Donation Header */}
+            <View>
+                <Text style={[donateStyle.pdheader, {color:pdcolor, textDecorationLine: pdline, textDecorationStyle: pddecoration}]}> Public Donation</Text>
+            </View>
 
+        {/* Choose Organization */}
             <View style={[donateStyle.padding, donateStyle.row]}>
-                    <Text style={donateStyle.lftItems}>Choose Organization</Text>
+                    <Text style={[donateStyle.lftItems, {color:cocolor, fontWeight: coweight}]}>Choose an Organization</Text>
                     <Switch
                         style={donateStyle.rgttems}
                         value = {chooseOrg}
@@ -287,6 +318,25 @@ return (
         </View>
             
     </ScrollView>
+
+    <Modal isVisible={showModal}
+            coverScreen={true}
+            animationIn='slideInUp'
+            style = {{height: 700,width: 380}}
+            isVisible = {showModal}
+            onBackdropPress={() => setShowModal(!showModal)}
+            >
+               {modalInitContent}
+               <TouchableOpacity style ={{position: 'absolute', zIndex: 1, top: 180, right: 50}}
+                onPress={() => setShowModal(!showModal)}
+                >
+                    <Image
+                    
+                    source={require('../assets/icon/x.png')}
+                    style = {{width: 15, height: 15}}
+                    />
+            </TouchableOpacity>
+            </Modal>
 
        
            

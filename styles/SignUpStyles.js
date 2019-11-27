@@ -10,7 +10,7 @@ var SignUpStyles = StyleSheet.create({
         alignItems: 'center'
     },
 
-//    HEADER TEXT
+//    HEADER TEXT 
     headerContainer:{ 
         flex:0.3,
         width: '98%',
@@ -76,6 +76,7 @@ var SignUpStyles = StyleSheet.create({
         width:'98%',
         alignItems: 'center',
         justifyContent: 'center',
+        top:-20
     },
    
 // BUTTON
