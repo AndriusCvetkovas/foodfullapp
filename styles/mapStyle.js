@@ -1,83 +1,114 @@
-import {StyleSheet} from 'react-native';
+import { StyleSheet } from 'react-native';
 
 var GMapStyle = StyleSheet.create({
     mapStyle: {
-      height: 450,
-      top: 0,
-      left: 0,
-      right: 0,
-      bottom: 0
+        height: '100%',
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0
     },
     viewStyle: {
-      flex: 1,
-      width: '95%',
-      backgroundColor: '#AAA',
-      height: 70,
-      marginRight: 10,
-      marginLeft: 10,
-      marginTop: 10,
-      padding: 10,
-      borderRadius: 10
-    },
-    infoBox: {
         position: 'absolute',
-        width: '70%',
-        height: '70%',
-        backgroundColor: '#e3e3e3',
-        alignSelf: 'center',
-        borderWidth: 0.5,
-        borderColor: 'black',
-        top: '10%',
-        flexDirection:'column',
-        alignItems: 'center',
-        justifyContent: 'center'
+        height: 200,
+        zIndex: 2,
+        bottom: 0,
+        overflow: 'hidden'
+        
     },
-    donatorTitle: {
-        fontSize: 20,
-        paddingTop: 25,
-        paddingLeft: 25,
-        flex: 0
-    },
-    imageBox:{
-        marginLeft: 20,
-        marginRight: 20,
-        flex: 2
-    },
-    donationImage:{
-        width: 100,
-        height: 100,
+    infoStyle: {
+        marginLeft: 10,
+        marginRight: 10,
+        height: 300,
+        padding: 20,
         backgroundColor: 'white',
-        margin: 20
+        width: 375,
+        justifyContent: 'center',
+        alignItems: 'center'
     },
-    dateBox: {
-        flex: 0.5,
-        flexDirection: 'row',
-        width: '85%',
-        alignItems: 'center',
-        justifyContent:'center'
-    },
-    timeBox: {
-        flex: 1,
-        margin: 20,
-        backgroundColor: 'white',
+    innerInfo:{
+        flex: 2,
+        top: -60,
         width: '80%',
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginLeft: 20,
+        marginRight: 20
+    },
+    innerTitle: {
+        fontFamily: 'avenir',
+        color: '#06a2bc',
+        fontSize: 20,
+        padding: 20
+    },
+    innerButton: {
+        borderRadius: 30,
+        borderWidth: 1,
+        width: 100,
+        height: 40,
+        top: -120,
+        marginLeft: 200,
+        justifyContent: 'center',
+        alignItems: 'center',
+        borderColor: '#06a2bc',
+        
+
+    },
+    innerInner: {
+        justifyContent: 'center',
+        //alignItems: 'center'
+    },
+    innerAddress: {
+        paddingLeft: 20,
+        top: -15
+    },
+    backBut:{
+        position: 'absolute',
+        top: 50,
+        left: 20,
+        backgroundColor: 'white',
+        width: 50,
+        height: 50,
+        borderRadius: 50,
+        shadowColor: 'black',
+        shadowRadius: 5,
+        elevation: 2 ,
+        justifyContent: 'center',
+        alignItems: 'center',
     },
     noteBox: {
         flex: 1,
         width: '80%',
         margin: 20,
-        backgroundColor: 'white'
+        // backgroundColor: '#aaaaaa'
     },
-    button: {
-        flex: 0.3,
-        padding: 5,
-        borderWidth: 0.5,
-        borderRadius: 20,
-        backgroundColor: 'green',
-        marginBottom: 20,
-        width: '30%',
+    infoBox: {
+        position: 'absolute',
+        width: '80%',
+        height: '50%',
+        backgroundColor: 'white',
+        alignSelf: 'center',
+        top: '25%',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        borderRadius: 30,
+        padding: 10,
+    },
+    dateBox: {
+        flex: 0.5,
+        flexDirection: 'row',
+        width: '80%',
         alignItems: 'center',
         justifyContent: 'center'
-    }
-  });
+    },
+    timeBox: {
+        flex: 1,
+        marginLeft: 20,
+
+        // backgroundColor: '#f3f4f4'
+    },
+    
+});
 export default GMapStyle;
