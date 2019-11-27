@@ -47,7 +47,7 @@ function AcceptingSignUp({text}) {
     // console.log(userAddress);
     // console.log(userName);
     // console.log(userType);
-    var r = await axios.post(`http://localhost:3001/post`, obj);
+    var r = await axios.post(`https://foodfullapp.herokuapp.com/post`, obj);
     console.log(r.data);
     Actions.onboarding();
   }

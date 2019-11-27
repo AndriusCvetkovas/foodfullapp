@@ -6,12 +6,13 @@
  * @flow
  */
 
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {View,Text,ScrollView} from 'react-native';
 import MaterialTabs from 'react-native-material-tabs';
 import ContentStyle from '../styles/contentStyle';
 import Donations from '../comps/donation';
 import Pickup from '../comps/pickup';
+import {Actions} from 'react-native-router-flux';
 
 function DonateContent({pickup, navigation}) {
   var pick = pickup;
@@ -20,17 +21,17 @@ function DonateContent({pickup, navigation}) {
     selectedTab = 1;
   }
   
-  var donation = null;
-  if (selectedTab == 0){
-    donation = (
-      <Donations/>
-    )
-  } else if (selectedTab == 1){
-    donation = (
-      <Pickup />
-    )
-  }
+  var donation = <Donations/>;
   
+    if (selectedTab == 0){
+      donation = (
+        <Donations/>
+      )
+    } else if (selectedTab == 1){
+      donation = (
+        <Pickup />
+      )
+    }
   return (
     <View style = {ContentStyle.comp}>
       <MaterialTabs

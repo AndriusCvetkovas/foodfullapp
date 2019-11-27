@@ -76,6 +76,39 @@ var GMapStyle = StyleSheet.create({
         elevation: 2 ,
         justifyContent: 'center',
         alignItems: 'center',
-    }
+    },
+    noteBox: {
+        flex: 1,
+        width: '80%',
+        margin: 20,
+        // backgroundColor: '#aaaaaa'
+    },
+    infoBox: {
+        position: 'absolute',
+        width: '80%',
+        height: '50%',
+        backgroundColor: 'white',
+        alignSelf: 'center',
+        top: '25%',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        borderRadius: 30,
+        padding: 10,
+    },
+    dateBox: {
+        flex: 0.5,
+        flexDirection: 'row',
+        width: '80%',
+        alignItems: 'center',
+        justifyContent: 'center'
+    },
+    timeBox: {
+        flex: 1,
+        marginLeft: 20,
+
+        // backgroundColor: '#f3f4f4'
+    },
+    
 });
 export default GMapStyle;
