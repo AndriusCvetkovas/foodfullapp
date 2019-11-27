@@ -9,6 +9,7 @@ import Modal from "react-native-modal";
  function Profile() {
     const [showModal, setShowModal]= useState(false);
     var currentId = '';
+    
 
     //USER INFORMATION
 
@@ -72,7 +73,10 @@ import Modal from "react-native-modal";
             data:{
                 id: uId,
                 email: userEmail,
-                address: userAddress
+                address: userAddress,
+                phone: userPhone,
+                Name: userName
+                
                 
             }
         }
@@ -218,12 +222,8 @@ import Modal from "react-native-modal";
             isVisible = {showModal}
             onBackdropPress={() => setShowModal(!showModal)}
             >
-                <View style = {{height: 400, width: 330, backgroundColor: 'white', marginTop:15, padding:20 }}>
-                    {/* <TextInput
-                    style ={{height: 50, width: 100}}
-                    placeholder={'hahahah'}
-                    
-                    ></TextInput> */}
+                <View style = {{height: 500, width: 330, backgroundColor: 'white', marginTop:15, padding:20, borderRadius:20 }}>
+                   
 
        <Text style ={ProfileStyle.titles}>Address</Text>
        <View style={styles.inputContainer}>
@@ -240,10 +240,21 @@ import Modal from "react-native-modal";
         </View>
 
 
-        <Text style ={ProfileStyle.titles}>Email</Text>
+        <Text style ={ProfileStyle.titles}>User Name</Text>
         <View style={styles.inputContainer}>
           
           <TextInput style={styles.inputs}
+                placeholder="User Name"
+                underlineColorAndroid='transparent'
+                value={userName}
+                onChangeText={(t)=>{setUserName(t);
+              }}
+              />
+        </View>
+
+        <Text style ={ProfileStyle.titles}>Email</Text>
+        <View style={styles.inputContainer}>
+        <TextInput style={styles.inputs}
                 placeholder="Email"
                 underlineColorAndroid='transparent'
                 value={userEmail}
@@ -252,15 +263,19 @@ import Modal from "react-native-modal";
               />
         </View>
 
+        
+
 
         <Text style ={ProfileStyle.titles}>Phone</Text>
         <View style={styles.inputContainer}>
-          
-          {/* <TextInput style={styles.inputs}
-              placeholder="Phone"
-              
-              underlineColorAndroid='transparent'
-              onChangeText={(email) => this.setState({email})}/> */}
+           
+        <TextInput style={styles.inputs}
+                placeholder="Phone"
+                underlineColorAndroid='transparent'
+                value={userPhone}
+                onChangeText={(t)=>{setUserPhone(t);
+              }}
+              /> 
         </View>
 
 

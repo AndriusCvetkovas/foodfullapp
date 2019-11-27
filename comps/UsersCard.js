@@ -3,7 +3,7 @@ import {View, Text, Animated, Button} from 'react-native';
 import axios from 'axios';
 import UsersEdit from './UsersEdit';
 
-function UsersCard({id, email, password, hash, ReadUsers, address}){
+function UsersCard({id, email, password, hash, ReadUsers}){
 
     const [op] = useState(new Animated.Value(0));
     const [showEdit, setShowEdit] = useState(false);
@@ -18,35 +18,43 @@ function UsersCard({id, email, password, hash, ReadUsers, address}){
         ).start();
     },[])
 
+    const DeleteUser=async()=>{
+        var obj={
+            key:"users_delete",
+            data:{
+                id:id
+            }
+        }
 
+        var r = await axios.post("http://localhost:3001/post", obj);
+        await ReadUsers();
+    }
 
     return(
         <Animated.View style={{opacity:op}}>
             <Text>{id}</Text>
             <Text>{email}</Text>
-            <Text>{address}</Text>
             <Text>{password}</Text>
             <Text>{hash}</Text>
             {
                 (showEdit) ? <UsersEdit 
                     id={id}
                     email={email}
-                    address={address}
                     ReadUsers={ReadUsers}
                 /> : null
             }
             <Button 
-                title="Edit Porfile"
+                title="Edit"
                 onPress={()=>{
                     setShowEdit(!showEdit)
                 }}
             />
-            {/* <Button 
+            <Button 
                 title="Delete"
                 onPress={()=>{
                     DeleteUser()
                 }}
-            /> */}
+            />
 
         </Animated.View>
     )

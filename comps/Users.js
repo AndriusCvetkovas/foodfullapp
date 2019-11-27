@@ -6,12 +6,26 @@ import UsersCard from './UsersCard';
 
 var email = "";
 var password = "";
-var address = "";
 
 function Users(){
     const [error, setError] = useState("");
     const [users, Setusers] = useState([]);
 
+    const CreateUser = async()=>{
+        //fetch to the db to create 
+        console.log(email, password);
+        var obj = {
+            key:'users_create',
+            data:{
+                email:email,
+                password:password
+            }
+        }
+        var data = await axios.post("http://localhost:3001/post", obj);
+        console.log("create", data)
+        await ReadUsers();      
+          
+    }
 
     const ReadUsers = async()=>{
 
@@ -33,7 +47,6 @@ function Users(){
     }, []);
  
     return(
-        <View style = {{flex: 1, backgroundColor:'lightgray', padding:20}}>
         <ScrollView>
             <TextInput
                 placeholder="email"
@@ -41,7 +54,7 @@ function Users(){
                     email=text;
                 }}
             />
-            {/* <TextInput
+            <TextInput
                 placeholder="password"
                 onChangeText={(text)=>{
                     password = text;
@@ -52,14 +65,14 @@ function Users(){
                     }
                 }}
                 secureTextEntry
-            /> */}
+            />
             <Text>{error}</Text>
-            {/* <Button
+            <Button
                 title="Create User"
                 onPress={()=>{
                     CreateUser()
                 }}
-            /> */}
+            />
 
             {
                 users.map((obj,i)=>{
@@ -67,7 +80,6 @@ function Users(){
                         key={i}
                         id={obj.id}
                         email={obj.email}
-                        address={obj.address}
                         password={obj.password}
                         hash={obj.hash}
                         ReadUsers={ReadUsers}
@@ -76,7 +88,6 @@ function Users(){
             }
 
         </ScrollView>
-        </View>
     )
 }
 
