@@ -96,7 +96,7 @@ function LoginPage() {
       </View>
 
       {/* HEADER AND SUBHEADER */}
-      <View style={{top:-40}}>
+      <View style={{top:-50}}>
         <Text style={Loginstyles.header}>
           Foodfull
           </Text>
