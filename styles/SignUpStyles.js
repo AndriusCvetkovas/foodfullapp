@@ -23,6 +23,7 @@ var SignUpStyles = StyleSheet.create({
         fontWeight: "500",
         color: "#06a2bc",
         textAlign:'center',
+        fontFamily: 'avenir'
     },
     subheader: {
         fontSize:20,
@@ -40,6 +41,7 @@ var SignUpStyles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
     },
+    
    
     option1: {
         flex: 1,

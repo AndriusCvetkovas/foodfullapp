@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {View, Text, Image, TouchableOpacity, ScrollView} from 'react-native';
 import ConfirmStyle from '../styles/confirmStyle';
 import buttonStyle from '../styles/buttonStyle';
@@ -6,7 +6,7 @@ import LottieView from 'lottie-react-native';
 import {Actions} from 'react-native-router-flux';
 import axios from 'axios';
 
-function Confirmation({obj}){
+function Confirmation({obj, setShowModal}){
     var url = obj.data.image_url[0].uri;
     console.log(obj);
     const SendDonationInfo = async () => {
@@ -15,6 +15,7 @@ function Confirmation({obj}){
     }
     const Confirm = () =>{
         SendDonationInfo();
+        setShowModal(false);
         Actions.donationposted();
     }
     
@@ -83,7 +84,7 @@ function Confirmation({obj}){
             <TouchableOpacity
             title="Accept"
             style = {[buttonStyle.button, {width: 200}]}
-            onPress={()=> Confirm({val: 'ssss'})}>
+            onPress={()=> Confirm()}>
                 <Text
                 style = {{color: 'white', fontSize: 16, fontWeight: '500'}}
                 >Confirm</Text>

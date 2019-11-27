@@ -22,6 +22,7 @@ import axios from 'axios';
 import Confirmation from './Confirmation';
 
 function GMap() {
+  var map = React.createRef();
   var type = '';
   //GET USER TYPE
   const getType = async () => {
@@ -54,10 +55,10 @@ function GMap() {
     var d = json.data;
     console.log(d);
     setUsers(d);
-    setLat(lat.push(d[i].lat));
-    setLong(long.push(d[i].long));
-    setName(name.push(d[i].name));
-    setAddress(address.push(d[i].address));
+    // setLat(lat.push(d[i].lat));
+    // setLong(long.push(d[i].long));
+    // setName(name.push(d[i].name));
+    // setAddress(address.push(d[i].address));
   };
 
   const [users, setUsers] = useState([]);
@@ -74,9 +75,11 @@ function GMap() {
   return (
     <View style={{justifyContent: 'center'}}>
       <MapView
+        ref ={map}
         provider={MapView.PROVIDER_GOOGLE}
         style={GMapStyle.mapStyle}
         zoomEnabled={true}
+        showsUserLocation={true}
         region={{
           latitude: la,
           longitude: lo,
@@ -95,18 +98,27 @@ function GMap() {
               title={d.name}
               description={d.address}
               image={require('../assets/icon/map.png')}
-              selected={true}
             />
           );
         })}
       </MapView>
       <ScrollView horizontal={true} style={GMapStyle.viewStyle}
       showsHorizontalScrollIndicator={false}
+      pagingEnabled={true}
       >
         {
           users.map((d, i)=>{
             return(
-          <TouchableOpacity style={GMapStyle.infoStyle}>
+          <TouchableOpacity style={GMapStyle.infoStyle}
+          onPress={()=>{ map.current.animateToRegion(
+            {
+              latitude: d.lat,
+              longitude: d.long,
+              latitudeDelta: 0.1,
+              longitudeDelta: 0.1,
+            },1000
+          )}
+          }>
             <View style={GMapStyle.innerInfo}>
               <Image
                 style={{height: 75, width: 75, borderRadius: 75}}

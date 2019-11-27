@@ -54,6 +54,7 @@ import MsgDeclineDonation from './MsgDeclineDonation';
 import AppHeader from './header';
 import GetStarted from './getStarted';
 import Home from './Home';
+import ChooseDonation from './postDonation/ChooseDonation';
 
 function AppContent() {
   return (
@@ -64,7 +65,6 @@ function AppContent() {
           component={Home}
           title="Home"
           hideNavBar={true}
-          initial
         />
         <Scene
           key="login"
@@ -97,6 +97,13 @@ function AppContent() {
           title="Account Created"
           hideNavBar={true}
         />
+        <Scene
+          gesturesEnabled={false}
+          key="mapaccept"
+          component={GMapAccept}
+          title="Map"
+          hideNavBar={true}
+        />
         <Tabs
           key="tabbar0"
           wrap={false}
@@ -110,6 +117,12 @@ function AppContent() {
             title="Dashboard"
             hideNavBar={true}
             panHandlers={null}
+          />
+          <Scene 
+          key='choosedonation'
+          component={ChooseDonation}
+          hideNavBar={true}
+          initial
           />
           <Scene
             key="postdonation"
@@ -206,13 +219,6 @@ function AppContent() {
           gesturesEnabled={false}
           key="map"
           component={GMap}
-          title="Map"
-          hideNavBar={true}
-        />
-        <Scene
-          gesturesEnabled={false}
-          key="mapaccept"
-          component={GMapAccept}
           title="Map"
           hideNavBar={true}
         />
