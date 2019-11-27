@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, Image, TouchableHighlight, AsyncStorage } from 'react-native';
-import GMapStyle from '../styles/mapStyle';
+import MsgNfStyles from '../styles/MsgNfStyles';
 import TimePicker from './DatePicker';
 import DatePicker from 'react-native-datepicker';
 import buttonStyle from '../styles/buttonStyle';
@@ -46,27 +46,27 @@ function Info({ description, names, img, time, date, address, id }) {
     }, [])
     return (
         <View
-            style={GMapStyle.infoBox}
+            style={MsgNfStyles.infoBox}
         >
             {/*Title box below*/}
             <View>
                 <Text
-                    style={GMapStyle.donatorTitle}
+                    style={MsgNfStyles.donatorTitle}
                 >{namer}</Text>
             </View>
             {/*Image box below*/}
             <View
-                style={GMapStyle.imageBox}
+                style={MsgNfStyles.imageBox}
             >
                 <Image
                     source={require('../assets/img/safeway.jpg')}
-                    style={GMapStyle.donationImage}
+                    style={MsgNfStyles.donationImage}
                 />
 
             </View>
             {/*Date box below*/}
             <View
-                style={GMapStyle.dateBox}
+                style={MsgNfStyles.dateBox}
             >
                 <Text style={{ flex: 1, color: '#0ca3bc', fontSize: 18, fontFamily: 'avenir' }}>Date:</Text>
                 <Text style={{ flex: 1.1, fontFamily: 'DidactGothic-regular', fontSize: 15 }}>{dates}</Text>
@@ -75,7 +75,7 @@ function Info({ description, names, img, time, date, address, id }) {
             <View style={{ flexDirection: 'row', width: "80%", alignItems: 'center', justifyContent: 'center' }}>
                 <Text style={{ color: '#0ca3bc', fontSize: 18, fontFamily: 'avenir' }}>Pick your time:</Text>
                 <View
-                    style={GMapStyle.timeBox}
+                    style={MsgNfStyles.timeBox}
                 >
                     {/* <DatePicker
                             style={{width: '100%'}}
@@ -112,7 +112,7 @@ function Info({ description, names, img, time, date, address, id }) {
 
 
             <View
-                style={GMapStyle.noteBox}
+                style={MsgNfStyles.noteBox}
             >
                 <Text style={{ color: '#0ca3bc', paddingBottom: 5, fontSize: 18, fontFamily: 'avenir' }}>Descriptions:</Text>
 

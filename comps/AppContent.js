@@ -54,7 +54,8 @@ function AppContent() {
  {/* <Users/>     */}
  {/* <DonNotification /> */}
  {/* <Donate /> */}
-    <Profile />
+    {/* <DInfoMap /> */}
+    <DConfMap />
     {/* <MsgCancelDonation /> */}
     {/* <MsgAcceptDonation /> */}
     {/* <MsgDeclineDonation /> */}
