@@ -38,9 +38,9 @@ function AccountCreate({text}) {
         </View>
 
         <View style={styles.containerButton}>
-          <TouchableHighlight style={[styles.buttonContainer, styles.MakePost]} onPress={() => ChangeToDashboard()}>
+          <TouchableOpacity style={[styles.buttonContainer, styles.MakePost]} onPress={() => ChangeToDashboard()}>
             <Text style={styles.B1}>Lets Get Started</Text>
-          </TouchableHighlight>
+          </TouchableOpacity>
 
         </View>
 
