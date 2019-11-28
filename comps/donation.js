@@ -129,14 +129,14 @@ function Donations() {
                                             </TouchableOpacity>
                                         </View>
                                     </View>
-                                    <TouchableOpacity style ={{position: 'absolute', top: 30, right: 30}}
+                                    {/* <TouchableOpacity style ={{position: 'absolute', top: 30, right: 30}}
                                     onPress={()=>{setShowModal(!showModal)}}>
                                         <Image
                                         
                                         source={require('../assets/icon/x.png')}
                                         style = {{width: 15, height: 15}}
                                         />
-                                    </TouchableOpacity>
+                                    </TouchableOpacity> */}
                             </View>
                     )
                 })
@@ -155,7 +155,7 @@ function Donations() {
 
                 <View style={AcceptNFStyle.donationInfoTop}>
                     <View style={AcceptNFStyle.Images}>
-                    <Text style={AcceptNFStyle.Month}>Date</Text>
+                    <Text style={AcceptNFStyle.Month}></Text>
                         <Text style={AcceptNFStyle.Month}>{dd.date}</Text>
                     </View>
 
@@ -209,7 +209,7 @@ function Donations() {
                     <Image
                     
                     source={require('../assets/icon/x.png')}
-                    style = {{width: 15, height: 15}}
+                    style = {{width: 15, height: 15, marginRight:35, backgroundColor:'#eeeb', padding:10,borderRadius:10}}
                     />
             </TouchableOpacity>
                 </View>

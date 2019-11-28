@@ -5,7 +5,10 @@ import buttonStyle from '../styles/buttonStyle';
 import {Actions} from 'react-native-router-flux';
 
 
-function PickedUpComfirm(){
+function PickedUpComfirm(props){
+
+
+
     return(
         <View style = {PickUpComfirmSty.main}>
             <View style = {PickUpComfirmSty.main2}>
@@ -64,7 +67,7 @@ function PickedUpComfirm(){
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad 
             </Text>
             <TouchableOpacity
-            
+             onPress={props.obj.hide} 
             title="Accept"
             style = {PickUpComfirmSty.button}>
                 <Text
@@ -72,7 +75,7 @@ function PickedUpComfirm(){
                 >Picked Up</Text>
             </TouchableOpacity>
             <TouchableOpacity
-            
+            onPress={props.obj.hide} 
             title="Accept"
             style = {PickUpComfirmSty.button2}>
                 <Text
@@ -82,7 +85,7 @@ function PickedUpComfirm(){
             
             </View>
             <TouchableOpacity style ={{position: 'absolute', top: 70, right: 50}}
-                // onPress={()=>{setShowModal(!showModal)}}
+                onPress={props.obj.hide} 
                 >
                     <Image
                     

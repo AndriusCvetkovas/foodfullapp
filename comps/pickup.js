@@ -38,6 +38,10 @@ function Pickup() {
     setDons(d);
     console.log(donsName)
   }
+
+  function closeModal(){
+    setShowModal(false);
+  }
   const [dons, setDons] = useState([]);
   const [donsName, setDonsName] = useState();
   // const [donsTime, setDonsTime] = useState();
@@ -59,7 +63,7 @@ function Pickup() {
       style = {{backgroundColor: 'transparent', height: 700,width: 380, position: "absolute"}}
       isVisible = {showModal}
       onBackdropPress={() => setShowModal(!showModal)}>
-        <PickedUpComfirm/>
+        <PickedUpComfirm obj={{hide: closeModal}}/>
       </Modal>
     <ScrollView>
       {
@@ -67,7 +71,10 @@ function Pickup() {
           if (d.status == 2) {
             var texta = 'Pickup Pending...'
             var colorz = '#ee9a23'
-        }else {
+        }else if (d.status == 3) {
+          var texta = 'Picked Up...'
+          var colorz = 'Green'
+      }else  {
             texta = 'Declined...'
             colorz = 'red'
         }
