@@ -2,10 +2,10 @@ import {StyleSheet} from 'react-native';
 
 var donationStyle = StyleSheet.create({
     CardDisplay:{
-        top: 10,
         borderColor:'#eee',
         borderRadius: 5,
         padding:5,
+        marginTop: 10,
         shadowOffset:{width:0.2, height: 0.1},
         shadowColor:'#eee',
         borderStyle: 'solid',
@@ -20,8 +20,14 @@ var donationStyle = StyleSheet.create({
         justifyContent:'center',
         alignItems: 'center',
         alignContent: 'center',
+        backgroundColor:'#f8c745',
         width: 120,
         height: 120,
+        borderRadius: 120/1,
+        transform:[
+            {scaleX: 0.75},
+            {scaleY: 0.75}
+          ]
 
     },
 
@@ -42,7 +48,6 @@ var donationStyle = StyleSheet.create({
 
     },
     Organization:{
-        width: 200,
         fontSize:18,
         color:'#07a2bb',
     },
@@ -87,9 +92,10 @@ var donationStyle = StyleSheet.create({
 
     },
     ImageSize:{
-        width: 100,
-        height: 100,
-        borderRadius: 100
+        width: 120,
+        height: 120,
+        borderRadius: 120,
+
     },
     Dots:{
        marginRight:15,
