@@ -52,7 +52,7 @@ var LeaderboardStyles = StyleSheet.create({
         width: 100,
         borderRadius: 100,
         marginBottom:5,
-        left:-20
+        left:10
     },
     rankBox: {
         marginTop: 0,
@@ -70,10 +70,11 @@ var LeaderboardStyles = StyleSheet.create({
         flexDirection:'row'
     },
     yourStats: {
-        flex: 0.8,
+        flex: 2,
         alignItems: 'center',
         justifyContent: 'center',
-        marginRight:10
+        marginRight:0
+       
     },
     icons:{
         width: 35, 

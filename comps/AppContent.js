@@ -45,6 +45,7 @@ import GetStarted from './getStarted';
 import Home from './Home';
 
 import Users from './Users';
+import Leaderboard from './profile/Leaderboard';
 function AppContent() {
   return (
 
@@ -56,6 +57,8 @@ function AppContent() {
 //  {/* <Donate /> */}
 //     {/* <DInfoMap /> */}
 //     {/* <DConfMap /> */}
+//     <Leaderboard />
+   
 //     {/* <DonNotificationDeclined /> */}
 //     {/* <MsgCancelDonation /> */}
 //     {/* <MsgAcceptDonation /> */}
