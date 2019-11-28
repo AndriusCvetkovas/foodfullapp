@@ -21,7 +21,7 @@ var ProfileStyle = StyleSheet.create({
     // Profile Image
     imageViewStyle:{
         flex: 0.5,
-        zIndex: 6,
+        zIndex: 1,
         alignItems: 'center',
         justifyContent: 'center',
         top: 30,

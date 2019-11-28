@@ -78,7 +78,7 @@ function Dashboard({navigation}) {
                     <Text style={DashStyle.header}>Let's Make a Change</Text>
                     <TouchableOpacity
                         style={DashStyle.donateButton}
-                        onPress={() => Actions.postdonation()}>
+                        onPress={() => Actions.choosedonation()}>
                         <Text style={DashStyle.donateButtonText}>Donate</Text>
                     </TouchableOpacity>
                 </View>

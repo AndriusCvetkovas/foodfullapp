@@ -1,34 +1,35 @@
 import React from 'react';
 import {View, Text, Image, TouchableHighlight} from 'react-native';
-import GMapStyle from '../styles/mapStyle';
+import MsgNfStyles from '../styles/MsgNfStyles';
 import buttonStyle from '../styles/buttonStyle';
+
 
 function MsgAcceptDonation(){
     return(
         <View
-        style = {GMapStyle.infoBox}
+        style = {MsgNfStyles.infoBox}
         >
             {/*Title box below*/} 
             <View
             style = {{marginTop: 50}}>
                 <Text
-                style = {GMapStyle.donatorTitle}
+                style = {MsgNfStyles.donatorTitle}
                 >Donation Accepted</Text>
             </View>
             {/*Image box below*/} 
             <View 
-            style = {GMapStyle.imageBox}
+            style = {MsgNfStyles.imageBox}
             >
                 <Image
-                style = {GMapStyle.checkmarkImage}
+                style = {MsgNfStyles.checkmarkImage}
                 source = {require('../assets/icon/checkmark.png')}
                 />
             </View>
             {/*Date box below*/} 
             <View
-            style = {GMapStyle.messageBox}
+            style = {MsgNfStyles.messageBox}
             >
-                <Text style = {{marginTop: 15, fontFamily: 'DidactGothic-Regular', fontSize: 15}}>You have Accepted this donation from Safeway Extra</Text>
+                <Text style = {{marginTop: 30, fontFamily: 'DidactGothic-Regular', fontSize: 15}}>You have Accepted this donation from Safeway Extra</Text>
                 <Text style = {{color: '#0ca3bc'}}></Text>
             </View>
             <View
