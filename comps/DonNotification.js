@@ -142,20 +142,11 @@ function DonNotification() {
 
                             </View>
                             <View style={donationStyle.TextDisplay}>
-                                <TouchableOpacity style = {{right: -120, top: -20, }}
+                                <TouchableOpacity style = {{right: -120, top: -50, }}
                                 onPress={()=> [setShowModal(!showModal), setdd(d)]}
                                 >
                                     <Image style={donationStyle.Dots} source={require("../assets/icon/dot_nav.png")} />
                                 </TouchableOpacity> 
-                                <View style={donationStyle.option}>
-                                    <TouchableOpacity
-                                        style={donationStyle.BtnStyleBlueView}
-                                        underlayColor='#000'
-                                        color='000'
-                                        onPress={()=>{[setShowModal(!showModal),setdd(d)]}}>
-                                        <Text style={donationStyle.btnText}>View</Text>
-                                    </TouchableOpacity>
-                                </View>
                             </View>
 
                             
