@@ -119,18 +119,12 @@ function DonNotification() {
                     
                     
                     return (
-
-                        
                         <View style={[donationStyle.CardDisplay, {top: 50,}]}>
                             <View style={donationStyle.Images}>
-                            
-                  <Text style={donationStyle.Date}>14</Text>
-                  <Text style={donationStyle.Month}>Jun</Text>
-           
-                            {/* <Image
+                            <Image
                                 style={{height: 60, width: 70}}
                                 source={require('../assets/icon/donating.png')}
-                                /> */}
+                                />
                             </View>
                             <View style={donationStyle.TextDisplay}>
                                 <View>
@@ -147,19 +141,17 @@ function DonNotification() {
                                 >
                                     <Image style={donationStyle.Dots} source={require("../assets/icon/dot_nav.png")} />
                                 </TouchableOpacity> 
-                            <Text style={[donationStyle.accpText, {color: colorz}]}>{texta}</Text>
+                            {/* <Text style={[donationStyle.accpText, {color: colorz}]}>{texta}</Text> */}
                                 <View style={donationStyle.option}>
-                                    <TouchableOpacity
+                                    {/* <TouchableOpacity
                                         style={donationStyle.BtnStyleBlueView}
                                         underlayColor='#000'
                                         color='000'
                                         onPress={()=>{[setShowModal(!showModal),setdd(d)]}}>
                                         <Text style={donationStyle.btnText}>View</Text>
-                                    </TouchableOpacity>
+                                    </TouchableOpacity> */}
                                 </View>
                             </View>
-
-                            
                         </View>
                     )
                 })
@@ -169,8 +161,6 @@ function DonNotification() {
 
         
         </ScrollView>
-
-        
         </View>
     )
 };
