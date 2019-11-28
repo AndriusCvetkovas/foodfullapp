@@ -23,11 +23,22 @@ function Leaderboard(){
                         style={LeaderboardStyles.yourImage}
                         source={require('../../assets/img/safeway.jpg')}
                      />
+                     
                 </View>
 
             {/*Stats/ your info below*/}
                 <View style = {LeaderboardStyles.yourStats}>
-                    
+                <View style={{ margin: 5 }}>
+                            <View style={{ flexDirection: 'row', alignItems:'center' }}>
+                                <Text style={{ color: '#01657c', fontSize: 20, marginBottom: 5, fontFamily: 'Avenir', fontWeight: '600' }}>You are in </Text>
+                                <Text style={{ color: '#0ca3bc', fontSize: 23, marginBottom: 5, fontFamily: 'Avenir', fontWeight: '800' }}>2nd </Text>
+                                <Text style={{ color: '#01657c', fontSize: 20, marginBottom: 5, fontFamily: 'Avenir', fontWeight: '600' }}>place</Text>
+                            </View>
+                            <View style={{ flexDirection: 'row' }}>
+                                <Text style={{ color: '#0ca3bc', fontSize: 18, marginRight: 15 }}>40 Donations</Text>
+                                <Text style={{ color: '#A4D638', fontSize: 18, fontFamily: 'Avenir', fontWeight: '800' }}>1100 Kg</Text>
+                            </View>
+                        </View>
                 </View>
             </View>
 
