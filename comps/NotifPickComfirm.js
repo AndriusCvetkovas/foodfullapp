@@ -3,7 +3,7 @@ import {View, Text, Image, TouchableHighlight, TextInput} from 'react-native';
 import PickUpStyle from '../styles/pickUpStyle';
 // import buttonStyle from '../styles/buttonStyle';
 
-function AcceptedInfo(){
+function AcceptedInfo(props){
     const [value, onChangeText] = React.useState('LBS');
     return(
         <View
@@ -51,11 +51,12 @@ function AcceptedInfo(){
             
             {/*Button below*/}
             <TouchableHighlight
+            onPress={props.obj.hide} 
             title="Accept"
             style = {PickUpStyle.buttonS}>
                 <Text
                 style = {{color: 'white'}}
-                >Comfirm Pickup</Text>
+                >Confirm Pickup</Text>
             </TouchableHighlight>
             
         </View>

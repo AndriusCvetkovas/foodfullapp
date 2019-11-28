@@ -62,7 +62,7 @@ function Pickup() {
       animationIn='slideInUp'
       style = {{backgroundColor: 'transparent', height: 700,width: 380, position: "absolute"}}
       isVisible = {showModal}
-      onBackdropPress={() => setShowModal(!showModal)}>
+      onBackdropPress={() => console.log('jeanos')}>
         <PickedUpComfirm obj={{hide: closeModal}}/>
       </Modal>
     <ScrollView>

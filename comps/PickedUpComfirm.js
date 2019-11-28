@@ -1,17 +1,88 @@
-import React from 'react';
-import {View, Text, Image, TouchableOpacity, ScrollView} from 'react-native';
+import React,{useState} from 'react';
+import {TextInput, View, Text, Image, TouchableOpacity, ScrollView} from 'react-native';
 import PickUpComfirmSty from '../styles/PickUpComfirmSty';
 import buttonStyle from '../styles/buttonStyle';
 import {Actions} from 'react-native-router-flux';
+import AcceptedInfo from '../comps/NotifPickComfirm';
+import PickUpStyle from '../styles/pickUpStyle';
+
 
 
 function PickedUpComfirm(props){
-
-
-
-    return(
+    const [value, onChangeText] = React.useState('LBS');
+    var acceptedInfoContent = (
         <View style = {PickUpComfirmSty.main}>
-            <View style = {PickUpComfirmSty.main2}>
+        <View style = {PickUpComfirmSty.main2}></View>
+        <View
+        style = {PickUpStyle.infoBox}
+        >
+            {/*Title box below*/} 
+            <View>
+                <Text
+                style = {PickUpStyle.donatorTitle}
+                >Picked Up</Text>
+            </View>
+            {/*Image box below*/} 
+            <View 
+            style = {PickUpStyle.imageBox}
+            >
+                <Image
+                style = {PickUpStyle.checkmarkImage}
+                source = {require('../assets/icon/checkmark.png')}
+                />
+            </View>
+            {/*Date box below*/} 
+            <View
+            style = {PickUpStyle.messageBox}
+            >
+                <Text>You have picked up your donation from Safeway Extra</Text>
+                <Text style = {{color: '#0ca3bc'}}></Text>
+            </View>
+            <View
+            style = {{flexDirection: 'row', width: "80%", flex: 0.2}}
+            >
+                <Text style = {{flex: 1, color: '#0ca3bc',fontWeight:'800'}}>How much food you have recieved?</Text>
+                
+            </View>
+            {/*Time box below*/} 
+            <View style = {{flexDirection: 'row', width: "80%", flex: 0.4}}>
+                <Text style = {{color: '#0ca3bc', flex: 1, fontWeight:'800'}}>Weight:</Text>
+                
+                <TextInput
+      style={PickUpStyle.InputSty}
+      onChangeText={text => onChangeText(text)}
+      value={value}
+    />
+            </View>
+            
+            {/*Button below*/}
+            <TouchableOpacity
+            onPress={props.obj.hide} 
+            title="Accept"
+            style = {PickUpStyle.buttonS}>
+                <Text
+                style = {{color: 'white'}}
+                >Confirm Pickup</Text>
+            </TouchableOpacity>
+
+             <TouchableOpacity style ={{position: 'absolute', top: -35, right: 12}}
+                onPress={props.obj.hide} 
+                >
+                    <Image
+
+                    source={require('../assets/icon/x.png')}
+                    style = {{width: 15, height: 15}}
+                    />
+            </TouchableOpacity>
+            
+        </View>
+        </View>
+          
+    );
+
+    var pickedUpModal =(
+    <View style = {PickUpComfirmSty.main}>
+        <View style = {PickUpComfirmSty.main2}>
             {/*Donation info below */}
            
             <View style = {PickUpComfirmSty.donationInfoTop}>
@@ -67,7 +138,7 @@ function PickedUpComfirm(props){
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad 
             </Text>
             <TouchableOpacity
-             onPress={props.obj.hide} 
+             onPress={()=>setPickedUpContent(acceptedInfoContent)} 
             title="Accept"
             style = {PickUpComfirmSty.button}>
                 <Text
@@ -88,12 +159,24 @@ function PickedUpComfirm(props){
                 onPress={props.obj.hide} 
                 >
                     <Image
-                    
+
                     source={require('../assets/icon/x.png')}
                     style = {{width: 15, height: 15}}
                     />
-                    </TouchableOpacity>
+            </TouchableOpacity>
         </View>
+    )
+
+    const[pickedUpContent, setPickedUpContent] = useState(pickedUpModal);
+    
+  
+
+    return(
+        <View>
+            {pickedUpContent}
+        </View>
+            
+        
     )
 };
 export default PickedUpComfirm;
