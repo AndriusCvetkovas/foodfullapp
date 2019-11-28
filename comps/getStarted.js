@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
   },
   desc:{
     fontFamily: 'Avenir',
-    fontSize: 20,
+    fontSize: 22,
     width:'90%',
     fontWeight:'500',
     color: '#3dbfd2',
@@ -99,6 +99,7 @@ export default class GetStarted extends Component {
         buttonWrapperStyle= {{borderRadius:20, backgroundColor: '#3dbfd2', width: 100, height: 45, justifyContent: 'center', alignItems: 'center', top: 660, left: 155, right: 0 }}
         showsButtons={false} showsPagination={true} loop={false} dot={<View style={{backgroundColor: '#bcd1d3', width: 8, height: 8, borderRadius: 8, marginLeft: 5, marginRight: 5, marginTop: 3, marginBottom: 3, bottom: 80}} />}
         activeDot={<View style={{backgroundColor: '#3dbfd2', width: 8, height: 8, borderRadius: 8, marginLeft: 3, marginRight: 3, marginTop: 3, marginBottom: 3, bottom: 80}} />}>
+
         <View style={styles.slide1}>
         <Text style={styles.header}>Your account has been created!</Text>
 
@@ -130,7 +131,7 @@ export default class GetStarted extends Component {
             autoPlay
             loop
         />
-        <Text style={styles.desc}>Match with food banks around your location and send donations in one easy step</Text>
+        <Text style={styles.desc}>Match with food banks around you and send donations in one easy step</Text>
        
         </View>
 
@@ -144,30 +145,28 @@ export default class GetStarted extends Component {
             autoPlay
             loop
         />
-          <Text style={styles.desc}>Set up a date and time for your donation to be picked up</Text>
+          <Text style={[styles.desc, {top:-25}]}>Set up a date and time for your donation to be picked up</Text>
         </View>
 
 
 
         {/* PAGE THREE:  */}
         <View style={styles.slide4}>
-          <Text style={styles.text}>And simple</Text>
-          <TouchableOpacity style = {{borderRadius: 30,borderWidth: 1, width: 70, height: 40, top: 470, justifyContent: 'center', alignItems: 'center', zIndex: 2}}
+          <TouchableOpacity style = {{borderRadius: 30, width: 180, height: 40, top: 490, justifyContent: 'center', alignItems: 'center', zIndex: 2, backgroundColor:'#06a2bc',}}
           onPress={()=>Actions.login()}
           >
-            <Text >Login</Text>
+            <Text style={{color:'#ffffff'}} >Login</Text>
           </TouchableOpacity>
-          <Text style={styles.subheader}>Track your progress</Text>
+          <Text style={[styles.subheader, {top:-63}]}>Track your progress</Text>
           <LottieView
-            source={require('../assets/lottieFiles/donatephone.json')}
-            style={{justifyContent:'center', alignItems:'center',height:350, width:'100%',top:-5, marginLeft:4.3}}
+            source={require('../assets/lottieFiles/make_donation.json')}
+            style={{justifyContent:'center', alignItems:'center',height:320, width:'80%',top:-5, marginLeft:4.3}}
             autoPlay
             loop
         />
-         <Text style={styles.desc}>Keep track of your donations and your ranking against other donators</Text>
+         <Text style={styles.desc}>Keep track of your donations and become the top donator!</Text>
         </View>
         
-
       </Swiper>
        </View> 
       

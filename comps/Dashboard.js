@@ -19,7 +19,7 @@ function Dashboard({navigation}) {
     const [user, setUser] = useState([]);
     const GetDonations = async () => {
         var obj = {
-        key: "donations_read",
+        key: "donations_read", 
         data: {
             user_id: currentId,
             status: 2,
