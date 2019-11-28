@@ -61,9 +61,9 @@ var DashStyle = StyleSheet.create({
         shadowOpacity: 0.4,
         shadowRadius: 8,
         elevation: 0,
-        width: '92%',
+        width: '90%',
         borderRadius: 30,
-        top:-80,
+        top:-70,
         justifyContent:'center',
         alignItems:'center'
     },
@@ -80,7 +80,7 @@ var DashStyle = StyleSheet.create({
         marginBottom: 5, 
         fontFamily:'Avenir', 
         fontWeight:'800'
-    },
+    }, 
 
     // Upcoming schedule
     title:{
@@ -110,17 +110,17 @@ var DashStyle = StyleSheet.create({
     },
     notifContainer:{
         flex:3.5,
-        width:'92%',
+        width:'90%',
         justifyContent:'center', 
         alignItems:'center',
-        top:-60, 
+        top:-50, 
         borderRadius:30,
-        backgroundColor:'#ffffff', 
         padding:20,
         shadowColor: '#aaaaaa',
         shadowOffset: { width: 0, height: 1 },
         shadowOpacity: 0.4,
         elevation:0,
+        backgroundColor:'#ffffff', 
         shadowRadius: 5,
     },
     notification:{

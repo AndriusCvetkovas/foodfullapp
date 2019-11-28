@@ -9,13 +9,12 @@ var ChooseDonationStyle = StyleSheet.create({
         justifyContent: 'center'
     },
     titleContainer: {
-        
     },
     title: {
         flex: 0.2,
         top: 50,
         fontFamily: 'avenir',
-        fontSize: 23,
+        fontSize: 25,
         textAlign: "center",
         marginBottom: 10,
         fontWeight: "500",
@@ -42,17 +41,17 @@ var ChooseDonationStyle = StyleSheet.create({
     },
     optionImage: {
         width: 85,
-        height: 75,
+        height: 80,
         marginBottom: 20,
         marginLeft: 15,
     },
     optionTitle: {
-        marginLeft: 57,
         color: '#606060',
-        fontSize: 20,
-        fontWeight: '600',
-        marginLeft: 20,
-        marginBottom: 10
+        fontSize: 25,
+        fontWeight: '800',
+        marginLeft: -8,
+        marginBottom: 5,
+        fontFamily:'Avenir'
     },
     optionInfo: {
         flex: 1,
@@ -64,7 +63,8 @@ var ChooseDonationStyle = StyleSheet.create({
         fontSize: 18,
         color: '#606060',
         width: 210,
-        marginLeft: 20
+        marginLeft: 20,
+        top:-5
     },
     optionTwo:{
         backgroundColor: '#F4F5F7',
