@@ -74,7 +74,7 @@ function SignUp() {
       <TouchableOpacity
         style={{
           position: 'absolute',
-          top: 50,
+          top: 70,
           left: 20,
           flexDirection: 'row',
           alignItems: 'center',
@@ -83,12 +83,11 @@ function SignUp() {
         onPress={() => Actions.login()}>
         <Image
           source={require('../../assets/icon/next.png')}
-          style={{
-            width: 20,
-            height: 20,
+          style={
+            {width: 25, height: 30, 
             transform: [{rotateY: '180deg'}],
           }}></Image>
-        <Text>Back</Text>
+        <Text></Text>
       </TouchableOpacity>
       {/* HEADER TEXT */}
       <View style={SignUpStyles.headerContainer}>
