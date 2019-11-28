@@ -2,7 +2,7 @@ import React from 'react';
 import {
   View,
   Text,
-  Image, 
+  Image,  
   Button,
   TouchableHighlight,
 } from 'react-native';
@@ -14,7 +14,7 @@ import LottieView from 'lottie-react-native';
 function DonationPosted(){
   var tt ='ha'
   return (
-   <View>
+   <View style={{backgroundColor:'#ffffff', flex:1}}>
        <View style={styles.mainbody}>
              <LottieView
                 source={require('../assets/lottieFiles/donatephone.json')}

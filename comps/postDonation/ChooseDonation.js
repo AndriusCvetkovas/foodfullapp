@@ -2,36 +2,48 @@ import React, {useState} from 'react';
 import {View, Text, Image, TouchableOpacity} from 'react-native';
 import {Actions} from 'react-native-router-flux';
 import ChooseDonationStyle from '../../styles/ChooseDonationStyle';
+import LottieView from 'lottie-react-native';
 
 function ChooseDonation(){
   const [donationType, setDonationType] = useState();
   const [optionColor1, setOptionColor1] = useState(false);
   const [optionColor2, setOptionColor2] = useState(false);
+  
   const changePage = () => {
     Actions.postdonation({dType: donationType});
   }
   function ChangeColor1() {
     setOptionColor1(!optionColor1);
     setOptionColor2(false);
-    setDonationType(0)
+    setDonationType(0);
+    
   }
   function ChangeColor2() {
     setOptionColor2(!optionColor2);
     setOptionColor1(false);
     setDonationType(1)
+    
   }
 
   var BGColor1 = '#F4F5F7';
   var HeaderColor1 = '#606060';
   var TextColor1 = '#606060';
-  var imageUrl1 = require('../../assets/icon/donating.png');
+  var imageUrl1 = require('../../assets/icon/public.png');
   var ShadowColor1 = '#9B9EA3';
   var ShadowOpacity1 = 0;
+  var imageDisplay = 'none';
 
   //Next Button
   var ButtonColor = '#EDEDEF';
   var ButtonBorder = '#EDEDEF';
   var ButtonText = '#606060';
+
+
+  var hidepublic =<Image
+    style = {ChooseDonationStyle.optionImage}
+    source = {imageUrl1}
+    />;
+
 
   if (optionColor1 === true) {
     BGColor1 = '#ffffff';
@@ -42,14 +54,25 @@ function ChooseDonation(){
     ButtonColor = '#0ca3bc';
     ButtonBorder = '#0ca3bc';
     ButtonText = '#ffffff';
-    imageUrl1 = require('../../assets/icon/donating_active.png');
+    hidepublic = <LottieView
+        source={require('../../assets/lottieFiles/public_active.json')}
+        style={{ width: 105, height: 120, marginBottom:55,left:-5.5, marginRight:-5}}
+        autoPlay
+        loop
+    />
   }
+
   var BGColor2 = '#F4F5F7';
   var HeaderColor2 = '#606060';
   var TextColor2 = '#606060';
-  var imageUrl2 = require('../../assets/icon/accepting.png');
+  var imageUrl2 = require('../../assets/icon/private.png');
   var ShadowColor2 = '#9B9EA3';
   var ShadowOpacity2 = 0;
+
+  var hideprivate =<Image
+  style = {ChooseDonationStyle.optionImage}
+  source = {imageUrl2}
+  />;
 
   if (optionColor2 === true) {
     BGColor2 = '#ffffff';
@@ -60,8 +83,16 @@ function ChooseDonation(){
     ButtonColor = '#34a3bd';
     ButtonBorder = '#0ca3bc';
     ButtonText = '#ffffff';
-    imageUrl2 = require('../../assets/icon/accepting_active.png');
+    hideprivate = <LottieView
+    source={require('../../assets/lottieFiles/private_active.json')}
+    style={{ width: 105, height: 122, marginBottom:53,left:-4, marginRight:-5}}
+    autoPlay
+    loop
+/>
+    
   }
+  
+    
     return(
         <View style = {ChooseDonationStyle.backgroundView}>
             <View style = {ChooseDonationStyle.titleContainer}>
@@ -80,13 +111,12 @@ function ChooseDonation(){
                     </Text>
 
                     <View style ={ChooseDonationStyle.optionInfo}>
-                        <Image
-                        style = {ChooseDonationStyle.optionImage}
-                        source = {imageUrl1}
-                        />
+                    
+                        {hidepublic}
+                        
 
                         <Text style = {[ChooseDonationStyle.optionDescription, {color: TextColor1}]}>
-                            This donation will be posted publicly and will be visible to all foodbanks in the area
+                            Post your donation publicly for organizations to claim it. 
                         </Text>
                     </View>
                 </TouchableOpacity>
@@ -102,13 +132,10 @@ function ChooseDonation(){
                     </Text>
 
                     <View style ={ChooseDonationStyle.optionInfo}>
-                        <Image
-                        style = {ChooseDonationStyle.optionImage}
-                        source = {imageUrl2}
-                        />
+                    {hideprivate}
 
-                        <Text style = {[ChooseDonationStyle.optionDescription, {color: TextColor2}]}>
-                            This donation will be posted publicly and will be visible to all foodbanks in the area
+                        <Text style = {[ChooseDonationStyle.optionDescription, {color: TextColor2, top:-10}]}>
+                            Choose the organization you'd like to donate to.
                         </Text>
                     </View>
                 </TouchableOpacity>
