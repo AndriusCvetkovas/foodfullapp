@@ -2,6 +2,14 @@ import {StyleSheet} from 'react-native';
 
 
 const styles = StyleSheet.create({
+popup:{
+  height: 500, 
+  width: 330, 
+  backgroundColor: 'white', 
+  marginTop:15, 
+  padding:25, 
+  borderRadius:30
+  },
 inputContainer: {
     borderBottomColor: '#F5FCFF',
     backgroundColor: '#F0F0F0',

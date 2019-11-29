@@ -218,6 +218,9 @@ import Modal from "react-native-modal";
 
 
             {/* EDIT PROFILE POPUP SECTION - THIS UPDATES USER INFO IN DATABASE*/}
+
+    
+
             <Modal isVisible={showModal}
             coverScreen={false}
             animationIn='slideInUp'
@@ -225,8 +228,15 @@ import Modal from "react-native-modal";
             isVisible = {showModal}
             onBackdropPress={() => setShowModal(!showModal)}
             >
-            <View style = {{height: 500, width: 330, backgroundColor: 'white', marginTop:15, padding:25, borderRadius:30 }}>
-                   
+                {/* X to close popup */}
+                 <TouchableOpacity style ={{position: 'absolute', top: 80, right: 45, zIndex:1}}
+                onPress={()=>{setShowModal(!showModal)}}>
+                    <Image
+                    source={require('../../assets/icon/x.png')}
+                     style = {{width: 15, height: 15}}
+                    />
+                </TouchableOpacity>
+            <View style = {EditStyles.popup}>
             <Text style ={EditStyles.header}>Edit Profile</Text>
             <Text style ={ProfileStyle.titles}>Address</Text>
             <View style={EditStyles.inputContainer}>
@@ -274,20 +284,17 @@ import Modal from "react-native-modal";
               }}
               /> 
         </View>
-
         <TouchableOpacity style={[EditStyles.buttonContainer, EditStyles.signupButton]} 
           title="UPDATE USER"
           onPress={()=>{
               UpdateUser();
+              setShowModal(!showModal)
           }}>
                         
          <Text style={EditStyles.signUpText}>Update</Text>
         </TouchableOpacity>
             </View>
             </Modal>
-
-
-
         </View>
     )
 }
