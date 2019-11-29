@@ -15,18 +15,29 @@ var AcceptNFStyle = StyleSheet.create({
         width: '80%',
         backgroundColor: 'white',
         borderRadius: 30,
-        padding: 20,
+        // padding: 20,
         alignItems: 'center',
         justifyContent: 'center',
-
         
-
+    },
+    DImage:{
+        
+        flex: 1,
+        resizeMode: 'cover', 
+        borderTopRightRadius:30, 
+        borderTopLeftRadius: 30 
     },
     donationInfoTop: {
-        flex: 1,
+        flex: 1.5,
+        borderTopLeftRadius: 30,
+        borderTopRightRadius:30,
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'center',
+        resizeMode: 'cover',
+        width: '100%',
+        marginBottom:10,
+        backgroundColor: '#0ca3bc',
     },
     imageText: {
         flex: 1,
@@ -73,7 +84,7 @@ var AcceptNFStyle = StyleSheet.create({
         
     },
     TextDisplay: {
-        flex: 2
+        flex: 0.3
 
 
     },

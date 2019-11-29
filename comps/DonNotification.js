@@ -7,6 +7,8 @@ import Modal from "react-native-modal";
 import AcceptNFStyle from '../styles/AcceptNFStyle';
 import AppHeaderStyle from '../styles/headerStyle';
 import LottieView from 'lottie-react-native';
+import Swiper from 'react-native-swiper'
+
 function DonNotification() {
     const [showModal, setShowModal]= useState(false);
     var currentId = "";
@@ -60,7 +62,7 @@ function DonNotification() {
                 {/*Donation info below */}
 
                 <View style={AcceptNFStyle.donationInfoTop}>
-                    <View style={AcceptNFStyle.Images}>
+                    {/* <View style={AcceptNFStyle.Images}>
                         <Text style={AcceptNFStyle.Date}>14</Text>
                         <Text style={AcceptNFStyle.Month}>Jun</Text>
                     </View>
@@ -68,14 +70,30 @@ function DonNotification() {
                     <View style={AcceptNFStyle.TextDisplay}>
                             <Text style={AcceptNFStyle.Organization}>{dd.name}</Text>
                             <Text style={AcceptNFStyle.address}>Donation Request</Text>
+                    </View> */}
+
+                <Swiper  showsButtons={true}>
+                    <View style={AcceptNFStyle.DImage}>
+                        <Text>Hello Swiper</Text>
                     </View>
+                    <View style={AcceptNFStyle.DImage}>
+                        <Text>Beautiful</Text>
+                    </View>
+                    <View style={AcceptNFStyle.DImage}>
+                        <Text>simple</Text>
+                    </View>
+                </Swiper>
+
 
                 </View>
                 {/*Image text below */}
-
+                <View style={AcceptNFStyle.TextDisplay}>
+                            <Text style={AcceptNFStyle.Organization}>{dd.name}</Text>
+                            <Text style={AcceptNFStyle.address}>Donation Request</Text>
+                    </View> 
                 {/*Date of pickup below */}
                 <View style={AcceptNFStyle.pickupDate}>
-                    <Text style={{ color: '#0ca3bc', fontSize: 18, flex: 1 }}>Loaction</Text>
+                
                     <Text style={{ color: '#066a87', fontSize: 16, flex: 1}}>{dd.address}</Text>
                 </View>
                 {/*Pickup time below */}
