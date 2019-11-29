@@ -5,6 +5,9 @@ import buttonStyle from '../styles/buttonStyle';
 import {Actions} from 'react-native-router-flux';
 import AcceptedInfo from '../comps/NotifPickComfirm';
 import PickUpStyle from '../styles/pickUpStyle';
+import MsgCancelDonation from '../comps/MsgCancelDonation';
+import GMapStyle from '../styles/mapStyle';
+
 
 
 
@@ -80,6 +83,95 @@ function PickedUpComfirm(props){
           
     );
 
+
+    var cancelPickUp = (
+        <View style = {PickUpComfirmSty.main}>
+           
+            <View style = {PickUpComfirmSty.main2}>
+            <View
+        style = {GMapStyle.infoBox}
+        >
+            {/*Title box below*/} 
+            <View
+            style = {{marginTop: 50}}>
+                <Text
+                style = {GMapStyle.CancelledText}
+                >Pick Up Cancelled</Text>
+            </View>
+            {/*Image box below*/} 
+           
+            {/*Date box below*/} 
+            <View
+            style = {GMapStyle.messageBox}
+            >
+                <Text style = {{height:70,marginTop: 40, fontFamily: 'DidactGothic-Regular', fontSize: 15}}>You have cancelled this donation from Safeway Extra.
+They will be informed that you are no longer picking
+up this donation.</Text>
+                <Text style = {{color: '#0ca3bc'}}></Text>
+            </View>
+            <View
+            style = {{flexDirection: 'row', width: "80%", flex: 0.4}}
+            >
+                <Text style = {{flex: 1, color: '#0ca3bc', fontFamily: 'Avenir', fontSize: 18}}>Location:</Text>
+                <Text style = {{flex: 1, fontFamily: 'DidactGothic-Regular', fontSize: 15}}>6666 Iona</Text>
+            </View>
+            {/*Time box below*/} 
+            <View style = {{flexDirection: 'row', width: "80%", flex: 0.4}}>
+                <Text style = {{color: '#0ca3bc', flex: 1, fontFamily: 'DidactGothic-Regular', fontSize: 15}}>Pickup time:</Text>
+                <Text
+                style = {{color: "black", flex: 1, fontFamily: 'DidactGothic-Regular', fontSize: 15}}
+                >
+                    1:20pm
+                </Text>
+            </View>
+            
+            {/*Button below*/}
+            <TouchableOpacity
+            onPress = {
+                props.obj.hide,
+                console.log("Olala")
+            }
+    
+            
+            title="Accept"
+            style = {buttonStyle.button}>
+                <Text
+                style = {{color: 'white', fontWeight: '500', fontFamily: 'avenir', fontSize: 16}}
+                >View Donations</Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              onPress={()=>
+                  {props.obj.hide},
+                  console.log('Modal Has been Closed')
+
+            } 
+            
+            title="Accept"
+            style = {buttonStyle.button2}>
+                <Text
+                style = {{color: '#0ca3bc', fontWeight: '500', fontFamily: 'avenir', fontSize: 16}}
+                >Search for Donations</Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity style ={{position: 'absolute', top: -5, right: 5}}
+                onPress={props.obj.hide} 
+                >
+                    <Image
+
+                    source={require('../assets/icon/x.png')}
+                    style = {{width: 15, height: 15}}
+                    />
+            </TouchableOpacity>
+        </View>
+
+      
+            </View>
+           
+        </View>
+        
+          
+    );
+
     var pickedUpModal =(
     <View style = {PickUpComfirmSty.main}>
         <View style = {PickUpComfirmSty.main2}>
@@ -146,8 +238,8 @@ function PickedUpComfirm(props){
                 >Picked Up</Text>
             </TouchableOpacity>
             <TouchableOpacity
-            onPress={props.obj.hide} 
-            title="Accept"
+             onPress={()=>setPickedUpContent(cancelPickUp)} 
+             title="Accept"
             style = {PickUpComfirmSty.button2}>
                 <Text
                 style = {{color: 'red', fontSize: 16, fontWeight: '500'}}
