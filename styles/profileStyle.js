@@ -16,12 +16,12 @@ var ProfileStyle = StyleSheet.create({
         height:'60%',
         top:-130,
         borderBottomLeftRadius:30,
-        borderBottomRightRadius:30,
+        borderBottomRightRadius:30, 
     },
     // Profile Image
     imageViewStyle:{
         flex: 0.5,
-        zIndex: 6,
+        zIndex: 1,
         alignItems: 'center',
         justifyContent: 'center',
         top: 30,

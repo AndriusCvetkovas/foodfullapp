@@ -4,7 +4,7 @@ import LeaderboardStyles from '../../styles/leaderboardStyle.js';
 function Leaderboard(){
     return(
         //Main View
-        <View style={LeaderboardStyles.mainView}>
+        <View style={LeaderboardStyles.mainView}> 
             {/*Your rank below*/}
 
             <View style={LeaderboardStyles.background}>
@@ -12,7 +12,7 @@ function Leaderboard(){
                     source={require('../../assets/img/blue_background.png')}/>
             </View>
             <View style={LeaderboardStyles.yourRank}>
-                    <Text style={{color:'#ffffff', fontFamily:'Avenir', fontWeight:'600', fontSize:20}}>You are currently in</Text>
+                    <Text style={{color:'#ffffff', fontFamily:'Avenir', fontWeight:'600', fontSize:25}}>You are currently in</Text>
                     <Text style={{color:'#ffffff', fontFamily:'Avenir', fontWeight:'800', fontSize:35}}>2nd Place</Text>
             </View>
  
@@ -23,11 +23,22 @@ function Leaderboard(){
                         style={LeaderboardStyles.yourImage}
                         source={require('../../assets/img/safeway.jpg')}
                      />
+                     
                 </View>
 
             {/*Stats/ your info below*/}
                 <View style = {LeaderboardStyles.yourStats}>
-                    
+                <View style={{ margin: 5 }}>
+                            <View style={{ flexDirection: 'row', alignItems:'center' }}>
+                                <Text style={LeaderboardStyles.title}>You are in </Text>
+                                <Text style={{ color: '#0ca3bc', fontSize: 23, marginBottom: 5, fontFamily: 'Avenir', fontWeight: '800' }}>2nd </Text>
+                                <Text style={LeaderboardStyles.title}>place</Text>
+                            </View>
+                            <View style={{ flexDirection: 'row' }}>
+                                <Text style={{ color: '#0ca3bc', fontSize: 18, marginRight: 15 }}>40 Donations</Text>
+                                <Text style={{ color: '#A4D638', fontSize: 18, fontFamily: 'Avenir', fontWeight: '800' }}>1100 Kg</Text>
+                            </View>
+                        </View>
                 </View>
             </View>
 

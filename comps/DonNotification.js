@@ -119,12 +119,18 @@ function DonNotification() {
                     
                     
                     return (
+
+                        
                         <View style={[donationStyle.CardDisplay, {top: 50,}]}>
                             <View style={donationStyle.Images}>
-                            <Image
+                            
+                  <Text style={donationStyle.Date}>14</Text>
+                  <Text style={donationStyle.Month}>Jun</Text>
+           
+                            {/* <Image
                                 style={{height: 60, width: 70}}
                                 source={require('../assets/icon/donating.png')}
-                                />
+                                /> */}
                             </View>
                             <View style={donationStyle.TextDisplay}>
                                 <View>
@@ -136,22 +142,14 @@ function DonNotification() {
 
                             </View>
                             <View style={donationStyle.TextDisplay}>
-                                <TouchableOpacity style = {{right: -120, top: -20, }}
+                                <TouchableOpacity style = {{right: -120, top: -50, }}
                                 onPress={()=> [setShowModal(!showModal), setdd(d)]}
                                 >
                                     <Image style={donationStyle.Dots} source={require("../assets/icon/dot_nav.png")} />
                                 </TouchableOpacity> 
-                            {/* <Text style={[donationStyle.accpText, {color: colorz}]}>{texta}</Text> */}
-                                <View style={donationStyle.option}>
-                                    {/* <TouchableOpacity
-                                        style={donationStyle.BtnStyleBlueView}
-                                        underlayColor='#000'
-                                        color='000'
-                                        onPress={()=>{[setShowModal(!showModal),setdd(d)]}}>
-                                        <Text style={donationStyle.btnText}>View</Text>
-                                    </TouchableOpacity> */}
-                                </View>
                             </View>
+
+                            
                         </View>
                     )
                 })
@@ -161,6 +159,8 @@ function DonNotification() {
 
         
         </ScrollView>
+
+        
         </View>
     )
 };

@@ -96,7 +96,7 @@ function LoginPage() {
       </View>
 
       {/* HEADER AND SUBHEADER */}
-      <View style={{top:-40}}>
+      <View style={{top:-50}}>
         <Text style={Loginstyles.header}>
           Foodfull
           </Text>
@@ -133,16 +133,17 @@ function LoginPage() {
       </View>
 
 
-
       <TouchableOpacity style={[Loginstyles.buttonContainer, Loginstyles.signinButton]} onPress={() => CheckUsers()}>
         <Text style={Loginstyles.signInText}>Sign In</Text>
       </TouchableOpacity>
 
       <View style={Loginstyles.signUpFooter}>
         <Text style={Loginstyles.signUpText}>Don't have account?</Text>
-        <Text
-          style={Loginstyles.link}
-          onPress={() => Actions.signup()}> Sign Up</Text>
+        <TouchableOpacity
+          onPress={() => Actions.signup()}
+          style={{height:30}}>
+            <Text style={Loginstyles.link}> Sign Up </Text>
+          </TouchableOpacity>
 
       </View>
 

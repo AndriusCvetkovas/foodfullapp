@@ -3,13 +3,13 @@ var styles = StyleSheet.create({
     mainbody:{
     flex:1,
     alignItems:"center",
-    top: 80
+    top: 80,
   },
   headers:{
     width:200,
     height:100,
     marginTop:20,
-},
+}, 
 
 contents:{
     width:300,

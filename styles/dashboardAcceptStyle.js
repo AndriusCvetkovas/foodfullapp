@@ -58,7 +58,7 @@ var DashStyle = StyleSheet.create({
     donations: {
         flexDirection:'row', 
         flex:1.2,
-        width:'92%',
+        width:'90%',
         justifyContent:'center', 
         alignItems:'center',
         top:-40, 
@@ -90,7 +90,7 @@ var DashStyle = StyleSheet.create({
     // Upcoming schedule
     notifContainer:{
         flex:4,
-        width:'92%',
+        width:'90%',
         justifyContent:'center', 
         alignItems:'center',
         top:-50, 

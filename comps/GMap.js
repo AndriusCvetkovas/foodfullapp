@@ -104,7 +104,6 @@ function GMap() {
       </MapView>
       <ScrollView horizontal={true} style={GMapStyle.viewStyle}
       showsHorizontalScrollIndicator={false}
-      pagingEnabled={true}
       >
         {
           users.map((d, i)=>{

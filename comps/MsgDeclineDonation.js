@@ -1,29 +1,29 @@
 import React from 'react';
 import {View, Text, Image, TouchableHighlight} from 'react-native';
-import GMapStyle from '../styles/mapStyle';
+import MsgNfStyles from '../styles/MsgNfStyles';
 import buttonStyle from '../styles/buttonStyle';
 
 function MsgDeclineDonation(){
     return(
         <View
-        style = {GMapStyle.infoBox}
+        style = {MsgNfStyles.infoBox}
         >
             {/*Title box below*/} 
             <View
             style = {{marginTop: 50}}>
                 <Text
-                style = {GMapStyle.CancelledText}
+                style = {MsgNfStyles.CancelledText}
                 >Donation Declined</Text>
             </View>
             {/*Image box below*/} 
             <View 
-            style = {GMapStyle.imageBox}
+            style = {MsgNfStyles.imageBox}
             >
                
             </View>
             {/*Date box below*/} 
             <View
-            style = {GMapStyle.messageBox}
+            style = {MsgNfStyles.messageBox}
             >
                 <Text style = {{height:70,marginTop: 40, fontFamily: 'DidactGothic-Regular', fontSize: 15}}>You have cancelled this donation from Safeway Extra.
                 You have declined this donation request</Text>
