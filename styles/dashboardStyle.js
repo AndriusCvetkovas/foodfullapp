@@ -4,78 +4,139 @@ var DashStyle = StyleSheet.create({
     main: {
         flex: 1,
         alignItems: 'center',
-        justifyContent: 'center'
-    },
-    pending: {
-        flex: 1,
         justifyContent: 'center',
-        alignItems: 'center',
-        borderRadius: 20,
-        backgroundColor: '#06a2bc',
-        width: '92%',
-        padding: 5
+        backgroundColor: '#f7f7f7'
     },
-    innerPendingBox: {
-        flex: 1,
-        margin: 5,
-        width: '95%',
-        backgroundColor: 'white',
-        borderRadius: 10,
-        flexDirection: 'row',
-        alignItems: 'center'
+    // Dashboard illustration
+    backgroundImg:{
+        width:'100%',  
+        flex:4,
+        top:0, 
+        justifyContent:'center', 
+        alignItems:'center',
     },
-    dateBubble: {
-        width: 60,
-        height: 60,
-        backgroundColor: '#a4d638',
-        borderRadius: 50,
-        alignItems: 'center',
-        justifyContent: 'center',
-        marginRight: 40,
-        marginLeft: 10
+    // Donation Button
+    donateContainer:{
+        justifyContent:'center', 
+        alignItems:'center', 
+        marginLeft:0
     },
-    
-    your: {
-        marginTop: 0,
-        flex: 0.5,
-        borderRadius: 30,
-        backgroundColor: 'white',
-        shadowColor: '#aaaaaa',
-        shadowOffset: { width: 2, height: 3 },
-        shadowOpacity: 0.5,
-        shadowRadius: 10,
-        elevation: 2,
-        alignItems: 'center',
-        justifyContent: 'center',
-        padding: 20
+    donateButton:{
+        backgroundColor:'#13bfd1',
+        width:150,
+        height:40,
+        zIndex: 5,
+        top: -10,
+        alignItems:'center',
+        justifyContent:'center',
+        borderRadius:30,
     },
+    donateButtonText:{
+        fontFamily:'Avenir',
+        fontSize:20,
+        fontWeight:'800',
+        color:'#ffffff',
+    },
+    header:{
+        color:'#0ca3bc',
+        fontFamily:'Avenir',
+        fontSize:28,
+        fontWeight:'700',
+        top: -30,
+        width:'100%',
+        marginLeft:0,
+        lineHeight:36
+    },
+
+    //LeaderBoard
     innerLeadB: {
-        flex: 1,
         flexDirection: 'row',
-        alignItems: 'center'
+        alignItems: 'center',
     },
     leaderBoardMain: {
-        flex: 2,
+        flex: 1.6,
+        backgroundColor: '#ffffff',
         shadowColor: '#aaaaaa',
-        backgroundColor: 'white',
-        shadowOffset: { width: 0, height: 0 },
-        shadowOpacity: 0.8,
-        shadowRadius: 2,
+        shadowOffset: { width: 0, height: 2 },
+        shadowOpacity: 0.4,
+        shadowRadius: 8,
         elevation: 0,
-        width: '92%',
-        marginTop: 15,
-        marginBottom: -50,
-        borderRadius: 30
+        width: '90%',
+        borderRadius: 30,
+        top:-70,
+        justifyContent:'center',
+        alignItems:'center'
     },
-    leaderDetail: {
-        flex: 1,
-        flexDirection: 'row',
-        alignItems: 'center',
-        marginTop: 5,
-        padding: 10
+    announcementText:{
+        color: '#01657c', 
+        fontSize: 20, 
+        marginBottom: 5, 
+        fontFamily:'Avenir', 
+        fontWeight:'600' 
     },
-    leader: {
-        flex: 1
-    }
+    rankNumber:{
+        color: '#0ca3bc', 
+        fontSize: 23, 
+        marginBottom: 5, 
+        fontFamily:'Avenir', 
+        fontWeight:'800'
+    }, 
+
+    // Upcoming schedule
+    title:{
+        fontSize:25,
+        fontFamily:'Avenir',
+        fontWeight:'500',
+        marginBottom:15,
+        color:'#0ca3bc'
+    },
+    today:{
+        left:0, 
+        flexDirection:'row', 
+        alignItems:'center', 
+        marginBottom:20
+    },
+    dateTitle:{
+        fontFamily:'Avenir',
+        fontSize:18,
+        fontWeight:'600',
+        color:'#727272',
+        marginRight:20,
+    },
+    line:{
+        borderBottomWidth:2,
+        borderColor:'#d8d8d8',
+        width:50,
+    },
+    notifContainer:{
+        flex:3.5,
+        width:'90%',
+        justifyContent:'center', 
+        alignItems:'center',
+        top:-50, 
+        borderRadius:30,
+        padding:20,
+        shadowColor: '#aaaaaa',
+        shadowOffset: { width: 0, height: 1 },
+        shadowOpacity: 0.4,
+        elevation:0,
+        backgroundColor:'#ffffff', 
+        shadowRadius: 5,
+    },
+    notification:{
+        flex:1,
+        width:'100%',
+        borderRadius:20, 
+        justifyContent:'center',
+        alignItems:'center',
+        backgroundColor:'pink',
+    },
+  
+    companyName:{
+        fontSize:20, 
+        fontFamily:'avenir', 
+        fontWeight:'500'
+    },
+
 });
 export default DashStyle;

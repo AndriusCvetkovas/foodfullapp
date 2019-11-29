@@ -2,7 +2,7 @@ import {StyleSheet} from 'react-native';
 
 var footerStyle = StyleSheet.create({
     comp:{
-        flex:1,
+        flex:0.11,
         flexDirection: 'row',
         backgroundColor:'#ffffff',
         justifyContent: 'center',

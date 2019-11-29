@@ -7,22 +7,23 @@ var mainStyle = StyleSheet.create({
     },
     AppHeader:{
         maxHeight:'20%',
-        height:'20%',
+        height:'13%',
         top: 0 ,
-        resizeMode: 'cover',
-        zIndex: 2
+        backgroundColor: 'transparent'
 
     },
 
     AppContent:{
         flex:1,
+        top: 0,
         height: '100%'
     },
 
     AppFooter:{
         backgroundColor:'#f6fafd',
         bottom: 0,
-        flexDirection: 'row'
+        flexDirection: 'row',
+        
     }
  });
 
