@@ -13,6 +13,8 @@ import GMapStyle from '../styles/mapStyle';
 
 function PickedUpComfirm(props){
     const [value, onChangeText] = React.useState('LBS');
+    var dd = props.dd;
+    console.log(dd);
     var acceptedInfoContent = (
         <View style = {PickUpComfirmSty.main}>
         <View style = {PickUpComfirmSty.main2}></View>
@@ -185,7 +187,7 @@ up this donation.</Text>
 
               <View style={PickUpComfirmSty.TextDisplay}>
                   <View>
-                      <Text style={PickUpComfirmSty.Organization}>Safeway Extra</Text>
+                      <Text style={PickUpComfirmSty.Organization}>{dd.name}</Text>
                   </View>
                   <View>
                     <Text style={PickUpComfirmSty.address}>Pending</Text>
@@ -212,12 +214,12 @@ up this donation.</Text>
             {/*Date of pickup below */}
             <View style = {PickUpComfirmSty.pickupDate}>
                 <Text style = {{ color: '#0ca3bc',fontSize: 18, flex: 1}}>Pickup loaction</Text>
-                <Text style = {{color: '#066a87', fontSize: 16, flex: 1, marginTop:18}}>20014 Coquitlam V3C 5W8</Text>
+                <Text style = {{color: '#066a87', fontSize: 16, flex: 1, marginTop:18}}>{dd.address}</Text>
             </View>
             {/*Pickup time below */}
             <View style = {PickUpComfirmSty.pickupTime}>
                 <Text style = {{color: '#0ca3bc', fontSize: 18, flex: 1}}>Pickup Time</Text>
-                <Text style = {{color: '#066a87', fontSize: 16, flex: 1, marginTop:5}}>3:00 pm - 7:00 pm</Text>
+                <Text style = {{color: '#066a87', fontSize: 16, flex: 1, marginTop:5}}>{dd.time}</Text>
             </View>
             {/*Description title below */}
             <Text
@@ -227,7 +229,7 @@ up this donation.</Text>
             <Text
             style = {PickUpComfirmSty.description}
             >
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad 
+            {dd.description}
             </Text>
             <TouchableOpacity
              onPress={()=>setPickedUpContent(acceptedInfoContent)} 
