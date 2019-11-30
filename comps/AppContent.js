@@ -117,12 +117,13 @@ function AppContent() {
             title="Dashboard"
             hideNavBar={true}
             panHandlers={null}
+            initial
           />
           <Scene 
           key='choosedonation'
           component={ChooseDonation}
           hideNavBar={true}
-          initial
+          
           />
           <Scene
             key="postdonation"
@@ -188,6 +189,7 @@ function AppContent() {
             component={DashboardAccept}
             title="Dashboard"
             hideNavBar={true}
+            initial
           />
           <Scene
             key="notification1"

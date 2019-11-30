@@ -13,15 +13,14 @@ import { Actions } from 'react-native-router-flux';
 import Dashboard from './Dashboard.js';
 import Schedule from './Schedule';
 
-
 var type = "";
 function Appfooter({navigation}) {
-  console.log(navigation.state.index);
   
   //GET USER TYPE 
   const getType = async () =>{
     var json = await AsyncStorage.getItem('type');
     type = json;
+    console.log('user type: ', type)
     CheckUser();
 }
   const [colorHome, changeColorHome] = useState(require('../assets/icon/home_active.png'));
@@ -48,7 +47,7 @@ function Appfooter({navigation}) {
     }
   }
   const CheckActive = ()=>{
-    if(type ==0){
+    if(type == 0){
       changeMainButton(require('../assets/icon/donate.png'))
       if(navigation.state.index == 0){
         changeColorHome(require('../assets/icon/home_active.png'));
