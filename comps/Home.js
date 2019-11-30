@@ -6,7 +6,7 @@ import {Actions} from 'react-native-router-flux';
 import HomeStyle from '../styles/HomeStyle';
 
 
-export default class Home extends Component {
+export default class Home extends Component { 
   render() {
     return (
        <View style={HomeStyle.comp} >
