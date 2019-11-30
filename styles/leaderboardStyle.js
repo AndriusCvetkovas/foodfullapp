@@ -14,19 +14,26 @@ var LeaderboardStyles = StyleSheet.create({
         backgroundColor: '#06a2bc',
         width: '100%',
         height:'70%',
-        top:-100,
+        top:-90,
         borderBottomLeftRadius:30,
         borderBottomRightRadius:30,
+    },
+    title:{
+        color: '#01657c', 
+        fontSize: 20, 
+        marginBottom: 5, 
+        fontFamily: 'Avenir', 
+        fontWeight: '600'
     },
     yourRank:{
         position:'absolute', 
         flexDirection:'column', 
         justifyContent:'center',       
         alignItems:'center', 
-        top:0
+        top:50
     },
     yourBox: {
-        flex: 0.15,
+        flex: 0.12,
         flexDirection: 'row',
         width: '90%',
         backgroundColor: '#ffffff',
@@ -36,9 +43,9 @@ var LeaderboardStyles = StyleSheet.create({
         shadowRadius: 5,
         elevation: 5,
         borderRadius: 30,
-        paddingTop: 20,
+        paddingTop: 25,
         paddingBottom: 20,
-        top:-35
+        top:15
     },
     imageBox: {
         flex: 1,
@@ -66,7 +73,7 @@ var LeaderboardStyles = StyleSheet.create({
         shadowRadius: 5,
         elevation: 5,
         borderRadius: 30,
-        top:-18,
+        top:30,
         flexDirection:'row'
     },
     yourStats: {

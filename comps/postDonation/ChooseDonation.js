@@ -31,7 +31,7 @@ function ChooseDonation(){
   var imageUrl1 = require('../../assets/icon/public.png');
   var ShadowColor1 = '#9B9EA3';
   var ShadowOpacity1 = 0;
-  var imageDisplay = 'none';
+  
 
   //Next Button
   var ButtonColor = '#EDEDEF';

@@ -16,7 +16,7 @@ var ProfileStyle = StyleSheet.create({
         height:'60%',
         top:-130,
         borderBottomLeftRadius:30,
-        borderBottomRightRadius:30,
+        borderBottomRightRadius:30, 
     },
     // Profile Image
     imageViewStyle:{

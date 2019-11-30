@@ -18,7 +18,9 @@ import GetStarted from './comps/getStarted';
 import {Actions} from 'react-native-router-flux';
 
 
+
 function App() {
+  console.disableYellowBox = true
   return (
     
     <View style={mainStyle.App}>
