@@ -58,7 +58,7 @@ function SignUp() {
     var movetext = -30;
     hidedonating = <LottieView
     source={require('../../assets/lottieFiles/donating_option.json')}
-    style={{ width: 95,height: 95, marginBottom: 20,left:-1}}
+    style={{ width: 95,height: 95, marginBottom: 20,left:-1, marginRight: -25}}
     autoPlay
     loop
     />
@@ -86,7 +86,7 @@ function SignUp() {
     ButtonText = '#ffffff';
     hideaccepting = <LottieView
     source={require('../../assets/lottieFiles/accepting_option.json')}
-    style={{ width: 137,height: 132, marginBottom: 32,left:-8.5}}
+    style={{ width: 100,height: 132, marginBottom: 32,left:-8.5, marginRight: -67}}
     autoPlay
     loop
     />
