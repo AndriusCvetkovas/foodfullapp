@@ -14,7 +14,7 @@ import axios from 'axios';
 
 
 function PickedUpComfirm(props){
-
+var d = props.dd;
      //COMMUNICATION
             var currentId = "";
             const getID = async () => {
@@ -232,7 +232,7 @@ function PickedUpComfirm(props){
 
               <View style={PickUpComfirmSty.TextDisplay}>
                   <View>
-                      <Text style={PickUpComfirmSty.Organization}>Safeway Extra</Text>
+                      <Text style={PickUpComfirmSty.Organization}>{d.name}</Text>
                   </View>
                   <View>
                     <Text style={PickUpComfirmSty.address}>Pending</Text>
@@ -259,12 +259,12 @@ function PickedUpComfirm(props){
             {/*Date of pickup below */}
             <View style = {PickUpComfirmSty.pickupDate}>
                 <Text style = {{ color: '#0ca3bc',fontSize: 18, flex: 1}}>Pickup loaction</Text>
-                <Text style = {{color: '#066a87', fontSize: 16, flex: 1, marginTop:18}}>20014 Coquitlam V3C 5W8</Text>
+                <Text style = {{color: '#066a87', fontSize: 16, flex: 1, marginTop:18}}>{d.address}</Text>
             </View>
             {/*Pickup time below */}
             <View style = {PickUpComfirmSty.pickupTime}>
                 <Text style = {{color: '#0ca3bc', fontSize: 18, flex: 1}}>Pickup Time</Text>
-                <Text style = {{color: '#066a87', fontSize: 16, flex: 1, marginTop:5}}>3:00 pm - 7:00 pm</Text>
+                <Text style = {{color: '#066a87', fontSize: 16, flex: 1, marginTop:5}}>{d.time}</Text>
             </View>
             {/*Description title below */}
             <Text
@@ -274,7 +274,7 @@ function PickedUpComfirm(props){
             <Text
             style = {PickUpComfirmSty.description}
             >
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad 
+            {d.description}
             </Text>
             <TouchableOpacity
              onPress={()=>setPickedUpContent(acceptedInfoContent)} 
