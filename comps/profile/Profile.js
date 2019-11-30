@@ -51,21 +51,6 @@ import Modal from "react-native-modal";
         // setAdress(d[0].adress)
     }
 
-    // const ReadUsers = async()=>{
-
-    //     //fetch to the db to read
-    //     var obj = {
-    //         key:"users_read",
-    //         data:{}
-    //     }
-
-    //     var data = await axios.post("http://localhost:3001/post", obj);
-    //     console.log("read", JSON.parse(data.data.body));
-        
-    //     var dbusers = JSON.parse(data.data.body).data;
-    //     Setusers(dbusers);  
-
-    // }
 
     const UpdateUser = async() => {
         var obj = {
@@ -99,12 +84,6 @@ import Modal from "react-native-modal";
         DeleteData();
         Actions.login();
     }
-    // useEffect(()=>{
-    //     getID();
-    // }, []);
-    // useEffect(()=>{
-    //     GetUser();
-    // }, [getID()]);
     useEffect(()=> {
         getID();
     }, [])
