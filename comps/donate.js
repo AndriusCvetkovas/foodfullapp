@@ -181,7 +181,7 @@ function Donate({addr, ids, tt, dType}) {
     data: {
       date: selectedDate,
       time: selectedTime,
-      image_url: selectedUrl,
+      image_url: image,
       weight: 0,
       description: selectedDescription,
       user_id: id,
@@ -196,8 +196,8 @@ function Donate({addr, ids, tt, dType}) {
       setStatus(1);
       setShowModal(!showModal);
       //Actions.confirmdonation({ text: obj })
-    } else if (receiverId != 0 && text == null) {
-      alert('Please enter receiver');
+    } else if (receiverId != 0 && text == null && image == null) {
+      alert('Please make sure you entered everything');
     } else {
       Actions.confirmdonation({text: obj});
     }
