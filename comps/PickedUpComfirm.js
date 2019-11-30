@@ -21,17 +21,17 @@ function PickedUpComfirm(props){
                 var json = await AsyncStorage.getItem('id');
                 currentId = json;
                 console.log("userID " + currentId);
-                GetDonations();
+                GetDonationsPendings();
             }
             
             const [dd, setdd]=useState({});
             
-            const GetDonations = async () => {
+            const GetDonationsPendings = async () => {
                 var obj = {
                     key: "donations_read",
                     data: {
                         destination_id: currentId,
-                        status: 1
+                        status: 2
                     }
                 }
                 var r = await axios.post(`https://foodfullapp.herokuapp.com/post`, obj);
