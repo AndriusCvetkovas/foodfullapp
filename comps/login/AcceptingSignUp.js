@@ -79,14 +79,14 @@ function AcceptingSignUp({text}) {
 
 
   //GRAB CURRENT LOCATION
-  const [long, setLong] = useState();
-  const [lat, setLat] = useState();
-  const getPos = async () => {
-    await Geolocation.getCurrentPosition((data) => {
-      setLong(data.coords.longitude);
-      setLat(data.coords.latitude);
-    });
-  }
+  const [long, setLong] = useState(49);
+  const [lat, setLat] = useState(-123);
+  // const getPos = async () => {
+  //   await Geolocation.getCurrentPosition((data) => {
+  //     setLong(data.coords.longitude);
+  //     setLat(data.coords.latitude);
+  //   });
+  // }
   //AUTOCOMPLETE FUNCTION
   var suggestionList = [];
   const [prediction, setPrediction] = useState([]);
@@ -134,7 +134,7 @@ function AcceptingSignUp({text}) {
 
 
   useEffect(() => {
-    getPos();
+    //getPos();
     signUpType();
   }, []);
 
@@ -142,14 +142,14 @@ function AcceptingSignUp({text}) {
   return (
 
     <View style={DonSignStyles.container}>
-      <TouchableOpacity style ={{position: 'absolute', top: 50, left: 20, flexDirection: 'row', alignItems: 'center', justifyContent:'center'}}
+      <TouchableOpacity style ={{position: 'absolute', top: 70, left: 20, flexDirection: 'row', alignItems: 'center', justifyContent:'center'}}
             onPress={()=>Actions.signup()}> 
                 <Image
                 source = {require('../../assets/icon/next.png')}
-                style = {{width: 20, height: 20, transform: [
+                style = {{width: 25, height: 30, transform: [
                     { rotateY: '180deg'} ]}}
                 ></Image>
-                <Text>Back</Text>
+                <Text></Text>
             </TouchableOpacity>
 
       {/* HEADER: icon and text */}
