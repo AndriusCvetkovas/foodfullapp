@@ -53,6 +53,7 @@ function Donate({addr, ids, tt, dType}) {
   var orgInput = null;
 
   //IMAGE UPLOAD
+  const [image, setImage] = useState()
   function uploadMyImage() {
     ImagePicker.showImagePicker(options, async(response) => {
       if (response.didCancel) {
@@ -77,11 +78,15 @@ function Donate({addr, ids, tt, dType}) {
           "Accept":"image/*",
           "Content-Type":"image/*"
         }, RNFetchBlob.wrap(uri));
+        
 
         //get url back - one of the properties has the path
         //gtg let me know how it works thanks a lot! will keep you posted!
         //sorry i made it so difficult.
         console.log("r2", r2);
+        setImage('https://foodfull.s3-us-west-2.amazonaws.com/photo1.jpg');
+        //arr.push(r2.respInfo.redirects[0]);
+
         return false;
         var arr = imageDefault.map(o => {
           return o;
@@ -236,11 +241,8 @@ function Donate({addr, ids, tt, dType}) {
                     <Text style={donateStyle.addImagePlus}>+</Text>
                   </View>
                 </TouchableOpacity>
-                {imageDefault.map((obj, i) => {
-                  return (
                     <Image
-                      key={i}
-                      source={obj}
+                      source={{uri: `${image}`}}
                       style={{
                         height: 100,
                         width: 100,
@@ -248,8 +250,6 @@ function Donate({addr, ids, tt, dType}) {
                         marginLeft: 5,
                       }}
                     />
-                  );
-                })}
                 {/* <Image source={avatarSource} style={{height:100, width:100, borderRadius: 10}} /> */}
               </View>
             </ScrollView>
