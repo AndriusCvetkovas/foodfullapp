@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, Image, Button, TextInput, TouchableOpacity, TouchableHighlight, AsyncStorage, } from 'react-native';
+import { KeyboardAvoidingView, View, Text, Image, Button, TextInput, TouchableOpacity, TouchableHighlight, AsyncStorage, } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 import Loginstyles from '../../styles/LoginStyles';
 import axios from 'axios';
@@ -79,7 +79,10 @@ function LoginPage() {
     Auth();
   }
   return (
-    <View style={Loginstyles.container}>
+
+
+    <View  style={Loginstyles.container}>
+
 
       {/* LOGO / ANIMATION */}
       <View>
@@ -129,8 +132,10 @@ function LoginPage() {
             onChangeText={(pas) => setEnteredPassword(pas)}
           />
         </View>
-
       </View>
+      
+
+      
 
 
       <TouchableOpacity style={[Loginstyles.buttonContainer, Loginstyles.signinButton]} onPress={() => CheckUsers()}>
@@ -148,8 +153,6 @@ function LoginPage() {
       </View>
 
     </View>
-
-
   )
 };
 

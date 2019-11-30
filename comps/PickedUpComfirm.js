@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React,{useState,useEffect} from 'react';
 import {TextInput, View, Text, Image, TouchableOpacity, ScrollView} from 'react-native';
 import PickUpComfirmSty from '../styles/PickUpComfirmSty';
 import buttonStyle from '../styles/buttonStyle';
@@ -7,14 +7,58 @@ import AcceptedInfo from '../comps/NotifPickComfirm';
 import PickUpStyle from '../styles/pickUpStyle';
 import MsgCancelDonation from '../comps/MsgCancelDonation';
 import GMapStyle from '../styles/mapStyle';
+import axios from 'axios';
+
 
 
 
 
 function PickedUpComfirm(props){
-    const [value, onChangeText] = React.useState('LBS');
-    var dd = props.dd;
-    console.log(dd);
+var d = props.dd;
+     //COMMUNICATION
+            var currentId = "";
+            const getID = async () => {
+                var json = await AsyncStorage.getItem('id');
+                currentId = json;
+                console.log("userID " + currentId);
+                GetDonations();
+            }
+            
+            const [dd, setdd]=useState({});
+            
+            const GetDonations = async () => {
+                var obj = {
+                    key: "donations_read",
+                    data: {
+                        destination_id: currentId,
+                        status: 1
+                    }
+                }
+                var r = await axios.post(`https://foodfullapp.herokuapp.com/post`, obj);
+                var json = JSON.parse(r.data.body);
+                //console.log(json.data);
+                var d = json.data;
+                setDons(d);
+            }
+
+    const Update4 = async (thisId) => {
+        var obj = {
+            key: "donations_update",
+            data: {
+                id: thisId,
+                status: 4
+            }
+        }
+        var r = await axios.post(`https://foodfullapp.herokuapp.com/post`, obj);
+        var json = JSON.parse(r.data.body);
+        console.log(json.data);
+        console.log('Your Status is now 4');
+        
+    }
+
+
+    var inputValueInit = null;
+    const [inputValue, onChangeText] = React.useState(inputValueInit);
     var acceptedInfoContent = (
         <View style = {PickUpComfirmSty.main}>
         <View style = {PickUpComfirmSty.main2}></View>
@@ -55,16 +99,16 @@ function PickedUpComfirm(props){
                 
                 <TextInput
       style={PickUpStyle.InputSty}
-      onChangeText={text => onChangeText(text)}
-      value={value}
+      onChangeText={(text) => onChangeText(text)}
+      value={inputValue}
     />
             </View>
             
             {/*Button below*/}
             <TouchableOpacity
-            onPress={props.obj.hide} 
-            title="Accept"
-            style = {PickUpStyle.buttonS}>
+                onPress={()=>{Update4(dd.id),[setdd(d)]}}
+                title="Accept"
+                style = {PickUpStyle.buttonS}>
                 <Text
                 style = {{color: 'white'}}
                 >Confirm Pickup</Text>
@@ -107,8 +151,9 @@ function PickedUpComfirm(props){
             style = {GMapStyle.messageBox}
             >
                 <Text style = {{height:70,marginTop: 40, fontFamily: 'DidactGothic-Regular', fontSize: 15}}>You have cancelled this donation from Safeway Extra.
-They will be informed that you are no longer picking
-up this donation.</Text>
+                    They will be informed that you are no longer picking
+                    up this donation.
+                </Text>
                 <Text style = {{color: '#0ca3bc'}}></Text>
             </View>
             <View
@@ -187,7 +232,7 @@ up this donation.</Text>
 
               <View style={PickUpComfirmSty.TextDisplay}>
                   <View>
-                      <Text style={PickUpComfirmSty.Organization}>{dd.name}</Text>
+                      <Text style={PickUpComfirmSty.Organization}>{d.name}</Text>
                   </View>
                   <View>
                     <Text style={PickUpComfirmSty.address}>Pending</Text>
@@ -214,12 +259,12 @@ up this donation.</Text>
             {/*Date of pickup below */}
             <View style = {PickUpComfirmSty.pickupDate}>
                 <Text style = {{ color: '#0ca3bc',fontSize: 18, flex: 1}}>Pickup loaction</Text>
-                <Text style = {{color: '#066a87', fontSize: 16, flex: 1, marginTop:18}}>{dd.address}</Text>
+                <Text style = {{color: '#066a87', fontSize: 16, flex: 1, marginTop:18}}>{d.address}</Text>
             </View>
             {/*Pickup time below */}
             <View style = {PickUpComfirmSty.pickupTime}>
                 <Text style = {{color: '#0ca3bc', fontSize: 18, flex: 1}}>Pickup Time</Text>
-                <Text style = {{color: '#066a87', fontSize: 16, flex: 1, marginTop:5}}>{dd.time}</Text>
+                <Text style = {{color: '#066a87', fontSize: 16, flex: 1, marginTop:5}}>{d.time}</Text>
             </View>
             {/*Description title below */}
             <Text
@@ -229,7 +274,7 @@ up this donation.</Text>
             <Text
             style = {PickUpComfirmSty.description}
             >
-            {dd.description}
+            {d.description}
             </Text>
             <TouchableOpacity
              onPress={()=>setPickedUpContent(acceptedInfoContent)} 
@@ -263,7 +308,9 @@ up this donation.</Text>
 
     const[pickedUpContent, setPickedUpContent] = useState(pickedUpModal);
     
-  
+    useEffect(() => {
+        getID();
+    }, []);
 
     return(
         <View>

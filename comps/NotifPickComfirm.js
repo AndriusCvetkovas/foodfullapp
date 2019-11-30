@@ -4,7 +4,7 @@ import PickUpStyle from '../styles/pickUpStyle';
 // import buttonStyle from '../styles/buttonStyle';
 
 function AcceptedInfo(props){
-    const [value, onChangeText] = React.useState('LBS');
+    const [value, onChangeText] = React.useState(value);
     return(
         <View
         style = {PickUpStyle.infoBox}
@@ -44,7 +44,7 @@ function AcceptedInfo(props){
                 
                 <TextInput
       style={PickUpStyle.InputSty}
-      onChangeText={text => onChangeText(text)}
+      onChangeText={() => onChangeText()}
       value={value}
     />
             </View>
