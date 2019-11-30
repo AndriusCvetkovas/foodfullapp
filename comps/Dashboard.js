@@ -25,7 +25,7 @@ function Dashboard({navigation}) {
             status: 2,
         }
         }
-        var r = await axios.post(`https://foodfullapp.herokuapp.com/post`, obj);
+        var r = await axios.post(`http://localhost:3001/post`, obj);
         var json = JSON.parse(r.data.body);
         console.log(json.data, json.receivers);
         var d = json.data;
@@ -43,7 +43,7 @@ function Dashboard({navigation}) {
     //         id: id
     //     }
     //     }
-    //     var b = await axios.post(`https://foodfullapp.herokuapp.com/post`, obj);
+    //     var b = await axios.post(`http://localhost:3001/post`, obj);
     //     var json = JSON.parse(b.data.body);
     //     console.log(json.data);
     //     var bb = json.data;

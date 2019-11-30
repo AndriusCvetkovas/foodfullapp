@@ -20,7 +20,7 @@ function LoginPage() {
         password: password
       }
     }
-    var r = await axios.post(`https://foodfullapp.herokuapp.com/post`, obj);
+    var r = await axios.post(`http://localhost:3001/post`, obj);
     //console.log(r);
     var d = await JSON.parse(r.data.body)
     var userId = r.data.body;
@@ -48,7 +48,7 @@ function LoginPage() {
             id: userId
           }
         }
-        var userInfo = await axios.post(`https://foodfullapp.herokuapp.com/post`, obj);
+        var userInfo = await axios.post(`http://localhost:3001/post`, obj);
         var userT = await JSON.parse(userInfo.data.body);
         var type = JSON.stringify(userT.data[0].type)
         console.log(type);

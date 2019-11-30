@@ -24,7 +24,7 @@ function GMapAccept() {
         status: 0
       }
     }
-    var p = await axios.post(`https://foodfullapp.herokuapp.com/post`, obj)
+    var p = await axios.post(`http://localhost:3001/post`, obj)
     var json = JSON.parse(p.data.body);
     console.log(json);
     var d = json.data;

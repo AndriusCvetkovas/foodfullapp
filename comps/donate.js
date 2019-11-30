@@ -18,6 +18,9 @@ import ImagePicker from 'react-native-image-picker';
 import axios from 'axios';
 import Confirmation from './Confirmation';
 import Modal from 'react-native-modal';
+//import base64toblob from 'base64toblob';
+import RNFetchBlob from 'rn-fetch-blob';
+
 var id = '';
 var receiverId = 0;
 function Donate({addr, ids, tt, dType}) {
@@ -51,7 +54,7 @@ function Donate({addr, ids, tt, dType}) {
 
   //IMAGE UPLOAD
   function uploadMyImage() {
-    ImagePicker.showImagePicker(options, response => {
+    ImagePicker.showImagePicker(options, async(response) => {
       if (response.didCancel) {
         console.log('User cancelled image picker');
       } else if (response.error) {
@@ -60,7 +63,26 @@ function Donate({addr, ids, tt, dType}) {
         console.log('User tapped custom button: ', response.customButton);
       } else {
         const source = {uri: response.uri};
+        console.log("source", source);
+        //send image name over to your db pics/imagename.jpg
+        var r = await axios.post("http://localhost:3001/post", {key:"image_upload", data:{}})
 
+        //get url
+        var url = JSON.parse(r.data.body).data.url;
+        var uri = response.uri.replace("file://", "");
+        console.log("uri2", uri);
+        console.log("url",url);
+        //upload with this - done
+        var r2 = await RNFetchBlob.fetch('PUT', url, {
+          "Accept":"image/*",
+          "Content-Type":"image/*"
+        }, RNFetchBlob.wrap(uri));
+
+        //get url back - one of the properties has the path
+        //gtg let me know how it works thanks a lot! will keep you posted!
+        //sorry i made it so difficult.
+        console.log("r2", r2);
+        return false;
         var arr = imageDefault.map(o => {
           return o;
         });

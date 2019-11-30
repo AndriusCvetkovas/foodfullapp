@@ -39,7 +39,7 @@ import Modal from "react-native-modal";
             id: currentId
         }
         }
-        var r = await axios.post(`https://foodfullapp.herokuapp.com/post`, obj);
+        var r = await axios.post(`http://localhost:3001/post`, obj);
         var json = JSON.parse(r.data.body);
         console.log(json);
         var d = json.data;
@@ -80,7 +80,7 @@ import Modal from "react-native-modal";
                 
             }
         }
-        var r = await axios.post(`https://foodfullapp.herokuapp.com/post`, obj);
+        var r = await axios.post(`http://localhost:3001/post`, obj);
     console.log("test", r.data.body);
     }
 

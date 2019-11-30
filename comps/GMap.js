@@ -49,7 +49,7 @@ function GMap() {
         type: 1,
       },
     };
-    var r = await axios.post(`https://foodfullapp.herokuapp.com/post`, obj);
+    var r = await axios.post(`http://localhost:3001/post`, obj);
     var json = JSON.parse(r.data.body);
     console.log(json);
     var d = json.data;
