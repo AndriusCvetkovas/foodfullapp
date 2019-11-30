@@ -16,7 +16,7 @@ function DonNotification() {
         var json = await AsyncStorage.getItem('id');
         currentId = json;
         console.log("userID " + currentId);
-        GetDonations();
+        GetDonations();     
     }
 
     const [dons, setDons] = useState([]);
@@ -89,7 +89,7 @@ function DonNotification() {
                 {/*Image text below */}
                 <View style={AcceptNFStyle.TextDisplay}>
                             <Text style={AcceptNFStyle.Organization}>{dd.name}</Text>
-                            <Text style={AcceptNFStyle.address}>Donation Request</Text>
+                            {/* <Text style={AcceptNFStyle.address}>Donation Request</Text> */}
                     </View> 
                 {/*Date of pickup below */}
                 <View style={AcceptNFStyle.pickupDate}>
@@ -98,7 +98,7 @@ function DonNotification() {
                 </View>
                 {/*Pickup time below */}
                 <View style={AcceptNFStyle.pickupTime}>
-                    <Text style={{ color: '#0ca3bc', fontSize: 18, flex: 1 }}>Pickup Time</Text>
+                    <Text style={{ color: '#0ca3bc', fontSize: 18, flex: 1,fontWeight: "600" }}>Pickup Time</Text>
                     <Text style={{ color: '#066a87', fontSize: 16, flex: 1 }}>{dd.time}</Text>
                 </View>
                 {/*Description title below */}
