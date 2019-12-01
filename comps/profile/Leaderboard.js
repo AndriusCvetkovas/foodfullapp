@@ -11,10 +11,6 @@ function Leaderboard(){
             <Image style ={{width:'100%', height:'100%',}}
                     source={require('../../assets/img/blue_background.png')}/>
             </View>
-            <View style={LeaderboardStyles.yourRank}>
-                    <Text style={{color:'#ffffff', fontFamily:'Avenir', fontWeight:'600', fontSize:25}}>You are currently in</Text>
-                    <Text style={{color:'#ffffff', fontFamily:'Avenir', fontWeight:'800', fontSize:35}}>2nd Place</Text>
-            </View>
  
              {/*Image box below*/}
             <View style ={LeaderboardStyles.yourBox}>

@@ -127,7 +127,7 @@ export default class GetStarted extends Component {
         <Text style={styles.subheader}>Donate Food</Text>
         <LottieView
             source={require('../assets/lottieFiles/make_donation.json')}
-            style={{justifyContent:'center', alignItems:'center',height:320, width:'80%',top:-5, marginLeft:4.3}}
+            style={{justifyContent:'center', alignItems:'center',height:300, width:'70%',top:-5, marginLeft:4.3}}
             autoPlay
             loop
         />
