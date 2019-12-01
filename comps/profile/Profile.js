@@ -71,6 +71,7 @@ import RNFetchBlob from 'rn-fetch-blob';
         var r = await axios.post(`https://foodfullapp.herokuapp.com/post`, obj);
     console.log("test", r.data.body);
     Actions.refresh({key: 'profile'});
+    Actions.refresh({key: 'dashboard0'});
     }
  //AVATAR CHANGE
  const options = {
@@ -242,6 +243,9 @@ ImagePicker.showImagePicker(options, async(response) => {
 
 
             {/* EDIT PROFILE POPUP SECTION - THIS UPDATES USER INFO IN DATABASE*/}
+
+    
+
             <Modal isVisible={showModal}
             coverScreen={false}
             animationIn='slideInUp'
@@ -250,12 +254,20 @@ ImagePicker.showImagePicker(options, async(response) => {
             onBackdropPress={() => setShowModal(!showModal)}
             >
 
-                <TouchableOpacity onPress={() => uploadMyImage()}
+                {/* <TouchableOpacity onPress={() => uploadMyImage()}
                 style = {{top: 50, zIndex: 3}}>
                     <Text>Change Avatar</Text>
-                </TouchableOpacity>
-            <View style = {{height: 500, width: 330, backgroundColor: 'white', marginTop:15, padding:25, borderRadius:30 }}>
+                </TouchableOpacity> */}
                    
+                {/* X to close popup */}
+                 <TouchableOpacity style ={{position: 'absolute', top: 80, right: 45, zIndex:1}}
+                onPress={()=>{setShowModal(!showModal)}}>
+                    <Image
+                    source={require('../../assets/icon/x.png')}
+                     style = {{width: 15, height: 15}}
+                    />
+                </TouchableOpacity>
+            <View style = {EditStyles.popup}>
             <Text style ={EditStyles.header}>Edit Profile</Text>
             <Text style ={ProfileStyle.titles}>Address</Text>
             <View style={EditStyles.inputContainer}>
@@ -303,21 +315,18 @@ ImagePicker.showImagePicker(options, async(response) => {
               }}
               /> 
         </View>
-
         <TouchableOpacity style={[EditStyles.buttonContainer, EditStyles.signupButton]} 
           title="UPDATE USER"
           onPress={()=>{
               UpdateUser();
               setImage(`https://foodfull.s3-us-west-2.amazonaws.com/avatar${uId}.jpg`)
+              setShowModal(!showModal)
           }}>
                         
          <Text style={EditStyles.signUpText}>Update</Text>
         </TouchableOpacity>
             </View>
             </Modal>
-
-
-
         </View>
     )
 }

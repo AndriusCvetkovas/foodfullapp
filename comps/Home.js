@@ -6,7 +6,7 @@ import {Actions} from 'react-native-router-flux';
 import HomeStyle from '../styles/HomeStyle';
 
 
-export default class Home extends Component {
+export default class Home extends Component { 
   render() {
     return (
        <View style={HomeStyle.comp} >
@@ -28,15 +28,16 @@ export default class Home extends Component {
                   <View style ={{ top: 30,backgroundColor:'#0ca3bc', width:350, height:60,padding:10, alignItems:'center', justifyContent:'center', borderRadius:15}}>  
                   <Text style={{fontSize:20, fontFamily:'Avenir', color:'#ffffff', fontWeight:'600'}}>Sign In</Text>
                   </View>
-            </TouchableOpacity>
+                </TouchableOpacity>
 
-              <TouchableOpacity 
+                <TouchableOpacity 
               onPress={()=>{Actions.signup()}}
               style={{height:60}}>
                   <View style ={{ top:50, width:350, height:60,padding:10, alignItems:'center', justifyContent:'center', borderRadius:15, borderColor:'#ffffff', borderWidth:2}}>  
                   <Text style={{fontSize:20, fontFamily:'Avenir', color:'#ffffff',}}>Create an Account</Text>
                   </View>
               </TouchableOpacity>
+           
 
            
         </View>
