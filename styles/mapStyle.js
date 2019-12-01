@@ -34,7 +34,7 @@ var GMapStyle = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         marginLeft: 20,
-        marginRight: 20
+        marginRight: 20,
     },
     innerTitle: {
         fontFamily: 'avenir',

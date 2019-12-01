@@ -5,6 +5,8 @@ import EditStyles from '../../styles/EditStyles';
 import { Actions} from 'react-native-router-flux';
 import axios from 'axios';
 import Modal from "react-native-modal";
+import ImagePicker from 'react-native-image-picker';
+import RNFetchBlob from 'rn-fetch-blob';
 
  function Profile() {
     const [showModal, setShowModal]= useState(false);
@@ -51,6 +53,7 @@ import Modal from "react-native-modal";
         // setAdress(d[0].adress)
     }
 
+//USER UPDATE
 
     const UpdateUser = async() => {
         var obj = {
@@ -67,8 +70,50 @@ import Modal from "react-native-modal";
         }
         var r = await axios.post(`https://foodfullapp.herokuapp.com/post`, obj);
     console.log("test", r.data.body);
+    Actions.refresh({key: 'profile'});
+    Actions.refresh({key: 'dashboard0'});
     }
+ //AVATAR CHANGE
+ const options = {
+    title: 'Select Donation Image',
+    storageOptions: {
+      skipBackup: true,
+      path: 'images',
+    },
+  };
+const [image, setImage] = useState(`https://foodfull.s3-us-west-2.amazonaws.com/avatar${uId}.jpg`)
+function uploadMyImage() {
+ImagePicker.showImagePicker(options, async(response) => {
+  if (response.didCancel) {
+    console.log('User cancelled image picker');
+  } else if (response.error) {
+    console.log('ImagePicker Error: ', response.error);
+  } else if (response.customButton) {
+    console.log('User tapped custom button: ', response.customButton);
+  } else {
+    const source = {uri: response.uri};
+    console.log("source", source);
+    //send image name over to your db pics/imagename.jpg
+    var r = await axios.post("https://foodfullapp.herokuapp.com/post", {key:"avatar_upload", data: {uId}})
+    //get url
+    var url = JSON.parse(r.data.body).data.url;
+    var uri = response.uri.replace("file://", "");
+    console.log("uri2", uri);
+    console.log("url",url);
+    //upload with this - done
+    var r2 = await RNFetchBlob.fetch('PUT', url, {
+      "Accept":"image/*",
+      "Content-Type":"image/*"
+    }, RNFetchBlob.wrap(uri));
+    
+    console.log("r2", r2);
+    setImage(`https://foodfull.s3-us-west-2.amazonaws.com/avatar${uId}.jpg`);
+    //arr.push(r2.respInfo.redirects[0]);
 
+    return false;
+  }
+});
+}
  
         
         
@@ -84,6 +129,7 @@ import Modal from "react-native-modal";
         DeleteData();
         Actions.login();
     }
+
     useEffect(()=> {
         getID();
     }, [])
@@ -103,7 +149,7 @@ import Modal from "react-native-modal";
             style={ProfileStyle.imageViewStyle}
             >
                 <Image
-                source={require('../../assets/img/safeway.jpg')}
+                source={{uri: `${image}`}}
                 style={ProfileStyle.imageStyle}
                 >
                 </Image>
@@ -207,6 +253,12 @@ import Modal from "react-native-modal";
             isVisible = {showModal}
             onBackdropPress={() => setShowModal(!showModal)}
             >
+
+                {/* <TouchableOpacity onPress={() => uploadMyImage()}
+                style = {{top: 50, zIndex: 3}}>
+                    <Text>Change Avatar</Text>
+                </TouchableOpacity> */}
+                   
                 {/* X to close popup */}
                  <TouchableOpacity style ={{position: 'absolute', top: 80, right: 45, zIndex:1}}
                 onPress={()=>{setShowModal(!showModal)}}>
@@ -267,6 +319,7 @@ import Modal from "react-native-modal";
           title="UPDATE USER"
           onPress={()=>{
               UpdateUser();
+              setImage(`https://foodfull.s3-us-west-2.amazonaws.com/avatar${uId}.jpg`)
               setShowModal(!showModal)
           }}>
                         

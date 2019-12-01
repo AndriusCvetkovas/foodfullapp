@@ -7,12 +7,14 @@ import axios from 'axios';
 
 function Dashboard({navigation}) {
     var currentId= 0;
+    const [image, setImage] = useState();
     //RECEIVE CURRENT USER ID FROM ASYNC STORAGE
     const getID = async () =>{
         var json = await AsyncStorage.getItem('id');
         currentId = json;
         console.log("userID "+currentId);
         GetDonations();
+        setImage(`https://foodfull.s3-us-west-2.amazonaws.com/avatar${currentId}.jpg`)
     }
     const [dons, setDons] = useState([]);
     const [name, setName] = useState();
@@ -76,7 +78,7 @@ function Dashboard({navigation}) {
                         <View>
                             <Image
                                 style={{ width: 95, height: 95, borderRadius: 100, backgroundColor: "#aaaaaa", left: -8 }}
-                                source={require('../assets/img/safeway.jpg')}
+                                source={{uri: `${image}`}}
                             ></Image>
                         </View>
                         <View style={{ margin: 20 }}>
