@@ -16,7 +16,14 @@ function SignUp() {
   const [userType, setUserType] = useState();
   const [optionColor1, setOptionColor1] = useState(false);
   const [optionColor2, setOptionColor2] = useState(false);
-  const changePage = () => Actions.acceptingsignup({text: userType});
+  const changePage = () => {
+    if(optionColor1 != true && optionColor2 !=true){
+      alert("Please pick your user type")
+    }else {
+      Actions.acceptingsignup({text: userType})
+    }
+  }
+  ;
   function ChangeColor1() {
     setOptionColor1(!optionColor1);
     setOptionColor2(false);
