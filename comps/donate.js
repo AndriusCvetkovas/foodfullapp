@@ -18,6 +18,9 @@ import ImagePicker from 'react-native-image-picker';
 import axios from 'axios';
 import Confirmation from './Confirmation';
 import Modal from 'react-native-modal';
+//import base64toblob from 'base64toblob';
+import RNFetchBlob from 'rn-fetch-blob';
+
 var id = '';
 var receiverId = 0;
 function Donate({addr, ids, tt, dType}) {
@@ -50,8 +53,9 @@ function Donate({addr, ids, tt, dType}) {
   var orgInput = null;
 
   //IMAGE UPLOAD
+  const [image, setImage] = useState()
   function uploadMyImage() {
-    ImagePicker.showImagePicker(options, response => {
+    ImagePicker.showImagePicker(options, async(response) => {
       if (response.didCancel) {
         console.log('User cancelled image picker');
       } else if (response.error) {
@@ -60,7 +64,29 @@ function Donate({addr, ids, tt, dType}) {
         console.log('User tapped custom button: ', response.customButton);
       } else {
         const source = {uri: response.uri};
+        console.log("source", source);
+        //send image name over to your db pics/imagename.jpg
+        var r = await axios.post("https://foodfullapp.herokuapp.com/post", {key:"image_upload", data: {id}})
+        //get url
+        var url = JSON.parse(r.data.body).data.url;
+        var uri = response.uri.replace("file://", "");
+        console.log("uri2", uri);
+        console.log("url",url);
+        //upload with this - done
+        var r2 = await RNFetchBlob.fetch('PUT', url, {
+          "Accept":"image/*",
+          "Content-Type":"image/*"
+        }, RNFetchBlob.wrap(uri));
+        
 
+        //get url back - one of the properties has the path
+        //gtg let me know how it works thanks a lot! will keep you posted!
+        //sorry i made it so difficult.
+        console.log("r2", r2);
+        setImage(`https://foodfull.s3-us-west-2.amazonaws.com/photo${id}.jpg`);
+        //arr.push(r2.respInfo.redirects[0]);
+
+        return false;
         var arr = imageDefault.map(o => {
           return o;
         });
@@ -154,7 +180,7 @@ function Donate({addr, ids, tt, dType}) {
     data: {
       date: selectedDate,
       time: selectedTime,
-      image_url: selectedUrl,
+      image_url: image,
       weight: 0,
       description: selectedDescription,
       user_id: id,
@@ -169,8 +195,8 @@ function Donate({addr, ids, tt, dType}) {
       setStatus(1);
       setShowModal(!showModal);
       //Actions.confirmdonation({ text: obj })
-    } else if (receiverId != 0 && text == null) {
-      alert('Please enter receiver');
+    } else if (receiverId != 0 && text == null && image == null) {
+      alert('Please make sure you entered everything');
     } else {
       Actions.confirmdonation({text: obj});
     }
@@ -214,11 +240,8 @@ function Donate({addr, ids, tt, dType}) {
                     <Text style={donateStyle.addImagePlus}>+</Text>
                   </View>
                 </TouchableOpacity>
-                {imageDefault.map((obj, i) => {
-                  return (
                     <Image
-                      key={i}
-                      source={obj}
+                      source={{uri: `${image}`}}
                       style={{
                         height: 100,
                         width: 100,
@@ -226,8 +249,6 @@ function Donate({addr, ids, tt, dType}) {
                         marginLeft: 5,
                       }}
                     />
-                  );
-                })}
                 {/* <Image source={avatarSource} style={{height:100, width:100, borderRadius: 10}} /> */}
               </View>
             </ScrollView>
