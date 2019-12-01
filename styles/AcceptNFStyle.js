@@ -15,37 +15,49 @@ var AcceptNFStyle = StyleSheet.create({
         width: '80%',
         backgroundColor: 'white',
         borderRadius: 30,
-        padding: 20,
+        // padding: 20,
         alignItems: 'center',
         justifyContent: 'center',
-
         
-
+    },
+    DImage:{
+        
+        flex: 1,
+        resizeMode: 'cover', 
+        borderTopRightRadius:30, 
+        borderTopLeftRadius: 30 
     },
     donationInfoTop: {
-        flex: 1,
+        flex: 1.5,
+        borderTopLeftRadius: 30,
+        borderTopRightRadius:30,
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'center',
+        resizeMode: 'cover',
+        width: '100%',
+        marginBottom:10,
+        backgroundColor: '#0ca3bc',
     },
     imageText: {
         flex: 1,
         fontSize: 18,
         fontWeight: "600",
         width: '90%',
-        alignItems: 'center',
-        justifyContent: 'center'
+        // alignItems: 'center',
+        // justifyContent: 'center'
+        textAlign: 'left'
     },
 
     pickupDate: {
         width: '90%',
-        flex: 0.5,
+        flex: 0.3,
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'center'
     },
     pickupTime: {
-        flex: 0.5,
+        flex: 0.3,
         width: '90%',
         flexDirection: 'row',
         alignItems: 'center',
@@ -73,13 +85,16 @@ var AcceptNFStyle = StyleSheet.create({
         
     },
     TextDisplay: {
-        flex: 2
+        flex: 0.3,
+        width:'90%'
 
 
     },
     Organization: {
-        fontSize: 18,
+        fontSize: 25,
         color: '#07a2bb',
+        textAlign: 'left',
+        fontWeight: "600"
     },
 
     address: {

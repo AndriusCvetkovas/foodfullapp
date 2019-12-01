@@ -6,7 +6,9 @@ var PickUpComfirmSty = StyleSheet.create({
         width: '100%',
         alignItems:'center',
         justifyContent: 'center',
-        height: '100%'
+        height: '100%',
+        
+        
         
     },
     main2: {
@@ -15,17 +17,41 @@ var PickUpComfirmSty = StyleSheet.create({
         backgroundColor: 'white',
         borderRadius: 30,
         margin: 20,
-        padding: 20,
+        // padding: 20,
         alignItems:'center',
         justifyContent: 'center'
         
     },
-    donationInfoTop: {
+
+    NameOrg: {
+        width: '95%',
+        flex: 0.4,
+       
+     
+    
+
+    },
+
+    PImage:{
+        backgroundColor: 'red',
         flex: 1,
+        resizeMode: 'cover', 
+        borderTopRightRadius:30, 
+        borderTopLeftRadius: 30 
+    },
+    
+    donationInfoTop: {
+        flex: 2,
+        borderTopLeftRadius: 30,
+        borderTopRightRadius:30,
         flexDirection: 'row',
         alignItems: 'center',
-        paddingLeft: 50,
-        paddingRight: 50
+        justifyContent: 'center',
+        resizeMode: 'cover',
+        width: '100%',
+        marginBottom:10,
+        backgroundColor: '#0ca3bc',
+        
     },
     imageText: {
         flex: 0.2,
@@ -44,22 +70,24 @@ var PickUpComfirmSty = StyleSheet.create({
     },
     pickupDate: {
         width: '95%',
-        flex: 0.7,
+        flex: 0.3,
         flexDirection: 'row',
         alignItems: 'center',
+        justifyContent: 'center'
     },
     pickupTime: {
-        flex: 0.7,
+        flex: 0.4,
         width: '95%',
         flexDirection: 'row',
         alignItems: 'center',
     },
     descriptionTitle: {
-        flex: 0.5,
+        flex: 0.2,
        color: '#0ca3bc',
         fontSize: 18,
         // fontWeight: "600",
         width: '95%',
+        padding:5,
     },
     descriptionTitle2: {
         flex: 0.3,
@@ -86,8 +114,10 @@ var PickUpComfirmSty = StyleSheet.create({
 
     },
     Organization:{
-        fontSize:18,
-        color:'#07a2bb',
+        fontSize: 25,
+        color: '#07a2bb',
+        textAlign: 'left',
+        fontWeight: "600"
     },
 
     address:{
@@ -118,7 +148,7 @@ var PickUpComfirmSty = StyleSheet.create({
         flex: 0.7,
         width: '90%',
         color: "black",
-        marginBottom: 20,
+        marginBottom: 10,
     },
     description2:{
       
@@ -145,7 +175,7 @@ var PickUpComfirmSty = StyleSheet.create({
  
      },
      button: {
-        flex: 0.3,
+        flex: 0.4,
         padding: 5,
         
         borderTopColor:'#F0F0F0',
@@ -156,23 +186,23 @@ var PickUpComfirmSty = StyleSheet.create({
         borderBottomWidth: 2,
         marginBottom: 0,
         marginTop: 20,
-        width: '110%',
+        width: '100%',
         alignItems: 'center',
         justifyContent: 'center',
         elevation: 1
     },
     button2: {
-        flex: 0.3,
+        flex: 0.4,
         padding: 5,
         
         borderTopColor:'#F0F0F0',
         borderBottomColor: '#F0F0F0',
         backgroundColor: 'white',
        
-        borderTopWidth: 2,
-        borderBottomWidth: 2,
+        borderBottomRightRadius:30, 
+        borderBottomLeftRadius: 30, 
      
-        width: '110%',
+        width: '100%',
         alignItems: 'center',
         justifyContent: 'center',
         elevation: 1
