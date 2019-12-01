@@ -28,7 +28,7 @@ export default class Home extends Component {
                   <View style ={{ top: 30,backgroundColor:'#0ca3bc', width:350, height:60,padding:10, alignItems:'center', justifyContent:'center', borderRadius:15}}>  
                   <Text style={{fontSize:20, fontFamily:'Avenir', color:'#ffffff', fontWeight:'600'}}>Sign In</Text>
                   </View>
-            </TouchableOpacity>
+                </TouchableOpacity>
 
               <TouchableOpacity 
               onPress={()=>{Actions.signup()}}
