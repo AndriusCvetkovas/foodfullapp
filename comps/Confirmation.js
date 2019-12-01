@@ -10,7 +10,7 @@ function Confirmation({obj, setShowModal}){
     var url = obj.data.image_url[0].uri;
     console.log(obj);
     const SendDonationInfo = async () => {
-        var r = await axios.post(`http://localhost:3001/post`, obj);
+        var r = await axios.post(`https://foodfullapp.herokuapp.com/post`, obj);
         console.log(r);
     }
     const Confirm = () =>{

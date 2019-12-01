@@ -66,8 +66,7 @@ function Donate({addr, ids, tt, dType}) {
         const source = {uri: response.uri};
         console.log("source", source);
         //send image name over to your db pics/imagename.jpg
-        var r = await axios.post("http://localhost:3001/post", {key:"image_upload", data:{}})
-
+        var r = await axios.post("https://foodfullapp.herokuapp.com/post", {key:"image_upload", data: {id}})
         //get url
         var url = JSON.parse(r.data.body).data.url;
         var uri = response.uri.replace("file://", "");
@@ -84,7 +83,7 @@ function Donate({addr, ids, tt, dType}) {
         //gtg let me know how it works thanks a lot! will keep you posted!
         //sorry i made it so difficult.
         console.log("r2", r2);
-        setImage('https://foodfull.s3-us-west-2.amazonaws.com/photo1.jpg');
+        setImage(`https://foodfull.s3-us-west-2.amazonaws.com/photo${id}.jpg`);
         //arr.push(r2.respInfo.redirects[0]);
 
         return false;

@@ -5,6 +5,8 @@ import styles from '../../styles/EditStyles';
 import { Actions} from 'react-native-router-flux';
 import axios from 'axios';
 import Modal from "react-native-modal";
+import ImagePicker from 'react-native-image-picker';
+import RNFetchBlob from 'rn-fetch-blob';
 
  function Profile() {
     const [showModal, setShowModal]= useState(false);
@@ -39,7 +41,7 @@ import Modal from "react-native-modal";
             id: currentId
         }
         }
-        var r = await axios.post(`http://localhost:3001/post`, obj);
+        var r = await axios.post(`https://foodfullapp.herokuapp.com/post`, obj);
         var json = JSON.parse(r.data.body);
         console.log(json);
         var d = json.data;
@@ -50,22 +52,7 @@ import Modal from "react-native-modal";
         setUserId(d[0].id);
         // setAdress(d[0].adress)
     }
-
-    // const ReadUsers = async()=>{
-
-    //     //fetch to the db to read
-    //     var obj = {
-    //         key:"users_read",
-    //         data:{}
-    //     }
-
-    //     var data = await axios.post("http://localhost:3001/post", obj);
-    //     console.log("read", JSON.parse(data.data.body));
-        
-    //     var dbusers = JSON.parse(data.data.body).data;
-    //     Setusers(dbusers);  
-
-    // }
+//USER UPDATE
 
     const UpdateUser = async() => {
         var obj = {
@@ -80,10 +67,51 @@ import Modal from "react-native-modal";
                 
             }
         }
-        var r = await axios.post(`http://localhost:3001/post`, obj);
+        var r = await axios.post(`https://foodfullapp.herokuapp.com/post`, obj);
     console.log("test", r.data.body);
+    Actions.refresh({key: 'profile'});
     }
+ //AVATAR CHANGE
+ const options = {
+    title: 'Select Donation Image',
+    storageOptions: {
+      skipBackup: true,
+      path: 'images',
+    },
+  };
+const [image, setImage] = useState(`https://foodfull.s3-us-west-2.amazonaws.com/avatar${uId}.jpg`)
+function uploadMyImage() {
+ImagePicker.showImagePicker(options, async(response) => {
+  if (response.didCancel) {
+    console.log('User cancelled image picker');
+  } else if (response.error) {
+    console.log('ImagePicker Error: ', response.error);
+  } else if (response.customButton) {
+    console.log('User tapped custom button: ', response.customButton);
+  } else {
+    const source = {uri: response.uri};
+    console.log("source", source);
+    //send image name over to your db pics/imagename.jpg
+    var r = await axios.post("https://foodfullapp.herokuapp.com/post", {key:"avatar_upload", data: {uId}})
+    //get url
+    var url = JSON.parse(r.data.body).data.url;
+    var uri = response.uri.replace("file://", "");
+    console.log("uri2", uri);
+    console.log("url",url);
+    //upload with this - done
+    var r2 = await RNFetchBlob.fetch('PUT', url, {
+      "Accept":"image/*",
+      "Content-Type":"image/*"
+    }, RNFetchBlob.wrap(uri));
+    
+    console.log("r2", r2);
+    setImage(`https://foodfull.s3-us-west-2.amazonaws.com/avatar${uId}.jpg`);
+    //arr.push(r2.respInfo.redirects[0]);
 
+    return false;
+  }
+});
+}
  
         
         
@@ -99,12 +127,8 @@ import Modal from "react-native-modal";
         DeleteData();
         Actions.login();
     }
-    // useEffect(()=>{
-    //     getID();
-    // }, []);
-    // useEffect(()=>{
-    //     GetUser();
-    // }, [getID()]);
+
+   
     useEffect(()=> {
         getID();
     }, [])
@@ -124,7 +148,7 @@ import Modal from "react-native-modal";
             style={ProfileStyle.imageViewStyle}
             >
                 <Image
-                source={require('../../assets/img/safeway.jpg')}
+                source={{uri: `${image}`}}
                 style={ProfileStyle.imageStyle}
                 >
                 </Image>
@@ -222,6 +246,10 @@ import Modal from "react-native-modal";
             isVisible = {showModal}
             onBackdropPress={() => setShowModal(!showModal)}
             >
+                <TouchableOpacity onPress={() => uploadMyImage()}
+                style = {{top: 50, zIndex: 3}}>
+                    <Text>Change Avatar</Text>
+                </TouchableOpacity>
                 <View style = {{height: 500, width: 330, backgroundColor: 'white', marginTop:15, padding:25, borderRadius:50 }}>
                    
 
@@ -283,6 +311,7 @@ import Modal from "react-native-modal";
           title="UPDATE USER"
           onPress={()=>{
               UpdateUser();
+              setImage(`https://foodfull.s3-us-west-2.amazonaws.com/avatar${uId}.jpg`)
           }}>
                         
           <Text style={styles.signUpText}>update</Text>

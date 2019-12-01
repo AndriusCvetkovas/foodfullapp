@@ -24,7 +24,7 @@ function GMapAccept() {
         status: 0
       }
     }
-    var p = await axios.post(`http://localhost:3001/post`, obj)
+    var p = await axios.post(`https://foodfullapp.herokuapp.com/post`, obj)
     var json = JSON.parse(p.data.body);
     console.log(json);
     var d = json.data;
@@ -103,6 +103,7 @@ const [hh] = useState(new Animated.Value(200))
       >
         {
           users.map((d, i)=>{
+            console.log(d.image_url)
             return(
           <TouchableOpacity style={GMapStyle.infoStyle}
           onPress={()=>{
@@ -140,7 +141,7 @@ const [hh] = useState(new Animated.Value(200))
             <View style={[GMapStyle.innerInfo, ]} >
               <Image
                 style={{height: 75, width: 75, borderRadius: 75}}
-                source={require('../assets/img/safeway.jpg')}></Image>
+                source={{uri: `https://foodfull.s3-us-west-2.amazonaws.com/photo${d.description}.jpg`}}></Image>
               <View style={[GMapStyle.innerInner, {top: 30}]}>
                 <Text style={GMapStyle.innerTitle}>{d.name}</Text>
                 <Text style={GMapStyle.innerAddress} key={i}>
@@ -153,7 +154,7 @@ const [hh] = useState(new Animated.Value(200))
                   <Text>
                   Donation Notes:
                   </Text>
-                  <Text style ={{color: 'grey', width: 150}}>{d.description} ssssssssssssssssssssssss</Text>
+                  <Text style ={{color: 'grey', width: 150}}>{d.description}</Text>
                 </View>
               </View>
             </View>

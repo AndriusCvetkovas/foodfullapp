@@ -28,7 +28,7 @@ function DashboardAccept({ navigation }) {
                 status: 1
             }
         }
-        var r = await axios.post(`http://localhost:3001/post`, obj);
+        var r = await axios.post(`https://foodfullapp.herokuapp.com/post`, obj);
         var json = JSON.parse(r.data.body);
         //console.log(json.data);
         var arr = json.data;
@@ -46,7 +46,7 @@ function DashboardAccept({ navigation }) {
                 status: 2
             }
         }
-        var r = await axios.post(`http://localhost:3001/post`, obj);
+        var r = await axios.post(`https://foodfullapp.herokuapp.com/post`, obj);
         var jsons = JSON.parse(r.data.body);
         var d = jsons.data;
         console.log(d);
