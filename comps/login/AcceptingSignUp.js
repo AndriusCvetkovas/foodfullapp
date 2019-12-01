@@ -232,9 +232,9 @@ function AcceptingSignUp({text}) {
 
 
       {/* SIGN UP BUTTON */}
-      <TouchableHighlight style={[DonSignStyles.buttonContainer, DonSignStyles.signupButton]} onPress={() => SendUser()}>
+      <TouchableOpacity style={[DonSignStyles.buttonContainer, DonSignStyles.signupButton]} onPress={() => SendUser()}>
         <Text style={DonSignStyles.signUpText}>Sign Up</Text>
-      </TouchableHighlight>
+      </TouchableOpacity>
 
     </View>
 

@@ -19,7 +19,7 @@ function Dashboard({navigation}) {
     const [user, setUser] = useState([]);
     const GetDonations = async () => {
         var obj = {
-        key: "donations_read",
+        key: "donations_read", 
         data: {
             user_id: currentId,
             status: 2,
@@ -35,25 +35,9 @@ function Dashboard({navigation}) {
     
         
     }
-    // //GET ACCEPTOR NAME
-    // const GetName = async (id) => {
-    //     var obj = {
-    //     key: "users_read",
-    //     data: {
-    //         id: id
-    //     }
-    //     }
-    //     var b = await axios.post(`https://foodfullapp.herokuapp.com/post`, obj);
-    //     var json = JSON.parse(b.data.body);
-    //     console.log(json.data);
-    //     var bb = json.data;
-    //     setName(bb);
-    // }
     const [n, setn] = useState();
     
-    // useEffect(()=>{
-    //     getID();
-    // }, []);
+    
     useEffect(()=>{
         getID();
     },[navigation.state.params]);

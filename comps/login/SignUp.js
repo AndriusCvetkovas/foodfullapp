@@ -9,13 +9,21 @@ import {
 import SignUpStyles from '../../styles/SignUpStyles';
 import {Actions} from 'react-native-router-flux';
 import axios from 'axios';
+import LottieView from 'lottie-react-native';
 
 function SignUp() {
   //Changing the colour of the option when clicked
   const [userType, setUserType] = useState();
   const [optionColor1, setOptionColor1] = useState(false);
   const [optionColor2, setOptionColor2] = useState(false);
-  const changePage = () => Actions.acceptingsignup({text: userType});
+  const changePage = () => {
+    if(optionColor1 != true && optionColor2 !=true){
+      alert("Please pick your user type")
+    }else {
+      Actions.acceptingsignup({text: userType})
+    }
+  }
+  ;
   function ChangeColor1() {
     setOptionColor1(!optionColor1);
     setOptionColor2(false);
@@ -39,6 +47,12 @@ function SignUp() {
   var ButtonBorder = '#EDEDEF';
   var ButtonText = '#606060';
 
+  var hidedonating =<Image
+    style = {{width: 80,height: 70, marginBottom: 20, marginLeft: 15,}}
+    source = {imageUrl1}
+    />;
+    var movetext = -30;
+
   if (optionColor1 === true) {
     BGColor1 = '#ffffff';
     HeaderColor1 = '#0ca3bc';
@@ -48,7 +62,13 @@ function SignUp() {
     ButtonColor = '#0ca3bc';
     ButtonBorder = '#0ca3bc';
     ButtonText = '#ffffff';
-    imageUrl1 = require('../../assets/icon/donating_active.png');
+    var movetext = -30;
+    hidedonating = <LottieView
+    source={require('../../assets/lottieFiles/donating_option.json')}
+    style={{ width: 95,height: 95, marginBottom: 20,left:-1, marginRight: -25, top: -0.5}}
+    autoPlay
+    loop
+    />
   }
   var BGColor2 = '#F4F5F7';
   var HeaderColor2 = '#606060';
@@ -56,6 +76,11 @@ function SignUp() {
   var imageUrl2 = require('../../assets/icon/accepting.png');
   var ShadowColor2 = '#9B9EA3';
   var ShadowOpacity2 = 0;
+
+  var hideaccepting =<Image
+  style = {{width: 85,height: 80, marginBottom: 20, marginLeft: 15,}}
+  source = {imageUrl2}
+  />;
 
   if (optionColor2 === true) {
     BGColor2 = '#ffffff';
@@ -66,7 +91,12 @@ function SignUp() {
     ButtonColor = '#34a3bd';
     ButtonBorder = '#0ca3bc';
     ButtonText = '#ffffff';
-    imageUrl2 = require('../../assets/icon/accepting_active.png');
+    hideaccepting = <LottieView
+    source={require('../../assets/lottieFiles/accepting_option.json')}
+    style={{ width: 100,height: 132, marginBottom: 32,left:-8.5, marginRight: -67, top: -1}}
+    autoPlay
+    loop
+    />
   }
 
   return (
@@ -120,18 +150,11 @@ function SignUp() {
 
             <View style={SignUpStyles.optioninfo}>
               <View>
-                <Image
-                  style={{
-                    width: 80,
-                    height: 70,
-                    marginBottom: 20,
-                    marginLeft: 15,
-                  }}
-                  source={imageUrl1}></Image>
+              {hidedonating}
               </View>
 
               <View style={{margin: 20}}>
-                <Text style={{color: TextColor1, width: 175, fontSize: 18}}>
+                <Text style={{color: TextColor1, width: 175, fontSize: 18,}}>
                   Grocery store and markets restaurants
                 </Text>
               </View>
@@ -165,18 +188,11 @@ function SignUp() {
 
             <View style={SignUpStyles.optioninfo}>
               <View>
-                <Image
-                  style={{
-                    width: 75,
-                    height: 70,
-                    marginBottom: 20,
-                    marginLeft: 15,
-                  }}
-                  source={imageUrl2}></Image>
+              {hideaccepting}
               </View>
 
               <View style={{margin: 20}}>
-                <Text style={{color: TextColor2, width: 250, fontSize: 18}}>
+                <Text style={{color: TextColor2, width: 250, fontSize: 18,}}>
                   Food banks, non profit organization and shelters
                 </Text>
               </View>
