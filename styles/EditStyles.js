@@ -5,10 +5,10 @@ const styles = StyleSheet.create({
 inputContainer: {
     borderBottomColor: '#F5FCFF',
     backgroundColor: '#F0F0F0',
-    borderRadius:30,
+    borderRadius:20,
     borderBottomWidth: 1,
-    width:250,
-    height:45,
+    width:280,
+    height:40,
     marginBottom:20,
     flexDirection: 'row',
     alignItems:'center',
@@ -23,15 +23,24 @@ inputs:{
     alignItems:'center',
     justifyContent: 'center'
 },
-
+header: {
+    fontFamily:'Avenir',
+    fontSize:20,
+    fontWeight: '800',
+    justifyContent:'center',
+    alignItems:'center',
+    textAlign:'center',
+    color:'#0ca3bc'
+},
 buttonContainer: {
   height:45,
   flexDirection: 'row',
   justifyContent: 'center',
   alignItems: 'center',
   marginBottom:20,
-  width:250,
+  width:260,
   borderRadius:30,
+  left:10
 },
 signupButton: {
   backgroundColor: "#0ca3bc",

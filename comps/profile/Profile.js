@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, Image, TouchableOpacity, AsyncStorage,Button , TextInput ,TouchableHighlight } from 'react-native';
 import ProfileStyle from '../../styles/profileStyle';
-import styles from '../../styles/EditStyles';
+import EditStyles from '../../styles/EditStyles';
 import { Actions} from 'react-native-router-flux';
 import axios from 'axios';
 import Modal from "react-native-modal";
@@ -52,6 +52,7 @@ import RNFetchBlob from 'rn-fetch-blob';
         setUserId(d[0].id);
         // setAdress(d[0].adress)
     }
+
 //USER UPDATE
 
     const UpdateUser = async() => {
@@ -128,7 +129,6 @@ ImagePicker.showImagePicker(options, async(response) => {
         Actions.login();
     }
 
-   
     useEffect(()=> {
         getID();
     }, [])
@@ -212,8 +212,8 @@ ImagePicker.showImagePicker(options, async(response) => {
                         <Text style ={ProfileStyle.titles}>Phone number</Text>
                         <Text style = {ProfileStyle.info}>{userPhone}</Text>
                     </View>
+                 </View>
                 </View>
-            </View>
 
             {/* Button view */}
             <View style = {ProfileStyle.buttonView}>
@@ -239,65 +239,63 @@ ImagePicker.showImagePicker(options, async(response) => {
                     <Text style={{textAlign: 'center', color: '#719799', fontSize: 20, fontFamily: 'avenir'}}>Sign Out</Text>
                 </TouchableOpacity>
             </View>
+
+
+            {/* EDIT PROFILE POPUP SECTION - THIS UPDATES USER INFO IN DATABASE*/}
             <Modal isVisible={showModal}
             coverScreen={false}
             animationIn='slideInUp'
-            style = {{backgroundColor: 'transparent', height: 500,width: 380, position: "absolute", alignItems:"center", marginTop:50}}
+            style = {{backgroundColor: 'transparent', height: 600,width: 370, position: "absolute", alignItems:"center", justifyContent:'center', marginTop:50}}
             isVisible = {showModal}
             onBackdropPress={() => setShowModal(!showModal)}
             >
+
                 <TouchableOpacity onPress={() => uploadMyImage()}
                 style = {{top: 50, zIndex: 3}}>
                     <Text>Change Avatar</Text>
                 </TouchableOpacity>
-                <View style = {{height: 500, width: 330, backgroundColor: 'white', marginTop:15, padding:25, borderRadius:50 }}>
+            <View style = {{height: 500, width: 330, backgroundColor: 'white', marginTop:15, padding:25, borderRadius:30 }}>
                    
+            <Text style ={EditStyles.header}>Edit Profile</Text>
+            <Text style ={ProfileStyle.titles}>Address</Text>
+            <View style={EditStyles.inputContainer}>
 
-       <Text style ={ProfileStyle.titles}>Address</Text>
-       <View style={styles.inputContainer}>
-
-          <TextInput style={styles.inputs}
-          placeholder="Address"
-          underlineColorAndroid='transparent'
-          value={userAddress}
-          onChangeText={(t)=>{setUserAddress(t);
-        }}
-        />
-
-             
-        </View>
-
-
-        <Text style ={ProfileStyle.titles}>User Name</Text>
-        <View style={styles.inputContainer}>
-          
-          <TextInput style={styles.inputs}
-                placeholder="User Name"
+                <TextInput style={EditStyles.inputs}
+                placeholder="Address"
                 underlineColorAndroid='transparent'
-                value={userName}
-                onChangeText={(t)=>{setUserName(t);
-              }}
-              />
-        </View>
+                value={userAddress}
+                onChangeText={(t)=>{setUserAddress(t);
+                }}
+                />
 
-        <Text style ={ProfileStyle.titles}>Email</Text>
-        <View style={styles.inputContainer}>
-        <TextInput style={styles.inputs}
-                placeholder="Email"
-                underlineColorAndroid='transparent'
-                value={userEmail}
-                onChangeText={(t)=>{setUserEmail(t);
-              }}
-              />
-        </View>
+             </View>
 
-        
+            <Text style ={ProfileStyle.titles}>User Name</Text>
+            <View style={EditStyles.inputContainer}>
+            
+            <TextInput style={EditStyles.inputs}
+                    placeholder="User Name"
+                    underlineColorAndroid='transparent'
+                    value={userName}
+                    onChangeText={(t)=>{setUserName(t);
+                }}
+                />
+            </View>
 
-
+            <Text style ={ProfileStyle.titles}>Email</Text>
+            <View style={EditStyles.inputContainer}>
+            <TextInput style={EditStyles.inputs}
+                    placeholder="Email"
+                    underlineColorAndroid='transparent'
+                    value={userEmail}
+                    onChangeText={(t)=>{setUserEmail(t);
+                }}
+                />
+            </View>
         <Text style ={ProfileStyle.titles}>Phone</Text>
-        <View style={styles.inputContainer}>
+        <View style={EditStyles.inputContainer}>
            
-        <TextInput style={styles.inputs}
+        <TextInput style={EditStyles.inputs}
                 placeholder="Phone"
                 underlineColorAndroid='transparent'
                 value={userPhone}
@@ -306,17 +304,16 @@ ImagePicker.showImagePicker(options, async(response) => {
               /> 
         </View>
 
-
-        <TouchableHighlight style={[styles.buttonContainer, styles.signupButton]} 
+        <TouchableOpacity style={[EditStyles.buttonContainer, EditStyles.signupButton]} 
           title="UPDATE USER"
           onPress={()=>{
               UpdateUser();
               setImage(`https://foodfull.s3-us-west-2.amazonaws.com/avatar${uId}.jpg`)
           }}>
                         
-          <Text style={styles.signUpText}>update</Text>
-        </TouchableHighlight>
-                </View>
+         <Text style={EditStyles.signUpText}>Update</Text>
+        </TouchableOpacity>
+            </View>
             </Modal>
 
 

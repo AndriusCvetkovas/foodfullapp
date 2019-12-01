@@ -63,7 +63,7 @@ var ChooseDonationStyle = StyleSheet.create({
         fontSize: 18,
         color: '#606060',
         width: 210,
-        marginLeft: 20,
+        left:20,
         top:-5
     },
     optionTwo:{
