@@ -30,13 +30,14 @@ export default class Home extends Component {
                   </View>
                 </TouchableOpacity>
 
-              <TouchableOpacity 
+                <TouchableOpacity 
               onPress={()=>{Actions.signup()}}
               style={{height:60}}>
                   <View style ={{ top:50, width:350, height:60,padding:10, alignItems:'center', justifyContent:'center', borderRadius:15, borderColor:'#ffffff', borderWidth:2}}>  
                   <Text style={{fontSize:20, fontFamily:'Avenir', color:'#ffffff',}}>Create an Account</Text>
                   </View>
               </TouchableOpacity>
+           
 
            
         </View>
