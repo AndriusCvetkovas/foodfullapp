@@ -21,6 +21,7 @@ function Info({dd, setShowModal}) {
   var dates = dd.date;
   var addresss = dd.address;
   var dId = dd.id;
+  var uid = dd.user_id;
   console.log(namer);
   var currentId = 0;
   const getID = async () => {
@@ -58,7 +59,7 @@ function Info({dd, setShowModal}) {
       {/*Image box below*/}
       <View style={GMapStyle.imageBox}>
         <Image
-          source={require('../assets/img/safeway.jpg')}
+          source={{uri: `https://foodfull.s3-us-west-2.amazonaws.com/photo${uid}.jpg`}}
           style={{width: 100, height: 100}}
         />
       </View>

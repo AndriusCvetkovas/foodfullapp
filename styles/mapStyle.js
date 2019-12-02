@@ -19,7 +19,7 @@ var GMapStyle = StyleSheet.create({
     infoStyle: {
         marginLeft: 10,
         marginRight: 10,
-        height: 300,
+        height: 400,
         padding: 20,
         backgroundColor: 'white',
         width: 375,
@@ -28,7 +28,7 @@ var GMapStyle = StyleSheet.create({
     },
     innerInfo:{
         flex: 2,
-        top: -60,
+        top:0,
         width: '80%',
         flexDirection: 'row',
         justifyContent: 'center',
@@ -47,7 +47,7 @@ var GMapStyle = StyleSheet.create({
         borderWidth: 1,
         width: 100,
         height: 40,
-        top: -120,
+        top: -20,
         marginLeft: 200,
         justifyContent: 'center',
         alignItems: 'center',

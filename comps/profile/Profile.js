@@ -81,7 +81,7 @@ import RNFetchBlob from 'rn-fetch-blob';
       path: 'images',
     },
   };
-const [image, setImage] = useState(`https://foodfull.s3-us-west-2.amazonaws.com/avatar${uId}.jpg`)
+const [image, setImage] = useState(`https://foodfull.s3-us-west-2.amazonaws.com/avatar0.jpg`)
 function uploadMyImage() {
 ImagePicker.showImagePicker(options, async(response) => {
   if (response.didCancel) {

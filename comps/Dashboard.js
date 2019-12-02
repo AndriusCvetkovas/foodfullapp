@@ -14,7 +14,7 @@ function Dashboard({navigation}) {
         currentId = json;
         console.log("userID "+currentId);
         GetDonations();
-        setImage(`https://foodfull.s3-us-west-2.amazonaws.com/avatar${currentId}.jpg`)
+        setImage(`https://foodfull.s3-us-west-2.amazonaws.com/avatar0.jpg`)
     }
     const [dons, setDons] = useState([]);
     const [name, setName] = useState();
