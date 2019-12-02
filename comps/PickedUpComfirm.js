@@ -1,5 +1,5 @@
 import React,{useState,useEffect} from 'react';
-import {TextInput, View, Text, Image, TouchableOpacity, ScrollView} from 'react-native';
+import {TextInput, View, Text, Image, TouchableOpacity, ScrollView,AsyncStorage} from 'react-native';
 import PickUpComfirmSty from '../styles/PickUpComfirmSty';
 import buttonStyle from '../styles/buttonStyle';
 import {Actions} from 'react-native-router-flux';
@@ -16,6 +16,8 @@ import axios from 'axios';
 function PickedUpComfirm(props){
 var d = props.dd;
      //COMMUNICATION
+
+
             var currentId = "";
             const getID = async () => {
                 var json = await AsyncStorage.getItem('id');
@@ -38,7 +40,7 @@ var d = props.dd;
                 var json = JSON.parse(r.data.body);
                 //console.log(json.data);
                 var d = json.data;
-                setDons(d);
+                console.log(d)
             }
 
     const Update4 = async (thisId) => {
@@ -46,15 +48,17 @@ var d = props.dd;
             key: "donations_update",
             data: {
                 id: thisId,
-                status: 4
+                status: 3
             }
         }
         var r = await axios.post(`https://foodfullapp.herokuapp.com/post`, obj);
         var json = JSON.parse(r.data.body);
         console.log(json.data);
-        console.log('Your Status is now 4');
-        
+        console.log('Your Status is now: ' + obj.data.status); 
+
     }
+
+    
 
 
     var inputValueInit = null;
@@ -82,6 +86,8 @@ var d = props.dd;
             </View>
             {/*Date box below*/} 
             <View
+
+
             style = {PickUpStyle.messageBox}
             >
                 <Text>You have picked up your donation from Safeway Extra</Text>
@@ -106,7 +112,7 @@ var d = props.dd;
             
             {/*Button below*/}
             <TouchableOpacity
-                onPress={()=>{Update4(dd.id),[setdd(d)]}}
+                onPress={() => {Update4(d.id),[setdd(d)], props.obj.hide(), props.obj.getPendings()}}
                 title="Accept"
                 style = {PickUpStyle.buttonS}>
                 <Text

@@ -36,7 +36,7 @@ function Pickup() {
     var d = jsons.data;
     console.log(d);
     setDons(d);
-    console.log(donsName)
+    console.log(d)
   }
 
   function closeModal(){
@@ -64,7 +64,7 @@ function Pickup() {
       style = {{backgroundColor: 'transparent', height: 700,width: 380, position: "absolute"}}
       isVisible = {showModal}
       onBackdropPress={() => console.log('BackDrop Closes the Modal')}>
-        <PickedUpComfirm obj={{hide: closeModal}} dd ={dd}/>
+        <PickedUpComfirm obj={{hide: closeModal, getPendings: getID}} dd ={dd} />
       </Modal>
     <ScrollView>
       {
