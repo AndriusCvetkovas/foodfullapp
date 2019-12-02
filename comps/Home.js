@@ -37,12 +37,8 @@ export default class Home extends Component {
                   <Text style={{fontSize:20, fontFamily:'Avenir', color:'#ffffff',}}>Create an Account</Text>
                   </View>
               </TouchableOpacity>
-           
-
-           
         </View>
-       
-       </View> 
+      </View> 
       
       
 
