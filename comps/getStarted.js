@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
     paddingLeft:20,
     zIndex:2,
     flex:1,
-    top:180
+    top:175
   },
   subheader:{
     fontFamily: 'Avenir',
@@ -34,11 +34,12 @@ const styles = StyleSheet.create({
   desc:{
     fontFamily: 'Avenir',
     fontSize: 25,
-    width:'90%',
+    width:'95%',
     fontWeight:'500',
     color: '#3dbfd2',
     paddingLeft:20,
-    flex:1
+    flex:1,
+    paddingTop:20
   },
   slide1: {
     flex: 1,
@@ -91,6 +92,7 @@ export default class GetStarted extends Component {
               >Skip</Text>
             </TouchableOpacity>
           </View>
+
        {/* PAGE ONE: ACCOUNT CREATED */}
         <Swiper style={styles.wrapper}
         nextButton={
@@ -120,8 +122,7 @@ export default class GetStarted extends Component {
             loop
         />
           <Text style={styles.desc}>Thank you for joining foodfull and making a change.</Text>
-          
-
+        
         </View>
 
 
@@ -130,29 +131,27 @@ export default class GetStarted extends Component {
         <Text style={styles.subheader}>Make a Donation</Text>
 
         <LottieView
-            source={require('../assets/lottieFiles/welcome.json')}
-            style={{justifyContent:'center', alignItems:'center',height:350, width:'100%', flex:1.2}}
+            source={require('../assets/lottieFiles/makedonation.json')}
+            style={{justifyContent:'center', alignItems:'center',height:300, width:350, flex:1.2}}
             autoPlay
             loop
         />
-          <Text style={styles.desc}>Match with food banks around you and send donations in one easy step</Text>
+          <Text style={styles.desc}>Select a food bank of your choice, or post your donation to the public</Text>
         </View>
-
 
 
       {/* PAGE THREE:  */}
       <View style={styles.slide1}>
-        <Text style={styles.subheader}>Make a Donation</Text>
+        <Text style={styles.subheader}>Set Your Schedule</Text>
 
         <LottieView
-            source={require('../assets/lottieFiles/welcome.json')}
+            source={require('../assets/lottieFiles/test2.json')}
             style={{justifyContent:'center', alignItems:'center',height:350, width:'100%', flex:1.2}}
             autoPlay
             loop
         />
           <Text style={styles.desc}>Match with food banks around you and send donations in one easy step</Text>
         </View>
-
 
 
         {/* PAGE FOUR:  */}

@@ -17,7 +17,7 @@ function DonationPosted(){
    <View style={{backgroundColor:'#ffffff', flex:1}}>
        <View style={styles.mainbody}>
              <LottieView
-                source={require('../assets/lottieFiles/donatephone.json')}
+                source={require('../assets/lottieFiles/location.json')}
                 style={{justifyContent:'center', alignItems:'center',height:300, width:'100%',}}
                 autoPlay
                 loop
