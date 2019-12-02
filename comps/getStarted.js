@@ -33,8 +33,8 @@ const styles = StyleSheet.create({
   },
   desc:{
     fontFamily: 'Avenir',
-    fontSize: 25,
-    width:'95%',
+    fontSize: 23,
+    width:'90%',
     fontWeight:'500',
     color: '#3dbfd2',
     paddingLeft:20,
@@ -89,7 +89,7 @@ const styles = StyleSheet.create({
     color: '#ffffff',
     fontSize:20,
     fontFamily: 'Avenir'
-  }
+  },
 })
 
 export default class GetStarted extends Component {
@@ -101,7 +101,7 @@ export default class GetStarted extends Component {
           <TouchableOpacity 
           onPress={()=>{Actions.login()}}
             >
-              <Text style ={{ color: 'grey', top: 140,textAlign: 'center'}}
+              <Text style ={{ color: 'grey', top: 140, textAlign: 'center', fontSize:18}}
               >Skip</Text>
             </TouchableOpacity>
           </View>
@@ -149,7 +149,7 @@ export default class GetStarted extends Component {
             autoPlay
             loop
         />
-          <Text style={styles.desc}>Select a food bank of your choice, or post your donation to the public</Text>
+          <Text style={styles.desc}>Select a food bank of your choice, or post your donation to the public.</Text>
         </View>
 
 
@@ -169,35 +169,31 @@ export default class GetStarted extends Component {
             autoPlay
             loop
         />
-          <Text style={[styles.desc, {top:-98}]}>Select your availability and keep track of your donations</Text>
+          <Text style={[styles.desc, {top:-98}]}>Create your availability and keep track of your donations.</Text>
         </View>
 
 
         {/* PAGE FOUR:  */}
         <View style={styles.slide4}>
-          <TouchableOpacity style = {{borderRadius: 30, width: 180, height: 40, position:'absolute',bottom:150, justifyContent: 'center', alignItems: 'center', zIndex: 2, backgroundColor:'#06a2bc'}}
+          <TouchableOpacity style = {{borderRadius: 30, width: 200, height: 45, position:'absolute',bottom:140, justifyContent: 'center', alignItems: 'center', zIndex: 2, backgroundColor:'#06a2bc'}}
           onPress={()=>Actions.login()}
           >
-            <Text style={styles.buttonText} >Login</Text>
+            <Text style={styles.buttonText}>Login</Text>
           </TouchableOpacity>
 
-          <Text style={styles.subheader}>Track your progress</Text>
+          <Text style={styles.subheader}>Help the Community</Text>
 
         <LottieView
-            source={require('../assets/lottieFiles/welcome.json')}
-            style={{justifyContent:'center', alignItems:'center',height:350, width:'100%', flex:1.2}}
+            source={require('../assets/lottieFiles/givingfood.json')}
+            style={styles.animation}
             autoPlay
             loop
         />
-          <Text style={styles.desc}>Keep track of how much you donate and show it off!</Text>
+          <Text style={styles.desc}>Once your donation is picked up you're all done!</Text>
         </View>
         
       </Swiper>
        </View> 
-      
-      
-
-      
     )
   }
 }
