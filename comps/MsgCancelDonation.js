@@ -1,25 +1,27 @@
 import React from 'react';
-import {View, Text, Image, TouchableHighlight} from 'react-native';
-import MsgNfStyles from '../styles/MsgNfStyles';
+import {View, Text, Image, TouchableOpacity} from 'react-native';
+import GMapStyle from '../styles/mapStyle';
 import buttonStyle from '../styles/buttonStyle';
+import {Actions} from 'react-native-router-flux';
 
-function MsgCancelDonation(){
+
+function MsgCancelDonation(props){
     return(
         <View
-        style = {MsgNfStyles.infoBox}
+        style = {GMapStyle.infoBox}
         >
             {/*Title box below*/} 
             <View
             style = {{marginTop: 50}}>
                 <Text
-                style = {MsgNfStyles.CancelledText}
+                style = {GMapStyle.CancelledText}
                 >Pick Up Cancelled</Text>
             </View>
             {/*Image box below*/} 
            
             {/*Date box below*/} 
             <View
-            style = {MsgNfStyles.messageBox}
+            style = {GMapStyle.messageBox}
             >
                 <Text style = {{height:70,marginTop: 40, fontFamily: 'DidactGothic-Regular', fontSize: 15}}>You have cancelled this donation from Safeway Extra.
 They will be informed that you are no longer picking
@@ -43,20 +45,33 @@ up this donation.</Text>
             </View>
             
             {/*Button below*/}
-            <TouchableHighlight
+            <TouchableOpacity
+            onPress = {()=>Actions.notification1()}
+            
             title="Accept"
             style = {buttonStyle.button}>
                 <Text
                 style = {{color: 'white', fontWeight: '500', fontFamily: 'avenir', fontSize: 16}}
                 >View Donations</Text>
-            </TouchableHighlight>
-            <TouchableHighlight
+            </TouchableOpacity>
+            <TouchableOpacity
+             onPress = {()=>Actions.dashboard1()}
             title="Accept"
             style = {buttonStyle.button2}>
                 <Text
                 style = {{color: '#0ca3bc', fontWeight: '500', fontFamily: 'avenir', fontSize: 16}}
                 >Search for Donations</Text>
-            </TouchableHighlight>
+            </TouchableOpacity>
+
+            <TouchableOpacity style ={{position: 'absolute', top: -5, right: 5}}
+                onPress={props.obj.closeMd} 
+                >
+                    <Image
+
+                    source={require('../assets/icon/x.png')}
+                    style = {{width: 15, height: 15}}
+                    />
+            </TouchableOpacity>
         </View>
     );
 };

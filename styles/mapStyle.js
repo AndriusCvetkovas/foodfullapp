@@ -85,16 +85,15 @@ var GMapStyle = StyleSheet.create({
     },
     infoBox: {
         position: 'absolute',
-        width: '80%',
-        height: '50%',
+        width: '100%',
+        height: '100%',
         backgroundColor: 'white',
         alignSelf: 'center',
-        top: '25%',
+        top: '5%',
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
-        borderRadius: 30,
-        padding: 10,
+       
     },
     dateBox: {
         flex: 0.5,

@@ -36,7 +36,11 @@ function Pickup() {
     var d = jsons.data;
     console.log(d);
     setDons(d);
-    console.log(donsName)
+    console.log(d)
+  }
+
+  function closeModal(){
+    setShowModal(false);
   }
   const [dons, setDons] = useState([]);
   const [donsName, setDonsName] = useState();
@@ -44,6 +48,7 @@ function Pickup() {
   // const [donsAddress, setDonsAddress] = useState();
   // const [donsStatus, setDonsStatus] = useState();
   // const [text, setText] = useState();
+  const [dd, setdd]= useState([])
   const [showModal, setShowModal]= useState(false);
 
   
@@ -58,8 +63,8 @@ function Pickup() {
       animationIn='slideInUp'
       style = {{backgroundColor: 'transparent', height: 700,width: 380, position: "absolute"}}
       isVisible = {showModal}
-      onBackdropPress={() => setShowModal(!showModal)}>
-        <PickedUpComfirm/>
+      onBackdropPress={() => console.log('BackDrop Closes the Modal')}>
+        <PickedUpComfirm obj={{hide: closeModal, getPendings: getID}} dd ={dd} />
       </Modal>
     <ScrollView>
       {
@@ -67,7 +72,10 @@ function Pickup() {
           if (d.status == 2) {
             var texta = 'Pickup Pending...'
             var colorz = '#ee9a23'
-        }else {
+        }else if (d.status == 3) {
+          var texta = 'Picked Up...'
+          var colorz = 'Green'
+      }else  {
             texta = 'Declined...'
             colorz = 'red'
         }
@@ -98,7 +106,7 @@ function Pickup() {
                   </View>
               </View>
               <TouchableOpacity
-              onPress={()=>setShowModal(!showModal)}
+              onPress={()=>{setShowModal(!showModal), setdd(d)}}
               >
                 <Image style={donationStyle.Dots} source={require("../assets/icon/dot_nav.png")} />
               </TouchableOpacity>

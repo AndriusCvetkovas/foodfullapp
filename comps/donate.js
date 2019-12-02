@@ -215,7 +215,7 @@ function Donate({addr, ids, tt, dType}) {
   const [showModal, setShowModal] = useState(false);
   var modalInitContent = (
     <View>
-      <Text>eee</Text>
+      <Text></Text>
     </View>
   );
 
