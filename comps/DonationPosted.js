@@ -17,18 +17,18 @@ function DonationPosted(){
    <View style={{backgroundColor:'#ffffff', flex:1}}>
        <View style={styles.mainbody}>
              <LottieView
-                source={require('../assets/lottieFiles/location.json')}
-                style={{justifyContent:'center', alignItems:'center',height:300, width:'100%',}}
+                source={require('../assets/lottieFiles/make_donation.json')}
+                style={{justifyContent:'center', alignItems:'center',height:250, width:'90%',}}
                 autoPlay
                 loop
             />
 
         <View style={styles.headers}>
-              <Text style={styles.titleHeader}>Your donation has been sent!</Text>
+              <Text style={styles.titleHeader}>Thank you for your Donation!</Text>
         </View>
 
         <View style={styles.contents}>
-              <Text style={styles.contentPosts}>When an organization accepts your donation, you will be notified.</Text>
+              <Text style={styles.contentPosts}>Your donation has been sent, and you will be notified when it's accepted.</Text>
         </View>
 
         <View style = {styles.containerButton}>
