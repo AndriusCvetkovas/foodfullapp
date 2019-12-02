@@ -9,7 +9,6 @@ const styles = StyleSheet.create({
     flex:1,
   },
   wrapper: {
-   
   },
   header:{
     fontFamily: 'Avenir',
@@ -17,8 +16,10 @@ const styles = StyleSheet.create({
     width:'90%',
     fontWeight:'700',
     color: '#3dbfd2',
-    top:-20,
-    paddingLeft:20
+    paddingLeft:20,
+    zIndex:2,
+    flex:1,
+    top:180
   },
   subheader:{
     fontFamily: 'Avenir',
@@ -26,16 +27,18 @@ const styles = StyleSheet.create({
     width:'90%',
     fontWeight:'700',
     color: '#3dbfd2',
-    top:-30,
+    top:200,
     textAlign:'center',
+    flex:1,
   },
   desc:{
     fontFamily: 'Avenir',
-    fontSize: 22,
+    fontSize: 25,
     width:'90%',
     fontWeight:'500',
     color: '#3dbfd2',
-    paddingLeft:20
+    paddingLeft:20,
+    flex:1
   },
   slide1: {
     flex: 1,
@@ -105,66 +108,70 @@ export default class GetStarted extends Component {
 
         <LottieView
             source={require('../assets/lottieFiles/checkmark.json')}
-            style={{justifyContent:'center', alignItems:'center',height:350, width:'100%', position:'absolute'}}
+            style={{height:300, width:'100%', position:'absolute', top:38, right:-40,}}
             autoPlay
             loop
         />
 
         <LottieView
             source={require('../assets/lottieFiles/welcome.json')}
-            style={{justifyContent:'center', alignItems:'center',height:350, width:'100%'}}
+            style={{justifyContent:'center', alignItems:'center',height:350, width:'100%', flex:1.2}}
             autoPlay
             loop
         />
-          <Text style={styles.desc}>Thank you for joining foodfull and making a change in your community.</Text>
+          <Text style={styles.desc}>Thank you for joining foodfull and making a change.</Text>
           
 
         </View>
 
 
       {/* PAGE TWO: DONATE */}
-        <View style={styles.slide2}>
-        <Text style={styles.subheader}>Donate Food</Text>
+      <View style={styles.slide1}>
+        <Text style={styles.subheader}>Make a Donation</Text>
+
         <LottieView
-            source={require('../assets/lottieFiles/make_donation.json')}
-            style={{justifyContent:'center', alignItems:'center',height:300, width:'70%',top:-5, marginLeft:4.3}}
+            source={require('../assets/lottieFiles/welcome.json')}
+            style={{justifyContent:'center', alignItems:'center',height:350, width:'100%', flex:1.2}}
             autoPlay
             loop
         />
-        <Text style={styles.desc}>Match with food banks around you and send donations in one easy step</Text>
-       
+          <Text style={styles.desc}>Match with food banks around you and send donations in one easy step</Text>
         </View>
+
 
 
       {/* PAGE THREE:  */}
-        <View style={styles.slide3}>
-          <Text style={styles.subheader}>Create a Schedule</Text>
-          <LottieView
-            source={require('../assets/lottieFiles/calendar.json')}
-            style={{justifyContent:'center', alignItems:'center',height:350, width:'100%',top:-5, marginLeft:4.3}}
+      <View style={styles.slide1}>
+        <Text style={styles.subheader}>Make a Donation</Text>
+
+        <LottieView
+            source={require('../assets/lottieFiles/welcome.json')}
+            style={{justifyContent:'center', alignItems:'center',height:350, width:'100%', flex:1.2}}
             autoPlay
             loop
         />
-          <Text style={[styles.desc, {top:-25}]}>Set up a date and time for your donation to be picked up</Text>
+          <Text style={styles.desc}>Match with food banks around you and send donations in one easy step</Text>
         </View>
 
 
 
-        {/* PAGE THREE:  */}
+        {/* PAGE FOUR:  */}
         <View style={styles.slide4}>
-          <TouchableOpacity style = {{borderRadius: 30, width: 180, height: 40, top: 490, justifyContent: 'center', alignItems: 'center', zIndex: 2, backgroundColor:'#06a2bc',}}
+          <TouchableOpacity style = {{borderRadius: 30, width: 180, height: 40, position:'absolute',bottom:-40, justifyContent: 'center', alignItems: 'center', zIndex: 2, backgroundColor:'#06a2bc'}}
           onPress={()=>Actions.login()}
           >
             <Text style={{color:'#ffffff'}} >Login</Text>
           </TouchableOpacity>
-          <Text style={[styles.subheader, {top:-63}]}>Track your progress</Text>
-          <LottieView
-            source={require('../assets/lottieFiles/make_donation.json')}
-            style={{justifyContent:'center', alignItems:'center',height:320, width:'80%',top:-5, marginLeft:4.3}}
+
+          <Text style={styles.subheader}>Track your progress</Text>
+
+        <LottieView
+            source={require('../assets/lottieFiles/welcome.json')}
+            style={{justifyContent:'center', alignItems:'center',height:350, width:'100%', flex:1.2}}
             autoPlay
             loop
         />
-         <Text style={styles.desc}>Keep track of your donations and become the top donator!</Text>
+          <Text style={styles.desc}>Keep track of your donations and become the top donator!</Text>
         </View>
         
       </Swiper>
