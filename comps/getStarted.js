@@ -41,6 +41,13 @@ const styles = StyleSheet.create({
     flex:1,
     paddingTop:20
   },
+  animation:{
+    justifyContent:'center', 
+    alignItems:'center',
+    height:300, 
+    width:350, 
+    flex:1.2
+  },
   slide1: {
     flex: 1,
     justifyContent: 'center',
@@ -77,10 +84,16 @@ const styles = StyleSheet.create({
     justifyContent:'center', 
     alignItems:'center',
     borderRadius: 30
+  },
+  buttonText: {
+    color: '#ffffff',
+    fontSize:20,
+    fontFamily: 'Avenir'
   }
 })
 
 export default class GetStarted extends Component {
+
   render() {
     return (
        <View style={styles.comp} >
@@ -102,8 +115,8 @@ export default class GetStarted extends Component {
           <Text style = {{position: 'absolute'}}></Text>
         }
         buttonWrapperStyle= {{borderRadius:20, backgroundColor: '#3dbfd2', width: 100, height: 45, justifyContent: 'center', alignItems: 'center', top: 660, left: 155, right: 0 }}
-        showsButtons={false} showsPagination={true} loop={false} dot={<View style={{backgroundColor: '#bcd1d3', width: 8, height: 8, borderRadius: 8, marginLeft: 5, marginRight: 5, marginTop: 3, marginBottom: 3, bottom: 80}} />}
-        activeDot={<View style={{backgroundColor: '#3dbfd2', width: 8, height: 8, borderRadius: 8, marginLeft: 3, marginRight: 3, marginTop: 3, marginBottom: 3, bottom: 80}} />}>
+        showsButtons={false} showsPagination={true} loop={false} dot={<View style={{backgroundColor: '#bcd1d3', width: 9, height: 9, borderRadius: 9, marginLeft: 5, marginRight: 5, marginTop: 3, marginBottom: 3, bottom: 80}} />}
+        activeDot={<View style={{backgroundColor: '#3dbfd2', width: 9, height: 9, borderRadius: 9, marginLeft: 3, marginRight: 3, marginTop: 3, marginBottom: 3, bottom: 80}} />}>
 
         <View style={styles.slide1}>
         <Text style={styles.header}>Your account has been created!</Text>
@@ -117,7 +130,7 @@ export default class GetStarted extends Component {
 
         <LottieView
             source={require('../assets/lottieFiles/welcome.json')}
-            style={{justifyContent:'center', alignItems:'center',height:350, width:'100%', flex:1.2}}
+            style={styles.animation}
             autoPlay
             loop
         />
@@ -132,7 +145,7 @@ export default class GetStarted extends Component {
 
         <LottieView
             source={require('../assets/lottieFiles/makedonation.json')}
-            style={{justifyContent:'center', alignItems:'center',height:300, width:350, flex:1.2}}
+            style={styles.animation}
             autoPlay
             loop
         />
@@ -145,21 +158,27 @@ export default class GetStarted extends Component {
         <Text style={styles.subheader}>Set Your Schedule</Text>
 
         <LottieView
-            source={require('../assets/lottieFiles/test2.json')}
-            style={{justifyContent:'center', alignItems:'center',height:350, width:'100%', flex:1.2}}
+            source={require('../assets/lottieFiles/calendar2.json')}
+            style={[styles.animation, {flex:3, zIndex:2}]}
             autoPlay
             loop
         />
-          <Text style={styles.desc}>Match with food banks around you and send donations in one easy step</Text>
+        <LottieView
+            source={require('../assets/lottieFiles/circle.json')}
+            style={{justifyContent:'center', alignItems:'center',height:'100%', width:'100%', position:'absolute'}}
+            autoPlay
+            loop
+        />
+          <Text style={[styles.desc, {top:-98}]}>Select your availability and keep track of your donations</Text>
         </View>
 
 
         {/* PAGE FOUR:  */}
         <View style={styles.slide4}>
-          <TouchableOpacity style = {{borderRadius: 30, width: 180, height: 40, position:'absolute',bottom:-40, justifyContent: 'center', alignItems: 'center', zIndex: 2, backgroundColor:'#06a2bc'}}
+          <TouchableOpacity style = {{borderRadius: 30, width: 180, height: 40, position:'absolute',bottom:150, justifyContent: 'center', alignItems: 'center', zIndex: 2, backgroundColor:'#06a2bc'}}
           onPress={()=>Actions.login()}
           >
-            <Text style={{color:'#ffffff'}} >Login</Text>
+            <Text style={styles.buttonText} >Login</Text>
           </TouchableOpacity>
 
           <Text style={styles.subheader}>Track your progress</Text>
@@ -170,7 +189,7 @@ export default class GetStarted extends Component {
             autoPlay
             loop
         />
-          <Text style={styles.desc}>Keep track of your donations and become the top donator!</Text>
+          <Text style={styles.desc}>Keep track of how much you donate and show it off!</Text>
         </View>
         
       </Swiper>

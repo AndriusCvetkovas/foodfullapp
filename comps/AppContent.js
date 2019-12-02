@@ -229,4 +229,4 @@ function AppContent() {
   );
 }
 
-export default DonationPosted;
+export default GetStarted;
