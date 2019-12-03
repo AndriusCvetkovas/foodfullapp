@@ -136,7 +136,7 @@ var DashStyle = StyleSheet.create({
         fontSize:20, 
         fontFamily:'avenir', 
         fontWeight:'500'
-    },
+    }
 
 });
 export default DashStyle;
