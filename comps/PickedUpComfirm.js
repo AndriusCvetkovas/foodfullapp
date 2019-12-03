@@ -267,8 +267,8 @@ function PickedUpComfirm(props) {
                             {/* <Text style={AcceptNFStyle.address}>Donation Request</Text> */}
                     </View> 
                 {/*Date of pickup below */}
-                <View style={[AcceptNFStyle.pickupDate, {flex: 1.3}]}>
-                    <Text style={{ color: '#066a87', fontSize: 16, flex: 2}} onPress={()=> alert('Address',d.address)}>{dd.address}</Text>
+                <View style={[AcceptNFStyle.pickupDate]}>
+                    <Text style={{ color: '#066a87', fontSize: 16, flex: 2}} onPress={()=> alert('Address',d.address)}>{d.address}</Text>
                 </View>
                 <View style={AcceptNFStyle.pickupDate}>
                     <Text style={{ color: '#0ca3bc', fontSize: 18, flex: 1,fontWeight: "600" }}>Pickup Date</Text>

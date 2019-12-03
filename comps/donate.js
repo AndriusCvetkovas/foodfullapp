@@ -48,6 +48,8 @@ function Donate({addr, ids, tt, dType}) {
     storageOptions: {
       skipBackup: true,
       path: 'images',
+      maxWidth: 500,
+      maxHight: 500
     },
   };
 

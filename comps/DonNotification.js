@@ -164,7 +164,7 @@ function DonNotification() {
                                         <Text style={[donationStyle.address, {fontSize: 16, fontWeight: '600'}]}>{d.time}</Text>
                                     </View>
                                     <View>
-                                        <Text style={[donationStyle.optionText, {color: colorz}]}>{texta}</Text>
+                                        <Text style={[donationStyle.optionText, {color: colorz, width: 400}]}>{texta}</Text>
                                     </View>
 
                                 </View>
