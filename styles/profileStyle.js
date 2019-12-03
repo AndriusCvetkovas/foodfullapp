@@ -3,7 +3,7 @@ import {StyleSheet} from 'react-native';
 var ProfileStyle = StyleSheet.create({
     mainView: {
         flex: 1,
-        top: 50,
+        paddingTop: 50,
         alignItems: 'center',
         justifyContent: 'center',
         backgroundColor: 'white'
@@ -140,7 +140,7 @@ var ProfileStyle = StyleSheet.create({
         width: 380,
         alignItems: 'center',
         justifyContent: 'center',
-        top:-80
+        top:-50
     }
    
 });

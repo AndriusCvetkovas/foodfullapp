@@ -6,7 +6,7 @@ popup:{
   height: 500, 
   width: 330, 
   backgroundColor: 'white', 
-  marginTop:15, 
+  marginTop:0,
   padding:25, 
   borderRadius:30
   },

@@ -249,7 +249,7 @@ ImagePicker.showImagePicker(options, async(response) => {
             <Modal isVisible={showModal}
             coverScreen={false}
             animationIn='slideInUp'
-            style = {{backgroundColor: 'transparent', height: 600,width: 370, position: "absolute", alignItems:"center", justifyContent:'center', marginTop:50}}
+            style = {{height: 600,width: 370, position: "absolute", alignItems:"center", marginTop:100}}
             isVisible = {showModal}
             onBackdropPress={() => setShowModal(!showModal)}
             >

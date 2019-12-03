@@ -25,6 +25,7 @@ var id = '';
 var receiverId = 0;
 function Donate({addr, ids, tt, dType}) {
   var donationType = dType;
+  var tts = tt;
   console.log('don type: ', donationType);
 
 
@@ -195,7 +196,7 @@ function Donate({addr, ids, tt, dType}) {
     setSelectedTime('');
     setSelectedDescription('');
     Actions.refresh({key: 'postdonation'});
-  }, [tt]);
+  }, []);
 
   const [showModal, setShowModal] = useState(false);
   var modalInitContent = (
@@ -398,7 +399,7 @@ function Donate({addr, ids, tt, dType}) {
           underlayColor="#000"
           color="white"
           onPress={() => 
-            {if(image == null && selectedDate == null && selectedTime == null && setSelectedDescription == null){
+            {if(image == null || selectedDate == null || selectedTime == null || setSelectedDescription == null){
               alert("Please fill in all the inputs")
             }else {
               changePage();
