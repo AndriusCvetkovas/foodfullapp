@@ -11,8 +11,8 @@ function LoginPage() {
   const [email, setEnteredEmail] = useState();
   const [password, setEnteredPassword] = useState();
   const [show, setShow] = useState(false);
-  if (show == true){
-    return(
+  if (show == true) {
+    return (
       null
     )
   }
@@ -58,7 +58,7 @@ function LoginPage() {
         var userT = await JSON.parse(userInfo.data.body);
         var type = JSON.stringify(userT.data[0].type)
         console.log(type);
-        
+
         //SAVE type
         const storeData2 = async () => {
           try {
@@ -89,7 +89,7 @@ function LoginPage() {
   return (
 
 
-    <View  style={Loginstyles.container}>
+    <View style={Loginstyles.container}>
 
 
       {/* LOGO / ANIMATION */}
@@ -98,16 +98,16 @@ function LoginPage() {
           style={Loginstyles.LogoImg}
           source={require('../../assets/img/logo_animation.png')}
         /> */}
-          <LottieView
-            source={require('../../assets/lottieFiles/signin.json')}
-            style={Loginstyles.LogoImg}
-            autoPlay
-            loop
+        <LottieView
+          source={require('../../assets/lottieFiles/signin.json')}
+          style={Loginstyles.LogoImg}
+          autoPlay
+          loop
         />
       </View>
 
       {/* HEADER AND SUBHEADER */}
-      <View style={{top:-50}}>
+      <View style={{ top: -50 }}>
         <Text style={Loginstyles.header}>
           Foodfull
           </Text>
@@ -141,10 +141,6 @@ function LoginPage() {
           />
         </View>
       </View>
-      
-
-      
-
 
       <TouchableOpacity style={[Loginstyles.buttonContainer, Loginstyles.signinButton]} onPress={() => CheckUsers()}>
         <Text style={Loginstyles.signInText}>Sign In</Text>
@@ -154,9 +150,9 @@ function LoginPage() {
         <Text style={Loginstyles.signUpText}>Don't have account?</Text>
         <TouchableOpacity
           onPress={() => Actions.signup()}
-          style={{height:30}}>
-            <Text style={Loginstyles.link}> Sign Up </Text>
-          </TouchableOpacity>
+          style={{ height: 30 }}>
+          <Text style={Loginstyles.link}> Sign Up </Text>
+        </TouchableOpacity>
 
       </View>
 

@@ -51,7 +51,7 @@ function Info({dd, setShowModal}) {
     getID();
   }, []);
   return (
-    <View style={GMapStyle.infoBox}>
+    <View style={[GMapStyle.infoBox, {height: 600}]}>
       {/*Title box below*/}
       <View>
         <Text style={GMapStyle.donatorTitle}>{namer}</Text>

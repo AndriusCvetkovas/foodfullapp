@@ -60,7 +60,6 @@ function Pickup() {
   }
   const [dons, setDons] = useState([]);
   const [dons2, setDons2] = useState([]);
-  const [donsName, setDonsName] = useState();
   const [dd, setdd]= useState([])
   const [showModal, setShowModal]= useState(false);
 
