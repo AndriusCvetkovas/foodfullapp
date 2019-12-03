@@ -10,6 +10,12 @@ import LottieView from 'lottie-react-native';
 function LoginPage() {
   const [email, setEnteredEmail] = useState();
   const [password, setEnteredPassword] = useState();
+  const [show, setShow] = useState(false);
+  if (show == true){
+    return(
+      null
+    )
+  }
   //Auth
   const Auth = async () => {
     console.log(email, password)
@@ -64,8 +70,10 @@ function LoginPage() {
         storeData2();
         if (userT.data[0].type == 0) {
           Actions.tabbar0();
+          setShow(!show);
         } else {
           Actions.tabbar1();
+          setShow(!show);
         }
       }
       Read();

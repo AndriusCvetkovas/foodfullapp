@@ -94,13 +94,19 @@ const styles = StyleSheet.create({
 })
 
 function GetStarted(){
+  const [show, setShow] = useState(false);
+  if(show == true){
+    return (
+      null
+    )
+  }
     var skipper = null;
     const [ind, setIndex] = useState();
     console.log(ind);
     if(ind != 3){
       skipper = (<View style = {{flex: 0.2, position: 'absolute', top: 670, zIndex: 2, textAlign: 'center', width: '100%'}}>
       <TouchableOpacity 
-      onPress={()=>{Actions.login()}}
+      onPress={()=>{Actions.login(),setShow(!show)}}
       style ={{top: 140, width: 40, alignSelf: 'center'}}
         >
           <Text style ={{ color: 'grey',textAlign: 'center'}}>Skip</Text>
@@ -181,7 +187,7 @@ function GetStarted(){
           {/* PAGE FOUR:  */}
           <View style={styles.slide4}>
             <TouchableOpacity style={{ borderRadius: 30, width: 200, height: 45, position: 'absolute', bottom: 140, justifyContent: 'center', alignItems: 'center', zIndex: 2, backgroundColor: '#06a2bc' }}
-              onPress={() => Actions.login()}
+              onPress={() => {Actions.login(), setShow(!show)}}
             >
               <Text style={styles.buttonText}>Login</Text>
             </TouchableOpacity>
