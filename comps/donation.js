@@ -134,62 +134,7 @@ function Donations() {
                     })
                 }
             </ScrollView>
-            {/* <Modal isVisible={showModal}
-                coverScreen={false}
-                animationIn='slideInUp'
-                style={{ backgroundColor: 'transparent', height: 500, width: 380, position: "absolute", top: 50 }}
-                isVisible={showModal}
-                onBackdropPress={() => setShowModal(!showModal)}
-            >
-                <View style={{ height: '100%', justifyContent: 'center', alignItems: 'center' }}>
-                    <View style={AcceptNFStyle.main2}>
-                        {/*Donation info below */}
-
-                        {/* <View style={AcceptNFStyle.donationInfoTop}>
-                            <View style={AcceptNFStyle.Images}>
-                                <Text style={AcceptNFStyle.Month}>{dd.date}</Text>
-                            </View>
-
-                            <View style={AcceptNFStyle.TextDisplay}>
-                                <Text style={AcceptNFStyle.Organization}>{dd.name}</Text>
-                                <Text style={AcceptNFStyle.address}>Donation Request</Text>
-                            </View>
-
-                        </View> */}
-                        {/*Image text below */}
-
-                        {/*Date of pickup below */}
-                        {/* <View style={AcceptNFStyle.pickupDate}>
-                            <Text style={{ color: '#0ca3bc', fontSize: 18, flex: 1 }}>Location</Text>
-                            <Text style={{ color: '#066a87', fontSize: 16, flex: 1 }}>{dd.address}</Text>
-                        </View> */}
-                        {/*Pickup time below */}
-                        {/* <View style={AcceptNFStyle.pickupTime}>
-                            <Text style={{ color: '#0ca3bc', fontSize: 18, flex: 1 }}>Pickup Time</Text>
-                            <Text style={{ color: '#066a87', fontSize: 16, flex: 1 }}>{dd.time}</Text>
-                        </View> */}
-                        {/*Description title below */}
-                        {/* <Text
-                            style={AcceptNFStyle.descriptionTitle}
-                        >Description</Text> */}
-                        {/*Description below */}
-                        {/* <Text
-                            style={AcceptNFStyle.description} */}
-                {/* //         >
-                //             {dd.description}
-                //         </Text>
-                //         
-                //     </View>
-                //     <TouchableOpacity style={{ position: 'absolute', top: 30, right: 30 }}
-                //         onPress={() => { setShowModal(!showModal) }}>
-                //         <Image
-
-                //             source={require('../assets/icon/x.png')}
-                //             style={{ width: 15, height: 15, marginRight: 35, padding: 10, borderRadius: 10 }}
-                //         />
-                //     </TouchableOpacity>
-                // </View>
-            //</Modal> */}
+            
             <Modal isVisible={showModal}
             coverScreen={false}
             animationIn='slideInUp'
