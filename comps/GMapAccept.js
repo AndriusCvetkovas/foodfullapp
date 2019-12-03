@@ -149,15 +149,15 @@ const [showImage, setShowImage] = useState(true)
             <Text style={[GMapStyle.innerTitle, {top: -20}]}>{d.name}</Text>
             {imageContent}
             <View style={[GMapStyle.innerInfo ]} >
-              <Image
+              {/* <Image
                 style={{height: 75, width: 75, borderRadius: 75}}
-                source={{uri: `https://foodfull.s3-us-west-2.amazonaws.com/avatar0.jpg`}}></Image>
-              <View style={[GMapStyle.innerInner, {top: 90}]}>
+                source={{uri: `https://foodfull.s3-us-west-2.amazonaws.com/avatar0.jpg`}}></Image> */}
+              <View style={[GMapStyle.innerInner, {top: 130, left: -25}]}>
                 
-                <Text style={[GMapStyle.innerAddress,{top: 70}]} key={i}>
+                <Text style={[GMapStyle.innerAddress,{top: 0, color: '#06a2bc', fontSize: 16}]} key={i}>
                   {d.address}
                 </Text>
-                <View style= {{left: -70, top: 100, overflow: 'hidden', height: 250}}>
+                <View style= {{left: 0, top: 20, overflow: 'hidden', height: 250}}>
                   
                   <Text>{d.time}</Text>
                   <Text>{d.date}</Text>

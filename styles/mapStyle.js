@@ -60,8 +60,7 @@ var GMapStyle = StyleSheet.create({
         //alignItems: 'center'
     },
     innerAddress: {
-        paddingLeft: 20,
-        top: -15
+        top: 10,
     },
     backBut:{
         position: 'absolute',
