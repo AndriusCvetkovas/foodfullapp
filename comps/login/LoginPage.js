@@ -110,7 +110,7 @@ function LoginPage() {
 
       <View style={Loginstyles.form}>
         <View style={Loginstyles.inputContainer}>
-          <Image style={{ width: 20, height: 15, marginLeft: 15, }}
+          <Image style={{ width: 20, height: 15, marginLeft: 5, }}
             source={require('../../assets/icon/email.png')} />
           <TextInput style={Loginstyles.inputs}
             placeholder="Email"
@@ -121,7 +121,7 @@ function LoginPage() {
         </View>
 
         <View style={Loginstyles.inputContainer}>
-          <Image style={{ width: 18, height: 25, marginLeft: 15, }}
+          <Image style={{ width: 18, height: 25, marginLeft: 5, }}
             source={require('../../assets/icon/password.png')} />
           <TextInput style={Loginstyles.inputs}
             placeholder="Password"
