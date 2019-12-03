@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 import { AppRegistry, StyleSheet, Text, View, Button, SafeAreaView, TouchableOpacity, Image } from 'react-native';
 import LottieView from 'lottie-react-native';
 import Swiper from 'react-native-swiper';
@@ -79,18 +79,22 @@ const styles = StyleSheet.create({
   }
 })
 
-export default class GetStarted extends Component {
-  render() {
+function GetStarted(){
+    var skipper = null;
+    const [ind, setIndex] = useState();
+    console.log(ind);
+    if(ind != 3){
+      skipper = (<View style = {{flex: 0.2, position: 'absolute', top: 670, zIndex: 2, textAlign: 'center', width: '100%'}}>
+      <TouchableOpacity 
+      onPress={()=>{Actions.login()}}
+        >
+          <Text style ={{ color: 'grey', top: 140,textAlign: 'center'}}>Skip</Text>
+        </TouchableOpacity>
+      </View>)
+    }
     return (
        <View style={styles.comp} >
-         <View style = {{flex: 0.2, position: 'absolute', top: 670, zIndex: 2, textAlign: 'center', width: '100%'}}>
-          <TouchableOpacity 
-          onPress={()=>{Actions.login()}}
-            >
-              <Text style ={{ color: 'grey', top: 140,textAlign: 'center'}}
-              >Skip</Text>
-            </TouchableOpacity>
-          </View>
+         {skipper}
        {/* PAGE ONE: ACCOUNT CREATED */}
         <Swiper style={styles.wrapper}
         nextButton={
@@ -99,6 +103,7 @@ export default class GetStarted extends Component {
         prevButton={
           <Text style = {{position: 'absolute'}}></Text>
         }
+        onIndexChanged={(index) => {setIndex(index)}}
         buttonWrapperStyle= {{borderRadius:20, backgroundColor: '#3dbfd2', width: 100, height: 45, justifyContent: 'center', alignItems: 'center', top: 660, left: 155, right: 0 }}
         showsButtons={false} showsPagination={true} loop={false} dot={<View style={{backgroundColor: '#bcd1d3', width: 8, height: 8, borderRadius: 8, marginLeft: 5, marginRight: 5, marginTop: 3, marginBottom: 3, bottom: 80}} />}
         activeDot={<View style={{backgroundColor: '#3dbfd2', width: 8, height: 8, borderRadius: 8, marginLeft: 3, marginRight: 3, marginTop: 3, marginBottom: 3, bottom: 80}} />}>
@@ -181,7 +186,6 @@ export default class GetStarted extends Component {
 
       
     )
-  }
 }
-
+export default GetStarted;
 AppRegistry.registerComponent('myproject', () => SwiperComponent)
