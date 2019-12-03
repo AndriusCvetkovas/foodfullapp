@@ -94,7 +94,7 @@ var donationStyle = StyleSheet.create({
     ImageSize:{
         width: 120,
         height: 120,
-        borderRadius: 120,
+        borderRadius: 20,
 
     },
     Dots:{
