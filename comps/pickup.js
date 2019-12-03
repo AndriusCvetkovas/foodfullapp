@@ -61,10 +61,6 @@ function Pickup() {
   const [dons, setDons] = useState([]);
   const [dons2, setDons2] = useState([]);
   const [donsName, setDonsName] = useState();
-  // const [donsTime, setDonsTime] = useState();
-  // const [donsAddress, setDonsAddress] = useState();
-  // const [donsStatus, setDonsStatus] = useState();
-  // const [text, setText] = useState();
   const [dd, setdd]= useState([])
   const [showModal, setShowModal]= useState(false);
 
@@ -92,10 +88,7 @@ function Pickup() {
         }else if (d.status == 4) {
           var texta = 'Picked Up...'
           var colorz = 'green'
-      }else  {
-            texta = 'Declined...'
-            colorz = 'red'
-        }
+      }
           return (
 <View style = {donationStyle.comp}>
         <View>
@@ -140,7 +133,7 @@ function Pickup() {
           if (d2.status == 2) {
             var texta = 'Pickup Pending...'
             var colorz = '#ee9a23'
-        }else if (d2.status == 3) {
+        }else if (d2.status == 4) {
           var texta = 'Picked Up...'
           var colorz = 'green'
       }else  {

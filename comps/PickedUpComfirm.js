@@ -58,7 +58,19 @@ function PickedUpComfirm(props) {
         var json = JSON.parse(r.data.body);
         console.log(json.data);
         console.log('Your Status is now: ' + obj.data.status);
-
+    }
+    const Update5 = async (thisId) => {
+        var obj = {
+            key: "donations_update",
+            data: {
+                id: thisId,
+                status: 5
+            }
+        }
+        var r = await axios.post(`https://foodfullapp.herokuapp.com/post`, obj);
+        var json = JSON.parse(r.data.body);
+        console.log(json.data);
+        console.log('Your Status is now: ' + obj.data.status);
     }
 
 
@@ -103,11 +115,11 @@ function PickedUpComfirm(props) {
 
                 </View>
                 {/*Time box below*/}
-                <View style={{ flexDirection: 'row', width: "80%", flex: 0.4 }}>
+                <View style={{ flexDirection: 'row', width: "80%", flex: 0.4, alignItems: 'center', justifyContent: 'center' }}>
                     <Text style={{ color: '#0ca3bc', flex: 1, fontWeight: '800' }}>Weight:</Text>
 
                     <TextInput
-                        style={PickUpStyle.InputSty}
+                        style={[PickUpStyle.InputSty, {width: 150}]}
                         onChangeText={(text) => onChangeText(text)}
                         value={inputValue}
                     />
@@ -117,13 +129,13 @@ function PickedUpComfirm(props) {
                 <TouchableOpacity
                     onPress={() => { Update4(d.id), [setdd(d)], props.obj.hide(), props.obj.getPendings() }}
                     title="Accept"
-                    style={PickUpStyle.buttonS}>
+                    style={[PickUpStyle.buttonS, {top: 20}]}>
                     <Text
                         style={{ color: 'white' }}
                     >Confirm Pickup</Text>
                 </TouchableOpacity>
 
-                <TouchableOpacity style={{ position: 'absolute', top: -35, right: 12 }}
+                <TouchableOpacity style ={{position: 'absolute', top: -30, right: 20}}
                     onPress={props.obj.hide}
                 >
                     <Image
@@ -140,11 +152,11 @@ function PickedUpComfirm(props) {
 
 
     var cancelPickUp = (
-        <View style={PickUpComfirmSty.main}>
+        <View style={[PickUpComfirmSty.main, {height: 500, top: 0}]}>
 
-            <View style={PickUpComfirmSty.main2}>
+            <View style={[PickUpComfirmSty.main2]}>
                 <View
-                    style={GMapStyle.infoBox}
+                    style={[GMapStyle.infoBox, {height: 300, width: '100%'}]}
                 >
                     {/*Title box below*/}
                     <View
@@ -157,7 +169,7 @@ function PickedUpComfirm(props) {
 
                     {/*Date box below*/}
                     <View
-                        style={GMapStyle.messageBox}
+                        style={[GMapStyle.messageBox]}
                     >
                         <Text style={{ height: 70, marginTop: 40, fontFamily: 'DidactGothic-Regular', fontSize: 15 }}>You have cancelled this donation from Safeway Extra.
                             They will be informed that you are no longer picking
@@ -169,7 +181,7 @@ function PickedUpComfirm(props) {
                         style={{ flexDirection: 'row', width: "80%", flex: 0.4 }}
                     >
                         <Text style={{ flex: 1, color: '#0ca3bc', fontFamily: 'Avenir', fontSize: 18 }}>Location:</Text>
-                        <Text style={{ flex: 1, fontFamily: 'DidactGothic-Regular', fontSize: 15 }}>6666 Iona</Text>
+                        <Text style={{ flex: 1, fontFamily: 'DidactGothic-Regular', fontSize: 15 }}>{d.address}</Text>
                     </View>
                     {/*Time box below*/}
                     <View style={{ flexDirection: 'row', width: "80%", flex: 0.4 }}>
@@ -177,7 +189,7 @@ function PickedUpComfirm(props) {
                         <Text
                             style={{ color: "black", flex: 1, fontFamily: 'DidactGothic-Regular', fontSize: 15 }}
                         >
-                            1:20pm
+                            {d.time}
                 </Text>
                     </View>
 
@@ -187,10 +199,8 @@ function PickedUpComfirm(props) {
                             props.obj.hide,
                             console.log("Olala")
                         }
-
-
                         title="Accept"
-                        style={buttonStyle.button}>
+                        style={[buttonStyle.button, {top: 0}]}>
                         <Text
                             style={{ color: 'white', fontWeight: '500', fontFamily: 'avenir', fontSize: 16 }}
                         >View Donations</Text>
@@ -208,7 +218,7 @@ function PickedUpComfirm(props) {
                         >Search for Donations</Text>
                     </TouchableOpacity>
 
-                    <TouchableOpacity style={{ position: 'absolute', top: -5, right: 5 }}
+                    <TouchableOpacity style={{ position: 'absolute', top: 10, right: 25 }}
                         onPress={props.obj.hide}
                     >
                         <Image
@@ -281,7 +291,7 @@ function PickedUpComfirm(props) {
             </Text>
             </View>
             <TouchableOpacity
-                            onPress={()=>setPickedUpContent(acceptedInfoContent)}
+                            onPress={()=>{setPickedUpContent(acceptedInfoContent), Update4(d.id)}}
                             title="Accept"
                             style={AcceptNFStyle.button}>
                             <Text
@@ -289,7 +299,7 @@ function PickedUpComfirm(props) {
                             >Picked Up</Text>
                         </TouchableOpacity>
                         <TouchableOpacity
-                            onPress={()=>setPickedUpContent(cancelPickUp)}
+                            onPress={()=>{setPickedUpContent(cancelPickUp), Update5(d.id)}}
                             title="Accept"
                             style={AcceptNFStyle.button2}>
                             <Text

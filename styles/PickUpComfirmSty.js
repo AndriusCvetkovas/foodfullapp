@@ -3,10 +3,11 @@ import {StyleSheet} from 'react-native';
 var PickUpComfirmSty = StyleSheet.create({
 
     main: {
-        width: '100%',
+        width: '95%',
         alignItems:'center',
         justifyContent: 'center',
-        height: '100%',
+        alignSelf: 'center',
+        height: 600
         
         
         
@@ -16,7 +17,7 @@ var PickUpComfirmSty = StyleSheet.create({
         width: '85%',
         backgroundColor: 'white',
         borderRadius: 30,
-        margin: 20,
+        //margin: 20,
         // padding: 20,
         alignItems:'center',
         justifyContent: 'center'

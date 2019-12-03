@@ -39,8 +39,8 @@ var ProfileStyle = StyleSheet.create({
 
     // Profile container box
     infoStyle: {
-        flex: 1.6,
-        top:-12,
+        flex: 1.8,
+        top:0,
         width: '90%',
         borderRadius: 30,
         backgroundColor: 'white',
