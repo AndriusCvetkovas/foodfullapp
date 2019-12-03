@@ -35,7 +35,9 @@ function AcceptingSignUp({text}) {
         type: userType,
         address: userAddress,
         lat: userLatitude,
-        long: userLongitude
+        long: userLongitude,
+        avatar_url: 0
+
       }
     }
     // console.log(userLatitude);
