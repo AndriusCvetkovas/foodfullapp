@@ -319,7 +319,6 @@ ImagePicker.showImagePicker(options, async(response) => {
           title="UPDATE USER"
           onPress={()=>{
               UpdateUser();
-              setImage(`https://foodfull.s3-us-west-2.amazonaws.com/avatar${uId}.jpg`)
               setShowModal(!showModal)
           }}>
                         

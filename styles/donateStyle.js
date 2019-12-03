@@ -31,7 +31,8 @@ var donateStyle = StyleSheet.create({
       marginBottom:10, 
       color:'#06a2bc', 
       width:'75%', 
-      marginLeft:15
+      marginLeft:15,
+      padding: 10
     },
     comp:{
         marginBottom:12,

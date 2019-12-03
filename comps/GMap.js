@@ -108,7 +108,7 @@ function GMap() {
         {
           users.map((d, i)=>{
             return(
-          <TouchableOpacity style={GMapStyle.infoStyle}
+          <TouchableOpacity style={[GMapStyle.infoStyle, {top: -120}]}
           onPress={()=>{ map.current.animateToRegion(
             {
               latitude: d.lat,
@@ -130,7 +130,7 @@ function GMap() {
               </View>
             </View>
 
-            <TouchableOpacity style={GMapStyle.innerButton}
+            <TouchableOpacity style={[GMapStyle.innerButton, {top: -100}]}
             
             onPress={()=>Actions.postdonation({addr: d.name, ids: d.id, stat: 1})}>
               <Text

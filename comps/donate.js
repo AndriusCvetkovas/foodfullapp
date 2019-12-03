@@ -41,7 +41,7 @@ function Donate({addr, ids, tt, dType}) {
 
   console.log(id);
   const [chooseOrg, setChooseOrg] = useState(false);
-  const [imageDefault, setArrayImages] = useState([]);
+  const [imageDefault, setArrayImages] = useState();
   const options = {
     title: 'Select Donation Image',
     storageOptions: {
@@ -87,13 +87,6 @@ function Donate({addr, ids, tt, dType}) {
         //arr.push(r2.respInfo.redirects[0]);
 
         return false;
-        var arr = imageDefault.map(o => {
-          return o;
-        });
-        arr.push(source);
-        setArrayImages(arr);
-        console.log(arr);
-        setSelectedUrl(arr);
       }
     });
   }
@@ -145,7 +138,7 @@ function Donate({addr, ids, tt, dType}) {
                 <Text
                   style={{
                     fontSize: 18,
-                    fontfamily: 'Avenir',
+                    fontFamily: 'Avenir',
                     fontWeight: '600',
                     color: '#06a2bc',
                   }}>
@@ -191,15 +184,7 @@ function Donate({addr, ids, tt, dType}) {
 
   console.log(obj.data.user_id);
   const changePage = () => {
-    if (receiverId != 0) {
-      setStatus(1);
       setShowModal(!showModal);
-      //Actions.confirmdonation({ text: obj })
-    } else if (receiverId != 0 && text == null && image == null) {
-      alert('Please make sure you entered everything');
-    } else {
-      Actions.confirmdonation({text: obj});
-    }
   };
   useEffect(() => {
     getID();
@@ -399,7 +384,8 @@ function Donate({addr, ids, tt, dType}) {
         <TouchableOpacity
           style={{position: 'absolute', top: 80, right: 50}}
           onPress={() => {
-            setShowModal(!showModal);
+            
+              setShowModal(!showModal);
           }}>
           <Image
             source={require('../assets/icon/x.png')}
@@ -411,7 +397,13 @@ function Donate({addr, ids, tt, dType}) {
           style={donateStyle.DonateBtn}
           underlayColor="#000"
           color="white"
-          onPress={changePage}>
+          onPress={() => 
+            {if(image == null && selectedDate == null && selectedTime == null && setSelectedDescription == null){
+              alert("Please fill in all the inputs")
+            }else {
+              changePage();
+          }}}
+          >
           <Text style={donateStyle.btnText}>Donate</Text>
         </TouchableOpacity>
     </KeyboardAvoidingView>
