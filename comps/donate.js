@@ -325,7 +325,7 @@ function Donate({addr, ids, tt, dType}) {
             </View>
             <TextInput
               style={{
-                height: 80,
+                height: 160,
                 borderColor: '#ddd',
                 borderWidth: 1,
                 borderRadius: 15,
