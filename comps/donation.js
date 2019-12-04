@@ -84,7 +84,7 @@ function Donations() {
     }, []);
     return (
 
-        <View>
+        <View style={{backgroundColor:'#f4f4f4'}}>
             {CheckifDon()}
 
             <ScrollView style={{ height: '100%' }}>

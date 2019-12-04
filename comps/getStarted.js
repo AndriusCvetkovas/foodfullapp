@@ -2,96 +2,9 @@ import React, { Component, useState } from 'react';
 import { AppRegistry, StyleSheet, Text, View, Button, SafeAreaView, TouchableOpacity, Image } from 'react-native';
 import LottieView from 'lottie-react-native';
 import Swiper from 'react-native-swiper';
-import { Actions } from 'react-native-router-flux'
-
-const styles = StyleSheet.create({
-  comp: {
-    flex: 1,
-  },
-  wrapper: {
-  },
-  header: {
-    fontFamily: 'Avenir',
-    fontSize: 35,
-    width: '90%',
-    fontWeight: '700',
-    color: '#3dbfd2',
-    paddingLeft: 20,
-    zIndex: 2,
-    flex: 1,
-    top: 175
-  },
-  subheader: {
-    fontFamily: 'Avenir',
-    fontSize: 35,
-    width: '90%',
-    fontWeight: '700',
-    color: '#3dbfd2',
-    top: 200,
-    textAlign: 'center',
-    flex: 1,
-  },
-  desc: {
-    fontFamily: 'Avenir',
-    fontSize: 23,
-    width: '90%',
-    fontWeight: '500',
-    color: '#3dbfd2',
-    flex: 1,
-    paddingLeft: 20,
-    paddingRight: 20,
-    paddingTop: 20
-  },
-  animation: {
-    justifyContent: 'center',
-    alignItems: 'center',
-    height: 300,
-    width: 350,
-    flex: 1.2
-  },
-  slide1: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#fff',
-  },
-  slide2: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#ffffff'
-  },
-  slide3: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#ffffff'
-  },
-  slide4: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#ffffff'
-  },
-  text: {
-    color: '#fff',
-    fontSize: 30,
-    fontWeight: 'bold'
-  },
-  nextButton: {
-    flex: 0.15,
-    backgroundColor: '#3dbfd2',
-    width: 100,
-    justifyContent: 'center',
-    alignItems: 'center',
-    borderRadius: 30
-  },
-  buttonText: {
-    color: '#ffffff',
-    fontSize: 20,
-    fontFamily: 'Avenir'
-  },
-})
+import { Actions } from 'react-native-router-flux';
+import style from 'react-native-router-flux'
+import getstartedStyle from '../styles/getstartedStyle';
 
 function GetStarted(){
   const [show, setShow] = useState(false);
@@ -114,7 +27,7 @@ function GetStarted(){
       </View>)
     }
     return (
-       <View style={styles.comp} >
+       <View style={getstartedStyle.comp} >
         {skipper}
         {/* PAGE ONE: ACCOUNT CREATED */}
         <Swiper style={getstartedStyle.wrapper}
@@ -145,7 +58,7 @@ function GetStarted(){
               autoPlay
               loop
             />
-            <Text style={getstartedStyle.desc}>Thank you for joining foodfull and making a change.</Text>
+            <Text style={getstartedStyle.desc}>Thank you for joining Foodfull and making a change.</Text>
 
           </View>
 
@@ -185,7 +98,7 @@ function GetStarted(){
 
 
           {/* PAGE FOUR:  */}
-          <View style={styles.slide4}>
+          <View style={getstartedStyle.slide4}>
             <TouchableOpacity style={{ borderRadius: 30, width: 200, height: 45, position: 'absolute', bottom: 140, justifyContent: 'center', alignItems: 'center', zIndex: 2, backgroundColor: '#06a2bc' }}
               onPress={() => {Actions.login(), setShow(!show)}}
             >
