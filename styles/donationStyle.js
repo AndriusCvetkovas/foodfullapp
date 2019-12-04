@@ -5,18 +5,17 @@ var donationStyle = StyleSheet.create({
         borderColor:'#eee',
         borderRadius: 5,
         padding:5,
-        marginTop: 10,
         shadowOffset:{width:0.2, height: 0.1},
         shadowColor:'#eee',
         borderStyle: 'solid',
         borderWidth: 1,
         flexDirection:'row',
-        backgroundColor:'#fff',
+        backgroundColor:'#ffffff',
         borderRadius:10
     },
     Images:{
         flex:0.35,
-        margin: 6,
+        margin: 4,
         justifyContent:'center',
         alignItems: 'center',
         alignContent: 'center',
@@ -44,6 +43,9 @@ var donationStyle = StyleSheet.create({
     Organization:{
         fontSize:18,
         color:'#07a2bb',
+        fontFamily:'Avenir',
+        fontWeight:'600',
+        
     },
 
     address:{
@@ -51,14 +53,15 @@ var donationStyle = StyleSheet.create({
         color:'#3b7687',
     },
     time:{
-        fontSize:14,
+        fontSize:15,
         color:'#6492a0',
     },
 
     Date:{
        fontSize:30,
        color:'white',
-       fontWeight:'bold'
+       fontWeight:'bold',
+       fontFamily:'Avenir',
 
     },
     option:{
@@ -66,14 +69,12 @@ var donationStyle = StyleSheet.create({
     },
     optionText:{
         color:'#f8c745',
-        marginTop:10,
         fontFamily:'Avenir',
         fontWeight:'600',
         fontSize:15
     },
     pickedText:{
         color:'#a5d826',
-        marginTop:10,
         fontFamily:'Avenir',
         fontWeight:'600',
         fontSize:15
@@ -92,10 +93,10 @@ var donationStyle = StyleSheet.create({
 
     },
     Dots:{
-       marginRight:15,
-       marginTop:20,
-       width:5,
-       height:20,
+       marginRight:10,
+       marginTop:25,
+       width:25,
+       height:5,
         
     },
     TextDisplay:{

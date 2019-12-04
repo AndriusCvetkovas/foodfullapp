@@ -68,7 +68,7 @@ function Pickup() {
     getID();
   }, []);
   return (
-    <View>
+    <View style={{backgroundColor:'#f4f4f4'}}>
       <Modal
       isVisible={showModal}
       coverScreen={false}
@@ -82,11 +82,11 @@ function Pickup() {
       {
         dons.map((d, i) => {
           if (d.status == 2) {
-            var texta = 'Pickup Pending...'
+            var texta = 'Pickup Pending'
             var colorz = '#ee9a23'
         }else if (d.status == 4) {
-          var texta = 'Picked Up...'
-          var colorz = 'green'
+          var texta = 'Picked Up'
+          var colorz = '#7cce1d'
       }
           return (
 <View style = {donationStyle.comp}>
@@ -99,29 +99,29 @@ function Pickup() {
               </View>
               <View style={donationStyle.TextDisplay}>
                   <View>
-                      <Text style={donationStyle.Organization} key={i}>{d.name}</Text>
+                      <Text style={[donationStyle.Organization,{ top:-10}]} key={i}>{d.name}</Text>
                   </View>
-                  <View>
+                  {/* <View>
                     <Text style={donationStyle.address}>{d.address}</Text>
-                  </View>
+                  </View> */}
                   <View>
                     <Text style={donationStyle.time}>{d.date +" "+d.time}</Text>
-                  </View>
-              </View>
-
-              <View style={donationStyle.option}>
-                  <View>
-                    <Text style={[donationStyle.optionText, {color: colorz}]}>{texta}</Text>
                   </View>
               </View>
               <TouchableOpacity
               onPress={()=>{setShowModal(!showModal), setdd(d)}}
               >
-                <Image style={donationStyle.Dots} source={require("../assets/icon/dot_nav.png")} />
+                <Image style={[donationStyle.Dots, {right:-85}]} source={require("../assets/icon/options.png")} />
               </TouchableOpacity>
           </View>
           
         </View>
+
+        <View style={donationStyle.option}>
+                  <View>
+                    <Text style={[donationStyle.optionText, {color: colorz, top:-30, left:140}]}>{texta}</Text>
+                  </View>
+              </View>
         
     </View>
           )
@@ -130,13 +130,13 @@ function Pickup() {
       {
         dons2.map((d2, i) => {
           if (d2.status == 2) {
-            var texta = 'Pickup Pending...'
+            var texta = 'Pickup Pending'
             var colorz = '#ee9a23'
         }else if (d2.status == 4) {
-          var texta = 'Picked Up...'
-          var colorz = 'green'
+          var texta = 'Picked Up'
+          var colorz = '#7cce1d'
       }else  {
-            texta = 'Declined...'
+            texta = 'Declined'
             colorz = 'red'
         }
           return (
@@ -150,11 +150,11 @@ function Pickup() {
               </View>
               <View style={donationStyle.TextDisplay}>
                   <View>
-                      <Text style={donationStyle.Organization} key={i}>{d2.name}</Text>
+                      <Text style={[donationStyle.Organization,{ top:-20}]} key={i}>{d2.name}</Text>
                   </View>
-                  <View>
+                  {/* <View>
                     <Text style={donationStyle.address}>{d2.address}</Text>
-                  </View>
+                  </View> */}
                   <View>
                     <Text style={donationStyle.time}>{d2.date +" "+d2.time}</Text>
                   </View>
@@ -168,7 +168,7 @@ function Pickup() {
               <TouchableOpacity
               onPress={()=>{setShowModal(!showModal), setdd(d2)}}
               >
-                <Image style={donationStyle.Dots} source={require("../assets/icon/dot_nav.png")} />
+                <Image style={donationStyle.Dots} source={require("../assets/icon/options.png")} />
               </TouchableOpacity>
           </View>
           
