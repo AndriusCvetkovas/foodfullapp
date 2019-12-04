@@ -17,7 +17,7 @@ function Leaderboard(){
                 <View style = {LeaderboardStyles.imageBox}>
                     <Image
                         style={LeaderboardStyles.yourImage}
-                        source={require('../../assets/img/safeway.jpg')}
+                        source={{uri: `https://foodfull.s3-us-west-2.amazonaws.com/avatar0.jpg`}}
                      />
                      
                 </View>
@@ -63,7 +63,7 @@ function Leaderboard(){
                     <View style ={[LeaderboardStyles.rankInnerBox,{backgroundColor: "rgba(19,191,209,0.07)"}]}>
                         <Text style={LeaderboardStyles.rankNum}>2</Text>
                         <Image 
-                        source = {require('../../assets/img/safeway.jpg')}
+                        source = {{uri: `https://foodfull.s3-us-west-2.amazonaws.com/avatar0.jpg`}}
                         style = {LeaderboardStyles.rankImage}
                         />
                         <View style = {LeaderboardStyles.nameAddress}>

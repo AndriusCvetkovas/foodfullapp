@@ -78,12 +78,14 @@ var DashStyle = StyleSheet.create({
         height:45,
         justifyContent:'center',
         borderRadius:100,
-        left:-10
+        left:-10,
     },
     circleText:{
         fontFamily:'Avenir',
         color:'#ffffff',
         fontSize:20,
+        left: 0.5,
+        top: 1,
         fontWeight:'700'
     },
 

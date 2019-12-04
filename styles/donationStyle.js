@@ -20,14 +20,8 @@ var donationStyle = StyleSheet.create({
         justifyContent:'center',
         alignItems: 'center',
         alignContent: 'center',
-        backgroundColor:'#f8c745',
         width: 120,
         height: 120,
-        borderRadius: 120/1,
-        transform:[
-            {scaleX: 0.75},
-            {scaleY: 0.75}
-          ]
 
     },
 
@@ -92,9 +86,9 @@ var donationStyle = StyleSheet.create({
 
     },
     ImageSize:{
-        width: 120,
-        height: 120,
-        borderRadius: 120,
+        width: 90,
+        height: 90,
+        borderRadius: 15,
 
     },
     Dots:{

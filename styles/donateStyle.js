@@ -6,7 +6,8 @@ var donateStyle = StyleSheet.create({
         flex: 1,
         height:'100%',
         top: 40,
-        padding:10,
+        
+        padding:20,
         borderRadius: 20,
         margin:5,
         backgroundColor:'#fff'
@@ -31,7 +32,8 @@ var donateStyle = StyleSheet.create({
       marginBottom:10, 
       color:'#06a2bc', 
       width:'75%', 
-      marginLeft:15
+      marginLeft:15,
+      padding: 10
     },
     comp:{
         marginBottom:12,

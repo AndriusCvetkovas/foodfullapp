@@ -6,18 +6,18 @@ import axios from 'axios';
 
 
 function Dashboard({navigation}) {
-    var currentId= 0;
-    const [image, setImage] = useState();
+    const [currentId, setCurrentId] = useState(0) ;
+    const [image, setImage] = useState(`https://foodfull.s3-us-west-2.amazonaws.com/avatar0.jpg`);
     //RECEIVE CURRENT USER ID FROM ASYNC STORAGE
     const getID = async () =>{
         var json = await AsyncStorage.getItem('id');
-        currentId = json;
+        setCurrentId(json);
         console.log("userID "+currentId);
+        GetUser();
         GetDonations();
-        setImage(`https://foodfull.s3-us-west-2.amazonaws.com/avatar${currentId}.jpg`)
+        
     }
     const [dons, setDons] = useState([]);
-    const [name, setName] = useState();
     const [user, setUser] = useState([]);
     const GetDonations = async () => {
         var obj = {
@@ -33,12 +33,25 @@ function Dashboard({navigation}) {
         var d = json.data;
         setUser(json.receivers);
         setDons(d);
-        
-    
-        
     }
     const [n, setn] = useState();
-    
+    const GetUser = async () => {
+        var obj = {
+        key: "users_read", 
+        data: {
+            id: currentId
+        }
+        }
+        var rr = await axios.post(`https://foodfullapp.herokuapp.com/post`, obj);
+        var json = JSON.parse(rr.data.body);
+        console.log('some', json.data.avatar_url)
+        if(json.data.avatar_url == 0 || json.data.avatar_url == null){
+            setImage(`https://foodfull.s3-us-west-2.amazonaws.com/avatar0.jpg`)
+        }else {
+            setImage(`https://foodfull.s3-us-west-2.amazonaws.com/avatar${json.data.avatar_url}.jpg`)
+        }
+        
+    }
     
     useEffect(()=>{
         getID();
@@ -50,7 +63,6 @@ function Dashboard({navigation}) {
             setn('Today')
         }
     }, [GetDonations])
-    
     return (
         <View style={DashStyle.main}>
 

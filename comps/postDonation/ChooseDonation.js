@@ -8,12 +8,12 @@ function ChooseDonation() {
     const [donationType, setDonationType] = useState();
     const [optionColor1, setOptionColor1] = useState(false);
     const [optionColor2, setOptionColor2] = useState(false);
-
+    var tt ='ha'
     const changePage = () => {
         if (optionColor1 != true && optionColor2 != true) {
             alert("Please pick your donation type")
         } else {
-            Actions.postdonation({ dType: donationType });
+            Actions.postdonation({ dType: donationType, tt });
         }
 
     }

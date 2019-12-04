@@ -108,7 +108,7 @@ function GMap() {
         {
           users.map((d, i)=>{
             return(
-          <TouchableOpacity style={GMapStyle.infoStyle}
+          <TouchableOpacity style={[GMapStyle.infoStyle, {top: -120}]}
           onPress={()=>{ map.current.animateToRegion(
             {
               latitude: d.lat,
@@ -121,7 +121,7 @@ function GMap() {
             <View style={GMapStyle.innerInfo}>
               <Image
                 style={{height: 75, width: 75, borderRadius: 75}}
-                source={require('../assets/img/safeway.jpg')}></Image>
+                source={{uri:`https://foodfull.s3-us-west-2.amazonaws.com/avatar0.jpg`}}></Image>
               <View style={GMapStyle.innerInner}>
                 <Text style={GMapStyle.innerTitle}>{d.name}</Text>
                 <Text style={GMapStyle.innerAddress} key={i}>
@@ -130,7 +130,7 @@ function GMap() {
               </View>
             </View>
 
-            <TouchableOpacity style={GMapStyle.innerButton}
+            <TouchableOpacity style={[GMapStyle.innerButton, {top: -100}]}
             
             onPress={()=>Actions.postdonation({addr: d.name, ids: d.id, stat: 1})}>
               <Text

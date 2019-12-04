@@ -22,13 +22,14 @@ function Pickup() {
     currentId = json;
     console.log("userID " + currentId);
     GetDonationsAcc();
+    GetDonationsAcc2();
   }
   const GetDonationsAcc = async () => {
     var obj = {
       key: "donations_read",
       data: {
         destination_id: currentId,
-        status: 2
+        status: 2,
       }
     }
     var r = await axios.post(`https://foodfullapp.herokuapp.com/post`, obj);
@@ -36,14 +37,30 @@ function Pickup() {
     var d = jsons.data;
     console.log(d);
     setDons(d);
-    console.log(donsName)
+    console.log(d)
+  }
+  const GetDonationsAcc2 = async () => {
+    var obj = {
+      key: "donations_read",
+      data: {
+        destination_id: currentId,
+        status: 4,
+      }
+    }
+    var r = await axios.post(`https://foodfullapp.herokuapp.com/post`, obj);
+    var jsons = JSON.parse(r.data.body);
+    var d2 = jsons.data;
+    console.log(d2);
+    setDons2(d2);
+    console.log(d2)
+  }
+
+  function closeModal(){
+    setShowModal(false);
   }
   const [dons, setDons] = useState([]);
-  const [donsName, setDonsName] = useState();
-  // const [donsTime, setDonsTime] = useState();
-  // const [donsAddress, setDonsAddress] = useState();
-  // const [donsStatus, setDonsStatus] = useState();
-  // const [text, setText] = useState();
+  const [dons2, setDons2] = useState([]);
+  const [dd, setdd]= useState([])
   const [showModal, setShowModal]= useState(false);
 
   
@@ -59,7 +76,7 @@ function Pickup() {
       style = {{backgroundColor: 'transparent', height: 700,width: 380, position: "absolute"}}
       isVisible = {showModal}
       onBackdropPress={() => setShowModal(!showModal)}>
-        <PickedUpComfirm/>
+        <PickedUpComfirm obj={{hide: closeModal, getPendings: getID}} setShowModal={setShowModal} dd ={dd} setShowModal/>
       </Modal>
     <ScrollView>
       {
@@ -67,22 +84,22 @@ function Pickup() {
           if (d.status == 2) {
             var texta = 'Pickup Pending...'
             var colorz = '#ee9a23'
-        }else {
-            texta = 'Declined...'
-            colorz = 'red'
-        }
+        }else if (d.status == 4) {
+          var texta = 'Picked Up...'
+          var colorz = 'green'
+      }
           return (
 <View style = {donationStyle.comp}>
         <View>
           <View style = {donationStyle.CardDisplay}>
               <View style = {donationStyle.Images}>
                   <Image
-                  source = {require('../assets/img/food.png')}
-                  style ={{height: 100, width: 100, borderRadius: 100}}/>
+                  source = {{uri: `https://foodfull.s3-us-west-2.amazonaws.com/photo${d.user_id}.jpg`}}
+                  style ={{height: 90, width: 90, borderRadius: 15}}/>
               </View>
               <View style={donationStyle.TextDisplay}>
                   <View>
-                      <Text style={donationStyle.Organization}>{d.name}</Text>
+                      <Text style={donationStyle.Organization} key={i}>{d.name}</Text>
                   </View>
                   <View>
                     <Text style={donationStyle.address}>{d.address}</Text>
@@ -98,7 +115,58 @@ function Pickup() {
                   </View>
               </View>
               <TouchableOpacity
-              onPress={()=>setShowModal(!showModal)}
+              onPress={()=>{setShowModal(!showModal), setdd(d)}}
+              >
+                <Image style={donationStyle.Dots} source={require("../assets/icon/dot_nav.png")} />
+              </TouchableOpacity>
+          </View>
+          
+        </View>
+        
+    </View>
+          )
+        })
+      }
+      {
+        dons2.map((d2, i) => {
+          if (d2.status == 2) {
+            var texta = 'Pickup Pending...'
+            var colorz = '#ee9a23'
+        }else if (d2.status == 4) {
+          var texta = 'Picked Up...'
+          var colorz = 'green'
+      }else  {
+            texta = 'Declined...'
+            colorz = 'red'
+        }
+          return (
+<View style = {donationStyle.comp}>
+        <View>
+          <View style = {donationStyle.CardDisplay}>
+              <View style = {donationStyle.Images}>
+                  <Image
+                  source = {{uri: `https://foodfull.s3-us-west-2.amazonaws.com/photo${d2.user_id}.jpg`}}
+                  style ={{height: 90, width: 90, borderRadius: 15}}/>
+              </View>
+              <View style={donationStyle.TextDisplay}>
+                  <View>
+                      <Text style={donationStyle.Organization} key={i}>{d2.name}</Text>
+                  </View>
+                  <View>
+                    <Text style={donationStyle.address}>{d2.address}</Text>
+                  </View>
+                  <View>
+                    <Text style={donationStyle.time}>{d2.date +" "+d2.time}</Text>
+                  </View>
+              </View>
+
+              <View style={donationStyle.option}>
+                  <View>
+                    <Text style={[donationStyle.optionText, {color: colorz}]}>{texta}</Text>
+                  </View>
+              </View>
+              <TouchableOpacity
+              onPress={()=>{setShowModal(!showModal), setdd(d2)}}
               >
                 <Image style={donationStyle.Dots} source={require("../assets/icon/dot_nav.png")} />
               </TouchableOpacity>

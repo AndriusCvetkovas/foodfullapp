@@ -21,9 +21,9 @@ var AcceptNFStyle = StyleSheet.create({
         
     },
     DImage:{
-        
         flex: 1,
         resizeMode: 'cover', 
+        zIndex: 1,
         borderTopRightRadius:30, 
         borderTopLeftRadius: 30 
     },
@@ -51,20 +51,20 @@ var AcceptNFStyle = StyleSheet.create({
 
     pickupDate: {
         width: '90%',
-        flex: 0.3,
+        flex: 1.2,
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'center'
     },
     pickupTime: {
-        flex: 0.3,
+        flex: 1.2,
         width: '90%',
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'center'
     },
     descriptionTitle: {
-        flex: 0.3,
+        flex: 1,
         color: '#0ca3bc',
         fontSize: 18,
         fontWeight: "600",
@@ -85,8 +85,9 @@ var AcceptNFStyle = StyleSheet.create({
         
     },
     TextDisplay: {
-        flex: 0.3,
-        width:'90%'
+        flex: 1,
+        width:'90%',
+        
 
 
     },
@@ -136,12 +137,11 @@ var AcceptNFStyle = StyleSheet.create({
         borderTopColor: '#F0F0F0',
         borderBottomColor: '#F0F0F0',
         backgroundColor: 'white',
-
         borderTopWidth: 2,
         borderBottomWidth: 2,
         marginBottom: 0,
         marginTop: 20,
-        width: '110%',
+        width: '100%',
         alignItems: 'center',
         justifyContent: 'center',
         elevation: 1
@@ -152,12 +152,12 @@ var AcceptNFStyle = StyleSheet.create({
 
         borderTopColor: '#F0F0F0',
         borderBottomColor: '#F0F0F0',
-        backgroundColor: 'white',
 
         borderTopWidth: 2,
         borderBottomWidth: 2,
-
-        width: '110%',
+        borderBottomEndRadius: 30,
+        borderBottomStartRadius: 30,
+        width: '100%',
         alignItems: 'center',
         justifyContent: 'center',
         elevation: 1

@@ -49,6 +49,7 @@ const [la,setLa] = useState(49);
 const [lo,setLo] = useState();
 const [h, setH] = useState(true);
 const [hh] = useState(new Animated.Value(200))
+const [showImage, setShowImage] = useState(true)
 
 
   const [dd, setdd] = useState([]);
@@ -81,6 +82,7 @@ const [hh] = useState(new Animated.Value(200))
         }}
         >
         {users.map((d, i) => {
+          
           return (
             <MapView.Marker
               id={d.id}
@@ -103,6 +105,12 @@ const [hh] = useState(new Animated.Value(200))
       >
         {
           users.map((d, i)=>{
+            if(showImage == true){
+              var imageContent = (<Image
+                source = {{uri: `https://foodfull.s3-us-west-2.amazonaws.com/photo${d.user_id}.jpg`}}
+                style = {{width: 375, flex: 3, top:-20, alignSelf:'center'}}>
+                </Image>)
+            }
             console.log(d.image_url)
             return(
           <TouchableOpacity style={GMapStyle.infoStyle}
@@ -111,7 +119,7 @@ const [hh] = useState(new Animated.Value(200))
               Animated.timing(
                 hh,
                 {
-                  toValue: 300,
+                  toValue: 400,
                   duration: 1000
                 }
               ).start();
@@ -138,16 +146,18 @@ const [hh] = useState(new Animated.Value(200))
         }
           
           >
-            <View style={[GMapStyle.innerInfo, ]} >
-              <Image
+            <Text style={[GMapStyle.innerTitle, {top: -20}]}>{d.name}</Text>
+            {imageContent}
+            <View style={[GMapStyle.innerInfo ]} >
+              {/* <Image
                 style={{height: 75, width: 75, borderRadius: 75}}
-                source={{uri: `https://foodfull.s3-us-west-2.amazonaws.com/photo${d.description}.jpg`}}></Image>
-              <View style={[GMapStyle.innerInner, {top: 30}]}>
-                <Text style={GMapStyle.innerTitle}>{d.name}</Text>
-                <Text style={GMapStyle.innerAddress} key={i}>
+                source={{uri: `https://foodfull.s3-us-west-2.amazonaws.com/avatar0.jpg`}}></Image> */}
+              <View style={[GMapStyle.innerInner, {top: 130, left: -25}]}>
+                
+                <Text style={[GMapStyle.innerAddress,{top: 0, color: '#06a2bc', fontSize: 16}]} key={i}>
                   {d.address}
                 </Text>
-                <View style= {{left: -70, top: 20, overflow: 'hidden', height: 70}}>
+                <View style= {{left: 0, top: 20, overflow: 'hidden', height: 250}}>
                   
                   <Text>{d.time}</Text>
                   <Text>{d.date}</Text>
@@ -155,7 +165,9 @@ const [hh] = useState(new Animated.Value(200))
                   Donation Notes:
                   </Text>
                   <Text style ={{color: 'grey', width: 150}}>{d.description}</Text>
+                  
                 </View>
+                
               </View>
             </View>
 

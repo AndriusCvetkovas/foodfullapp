@@ -19,6 +19,7 @@ import RNFetchBlob from 'rn-fetch-blob';
     const [userAddress, setUserAddress] = useState();
     const [userEmail, setUserEmail] = useState();
     const [userPhone, setUserPhone] = useState();
+    const [avatar, setAvatar]= useState();
 
 
     // const [t_email, setEmail] = useState("");
@@ -45,6 +46,7 @@ import RNFetchBlob from 'rn-fetch-blob';
         var json = JSON.parse(r.data.body);
         console.log(json);
         var d = json.data;
+        setAvatar(d[0].avatar_url);
         setUserName(d[0].name);
         setUserAddress(d[0].address)
         setUserEmail(d[0].email)
@@ -64,8 +66,6 @@ import RNFetchBlob from 'rn-fetch-blob';
                 address: userAddress,
                 phone: userPhone,
                 Name: userName
-                
-                
             }
         }
         var r = await axios.post(`https://foodfullapp.herokuapp.com/post`, obj);
@@ -81,7 +81,6 @@ import RNFetchBlob from 'rn-fetch-blob';
       path: 'images',
     },
   };
-const [image, setImage] = useState(`https://foodfull.s3-us-west-2.amazonaws.com/avatar${uId}.jpg`)
 function uploadMyImage() {
 ImagePicker.showImagePicker(options, async(response) => {
   if (response.didCancel) {
@@ -107,7 +106,8 @@ ImagePicker.showImagePicker(options, async(response) => {
     }, RNFetchBlob.wrap(uri));
     
     console.log("r2", r2);
-    setImage(`https://foodfull.s3-us-west-2.amazonaws.com/avatar${uId}.jpg`);
+    setAvatar(uId)
+    //setImage(`https://foodfull.s3-us-west-2.amazonaws.com/avatar${uId}.jpg`);
     //arr.push(r2.respInfo.redirects[0]);
 
     return false;
@@ -149,7 +149,7 @@ ImagePicker.showImagePicker(options, async(response) => {
             style={ProfileStyle.imageViewStyle}
             >
                 <Image
-                source={{uri: `${image}`}}
+                source={{uri: `https://foodfull.s3-us-west-2.amazonaws.com/avatar${avatar}.jpg`}}
                 style={ProfileStyle.imageStyle}
                 >
                 </Image>
@@ -249,7 +249,7 @@ ImagePicker.showImagePicker(options, async(response) => {
             <Modal isVisible={showModal}
             coverScreen={false}
             animationIn='slideInUp'
-            style = {{backgroundColor: 'transparent', height: 600,width: 370, position: "absolute", alignItems:"center", justifyContent:'center', marginTop:50}}
+            style = {{height: 600,width: 370, position: "absolute", alignItems:"center", marginTop:100}}
             isVisible = {showModal}
             onBackdropPress={() => setShowModal(!showModal)}
             >
@@ -319,7 +319,6 @@ ImagePicker.showImagePicker(options, async(response) => {
           title="UPDATE USER"
           onPress={()=>{
               UpdateUser();
-              setImage(`https://foodfull.s3-us-west-2.amazonaws.com/avatar${uId}.jpg`)
               setShowModal(!showModal)
           }}>
                         

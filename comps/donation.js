@@ -1,11 +1,3 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow
- */
-
 
 import React, { useState, useEffect } from 'react';
 import { View, Text, Image, ScrollView, TouchableOpacity, AsyncStorage } from 'react-native';
@@ -16,9 +8,10 @@ import Modal from "react-native-modal";
 import AcceptDonationNF from './AcceptDonationNF';
 import AcceptNFStyle from '../styles/AcceptNFStyle';
 import buttonStyle from '../styles/buttonStyle';
+import Swiper from 'react-native-swiper';
 function Donations() {
     // MODAL VIEW 
-    const [showModal, setShowModal]= useState(false);
+    const [showModal, setShowModal] = useState(false);
 
 
 
@@ -35,8 +28,7 @@ function Donations() {
     const [dons, setDons] = useState([]);
     const [donsName, setDonsName] = useState([]);
     const [donsAddress, setDonsAddress] = useState();
-    const [dd, setdd]=useState({});
-    
+    const [dd, setdd] = useState({});
     const GetDonations = async () => {
         var obj = {
             key: "donations_read",
@@ -62,7 +54,7 @@ function Donations() {
         var r = await axios.post(`https://foodfullapp.herokuapp.com/post`, obj);
         var json = JSON.parse(r.data.body);
         console.log(json.data);
-        
+
     }
     const Update3 = async (thisId) => {
         var obj = {
@@ -75,13 +67,13 @@ function Donations() {
         var r = await axios.post(`https://foodfullapp.herokuapp.com/post`, obj);
         var json = JSON.parse(r.data.body);
         console.log(json.data);
-        
+
     }
     const CheckifDon = () => {
-        if(dons == ''){
+        if (dons == '') {
             return (
-                <View style ={{alignItems: 'center', justifyContent: 'center', top: '50%'}}>
-                    <Text style ={{color: 'grey', fontFamily: 'avenir', fontSize: 20}}>You don't have any notifications...</Text>
+                <View style={{ alignItems: 'center', justifyContent: 'center', top: '50%' }}>
+                    <Text style={{ color: 'grey', fontFamily: 'avenir', fontSize: 20 }}>You don't have any notifications...</Text>
                 </View>
             )
         }
@@ -94,87 +86,101 @@ function Donations() {
 
         <View>
             {CheckifDon()}
-            
-        <ScrollView style ={{height: '100%'}}>
 
-            {
-                dons.map((d, i) => {
-                    return (
-                       
-                            <View style = {donationStyle.CardDisplay}>
-                                <View style = {donationStyle.Images}>
+            <ScrollView style={{ height: '100%' }}>
+
+                {
+                    dons.map((d, i) => {
+                        return (
+
+                            <View style={donationStyle.CardDisplay}>
+                                <View style={donationStyle.Images}>
                                     <Image
-                                    style={donationStyle.ImageSize}
-                                    source={require('../assets/img/safeway.jpg')}
+                                        style={donationStyle.ImageSize}
+                                        source={{uri: `https://foodfull.s3-us-west-2.amazonaws.com/avatar${d.user_id}.jpg`}}
                                     />
                                 </View>
                                 <View style={donationStyle.TextDisplay}>
                                     <View>
-                                        <Text style={donationStyle.Organization} >{d.name}</Text>
+                                        <Text style={donationStyle.Organization} key={i} >{d.name}</Text>
                                     </View>
                                     <View>
                                         <Text style={donationStyle.address}>{d.address}</Text>
                                     </View>
-                                    
+
                                 </View>
                                 <View style={donationStyle.TextDisplay}>
-                                        <View style={donationStyle.option}>
-                                        
-                                            <TouchableOpacity
-                                                style={donationStyle.BtnStyleBlueView}
-                                                underlayColor='#000'
-                                                color='000'
-                                                    onPress={()=>[setShowModal(!showModal), setdd(d),console.log(dd)]}>
-                                                <Text style={donationStyle.btnText}>View</Text>
-                                            </TouchableOpacity>
-                                        </View>
+                                    <View style={donationStyle.option}>
+
+                                        <TouchableOpacity
+                                            style={donationStyle.BtnStyleBlueView}
+                                            underlayColor='#000'
+                                            color='000'
+                                            onPress={() => [setShowModal(!showModal), setdd(d), console.log(dd)]}>
+                                            <Text style={donationStyle.btnText}>View</Text>
+                                        </TouchableOpacity>
                                     </View>
-                                    <TouchableOpacity style ={{position: 'absolute', top: 30, right: 30}}
+                                </View>
+                                {/* <TouchableOpacity style ={{position: 'absolute', top: 30, right: 30}}
                                     onPress={()=>{setShowModal(!showModal)}}>
                                         <Image
                                         
                                         source={require('../assets/icon/x.png')}
                                         style = {{width: 15, height: 15}}
                                         />
-                                    </TouchableOpacity>
+                                    </TouchableOpacity> */}
                             </View>
-                    )
-                })
-            }
-        </ScrollView>
-        <Modal isVisible={showModal}
+                        )
+                    })
+                }
+            </ScrollView>
+            
+            <Modal isVisible={showModal}
             coverScreen={false}
             animationIn='slideInUp'
-            style = {{backgroundColor: 'transparent', height: 500,width: 380, position: "absolute"}}
+            style = {{backgroundColor: 'transparent', height: 50,width: '95%', position: 'absolute', top: "40%", alignSelf:'center'}}
             isVisible = {showModal}
             onBackdropPress={() => setShowModal(!showModal)}
             >
-                <View style ={{height: '100%', justifyContent: 'center', alignItems: 'center'}}>
+                <View style ={{height: 500, alignItems: 'center'}}>
                 <View style={AcceptNFStyle.main2}>
                 {/*Donation info below */}
 
                 <View style={AcceptNFStyle.donationInfoTop}>
-                    <View style={AcceptNFStyle.Images}>
-                    <Text style={AcceptNFStyle.Month}>Date</Text>
-                        <Text style={AcceptNFStyle.Month}>{dd.date}</Text>
-                    </View>
+                <Swiper  showsButtons={false}>
+                    <Image style={AcceptNFStyle.DImage}
+                    source = {{uri: `https://foodfull.s3-us-west-2.amazonaws.com/photo${dd.user_id}.jpg`}}
+                    >
+                    </Image>
+                    {/* <Image style={AcceptNFStyle.DImage}
+                    source = {{uri: `https://foodfull.s3-us-west-2.amazonaws.com/photo${dd.image_url[1]}.jpg`}}
+                    >
+                    </Image>
+                    <Image style={AcceptNFStyle.DImage}
+                    source = {{uri: `https://foodfull.s3-us-west-2.amazonaws.com/photo${dd.image_url[1]}.jpg`}}
+                    >
+                    </Image>  */}
+                </Swiper>
 
-                    <View style={AcceptNFStyle.TextDisplay}>
-                    <Text style={AcceptNFStyle.Organization}>{dd.name}</Text>
-                            <Text style={AcceptNFStyle.address}>Donation Request</Text>
-                    </View>
 
                 </View>
                 {/*Image text below */}
-
+                <View style ={{flex: 1.5, padding: 5}}>
+                <View style={AcceptNFStyle.TextDisplay}>
+                            <Text style={AcceptNFStyle.Organization}>{dd.name}</Text>
+                            {/* <Text style={AcceptNFStyle.address}>Donation Request</Text> */}
+                    </View> 
                 {/*Date of pickup below */}
+                <View style={[AcceptNFStyle.pickupDate, {flex: 1.3}]}>
+                    <Text style={{ color: '#066a87', fontSize: 16, flex: 2}} onPress={()=> alert('Address',dd.address)}>{dd.address}</Text>
+                </View>
                 <View style={AcceptNFStyle.pickupDate}>
-                    <Text style={{ color: '#0ca3bc', fontSize: 18, flex: 1 }}>Location</Text>
-                    <Text style={{ color: '#066a87', fontSize: 16, flex: 1}}>{dd.address}</Text>
+                    <Text style={{ color: '#0ca3bc', fontSize: 18, flex: 1,fontWeight: "600" }}>Pickup Date</Text>
+                    <Text style={{ color: '#066a87', fontSize: 16, flex: 1}}>{dd.date}</Text>
                 </View>
                 {/*Pickup time below */}
                 <View style={AcceptNFStyle.pickupTime}>
-                    <Text style={{ color: '#0ca3bc', fontSize: 18, flex: 1 }}>Pickup Time</Text>
+                    <Text style={{ color: '#0ca3bc', fontSize: 18, flex: 1,fontWeight: "600" }}>Pickup Time</Text>
                     <Text style={{ color: '#066a87', fontSize: 16, flex: 1 }}>{dd.time}</Text>
                 </View>
                 {/*Description title below */}
@@ -187,31 +193,32 @@ function Donations() {
                 >
                     {dd.description}
             </Text>
-                <TouchableOpacity
-                    onPress={()=>{Update2(dd.id), setShowModal(!showModal),getID()}}
-                    title="Accept"
-                    style={AcceptNFStyle.button}>
-                    <Text
-                        style={{ color: '#0ca3bc', fontSize: 16, fontWeight: '500' }}
-                    >Accept Donation</Text>
-                </TouchableOpacity>
-                <TouchableOpacity
-                    onPress={()=>{Update3(dd.id), setShowModal(!showModal),getID()}}
-                    title="Accept"
-                    style={AcceptNFStyle.button2}>
-                    <Text
-                        style={{ color: 'red', fontSize: 16, fontWeight: '500' }}
-                    >Decline Donation</Text>
-                </TouchableOpacity>
             </View>
-            <TouchableOpacity style ={{position: 'absolute', top: 30, right: 30}}
+            <TouchableOpacity
+                            onPress={() => { Update2(dd.id), setShowModal(!showModal), getID() }}
+                            title="Accept"
+                            style={AcceptNFStyle.button}>
+                            <Text
+                                style={{ color: '#0ca3bc', fontSize: 16, fontWeight: '500' }}
+                            >Accept Donation</Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity
+                            onPress={() => { Update3(dd.id), setShowModal(!showModal), getID() }}
+                            title="Accept"
+                            style={AcceptNFStyle.button2}>
+                            <Text
+                                style={{ color: 'red', fontSize: 16, fontWeight: '500' }}
+                            >Decline Donation</Text>
+                        </TouchableOpacity>
+                <TouchableOpacity style ={{position: 'absolute', top: 30, right: 30}}
                 onPress={()=>{setShowModal(!showModal)}}>
                     <Image
                     
                     source={require('../assets/icon/x.png')}
                     style = {{width: 15, height: 15}}
                     />
-            </TouchableOpacity>
+                </TouchableOpacity>
+            </View>
                 </View>
             </Modal>
         </View>

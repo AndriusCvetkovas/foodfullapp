@@ -56,13 +56,13 @@ function Confirmation({obj, setShowModal}){
 
             {/*Date of pickup below */}
             <View style={{flex:2, marginTop:0}}>
-                <View style = {ConfirmStyle.pickupDate}>
+                <View style = {[ConfirmStyle.pickupDate, {marginTop:10}]}>
                     <Text style = {ConfirmStyle.titles}>Date of pickup</Text>
                     <Text style = {{color: '#066a87', fontSize: 16, flex: 1}}>{obj.data.date}</Text>
                 </View>
 
                 {/*Pickup time below */}
-                <View style = {ConfirmStyle.pickupTime}>
+                <View style = {[ConfirmStyle.pickupTime, {marginTop:10}]}>
                     <Text style = {ConfirmStyle.titles}>Pickup Time</Text>
                     <Text style = {{color: '#066a87', fontSize: 16, flex: 1}}>{obj.data.time}</Text>
                 </View>

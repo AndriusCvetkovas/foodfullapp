@@ -12,7 +12,7 @@ import LottieView from 'lottie-react-native';
 
 
 function DonationPosted(){
-  var tt ='ha'
+  
   return (
    <View style={{backgroundColor:'#ffffff', flex:1}}>
        <View style={styles.mainbody}>
@@ -32,7 +32,7 @@ function DonationPosted(){
         </View>
 
         <View style = {styles.containerButton}>
-        <TouchableHighlight style={[styles.buttonContainer, styles.MakePost]} onPress={() => Actions.postdonation({tt})}>
+        <TouchableHighlight style={[styles.buttonContainer, styles.MakePost]} onPress={() => Actions.choosedonation()}>
           <Text style={styles.B1}>Make another Donation</Text>
         </TouchableHighlight>
         <TouchableHighlight style={[styles.buttonContainer, styles.ViewPost]} onPress={() => {Actions.notification0()}}>
