@@ -114,7 +114,7 @@ var title ='Public Donation';
               ]}>
               Choose an Organization:
         </Text>
-        <View style={{margin: 0}}>
+        <View style={{margin: 0, flexDirection: 'row'}}>
           <TextInput
             onFocus={() => Actions.map()}
             style={{
@@ -125,12 +125,12 @@ var title ='Public Donation';
               backgroundColor: '#eee',
               marginBottom: 10,
               padding: 10,
-              width: '98%',
+              flex: 2
             }}
             placeholder="Please locate users in the map">
             {text}
           </TextInput>
-          <View style={{justifyContent: 'center', alignItems: 'center'}}>
+          <View style={{justifyContent: 'center', alignItems: 'center', flex: 1, height: 45}}>
             <TouchableOpacity
               style={donateStyle.mapSearchButton}
               underlayColor="#000"
@@ -138,7 +138,7 @@ var title ='Public Donation';
               onPress={() => Actions.map()}>
               <View style={{flexDirection: 'row', alignItems: 'center'}}>
                 <Image
-                  style={{width: 15, height: 20, left: -20}}
+                  style={{width: 15, height: 20, marginRight: 10}}
                   source={require('../assets/icon/map.png')}
                 />
                 <Text
@@ -148,7 +148,7 @@ var title ='Public Donation';
                     fontWeight: '600',
                     color: '#06a2bc',
                   }}>
-                  View Map
+                  Map
                 </Text>
               </View>
             </TouchableOpacity>
@@ -218,12 +218,12 @@ var title ='Public Donation';
       style={donateStyle.container}
       behavior="padding"
       enabled>
-      <ScrollView>
-      <TouchableOpacity
+        <Text style={donateStyle.pageHeader}>{title}</Text>
+        <TouchableOpacity
         style={{
           position: 'absolute',
-          top: 12,
-          left: 10,
+          top: 62,
+          left: 20,
           flexDirection: 'row',
           alignItems: 'center',
           justifyContent: 'center',
@@ -238,11 +238,13 @@ var title ='Public Donation';
           }}></Image>
         <Text></Text>
       </TouchableOpacity>
+      <ScrollView>
+      
         <View>
           <View style={donateStyle.padding}>
             {/* ADD A PHOTO */}
-            <Text style={donateStyle.pageHeader}>{title}</Text>
-            <Text style={donateStyle.headers}>Add up to 3 Photos</Text>
+            
+            <Text style={[donateStyle.headers]}>Add up to 3 Photos</Text>
             <ScrollView horizontal="true">
               <View style={donateStyle.ImagePad}>
                 <TouchableOpacity onPress={() => uploadMyImage()}>

@@ -11,6 +11,7 @@ var donateStyle = StyleSheet.create({
         backgroundColor:'#fff'
     },
     pageHeader:{
+      top: 10,
       fontSize:25, 
       fontFamily:'Avenir', 
       color:'#07a2bb', 
@@ -97,18 +98,18 @@ var donateStyle = StyleSheet.create({
       mapSearchButton:{
         flexDirection:'row',
         flex:1,
-        marginBottom:3,
+        marginBottom:4,
         justifyContent:'center',
         alignItems:'center',
-        height:45,
-        paddingTop:5,
-        paddingBottom:5,
+        height:40,
+        paddingTop:1,
+        paddingBottom:1,
         borderRadius:30,
         borderWidth: 1,
         borderColor: '#07a2bb',
         backgroundColor: '#fff',
         color:'#fff',
-        width: '70%'
+        width: 100
       },
     
       btnText:{
