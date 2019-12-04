@@ -8,11 +8,11 @@ import getstartedStyle from '../styles/getstartedStyle';
 
 function GetStarted(){
   const [show, setShow] = useState(false);
-  if(show == true){
-    return (
-      null
-    )
-  }
+  // if(show == true){
+  //   return (
+  //     null
+  //   )
+  // }
     var skipper = null;
     const [ind, setIndex] = useState();
     console.log(ind);
