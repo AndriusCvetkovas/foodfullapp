@@ -46,11 +46,11 @@ function Donate({addr, ids, tt, dType}) {
   const [imageDefault, setArrayImages] = useState();
   const options = {
     title: 'Select Donation Image',
+    maxWidth: 500,
+      maxHight: 500,
     storageOptions: {
       skipBackup: true,
       path: 'images',
-      maxWidth: 500,
-      maxHight: 500
     },
   };
 
