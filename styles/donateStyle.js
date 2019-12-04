@@ -4,12 +4,10 @@ var donateStyle = StyleSheet.create({
 
     container:{
         flex: 1,
-        height:'100%',
-        top: 40,
-        
+        paddingTop: 50,
+        width: '100%',
+        bottom: 0,
         padding:20,
-        borderRadius: 20,
-        margin:5,
         backgroundColor:'#fff'
     },
     pageHeader:{
@@ -22,7 +20,8 @@ var donateStyle = StyleSheet.create({
     },
     headers:{
       fontSize:18, 
-      marginBottom:15,
+      marginBottom:5,
+      marginTop:10,
       fontFamily: 'Avenir',
       fontWeight:'600',
       left:5
@@ -58,6 +57,7 @@ var donateStyle = StyleSheet.create({
 
       padding:{
           padding:10,
+          paddingLeft: 5
       },
 
       row:{
@@ -82,13 +82,13 @@ var donateStyle = StyleSheet.create({
         alignSelf:'center',
         justifyContent:'center',
         alignItems:'center',
-        height:50,
+        height:45,
         borderRadius:30,
         borderWidth: 1,
         borderColor: '#07a2bb',
         backgroundColor: '#07a2bb',
         color:'#fff',
-        width: '60%'
+        width: '50%'
 
       },
       mapSearchButton:{

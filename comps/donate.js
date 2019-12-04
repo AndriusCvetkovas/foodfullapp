@@ -9,6 +9,7 @@ import {
   TouchableOpacity,
   KeyboardAvoidingView,
   AsyncStorage,
+  Alert
 } from 'react-native';
 import DatePicker from 'react-native-datepicker';
 import donateStyle from '../styles/donateStyle';
@@ -93,13 +94,16 @@ function Donate({addr, ids, tt, dType}) {
       }
     });
   }
-
+var title ='Public Donation';
   if (donationType === 1) {
     var pdcolor = '#b7b7b7',
       pdline = 'line-through',
       pddecoration = 'solid',
       cocolor = '#3dbfd2';
     coweight = '800';
+    title = 'Private Donation';
+
+
 
     orgInput = (
       
@@ -216,10 +220,29 @@ function Donate({addr, ids, tt, dType}) {
       behavior="padding"
       enabled>
       <ScrollView>
+      <TouchableOpacity
+        style={{
+          position: 'absolute',
+          top: 12,
+          left: 10,
+          flexDirection: 'row',
+          alignItems: 'center',
+          justifyContent: 'center',
+          zIndex:2
+        }}
+        onPress={() => Actions.choosedonation()}>
+        <Image
+          source={require('../assets/icon/next.png')}
+          style={
+            {width: 25, height: 30, 
+            transform: [{rotateY: '180deg'}],
+          }}></Image>
+        <Text></Text>
+      </TouchableOpacity>
         <View>
           <View style={donateStyle.padding}>
             {/* ADD A PHOTO */}
-            <Text style={donateStyle.pageHeader}>Make a Donation</Text>
+            <Text style={donateStyle.pageHeader}>{title}</Text>
             <Text style={donateStyle.headers}>Add up to 3 Photos</Text>
             <ScrollView horizontal="true">
               <View style={donateStyle.ImagePad}>
@@ -318,14 +341,19 @@ function Donate({addr, ids, tt, dType}) {
 
           <View>
             <View style={{flexDirection: 'row', alignItems: 'center'}}>
-              <Text style={donateStyle.headers}>Description</Text>
-              <Text style={donateStyle.note}>
-                Please add notes or details about your food donation
-              </Text>
+              <Text style={[donateStyle.headers, {flex: 1, marginTop: 30}]}>Description</Text>
+              <TouchableOpacity style= {{flex:0.12,marginTop: 30}}
+              onPress={()=> Alert.alert('Please add notes or details about your food donation','')}>
+                <Image
+                source = {require('../assets/icon/question.png')}
+                style= {{width: 25, height: 25,top: -5, marginRight: 10}}
+                >
+                </Image>
+              </TouchableOpacity>
             </View>
             <TextInput
               style={{
-                height: 160,
+                height: 140,
                 borderColor: '#ddd',
                 borderWidth: 1,
                 borderRadius: 15,
@@ -338,38 +366,6 @@ function Donate({addr, ids, tt, dType}) {
               {selectedDescription}
             </TextInput>
           </View>
-
-          {/* Public Donation Header */}
-          {/* <View>
-            <Text
-              style={[
-                donateStyle.pdheader,
-                {
-                  color: pdcolor,
-                  textDecorationLine: pdline,
-                  textDecorationStyle: pddecoration,
-                },
-              ]}>
-              {' '}
-              Public Donation
-            </Text>
-          </View> */}
-
-          {/* Choose Organization */}
-          {/* <View style={[donateStyle.padding, donateStyle.row]}>
-            <Text
-              style={[
-                donateStyle.lftItems,
-                {color: cocolor, fontWeight: coweight},
-              ]}>
-              Choose an Organization
-            </Text>
-            <Switch
-              style={donateStyle.rgttems}
-              value={chooseOrg}
-              onValueChange={() => setChooseOrg(!chooseOrg)}
-            />
-          </View> */}
         <View>
           {orgInput}
         </View>
