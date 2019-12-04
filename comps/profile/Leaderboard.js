@@ -1,7 +1,7 @@
 import React from 'react';
 import {View, Text, Image, ScrollView} from 'react-native';
 import LeaderboardStyles from '../../styles/leaderboardStyle.js';
-function Leaderboard(){
+function Leaderboard({names, address}){
     return(
         //Main View
         <View style={LeaderboardStyles.mainView}> 
@@ -67,8 +67,8 @@ function Leaderboard(){
                         style = {LeaderboardStyles.rankImage}
                         />
                         <View style = {LeaderboardStyles.nameAddress}>
-                            <Text style ={LeaderboardStyles.rankName}>Safeway Extra</Text>
-                            <Text style ={LeaderboardStyles.rankAddress}>6153 200 St, Langley</Text>
+                            <Text style ={LeaderboardStyles.rankName}>{names}</Text>
+                            <Text style ={LeaderboardStyles.rankAddress}>{address}</Text>
                         </View>
                         <Text style ={LeaderboardStyles.rankAmount}>1100 kg</Text>
                     </View>

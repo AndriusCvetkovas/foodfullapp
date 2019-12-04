@@ -219,7 +219,7 @@ ImagePicker.showImagePicker(options, async(response) => {
             {/* Button view */}
             <View style = {ProfileStyle.buttonView}>
                 <TouchableOpacity style ={ProfileStyle.buttonStyle}
-                onPress={()=>Actions.leaderboard()}
+                onPress={()=>Actions.leaderboard({names: userName, address: userAddress})}
                 >
                     <Image
                     style={{flex: 0.04, width:25, height:15}}

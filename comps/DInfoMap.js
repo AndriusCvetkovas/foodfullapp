@@ -3,7 +3,7 @@ import {
   View,
   Text,
   Image,
-  TouchableHighlight,
+  TouchableOpacity,
   AsyncStorage,
 } from 'react-native';
 import GMapStyle from '../styles/mapStyle';
@@ -12,6 +12,8 @@ import DatePicker from 'react-native-datepicker';
 import buttonStyle from '../styles/buttonStyle';
 import {Router, Scene, Actions} from 'react-native-router-flux';
 import axios from 'axios';
+import AcceptNFStyle from '../styles/AcceptNFStyle';
+import Swiper from 'react-native-swiper';
 //for DateTimePicker run yarn add @react-native-community/datetimepicker and pod install
 
 function Info({dd, setShowModal}) {
@@ -51,73 +53,59 @@ function Info({dd, setShowModal}) {
     getID();
   }, []);
   return (
-    <View style={[GMapStyle.infoBox, {height: 600}]}>
-      {/*Title box below*/}
-      <View>
-        <Text style={GMapStyle.donatorTitle}>{namer}</Text>
-      </View>
-      {/*Image box below*/}
-      <View style={GMapStyle.imageBox}>
-        <Image
-          source={{uri: `https://foodfull.s3-us-west-2.amazonaws.com/photo${uid}.jpg`}}
-          style={{width: 100, height: 100}}
-        />
-      </View>
-      {/*Date box below*/}
-      <View style={GMapStyle.dateBox}>
-        <Text
-          style={{
-            flex: 1,
-            color: '#0ca3bc',
-            fontSize: 18,
-            fontFamily: 'avenir',
-          }}>
-          Date:
-        </Text>
-        <Text
-          style={{flex: 1.1, fontFamily: 'DidactGothic-regular', fontSize: 15}}>
-          {dates}
-        </Text>
-      </View>
-      {/*Time box below*/}
-      <View
-        style={{
-          flexDirection: 'row',
-          width: '80%',
-          alignItems: 'center',
-          justifyContent: 'center',
-        }}>
-        <Text style={{color: '#0ca3bc', fontSize: 18, fontFamily: 'avenir'}}>
-          Pick your time:
-        </Text>
-        <View style={GMapStyle.timeBox}>
-          <Text>{times}</Text>
-        </View>
-      </View>
-      {/*Note box below*/}
+    <View style ={{height: 500, alignItems: 'center'}}>
+                <View style={AcceptNFStyle.main2}>
+                {/*Donation info below */}
 
-      <View style={GMapStyle.noteBox}>
-        <Text
-          style={{
-            color: '#0ca3bc',
-            paddingBottom: 5,
-            fontSize: 18,
-            fontFamily: 'avenir',
-          }}>
-          Descriptions:
-        </Text>
+                <View style={AcceptNFStyle.donationInfoTop}>
+                <Swiper  showsButtons={false}>
+                    <Image style={AcceptNFStyle.DImage}
+                    source = {{uri: `https://foodfull.s3-us-west-2.amazonaws.com/photo${uid}.jpg`}}
+                    >
+                    </Image>
+                    {/* <Image style={AcceptNFStyle.DImage}
+                    source = {{uri: `https://foodfull.s3-us-west-2.amazonaws.com/photo${dd.image_url[1]}.jpg`}}
+                    >
+                    </Image>
+                    <Image style={AcceptNFStyle.DImage}
+                    source = {{uri: `https://foodfull.s3-us-west-2.amazonaws.com/photo${dd.image_url[1]}.jpg`}}
+                    >
+                    </Image>  */}
+                </Swiper>
 
-        <Text
-          style={{
-            paddingTop: 10,
-            fontFamily: 'DidactGothic-regular',
-            fontSize: 15,
-          }}>
-          {desc}
-        </Text>
-      </View>
-      {/*Button below*/}
-      <TouchableHighlight
+
+                </View>
+                {/*Image text below */}
+                <View style ={{flex: 1.5, padding: 5}}>
+                <View style={AcceptNFStyle.TextDisplay}>
+                            <Text style={AcceptNFStyle.Organization}>{dd.name}</Text>
+                            {/* <Text style={AcceptNFStyle.address}>Donation Request</Text> */}
+                    </View> 
+                {/*Date of pickup below */}
+                <View style={[AcceptNFStyle.pickupDate, {flex: 1.3}]}>
+                    <Text style={{ color: '#066a87', fontSize: 16, flex: 2}} onPress={()=> alert('Address',dd.address)}>{dd.address}</Text>
+                </View>
+                <View style={AcceptNFStyle.pickupDate}>
+                    <Text style={{ color: '#0ca3bc', fontSize: 18, flex: 1,fontWeight: "600" }}>Pickup Date</Text>
+                    <Text style={{ color: '#066a87', fontSize: 16, flex: 1}}>{dd.date}</Text>
+                </View>
+                {/*Pickup time below */}
+                <View style={AcceptNFStyle.pickupTime}>
+                    <Text style={{ color: '#0ca3bc', fontSize: 18, flex: 1,fontWeight: "600" }}>Pickup Time</Text>
+                    <Text style={{ color: '#066a87', fontSize: 16, flex: 1 }}>{dd.time}</Text>
+                </View>
+                {/*Description title below */}
+                <Text
+                    style={AcceptNFStyle.descriptionTitle}
+                >Description</Text>
+                {/*Description below */}
+                <Text
+                    style={AcceptNFStyle.description}
+                >
+                    {dd.description}
+            </Text>
+            </View>
+            <TouchableOpacity
         onPress={() => Claim()}
         title="Accept"
         style={buttonStyle.button}>
@@ -130,8 +118,18 @@ function Info({dd, setShowModal}) {
           }}>
           Claim Donation
         </Text>
-      </TouchableHighlight>
-    </View>
+      </TouchableOpacity>
+              <TouchableOpacity style ={{position: 'absolute', top: 30, right: 30}}
+              onPress={()=>{setShowModal(false)}}>
+                  <Image
+                  
+                  source={require('../assets/icon/x.png')}
+                  style = {{width: 15, height: 15}}
+                  />
+              </TouchableOpacity>
+            </View>
+                </View>
+      
   );
 }
 export default Info;

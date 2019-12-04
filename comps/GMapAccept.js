@@ -206,15 +206,7 @@ const [showImage, setShowImage] = useState(true)
             isVisible = {showModal}
             onBackdropPress={() => setShowModal(!showModal)}
             >
-               {modalInitContent}
-               <TouchableOpacity style ={{position: 'absolute', top: 240, right: 60}}
-                onPress={()=>{setShowModal(!showModal)}}>
-                    <Image
-                    
-                    source={require('../assets/icon/x.png')}
-                    style = {{width: 15, height: 15}}
-                    />
-                    </TouchableOpacity>
+              {modalInitContent}
             </Modal>
     </View>
   );
