@@ -94,12 +94,12 @@ function Pickup() {
           <View style = {donationStyle.CardDisplay}>
               <View style = {donationStyle.Images}>
                   <Image
-                  source = {require('../assets/img/food.png')}
+                  source = {{uri: `https://foodfull.s3-us-west-2.amazonaws.com/photo${d.user_id}.jpg`}}
                   style ={{height: 90, width: 90, borderRadius: 15}}/>
               </View>
               <View style={donationStyle.TextDisplay}>
                   <View>
-                      <Text style={donationStyle.Organization}>{d.name}</Text>
+                      <Text style={donationStyle.Organization} key={i}>{d.name}</Text>
                   </View>
                   <View>
                     <Text style={donationStyle.address}>{d.address}</Text>
@@ -145,12 +145,12 @@ function Pickup() {
           <View style = {donationStyle.CardDisplay}>
               <View style = {donationStyle.Images}>
                   <Image
-                  source = {require('../assets/img/food.png')}
+                  source = {{uri: `https://foodfull.s3-us-west-2.amazonaws.com/photo${d2.user_id}.jpg`}}
                   style ={{height: 90, width: 90, borderRadius: 15}}/>
               </View>
               <View style={donationStyle.TextDisplay}>
                   <View>
-                      <Text style={donationStyle.Organization}>{d2.name}</Text>
+                      <Text style={donationStyle.Organization} key={i}>{d2.name}</Text>
                   </View>
                   <View>
                     <Text style={donationStyle.address}>{d2.address}</Text>
