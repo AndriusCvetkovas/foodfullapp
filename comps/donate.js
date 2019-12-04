@@ -110,12 +110,11 @@ var title ='Public Donation';
       <KeyboardAvoidingView enabled>
         <Text
               style={[
-                donateStyle.lftItems,
-                {color: cocolor, fontWeight: coweight},
+                donateStyle.lftItems
               ]}>
               Choose an Organization:
         </Text>
-        <View style={{margin: 5}}>
+        <View style={{margin: 0}}>
           <TextInput
             onFocus={() => Actions.map()}
             style={{
@@ -369,7 +368,19 @@ var title ='Public Donation';
         <View>
           {orgInput}
         </View>
-        
+        <TouchableOpacity
+          style={donateStyle.DonateBtn}
+          underlayColor="#000"
+          color="white"
+          onPress={() => 
+            {if(image == null || selectedDate == null || selectedTime == null || setSelectedDescription == null){
+              alert("Please fill in all the inputs")
+            }else {
+              changePage();
+          }}}
+          >
+          <Text style={donateStyle.btnText}>Donate</Text>
+        </TouchableOpacity>
       </ScrollView>
 
       <Modal
@@ -392,19 +403,7 @@ var title ='Public Donation';
           />
         </TouchableOpacity>
       </Modal>
-      <TouchableOpacity
-          style={donateStyle.DonateBtn}
-          underlayColor="#000"
-          color="white"
-          onPress={() => 
-            {if(image == null || selectedDate == null || selectedTime == null || setSelectedDescription == null){
-              alert("Please fill in all the inputs")
-            }else {
-              changePage();
-          }}}
-          >
-          <Text style={donateStyle.btnText}>Donate</Text>
-        </TouchableOpacity>
+      
     </KeyboardAvoidingView>
   );
 }
