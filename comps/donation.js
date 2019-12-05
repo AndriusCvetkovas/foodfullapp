@@ -143,7 +143,7 @@ function Donations() {
             isVisible = {showModal}
             onBackdropPress={() => setShowModal(!showModal)}
             >
-                <View style ={{height: 500, alignItems: 'center'}}>
+                <View style ={{height: 550, alignItems: 'center'}}>
                 <View style={AcceptNFStyle.main2}>
                 {/*Donation info below */}
 
@@ -176,21 +176,21 @@ function Donations() {
                     <Text style={{ color: '#066a87', fontSize: 16, flex: 2}} onPress={()=> alert('Address',dd.address)}>{dd.address}</Text>
                 </View>
                 <View style={AcceptNFStyle.pickupDate}>
-                    <Text style={{ color: '#0ca3bc', fontSize: 18, flex: 1,fontWeight: "600" }}>Pickup Date</Text>
+                    <Text style={{ color: '#0ca3bc', fontSize: 18, flex: 1,fontWeight: "800", fontFamily:'Avenir' }}>Pickup Date</Text>
                     <Text style={{ color: '#066a87', fontSize: 16, flex: 1}}>{dd.date}</Text>
                 </View>
                 {/*Pickup time below */}
                 <View style={AcceptNFStyle.pickupTime}>
-                    <Text style={{ color: '#0ca3bc', fontSize: 18, flex: 1,fontWeight: "600" }}>Pickup Time</Text>
+                    <Text style={{ color: '#0ca3bc', fontSize: 18, flex: 1,fontWeight: "800", fontFamily:'Avenir' }}>Pickup Time</Text>
                     <Text style={{ color: '#066a87', fontSize: 16, flex: 1 }}>{dd.time}</Text>
                 </View>
                 {/*Description title below */}
                 <Text
-                    style={AcceptNFStyle.descriptionTitle}
+                    style={[AcceptNFStyle.descriptionTitle,{fontWeight:'800', top:5}]}
                 >Description</Text>
                 {/*Description below */}
                 <Text
-                    style={AcceptNFStyle.description}
+                    style={[AcceptNFStyle.description,{top:5}]}
                 >
                     {dd.description}
             </Text>

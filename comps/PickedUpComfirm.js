@@ -239,7 +239,7 @@ function PickedUpComfirm(props) {
     );
 
     var pickedUpModal = (
-        <View style ={{height: 500, alignItems: 'center'}}>
+        <View style ={{height: 550, alignItems: 'center'}}>
                 <View style={AcceptNFStyle.main2}>
                 {/*Donation info below */}
 
@@ -264,7 +264,7 @@ function PickedUpComfirm(props) {
                 {/*Image text below */}
                 <View style ={{flex: 1.5, padding: 5}}>
                 <View style={AcceptNFStyle.TextDisplay}>
-                            <Text style={AcceptNFStyle.Organization}>{d.name}</Text>
+                            <Text style={[AcceptNFStyle.Organization, {fontFamily:'Avenir'}]}>{d.name}</Text>
                             {/* <Text style={AcceptNFStyle.address}>Donation Request</Text> */}
                     </View> 
                 {/*Date of pickup below */}
@@ -282,11 +282,11 @@ function PickedUpComfirm(props) {
                 </View>
                 {/*Description title below */}
                 <Text
-                    style={AcceptNFStyle.descriptionTitle}
+                    style={[AcceptNFStyle.descriptionTitle,{top:4, fontWeight:'800', fontFamily:'Avenir'}]}
                 >Description</Text>
                 {/*Description below */}
                 <Text
-                    style={AcceptNFStyle.description}
+                    style={[AcceptNFStyle.description,{top:3}]}
                 >
                     {d.description}
             </Text>
@@ -305,7 +305,7 @@ function PickedUpComfirm(props) {
                             style={AcceptNFStyle.button2}>
                             <Text
                                 style={{ color: 'red', fontSize: 16, fontWeight: '500' }}
-                            >Decline Donation</Text>
+                            >Cancel Donation</Text>
                         </TouchableOpacity>
                 <TouchableOpacity style ={{position: 'absolute', top: 30, right: 30}}
                 onPress={()=>{props.obj.hide()}} >
