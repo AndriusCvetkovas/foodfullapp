@@ -97,7 +97,8 @@ function GMap() {
               }}
               title={d.name}
               description={d.address}
-              image={require('../assets/icon/map.png')}
+              image={require('../assets/icon/map_pin.png')}
+              style={{ width: 40, height: 40 }}
             />
           );
         })}

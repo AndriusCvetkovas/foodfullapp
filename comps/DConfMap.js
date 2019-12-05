@@ -28,11 +28,11 @@ function AcceptedInfo({address, time, date, names}) {
               <Text style={[styles.contentPosts, {top:-30, width:300}]}>This food donation is now yours, and the donating organization will be expecting you.</Text>
         </View>
 
-        <View style = {[styles.containerButton,{top:0}]}>
+        <View style = {[styles.containerButton,{top:20}]}>
         <TouchableHighlight style={[styles.buttonContainer, styles.MakePost]} onPress={() => Actions.mapaccept()}>
           <Text style={styles.B1}>Claim More</Text>
         </TouchableHighlight>
-        <TouchableHighlight style={[styles.buttonContainer, styles.ViewPost]} onPress={() => {Actions.notification1()}}>
+        <TouchableHighlight style={[styles.buttonContainer, styles.ViewPost, {top: 20}]} onPress={() => {Actions.notification1()}}>
           <Text style={styles.B2}>View Pickups</Text>
         </TouchableHighlight>
         </View>
