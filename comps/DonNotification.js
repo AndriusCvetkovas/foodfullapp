@@ -64,12 +64,12 @@ function DonNotification() {
                 {/*Donation info below */}
 
                 <View style={AcceptNFStyle.donationInfoTop}>
-                <Swiper  showsButtons={false}>
-                    
                     <Image style={[AcceptNFStyle.DImage]}
-                    source = {{uri:  `https://foodfull.s3-us-west-2.amazonaws.com/photo${dd.user_id}.jpg`}}
-                    >
+                        source = {{uri:  `https://foodfull.s3-us-west-2.amazonaws.com/photo${dd.user_id}.jpg`}}
+                        >
                     </Image>
+                {/* <Swiper  showsButtons={false}>
+                    
                     {/* <Image style={AcceptNFStyle.DImage}
                     source = {{uri: `https://foodfull.s3-us-west-2.amazonaws.com/photo${dd.image_url[1]}.jpg`}}
                     >
@@ -77,8 +77,8 @@ function DonNotification() {
                     <Image style={AcceptNFStyle.DImage}
                     source = {{uri: `https://foodfull.s3-us-west-2.amazonaws.com/photo${dd.image_url[1]}.jpg`}}
                     >
-                    </Image>  */}
-                </Swiper>
+                    </Image>  *
+                </Swiper> */}
 
 
                 </View>

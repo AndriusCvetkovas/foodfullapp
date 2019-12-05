@@ -58,7 +58,7 @@ function Info({dd, setShowModal}) {
                 {/*Donation info below */}
 
                 <View style={AcceptNFStyle.donationInfoTop}>
-                <Swiper  showsButtons={false}>
+                {/* <Swiper  showsButtons={false}> */}
                     <Image style={AcceptNFStyle.DImage}
                     source = {{uri: `https://foodfull.s3-us-west-2.amazonaws.com/photo${uid}.jpg`}}
                     >
@@ -71,7 +71,7 @@ function Info({dd, setShowModal}) {
                     source = {{uri: `https://foodfull.s3-us-west-2.amazonaws.com/photo${dd.image_url[1]}.jpg`}}
                     >
                     </Image>  */}
-                </Swiper>
+                {/* </Swiper> */}
 
 
                 </View>

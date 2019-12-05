@@ -24,7 +24,9 @@ var AcceptNFStyle = StyleSheet.create({
     },
     DImage:{
         flex: 1,
-        resizeMode: 'cover', 
+        width: '100%',
+        height: '100%',
+        resizeMode: 'cover',
         borderTopRightRadius:30, 
         borderTopLeftRadius: 30 
     },
