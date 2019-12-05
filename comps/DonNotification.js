@@ -109,7 +109,7 @@ function DonNotification() {
                 >Description</Text>
                 {/*Description below */}
                 <Text
-                    style={AcceptNFStyle.description}
+                    style={[AcceptNFStyle.description, {top: -17}]}
                 >
                     {dd.description}
             </Text>
