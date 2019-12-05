@@ -156,22 +156,22 @@ function PickedUpComfirm(props) {
 
             <View style={[PickUpComfirmSty.main2]}>
                 <View
-                    style={[GMapStyle.infoBox, {height: 300, width: '100%'}]}
+                    style={[GMapStyle.infoBox, {height:  '100%', width: '100%', backgroundColor: 'transparent'}]}
                 >
                     {/*Title box below*/}
                     <View
-                        style={{ marginTop: 50 }}>
+                        style={{ marginTop: 50}}>
                         <Text
-                            style={GMapStyle.CancelledText}
+                            style={{color: "#0ca3bc", fontSize: 18, fontFamily: 'Avenir', fontWeight: '600'}}
                         >Pick Up Cancelled</Text>
                     </View>
                     {/*Image box below*/}
 
                     {/*Date box below*/}
                     <View
-                        style={[GMapStyle.messageBox]}
+                        style={{width: '80%', }}
                     >
-                        <Text style={{ height: 70, marginTop: 40, fontFamily: 'DidactGothic-Regular', fontSize: 15 }}>You have cancelled this donation from Safeway Extra.
+                        <Text style={{ height: 200, top: 50, fontFamily: 'DidactGothic-Regular', fontSize: 15, flex: 0}}>You have cancelled this donation from Safeway Extra.
                             They will be informed that you are no longer picking
                             up this donation.
                 </Text>
@@ -200,7 +200,7 @@ function PickedUpComfirm(props) {
                             console.log("Olala")
                         }
                         title="Accept"
-                        style={[buttonStyle.button, {top: 0}]}>
+                        style={[buttonStyle.button]}>
                         <Text
                             style={{ color: 'white', fontWeight: '500', fontFamily: 'avenir', fontSize: 16 }}
                         >View Donations</Text>
@@ -208,17 +208,17 @@ function PickedUpComfirm(props) {
                     <TouchableOpacity
                         onPress={() => { props.obj.hide },
                             console.log('Modal Has been Closed')
-
+                        
                         }
 
                         title="Accept"
-                        style={buttonStyle.button2}>
+                        style={[buttonStyle.button2, {marginBottom: 100}]}>
                         <Text
                             style={{ color: '#0ca3bc', fontWeight: '500', fontFamily: 'avenir', fontSize: 16 }}
                         >Search for Donations</Text>
                     </TouchableOpacity>
 
-                    <TouchableOpacity style={{ position: 'absolute', top: 10, right: 25 }}
+                    <TouchableOpacity style={{ position: 'absolute', top: 0, right: 25 }}
                         onPress={props.obj.hide}
                     >
                         <Image

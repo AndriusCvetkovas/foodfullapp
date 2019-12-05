@@ -159,7 +159,7 @@ ImagePicker.showImagePicker(options, async(response) => {
             <View
             style={ProfileStyle.infoStyle}
             >
-                <TouchableOpacity style = {{position: 'absolute', top: 20, right: 20}}
+                <TouchableOpacity style = {{position: 'absolute', top: 20, right: 20, zIndex:2}}
                 onPress={()=> setShowModal(!showModal)}>
                     <Image style ={{width: 20, height: 20}}
                     source={require('../../assets/icon/edit.png')}
@@ -260,7 +260,7 @@ ImagePicker.showImagePicker(options, async(response) => {
                 </TouchableOpacity> */}
                    
                 {/* X to close popup */}
-                 <TouchableOpacity style ={{position: 'absolute', top: 80, right: 45, zIndex:1}}
+                 <TouchableOpacity style ={{position: 'absolute', top: 80, right: 45, zIndex:2}}
                 onPress={()=>{setShowModal(!showModal)}}>
                     <Image
                     source={require('../../assets/icon/x.png')}
