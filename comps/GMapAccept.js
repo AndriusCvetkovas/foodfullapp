@@ -48,7 +48,7 @@ useEffect(()=> {
 const [la,setLa] = useState(49);
 const [lo,setLo] = useState();
 const [h, setH] = useState(true);
-const [hh] = useState(new Animated.Value(200))
+const [hh] = useState(new Animated.Value(300))
 const [showImage, setShowImage] = useState(true)
 
 
@@ -108,18 +108,18 @@ const [showImage, setShowImage] = useState(true)
             if(showImage == true){
               var imageContent = (<Image
                 source = {{uri: `https://foodfull.s3-us-west-2.amazonaws.com/photo${d.user_id}.jpg`}}
-                style = {{width: 375, flex: 3, top:-20, alignSelf:'center'}}>
+                style = {{width: 375, flex: 1.8, top:-20, alignSelf:'center'}}>
                 </Image>)
             }
             console.log(d.image_url)
             return(
-          <TouchableOpacity style={GMapStyle.infoStyle}
+          <TouchableOpacity style={[GMapStyle.infoStyle, {height: 600}]}
           onPress={()=>{
-            if(hh._value == 200){
+            if(hh._value == 300){
               Animated.timing(
                 hh,
                 {
-                  toValue: 400,
+                  toValue: 600,
                   duration: 1000
                 }
               ).start();
@@ -127,7 +127,7 @@ const [showImage, setShowImage] = useState(true)
               Animated.timing(
                 hh,
                 {
-                  toValue: 200,
+                  toValue: 300,
                   duration: 1000
                 }
               ).start();
@@ -135,7 +135,7 @@ const [showImage, setShowImage] = useState(true)
             InteractionManager.runAfterInteractions(()=>{
               map.current.animateToRegion(
                 {
-                  latitude: d.lat,
+                  latitude: d.lat -0.04,
                   longitude: d.long,
                   latitudeDelta: 0.1,
                   longitudeDelta: 0.1
@@ -146,42 +146,48 @@ const [showImage, setShowImage] = useState(true)
         }
           
           >
-            <Text style={[GMapStyle.innerTitle, {top: -20}]}>{d.name}</Text>
+            
             {imageContent}
+            <Text style={[GMapStyle.innerTitle, {top: -20, paddingLeft: 0, textAlign: 'center', fontFamily: 'Avenir', fontSize: 25, fontWeight: '700'}]}>{d.name}</Text>
             <View style={[GMapStyle.innerInfo ]} >
               {/* <Image
                 style={{height: 75, width: 75, borderRadius: 75}}
                 source={{uri: `https://foodfull.s3-us-west-2.amazonaws.com/avatar0.jpg`}}></Image> */}
               <View style={[GMapStyle.innerInner, {top: 130, left: -25}]}>
                 
-                <Text style={[GMapStyle.innerAddress,{top: 0, color: '#06a2bc', fontSize: 16}]} key={i}>
+                <Text style={[GMapStyle.innerAddress,{top: -80, color: '#06a2bc', fontSize: 16, left: 20, width: 300}]} key={i}>
                   {d.address}
                 </Text>
-                <View style= {{left: 0, top: 20, overflow: 'hidden', height: 250}}>
-                  
-                  <Text>{d.time}</Text>
-                  <Text>{d.date}</Text>
-                  <Text>
+                <View style= {{left: 20, top: -60, height: 300}}>
+                  <View style ={{flexDirection: 'row', margin: 5, marginLeft: 0, alignItems: 'center'}}>
+                    <Text style = {{flex:0.2, fontSize: 16, color: '#06a2bc', fontWeight: '600'}}>Date:</Text>
+                    <Text style = {{flex:1, top: 1.5}}>2019-Nov-12{d.date}</Text>
+                  </View>
+                  <View style ={{flexDirection: 'row', margin: 5, marginLeft: 0, alignItems: 'center'}}>
+                    <Text style = {{flex:0.2, fontSize: 16, color: '#06a2bc', fontWeight: '600'}}>Time:</Text>
+                    <Text style = {{flex:1, top: 1.5}}>{d.time}5:55</Text>
+                  </View>
+                  <Text style={{fontSize: 16, color: '#06a2bc', fontWeight: '600', marign: 5, marginTop: 10}}>
                   Donation Notes:
                   </Text>
-                  <Text style ={{color: 'grey', width: 150}}>{d.description}</Text>
+                  <Text style ={{color: 'grey', width: 250, fontSize: 16, marginTop: 5}}>This is our food donation, please see the image and bring 2 trucks{d.description}</Text>
                   
                 </View>
                 
               </View>
             </View>
 
-            <TouchableOpacity style={GMapStyle.innerButton}
+            <TouchableOpacity style={[GMapStyle.innerButton, {marginLeft: 0, top: -20, width: 150, backgroundColor: "#06a2bc"}]}
             
             onPress={()=>{setShowModal(!showModal), setdd(d)}}>
               <Text
                 style={{
-                  color: '#06a2bc',
+                  color: 'white',
                   fontFamily: 'avenir',
-                  fontWeight: '600',
-                  fontSize: 16,
+                  fontWeight: '700',
+                  fontSize: 18,
                 }}>
-                Select
+                Claim
               </Text>
             </TouchableOpacity>
           </TouchableOpacity>
