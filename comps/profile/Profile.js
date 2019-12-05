@@ -145,7 +145,8 @@ ImagePicker.showImagePicker(options, async(response) => {
             </View>
 
             {/* Image view */}
-            <View
+            <TouchableOpacity
+            onPress={()=>uploadMyImage()}
             style={ProfileStyle.imageViewStyle}
             >
                 <Image
@@ -153,7 +154,7 @@ ImagePicker.showImagePicker(options, async(response) => {
                 style={ProfileStyle.imageStyle}
                 >
                 </Image>
-            </View>
+            </TouchableOpacity>
 
             {/* Info view */}
             <View
