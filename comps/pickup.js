@@ -118,7 +118,7 @@ function Pickup() {
         </View>
         <View style={donationStyle.option}>
                   <View>
-                    <Text style={[donationStyle.optionText, {color: colorz, top:-40, left:130}]}>*{texta}</Text>
+                    <Text style={[donationStyle.optionText, {color: colorz, top:-40, left:130}]}>* {texta}</Text>
                   </View>
               </View>
     </View>

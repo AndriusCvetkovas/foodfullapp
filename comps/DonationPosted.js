@@ -2,7 +2,7 @@ import React from 'react';
 import {
   View,
   Text,
-  Image,  
+  Image,   
   Button,
   TouchableHighlight,
 } from 'react-native';
@@ -32,7 +32,7 @@ function DonationPosted(){
         </View>
 
         <View style = {styles.containerButton}>
-        <TouchableHighlight style={[styles.buttonContainer, styles.MakePost]} onPress={() => Actions.choosedonation()}>
+        <TouchableHighlight style={[styles.buttonContainer, styles.MakePost, {marginTop:20}]} onPress={() => Actions.choosedonation()}>
           <Text style={styles.B1}>Make another Donation</Text>
         </TouchableHighlight>
         <TouchableHighlight style={[styles.buttonContainer, styles.ViewPost]} onPress={() => {Actions.notification0()}}>

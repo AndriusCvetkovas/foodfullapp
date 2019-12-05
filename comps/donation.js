@@ -93,7 +93,7 @@ function Donations() {
                     dons.map((d, i) => {
                         return (
 
-                            <View style={donationStyle.CardDisplay}>
+                            <View style={[donationStyle.CardDisplay, {marginTop:2}]}>
                                 <View style={donationStyle.Images}>
                                     <Image
                                         style={donationStyle.ImageSize}
@@ -113,11 +113,12 @@ function Donations() {
                                     <View style={donationStyle.option}>
 
                                         <TouchableOpacity
-                                            style={donationStyle.BtnStyleBlueView}
+                                           style={{left:95, top:-33}}
                                             underlayColor='#000'
                                             color='000'
                                             onPress={() => [setShowModal(!showModal), setdd(d), console.log(dd)]}>
-                                            <Text style={donationStyle.btnText}>View</Text>
+                                            {/* <Text style={donationStyle.btnText}>View</Text> */}
+                                            <Image style={donationStyle.Dots} source={require("../assets/icon/options.png")} />
                                         </TouchableOpacity>
                                     </View>
                                 </View>
