@@ -10,6 +10,7 @@ import LottieView from 'lottie-react-native';
 import Swiper from 'react-native-swiper'
 
 function DonNotification() {
+   
     const [showModal, setShowModal] = useState(false);
     var currentId = "";
     const getID = async () => {
@@ -43,6 +44,8 @@ function DonNotification() {
             )
         }
     }
+    var image = Image.prefetch(`https://foodfull.s3-us-west-2.amazonaws.com/photo${dd.user_id}.jpg`);
+    console.log(image)
     useEffect(() => {
         getID();
     }, [])
@@ -62,8 +65,9 @@ function DonNotification() {
 
                 <View style={AcceptNFStyle.donationInfoTop}>
                 <Swiper  showsButtons={false}>
-                    <Image style={AcceptNFStyle.DImage}
-                    source = {{uri: `https://foodfull.s3-us-west-2.amazonaws.com/photo${dd.user_id}.jpg`}}
+                    
+                    <Image style={[AcceptNFStyle.DImage]}
+                    source = {{uri:  `https://foodfull.s3-us-west-2.amazonaws.com/photo${dd.user_id}.jpg`}}
                     >
                     </Image>
                     {/* <Image style={AcceptNFStyle.DImage}
@@ -163,7 +167,7 @@ function DonNotification() {
                                     </View>
                                     <View style = {{flexDirection: 'row', alignItems: 'center', marginTop :10, marginBottom: 15}}>
                                         <Text style={[donationStyle.address, {fontSize: 16, marginTop: 10}]}>{d.date}</Text>
-                                        <Text style={[donationStyle.address, {fontSize: 16, marginTop: 10, marginLeft: 5}]}>{d.time}</Text>
+                                        <Text style={[donationStyle.address, {fontSize: 16, marginTop: 10, left: -150}]}>{d.time}</Text>
                                     </View>
                                     <View>
                                         <Text style={[donationStyle.optionText, {color: colorz, width: 400, fontSize: 14}]}>* {texta}</Text>

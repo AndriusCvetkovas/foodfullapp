@@ -45,6 +45,7 @@ function PickedUpComfirm(props) {
         var d = json.data;
         console.log(d)
     }
+    var image = `https://foodfull.s3-us-west-2.amazonaws.com/photo${d.user_id}.jpg`
 
     const Update4 = async (thisId) => {
         var obj = {
@@ -244,8 +245,8 @@ function PickedUpComfirm(props) {
 
                 <View style={AcceptNFStyle.donationInfoTop}>
                 <Swiper  showsButtons={false}>
-                    <Image style={AcceptNFStyle.DImage}
-                    source = {{uri: `https://foodfull.s3-us-west-2.amazonaws.com/photo${d.user_id}.jpg`}}
+                    <Image style={[AcceptNFStyle.DImage]}
+                    source = {{uri: image}}
                     >
                     </Image>
                     {/* <Image style={AcceptNFStyle.DImage}
