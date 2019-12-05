@@ -93,9 +93,8 @@ const [showImage, setShowImage] = useState(true)
               }}
               title={d.name}
               description={d.address}
-              image={require('../assets/icon/map_pin.png')}
+              image={require('../assets/icon/mapPin.png')}
               selected={true}
-              style={{ width: 20, height: 20 }}
             />
           );
         })}
