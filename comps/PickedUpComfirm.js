@@ -11,7 +11,7 @@ import axios from 'axios';
 import AcceptNFStyle from '../styles/AcceptNFStyle'
 import Swiper from 'react-native-swiper';
 
-
+import LottieView from 'lottie-react-native';
 
 
 
@@ -92,12 +92,14 @@ function PickedUpComfirm(props) {
                 </View>
                 {/*Image box below*/}
                 <View
-                    style={PickUpStyle.imageBox}
+                    style={[PickUpStyle.imageBox, {top: -170}]}
                 >
-                    <Image
-                        style={PickUpStyle.checkmarkImage}
-                        source={require('../assets/icon/checkmark.png')}
-                    />
+                    <LottieView
+                source={require('../assets/lottieFiles/checkmark.json')}
+                style={{alignSelf: 'center',height:550, width:'90%',}}
+                autoPlay
+                loop
+            />
                 </View>
                 {/*Date box below*/}
                 <View
