@@ -28,7 +28,7 @@ function AcceptedInfo({address, time, date, names}) {
               <Text style={styles.contentPosts}>This donation is now in a pickup pending state and can be viewed in your pick ups</Text>
         </View>
 
-        <View style = {styles.containerButton}>
+        <View style = {[styles.containerButton,{top:60}]}>
         <TouchableHighlight style={[styles.buttonContainer, styles.MakePost]} onPress={() => Actions.mapaccept()}>
           <Text style={styles.B1}>Claim another Donation</Text>
         </TouchableHighlight>
