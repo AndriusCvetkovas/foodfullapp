@@ -63,7 +63,7 @@ function DonNotification() {
                 <View style={AcceptNFStyle.donationInfoTop}>
                 <Swiper  showsButtons={false}>
                     <Image style={AcceptNFStyle.DImage}
-                    source = {{uri: `https://foodfull.s3-us-west-2.amazonaws.com/photo${currentId}.jpg`}}
+                    source = {{uri: `https://foodfull.s3-us-west-2.amazonaws.com/photo${dd.user_id}.jpg`}}
                     >
                     </Image>
                     {/* <Image style={AcceptNFStyle.DImage}
@@ -128,16 +128,16 @@ function DonNotification() {
                 {
                     dons.map((d, i) => {
                         if (d.status == 1 || d.status == 0) {
-                            var texta = 'Your donation is not yet accepted';
+                            var texta = 'Donation Pending';
                             var colorz = '#ee9a23'
                         } else if (d.status == 2) {
-                            texta = 'Foodbank accepted your donation!'
+                            texta = 'Pickup Pending'
                             colorz = '#a5d826'
                         } else if (d.status == 4){
-                            texta = 'Your donation was picked up!'
+                            texta = 'Picked Up'
                             colorz = '#a5d826'
                         } else if (d.status == 5 || d.status == 3){
-                            texta = 'Your donation was cancelled!'
+                            texta = 'Cancelled'
                             colorz = 'red'
                         }else {
                             texta = 'SOMETHING WENT WRONG'
@@ -161,17 +161,17 @@ function DonNotification() {
                                     <View>
                                         <Text style={donationStyle.Organization} key={i}>{d.name}</Text>
                                     </View>
-                                    <View style = {{flexDirection: 'row', alignItems: 'center', marginTop :10, marginBottom: 10}}>
-                                        <Text style={[donationStyle.address, {fontSize: 14, marginTop: 10}]}>{d.date}</Text>
-                                        <Text style={[donationStyle.address, {fontSize: 14, marginTop: 10, marginLeft: 5}]}>{d.time}</Text>
+                                    <View style = {{flexDirection: 'row', alignItems: 'center', marginTop :10, marginBottom: 15}}>
+                                        <Text style={[donationStyle.address, {fontSize: 16, marginTop: 10}]}>{d.date}</Text>
+                                        <Text style={[donationStyle.address, {fontSize: 16, marginTop: 10, marginLeft: 5}]}>{d.time}</Text>
                                     </View>
                                     <View>
-                                        <Text style={[donationStyle.optionText, {color: colorz, width: 400}]}>{texta}</Text>
+                                        <Text style={[donationStyle.optionText, {color: colorz, width: 400, fontSize: 14}]}>* {texta}</Text>
                                     </View>
 
                                 </View>
                                 <View style={donationStyle.TextDisplay}>
-                                    <TouchableOpacity style={{top: -50, }}
+                                    <TouchableOpacity style={{top: -50, left: 95}}
                                         onPress={() => [setShowModal(!showModal), setdd(d)]}
                                     >
                                         <Image style={donationStyle.Dots} source={require("../assets/icon/options.png")} />

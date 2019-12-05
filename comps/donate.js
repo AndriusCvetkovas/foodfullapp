@@ -41,13 +41,20 @@ function Donate({addr, ids, tt, dType}) {
     text = '';
   }
 
+   //GET USER ID
+
+   const getID = async () => {
+    var json = await AsyncStorage.getItem('id');
+    id = json;
+    console.log(id);
+  };
   console.log(id);
   const [chooseOrg, setChooseOrg] = useState(false);
   const [imageDefault, setArrayImages] = useState();
   const options = {
     title: 'Select Donation Image',
     maxWidth: 500,
-      maxHight: 500,
+    maxHight: 500,
     storageOptions: {
       skipBackup: true,
       path: 'images',
@@ -165,13 +172,7 @@ var title ='Public Donation';
   const [selectedDescription, setSelectedDescription] = useState();
   const [selectedTime, setSelectedTime] = useState();
   const [status, setStatus] = useState(0);
-  //GET USER ID
-
-  const getID = async () => {
-    var json = await AsyncStorage.getItem('id');
-    id = json;
-    console.log(id);
-  };
+ 
 
   //SEND INFORMATION TO DATABASE
   const obj = {
