@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, ScrollView, Image, TouchableOpacity, AsyncStorage } from 'react-native';
+import { View, Text, ScrollView, Image, TouchableOpacity, AsyncStorage, Alert } from 'react-native';
 import DonNotifStyle from '../styles/donNotifStyle';
 import donationStyle from '../styles/donationStyle';
 import axios from 'axios';
@@ -47,7 +47,7 @@ function DonNotification() {
         getID();
     }, [])
     return (
-        <View>
+        <View style = {{backgroundColor: '#fff'}}>
             {CheckifDon()}
             <Modal isVisible={showModal}
                 coverScreen={false}
@@ -56,7 +56,7 @@ function DonNotification() {
                 isVisible={showModal}
                 onBackdropPress={() => setShowModal(!showModal)}
             >
-                <View style ={{height: 500, alignItems: 'center'}}>
+                <View style ={{height: 600, alignItems: 'center', top: 50}}>
                 <View style={AcceptNFStyle.main2}>
                 {/*Donation info below */}
 
@@ -86,7 +86,9 @@ function DonNotification() {
                     </View> 
                 {/*Date of pickup below */}
                 <View style={[AcceptNFStyle.pickupDate, {flex: 1.3}]}>
-                    <Text style={{ color: '#066a87', fontSize: 16, flex: 2}} onPress={()=> alert('Address',dd.address)}>{dd.address}</Text>
+                    <Text style={{ color: '#066a87', fontSize: 16, flex: 2}} 
+                    // onPress={()=> Alert.alert('Address',dd.address)}
+                    >{dd.address}</Text>
                 </View>
                 <View style={AcceptNFStyle.pickupDate}>
                     <Text style={{ color: '#0ca3bc', fontSize: 18, flex: 1,fontWeight: "600" }}>Pickup Date</Text>
@@ -120,7 +122,7 @@ function DonNotification() {
             </View>
                 </View>
             </Modal>
-            <ScrollView style={{ height: '100%' }}>
+            <ScrollView style={{ height: '100%', paddingTop: -100 }}>
 
 
                 {
@@ -149,8 +151,8 @@ function DonNotification() {
                             <View style={[donationStyle.CardDisplay, { top: 50, }]}>
                                 <View style={donationStyle.Images}>
                                 <Image
-                                style={{width: 90,
-                                    height: 90,
+                                style={{width: 95,
+                                    height: 95,
                                     borderRadius: 15,}}
                                 source={{uri: `https://foodfull.s3-us-west-2.amazonaws.com/photo${currentId}.jpg`}}
                                 /> 
@@ -159,9 +161,9 @@ function DonNotification() {
                                     <View>
                                         <Text style={donationStyle.Organization} key={i}>{d.name}</Text>
                                     </View>
-                                    <View>
-                                        <Text style={[donationStyle.address, {fontSize: 16, fontWeight: '600', marginTop: 10}]}>{d.date}</Text>
-                                        <Text style={[donationStyle.address, {fontSize: 16, fontWeight: '600'}]}>{d.time}</Text>
+                                    <View style = {{flexDirection: 'row', alignItems: 'center', marginTop :10, marginBottom: 10}}>
+                                        <Text style={[donationStyle.address, {fontSize: 14, marginTop: 10}]}>{d.date}</Text>
+                                        <Text style={[donationStyle.address, {fontSize: 14, marginTop: 10, marginLeft: 5}]}>{d.time}</Text>
                                     </View>
                                     <View>
                                         <Text style={[donationStyle.optionText, {color: colorz, width: 400}]}>{texta}</Text>
@@ -169,10 +171,10 @@ function DonNotification() {
 
                                 </View>
                                 <View style={donationStyle.TextDisplay}>
-                                    <TouchableOpacity style={{ right: -120, top: -50, }}
+                                    <TouchableOpacity style={{top: -50, }}
                                         onPress={() => [setShowModal(!showModal), setdd(d)]}
                                     >
-                                        <Image style={donationStyle.Dots} source={require("../assets/icon/dot_nav.png")} />
+                                        <Image style={donationStyle.Dots} source={require("../assets/icon/options.png")} />
                                     </TouchableOpacity>
                                 </View>
 

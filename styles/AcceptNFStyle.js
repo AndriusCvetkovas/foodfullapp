@@ -7,12 +7,14 @@ var AcceptNFStyle = StyleSheet.create({
         width: '100%',
         alignItems: 'center',
         justifyContent: 'center',
-        flex: 1
+        flex: 1,
+        height: 700
 
     },
     main2: {
-        flex: 1,
-        width: '80%',
+        flex: 2,
+        height: 700,
+        width: '90%',
         backgroundColor: 'white',
         borderRadius: 30,
         // padding: 20,

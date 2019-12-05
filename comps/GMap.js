@@ -120,7 +120,7 @@ function GMap() {
           }>
             <View style={GMapStyle.innerInfo}>
               <Image
-                style={{height: 75, width: 75, borderRadius: 75}}
+                style={{height: 100, width: 100, borderRadius: 100, left: -10, top: 10}}
                 source={{uri:`https://foodfull.s3-us-west-2.amazonaws.com/avatar0.jpg`}}></Image>
               <View style={GMapStyle.innerInner}>
                 <Text style={GMapStyle.innerTitle}>{d.name}</Text>

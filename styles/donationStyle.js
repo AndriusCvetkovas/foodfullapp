@@ -41,7 +41,7 @@ var donationStyle = StyleSheet.create({
 
     },
     Organization:{
-        fontSize:18,
+        fontSize:20,
         color:'#07a2bb',
         fontFamily:'Avenir',
         fontWeight:'600',
@@ -93,7 +93,7 @@ var donationStyle = StyleSheet.create({
 
     },
     Dots:{
-       marginRight:10,
+       right: -95,
        marginTop:25,
        width:25,
        height:5,

@@ -40,7 +40,8 @@ var GMapStyle = StyleSheet.create({
         fontFamily: 'avenir',
         color: '#06a2bc',
         fontSize: 20,
-        padding: 20
+        padding: 20,
+        width: 200
     },
     innerButton: {
         borderRadius: 30,
@@ -60,7 +61,9 @@ var GMapStyle = StyleSheet.create({
         //alignItems: 'center'
     },
     innerAddress: {
-        top: 10,
+        top: -10,
+        left: 20,
+        width: 200
     },
     backBut:{
         position: 'absolute',

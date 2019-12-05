@@ -97,7 +97,7 @@ function Donations() {
                                 <View style={donationStyle.Images}>
                                     <Image
                                         style={donationStyle.ImageSize}
-                                        source={{uri: `https://foodfull.s3-us-west-2.amazonaws.com/avatar${d.avatar_url}.jpg`}}
+                                        source={{uri: `https://foodfull.s3-us-west-2.amazonaws.com/avatar${d.user_id}.jpg`}}
                                     />
                                 </View>
                                 <View style={donationStyle.TextDisplay}>
