@@ -37,8 +37,7 @@ var donationStyle = StyleSheet.create({
         transform:[
             {scaleX: 0.75},
             {scaleY: 0.75}
-          ]
-
+          ] 
     },
     Organization:{
         fontSize:20,

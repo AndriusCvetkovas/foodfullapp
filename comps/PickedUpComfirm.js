@@ -80,15 +80,16 @@ function PickedUpComfirm(props) {
     var inputValueInit = null;
     const [inputValue, onChangeText] = React.useState(inputValueInit);
     var acceptedInfoContent = (
+
         <View style={PickUpComfirmSty.main}>
-            <View style={PickUpComfirmSty.main2}></View>
+            <View style={[PickUpComfirmSty.main2, {width:'90%', left:-5}]}></View>
             <View
                 style={PickUpStyle.infoBox}
             >
                 {/*Title box below*/}
                 <View>
                     <Text
-                        style={PickUpStyle.donatorTitle}
+                        style={[PickUpStyle.donatorTitle,{fontweight:'800', fontFamily:'Avenir', fontSize:25}]}
                     >Picked Up</Text>
                 </View>
                 {/*Image box below*/}
@@ -97,32 +98,31 @@ function PickedUpComfirm(props) {
                 >
                     <LottieView
                 source={require('../assets/lottieFiles/checkmark.json')}
-                style={{alignSelf: 'center',height:550, width:'90%',}}
+                style={{alignSelf: 'center',height:450, width:'70%', top:13}}
                 autoPlay
-                loop
+                
             />
+
                 </View>
                 {/*Date box below*/}
-                <View
-
-
-                    style={PickUpStyle.messageBox}
+                <View style={[PickUpStyle.messageBox]}
                 >
-                    <Text>You have picked up your donation from Safeway Extra</Text>
+                    <Text style={{fontSize:15}}>You have picked up your donation from</Text>
+                    <Text style={{color:'#0ca3bc', fontFamily:'Avenir', fontWeight:'700', fontSize:15, position: 'absolute', top: 15.8, left: 40}}>{d.name}</Text>
                     <Text style={{ color: '#0ca3bc' }}></Text>
                 </View>
                 <View
-                    style={{ flexDirection: 'row', width: "80%", flex: 0.2 }}
+                    style={{ flexDirection: 'row', width: "90%", flex: 0.2 }}
                 >
-                    <Text style={{ flex: 1, color: '#0ca3bc', fontWeight: '800' }}>How much food you have recieved?</Text>
+                    <Text style={{ flex: 1, color: '#0ca3bc', fontWeight: '600', fontFamily:'Avenir', fontSize:16, }}>How much food did you receive?</Text>
 
                 </View>
                 {/*Time box below*/}
                 <View style={{ flexDirection: 'row', width: "80%", flex: 0.4, alignItems: 'center', justifyContent: 'center' }}>
-                    <Text style={{ color: '#0ca3bc', flex: 1, fontWeight: '800' }}>Weight:</Text>
+                    <Text style={{ color: '#0ca3bc', flex: 1, fontWeight: '800', fontFamily:'Avenir', fontSize:15 }}>Weight:</Text>
 
                     <TextInput
-                        style={[PickUpStyle.InputSty, {width: 150}]}
+                        style={[PickUpStyle.InputSty, {width: 150, borderWidth:1}]}
                         onChangeText={(text) => onChangeText(text)}
                         value={inputValue}
                     />
@@ -132,9 +132,9 @@ function PickedUpComfirm(props) {
                 <TouchableOpacity
                     onPress={() => { Update4(d.id), [setdd(d)], props.obj.hide(), props.obj.getPendings() }}
                     title="Accept"
-                    style={[PickUpStyle.buttonS, {top: 20}]}>
+                    style={[PickUpStyle.buttonS, {top: 20, backgroundColor:'#a4d638'}]}>
                     <Text
-                        style={{ color: 'white' }}
+                        style={{ color: 'white', fontFamily:'Avenir', fontWeight:'600' }}
                     >Confirm Pickup</Text>
                 </TouchableOpacity>
 
@@ -199,8 +199,7 @@ function PickedUpComfirm(props) {
                     {/*Button below*/}
                     <TouchableOpacity
                         onPress={
-                            props.obj.hide,
-                            console.log("Olala")
+                            props.obj.hide
                         }
                         title="Accept"
                         style={[buttonStyle.button]}>
@@ -209,17 +208,16 @@ function PickedUpComfirm(props) {
                         >View Donations</Text>
                     </TouchableOpacity>
                     <TouchableOpacity
-                        onPress={() => { props.obj.hide },
-                            console.log('Modal Has been Closed')
+                        onPress={() => { props.obj.hide }
                         
                         }
-
                         title="Accept"
                         style={[buttonStyle.button2, {marginBottom: 100}]}>
                         <Text
                             style={{ color: '#0ca3bc', fontWeight: '500', fontFamily: 'avenir', fontSize: 16 }}
                         >Search for Donations</Text>
                     </TouchableOpacity>
+                   
 
                     <TouchableOpacity style={{ position: 'absolute', top: 0, right: 25 }}
                         onPress={props.obj.hide}
@@ -241,7 +239,7 @@ function PickedUpComfirm(props) {
     );
 
     var pickedUpModal = (
-        <View style ={{height: 500, alignItems: 'center'}}>
+        <View style ={{height: 550, alignItems: 'center'}}>
                 <View style={AcceptNFStyle.main2}>
                 {/*Donation info below */}
 
@@ -266,7 +264,7 @@ function PickedUpComfirm(props) {
                 {/*Image text below */}
                 <View style ={{flex: 1.5, padding: 5}}>
                 <View style={AcceptNFStyle.TextDisplay}>
-                            <Text style={AcceptNFStyle.Organization}>{d.name}</Text>
+                            <Text style={[AcceptNFStyle.Organization, {fontFamily:'Avenir'}]}>{d.name}</Text>
                             {/* <Text style={AcceptNFStyle.address}>Donation Request</Text> */}
                     </View> 
                 {/*Date of pickup below */}
@@ -284,11 +282,11 @@ function PickedUpComfirm(props) {
                 </View>
                 {/*Description title below */}
                 <Text
-                    style={AcceptNFStyle.descriptionTitle}
+                    style={[AcceptNFStyle.descriptionTitle,{top:4, fontWeight:'800', fontFamily:'Avenir'}]}
                 >Description</Text>
                 {/*Description below */}
                 <Text
-                    style={AcceptNFStyle.description}
+                    style={[AcceptNFStyle.description,{top:3}]}
                 >
                     {d.description}
             </Text>
@@ -307,7 +305,7 @@ function PickedUpComfirm(props) {
                             style={AcceptNFStyle.button2}>
                             <Text
                                 style={{ color: 'red', fontSize: 16, fontWeight: '500' }}
-                            >Decline Donation</Text>
+                            >Cancel Donation</Text>
                         </TouchableOpacity>
                 <TouchableOpacity style ={{position: 'absolute', top: 30, right: 30}}
                 onPress={()=>{props.obj.hide()}} >

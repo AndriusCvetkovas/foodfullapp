@@ -15,22 +15,22 @@ function AcceptedInfo({address, time, date, names}) {
        
              <LottieView
                 source={require('../assets/lottieFiles/checkmark.json')}
-                style={{alignSelf: 'center',height:550, width:'90%',}}
+                style={{alignSelf: 'center',height:550, width:'90%', top:8}}
                 autoPlay
                 loop
             />
-        <View style={[styles.mainbody, {top: -250}]}>
+        <View style={[styles.mainbody, {top: -200}]}>
         <View style={styles.headers}>
-              <Text style={[styles.titleHeader, {width: 300, alignSelf: 'center'}]}>You just claimed a donation!</Text>
+              <Text style={[styles.titleHeader, {width: 400, alignSelf: 'center'}]}>You Claimed a Donation!</Text>
         </View>
 
         <View style={styles.contents}>
-              <Text style={styles.contentPosts}>This donation is now in a pickup pending state and can be viewed in your pick ups</Text>
+              <Text style={[styles.contentPosts, {top:-30, width:300}]}>This food donation is now yours, and the donating organization will be expecting you.</Text>
         </View>
 
-        <View style = {styles.containerButton}>
+        <View style = {[styles.containerButton,{top:0}]}>
         <TouchableHighlight style={[styles.buttonContainer, styles.MakePost]} onPress={() => Actions.mapaccept()}>
-          <Text style={styles.B1}>Claim another Donation</Text>
+          <Text style={styles.B1}>Claim More</Text>
         </TouchableHighlight>
         <TouchableHighlight style={[styles.buttonContainer, styles.ViewPost]} onPress={() => {Actions.notification1()}}>
           <Text style={styles.B2}>View Pickups</Text>

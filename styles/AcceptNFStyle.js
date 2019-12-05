@@ -73,7 +73,8 @@ var AcceptNFStyle = StyleSheet.create({
         fontWeight: "600",
         width: '90%',
         alignItems: 'center',
-        justifyContent: 'center'
+        justifyContent: 'center',
+        fontFamily:'Avenir'
     },
     Images: {
         flex: 1.5,
@@ -98,7 +99,8 @@ var AcceptNFStyle = StyleSheet.create({
         fontSize: 25,
         color: '#07a2bb',
         textAlign: 'left',
-        fontWeight: "600"
+        fontWeight: "700",
+        fontFamily:"Avenir"
     },
 
     address: {
@@ -113,7 +115,7 @@ var AcceptNFStyle = StyleSheet.create({
     Date: {
         fontSize: 30,
         color: 'white',
-        fontWeight: 'bold'
+        fontWeight: 'bold',
 
     },
     description: {
@@ -156,7 +158,7 @@ var AcceptNFStyle = StyleSheet.create({
         borderTopColor: '#F0F0F0',
         borderBottomColor: '#F0F0F0',
 
-        borderTopWidth: 2,
+        borderTopWidth: 1,
         borderBottomWidth: 2,
         borderBottomEndRadius: 30,
         borderBottomStartRadius: 30,

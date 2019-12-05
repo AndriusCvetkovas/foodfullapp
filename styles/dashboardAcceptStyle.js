@@ -103,7 +103,7 @@ var DashStyle = StyleSheet.create({
         shadowOffset: { width: 0, height: 1 },
         shadowOpacity: 0.4,
         elevation:0,
-        shadowRadius: 5,
+        shadowRadius: 5, 
     },
     dateTitle:{
         fontFamily:'Avenir',
