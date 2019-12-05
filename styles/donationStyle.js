@@ -11,7 +11,7 @@ var donationStyle = StyleSheet.create({
         borderWidth: 1,
         flexDirection:'row',
         backgroundColor:'#ffffff',
-        borderRadius:10
+        borderRadius:10,
     },
     Images:{
         flex:0.35,
@@ -41,11 +41,11 @@ var donationStyle = StyleSheet.create({
 
     },
     Organization:{
-        fontSize:18,
+        fontSize:20,
+        width:200,
         color:'#07a2bb',
         fontFamily:'Avenir',
         fontWeight:'600',
-        
     },
 
     address:{
@@ -53,16 +53,11 @@ var donationStyle = StyleSheet.create({
         color:'#3b7687',
     },
     time:{
-        fontSize:15,
+        fontSize:17,
+        width:200,
         color:'#6492a0',
-    },
-
-    Date:{
-       fontSize:30,
-       color:'white',
-       fontWeight:'bold',
-       fontFamily:'Avenir',
-
+        top:-5,
+        fontFamily:'Avenir'
     },
     option:{
         flex:0.3,
@@ -93,7 +88,7 @@ var donationStyle = StyleSheet.create({
 
     },
     Dots:{
-       marginRight:10,
+       marginRight:20,
        marginTop:25,
        width:25,
        height:5,
@@ -136,7 +131,8 @@ var donationStyle = StyleSheet.create({
     },
 
     comp:{
-        marginTop:10
+        marginTop:0,
+
     },
 
 
