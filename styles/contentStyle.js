@@ -5,6 +5,7 @@ var ContentStyle = StyleSheet.create({
         paddingTop: 50,
         flex: 1,
         height: '100%',
+        backgroundColor:'#ffffff',
         
     }
     

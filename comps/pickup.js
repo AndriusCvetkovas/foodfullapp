@@ -13,8 +13,6 @@ import axios from 'axios';
 import Modal from "react-native-modal";
 import PickedUpComfirm from './PickedUpComfirm';
 
-
-
 function Pickup() {
   var currentId = "";
   const getID = async () => {
@@ -84,45 +82,45 @@ function Pickup() {
           if (d.status == 2) {
             var texta = 'Pickup Pending'
             var colorz = '#ee9a23'
+            var dotcolor = '#ee9a23'
         }else if (d.status == 4) {
           var texta = 'Picked Up'
           var colorz = '#7cce1d'
+          var dotcolor = '#7cce1d'
       }
           return (
-<View style = {donationStyle.comp}>
-        <View>
+<View style = {[donationStyle.comp, {top:20}]}>
+        <View style = {{marginTop: -18}}>
           <View style = {donationStyle.CardDisplay}>
               <View style = {donationStyle.Images}>
                   <Image
                   source = {{uri: `https://foodfull.s3-us-west-2.amazonaws.com/photo${d.user_id}.jpg`}}
-                  style ={{height: 90, width: 90, borderRadius: 15}}/>
+                  style ={{height: 95, width: 95, borderRadius: 15}}/>
               </View>
               <View style={donationStyle.TextDisplay}>
                   <View>
-                      <Text style={[donationStyle.Organization,{ top:-10}]} key={i}>{d.name}</Text>
+                      <Text style={[donationStyle.Organization,{ top:-23,left:-2}]} key={i}>{d.name}</Text>
                   </View>
                   {/* <View>
                     <Text style={donationStyle.address}>{d.address}</Text>
                   </View> */}
                   <View>
-                    <Text style={donationStyle.time}>{d.date +" "+d.time}</Text>
+                    <Text style={[donationStyle.time,{left:-5}]}>{d.date +" "+d.time}</Text>
                   </View>
               </View>
-              <TouchableOpacity
+              <TouchableOpacity style={{right:-80, height:40}}
               onPress={()=>{setShowModal(!showModal), setdd(d)}}
               >
-                <Image style={[donationStyle.Dots, {right:-85}]} source={require("../assets/icon/options.png")} />
+                <Image style={[donationStyle.Dots]} source={require("../assets/icon/options.png")} />
               </TouchableOpacity>
           </View>
           
         </View>
-
         <View style={donationStyle.option}>
                   <View>
-                    <Text style={[donationStyle.optionText, {color: colorz, top:-30, left:140}]}>{texta}</Text>
+                    <Text style={[donationStyle.optionText, {color: colorz, top:-40, left:130}]}>*{texta}</Text>
                   </View>
               </View>
-        
     </View>
           )
         })
@@ -140,32 +138,33 @@ function Pickup() {
             colorz = 'red'
         }
           return (
-<View style = {donationStyle.comp}>
-        <View>
+<View style = {[donationStyle.comp, {top:0}]}>
+        <View style={{marginTop:2}}>
           <View style = {donationStyle.CardDisplay}>
               <View style = {donationStyle.Images}>
                   <Image
                   source = {{uri: `https://foodfull.s3-us-west-2.amazonaws.com/photo${d2.user_id}.jpg`}}
-                  style ={{height: 90, width: 90, borderRadius: 15}}/>
+                  style ={{height: 95, width: 95, borderRadius: 15}}/>
               </View>
               <View style={donationStyle.TextDisplay}>
                   <View>
-                      <Text style={[donationStyle.Organization,{ top:-20}]} key={i}>{d2.name}</Text>
+                      <Text style={[donationStyle.Organization,{ top:-20, left:3}]} key={i}>{d2.name}</Text>
                   </View>
                   {/* <View>
                     <Text style={donationStyle.address}>{d2.address}</Text>
                   </View> */}
                   <View>
-                    <Text style={donationStyle.time}>{d2.date +" "+d2.time}</Text>
+                    <Text style={[donationStyle.time,{left:3}]}>{d2.date +"   "+d2.time}</Text>
                   </View>
               </View>
 
               <View style={donationStyle.option}>
                   <View>
-                    <Text style={[donationStyle.optionText, {color: colorz}]}>{texta}</Text>
+                    <Text style={[donationStyle.optionText, {color: colorz, top:98, left:-135}]}>* {texta}</Text>
                   </View>
               </View>
               <TouchableOpacity
+              style={{height:40}}
               onPress={()=>{setShowModal(!showModal), setdd(d2)}}
               >
                 <Image style={donationStyle.Dots} source={require("../assets/icon/options.png")} />
