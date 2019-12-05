@@ -49,8 +49,11 @@ var donationStyle = StyleSheet.create({
     },
 
     address:{
-        fontSize:14,
+        fontSize:16,
         color:'#3b7687',
+        fontFamily: 'DidactGothic-Regular',
+        width:250
+
     },
     time:{
         fontSize:17,
