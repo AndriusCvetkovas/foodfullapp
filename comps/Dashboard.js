@@ -146,9 +146,9 @@ function Dashboard({navigation}) {
                                         <View style={{ flexDirection: 'row', alignItems: 'center' }}>
                                             <View style={DashStyle.dateCircle}>
                                             </View>
-                                            <View>
+                                            <View style={{flexDirection:'row', alignItems:'center'}}>
+                                                <Text style={{marginRight:30, fontFamily:'Avenir', fontWeight:'700', fontSize:18}}>{d.time}</Text>
                                                 <Text style={{ fontSize: 20, fontFamily: 'avenir', fontWeight: '500' } } key={i}>{uname}</Text>
-                                                <Text>{d.time}</Text>
                                             </View>
                                         </View>
                                     </View>

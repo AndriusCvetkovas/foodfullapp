@@ -229,4 +229,4 @@ function AppContent() {
   );
 }
 
-export default DConfMap;
+export default AppContent;

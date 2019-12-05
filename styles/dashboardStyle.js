@@ -86,7 +86,7 @@ var DashStyle = StyleSheet.create({
     title:{
         fontSize:25,
         fontFamily:'Avenir',
-        fontWeight:'500',
+        fontWeight:'700',
         marginBottom:15,
         color:'#0ca3bc'
     },
