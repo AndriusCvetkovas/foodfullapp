@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import { View, Text, Image, ScrollView, TouchableOpacity, AsyncStorage } from 'react-native';
-import DashStyle from '../styles/dashboardStyle';
+import DashStyle from '../../styles/dashboardStyle';
 import { Actions } from 'react-native-router-flux';
 import axios from 'axios';
 
@@ -69,7 +69,7 @@ function Dashboard({navigation}) {
             {/* BACKGROUND IMAGE AND DONATE BUTTON */}
             <View style={DashStyle.backgroundImg}>
                 <Image style={{ width: '100%', height: 420, position: 'absolute' }}
-                    source={require('../assets/img/dashboard_illustration.png')}>
+                    source={require('../../assets/img/dashboard_illustration.png')}>
                 </Image>
 
                 <View style={{ justifyContent: 'center', alignItems: 'center'}}>
@@ -108,7 +108,7 @@ function Dashboard({navigation}) {
                         onPress={()=>Actions.leaderboard()}
                         >
                             <Image style={{ width: 15, height: 20, position: 'absolute', top: -10 }}
-                                source={require('../assets/icon/next.png')} />
+                                source={require('../../assets/icon/next.png')} />
                         </TouchableOpacity>
                     </View>
                 </View>
@@ -123,7 +123,7 @@ function Dashboard({navigation}) {
                     {/* Date with line */}
                     <View style={{ left: 0, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', marginBottom: 20 }}>
                         <Image
-                        source={require('../assets/icon/donating.png')}
+                        source={require('../../assets/icon/donating.png')}
                         style={{width: 200, height: 170, position: 'absolute', top: 50, opacity: 0.05, }}
                         ></Image>
                         <View style={[DashStyle.line, {marginRight: 20}]}></View>

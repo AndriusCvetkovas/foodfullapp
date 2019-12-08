@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, ScrollView, Image, TouchableOpacity, AsyncStorage, Alert } from 'react-native';
-import DonNotifStyle from '../styles/donNotifStyle';
-import donationStyle from '../styles/donationStyle';
+import DonNotifStyle from '../../styles/donNotifStyle';
+import donationStyle from '../../styles/donationStyle';
 import axios from 'axios';
 import Modal from "react-native-modal";
-import AcceptNFStyle from '../styles/AcceptNFStyle';
-import AppHeaderStyle from '../styles/headerStyle';
+import AcceptNFStyle from '../../styles/AcceptNFStyle';
+import AppHeaderStyle from '../../styles/headerStyle';
 import LottieView from 'lottie-react-native';
 import Swiper from 'react-native-swiper'
 
@@ -119,7 +119,7 @@ function DonNotification() {
                 onPress={()=>{setShowModal(!showModal)}}>
                     <Image
                     
-                    source={require('../assets/icon/x.png')}
+                    source={require('../../assets/icon/x.png')}
                     style = {{width: 15, height: 15}}
                     />
                 </TouchableOpacity>
@@ -178,7 +178,7 @@ function DonNotification() {
                                     <TouchableOpacity style={{top: -50, left: 95}}
                                         onPress={() => [setShowModal(!showModal), setdd(d)]}
                                     >
-                                        <Image style={donationStyle.Dots} source={require("../assets/icon/options.png")} />
+                                        <Image style={donationStyle.Dots} source={require("../../assets/icon/options.png")} />
                                     </TouchableOpacity>
                                 </View>
 

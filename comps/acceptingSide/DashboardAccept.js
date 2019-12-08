@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, Image, ScrollView, TouchableOpacity, AsyncStorage } from 'react-native';
-import DashStyle from '../styles/dashboardAcceptStyle';
+import DashStyle from '../../styles/dashboardAcceptStyle';
 import { Actions } from 'react-native-router-flux';
 import axios from 'axios';
 
@@ -70,7 +70,7 @@ function DashboardAccept({ navigation }) {
             {/* BACKGROUND IMAGE AND DONATE BUTTON */}
             <View style={DashStyle.backgroundImg}>
                 <Image style={{ width: '100%', height: 400, position: 'absolute' }}
-                    source={require('../assets/img/dashboard_illustration2.png')}>
+                    source={require('../../assets/img/dashboard_illustration2.png')}>
                 </Image>
                 <View style={{ justifyContent: 'center', alignItems: 'center' }}>
                     <Text style={DashStyle.header}>Looking for Donations?</Text>
@@ -95,7 +95,7 @@ function DashboardAccept({ navigation }) {
                         <Text style={DashStyle.titles}>Donation Requests</Text>
                     </View>
                     <Image style={{ width: 15, height: 20, margin: 10 }}
-                        source={require('../assets/icon/next.png')}>
+                        source={require('../../assets/icon/next.png')}>
                     </Image>
                 </TouchableOpacity>
             </View>

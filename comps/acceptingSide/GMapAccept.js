@@ -3,11 +3,8 @@ import { View, ScrollView, Text, TouchableOpacity, Image, AsyncStorage, Animated
 import MapView, { Marker, Callout} from 'react-native-maps';
 import { Router, Scene, Actions } from 'react-native-router-flux';
 import Geolocation from 'react-native-geolocation-service';
-import GMapStyle from '../styles/mapStyle';
+import GMapStyle from '../../styles/mapStyle';
 import Info from './DInfoMap';
-import AcceptedInfo from './DConfMap';
-import AppContent from './AppContent';
-import apiKey from '../apiKey/apiKey';
 import axios from 'axios';
 import Modal from 'react-native-modal';
 
@@ -93,7 +90,7 @@ const [showImage, setShowImage] = useState(true)
               }}
               title={d.name}
               description={d.address}
-              image={require('../assets/icon/mapPin.png')}
+              image={require('../../assets/icon/mapPin.png')}
               selected={true}
             />
           );
@@ -170,7 +167,7 @@ const [showImage, setShowImage] = useState(true)
                   <Text style={{fontSize: 16, color: '#06a2bc', fontWeight: '600', marign: 5, marginTop: 10}}>
                   Donation Notes:
                   </Text>
-                  <Text style ={{color: 'grey', width: 250, fontSize: 16, marginTop: 5}}>This is our food donation, please see the image and bring 2 trucks{d.description}</Text>
+                  <Text style ={{color: 'grey', width: 250, fontSize: 16, marginTop: 5}}>{d.description}</Text>
                   
                 </View>
                 
@@ -197,7 +194,7 @@ const [showImage, setShowImage] = useState(true)
       <TouchableOpacity style={GMapStyle.backBut}
       onPress={()=> Actions.tabbar1()}>
         <Image
-          source={require('../assets/icon/next.png')}
+          source={require('../../assets/icon/next.png')}
           style={{
             left: -2,
             width: 15,

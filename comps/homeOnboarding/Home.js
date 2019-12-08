@@ -2,7 +2,7 @@ import React, { Component, useState } from 'react';
 import { Text, View, TouchableOpacity} from 'react-native';
 import LottieView from 'lottie-react-native';
 import { Actions } from 'react-native-router-flux';
-import HomeStyle from '../styles/HomeStyle';
+import HomeStyle from '../../styles/HomeStyle';
 
 
 function Home() {
@@ -16,7 +16,7 @@ function Home() {
   return (
     <View style={HomeStyle.comp} >
       <LottieView
-        source={require('../assets/lottieFiles/homescreen')}
+        source={require('../../assets/lottieFiles/homescreen')}
         style={{ height: '100%', width: '100%', position: 'absolute' }}
         autoPlay
         loop

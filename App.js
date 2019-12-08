@@ -13,8 +13,7 @@ import {View,Text, ScrollView} from 'react-native';
 import mainStyle from './styles/mainStyle';
 import AppHeader from './comps/header';
 import AppFooter from './comps/footer';
-import AppContent from './comps/AppContent';
-import GetStarted from './comps/getStarted';
+import AppContent from './comps/AppContent'; 
 import {Actions} from 'react-native-router-flux';
 
 

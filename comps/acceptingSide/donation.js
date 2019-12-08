@@ -1,13 +1,10 @@
 
 import React, { useState, useEffect } from 'react';
 import { View, Text, Image, ScrollView, TouchableOpacity, AsyncStorage } from 'react-native';
-import donationStyle from '../styles/donationStyle';
+import donationStyle from '../../styles/donationStyle';
 import axios from 'axios';
-import Donate from './donate';
 import Modal from "react-native-modal";
-import AcceptDonationNF from './AcceptDonationNF';
-import AcceptNFStyle from '../styles/AcceptNFStyle';
-import buttonStyle from '../styles/buttonStyle';
+import AcceptNFStyle from '../../styles/AcceptNFStyle';
 import Swiper from 'react-native-swiper';
 function Donations() {
     // MODAL VIEW 
@@ -97,7 +94,7 @@ function Donations() {
                                 <View style={donationStyle.Images}>
                                     <Image
                                         style={donationStyle.ImageSize}
-                                        source={{uri: `https://foodfull.s3-us-west-2.amazonaws.com/avatar${d.user_id}.jpg`}}
+                                        source={{uri: `https://foodfull.s3-us-west-2.amazonaws.com/avatar0.jpg`}}
                                     />
                                 </View>
                                 <View style={donationStyle.TextDisplay}>
@@ -118,7 +115,7 @@ function Donations() {
                                             color='000'
                                             onPress={() => [setShowModal(!showModal), setdd(d), console.log(dd)]}>
                                             {/* <Text style={donationStyle.btnText}>View</Text> */}
-                                            <Image style={donationStyle.Dots} source={require("../assets/icon/options.png")} />
+                                            <Image style={donationStyle.Dots} source={require("../../assets/icon/options.png")} />
                                         </TouchableOpacity>
                                     </View>
                                 </View>
@@ -148,7 +145,7 @@ function Donations() {
                 {/*Donation info below */}
 
                 <View style={AcceptNFStyle.donationInfoTop}>
-                <Swiper  showsButtons={false}>
+                {/* <Swiper  showsButtons={false}> */}
                     <Image style={AcceptNFStyle.DImage}
                     source = {{uri: `https://foodfull.s3-us-west-2.amazonaws.com/photo${dd.user_id}.jpg`}}
                     >
@@ -161,7 +158,7 @@ function Donations() {
                     source = {{uri: `https://foodfull.s3-us-west-2.amazonaws.com/photo${dd.image_url[1]}.jpg`}}
                     >
                     </Image>  */}
-                </Swiper>
+                {/* </Swiper> */}
 
 
                 </View>
@@ -215,7 +212,7 @@ function Donations() {
                 onPress={()=>{setShowModal(!showModal)}}>
                     <Image
                     
-                    source={require('../assets/icon/x.png')}
+                    source={require('../../assets/icon/x.png')}
                     style = {{width: 15, height: 15}}
                     />
                 </TouchableOpacity>

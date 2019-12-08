@@ -12,8 +12,8 @@ import {
   Alert
 } from 'react-native';
 import DatePicker from 'react-native-datepicker';
-import donateStyle from '../styles/donateStyle';
-import donationStyle from '../styles/donationStyle';
+import donateStyle from '../../styles/donateStyle';
+import donationStyle from '../../styles/donationStyle';
 import {Actions} from 'react-native-router-flux';
 import ImagePicker from 'react-native-image-picker';
 import axios from 'axios';
@@ -146,7 +146,7 @@ var title ='Public Donation';
               <View style={{flexDirection: 'row', alignItems: 'center'}}>
                 <Image
                   style={{width: 15, height: 20, marginRight: 10}}
-                  source={require('../assets/icon/map.png')}
+                  source={require('../../assets/icon/map.png')}
                 />
                 <Text
                   style={{
@@ -232,7 +232,7 @@ var title ='Public Donation';
         }}
         onPress={() => Actions.choosedonation()}>
         <Image
-          source={require('../assets/icon/next.png')}
+          source={require('../../assets/icon/next.png')}
           style={
             {width: 25, height: 30, 
             transform: [{rotateY: '180deg'}],
@@ -347,7 +347,7 @@ var title ='Public Donation';
               <TouchableOpacity style= {{flex:0.12,marginTop: 30}}
               onPress={()=> Alert.alert('Please add notes or details about your food donation','')}>
                 <Image
-                source = {require('../assets/icon/question.png')}
+                source = {require('../../assets/icon/question.png')}
                 style= {{width: 25, height: 25,top: -5, marginRight: 10}}
                 >
                 </Image>
@@ -401,7 +401,7 @@ var title ='Public Donation';
               setShowModal(!showModal);
           }}>
           <Image
-            source={require('../assets/icon/x.png')}
+            source={require('../../assets/icon/x.png')}
             style={{width: 15, height: 15, top: 100, right: 10}}
           />
         </TouchableOpacity>

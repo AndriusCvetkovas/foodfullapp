@@ -1,14 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { TextInput, View, Text, Image, TouchableOpacity, ScrollView, AsyncStorage } from 'react-native';
-import PickUpComfirmSty from '../styles/PickUpComfirmSty';
-import buttonStyle from '../styles/buttonStyle';
+import PickUpComfirmSty from '../../styles/PickUpComfirmSty';
+import buttonStyle from '../../styles/buttonStyle';
 import { Actions } from 'react-native-router-flux';
-import AcceptedInfo from '../comps/NotifPickComfirm';
-import PickUpStyle from '../styles/pickUpStyle';
-import MsgCancelDonation from '../comps/MsgCancelDonation';
-import GMapStyle from '../styles/mapStyle';
+import PickUpStyle from '../../styles/pickUpStyle';
+import GMapStyle from '../../styles/mapStyle';
 import axios from 'axios';
-import AcceptNFStyle from '../styles/AcceptNFStyle'
+import AcceptNFStyle from '../../styles/AcceptNFStyle'
 import Swiper from 'react-native-swiper';
 
 import LottieView from 'lottie-react-native';
@@ -97,7 +95,7 @@ function PickedUpComfirm(props) {
                     style={[PickUpStyle.imageBox, {top: -170}]}
                 >
                     <LottieView
-                source={require('../assets/lottieFiles/checkmark.json')}
+                source={require('../../assets/lottieFiles/checkmark.json')}
                 style={{alignSelf: 'center',height:450, width:'70%', top:13}}
                 autoPlay
                 
@@ -143,7 +141,7 @@ function PickedUpComfirm(props) {
                 >
                     <Image
 
-                        source={require('../assets/icon/x.png')}
+                        source={require('../../assets/icon/x.png')}
                         style={{ width: 15, height: 15 }}
                     />
                 </TouchableOpacity>
@@ -224,7 +222,7 @@ function PickedUpComfirm(props) {
                     >
                         <Image
 
-                            source={require('../assets/icon/x.png')}
+                            source={require('../../assets/icon/x.png')}
                             style={{ width: 15, height: 15 }}
                         />
                     </TouchableOpacity>
@@ -311,7 +309,7 @@ function PickedUpComfirm(props) {
                 onPress={()=>{props.obj.hide()}} >
                     <Image
                     
-                    source={require('../assets/icon/x.png')}
+                    source={require('../../assets/icon/x.png')}
                     style = {{width: 15, height: 15}}
                     />
                 </TouchableOpacity>

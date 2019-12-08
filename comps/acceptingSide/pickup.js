@@ -8,7 +8,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { View, Text, ScrollView, Image, TouchableOpacity, AsyncStorage } from 'react-native';
-import donationStyle from '../styles/donationStyle';
+import donationStyle from '../../styles/donationStyle';
 import axios from 'axios';
 import Modal from "react-native-modal";
 import PickedUpComfirm from './PickedUpComfirm';
@@ -111,7 +111,7 @@ function Pickup() {
               <TouchableOpacity style={{right:-80, height:40}}
               onPress={()=>{setShowModal(!showModal), setdd(d)}}
               >
-                <Image style={[donationStyle.Dots]} source={require("../assets/icon/options.png")} />
+                <Image style={[donationStyle.Dots]} source={require("../../assets/icon/options.png")} />
               </TouchableOpacity>
           </View>
           
@@ -136,7 +136,7 @@ function Pickup() {
       }else  {
             texta = 'Declined'
             colorz = 'red'
-        }
+      }
           return (
 <View style = {[donationStyle.comp, {top:0}]}>
         <View style={{marginTop:2}}>
@@ -167,7 +167,7 @@ function Pickup() {
               style={{height:40}}
               onPress={()=>{setShowModal(!showModal), setdd(d2)}}
               >
-                <Image style={donationStyle.Dots} source={require("../assets/icon/options.png")} />
+                <Image style={donationStyle.Dots} source={require("../../assets/icon/options.png")} />
               </TouchableOpacity>
           </View>
           

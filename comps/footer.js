@@ -10,8 +10,6 @@ import React, { useState, useEffect } from 'react';
 import { View, Text, Image, ScrollView, TouchableOpacity, AsyncStorage } from 'react-native';
 import footerStyle from '../styles/footerStyle';
 import { Actions } from 'react-native-router-flux';
-import Dashboard from './Dashboard.js';
-import Schedule from './Schedule';
 
 var type = "";
 function Appfooter({navigation}) {

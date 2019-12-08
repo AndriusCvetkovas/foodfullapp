@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {View, Text, Image, TouchableOpacity, ScrollView} from 'react-native';
-import ConfirmStyle from '../styles/confirmStyle';
-import buttonStyle from '../styles/buttonStyle';
+import ConfirmStyle from '../../styles/confirmStyle';
+import buttonStyle from '../../styles/buttonStyle';
 import LottieView from 'lottie-react-native';
 import {Actions} from 'react-native-router-flux';
 import axios from 'axios';
@@ -35,13 +35,13 @@ function Confirmation({obj, setShowModal}){
               loop
             /> */}
                <LottieView
-              source={require('../assets/lottieFiles/checkmark2.json')}
+              source={require('../../assets/lottieFiles/checkmark2.json')}
               style={{justifyContent:'center', alignItems:'center',height:50, width:50, position:'absolute', top:25, left:13, zIndex:1}}
               autoPlay
               loop
             />
             <Image style = {{height: 120, width: 120, top:10}}
-                source={require('../assets/img/confirm_donation.png')} 
+                source={require('../../assets/img/confirm_donation.png')} 
                 />
             </View>
             {/* Image text below */}

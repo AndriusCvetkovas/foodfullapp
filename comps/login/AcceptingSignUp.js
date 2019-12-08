@@ -69,7 +69,7 @@ function AcceptingSignUp({text}) {
   const [userLatitude, setUserLatitude] = useState();
   const [userLongitude, setUserLongitude] = useState();
   //Selected Email
-  const [userEmail, setUserEmail] = useState('info@store.com');
+  const [userEmail, setUserEmail] = useState('store');
   //Selected password
   const [userPassword, setUserPassword] = useState('store');
   //Selected Phone
@@ -215,7 +215,7 @@ function AcceptingSignUp({text}) {
           autoCapitalize={false}
           selectionColor="#0ca3bc"
           onChangeText={(email) => setUserEmail(email)}
-        >info@store.com</TextInput>
+        >store</TextInput>
       </View>
 
 

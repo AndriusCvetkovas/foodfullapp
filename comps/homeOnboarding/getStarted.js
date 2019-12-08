@@ -3,8 +3,7 @@ import { AppRegistry, StyleSheet, Text, View, Button, SafeAreaView, TouchableOpa
 import LottieView from 'lottie-react-native';
 import Swiper from 'react-native-swiper';
 import { Actions } from 'react-native-router-flux';
-import style from 'react-native-router-flux'
-import getstartedStyle from '../styles/getstartedStyle';
+import getstartedStyle from '../../styles/getstartedStyle';
 
 function GetStarted(){
   const [show, setShow] = useState(false);
@@ -46,14 +45,14 @@ function GetStarted(){
             <Text style={getstartedStyle.header}>Your account has been created!</Text>
 
             <LottieView
-              source={require('../assets/lottieFiles/checkmark.json')}
+              source={require('../../assets/lottieFiles/checkmark.json')}
               style={{ height: 300, width: '100%', position: 'absolute', top: 38, right: -40, }}
               autoPlay
               loop
             />
 
             <LottieView
-              source={require('../assets/lottieFiles/welcome.json')}
+              source={require('../../assets/lottieFiles/welcome.json')}
               style={getstartedStyle.animation}
               autoPlay
               loop
@@ -68,7 +67,7 @@ function GetStarted(){
             <Text style={getstartedStyle.subheader}>Make a Donation</Text>
 
             <LottieView
-              source={require('../assets/lottieFiles/makedonation.json')}
+              source={require('../../assets/lottieFiles/makedonation.json')}
               style={getstartedStyle.animation}
               autoPlay
               loop
@@ -82,13 +81,13 @@ function GetStarted(){
             <Text style={getstartedStyle.subheader}>Set Your Schedule</Text>
 
             <LottieView
-              source={require('../assets/lottieFiles/calendar2.json')}
+              source={require('../../assets/lottieFiles/calendar2.json')}
               style={[getstartedStyle.animation, { flex: 3, zIndex: 2 }]}
               autoPlay
               loop
             />
             <LottieView
-              source={require('../assets/lottieFiles/circle.json')}
+              source={require('../../assets/lottieFiles/circle.json')}
               style={{ justifyContent: 'center', alignItems: 'center', height: '100%', width: '100%', position: 'absolute' }}
               autoPlay
               loop
@@ -108,7 +107,7 @@ function GetStarted(){
             <Text style={getstartedStyle.subheader}>Help the Community</Text>
 
             <LottieView
-              source={require('../assets/lottieFiles/givingfood.json')}
+              source={require('../../assets/lottieFiles/givingfood.json')}
               style={getstartedStyle.animation}
               autoPlay
               loop

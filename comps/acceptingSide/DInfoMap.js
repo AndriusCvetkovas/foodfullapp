@@ -6,13 +6,10 @@ import {
   TouchableOpacity,
   AsyncStorage,
 } from 'react-native';
-import GMapStyle from '../styles/mapStyle';
-import TimePicker from './DatePicker';
-import DatePicker from 'react-native-datepicker';
-import buttonStyle from '../styles/buttonStyle';
+import buttonStyle from '../../styles/buttonStyle';
 import {Router, Scene, Actions} from 'react-native-router-flux';
 import axios from 'axios';
-import AcceptNFStyle from '../styles/AcceptNFStyle';
+import AcceptNFStyle from '../../styles/AcceptNFStyle';
 import Swiper from 'react-native-swiper';
 //for DateTimePicker run yarn add @react-native-community/datetimepicker and pod install
 
@@ -123,7 +120,7 @@ function Info({dd, setShowModal}) {
               onPress={()=>{setShowModal(false)}}>
                   <Image
                   
-                  source={require('../assets/icon/x.png')}
+                  source={require('../../assets/icon/x.png')}
                   style = {{width: 15, height: 15}}
                   />
               </TouchableOpacity>

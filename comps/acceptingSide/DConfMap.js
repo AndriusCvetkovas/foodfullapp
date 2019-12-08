@@ -1,7 +1,6 @@
 import React from 'react';
 import { View, Text, Image, TouchableHighlight } from 'react-native';
-import styles from '../styles/PostedStyle';
-import buttonStyle from '../styles/buttonStyle';
+import styles from '../../styles/PostedStyle';
 import {Actions} from 'react-native-router-flux';
 import LottieView from 'lottie-react-native';
 
@@ -12,14 +11,17 @@ function AcceptedInfo({address, time, date, names}) {
     var n = names;
     return (
         <View style={{backgroundColor:'#ffffff', flex:1}}>
-       
-             <LottieView
+             {/* <LottieView
                 source={require('../assets/lottieFiles/checkmark.json')}
-                style={{alignSelf: 'center',height:550, width:'90%', top:8}}
-                autoPlay
-                loop
-            />
-        <View style={[styles.mainbody, {top: -200}]}>
+                style={{alignSelf: 'center',height:550, width:'80%', top:0}}
+              
+            /> */}
+            <Image
+            style= {{ width: 100, height: 100, alignSelf: 'center', top: 170}}
+            source = {require('../../assets/icon/checkmark.png')}>
+
+            </Image>
+        <View style={[styles.mainbody, {top: 200}]}>
         <View style={styles.headers}>
               <Text style={[styles.titleHeader, {width: 400, alignSelf: 'center'}]}>You Claimed a Donation!</Text>
         </View>
