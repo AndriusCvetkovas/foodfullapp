@@ -35,12 +35,10 @@ const styles = StyleSheet.create({
   //  FORM
 
   form:{
-    marginTop:0,
+    marginTop:-5,
   },
     inputContainer: {
-        borderBottomColor: '#F5FCFF',
-        backgroundColor: '#F0F0F0',
-        borderRadius:30,
+        borderBottomColor: '#9e9e9e',
         borderBottomWidth: 1,
         width:'70%',
         height:40,
@@ -58,7 +56,7 @@ const styles = StyleSheet.create({
       flexDirection: 'row',
       justifyContent: 'center',
       alignItems: 'center',
-      marginTop:15,
+      marginTop:20,
       marginBottom:20,
       width:280,
       borderRadius:30,

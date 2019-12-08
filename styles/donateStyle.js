@@ -4,14 +4,14 @@ var donateStyle = StyleSheet.create({
 
     container:{
         flex: 1,
-        height:'100%',
-        top: 40,
-        padding:10,
-        borderRadius: 20,
-        margin:5,
+        paddingTop: 50,
+        width: '100%',
+        bottom: 0,
+        padding:20,
         backgroundColor:'#fff'
     },
     pageHeader:{
+      top: 10,
       fontSize:25, 
       fontFamily:'Avenir', 
       color:'#07a2bb', 
@@ -21,7 +21,8 @@ var donateStyle = StyleSheet.create({
     },
     headers:{
       fontSize:18, 
-      marginBottom:15,
+      marginBottom:5,
+      marginTop:10,
       fontFamily: 'Avenir',
       fontWeight:'600',
       left:5
@@ -31,7 +32,8 @@ var donateStyle = StyleSheet.create({
       marginBottom:10, 
       color:'#06a2bc', 
       width:'75%', 
-      marginLeft:15
+      marginLeft:15,
+      padding: 10
     },
     comp:{
         marginBottom:12,
@@ -56,6 +58,7 @@ var donateStyle = StyleSheet.create({
 
       padding:{
           padding:10,
+          paddingLeft: 5
       },
 
       row:{
@@ -70,40 +73,43 @@ var donateStyle = StyleSheet.create({
           flex:1,
           fontSize:20,
           fontFamily:'Avenir',
-          marginTop: 10,
+          marginTop: 28,
+          paddingLeft: 5,
           marginBottom: 5,
           left:0
       },
       DonateBtn:{
-        position: 'absolute',
+        top: 20,
         bottom: 60,
         alignSelf:'center',
         justifyContent:'center',
         alignItems:'center',
-        height:50,
+        height:45,
+
         borderRadius:30,
         borderWidth: 1,
         borderColor: '#07a2bb',
         backgroundColor: '#07a2bb',
         color:'#fff',
-        width: '60%'
+        width: '60%',
+        marginBottom: 50
 
       },
       mapSearchButton:{
         flexDirection:'row',
         flex:1,
-        marginBottom:3,
+        marginBottom:4,
         justifyContent:'center',
         alignItems:'center',
-        height:45,
-        paddingTop:5,
-        paddingBottom:5,
+        height:40,
+        paddingTop:1,
+        paddingBottom:1,
         borderRadius:30,
         borderWidth: 1,
         borderColor: '#07a2bb',
         backgroundColor: '#fff',
         color:'#fff',
-        width: '90%'
+        width: 100
       },
     
       btnText:{

@@ -1,7 +1,7 @@
 import React from 'react';
 import {View, Text, Image, ScrollView} from 'react-native';
 import LeaderboardStyles from '../../styles/leaderboardStyle.js';
-function Leaderboard(){
+function Leaderboard({names, address}){
     return(
         //Main View
         <View style={LeaderboardStyles.mainView}> 
@@ -11,17 +11,13 @@ function Leaderboard(){
             <Image style ={{width:'100%', height:'100%',}}
                     source={require('../../assets/img/blue_background.png')}/>
             </View>
-            <View style={LeaderboardStyles.yourRank}>
-                    <Text style={{color:'#ffffff', fontFamily:'Avenir', fontWeight:'600', fontSize:25}}>You are currently in</Text>
-                    <Text style={{color:'#ffffff', fontFamily:'Avenir', fontWeight:'800', fontSize:35}}>2nd Place</Text>
-            </View>
  
              {/*Image box below*/}
             <View style ={LeaderboardStyles.yourBox}>
                 <View style = {LeaderboardStyles.imageBox}>
                     <Image
                         style={LeaderboardStyles.yourImage}
-                        source={require('../../assets/img/safeway.jpg')}
+                        source={{uri: `https://foodfull.s3-us-west-2.amazonaws.com/avatar0.jpg`}}
                      />
                      
                 </View>
@@ -67,12 +63,12 @@ function Leaderboard(){
                     <View style ={[LeaderboardStyles.rankInnerBox,{backgroundColor: "rgba(19,191,209,0.07)"}]}>
                         <Text style={LeaderboardStyles.rankNum}>2</Text>
                         <Image 
-                        source = {require('../../assets/img/safeway.jpg')}
+                        source = {{uri: `https://foodfull.s3-us-west-2.amazonaws.com/avatar0.jpg`}}
                         style = {LeaderboardStyles.rankImage}
                         />
                         <View style = {LeaderboardStyles.nameAddress}>
-                            <Text style ={LeaderboardStyles.rankName}>Safeway Extra</Text>
-                            <Text style ={LeaderboardStyles.rankAddress}>6153 200 St, Langley</Text>
+                            <Text style ={LeaderboardStyles.rankName}>{names}</Text>
+                            <Text style ={LeaderboardStyles.rankAddress}>{address}</Text>
                         </View>
                         <Text style ={LeaderboardStyles.rankAmount}>1100 kg</Text>
                     </View>

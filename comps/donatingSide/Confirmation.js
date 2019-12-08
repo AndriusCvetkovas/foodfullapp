@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {View, Text, Image, TouchableOpacity, ScrollView} from 'react-native';
-import ConfirmStyle from '../styles/confirmStyle';
-import buttonStyle from '../styles/buttonStyle';
+import ConfirmStyle from '../../styles/confirmStyle';
+import buttonStyle from '../../styles/buttonStyle';
 import LottieView from 'lottie-react-native';
 import {Actions} from 'react-native-router-flux';
 import axios from 'axios';
@@ -35,13 +35,13 @@ function Confirmation({obj, setShowModal}){
               loop
             /> */}
                <LottieView
-              source={require('../assets/lottieFiles/checkmark2.json')}
+              source={require('../../assets/lottieFiles/checkmark2.json')}
               style={{justifyContent:'center', alignItems:'center',height:50, width:50, position:'absolute', top:25, left:13, zIndex:1}}
               autoPlay
               loop
             />
             <Image style = {{height: 120, width: 120, top:10}}
-                source={require('../assets/img/confirm_donation.png')} 
+                source={require('../../assets/img/confirm_donation.png')} 
                 />
             </View>
             {/* Image text below */}
@@ -56,13 +56,13 @@ function Confirmation({obj, setShowModal}){
 
             {/*Date of pickup below */}
             <View style={{flex:2, marginTop:0}}>
-                <View style = {ConfirmStyle.pickupDate}>
+                <View style = {[ConfirmStyle.pickupDate, {marginTop:10}]}>
                     <Text style = {ConfirmStyle.titles}>Date of pickup</Text>
                     <Text style = {{color: '#066a87', fontSize: 16, flex: 1}}>{obj.data.date}</Text>
                 </View>
 
                 {/*Pickup time below */}
-                <View style = {ConfirmStyle.pickupTime}>
+                <View style = {[ConfirmStyle.pickupTime, {marginTop:10}]}>
                     <Text style = {ConfirmStyle.titles}>Pickup Time</Text>
                     <Text style = {{color: '#066a87', fontSize: 16, flex: 1}}>{obj.data.time}</Text>
                 </View>

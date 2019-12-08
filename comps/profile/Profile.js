@@ -5,6 +5,8 @@ import EditStyles from '../../styles/EditStyles';
 import { Actions} from 'react-native-router-flux';
 import axios from 'axios';
 import Modal from "react-native-modal";
+import ImagePicker from 'react-native-image-picker';
+import RNFetchBlob from 'rn-fetch-blob';
 
  function Profile() {
     const [showModal, setShowModal]= useState(false);
@@ -17,6 +19,7 @@ import Modal from "react-native-modal";
     const [userAddress, setUserAddress] = useState();
     const [userEmail, setUserEmail] = useState();
     const [userPhone, setUserPhone] = useState();
+    const [avatar, setAvatar]= useState();
 
 
     // const [t_email, setEmail] = useState("");
@@ -43,6 +46,7 @@ import Modal from "react-native-modal";
         var json = JSON.parse(r.data.body);
         console.log(json);
         var d = json.data;
+        setAvatar(d[0].avatar_url);
         setUserName(d[0].name);
         setUserAddress(d[0].address)
         setUserEmail(d[0].email)
@@ -51,6 +55,7 @@ import Modal from "react-native-modal";
         // setAdress(d[0].adress)
     }
 
+//USER UPDATE
 
     const UpdateUser = async() => {
         var obj = {
@@ -61,14 +66,54 @@ import Modal from "react-native-modal";
                 address: userAddress,
                 phone: userPhone,
                 Name: userName
-                
-                
             }
         }
         var r = await axios.post(`https://foodfullapp.herokuapp.com/post`, obj);
     console.log("test", r.data.body);
+    Actions.refresh({key: 'profile'});
+    Actions.refresh({key: 'dashboard0'});
     }
+ //AVATAR CHANGE
+ const options = {
+    title: 'Select Donation Image',
+    storageOptions: {
+      skipBackup: true,
+      path: 'images',
+    },
+  };
+function uploadMyImage() {
+ImagePicker.showImagePicker(options, async(response) => {
+  if (response.didCancel) {
+    console.log('User cancelled image picker');
+  } else if (response.error) {
+    console.log('ImagePicker Error: ', response.error);
+  } else if (response.customButton) {
+    console.log('User tapped custom button: ', response.customButton);
+  } else {
+    const source = {uri: response.uri};
+    console.log("source", source);
+    //send image name over to your db pics/imagename.jpg
+    var r = await axios.post("https://foodfullapp.herokuapp.com/post", {key:"avatar_upload", data: {uId}})
+    //get url
+    var url = JSON.parse(r.data.body).data.url;
+    var uri = response.uri.replace("file://", "");
+    console.log("uri2", uri);
+    console.log("url",url);
+    //upload with this - done
+    var r2 = await RNFetchBlob.fetch('PUT', url, {
+      "Accept":"image/*",
+      "Content-Type":"image/*"
+    }, RNFetchBlob.wrap(uri));
+    
+    console.log("r2", r2);
+    setAvatar(uId)
+    //setImage(`https://foodfull.s3-us-west-2.amazonaws.com/avatar${uId}.jpg`);
+    //arr.push(r2.respInfo.redirects[0]);
 
+    return false;
+  }
+});
+}
  
         
         
@@ -84,6 +129,7 @@ import Modal from "react-native-modal";
         DeleteData();
         Actions.login();
     }
+
     useEffect(()=> {
         getID();
     }, [])
@@ -99,21 +145,22 @@ import Modal from "react-native-modal";
             </View>
 
             {/* Image view */}
-            <View
+            <TouchableOpacity
+            onPress={()=>uploadMyImage()}
             style={ProfileStyle.imageViewStyle}
             >
                 <Image
-                source={require('../../assets/img/safeway.jpg')}
+                source={{uri: `https://foodfull.s3-us-west-2.amazonaws.com/avatar${avatar}.jpg`}}
                 style={ProfileStyle.imageStyle}
                 >
                 </Image>
-            </View>
+            </TouchableOpacity>
 
             {/* Info view */}
             <View
             style={ProfileStyle.infoStyle}
             >
-                <TouchableOpacity style = {{position: 'absolute', top: 20, right: 20}}
+                <TouchableOpacity style = {{position: 'absolute', top: 20, right: 20, zIndex:2}}
                 onPress={()=> setShowModal(!showModal)}>
                     <Image style ={{width: 20, height: 20}}
                     source={require('../../assets/icon/edit.png')}
@@ -173,7 +220,7 @@ import Modal from "react-native-modal";
             {/* Button view */}
             <View style = {ProfileStyle.buttonView}>
                 <TouchableOpacity style ={ProfileStyle.buttonStyle}
-                onPress={()=>Actions.leaderboard()}
+                onPress={()=>Actions.leaderboard({names: userName, address: userAddress})}
                 >
                     <Image
                     style={{flex: 0.04, width:25, height:15}}
@@ -203,12 +250,18 @@ import Modal from "react-native-modal";
             <Modal isVisible={showModal}
             coverScreen={false}
             animationIn='slideInUp'
-            style = {{backgroundColor: 'transparent', height: 600,width: 370, position: "absolute", alignItems:"center", justifyContent:'center', marginTop:50}}
+            style = {{height: 600,width: 370, position: "absolute", alignItems:"center", marginTop:100}}
             isVisible = {showModal}
             onBackdropPress={() => setShowModal(!showModal)}
             >
+
+                {/* <TouchableOpacity onPress={() => uploadMyImage()}
+                style = {{top: 50, zIndex: 3}}>
+                    <Text>Change Avatar</Text>
+                </TouchableOpacity> */}
+                   
                 {/* X to close popup */}
-                 <TouchableOpacity style ={{position: 'absolute', top: 80, right: 45, zIndex:1}}
+                 <TouchableOpacity style ={{position: 'absolute', top: 80, right: 45, zIndex:2}}
                 onPress={()=>{setShowModal(!showModal)}}>
                     <Image
                     source={require('../../assets/icon/x.png')}

@@ -9,19 +9,24 @@ import {
   TouchableOpacity,
   KeyboardAvoidingView,
   AsyncStorage,
+  Alert
 } from 'react-native';
 import DatePicker from 'react-native-datepicker';
-import donateStyle from '../styles/donateStyle';
-import donationStyle from '../styles/donationStyle';
+import donateStyle from '../../styles/donateStyle';
+import donationStyle from '../../styles/donationStyle';
 import {Actions} from 'react-native-router-flux';
 import ImagePicker from 'react-native-image-picker';
 import axios from 'axios';
 import Confirmation from './Confirmation';
 import Modal from 'react-native-modal';
+//import base64toblob from 'base64toblob';
+import RNFetchBlob from 'rn-fetch-blob';
+
 var id = '';
 var receiverId = 0;
 function Donate({addr, ids, tt, dType}) {
   var donationType = dType;
+  var tts = tt;
   console.log('don type: ', donationType);
 
 
@@ -36,11 +41,20 @@ function Donate({addr, ids, tt, dType}) {
     text = '';
   }
 
+   //GET USER ID
+
+   const getID = async () => {
+    var json = await AsyncStorage.getItem('id');
+    id = json;
+    console.log(id);
+  };
   console.log(id);
   const [chooseOrg, setChooseOrg] = useState(false);
-  const [imageDefault, setArrayImages] = useState([]);
+  const [imageDefault, setArrayImages] = useState();
   const options = {
     title: 'Select Donation Image',
+    maxWidth: 500,
+    maxHight: 500,
     storageOptions: {
       skipBackup: true,
       path: 'images',
@@ -50,8 +64,9 @@ function Donate({addr, ids, tt, dType}) {
   var orgInput = null;
 
   //IMAGE UPLOAD
+  const [image, setImage] = useState()
   function uploadMyImage() {
-    ImagePicker.showImagePicker(options, response => {
+    ImagePicker.showImagePicker(options, async(response) => {
       if (response.didCancel) {
         console.log('User cancelled image picker');
       } else if (response.error) {
@@ -60,36 +75,53 @@ function Donate({addr, ids, tt, dType}) {
         console.log('User tapped custom button: ', response.customButton);
       } else {
         const source = {uri: response.uri};
+        console.log("source", source);
+        //send image name over to your db pics/imagename.jpg
+        var r = await axios.post("https://foodfullapp.herokuapp.com/post", {key:"image_upload", data: {id}})
+        //get url
+        var url = JSON.parse(r.data.body).data.url;
+        var uri = response.uri.replace("file://", "");
+        console.log("uri2", uri);
+        console.log("url",url);
+        //upload with this - done
+        var r2 = await RNFetchBlob.fetch('PUT', url, {
+          "Accept":"image/*",
+          "Content-Type":"image/*"
+        }, RNFetchBlob.wrap(uri));
+        
 
-        var arr = imageDefault.map(o => {
-          return o;
-        });
-        arr.push(source);
-        setArrayImages(arr);
-        console.log(arr);
-        setSelectedUrl(arr);
+        //get url back - one of the properties has the path
+        //gtg let me know how it works thanks a lot! will keep you posted!
+        //sorry i made it so difficult.
+        console.log("r2", r2);
+        setImage(`https://foodfull.s3-us-west-2.amazonaws.com/photo${id}.jpg`);
+        //arr.push(r2.respInfo.redirects[0]);
+
+        return false;
       }
     });
   }
-
+var title ='Public Donation';
   if (donationType === 1) {
     var pdcolor = '#b7b7b7',
       pdline = 'line-through',
       pddecoration = 'solid',
       cocolor = '#3dbfd2';
     coweight = '800';
+    title = 'Private Donation';
+
+
 
     orgInput = (
       
       <KeyboardAvoidingView enabled>
         <Text
               style={[
-                donateStyle.lftItems,
-                {color: cocolor, fontWeight: coweight},
+                donateStyle.lftItems
               ]}>
               Choose an Organization:
         </Text>
-        <View style={{margin: 5}}>
+        <View style={{margin: 0, flexDirection: 'row'}}>
           <TextInput
             onFocus={() => Actions.map()}
             style={{
@@ -100,12 +132,12 @@ function Donate({addr, ids, tt, dType}) {
               backgroundColor: '#eee',
               marginBottom: 10,
               padding: 10,
-              width: '98%',
+              flex: 2
             }}
             placeholder="Please locate users in the map">
             {text}
           </TextInput>
-          <View style={{justifyContent: 'center', alignItems: 'center'}}>
+          <View style={{justifyContent: 'center', alignItems: 'center', flex: 1, height: 45}}>
             <TouchableOpacity
               style={donateStyle.mapSearchButton}
               underlayColor="#000"
@@ -113,17 +145,17 @@ function Donate({addr, ids, tt, dType}) {
               onPress={() => Actions.map()}>
               <View style={{flexDirection: 'row', alignItems: 'center'}}>
                 <Image
-                  style={{width: 15, height: 20, left: -20}}
-                  source={require('../assets/icon/map.png')}
+                  style={{width: 15, height: 20, marginRight: 10}}
+                  source={require('../../assets/icon/map.png')}
                 />
                 <Text
                   style={{
                     fontSize: 18,
-                    fontfamily: 'Avenir',
+                    fontFamily: 'Avenir',
                     fontWeight: '600',
                     color: '#06a2bc',
                   }}>
-                  View Map
+                  Map
                 </Text>
               </View>
             </TouchableOpacity>
@@ -140,13 +172,7 @@ function Donate({addr, ids, tt, dType}) {
   const [selectedDescription, setSelectedDescription] = useState();
   const [selectedTime, setSelectedTime] = useState();
   const [status, setStatus] = useState(0);
-  //GET USER ID
-
-  const getID = async () => {
-    var json = await AsyncStorage.getItem('id');
-    id = json;
-    console.log(id);
-  };
+ 
 
   //SEND INFORMATION TO DATABASE
   const obj = {
@@ -154,7 +180,7 @@ function Donate({addr, ids, tt, dType}) {
     data: {
       date: selectedDate,
       time: selectedTime,
-      image_url: selectedUrl,
+      image_url: image,
       weight: 0,
       description: selectedDescription,
       user_id: id,
@@ -165,15 +191,7 @@ function Donate({addr, ids, tt, dType}) {
 
   console.log(obj.data.user_id);
   const changePage = () => {
-    if (receiverId != 0) {
-      setStatus(1);
       setShowModal(!showModal);
-      //Actions.confirmdonation({ text: obj })
-    } else if (receiverId != 0 && text == null) {
-      alert('Please enter receiver');
-    } else {
-      Actions.confirmdonation({text: obj});
-    }
   };
   useEffect(() => {
     getID();
@@ -184,12 +202,12 @@ function Donate({addr, ids, tt, dType}) {
     setSelectedTime('');
     setSelectedDescription('');
     Actions.refresh({key: 'postdonation'});
-  }, [tt]);
+  }, []);
 
   const [showModal, setShowModal] = useState(false);
   var modalInitContent = (
     <View>
-      <Text>eee</Text>
+      <Text></Text>
     </View>
   );
 
@@ -201,12 +219,33 @@ function Donate({addr, ids, tt, dType}) {
       style={donateStyle.container}
       behavior="padding"
       enabled>
+        <Text style={donateStyle.pageHeader}>{title}</Text>
+        <TouchableOpacity
+        style={{
+          position: 'absolute',
+          top: 62,
+          left: 20,
+          flexDirection: 'row',
+          alignItems: 'center',
+          justifyContent: 'center',
+          zIndex:2
+        }}
+        onPress={() => Actions.choosedonation()}>
+        <Image
+          source={require('../../assets/icon/next.png')}
+          style={
+            {width: 25, height: 30, 
+            transform: [{rotateY: '180deg'}],
+          }}></Image>
+        <Text></Text>
+      </TouchableOpacity>
       <ScrollView>
+      
         <View>
           <View style={donateStyle.padding}>
             {/* ADD A PHOTO */}
-            <Text style={donateStyle.pageHeader}>Make a Donation</Text>
-            <Text style={donateStyle.headers}>Add up to 3 Photos</Text>
+            
+            <Text style={[donateStyle.headers]}>Add up to 3 Photos</Text>
             <ScrollView horizontal="true">
               <View style={donateStyle.ImagePad}>
                 <TouchableOpacity onPress={() => uploadMyImage()}>
@@ -214,11 +253,8 @@ function Donate({addr, ids, tt, dType}) {
                     <Text style={donateStyle.addImagePlus}>+</Text>
                   </View>
                 </TouchableOpacity>
-                {imageDefault.map((obj, i) => {
-                  return (
                     <Image
-                      key={i}
-                      source={obj}
+                      source={{uri: `${image}`}}
                       style={{
                         height: 100,
                         width: 100,
@@ -226,8 +262,6 @@ function Donate({addr, ids, tt, dType}) {
                         marginLeft: 5,
                       }}
                     />
-                  );
-                })}
                 {/* <Image source={avatarSource} style={{height:100, width:100, borderRadius: 10}} /> */}
               </View>
             </ScrollView>
@@ -309,14 +343,19 @@ function Donate({addr, ids, tt, dType}) {
 
           <View>
             <View style={{flexDirection: 'row', alignItems: 'center'}}>
-              <Text style={donateStyle.headers}>Description</Text>
-              <Text style={donateStyle.note}>
-                Please add notes or details about your food donation
-              </Text>
+              <Text style={[donateStyle.headers, {flex: 1, marginTop: 30}]}>Description</Text>
+              <TouchableOpacity style= {{flex:0.12,marginTop: 30}}
+              onPress={()=> Alert.alert('Please add notes or details about your food donation','')}>
+                <Image
+                source = {require('../../assets/icon/question.png')}
+                style= {{width: 25, height: 25,top: -5, marginRight: 10}}
+                >
+                </Image>
+              </TouchableOpacity>
             </View>
             <TextInput
               style={{
-                height: 80,
+                height: 140,
                 borderColor: '#ddd',
                 borderWidth: 1,
                 borderRadius: 15,
@@ -329,42 +368,22 @@ function Donate({addr, ids, tt, dType}) {
               {selectedDescription}
             </TextInput>
           </View>
-
-          {/* Public Donation Header */}
-          {/* <View>
-            <Text
-              style={[
-                donateStyle.pdheader,
-                {
-                  color: pdcolor,
-                  textDecorationLine: pdline,
-                  textDecorationStyle: pddecoration,
-                },
-              ]}>
-              {' '}
-              Public Donation
-            </Text>
-          </View> */}
-
-          {/* Choose Organization */}
-          {/* <View style={[donateStyle.padding, donateStyle.row]}>
-            <Text
-              style={[
-                donateStyle.lftItems,
-                {color: cocolor, fontWeight: coweight},
-              ]}>
-              Choose an Organization
-            </Text>
-            <Switch
-              style={donateStyle.rgttems}
-              value={chooseOrg}
-              onValueChange={() => setChooseOrg(!chooseOrg)}
-            />
-          </View> */}
         <View>
           {orgInput}
         </View>
-        
+        <TouchableOpacity
+          style={donateStyle.DonateBtn}
+          underlayColor="#000"
+          color="white"
+          onPress={() => 
+            {if(image == null || selectedDate == null || selectedTime == null || setSelectedDescription == null){
+              alert("Please fill in all the inputs")
+            }else {
+              changePage();
+          }}}
+          >
+          <Text style={donateStyle.btnText}>Donate</Text>
+        </TouchableOpacity>
       </ScrollView>
 
       <Modal
@@ -378,21 +397,16 @@ function Donate({addr, ids, tt, dType}) {
         <TouchableOpacity
           style={{position: 'absolute', top: 80, right: 50}}
           onPress={() => {
-            setShowModal(!showModal);
+            
+              setShowModal(!showModal);
           }}>
           <Image
-            source={require('../assets/icon/x.png')}
+            source={require('../../assets/icon/x.png')}
             style={{width: 15, height: 15, top: 100, right: 10}}
           />
         </TouchableOpacity>
       </Modal>
-      <TouchableOpacity
-          style={donateStyle.DonateBtn}
-          underlayColor="#000"
-          color="white"
-          onPress={changePage}>
-          <Text style={donateStyle.btnText}>Donate</Text>
-        </TouchableOpacity>
+      
     </KeyboardAvoidingView>
   );
 }

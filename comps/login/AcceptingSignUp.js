@@ -35,7 +35,9 @@ function AcceptingSignUp({text}) {
         type: userType,
         address: userAddress,
         lat: userLatitude,
-        long: userLongitude
+        long: userLongitude,
+        avatar_url: 0
+
       }
     }
     // console.log(userLatitude);
@@ -67,13 +69,13 @@ function AcceptingSignUp({text}) {
   const [userLatitude, setUserLatitude] = useState();
   const [userLongitude, setUserLongitude] = useState();
   //Selected Email
-  const [userEmail, setUserEmail] = useState();
+  const [userEmail, setUserEmail] = useState('store');
   //Selected password
-  const [userPassword, setUserPassword] = useState();
+  const [userPassword, setUserPassword] = useState('store');
   //Selected Phone
-  const [userPhone, setUserPhone] = useState();
+  const [userPhone, setUserPhone] = useState('655 555 4824');
   //SELECTED name
-  const [userName, setUserName] = useState();
+  const [userName, setUserName] = useState('Choices Markets');
   //SELECTED address
   const [userAddress, setUserAddress] = useState();
 
@@ -174,7 +176,7 @@ function AcceptingSignUp({text}) {
           autoFocus={true}
           selectionColor="#0ca3bc"
           onChangeText={(name) => setUserName(name)}
-        />
+        >Choices Markets</TextInput>
       </View>
 
 
@@ -200,7 +202,7 @@ function AcceptingSignUp({text}) {
           keyboardType="number-pad"
           selectionColor="#0ca3bc" 
           onChangeText={(phone) => setUserPhone(phone)}
-          />
+          >655 555 4824</TextInput>
       </View>
 
 
@@ -213,7 +215,7 @@ function AcceptingSignUp({text}) {
           autoCapitalize={false}
           selectionColor="#0ca3bc"
           onChangeText={(email) => setUserEmail(email)}
-        />
+        >store</TextInput>
       </View>
 
 
@@ -226,7 +228,7 @@ function AcceptingSignUp({text}) {
           selectionColor="#0ca3bc"
           secureTextEntry={true}
           onChangeText={(password) => setUserPassword(password)}
-        />
+        >store</TextInput>
       </View>
 
 

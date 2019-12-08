@@ -1,21 +1,23 @@
 import React, {useEffect, useState} from 'react';
 import { View, Text, Image, ScrollView, TouchableOpacity, AsyncStorage } from 'react-native';
-import DashStyle from '../styles/dashboardStyle';
+import DashStyle from '../../styles/dashboardStyle';
 import { Actions } from 'react-native-router-flux';
 import axios from 'axios';
 
 
 function Dashboard({navigation}) {
-    var currentId= 0;
+    const [currentId, setCurrentId] = useState(0) ;
+    const [image, setImage] = useState(`https://foodfull.s3-us-west-2.amazonaws.com/avatar0.jpg`);
     //RECEIVE CURRENT USER ID FROM ASYNC STORAGE
     const getID = async () =>{
         var json = await AsyncStorage.getItem('id');
-        currentId = json;
+        setCurrentId(json);
         console.log("userID "+currentId);
+        GetUser();
         GetDonations();
+        
     }
     const [dons, setDons] = useState([]);
-    const [name, setName] = useState();
     const [user, setUser] = useState([]);
     const GetDonations = async () => {
         var obj = {
@@ -31,12 +33,25 @@ function Dashboard({navigation}) {
         var d = json.data;
         setUser(json.receivers);
         setDons(d);
-        
-    
-        
     }
     const [n, setn] = useState();
-    
+    const GetUser = async () => {
+        var obj = {
+        key: "users_read", 
+        data: {
+            id: currentId
+        }
+        }
+        var rr = await axios.post(`https://foodfullapp.herokuapp.com/post`, obj);
+        var json = JSON.parse(rr.data.body);
+        console.log('some', json.data.avatar_url)
+        if(json.data.avatar_url == 0 || json.data.avatar_url == null){
+            setImage(`https://foodfull.s3-us-west-2.amazonaws.com/avatar0.jpg`)
+        }else {
+            setImage(`https://foodfull.s3-us-west-2.amazonaws.com/avatar${json.data.avatar_url}.jpg`)
+        }
+        
+    }
     
     useEffect(()=>{
         getID();
@@ -48,14 +63,13 @@ function Dashboard({navigation}) {
             setn('Today')
         }
     }, [GetDonations])
-    
     return (
         <View style={DashStyle.main}>
 
             {/* BACKGROUND IMAGE AND DONATE BUTTON */}
             <View style={DashStyle.backgroundImg}>
                 <Image style={{ width: '100%', height: 420, position: 'absolute' }}
-                    source={require('../assets/img/dashboard_illustration.png')}>
+                    source={require('../../assets/img/dashboard_illustration.png')}>
                 </Image>
 
                 <View style={{ justifyContent: 'center', alignItems: 'center'}}>
@@ -76,7 +90,7 @@ function Dashboard({navigation}) {
                         <View>
                             <Image
                                 style={{ width: 95, height: 95, borderRadius: 100, backgroundColor: "#aaaaaa", left: -8 }}
-                                source={require('../assets/img/safeway.jpg')}
+                                source={{uri: `${image}`}}
                             ></Image>
                         </View>
                         <View style={{ margin: 20 }}>
@@ -94,7 +108,7 @@ function Dashboard({navigation}) {
                         onPress={()=>Actions.leaderboard()}
                         >
                             <Image style={{ width: 15, height: 20, position: 'absolute', top: -10 }}
-                                source={require('../assets/icon/next.png')} />
+                                source={require('../../assets/icon/next.png')} />
                         </TouchableOpacity>
                     </View>
                 </View>
@@ -109,7 +123,7 @@ function Dashboard({navigation}) {
                     {/* Date with line */}
                     <View style={{ left: 0, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', marginBottom: 20 }}>
                         <Image
-                        source={require('../assets/icon/donating.png')}
+                        source={require('../../assets/icon/donating.png')}
                         style={{width: 200, height: 170, position: 'absolute', top: 50, opacity: 0.05, }}
                         ></Image>
                         <View style={[DashStyle.line, {marginRight: 20}]}></View>
@@ -132,9 +146,9 @@ function Dashboard({navigation}) {
                                         <View style={{ flexDirection: 'row', alignItems: 'center' }}>
                                             <View style={DashStyle.dateCircle}>
                                             </View>
-                                            <View>
+                                            <View style={{flexDirection:'row', alignItems:'center'}}>
+                                                <Text style={{marginRight:30, fontFamily:'Avenir', fontWeight:'700', fontSize:18}}>{d.time}</Text>
                                                 <Text style={{ fontSize: 20, fontFamily: 'avenir', fontWeight: '500' } } key={i}>{uname}</Text>
-                                                <Text>{d.time}</Text>
                                             </View>
                                         </View>
                                     </View>

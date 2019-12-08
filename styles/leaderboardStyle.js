@@ -45,7 +45,7 @@ var LeaderboardStyles = StyleSheet.create({
         borderRadius: 30,
         paddingTop: 25,
         paddingBottom: 20,
-        top:15
+        top:5
     },
     imageBox: {
         flex: 1,
@@ -73,7 +73,7 @@ var LeaderboardStyles = StyleSheet.create({
         shadowRadius: 5,
         elevation: 5,
         borderRadius: 30,
-        top:30,
+        top:20,
         flexDirection:'row'
     },
     yourStats: {

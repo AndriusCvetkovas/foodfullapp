@@ -9,10 +9,10 @@
 import React, {useState, useEffect} from 'react';
 import {View,Text,ScrollView} from 'react-native';
 import MaterialTabs from 'react-native-material-tabs';
-import ContentStyle from '../styles/contentStyle';
-import Donations from '../comps/donation';
-import Pickup from '../comps/pickup';
-import {Actions} from 'react-native-router-flux';
+import ContentStyle from '../../styles/contentStyle';
+import Donations from './donation';
+import Pickup from './pickup';
+import {Actions} from 'react-native-router-flux'; 
 
 function DonateContent({pickup, navigation}) {
   var pick = pickup;

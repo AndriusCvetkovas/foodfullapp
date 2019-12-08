@@ -2,11 +2,14 @@ import {StyleSheet} from 'react-native';
 
 var PickUpStyle = StyleSheet.create({
     mapStyle: {
+    
       height: 450,
       top: 0,
       left: 0,
       right: 0,
-      bottom: 0
+      bottom: 0,
+      justifyContent:'center',
+      alignItems:'center'
     },
     viewStyle: {
       flex: 1,
@@ -25,18 +28,14 @@ var PickUpStyle = StyleSheet.create({
         width: '80%',
         height: '70%',
         backgroundColor: 'white',
-        alignSelf: 'center',
-        shadowColor: '#aaaaaa',
-        shadowOffset: { width: 2, height: 3 },
-        shadowOpacity: 0.6,
-        shadowRadius: 10,
-        top: '25%',
+       
         flexDirection:'column',
         alignItems: 'center',
         justifyContent: 'center',
-        borderRadius: 30
     },
     donatorTitle: {
+        alignItems: 'center',
+        justifyContent: 'center',
         fontSize: 20,
         paddingTop: 25,
         flex: 0,
@@ -44,7 +43,7 @@ var PickUpStyle = StyleSheet.create({
         fontWeight:'800',
     },
     imageBox:{
-        flex: 0.6,
+        flex: 0.9,
     },
     donationImage:{
         width: 100,

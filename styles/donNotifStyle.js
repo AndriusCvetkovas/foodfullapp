@@ -5,4 +5,4 @@ var DonNotifStyle = StyleSheet.create({
         flex:1
     }
 });
-export default DonNotifStyle;
+export default DonNotifStyle; 

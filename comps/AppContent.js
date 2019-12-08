@@ -21,40 +21,28 @@ import {
   Animations,
   Schema,
 } from 'react-native-router-flux';
-import GMap from './GMap';
-import Dashboard from './Dashboard';
-import Confirmation from './Confirmation';
-import DashboardAccept from './DashboardAccept';
-import DonationPen from '../comps/DonationPen';
+import GMap from './donatingSide/GMap';
+import Dashboard from './donatingSide/Dashboard';
+import Confirmation from './donatingSide/Confirmation';
+import DashboardAccept from './acceptingSide/DashboardAccept';
 import AccountCreate from './login/AccountCreate';
+import GetStarted from './homeOnboarding/getStarted';
 import LoginPage from './login/LoginPage';
 import SignUp from './login/SignUp';
 import AcceptingSignUp from './login/AcceptingSignUp';
-import Donate from './donate';
-import Info from './DInfoMap';
-import DonateContent from './donateContent';
-import DonationPosted from './DonationPosted';
-import DConfMap from './DConfMap';
-import DInfoMap from './DInfoMap';
-import Pickup from './pickup';
-import PickedUpComfirm from './PickedUpComfirm';
-import NotifPickComfirm from './NotifPickComfirm';
-import AcceptDonationNF from './AcceptDonationNF';
-import MsgAcceptDonation from './MsgAcceptDonation';
-import MsgCancelDonation from './MsgCancelDonation';
+import Donate from './donatingSide/donate';
+import Info from './acceptingSide/DInfoMap';
+import DonateContent from './acceptingSide/donateContent';
+import DonationPosted from './donatingSide/DonationPosted';
+import DConfMap from './acceptingSide/DConfMap';
 import LeaderBoard from './profile/Leaderboard';
 import Profile from './profile/Profile';
 import Appfooter from './footer';
-import DonNotification from './DonNotification';
+import DonNotification from './donatingSide/DonNotification';
 import Schedule from './Schedule';
-import GMapAccept from './GMapAccept';
-import DonNotificationAccepted from './DonNotificationAccepted';
-import DonNotificationDeclined from './DonNotificationDeclined';
-import MsgDeclineDonation from './MsgDeclineDonation';
-import AppHeader from './header';
-import GetStarted from './getStarted';
-import Home from './Home';
-import ChooseDonation from './postDonation/ChooseDonation';
+import GMapAccept from './acceptingSide/GMapAccept';
+import Home from './homeOnboarding/Home';
+import ChooseDonation from './donatingSide/ChooseDonation';
 
 function AppContent() {
   return (

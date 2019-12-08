@@ -19,7 +19,7 @@ var GMapStyle = StyleSheet.create({
     infoStyle: {
         marginLeft: 10,
         marginRight: 10,
-        height: 300,
+        height: 400,
         padding: 20,
         backgroundColor: 'white',
         width: 375,
@@ -28,27 +28,33 @@ var GMapStyle = StyleSheet.create({
     },
     innerInfo:{
         flex: 2,
-        top: -60,
+        top:0,
         width: '80%',
         flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'center',
         marginLeft: 20,
-        marginRight: 20
+        marginRight: 20,
     },
     innerTitle: {
         fontFamily: 'avenir',
         color: '#06a2bc',
         fontSize: 20,
-        padding: 20
+        paddingLeft: 20,
+        paddingBottom: 20,
+        paddingTop: 20,
+        paddingRight: 0,
+        width: 220,
+        height: 70,
+        overflow: 'hidden'
     },
     innerButton: {
         borderRadius: 30,
         borderWidth: 1,
-        width: 100,
+        width: 150,
         height: 40,
-        top: -120,
-        marginLeft: 200,
+        top: -20,
+        marginLeft: 65,
         justifyContent: 'center',
         alignItems: 'center',
         borderColor: '#06a2bc',
@@ -60,8 +66,9 @@ var GMapStyle = StyleSheet.create({
         //alignItems: 'center'
     },
     innerAddress: {
-        paddingLeft: 20,
-        top: -15
+        top: -10,
+        left: 20,
+        width: 200
     },
     backBut:{
         position: 'absolute',
@@ -85,16 +92,15 @@ var GMapStyle = StyleSheet.create({
     },
     infoBox: {
         position: 'absolute',
-        width: '80%',
-        height: '50%',
+        width: '100%',
+        height: '100%',
         backgroundColor: 'white',
         alignSelf: 'center',
-        top: '25%',
+        top: '5%',
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
-        borderRadius: 30,
-        padding: 10,
+       
     },
     dateBox: {
         flex: 0.5,

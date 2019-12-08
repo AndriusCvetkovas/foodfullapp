@@ -3,7 +3,7 @@ var styles = StyleSheet.create({
     mainbody:{
     flex:1,
     alignItems:"center",
-    top: 80,
+    top: 150,
   },
   headers:{
     width:200,
@@ -14,8 +14,8 @@ var styles = StyleSheet.create({
 contents:{
     width:300,
     height:50,
+    alignItems:'center',
     // backgroundColor:"red",
-  
 },
 
   imgPosted:{
@@ -27,22 +27,23 @@ contents:{
      textAlign:"center",
      fontSize:30,
      fontWeight:"600",
-     color: "#0ca3bc",
+     color: "#13bfd1",
   },
   contentPosts:{
-    textAlign:"center",
-    fontSize:15,
+    fontSize:20,
+    height:500,
+    width:250,
     fontWeight:"400",
     color: "black",
  },
  buttonContainer: {
-    height:45,
+    height:50,
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
     marginTop:5,
     marginBottom:20,
-    width:250,
+    width:260,
     borderRadius:30,
 
   },
@@ -63,11 +64,16 @@ contents:{
   },
   B1: {
     color: 'white',
-    fontSize: 20
+    fontSize: 20,
+    fontFamily:'Avenir',
+    fontWeight:'800'
   },
   B2: {
     color: '#0ca3bc',
-    fontSize: 20
+    fontSize: 20,
+    fontFamily:'Avenir',
+    fontWeight:'800'
+
   },
 
 });

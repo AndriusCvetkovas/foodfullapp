@@ -7,58 +7,74 @@ var AcceptNFStyle = StyleSheet.create({
         width: '100%',
         alignItems: 'center',
         justifyContent: 'center',
-        flex: 1
+        flex: 1,
+        height: 700
 
     },
     main2: {
-        flex: 1,
-        width: '80%',
+        flex: 2,
+        height: 700,
+        width: '90%',
         backgroundColor: 'white',
         borderRadius: 30,
-        padding: 20,
+        // padding: 20,
         alignItems: 'center',
         justifyContent: 'center',
-
         
-
+    },
+    DImage:{
+        flex: 1,
+        width: '100%',
+        height: '100%',
+        resizeMode: 'cover',
+        borderTopRightRadius:30, 
+        borderTopLeftRadius: 30 
     },
     donationInfoTop: {
-        flex: 1,
+        flex: 1.5,
+        borderTopLeftRadius: 30,
+        borderTopRightRadius:30,
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'center',
+        resizeMode: 'cover',
+        width: '100%',
+        marginBottom:10,
+        backgroundColor: '#0ca3bc',
     },
     imageText: {
         flex: 1,
         fontSize: 18,
         fontWeight: "600",
         width: '90%',
-        alignItems: 'center',
-        justifyContent: 'center'
+        // alignItems: 'center',
+        // justifyContent: 'center'
+        textAlign: 'left'
     },
 
     pickupDate: {
         width: '90%',
-        flex: 0.5,
+        flex: 1.2,
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'center'
     },
     pickupTime: {
-        flex: 0.5,
+        flex: 1.2,
         width: '90%',
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'center'
     },
     descriptionTitle: {
-        flex: 0.3,
+        flex: 1,
         color: '#0ca3bc',
         fontSize: 18,
         fontWeight: "600",
         width: '90%',
         alignItems: 'center',
-        justifyContent: 'center'
+        justifyContent: 'center',
+        fontFamily:'Avenir'
     },
     Images: {
         flex: 1.5,
@@ -73,13 +89,18 @@ var AcceptNFStyle = StyleSheet.create({
         
     },
     TextDisplay: {
-        flex: 2
+        flex: 1,
+        width:'90%',
+        
 
 
     },
     Organization: {
-        fontSize: 18,
+        fontSize: 25,
         color: '#07a2bb',
+        textAlign: 'left',
+        fontWeight: "700",
+        fontFamily:"Avenir"
     },
 
     address: {
@@ -94,7 +115,7 @@ var AcceptNFStyle = StyleSheet.create({
     Date: {
         fontSize: 30,
         color: 'white',
-        fontWeight: 'bold'
+        fontWeight: 'bold',
 
     },
     description: {
@@ -121,12 +142,11 @@ var AcceptNFStyle = StyleSheet.create({
         borderTopColor: '#F0F0F0',
         borderBottomColor: '#F0F0F0',
         backgroundColor: 'white',
-
         borderTopWidth: 2,
         borderBottomWidth: 2,
         marginBottom: 0,
         marginTop: 20,
-        width: '110%',
+        width: '100%',
         alignItems: 'center',
         justifyContent: 'center',
         elevation: 1
@@ -137,12 +157,12 @@ var AcceptNFStyle = StyleSheet.create({
 
         borderTopColor: '#F0F0F0',
         borderBottomColor: '#F0F0F0',
-        backgroundColor: 'white',
 
-        borderTopWidth: 2,
+        borderTopWidth: 1,
         borderBottomWidth: 2,
-
-        width: '110%',
+        borderBottomEndRadius: 30,
+        borderBottomStartRadius: 30,
+        width: '100%',
         alignItems: 'center',
         justifyContent: 'center',
         elevation: 1
